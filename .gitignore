@@ -9,3 +9,10 @@
 # Documentation here: https://yarnpkg.com/features/zero-installs
 !.yarn/cache
 #.pnp.*
+.idea
+coverage/
+node_modules/
+.eslintcache
+.ultra.cache.json
+.env
+.envrc
