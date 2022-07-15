@@ -19,13 +19,12 @@ jobs:
       url: https://gdsc-dju.web.app
     steps:
       - uses: actions/checkout@v2
-      - name: yarn install package
-        run: yarn && yarn install
-      - name: yarn install project
-        run: yarn && yarn build
-        working-directory: ${{ env.working-directory }}
-      - name: add sitemap packages
-        run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register react-router-sitemap
+      - name: install package
+        run: yarn install
+      - name: install dependencies
+        run: yarn install
+      - name: Project Build
+        run: yarn build
         working-directory: ${{ env.working-directory }}
       - name: sitemap-build
         run: node sitemap-builder
