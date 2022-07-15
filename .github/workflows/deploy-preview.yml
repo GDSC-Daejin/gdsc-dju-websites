@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: install package
-        run: yarn install
+        run: yarn install --immutable --immutable-cache
       - name: Project Build
         run: yarn build
         working-directory: ${{ env.working-directory }}
