@@ -10,6 +10,7 @@ on:
     paths:
       - "/packages/gdsc-dju-web/*"
 jobs:
+
   Deploy_Live_channel:
     runs-on: ubuntu-latest
     env:
@@ -24,6 +25,7 @@ jobs:
       - name: Project Build
         run: yarn build
         working-directory: ${{ env.working-directory }}
+      - name: Deploy to Firebase
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: run_firebase_deploy
         with:
@@ -31,7 +33,8 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GDSC_DJU }}'
           channelId: live
           projectId: gdsc-dju
-          working-directory: ${{ env.working-directory }}
+          entryPoint: './packages/gdsc-dju-web'
+
       - name: Discord Message Notify
         uses: appleboy/discord-action@0.0.3
         with:
