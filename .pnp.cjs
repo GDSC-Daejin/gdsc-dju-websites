@@ -6690,6 +6690,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["swr", "virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:1.3.0"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=7ad353"],\
             ["vite", "virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:2.9.14"],\
+            ["vite-plugin-external", "npm:1.2.3"],\
             ["vite-plugin-svgr", "virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:2.2.0"]\
           ],\
           "linkType": "SOFT"\
@@ -12208,6 +12209,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "less",\
             "sass",\
             "stylus"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["vite-plugin-external", [\
+        ["npm:1.2.3", {\
+          "packageLocation": "./.yarn/cache/vite-plugin-external-npm-1.2.3-f4d6af3636-8827d19678.zip/node_modules/vite-plugin-external/",\
+          "packageDependencies": [\
+            ["vite-plugin-external", "npm:1.2.3"],\
+            ["fs-extra", "npm:10.1.0"]\
           ],\
           "linkType": "HARD"\
         }]\

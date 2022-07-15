@@ -4934,7 +4934,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^10.1.0":
+"fs-extra@npm:^10.0.0, fs-extra@npm:^10.1.0":
   version: 10.1.0
   resolution: "fs-extra@npm:10.1.0"
   dependencies:
@@ -5166,6 +5166,7 @@ __metadata:
     swr: ^1.0.1
     typescript: ^4.6.3
     vite: ^2.9.7
+    vite-plugin-external: ^1.2.3
     vite-plugin-svgr: ^2.2.0
   languageName: unknown
   linkType: soft
@@ -9902,6 +9903,15 @@ __metadata:
     core-util-is: 1.0.2
     extsprintf: ^1.2.0
   checksum: c431df0bedf2088b227a4e051e0ff4ca54df2c114096b0c01e1cbaadb021c30a04d7dd5b41ab277bcd51246ca135bf931d4c4c796ecae7a4fef6d744ecef36ea
+  languageName: node
+  linkType: hard
+
+"vite-plugin-external@npm:^1.2.3":
+  version: 1.2.3
+  resolution: "vite-plugin-external@npm:1.2.3"
+  dependencies:
+    fs-extra: ^10.0.0
+  checksum: 8827d1967879a51cfecc3c2b8464578bb5128eba0e752c96b2936a4c613081d372e83e768ee04c62d8eb3fcf131968c21a73177f769126950686c826bf88b918
   languageName: node
   linkType: hard
 
