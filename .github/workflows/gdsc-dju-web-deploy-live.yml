@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: yarn install package
-        run: yarn && yarn build
+        run: yarn && yarn install
       - name: yarn install project
         run: yarn && yarn build
         working-directory: ${{ env.working-directory }}
