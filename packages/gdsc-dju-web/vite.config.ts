@@ -18,10 +18,10 @@ export default defineConfig({
   esbuild: {
     logOverride: { 'this-is-undefined-in-esm': 'silent' },
   },
-  build: {
-    rollupOptions: {
-      // https://rollupjs.org/guide/en/#big-list-of-options
-      external: Object.keys(pkg.dependencies),
-    },
-  },
+  // build: {
+  //   rollupOptions: {
+  //     // https://rollupjs.org/guide/en/#big-list-of-options
+  //     external: Object.keys(pkg.dependencies),
+  //   },
+  // },
 });
