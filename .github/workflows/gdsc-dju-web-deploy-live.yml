@@ -28,7 +28,7 @@ jobs:
         run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register react-router-sitemap
         working-directory: ${{ env.working-directory }}
       - name: sitemap-build
-        run: node sitemap-builder.js
+        run: node sitemap-builder
         working-directory: ${{ env.working-directory }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: run_firebase_deploy
