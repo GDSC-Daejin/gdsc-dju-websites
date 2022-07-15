@@ -3,6 +3,7 @@ name: Deploy to GDSC DJU Live Channel
 on:
   push:
     branches: [ master ]
+
   pull_request:
     branches: [ master ]
     types: [ closed ]
@@ -18,10 +19,12 @@ jobs:
       url: https://gdsc-dju.web.app
     steps:
       - uses: actions/checkout@v2
-      - name: add siteMap packages
+      - name: yarn install package
+        run: yarn && yarn build
+      - name: yarn install project
         run: yarn && yarn build
         working-directory: ${{ env.working-directory }}
-      - name: add siteMap packages
+      - name: add sitemap packages
         run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register react-router-sitemap
         working-directory: ${{ env.working-directory }}
       - name: sitemap-build
