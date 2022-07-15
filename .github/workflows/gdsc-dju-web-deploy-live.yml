@@ -22,12 +22,11 @@ jobs:
         run: yarn && yarn build
         working-directory: ${{ env.working-directory }}
       - name: add siteMap packages
-        run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register react-router-sitemap vite
+        run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register react-router-sitemap
         working-directory: ${{ env.working-directory }}
       - name: sitemap-build
         run: node sitemap-builder.js
         working-directory: ${{ env.working-directory }}
-
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: run_firebase_deploy
         with:
@@ -38,8 +37,8 @@ jobs:
       - name: Discord Message Notify
         uses: appleboy/discord-action@0.0.3
         with:
-          webhook_id: ${{ secrets.WEBHOOK_ID }}
-          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+          webhook_id: ${{ secrets.DISCORD_FRONT_WEBHOOK_ID }}
+          webhook_token: ${{ secrets.DISCORD_FRONT_WEBHOOK_TOKEN }}
           color: "#4285f4"
           args: |
             gdsc-dju-web has been deployed to Live channel
