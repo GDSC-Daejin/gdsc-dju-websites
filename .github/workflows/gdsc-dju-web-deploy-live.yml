@@ -23,7 +23,7 @@ jobs:
       - name: install package
         run: yarn install
       - name: Install firebsae
-        run: yarn install -g firebase-tools
+        run: yarn add firebase-tools
       - name: Project Build
         run: yarn build
         working-directory: ${{ env.working-directory }}
