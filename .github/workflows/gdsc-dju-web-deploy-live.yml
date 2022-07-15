@@ -25,7 +25,6 @@ jobs:
       - name: Project Build
         run: yarn build
         working-directory: ${{ env.working-directory }}
-      - name: Deploy to Firebase
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: run_firebase_deploy
         with:
