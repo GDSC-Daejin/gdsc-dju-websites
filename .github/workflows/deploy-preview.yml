@@ -20,21 +20,22 @@ jobs:
       - uses: actions/checkout@v2
       - name: install package
         run: yarn install
-      - name: Add firebase-tools
-        run: yarn add firebase-tools
       - name: Project Build
         run: yarn build
         working-directory: ${{ env.working-directory }}
       - name: Get short SHA
         id: slug
         run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
+      - name: Add firebase-tools
+        run: yarn add firebase-tools
+        working-directory: ${{ env.working-directory }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: run_firebase_preview
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GDSC_DJU }}'
           projectId: gdsc-dju
-          channelId: ' pr-${{ steps.slug.outputs.sha8 }}-${{ github.event.pull_request.head.ref }} '
+          channelId: ' ${{ steps.slug.outputs.sha8 }}-${{ github.event.pull_request.head.ref }} '
           entryPoint: './packages/gdsc-dju-web'
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
