@@ -40,7 +40,9 @@ const Recruitment = () => {
           <TopMargin />
           <RecruitmentCategory />
           {RecruitDetails.map((data) => (
-            <Announcement {...data} key={data.id} />
+            <div key={data.id}>
+              <Announcement {...data} />
+            </div>
           ))}
           <TopMargin />
         </ContainerInner>
