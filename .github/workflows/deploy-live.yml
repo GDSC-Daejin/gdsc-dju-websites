@@ -3,24 +3,31 @@ name: Deploy to Live Channel
 on:
   push:
     branches: [ master ]
-    paths:
-      - "packages/gdsc-dju-web"
   pull_request:
     branches: [ master ]
     types: [ closed ]
     paths:
-      - "packages/gdsc-dju-web"
+      - "/packages/gdsc-dju-web/*"
 jobs:
   Deploy_Live_channel:
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./packages/gdsc-dju-web
     environment:
       name: Production
       url: https://gdsc-dju.web.app
     steps:
       - uses: actions/checkout@v2
-      - run: yarn workspace gdsc-dju-web install && yarn workspace gdsc-dju-web build
-      - run: yarn workspace gdsc-dju-web yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register react-router-sitemap
-      - run: node sitemap-builder.js
+      - name: add siteMap packages
+        run: yarn && yarn build
+        working-directory: ${{ env.working-directory }}
+      - name: add siteMap packages
+        run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register react-router-sitemap
+        working-directory: ${{ env.working-directory }}
+      - name: sitemap-build
+        run: node sitemap-builder.js
+        working-directory: ${{ env.working-directory }}
+
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: run_firebase_deploy
         with:
@@ -40,3 +47,5 @@ jobs:
             `Event Status` ${{github.event_name}}
             `URL` https://gdsc-dju.web.app
             `Build Time` ${{steps.run_firebase_deploy.outputs.expire_time}}
+        env:
+          SOURCE_DIR: 'packages/gdsc-dju-web/'
