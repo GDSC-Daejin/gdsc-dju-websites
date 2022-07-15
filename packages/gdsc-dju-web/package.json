@@ -8,6 +8,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
+  "type": "module",
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
     "@firebase/app": "^0.7.28",
