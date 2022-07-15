@@ -1,4 +1,5 @@
-require('babel-register')({
+import babelRegister from 'babel-register';
+babelRegister({
   presets: ['es2015', 'react'],
 });
 require.extensions['.css'] = () => {};
