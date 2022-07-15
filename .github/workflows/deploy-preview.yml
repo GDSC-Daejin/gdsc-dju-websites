@@ -12,18 +12,20 @@ jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest
     environment:
-      name: Preview
+      name: GDSC DJU WEB Preview
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
     steps:
       - uses: actions/checkout@v2
-      - run: yarn && yarn build
-        env:
-          CI: ""
-        # Add additional build steps here
+      - name: install package
+      run: yarn install
+        - name: Install firebase
+          run: yarn install -g firebase-tools
+        - name: Project Build
+          run: yarn build
+          working-directory: ${{ env.working-directory }}
       - name: Get short SHA
         id: slug
         run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
-
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: run_firebase_preview
         with:
@@ -31,13 +33,14 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GDSC_DJU }}'
           projectId: gdsc-dju
           channelId: ' pr-${{ steps.slug.outputs.sha8 }}-${{ github.event.pull_request.head.ref }} '
+          entryPoint: './packages/gdsc-dju-web'
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
       - name: Discord Message Notify
         uses: appleboy/discord-action@0.0.3
         with:
-          webhook_id: ${{ secrets.WEBHOOK_ID }}
-          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+          webhook_id: ${{ secrets.DISCORD_FRONT_WEBHOOK_ID }}
+          webhook_token: ${{ secrets.DISCORD_FRONT_WEBHOOK_TOKEN }}
           color: "#4285f4"
           args: |
             gdsc-dju-web has been deployed to Preview channel
