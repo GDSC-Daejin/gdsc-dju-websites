@@ -30,6 +30,7 @@ import {
   IInputRegister,
   IRegisterApplicantType,
 } from '../../../types/applicant';
+import { FormValue } from '../../../types/recruitForm';
 import { isObjEmpty } from '../../../utils/objectCheck';
 import { positionSelect } from './FormFunctions';
 import {
@@ -52,22 +53,7 @@ const RecruitForm = () => {
   const [file, setFile] = useState<null | File>(null);
   const navigate = useNavigate();
   const [data, setData] = useState<null | IInputRegister>(null);
-  interface FormValue {
-    name: string;
-    phoneNumber: string;
-    major: string;
-    email: string;
-    studentID: string;
-    position: string;
-    question1: string;
-    question2: string;
-    question3: string;
-    question4: string;
-    question5: string;
-    link0: string;
-    link1: string;
-    recommender: string;
-  }
+
   const { register, handleSubmit, watch, formState } = useForm<FormValue>({
     mode: 'onChange',
   });
@@ -139,6 +125,12 @@ const RecruitForm = () => {
       });
       setLoading({ ...loading, load: false });
     } catch (e) {
+      setAlert({
+        ...modal,
+        alertMessage: '어딘가 문제가 생겼어요.',
+        alertStatus: 'error',
+        alertHandle: true,
+      });
       setLoading({ ...loading, load: false });
     }
   };
@@ -169,6 +161,9 @@ const RecruitForm = () => {
   useLayoutEffect(() => {
     setPosition(positionSelect[id as keyof typeof positionSelect]);
   }, [id]);
+  const formElements = Object.keys(formValidation) as Array<
+    keyof typeof formValidation
+  >;
 
   return (
     <>
@@ -184,134 +179,43 @@ const RecruitForm = () => {
                 <Title>지원서 작성하기</Title>
                 <SubTitle>{position}</SubTitle>
                 <FormMargin />
-                <FormContentWrapper>
-                  <FormLabel essential={true}>이름(실명)</FormLabel>
-                  <StyledInput
-                    error={!!errors.name}
-                    placeholder={'김구글'}
-                    {...register('name', formValidation.name)}
-                  />
-                  <ErrorBox>
-                    {!!errors.name && (errors.name.message as string)}
-                  </ErrorBox>
-                </FormContentWrapper>
-                <FormContentWrapper>
-                  <FormLabel essential={true}>전화번호</FormLabel>
-                  <StyledInput
-                    placeholder={'010-0000-0000'}
-                    error={!!errors.phoneNumber}
-                    {...register('phoneNumber', formValidation.phoneNumber)}
-                  />
-                  <ErrorBox>
-                    {!!errors.phoneNumber && errors.phoneNumber.message}
-                  </ErrorBox>
-                </FormContentWrapper>
-                <FormContentWrapper>
-                  <FormLabel essential={true}>이메일(gmail)</FormLabel>
-                  <StyledInput
-                    placeholder={'googledev@gmail.com'}
-                    error={!!errors.email}
-                    {...register('email', formValidation.email)}
-                  />
-                  <ErrorBox>{errors.email && errors.email.message}</ErrorBox>
-                </FormContentWrapper>
-                <FormContentWrapper>
-                  <FormLabel essential={true}>학과</FormLabel>
-                  <StyledInput
-                    placeholder={'구글개발학과'}
-                    error={!!errors.major}
-                    {...register('major', formValidation.major)}
-                  />
-                  <ErrorBox>{errors.major && errors.major.message}</ErrorBox>
-                </FormContentWrapper>
-                <FormContentWrapper>
-                  <FormLabel essential={true}>학번</FormLabel>
-                  <StyledInput
-                    placeholder={'20221234'}
-                    error={!!errors.studentID}
-                    {...register('studentID', formValidation.studentID)}
-                  />
-                  <ErrorBox>
-                    {errors.studentID && errors.studentID.message}
-                  </ErrorBox>
-                </FormContentWrapper>
-                <FormContentWrapper>
-                  <FormLabel essential={true}>포지션</FormLabel>
-                  <StyledInput disabled={true} placeholder={position} />
-                  <ErrorBox>
-                    {errors.position && errors.position.message}
-                  </ErrorBox>
-                </FormContentWrapper>
-                <FormContentWrapper>
-                  <FormLabel essential={true}>
-                    {applicationQuestions.question1}
-                  </FormLabel>
-                  <FormText>
-                    * 디자이너 분들은 사용가능한 툴에 대해서 알려주세요.
-                  </FormText>
-                  <StyledTextArea
-                    placeholder={
-                      '예) Spring, Vue, Git, Github, NodeJS, Spring, Figma, Adobe XD'
-                    }
-                    error={!!errors.question1}
-                    {...register('question1', formValidation.question1)}
-                  />
-                  <ErrorBox>
-                    {errors.question1 && errors.question1.message}
-                  </ErrorBox>
-                </FormContentWrapper>
-                <FormContentWrapper>
-                  <FormLabel essential={true}>
-                    {applicationQuestions.question2}
-                  </FormLabel>
-                  <FormText>
-                    * 프로젝트 경험이 없다면 본인이 노력해서 보람을 느낀 일에
-                    대해서 알려주세요.
-                  </FormText>
-                  <StyledTextArea
-                    error={!!errors.question2}
-                    {...register('question2', formValidation.question2)}
-                  />
-                  <ErrorBox>
-                    {errors.question2 && errors.question2.message}
-                  </ErrorBox>
-                </FormContentWrapper>
-                <FormContentWrapper>
-                  <FormLabel essential={true}>
-                    {applicationQuestions.question3}
-                  </FormLabel>
-                  <StyledTextArea
-                    error={!!errors.question3}
-                    {...register('question3', formValidation.question3)}
-                  />
-                  <ErrorBox>
-                    {errors.question3 && errors.question3.message}
-                  </ErrorBox>
-                </FormContentWrapper>
-                <FormContentWrapper>
-                  <FormLabel essential={true}>
-                    {applicationQuestions.question4}
-                  </FormLabel>
-                  <StyledTextArea
-                    error={!!errors.question4}
-                    {...register('question4', formValidation.question4)}
-                  />
-                  <ErrorBox>
-                    {errors.question4 && errors.question4.message}
-                  </ErrorBox>
-                </FormContentWrapper>
-                <FormContentWrapper>
-                  <FormLabel essential={true}>
-                    {applicationQuestions.question5}
-                  </FormLabel>
-                  <StyledTextArea
-                    error={!!errors.question5}
-                    {...register('question5', formValidation.question5)}
-                  />
-                  <ErrorBox>
-                    {errors.question5 && errors.question5.message}
-                  </ErrorBox>
-                </FormContentWrapper>
+                {formElements.map((element) => {
+                  const elementName = formValidation[element];
+                  const isRequired = elementName.required.value;
+                  return (
+                    <FormContentWrapper key={element}>
+                      <FormLabel essential={isRequired}>
+                        {elementName.label}
+                      </FormLabel>
+                      {elementName.text && (
+                        <FormText>{elementName.text}</FormText>
+                      )}
+                      {elementName.type === 'INPUT' ? (
+                        <StyledInput
+                          error={!!errors[element]}
+                          placeholder={elementName.placeholder}
+                          {...register(element, elementName)}
+                        />
+                      ) : elementName.type === 'TEXT_AREA' ? (
+                        <StyledTextArea
+                          placeholder={elementName.placeholder}
+                          error={!!errors[element]}
+                          {...register(element, elementName)}
+                        />
+                      ) : (
+                        <p>
+                          {elementName.notice?.split('\n').map((text) => (
+                            <FormText key={text}>{text}</FormText>
+                          ))}
+                        </p>
+                      )}
+                      <ErrorBox>
+                        {!!errors[element] &&
+                          (errors[element]?.message as string)}
+                      </ErrorBox>
+                    </FormContentWrapper>
+                  );
+                })}
                 <FormContentWrapper>
                   <FormLabel essential={false}>
                     참고해야 할 추가적인 자료가 있다면 첨부해주세요
@@ -327,44 +231,7 @@ const RecruitForm = () => {
                     * 파일은 최대 50MB로 업로드 하실 수 있습니다.
                   </FormText>
                 </FormContentWrapper>
-                <FormContentWrapper>
-                  <FormLabel essential={false}>링크 1</FormLabel>
-                  <StyledInput
-                    placeholder={'https://'}
-                    error={!!errors.link0}
-                    {...register('link0', formValidation.link0)}
-                  />
-                  <ErrorBox>{errors.link0 && errors.link0.message}</ErrorBox>
-                  <FormLabel>링크 2 </FormLabel>
-                  <StyledInput
-                    placeholder={'https://'}
-                    error={!!errors.link1}
-                    {...register('link1', formValidation.link1)}
-                  />
-                  <ErrorBox>{errors.link1 && errors.link1.message}</ErrorBox>
-                  <FormText>
-                    자신을 잘 나타낼 수 있는 개인블로그, 노션, Github링크 등을
-                    입력해주세요.
-                  </FormText>
-                  <FormText>
-                    *디자이너 분들은 포트폴리오가 필수사항입니다.
-                  </FormText>
-                  <FormText>
-                    *파일 용량이 50MB를 넘어갈 경우 클라우드/드라이브에 파일을
-                    업로드 후 공유링크를 입력해주세요.
-                  </FormText>
-                </FormContentWrapper>
                 <FormMarginXS />
-                <FormContentWrapper>
-                  <FormLabel>추천인</FormLabel>
-                  <StyledInput
-                    placeholder={'GDSC에 추천인이 있다면 입력해주세요.'}
-                    {...register('recommender')}
-                  />
-                  <ErrorBox>
-                    {errors.recommender && errors.recommender.message}
-                  </ErrorBox>
-                </FormContentWrapper>
                 <FormMargin />
                 {!isBlocked ? (
                   <FormSubmitButton type={'submit'} onClick={onSubmit}>

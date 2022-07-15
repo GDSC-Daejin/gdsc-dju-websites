@@ -3,10 +3,13 @@ name: Deploy to Live Channel
 on:
   push:
     branches: [ master ]
-
+    paths:
+      - "packages/gdsc-dju-web"
   pull_request:
     branches: [ master ]
     types: [ closed ]
+    paths:
+      - "packages/gdsc-dju-web"
 jobs:
   Deploy_Live_channel:
     runs-on: ubuntu-latest
@@ -15,8 +18,8 @@ jobs:
       url: https://gdsc-dju.web.app
     steps:
       - uses: actions/checkout@v2
-      - run: yarn && yarn build
-      - run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register react-router-sitemap
+      - run: yarn workspace gdsc-dju-web install && yarn workspace gdsc-dju-web build
+      - run: yarn workspace gdsc-dju-web yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register react-router-sitemap
       - run: node sitemap-builder.js
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: run_firebase_deploy
