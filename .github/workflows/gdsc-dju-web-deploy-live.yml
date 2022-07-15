@@ -23,8 +23,12 @@ jobs:
         run: yarn install
       - name: install dependencies
         run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register
+        working-directory: ${{ env.working-directory }}
       - name: Project Build
         run: yarn build
+        working-directory: ${{ env.working-directory }}
+      - name: sitemap-build
+        run: node sitemap-builder
         working-directory: ${{ env.working-directory }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: run_firebase_deploy
@@ -33,6 +37,7 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GDSC_DJU }}'
           channelId: live
           projectId: gdsc-dju
+          working-directory: ${{ env.working-directory }}
       - name: Discord Message Notify
         uses: appleboy/discord-action@0.0.3
         with:
