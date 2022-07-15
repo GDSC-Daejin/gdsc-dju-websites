@@ -26,9 +26,6 @@ jobs:
       - name: Project Build
         run: yarn build
         working-directory: ${{ env.working-directory }}
-      - name: sitemap-build
-        run: node sitemap-builder
-        working-directory: ${{ env.working-directory }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: run_firebase_deploy
         with:
