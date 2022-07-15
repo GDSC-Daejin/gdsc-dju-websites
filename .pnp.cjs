@@ -7829,6 +7829,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vitejs/plugin-react", "npm:1.3.2"],\
             ["autoprefixer", "virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:10.4.7"],\
             ["axios", "npm:0.26.1"],\
+            ["babel-cli", "npm:6.26.0"],\
+            ["babel-preset-es2015", "npm:6.24.1"],\
+            ["babel-preset-react", "npm:6.24.1"],\
+            ["babel-register", "npm:6.26.0"],\
             ["browser-detect", "npm:0.2.28"],\
             ["cookie", "npm:0.5.0"],\
             ["firebase", "npm:9.9.0"],\
