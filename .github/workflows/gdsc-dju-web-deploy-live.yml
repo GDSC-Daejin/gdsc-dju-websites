@@ -6,7 +6,7 @@ on:
     paths:
       - "packages/gdsc-dju-web/**"
   pull_request:
-    branches: [ master ]
+    branches: [ master, 'feature/gdsc-dju-web/**' ]
     types: [ closed ]
     paths:
       - "packages/gdsc-dju-web/**"
