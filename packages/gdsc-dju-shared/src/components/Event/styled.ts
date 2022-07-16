@@ -1,11 +1,4 @@
 import styled from 'styled-components';
-
-export const EventWrapper = styled.div`
-  padding: 60px 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
 export const EventTitle = styled.h3`
   font-size: ${({ theme }) => theme.fontSize.h4};
   color: ${({ theme }) => theme.colors.grey900};
