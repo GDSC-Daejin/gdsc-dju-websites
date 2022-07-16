@@ -12,7 +12,7 @@ on:
     types: [ closed ]
 jobs:
   if_merged:
-    if: github.event.pull_request.merged && github.payload.pull_request.head.ref == 'feature/gdsc-dju-web/**'
+    if: github.event.pull_request.merged && github.base_ref == 'feature/gdsc-dju-web/**'
     runs-on: ubuntu-latest
     env:
       working-directory: ./packages/gdsc-dju-web
