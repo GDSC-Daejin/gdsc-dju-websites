@@ -1,10 +1,10 @@
-name: Deploy to GDSC DJU Shared Preview Channel
+name: Deploy to GDSC DJU Web Preview Channel
 
 on:
   push:
     paths:
-      - "packages/gdsc-dju-shared/*"
-      - ".github/workflows/gdsc-dju-shared-deploy-preview.yml"
+      - "packages/gdsc-dju-web/**"
+      - ".github/workflows/gdsc-dju-Web-deploy-preview.yml"
     branches-ignore:
       - master
   pull_request:
@@ -12,14 +12,14 @@ on:
       - master
       - develop
     paths:
-      - "packages/gdsc-dju-shared/*"
+      - "packages/gdsc-dju-Web/**"
 jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest
     env:
-      working-directory: ./packages/gdsc-dju-shared
+      working-directory: ./packages/gdsc-dju-Web
     environment:
-      name: GDSC DJU Shared Preview
+      name: GDSC DJU Web Preview
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
     steps:
       - uses: actions/checkout@v2
@@ -36,10 +36,10 @@ jobs:
         id: run_firebase_preview
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GDSC_DJU_SHARED }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GDSC_DJU }}'
           projectId: gdsc-dju-shared
           channelId: ' ${{ steps.slug.outputs.sha8 }}-${{ github.event.pull_request.head.ref }} '
-          entryPoint: './packages/gdsc-dju-shared'
+          entryPoint: './packages/gdsc-dju-Web'
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
       - name: Discord Message Notify
@@ -49,7 +49,7 @@ jobs:
           webhook_token: ${{ secrets.DISCORD_SHARED_WEBHOOK_TOKEN }}
           color: "#4285f4"
           args: |
-            gdsc-dju-shared has been deployed to Preview channel
+            gdsc-dju-Web has been deployed to Preview channel
             `Contributor`: ${{github.actor}}
             `Event Status` ${{github.event_name}}
             `URL` <${{steps.run_firebase_preview.outputs.details_url}}>
