@@ -42,7 +42,13 @@ ex) feature/gdsc-dju-web/29-navigation
 - refactor : 코드 리팩토링에 대한 커밋
 - test : 테스트 코드 수정에 대한 커밋
 
+## Get Started
 
+```bash
+> yarn install
+> yarn workspace {project name} install
+> yarn workspace {project name} dev && vite
+```
 
 ## Contributors
 
