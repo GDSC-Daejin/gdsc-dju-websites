@@ -40,12 +40,11 @@ ex) feature/gdsc-dju-web/29-navigation
 - docs : 문서 수정에 대한 커밋
 - style : 코드 스타일 혹은 포맷 등에 관한 커밋
 - refactor : 코드 리팩토링에 대한 커밋
-- test : 테스트 코드 수정에 대한 커밋 ex)
+- test : 테스트 코드 수정에 대한 커밋
 
 
 
-
-### Contributors
+## Contributors
 
 <a href="https://github.com/GDSC-Daejin/gdsc-dju-frontend/graphs/contributors" style="display: flex; align-items: center; justify-content: center">
   <img src="https://contrib.rocks/image?repo=GDSC-Daejin/gdsc-dju-frontend" />
