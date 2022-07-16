@@ -4,8 +4,6 @@ on:
   push:
     branches-ignore:
       - master
-    paths:
-      - "/packages/gdsc-dju-web/*"
   pull_request:
     branches-ignore:
       - master
@@ -31,7 +29,7 @@ jobs:
       - name: Get short SHA
         id: slug
         run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
-      - name: add sitemap
+      - name: Generate sitemap
       - run: node sitemap-builder.js
         working-directory: ${{ env.working-directory }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
