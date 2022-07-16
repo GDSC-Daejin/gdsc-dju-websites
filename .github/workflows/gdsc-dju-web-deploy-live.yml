@@ -5,15 +5,13 @@ on:
     branches:
       - master
   pull_request:
-    paths:
-      - "packages/gdsc-dju-web/**"
     branches:
     - master
     types:
       - closed
 jobs:
   Deploy_Live_channel:
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == 'true'
     runs-on: ubuntu-latest
     env:
       working-directory: ./packages/gdsc-dju-web
