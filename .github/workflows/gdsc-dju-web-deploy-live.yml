@@ -15,7 +15,7 @@ on:
     types: [ closed ]
 jobs:
   Deploy_Live_channel:
-    if: github.event.pull_request.merged == 'true'
+    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
       working-directory: ./packages/gdsc-dju-web
