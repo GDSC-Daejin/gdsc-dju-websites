@@ -23,18 +23,8 @@ jobs:
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
     steps:
       - uses: actions/checkout@v2
-      - name: 버전 정보 추출(from Branch Name)
-        run: echo "TAG=$(echo '${{ steps.branch-name.outputs.current_branch }}')" >> $GITHUB_ENV
-      - name: Release & Tag 생성
-        if: github.event.pull_request.merged == true
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ env.TAG }}
-          release_name: ${{ env.TAG }}
       - name: echo current branch name
-        run: echo "current branch name - ${{ env.TAG }}"
+        run: echo "current branch name - ${{ github.payload.pull_request.head.ref }}"
 
       - name: install package
         run: yarn install
