@@ -4,13 +4,9 @@ on:
   push:
     branches:
       - master
-    paths:
-      - "packages/gdsc-dju-web/**"
   pull_request:
     branches:
     - master
-    paths:
-      - "packages/gdsc-dju-web/**"
     types:
       - closed
 jobs:
