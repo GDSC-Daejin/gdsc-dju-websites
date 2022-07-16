@@ -34,9 +34,9 @@
     "swr": "^1.0.1"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.181",
     "@firebase/app": "^0.7.28",
     "@firebase/app-compat": "^0.1.29",
+    "@types/lodash": "^4.14.181",
     "@types/node": "^18.0.4",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
