@@ -12,18 +12,17 @@ on:
     - master
     paths:
       - "packages/gdsc-dju-web/**"
-      - ".github/workflows/gdsc-dju-web-deploy-live.yml"
     types:
       - closed
 jobs:
   Deploy_Live_channel:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
       working-directory: ./packages/gdsc-dju-web
     environment:
       name: GDSC DJU WEB Production
       url: https://gdsc-dju.web.app
+    if: github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v2
       - name: install package
