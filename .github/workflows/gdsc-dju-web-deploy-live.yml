@@ -9,12 +9,12 @@ on:
   pull_request:
     branches:
     - master,
-    - 'feature/gdsc-dju-web/**'
-    - ".github/workflows/gdsc-dju-web-deploy-live.yml"
+    paths:
+      - 'feature/gdsc-dju-web/**'
+      - ".github/workflows/gdsc-dju-web-deploy-live.yml"
     types: [ closed ]
 jobs:
-  Deploy_preview_channel:
-    if: github.event.pull_request.merged
+  if_merged:
     runs-on: ubuntu-latest
     env:
       working-directory: ./packages/gdsc-dju-web
