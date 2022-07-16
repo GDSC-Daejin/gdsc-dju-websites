@@ -7,7 +7,7 @@ on:
     types:
       - closed
     paths:
-      - "packages/gdsc-dju-web/**"
+      - "packages/gdsc-dju-web/*"
 jobs:
   Deploy_Live_channel:
     if: github.event.pull_request.merged == true
@@ -21,10 +21,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: install package
         run: yarn install
-      - name: Install firebase
-        run: yarn add firebase-tools
+      - name: install sitemap package
+        run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register
       - name: Project Build
         run: yarn build
+      - name: Generate sitemap
+        run: node sitemap-builder.js
         working-directory: ${{ env.working-directory }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: run_firebase_deploy

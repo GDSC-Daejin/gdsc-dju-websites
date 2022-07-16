@@ -12,7 +12,7 @@ on:
       - master
       - develop
     paths:
-      - "packages/gdsc-dju-web/**"
+      - "packages/gdsc-dju-web/*"
 jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest
@@ -23,21 +23,14 @@ jobs:
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
     steps:
       - uses: actions/checkout@v2
-      - name: echo current branch name
-        run: echo "current branch name - ${{ github.payload.pull_request.head.ref }}"
-
       - name: install package
         run: yarn install
-      - name: install sitemap package
-        run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register
       - name: Project Build
         run: yarn build
         working-directory: ${{ env.working-directory }}
       - name: Get short SHA
         id: slug
         run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
-      - name: Generate sitemap
-        run: node sitemap-builder.js
         working-directory: ${{ env.working-directory }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: run_firebase_preview
