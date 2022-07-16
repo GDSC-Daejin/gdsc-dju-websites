@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-export const EventTitle = styled.h3`
-  font-size: ${({ theme }) => theme.fontSize.h4};
-  color: ${({ theme }) => theme.colors.grey900};
-`;
+
 export const EventDescription = styled.p`
   margin-top: 10px;
   font-size: ${({ theme }) => theme.fontSize.body1};
