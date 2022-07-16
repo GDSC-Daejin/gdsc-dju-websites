@@ -19,6 +19,7 @@ function App() {
     location.pathname === '/' ? setFooter(false) : setFooter(true);
   }, [location.pathname]);
   const { theme, toggleTheme } = useTheme();
+
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
