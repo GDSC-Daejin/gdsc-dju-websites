@@ -2,13 +2,14 @@ name: Deploy to GDSC DJU Live Channel
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
     paths:
       - "packages/gdsc-dju-web/**"
       - ".github/workflows/gdsc-dju-web-deploy-live.yml"
   pull_request:
     branches:
-    - master,
+    - master
     paths:
       - "packages/gdsc-dju-web/**"
       - ".github/workflows/gdsc-dju-web-deploy-live.yml"
