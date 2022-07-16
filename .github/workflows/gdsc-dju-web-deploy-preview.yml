@@ -2,16 +2,16 @@ name: Deploy to GDSC DJU Preview Channel
 
 on:
   push:
+    paths:
+      - "./packages/gdsc-dju-web/*"
     branches-ignore:
       - master
-    paths:
-      - "/packages/gdsc-dju-web/*"
   pull_request:
     branches-ignore:
       - master
       - develop
     paths:
-      - "/packages/gdsc-dju-web/*"
+      - "./packages/gdsc-dju-web/*"
 jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest
