@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - "packages/gdsc-dju-web/*"
-      - ".github/workflows/gdsc-dju-shared-deploy-preview.yml"
+      - ".github/workflows/gdsc-dju-web-deploy-preview.yml"
     branches-ignore:
       - master
   pull_request:
