@@ -26,9 +26,9 @@ master과 develop을 제외한 다른 브랜치는 도메인 별로 다른 브�
 
 - hotfix - 급한 경우만 사용하는 브랜치
 
->feature/`프로젝트 이름`/`issue번호`-`기능이름`
-> 
-> ex) feature/gdsc-dju-web/29-navigation
+feature/`프로젝트 이름`/`issue번호`-`기능이름`
+ 
+ex) feature/gdsc-dju-web/29-navigation
 
 ### Commit convention rule
 
