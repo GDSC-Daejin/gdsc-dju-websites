@@ -1,14 +1,13 @@
 name: Deploy to GDSC DJU Live Channel
 
 on:
-  push:
-    branches:
-      - master
   pull_request:
     branches:
     - master
     types:
       - closed
+    paths:
+      - "packages/gdsc-dju-web/**"
 jobs:
   Deploy_Live_channel:
     if: github.event.pull_request.merged == true
@@ -20,7 +19,6 @@ jobs:
       url: https://gdsc-dju.web.app
     steps:
       - uses: actions/checkout@v2
-      - run: echo 'The time was ${{ github.event.pull_request.merged }}.'
       - name: install package
         run: yarn install
       - name: Install firebase
