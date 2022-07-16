@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "packages/gdsc-dju-web/**"
+      - ".github/workflows/gdsc-dju-web-deploy-preview.yml"
     branches-ignore:
       - master
   pull_request:
@@ -22,6 +23,9 @@ jobs:
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
     steps:
       - uses: actions/checkout@v2
+      - name: echo current branch name
+        run: echo "current branch name - ${{ github.payload.pull_request.head.ref }}"
+
       - name: install package
         run: yarn install
       - name: install sitemap package
