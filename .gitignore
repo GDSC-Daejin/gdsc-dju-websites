@@ -10,6 +10,8 @@
 !.yarn/cache
 #.pnp.*
 .idea
+.firebase
+.vscode
 dist
 coverage/
 node_modules/
