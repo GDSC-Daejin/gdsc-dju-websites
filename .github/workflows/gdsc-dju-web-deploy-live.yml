@@ -10,7 +10,7 @@ on:
     branches:
     - master,
     paths:
-      - 'feature/gdsc-dju-web/**'
+      - "packages/gdsc-dju-web/**"
       - ".github/workflows/gdsc-dju-web-deploy-live.yml"
     types: [ closed ]
 jobs:
