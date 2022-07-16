@@ -10,6 +10,7 @@
 !.yarn/cache
 #.pnp.*
 .idea
+dist
 coverage/
 node_modules/
 .eslintcache

@@ -10,9 +10,6 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
-    "@firebase/app": "^0.7.28",
-    "@firebase/app-compat": "^0.1.29",
-    "@rollup/plugin-node-resolve": "^13.3.0",
     "axios": "^0.26.1",
     "browser-detect": "^0.2.28",
     "cookie": "^0.5.0",
@@ -38,6 +35,8 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.181",
+    "@firebase/app": "^0.7.28",
+    "@firebase/app-compat": "^0.1.29",
     "@types/node": "^18.0.4",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
@@ -48,8 +47,6 @@
     "prettier": "^2.6.2",
     "react-pdf": "^5.7.2",
     "typescript": "^4.6.3",
-    "vite": "^2.9.7",
-    "vite-plugin-external": "^1.2.3",
-    "vite-plugin-svgr": "^2.2.0"
+    "vite": "^2.9.7"
   }
 }
