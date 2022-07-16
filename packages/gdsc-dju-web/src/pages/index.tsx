@@ -29,11 +29,6 @@ const Faq = lazy(() =>
 );
 
 const Pages = () => {
-  // const [selector, setSelector] = useRecoilState(recruitmentSelector);
-  //
-  // useEffect(() => {
-  //   setSelector(selector);
-  // }, []);
   return (
     <>
       <ScrollTop />
