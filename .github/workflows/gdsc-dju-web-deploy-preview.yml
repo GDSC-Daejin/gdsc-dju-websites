@@ -4,10 +4,14 @@ on:
   push:
     branches-ignore:
       - master
+    paths:
+      - "/packages/gdsc-dju-web/*"
   pull_request:
     branches-ignore:
       - master
       - develop
+    paths:
+      - "/packages/gdsc-dju-web/*"
 jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest
