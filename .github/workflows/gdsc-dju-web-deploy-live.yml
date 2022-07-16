@@ -6,7 +6,6 @@ on:
       - master
     paths:
       - "packages/gdsc-dju-web/**"
-      - ".github/workflows/gdsc-dju-web-deploy-live.yml"
   pull_request:
     branches:
     - master
