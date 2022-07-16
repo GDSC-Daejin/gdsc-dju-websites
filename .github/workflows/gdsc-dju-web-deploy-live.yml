@@ -11,8 +11,8 @@ on:
     - 'feature/gdsc-dju-web/**'
     types: [ closed ]
 jobs:
-  if_merged:
-    if: github.event.pull_request.merged && github.base_ref == 'feature/gdsc-dju-web/**'
+  Deploy_Live_channel:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
       working-directory: ./packages/gdsc-dju-web
