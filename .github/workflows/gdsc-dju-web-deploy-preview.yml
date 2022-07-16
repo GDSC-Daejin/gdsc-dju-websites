@@ -28,8 +28,14 @@ jobs:
       - name: Release & Tag 생성
         if: github.event.pull_request.merged == true
         uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.TAG }}
+          release_name: ${{ env.TAG }}
       - name: echo current branch name
         run: echo "current branch name - ${{ env.TAG }}"
+
       - name: install package
         run: yarn install
       - name: install sitemap package
