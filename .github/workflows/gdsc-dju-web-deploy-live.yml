@@ -5,12 +5,12 @@ on:
     branches: [ master ]
     paths:
       - "packages/gdsc-dju-web/**"
-      - ".github/workflows/gdsc-dju-web-deploy-preview.yml"
+      - ".github/workflows/gdsc-dju-web-deploy-live.yml"
   pull_request:
     branches:
     - master,
     - 'feature/gdsc-dju-web/**'
-    - ".github/workflows/gdsc-dju-web-deploy-preview.yml"
+    - ".github/workflows/gdsc-dju-web-deploy-live.yml"
     types: [ closed ]
 jobs:
   Deploy_preview_channel:
