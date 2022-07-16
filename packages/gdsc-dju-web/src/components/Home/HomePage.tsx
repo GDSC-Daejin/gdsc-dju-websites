@@ -33,13 +33,7 @@ const HomePage = () => {
       <BannerTitleWrapper>
         <RecruitingWrapper variants={bannerItemAnimate}>
           <Recruiting />
-          <MainBannerText variants={bannerItemAnimate}>
-            {recruit.home ? (
-              <>GDSC Daejin Univ. 에서 새로운 식구들을 모집하고 있습니다.</>
-            ) : (
-              <>상상의 시작은 GDSC로부터.</>
-            )}
-          </MainBannerText>
+          <MainBannerText variants={bannerItemAnimate}></MainBannerText>
           <HomeRecruitmentButton />
           <MainBannerText variants={bannerItemAnimate}>
             11. 22 ~ 12. 19
