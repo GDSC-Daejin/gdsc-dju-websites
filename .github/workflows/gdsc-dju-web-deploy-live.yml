@@ -3,7 +3,7 @@ name: Deploy to GDSC DJU Live Channel
 on:
   pull_request:
     branches:
-    - master
+      - master
     types:
       - closed
     paths:
@@ -23,8 +23,10 @@ jobs:
         run: yarn install
       - name: install sitemap package
         run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register
+        working-directory: ${{ env.working-directory }}
       - name: Project Build
         run: yarn build
+        working-directory: ${{ env.working-directory }}
       - name: Generate sitemap
         run: node sitemap-builder.js
         working-directory: ${{ env.working-directory }}
