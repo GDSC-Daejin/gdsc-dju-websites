@@ -12,7 +12,7 @@ on:
       - master
       - develop
     paths:
-      - "packages/gdsc-dju-web/**"
+      - "packages/gdsc-dju-web/*"
 jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest
