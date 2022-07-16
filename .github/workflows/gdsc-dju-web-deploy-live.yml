@@ -5,14 +5,16 @@ on:
     branches: [ master ]
     paths:
       - "packages/gdsc-dju-web/**"
+      - ".github/workflows/gdsc-dju-web-deploy-preview.yml"
   pull_request:
     branches:
     - master,
     - 'feature/gdsc-dju-web/**'
+    - ".github/workflows/gdsc-dju-web-deploy-preview.yml"
     types: [ closed ]
 jobs:
   Deploy_Live_channel:
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true || github.payload.pull_request.head.ref == 'feature/gdsc-dju-web'
     runs-on: ubuntu-latest
     env:
       working-directory: ./packages/gdsc-dju-web
