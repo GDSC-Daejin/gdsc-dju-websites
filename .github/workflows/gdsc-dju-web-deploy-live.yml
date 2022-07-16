@@ -6,10 +6,10 @@ on:
     paths:
       - "packages/gdsc-dju-web/**"
   pull_request:
-    branches: [ master, 'feature/gdsc-dju-web/**' ]
+    branches:
+    - master,
+    - 'feature/gdsc-dju-web/**'
     types: [ closed ]
-    paths:
-      - "packages/gdsc-dju-web/**"
 jobs:
 
   Deploy_Live_channel:
