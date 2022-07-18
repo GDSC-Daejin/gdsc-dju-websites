@@ -23,11 +23,8 @@ jobs:
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
     steps:
       - uses: actions/checkout@v2
-      - name: install package
-        run: yarn install
-      - uses: actions/checkout@v2
-      - name: Project Build
-        run: tsc && yarn build
+      - run: yarn install
+      - run: tsc && yarn build
         working-directory: ${{ env.working-directory }}
       - name: Get short SHA
         id: slug
