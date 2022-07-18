@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Folder = () => {
+const FolderIcon = () => {
   return (
     <svg
       width="96"
@@ -17,4 +17,4 @@ const Folder = () => {
   );
 };
 
-export default Folder;
+export default FolderIcon;

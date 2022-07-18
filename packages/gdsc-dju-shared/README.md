@@ -32,7 +32,7 @@ or
 
 
 
-## Folder Structure
+## FolderIcon Structure
 
 ```
 ├── package-lock.json //프로젝트 초기

@@ -2,7 +2,6 @@ import React, { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router';
 import { ErrorBoundary } from 'react-error-boundary';
 import GoogleSpinner from '../components/Lottie/GoogleSpinner';
-import Error from '../pages/Error';
 
 const Pages = lazy(() =>
   import('../pages').then((module) => ({
@@ -16,6 +15,11 @@ const Admin = lazy(() =>
 );
 const Auth = lazy(() =>
   import('../pages/Auth').then((module) => ({
+    default: module.default,
+  })),
+);
+const Error = lazy(() =>
+  import('../pages/Error').then((module) => ({
     default: module.default,
   })),
 );

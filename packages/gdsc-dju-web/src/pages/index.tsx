@@ -17,11 +17,7 @@ const Introduce = lazy(() =>
     default: module.default,
   })),
 );
-const CodeOfConduct = lazy(() =>
-  import('./CodeOfConduct').then((module) => ({
-    default: module.default,
-  })),
-);
+
 const Faq = lazy(() =>
   import('./Faq').then((module) => ({
     default: module.default,
@@ -36,7 +32,6 @@ const Pages = () => {
         <Route path={'/*'} element={<Home />} />
         <Route path={'/introduce'} element={<Introduce />} />
         <Route path={'/recruit/*'} element={<Recruit />} />
-        <Route path={'/conduct'} element={<CodeOfConduct />} />
         <Route path={'/faq/*'} element={<Faq />} />
       </Routes>
     </>

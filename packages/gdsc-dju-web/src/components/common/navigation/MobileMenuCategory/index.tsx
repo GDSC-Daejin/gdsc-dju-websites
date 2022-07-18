@@ -13,7 +13,7 @@ import './MobileMenu.css';
 import { useNavigate } from 'react-router-dom';
 import { navigationAnimate } from '../../Variants/NavigationAnimation';
 import { ROUTES } from '../DeskNavigation';
-import GDSCLogo from '../../../../assets/GDSCLogo.svg';
+import GDSCLogo from '../../../../assets/logos/GDSCLogo.svg';
 
 const MobileMenuCategory = () => {
   const navigate = useNavigate();

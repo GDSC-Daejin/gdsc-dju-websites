@@ -1,6 +1,6 @@
 import React from 'react';
 import { DownArrowWrapper } from '../../../pages/Home/styled';
-import DownArrowIcon from '../../../assets/DownArrow';
+import DownArrowIcon from '../../../assets/icons/DownArrowIcon';
 
 const DownArrow = () => {
   return (

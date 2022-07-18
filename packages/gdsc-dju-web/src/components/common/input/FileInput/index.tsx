@@ -1,11 +1,11 @@
 import React, {
   ChangeEvent,
-  forwardRef,
   ForwardRefRenderFunction,
+  forwardRef,
   useRef,
   useState,
 } from 'react';
-import Folder from '../../../../assets/Folder';
+import FolderIcon from '../../../../assets/icons/FolderIcon';
 import {
   InputImageWrapper,
   StyledFileInput,
@@ -50,7 +50,7 @@ const FileInput = (props: Iprops, ref: React.RefObject<HTMLInputElement>) => {
       }}
     >
       <InputImageWrapper>
-        <Folder />
+        <FolderIcon />
       </InputImageWrapper>
       <StyledFileInput>{placeholder}</StyledFileInput>
       <input

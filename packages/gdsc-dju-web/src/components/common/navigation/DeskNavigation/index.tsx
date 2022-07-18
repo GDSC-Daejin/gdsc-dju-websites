@@ -1,6 +1,6 @@
 import React from 'react';
 
-import GDSCLogo from '../../../../assets/GDSCLogo.svg';
+import GDSCLogo from '../../../../assets/logos/GDSCLogo.svg';
 
 import { useLocation } from 'react-router';
 

@@ -91,7 +91,7 @@ V2
 
 
 
-### Folder Structure
+### FolderIcon Structure
 
 
 
