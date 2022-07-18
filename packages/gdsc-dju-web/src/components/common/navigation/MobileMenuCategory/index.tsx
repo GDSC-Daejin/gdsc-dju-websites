@@ -18,7 +18,6 @@ import GDSCLogo from '../../../../assets/logos/GDSCLogo.svg';
 const MobileMenuCategory = () => {
   const navigate = useNavigate();
   const [menu, setMenu] = useRecoilState(menuState);
-
   return (
     <MenuWrapper>
       <picture>
