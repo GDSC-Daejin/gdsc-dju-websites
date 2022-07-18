@@ -20,9 +20,9 @@ import {
   SignInSolarSystemWrapper,
   SignInWrapper,
 } from './styled';
-import GDSCImage from '../../../assets/GDSCLogo.svg';
-import GoogleLogo from '../../../assets/GoogleLogo.svg';
-import GithubLogo from '../../../assets/GithubLogo.svg';
+import GDSCImage from '../../../assets/logos/GDSCLogo.svg';
+import GoogleLogo from '../../../assets/logos/GoogleLogo.svg';
+import GithubLogo from '../../../assets/logos/GithubLogo.svg';
 import { useNavigate } from 'react-router-dom';
 
 import SolorSystem from '../../../components/Home/SolorSystem';

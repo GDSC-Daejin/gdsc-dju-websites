@@ -3,10 +3,8 @@ import './Admin.css';
 import {
   AdminNavCategoryWrapper,
   AdminNavigationWrapper,
-  SidebarContainer,
   StyledUserName,
 } from './styled';
-import AdminTopMenu from '../../../components/admin/AdminTopMenu';
 import { useLocation } from 'react-router';
 import {
   NavInner,
@@ -19,7 +17,7 @@ import {
   StyledLogo,
   StyledLogoWrapper,
 } from '../../common/navigation/DeskNavigation/styled';
-import GDSCLogo from '../../../assets/GDSCLogo.svg';
+import GDSCLogo from '../../../assets/logos/GDSCLogo.svg';
 import AdminUserMenu from '../AdminUserMenu';
 import { useRecoilState } from 'recoil';
 import { adminUserState } from '../../../store/localUser';
