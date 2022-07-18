@@ -41,28 +41,26 @@ const HomeContainer = styled.div`
 
 const Home = () => {
   return (
-    <>
-      <ReactHelmet
-        title={'GDSC DJU'}
-        description={
-          'Google Developer Student Clubs Daejin University 챕터입니다. '
-        }
-      />
-      <HomeContainer>
-        <Suspense fallback={<GoogleSpinner />}>
-          <div className={'container'}>
-            <HomeSolarSystemWrapper>
-              <SolarSystem />
-            </HomeSolarSystemWrapper>
-            <HomePageV2 />
-            <SectionIntroduce />
-            <SectionCulture />
-            <SectionManager />
-            <Footer />
-          </div>
-        </Suspense>
-      </HomeContainer>
-    </>
+    <HomeContainer>
+      <Suspense fallback={<GoogleSpinner />}>
+        <ReactHelmet
+          title={'GDSC DJU'}
+          description={
+            'Google Developer Student Clubs Daejin University 챕터입니다. '
+          }
+        />
+        <div className={'container'}>
+          <HomeSolarSystemWrapper>
+            <SolarSystem />
+          </HomeSolarSystemWrapper>
+          <HomePageV2 />
+          <SectionIntroduce />
+          <SectionCulture />
+          <SectionManager />
+          <Footer />
+        </div>
+      </Suspense>
+    </HomeContainer>
   );
 };
 export default Home;
