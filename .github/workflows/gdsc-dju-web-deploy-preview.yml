@@ -12,12 +12,12 @@ on:
       - master
       - develop
     paths:
-      - "packages/gdsc-dju-Web/**"
+      - "packages/gdsc-dju-web/**"
 jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest
     env:
-      working-directory: ./packages/gdsc-dju-Web
+      working-directory: ./packages/gdsc-dju-web
     environment:
       name: GDSC DJU Web Preview
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
@@ -35,7 +35,7 @@ jobs:
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GDSC_DJU }}'
-          projectId: gdsc-dju-shared
+          projectId: gdsc-dju
           channelId: ' ${{ steps.slug.outputs.sha8 }}-${{ github.event.pull_request.head.ref }} '
           entryPoint: './packages/gdsc-dju-Web'
         env:
@@ -52,5 +52,4 @@ jobs:
             `Event Status` ${{github.event_name}}
             `URL` <${{steps.run_firebase_preview.outputs.details_url}}>
             `Build Time` ${{steps.run_firebase_preview.outputs.expire_time}}
-        env:
-          SOURCE_DIR: 'packages/gdsc-dju-web/'
+      

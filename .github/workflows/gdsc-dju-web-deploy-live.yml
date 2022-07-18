@@ -55,5 +55,3 @@ jobs:
             `Event Status` ${{github.event_name}}
             `URL` https://gdsc-dju.web.app
             `Build Time` ${{steps.run_firebase_deploy.outputs.expire_time}}
-        env:
-          SOURCE_DIR: 'packages/gdsc-dju-web/'
