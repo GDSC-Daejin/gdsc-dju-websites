@@ -25,6 +25,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: install package
         run: yarn install
+      - uses: actions/checkout@v2
       - name: Project Build
         run: tsc && yarn build
         working-directory: ${{ env.working-directory }}
