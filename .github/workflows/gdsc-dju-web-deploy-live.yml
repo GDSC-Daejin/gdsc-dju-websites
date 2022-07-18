@@ -1,13 +1,18 @@
 name: Deploy to GDSC DJU Live Channel
 
 on:
+  push:
+    branches:
+      - master
+    paths:
+      - "packages/gdsc-dju-web/*"
   pull_request:
     branches:
       - master
     types:
       - closed
     paths:
-      - "packages/gdsc-dju-web/**"
+      - "packages/gdsc-dju-web/*"
 jobs:
   Deploy_Live_channel:
     if: github.event.pull_request.merged == true

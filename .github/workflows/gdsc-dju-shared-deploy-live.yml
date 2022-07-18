@@ -7,7 +7,7 @@ on:
     types:
       - closed
     paths:
-      - "packages/gdsc-dju-shared/**"
+      - "packages/gdsc-dju-shared/*"
 jobs:
   Deploy_Live_channel:
     if: github.event.pull_request.merged == true
