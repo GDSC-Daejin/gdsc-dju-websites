@@ -17,7 +17,7 @@ jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest
     env:
-      working-directory: packages/gdsc-dju-Web
+      working-directory: ./packages/gdsc-dju-Web
     environment:
       name: GDSC DJU Web Preview
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
@@ -26,7 +26,7 @@ jobs:
       - name: install package
         run: yarn install
       - name: Project Build
-        run: yarn build
+        run: tsc && yarn build
         working-directory: ${{ env.working-directory }}
       - name: Get short SHA
         id: slug
@@ -54,3 +54,5 @@ jobs:
             `Event Status` ${{github.event_name}}
             `URL` <${{steps.run_firebase_preview.outputs.details_url}}>
             `Build Time` ${{steps.run_firebase_preview.outputs.expire_time}}
+        env:
+          SOURCE_DIR: 'packages/gdsc-dju-web/'
