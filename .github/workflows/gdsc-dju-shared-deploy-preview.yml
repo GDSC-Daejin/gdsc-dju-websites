@@ -36,8 +36,9 @@ jobs:
         id: run_firebase_preview
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GDSC_DJU_SHARED }}'
-          projectId: gdsc-dju-shared
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GDSC_DJU }}'
+          projectId: gdsc-dju
+          target: gdsc-dju-share
           channelId: ' ${{ steps.slug.outputs.sha8 }}-${{ github.event.pull_request.head.ref }} '
           entryPoint: './packages/gdsc-dju-shared'
         env:

@@ -1,5 +1,15 @@
 {
   "projects": {
-    "default": "gdsc-dju-shared"
-  }
+    "default": "gdsc-dju"
+  },
+  "targets": {
+    "gdsc-dju": {
+      "hosting": {
+        "gdsc-dju-share": [
+          "gdsc-dju-share"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
