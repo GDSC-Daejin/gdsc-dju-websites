@@ -29,6 +29,7 @@ const AdminHeader = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>(
     location.pathname,
   );
+
   const tabs = [
     { label: '홈', route: '/admin' },
     // { label: '멤버 관리', route: '/admin/member' },
