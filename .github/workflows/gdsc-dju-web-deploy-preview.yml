@@ -17,7 +17,7 @@ jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest
     env:
-      working-directory: ./packages/gdsc-dju-Web
+      working-directory: packages/gdsc-dju-Web
     environment:
       name: GDSC DJU Web Preview
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
