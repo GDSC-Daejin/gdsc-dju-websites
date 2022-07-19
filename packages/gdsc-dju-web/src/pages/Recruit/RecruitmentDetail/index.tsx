@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { recruitDefaultText } from '../../../apis/pageData/recruitDefaultText';
+import { recruitDefaultText } from '../../../apis/pageData/recruitDetails';
 import { RecruitDetails } from '../../../apis/pageData/recruitDetails';
 import Banner from '../../../components/common/Banner';
 import { SubtitleContent } from '../../../components/common/BulletList';
