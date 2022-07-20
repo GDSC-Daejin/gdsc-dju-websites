@@ -14,7 +14,7 @@ import {
   QuestionMark,
   QuestionWrapper,
 } from './styled';
-import { FaqData } from '../../apis/pageData/faq';
+import { FaqData } from '../../pageData/faq';
 import { AnimatePresence, motion } from 'framer-motion';
 import Banner from '../../components/common/Banner';
 import ReactHelmet from '../../components/common/ReactHelmet';

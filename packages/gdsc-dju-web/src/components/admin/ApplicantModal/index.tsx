@@ -30,10 +30,10 @@ import ApplicantChat from '../ApplicantChatSection';
 import { AnimatePresence } from 'framer-motion';
 import { timeFilter } from '../../../utils/timeFilter';
 import {
-  applicationQuestions,
   QuestionType,
+  applicationQuestions,
   recruitInfo,
-} from '../../../apis/pageData/recruitInfo';
+} from '../../../pageData/recruitInfo';
 import { getApplicant } from '../../../utils/applicantsHandler';
 import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '../../../firebase/firebase';

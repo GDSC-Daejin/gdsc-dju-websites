@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { recruitDefaultText } from '../../../apis/pageData/recruitDetails';
-import { RecruitDetails } from '../../../apis/pageData/recruitDetails';
+import { recruitDefaultText } from '../../../pageData/recruitDetails';
+import { RecruitDetails } from '../../../pageData/recruitDetails';
 import Banner from '../../../components/common/Banner';
 import { SubtitleContent } from '../../../components/common/BulletList';
 import ReactHelmet from '../../../components/common/ReactHelmet';

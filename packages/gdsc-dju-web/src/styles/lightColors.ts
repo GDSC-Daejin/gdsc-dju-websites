@@ -67,6 +67,7 @@ export const googleLogoColor = {
 };
 export const themeColor = {
   background: '#fff',
+  boxShadow50: '0px 2px 2px rgba(0,0,0,0.05)',
   boxShadow100:
     '0 0.8px 2px rgba(0,0,0,0.03), 0 2.7px 6.7px rgba(0,0,0,0.05),0 12px 30px rgba(0,0,0,0.1)',
   boxShadow300:

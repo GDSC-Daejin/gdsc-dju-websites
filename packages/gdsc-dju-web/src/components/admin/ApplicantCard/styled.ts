@@ -6,7 +6,7 @@ export const ApplicantCardWrapper = styled(motion.div)`
   flex-direction: row;
   padding: 10px 20px;
   justify-content: space-between;
-  box-shadow: ${({ theme }) => theme.colors.boxShadow100};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow50};
   border-radius: 10px;
   box-sizing: border-box;
   align-items: center;

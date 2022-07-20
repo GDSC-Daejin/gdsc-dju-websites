@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useNavigate } from 'react-router';
-import { RecruitDetails } from '../../../apis/pageData/recruitDetails';
+import { RecruitDetails } from '../../../pageData/recruitDetails';
 import Banner from '../../../components/common/Banner';
 import ReactHelmet from '../../../components/common/ReactHelmet';
 import { MainText, Title } from '../../../components/common/Title/title';

@@ -8,7 +8,7 @@ import {
 } from './styled';
 import MemberCardV2 from '../common/MemberCardV2';
 import { motion } from 'framer-motion';
-import { managerData } from '../../apis/pageData/managerData';
+import { managerData } from '../../pageData/managerData';
 import { listAnimate, listItemAnimate } from '../common/Variants/Variants';
 
 const ManagerSubTitle = styled(motion.div)`
