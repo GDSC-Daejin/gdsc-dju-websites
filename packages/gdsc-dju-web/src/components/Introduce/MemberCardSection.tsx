@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { CardList } from '../../styles/layouts';
 import { listAnimate, memberCardAnimate } from '../common/Variants/Variants';
-import { memberList } from '../../apis/pageData/MemberList';
+import { memberList } from '../../pageData/MemberList';
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { MemberCardWrapper } from '../../pages/Introduce/styled';
 import MemberCardV2 from '../common/MemberCardV2';

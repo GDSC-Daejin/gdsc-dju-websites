@@ -5,10 +5,7 @@ import { useForm } from 'react-hook-form';
 import { FieldValues } from 'react-hook-form/dist/types/fields';
 import { createSearchParams, useNavigate, useParams } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
-import {
-  applicationQuestions,
-  recruitInfo,
-} from '../../../apis/pageData/recruitInfo';
+import { recruitInfo } from '../../../pageData/recruitInfo';
 import FileInput from '../../../components/common/input/FileInput';
 import { StyledTextArea } from '../../../components/common/input/TextArea/styled';
 import {

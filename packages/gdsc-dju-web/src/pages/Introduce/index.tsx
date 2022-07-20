@@ -6,7 +6,7 @@ import {
 } from '../../styles/layouts';
 import { MainText, Title } from '../../components/common/Title/title';
 
-import { memberList } from '../../apis/pageData/MemberList';
+import { memberList } from '../../pageData/MemberList';
 
 import Banner from '../../components/common/Banner';
 import MemberCardSection from '../../components/Introduce/MemberCardSection';

@@ -6,7 +6,7 @@ import {
   HomeSectionTitle,
   HomeSectionWrapper,
 } from './styled';
-import { culture } from '../../apis/pageData/culture';
+import { culture } from '../../pageData/culture';
 import { motion } from 'framer-motion';
 import { listAnimate, listItemAnimate } from '../common/Variants/Variants';
 

@@ -1,4 +1,4 @@
-import { RecruitmentDetailType } from '../../types/pageData';
+import { RecruitmentDetailType } from '../types/pageData';
 export const recruitDefaultText = {
   developer:
     '코딩에 대한 남다른 애정을 가지신 분\n' +

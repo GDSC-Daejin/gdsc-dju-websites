@@ -3,7 +3,7 @@ import { addDoc, collection } from 'firebase/firestore';
 import { AnimatePresence } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { isDevelop } from '../../../apis/pageData/recruitInfo';
+import { isDevelop } from '../../../pageData/recruitInfo';
 import ApplicantModal from '../../../components/admin/ApplicantModal';
 import StatusBadgeBox from '../../../components/admin/StatusBadgeBox';
 import { GDSCButton } from '../../../components/common/Button';

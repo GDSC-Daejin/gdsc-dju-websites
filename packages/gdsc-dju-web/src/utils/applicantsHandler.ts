@@ -4,15 +4,15 @@ import {
   StatusType,
 } from '../types/applicant';
 import { db } from '../firebase/firebase';
-import { recruitInfo } from '../apis/pageData/recruitInfo';
+import { recruitInfo } from '../pageData/recruitInfo';
 import {
   collection,
-  getDocs,
-  query,
-  where,
-  orderBy,
   doc,
   getDoc,
+  getDocs,
+  orderBy,
+  query,
+  where,
 } from 'firebase/firestore';
 
 export const applicantFilterByStatus = (

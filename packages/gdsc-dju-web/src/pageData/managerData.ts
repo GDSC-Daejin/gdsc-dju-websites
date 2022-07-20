@@ -1,6 +1,6 @@
-import Jason from '../../assets/managerProfile/jason.jpeg';
-import Blaire from '../../assets/managerProfile/blaire.jpg';
-import { IMemberCardType } from '../../types/member';
+import Jason from '../assets/managerProfile/jason.jpeg';
+import Blaire from '../assets/managerProfile/blaire.jpg';
+import { IMemberCardType } from '../types/member';
 export const managerData: IMemberCardType[] = [
   {
     nickname: 'Jason',
