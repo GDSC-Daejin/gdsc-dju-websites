@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - "packages/gdsc-dju-web/**"
-      - ".github/workflows/gdsc-dju-Web-deploy-preview.yml"
+      - ".github/workflows/gdsc-dju-web-deploy-preview.yml"
     branches-ignore:
       - master
   pull_request:
@@ -13,6 +13,7 @@ on:
       - develop
     paths:
       - "packages/gdsc-dju-web/**"
+      - ".github/workflows/gdsc-dju-web-deploy-preview.yml"
 jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest

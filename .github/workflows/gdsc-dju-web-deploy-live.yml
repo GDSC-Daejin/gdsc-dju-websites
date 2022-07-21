@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - "packages/gdsc-dju-web/**"
+      - ".github/workflows/gdsc-dju-web-deploy-live.yml"
   pull_request:
     branches:
       - master
@@ -13,6 +14,7 @@ on:
       - closed
     paths:
       - "packages/gdsc-dju-web/**"
+      - ".github/workflows/gdsc-dju-web-deploy-live.yml"
 jobs:
   Deploy_Live_channel:
     if: github.event.pull_request.merged == true
