@@ -8,6 +8,7 @@ on:
       - closed
     paths:
       - "packages/gdsc-dju-shared/**"
+      - ".github/workflows/gdsc-dju-shared-deploy-live.yml"
 jobs:
   Deploy_Live_channel:
     if: github.event.pull_request.merged == true
