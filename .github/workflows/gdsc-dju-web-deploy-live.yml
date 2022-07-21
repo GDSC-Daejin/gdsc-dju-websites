@@ -24,11 +24,6 @@ jobs:
       url: https://gdsc-dju.web.app
     steps:
       - uses: actions/checkout@v2
-      - name: install package
-        run: yarn install
-      - name: install sitemap package
-        run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register
-        working-directory: ${{ env.working-directory }}
       - name: Setting .env
         run: |
           echo "VITE_FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }}" >> .env
@@ -40,6 +35,11 @@ jobs:
           echo "VITE_FIREBASE_APPID=${{ secrets.VITE_FIREBASE_APPID }}" >> .env
           echo "VITE_FIREBASE_MEASUREMENT_ID=${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}" >> .env
           cat .env
+        working-directory: ${{ env.working-directory }}
+      - name: install package
+        run: yarn install
+      - name: install sitemap package
+        run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register
         working-directory: ${{ env.working-directory }}
       - name: Project Build
         run: yarn build
