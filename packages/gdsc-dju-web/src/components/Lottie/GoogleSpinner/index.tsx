@@ -3,13 +3,14 @@ import { GoogleLoader, LoaderBackground } from './styled';
 import lottie from 'lottie-web';
 import googleAnimation from './GoogleAnimation.json';
 import { AnimatePresence } from 'framer-motion';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { loaderState } from '../../../store/loader';
 
 const GoogleSpinner = (props: { background?: boolean }) => {
-  const loading = useRecoilValue(loaderState);
   const { background } = props;
   const googleContainer = useRef<HTMLDivElement>(null);
+  const loading = useRecoilValue(loaderState);
+
   useEffect(
     () =>
       void lottie.loadAnimation({
@@ -21,6 +22,7 @@ const GoogleSpinner = (props: { background?: boolean }) => {
       }),
     [loading.load],
   );
+
   return (
     <AnimatePresence>
       {loading.load && (
