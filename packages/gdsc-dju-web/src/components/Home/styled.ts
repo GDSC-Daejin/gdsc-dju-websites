@@ -16,6 +16,7 @@ export const HomeSectionContainer = styled(motion.div)<{
     css`
       background: ${(props) => props.theme.colors[color]};
     `};
+
   @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
     min-height: 100vh;
     padding: 40px 0;
@@ -30,6 +31,12 @@ export const HomeSectionContainerInner = styled(motion.div)`
   max-width: 1160px;
   margin: 0 auto;
   min-width: 320px;
+  @media (max-width: ${({ theme }) => theme.windowSize.desk}px) {
+    max-width: 900px;
+  }
+  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
+    max-width: 800px;
+  }
 `;
 export const HomeSectionWrapper = styled(motion.div)`
   width: fit-content;

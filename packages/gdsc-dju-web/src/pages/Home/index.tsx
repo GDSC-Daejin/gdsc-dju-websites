@@ -1,17 +1,12 @@
 import React, { lazy } from 'react';
 import { Footer } from '../../components/common/Footer';
 import ReactHelmet from '../../components/common/ReactHelmet';
+import HomePageV2 from '../../components/Home/HomePageV2';
 import SectionCulture from '../../components/Home/SectionCulture';
 import SectionIntroduce from '../../components/Home/SectionIntroduce';
 import SectionManager from '../../components/Home/SectionManager';
 import SolarSystem from '../../components/Home/SolorSystem';
 import { HomeContainer, HomeSolarSystemWrapper } from './styled';
-
-const HomePageV2 = lazy(() =>
-  import('../../components/Home/HomePageV2').then((module) => ({
-    default: module.default,
-  })),
-);
 
 const Home = () => {
   return (
