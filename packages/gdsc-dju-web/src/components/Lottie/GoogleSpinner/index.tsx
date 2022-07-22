@@ -22,7 +22,6 @@ const GoogleSpinner = (props: { background?: boolean }) => {
       }),
     [loading.load],
   );
-
   return (
     <AnimatePresence>
       {loading.load && (
@@ -43,5 +42,37 @@ const GoogleSpinner = (props: { background?: boolean }) => {
     </AnimatePresence>
   );
 };
+const GoogleSpinnerStatic = (props: { background?: boolean }) => {
+  const { background } = props;
+  const googleContainer = useRef<HTMLDivElement>(null);
+  const loading = useRecoilValue(loaderState);
 
-export default GoogleSpinner;
+  useEffect(
+    () =>
+      void lottie.loadAnimation({
+        container: googleContainer.current as Element,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        animationData: googleAnimation,
+      }),
+    [loading.load],
+  );
+  return (
+    <LoaderBackground
+      background={background}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
+      <GoogleLoader
+        ref={googleContainer}
+        initial={{ opacity: 0 }}
+        exit={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      />
+    </LoaderBackground>
+  );
+};
+
+export { GoogleSpinner, GoogleSpinnerStatic };

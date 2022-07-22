@@ -7,7 +7,7 @@ export const LoaderBackground = styled(motion.div)<{ background?: boolean }>`
   ${(props) =>
     props.background &&
     css`
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(0, 0, 0, 0.5);
     `}
   width: 100vw;
   height: 100vh;
