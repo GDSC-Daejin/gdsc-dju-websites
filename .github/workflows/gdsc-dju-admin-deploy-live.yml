@@ -54,8 +54,8 @@ jobs:
       - name: Discord Message Notify
         uses: appleboy/discord-action@0.0.3
         with:
-          webhook_id: ${{ secrets.DISCORD_ADMIN_HOOK_ID }}
-          webhook_token: ${{ secrets.DISCORD_ADMIN_HOOK_TOKEN }}
+          webhook_id: ${{ secrets.DISCORD_ADMIN_WEBHOOK_ID }}
+          webhook_token: ${{ secrets.DISCORD_ADMIN_WEBHOOK_TOKEN }}
           color: "#4285f4"
           args: |
             gdsc-dju-admin has been deployed to Live channel
