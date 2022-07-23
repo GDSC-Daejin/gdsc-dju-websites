@@ -8,13 +8,14 @@ import {
   MainBannerText,
   RecruitingWrapper,
   StyledRecruitmentButton,
-} from '../../pages/Home/styled';
+} from '../../Layout/home.styled';
+
 import { recruitmentState } from '../../store/recruitHandler';
 import DownArrow from '../common/DownArrow';
 import { bannerItemAnimate } from '../common/Variants/Variants';
 import { HomeSectionContainer, HomeSectionContainerInner } from './styled';
 
-const HomePageV2 = () => {
+const HomePage = () => {
   return (
     <HomeSectionContainer>
       <HomeSectionContainerInner>
@@ -58,4 +59,4 @@ const HomeRecruitmentButton = () => {
   );
 };
 
-export default HomePageV2;
+export default HomePage;

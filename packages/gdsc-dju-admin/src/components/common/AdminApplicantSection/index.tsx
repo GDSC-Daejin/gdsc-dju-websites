@@ -23,7 +23,7 @@ import {
 } from './styled';
 
 const position = {
-  home: 'Home',
+  home: 'HomeSection',
   frontend: 'Frontend Developer',
   backend: 'Backend Developer',
   android: 'Android Developer',

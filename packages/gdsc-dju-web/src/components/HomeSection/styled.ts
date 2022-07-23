@@ -23,9 +23,10 @@ export const HomeSectionContainerInner = styled(motion.div)`
   align-items: center;
   width: 100vw;
   min-height: 100vh;
-  max-width: 70%;
+  max-width: 80%;
   margin: 0 auto;
   min-width: 320px;
+
   @media (max-width: ${({ theme }) => theme.windowSize.desk}px) {
     max-width: 1160px;
   }
@@ -34,11 +35,12 @@ export const HomeSectionContainerInner = styled(motion.div)`
   }
 `;
 export const HomeSectionWrapper = styled(motion.div)`
-  margin: 0 auto;
+  margin: 50px auto;
   max-width: 1090px;
   padding: 0 2rem;
   display: flex;
   flex-wrap: wrap;
+
   @media (max-width: ${({ theme }) => theme.windowSize.desk}px) {
     max-width: 700px;
   }

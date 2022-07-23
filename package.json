@@ -2,7 +2,7 @@
   "name": "gdsc-dju-frontend",
   "private": true,
   "scripts": {
-    "lint": "eslint ./package --ext .ts,.tsx,.js,.jsx --cache",
+    "lint": "eslint --ext .ts,.tsx,.js,.jsx --cache",
     "test:all": "yarn workspaces foreach --parallel run test"
   },
   "workspaces": {

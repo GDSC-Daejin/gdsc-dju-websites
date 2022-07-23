@@ -1,11 +1,11 @@
 import React from 'react';
 import { Footer } from '../components/common/Footer';
-import HomePageV2 from '../components/Home/HomePageV2';
-import SectionCulture from '../components/Home/SectionCulture';
-import SectionIntroduce from '../components/Home/SectionIntroduce';
-import SectionManager from '../components/Home/SectionManager';
+import HomePage from '../components/HomeSection/HomePage';
+import SectionCulture from '../components/HomeSection/SectionCulture';
+import SectionIntroduce from '../components/HomeSection/SectionIntroduce';
+import SectionManager from '../components/HomeSection/SectionManager';
 import SolarSystem from '../components/SolarSystem';
-import { HomeSolarSystemWrapper } from '../pages/Home/styled';
+import { HomeSolarSystemWrapper } from './home.styled';
 
 const HomeLayout = () => {
   return (
@@ -13,7 +13,7 @@ const HomeLayout = () => {
       <HomeSolarSystemWrapper>
         <SolarSystem />
       </HomeSolarSystemWrapper>
-      <HomePageV2 />
+      <HomePage />
       <SectionIntroduce />
       <SectionCulture />
       <SectionManager />

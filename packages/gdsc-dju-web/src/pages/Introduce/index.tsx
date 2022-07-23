@@ -2,7 +2,7 @@ import React from 'react';
 
 import Banner from '../../components/common/Banner';
 import { MainText, Title } from '../../components/common/Title/title';
-import MemberCardSection from '../../components/Introduce/MemberCardSection';
+import MemberCardSection from '../../components/IntroduceSection/MemberCardSection';
 
 import { memberList } from '../../pageData/MemberList';
 import {
@@ -20,9 +20,12 @@ const Introduce = () => {
           <TopMargin />
           <Title>About us</Title>
           <TopMargin />
-          <MainText>
-            GDSC와 함께 성장하는 멋진 {memberList.length}명을 소개해요
-          </MainText>
+
+          <div>
+            <MainText>
+              GDSC와 함께 성장하는 멋진 {memberList.length}명을 소개해요
+            </MainText>
+          </div>
           <TopMargin />
           <MemberCardSection />
           <TopMargin />

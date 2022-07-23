@@ -1,6 +1,16 @@
+import { motion } from 'framer-motion';
 import React from 'react';
-import { DownArrowWrapper } from '../../../pages/Home/styled';
+import styled from 'styled-components';
 import DownArrowIcon from '../../../assets/icons/DownArrowIcon';
+
+const DownArrowWrapper = styled(motion.div)`
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 5%;
+`;
 
 const DownArrow = () => {
   return (

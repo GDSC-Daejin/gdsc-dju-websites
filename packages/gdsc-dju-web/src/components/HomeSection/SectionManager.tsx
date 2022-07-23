@@ -6,7 +6,7 @@ import {
   HomeSectionTitle,
   HomeSectionWrapper,
 } from './styled';
-import MemberCardV2 from '../common/MemberCardV2';
+import MemberCardV2 from '../common/MemberCard';
 import { motion } from 'framer-motion';
 import { managerData } from '../../pageData/managerData';
 import { listAnimate, listItemAnimate } from '../common/Variants/Variants';
