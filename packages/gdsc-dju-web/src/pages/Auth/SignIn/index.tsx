@@ -25,9 +25,9 @@ import GoogleLogo from '../../../assets/logos/GoogleLogo.svg';
 import GithubLogo from '../../../assets/logos/GithubLogo.svg';
 import { useNavigate } from 'react-router-dom';
 
-import SolorSystem from '../../../components/Home/SolorSystem';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../../firebase/firebase';
+import SolarSystem from '../../../components/SolarSystem';
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -83,7 +83,7 @@ const SignIn = () => {
     <SignInWrapper>
       <SignInLeftSection>
         <SignInSolarSystemWrapper>
-          <SolorSystem />
+          <SolarSystem />
         </SignInSolarSystemWrapper>
       </SignInLeftSection>
       <AuthBoxWrapper>

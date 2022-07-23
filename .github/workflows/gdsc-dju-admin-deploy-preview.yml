@@ -1,10 +1,10 @@
-name: Deploy to GDSC DJU WEB Preview Channel
+name: Deploy to GDSC DJU ADMIN Preview Channel
 
 on:
   push:
     paths:
-      - "packages/gdsc-dju-web/*"
-      - ".github/workflows/gdsc-dju-web-deploy-preview.yml"
+      - "packages/gdsc-dju-admin/*"
+      - ".github/workflows/gdsc-dju-admin-deploy-preview.yml"
     branches-ignore:
       - master
   pull_request:
@@ -12,15 +12,15 @@ on:
       - master
       - develop
     paths:
-      - "packages/gdsc-dju-web/*"
-      - ".github/workflows/gdsc-dju-web-deploy-preview.yml"
+      - "packages/gdsc-dju-admin/*"
+      - ".github/workflows/gdsc-dju-admin-deploy-preview.yml"
 jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest
     env:
-      working-directory: ./packages/gdsc-dju-web
+      working-directory: ./packages/gdsc-dju-admin
     environment:
-      name: GDSC DJU Web Preview
+      name: GDSC DJU admin Preview
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
     steps:
       - uses: actions/checkout@v2
@@ -50,17 +50,17 @@ jobs:
           projectId: gdsc-dju
           expires: 3d
           channelId: ' ${{ steps.slug.outputs.sha8 }}-${{ github.event.pull_request.head.ref }} '
-          entryPoint: './packages/gdsc-dju-web'
+          entryPoint: './packages/gdsc-dju-admin'
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
       - name: Discord Message Notify
         uses: appleboy/discord-action@0.0.3
         with:
-          webhook_id: ${{ secrets.DISCORD_FRONT_WEBHOOK_ID }}
-          webhook_token: ${{ secrets.DISCORD_FRONT_WEBHOOK_TOKEN }}
+          webhook_id: ${{ secrets.DISCORD_FRONT_adminHOOK_ID }}
+          webhook_token: ${{ secrets.DISCORD_FRONT_adminHOOK_TOKEN }}
           color: "#4285f4"
           args: |
-            gdsc-dju-web has been deployed to Preview channel
+            gdsc-dju-admin has been deployed to Preview channel
             `Contributor`: ${{github.actor}}
             `Event Status` ${{github.event_name}}
             `URL` <${{steps.run_firebase_preview.outputs.details_url}}>

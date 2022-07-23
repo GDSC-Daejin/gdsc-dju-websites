@@ -114,37 +114,40 @@ const AdminEmail: React.FC<{ template: string }> = ({ template }) => {
   ) => {
     applicants.map(async (applicant) => {
       emailjs.init('RsM6o4WUsb5rzJGXG');
-      try {
-        const result = await emailjs.send('default_service', template, {
-          email: applicant.email,
-          name: applicant.name,
-        });
-        //로그 생성
-        const emailLog: EmailLogType = {
-          email: applicant.email,
-          name: applicant.name,
-          applicantID: applicant.id,
-          applicantStatus: applicant.status,
-          sender: admin.nickname,
-          status: result.status,
-          uploadDate: new Date(),
-        };
-        await sendLogHandler(emailLog);
+      if (admin.nickname) {
+        try {
+          const result = await emailjs.send('default_service', template, {
+            email: applicant.email,
+            name: applicant.name,
+          });
 
-        if (emailLog) {
+          //로그 생성
+          const emailLog: EmailLogType = {
+            email: applicant.email,
+            name: applicant.name,
+            applicantID: applicant.id,
+            applicantStatus: applicant.status,
+            sender: admin.nickname,
+            status: result.status,
+            uploadDate: new Date(),
+          };
+          await sendLogHandler(emailLog);
+
+          if (emailLog) {
+            setAlert({
+              ...alert,
+              alertHandle: true,
+              alertMessage: '메일이 전송되었어요. 로그를 확인해주세요.',
+            });
+            setLoading({ ...loading, isLoading: false });
+          }
+        } catch (e) {
           setAlert({
             ...alert,
             alertHandle: true,
-            alertMessage: '메일이 전송되었어요. 로그를 확인해주세요.',
+            alertMessage: '어딘가 문제가 생겼어요. 콘솔을 확인해주세요.',
           });
-          setLoading({ ...loading, isLoading: false });
         }
-      } catch (e) {
-        setAlert({
-          ...alert,
-          alertHandle: true,
-          alertMessage: '어딘가 문제가 생겼어요. 콘솔을 확인해주세요.',
-        });
       }
     });
   };

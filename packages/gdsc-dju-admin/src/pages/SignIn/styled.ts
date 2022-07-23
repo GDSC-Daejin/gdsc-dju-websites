@@ -108,6 +108,11 @@ export const AuthInput = styled.input`
   border-radius: 10px;
   padding: 0 20px;
   font-size: ${({ theme }) => theme.fontSize.body2};
+  background: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.grey900};
+  ::placeholder {
+    color: ${({ theme }) => theme.colors.grey400};
+  }
 `;
 
 export const AuthLogoText = styled.div<any>`

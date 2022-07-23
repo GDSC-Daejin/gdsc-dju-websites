@@ -1,23 +1,29 @@
-name: Deploy to GDSC DJU Shared Live Channel
+name: Deploy to GDSC DJU ADMIN Live Channel
 
 on:
+  push:
+    branches:
+      - master
+    paths:
+      - "packages/gdsc-dju-admin/*"
+      - ".github/workflows/gdsc-dju-admin-deploy-live.yml"
   pull_request:
     branches:
       - master
     types:
       - closed
     paths:
-      - "packages/gdsc-dju-shared/*"
-      - ".github/workflows/gdsc-dju-shared-deploy-live.yml"
+      - "packages/gdsc-dju-admin/*"
+      - ".github/workflows/gdsc-dju-admin-deploy-live.yml"
 jobs:
   Deploy_Live_channel:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
-      working-directory: ./packages/gdsc-dju-shared
+      working-directory: ./packages/gdsc-dju-admin
     environment:
-      name: GDSC DJU Shared Production
-      url: https://gdsc-dju-share.web.app
+      name: GDSC DJU admin Production
+      url: https://gdsc-dju.admin.app
     steps:
       - uses: actions/checkout@v2
       - name: Setting .env
@@ -34,14 +40,8 @@ jobs:
         working-directory: ${{ env.working-directory }}
       - name: install package
         run: yarn install
-      - name: install sitemap package
-        run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register
-        working-directory: ${{ env.working-directory }}
       - name: Project Build
         run: yarn build
-        working-directory: ${{ env.working-directory }}
-      - name: Generate sitemap
-        run: node sitemap-builder.js
         working-directory: ${{ env.working-directory }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: run_firebase_deploy
@@ -50,17 +50,16 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GDSC_DJU }}'
           channelId: live
           projectId: gdsc-dju
-          target: gdsc-dju-share
-          entryPoint: './packages/gdsc-dju-shared'
+          entryPoint: './packages/gdsc-dju-admin'
       - name: Discord Message Notify
         uses: appleboy/discord-action@0.0.3
         with:
-          webhook_id: ${{ secrets.DISCORD_SHARED_WEBHOOK_ID }}
-          webhook_token: ${{ secrets.DISCORD_SHARED_WEBHOOK_TOKEN }}
+          webhook_id: ${{ secrets.DISCORD_FRONT_adminHOOK_ID }}
+          webhook_token: ${{ secrets.DISCORD_FRONT_adminHOOK_TOKEN }}
           color: "#4285f4"
           args: |
-            gdsc-dju-shared has been deployed to Live channel
+            gdsc-dju-admin has been deployed to Live channel
             `Contributor` ${{github.actor}}
             `Event Status` ${{github.event_name}}
-            `URL` https://gdsc-dju-shared.web.app
+            `URL` https://gdsc-dju.admin.app
             `Build Time` ${{steps.run_firebase_deploy.outputs.expire_time}}

@@ -36,7 +36,7 @@ const Navigation: React.FC<{
         <NavInner>
           <NavTaskWrapper>
             <NavTask>
-              <StyledLogoWrapper to={'/admin'}>
+              <StyledLogoWrapper to={'/certified'}>
                 <StyledImg src={GDSCLogo} alt="GDSC-Chapter-Logo" />
                 <StyledLogo>GDSC</StyledLogo>
                 <SchoolName>Daejin </SchoolName>

@@ -2,48 +2,6 @@ import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-export const ButtonWrapper = styled.div`
-  margin-top: 15px;
-`;
-export const SidebarContainer = styled.div`
-  width: 100%;
-`;
-export const AdminContainerWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-export const StyledButtonWrapper = styled.div`
-  margin-right: 10px;
-`;
-export const AdminHeaderWrapper = styled.div`
-  background: white;
-`;
-export const StyledAdminButton = styled.button`
-  border-style: none;
-  border-radius: 10px;
-  font-size: 1.4rem;
-  color: white;
-  transition: 0.3s;
-  transition-delay: 0.3ms;
-  transform-style: initial;
-  cursor: pointer;
-  background: ${(props) => props.theme.colors.tossBlue};
-  padding: 7px 20px;
-  align-items: center;
-  :hover {
-    background: ${(props) => props.theme.colors.tossBlueActive};
-  }
-  @media (max-width: 500px) {
-    padding: 7px 13px;
-    font-size: 1.3rem;
-  }
-`;
-export const ButtonElementWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-top: 10px;
-`;
 export const NavigationWrapper = styled.nav<{ disable: boolean }>`
   position: sticky;
   top: 0;
@@ -71,7 +29,6 @@ export const NavDesign = styled(motion.nav)<{
   ${(props) =>
     props.background
       ? css`
-          //background-color: rgba(255, 255, 255, 0.1);
           backdrop-filter: saturate(50%) blur(8px);
         `
       : css`
@@ -195,20 +152,6 @@ export const NavTaskWrapper = styled.ul`
   list-style: none;
   padding-left: 0;
 `;
-export const NavIconWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  margin-right: 15px;
-  padding: 7px 7px;
-  border-radius: 10px;
-  transition-delay: 0.05s;
-  transition-duration: 0.2s;
-  transition-timing-function: ease;
-  :hover {
-    background: ${(props) => props.theme.colors.grey100};
-    cursor: pointer;
-  }
-`;
 
 export const AdminNavCategoryWrapper = styled.nav`
   display: flex;
@@ -226,24 +169,4 @@ export const StyledUserName = styled.div`
   &:hover {
     cursor: pointer;
   }
-`;
-export const StyledSubTitle = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-top: 10px;
-  align-items: center;
-  transition: 0.3s;
-  transition-delay: 0.3ms;
-  transform-style: initial;
-`;
-export const AdminBlockPage = styled.div`
-  display: flex;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 50%;
-  background: ${(props) => props.theme.colors.grey500};
-  z-index: 999;
 `;

@@ -47,7 +47,7 @@ const SignIn = () => {
       signInWithEmailAndPassword(auth, email, password).then(
         (userCredential) => {
           const user = userCredential.user;
-          user && navigate('/admin');
+          user && navigate('/redirect');
         },
       );
     } catch (e) {
@@ -114,6 +114,7 @@ const SignIn = () => {
               name={'password'}
               onKeyPress={onKeyPress}
               onChange={onChange}
+              placeholder={'password'}
             />
           </AuthElementWrapper>
           <AuthErrorText>{error}</AuthErrorText>

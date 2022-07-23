@@ -1,6 +1,6 @@
-import { useAtom } from 'jotai';
 import React, { memo } from 'react';
-import { recruitmentAtom } from '../../../atoms/recruitmentAtom';
+import { useLocation } from 'react-router';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { SidebarContainer } from '../../../pages/Admin/styled';
 import {
   SideElementChildrenWrapper,
@@ -8,9 +8,6 @@ import {
   SideElementText,
   SideElementWrapper,
 } from './styled';
-import { useLocation } from 'react-router';
-import { useNavigate, useSearchParams } from 'react-router-dom';
-import { useRecoilValue } from 'recoil';
 
 const position = {
   home: 'Home',
@@ -21,12 +18,12 @@ const position = {
   design: 'Designer',
   ml: 'Machine Learning',
 };
-const tabs = [
-  { label: '홈', route: '/admin' },
-  { label: '멤버 관리', route: '/admin/member' },
-  { label: '지원자 관리', route: '/admin/recruit' },
-  { label: '이메일', route: '/admin/email' },
-  { label: '이메일 로그', route: '/admin/email-log' },
+const ROUTES = [
+  { label: '홈', route: '/' },
+  { label: '멤버 관리', route: '/member' },
+  { label: '지원자 관리', route: '/recruit' },
+  { label: '이메일', route: '/email' },
+  { label: '이메일 로그', route: '/email-log' },
 ];
 
 const AdminSidebar = () => {
@@ -34,9 +31,8 @@ const AdminSidebar = () => {
   const navigate = useNavigate();
 
   const routeHandler = (route: string) => {
-    navigate(route);
+    navigate(`/certified${route}`);
   };
-  const [recruit] = useAtom(recruitmentAtom);
   const [searchParams, setSearchParams] = useSearchParams();
   const setParams = (key: string) => {
     setSearchParams({ type: key });
@@ -46,9 +42,9 @@ const AdminSidebar = () => {
 
   return (
     <SidebarContainer>
-      {tabs.map((item) => {
+      {ROUTES.map((item) => {
         const isCurrent = location.pathname === item.route;
-        const isRecruitRoute = location.pathname.includes('/admin/recruit');
+        const isRecruitRoute = location.pathname.includes('/certified/recruit');
         const isRecruit = item.label === '지원자 관리';
         return (
           <>

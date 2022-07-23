@@ -109,7 +109,7 @@ const ApplicantChatSection: React.FC<IApplicantChatSectionProps> = ({
   return (
     <ApplicantChatSectionWrapper>
       <>
-        {chatSectionRef && newMessages && (
+        {chatSectionRef && newMessages && adminUser.uid && (
           <ApplicantChat
             ref={chatSectionRef}
             adminUser={adminUser.uid}
