@@ -5,7 +5,6 @@ import { Footer } from './components/common/Footer';
 import Modal from './components/common/Modal';
 import Navigation from './components/common/navigation/DeskNavigation';
 import { useTheme } from './hooks/useTheme';
-
 import Layout from './Layout';
 import GlobalStyles from './styles/globalStyles';
 import { darkTheme, lightTheme } from './styles/theme';

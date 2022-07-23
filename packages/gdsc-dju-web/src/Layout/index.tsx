@@ -2,24 +2,27 @@ import React, { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router';
 import { ErrorBoundary } from 'react-error-boundary';
 import { GoogleSpinnerStatic } from '../components/Lottie/GoogleSpinner';
+import ScrollTop from '../components/common/ScrollTop';
+import Error from '../pages/Error';
 
-const Pages = lazy(() =>
-  import('../pages').then((module) => ({
+const Home = lazy(() =>
+  import('../pages/Home').then((module) => ({
     default: module.default,
   })),
 );
-const Admin = lazy(() =>
-  import('../pages/Admin').then((module) => ({
+const Recruit = lazy(() =>
+  import('../pages/Recruit').then((module) => ({
     default: module.default,
   })),
 );
-const Auth = lazy(() =>
-  import('../pages/Auth').then((module) => ({
+const Introduce = lazy(() =>
+  import('../pages/Introduce').then((module) => ({
     default: module.default,
   })),
 );
-const Error = lazy(() =>
-  import('../pages/Error').then((module) => ({
+
+const Faq = lazy(() =>
+  import('../pages/Faq').then((module) => ({
     default: module.default,
   })),
 );
@@ -27,10 +30,12 @@ const Layout = () => {
   return (
     <ErrorBoundary FallbackComponent={Error}>
       <Suspense fallback={<GoogleSpinnerStatic />}>
+        <ScrollTop />
         <Routes>
-          <Route path={'/*'} element={<Pages />} />
-          <Route path={'/admin/*'} element={<Admin />} />
-          <Route path={'/auth/*'} element={<Auth />} />
+          <Route path={'/*'} element={<Home />} />
+          <Route path={'/introduce'} element={<Introduce />} />
+          <Route path={'/recruit/*'} element={<Recruit />} />
+          <Route path={'/faq/*'} element={<Faq />} />
         </Routes>
       </Suspense>
     </ErrorBoundary>

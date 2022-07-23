@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "gdsc-dju"
+  },
+  "targets": {
+    "gdsc-dju": {
+      "hosting": {
+        "gdsc-dju-admin": [
+          "gdsc-dju-admin"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
