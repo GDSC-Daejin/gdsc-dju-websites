@@ -1,12 +1,28 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 
-interface IReactHelmetProps {
-  title?: string;
-  description?: string;
-}
+const ReactHelmet = () => {
+  const METAS = {
+    '/': {
+      title: 'GDSC DJU',
+    },
+    '/introduce': {
+      title: 'GDSC DJU 소개',
+    },
+    '/recruit': {
+      title: 'GDSC DJU 지원',
+    },
+    '/faq': {
+      title: 'FAQ',
+    },
+  };
+  const location = useLocation();
 
-const ReactHelmet: React.FC<IReactHelmetProps> = ({ description, title }) => {
+  const meta = METAS[location.pathname as keyof typeof METAS];
+  const title = meta ? meta.title : 'GDSC DJU';
+  const description = 'GDSC DJU';
+
   return (
     <Helmet>
       <title>{title}</title>

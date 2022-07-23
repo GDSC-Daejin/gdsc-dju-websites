@@ -1,9 +1,6 @@
 import React from 'react';
-
-import GDSCLogo from '../../../../assets/logos/GDSCLogo.svg';
-
 import { useLocation } from 'react-router';
-
+import GDSCLogo from '../../../../assets/logos/GDSCLogo.svg';
 import MenuToggleIcon from '../../MenuToggleIcon';
 import {
   NavDesign,

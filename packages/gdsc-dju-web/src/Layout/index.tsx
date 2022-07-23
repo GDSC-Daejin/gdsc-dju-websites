@@ -1,8 +1,8 @@
 import React, { Suspense, lazy } from 'react';
-import { Route, Routes } from 'react-router';
 import { ErrorBoundary } from 'react-error-boundary';
-import { GoogleSpinnerStatic } from '../components/Lottie/GoogleSpinner';
+import { Route, Routes } from 'react-router';
 import ScrollTop from '../components/common/ScrollTop';
+import { GoogleSpinnerStatic } from '../components/Lottie/GoogleSpinner';
 import Error from '../pages/Error';
 
 const Home = lazy(() =>

@@ -4,18 +4,18 @@ import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import { IMemberCardType } from '../../../types/member';
 import { positionColorHandler } from '../../../utils/positionColorHandler';
 import { useLocation } from 'react-router';
+import { memberCardAnimate } from '../Variants/Variants';
 
 const MemberCardContainer = styled(motion.div)<{ isSquare: boolean }>`
-  position: relative;
-  width: 250px;
-  height: 300px;
+  min-width: 250px;
+  min-height: 300px;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: ${({ theme }) => theme.colors.boxShadow100};
   ${({ isSquare }) =>
     isSquare &&
     css`
-      height: 250px;
+      min-height: 250px;
     `}
 `;
 const MemberCardInner = styled(motion.div)`
@@ -35,6 +35,10 @@ const MemberCardImage = styled(motion.img)<{ isSquare: boolean }>`
   position: absolute;
   z-index: -1;
   height: 300px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-position-x: 50%;
   background-position-y: 50%;
   border-radius: 16px;
@@ -105,17 +109,7 @@ const CardTextWrapper = styled(motion.div)<{ isClicked?: boolean }>`
           transition: background 0.2s ease-in-out;
         `}
 `;
-const memberCardAnimate = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-  },
-  exit: {
-    opacity: 0,
-  },
-};
+
 interface IMemberCardProps {
   member: IMemberCardType;
   isSquare?: boolean;
@@ -128,10 +122,6 @@ const MemberCardV2: React.FC<IMemberCardProps> = ({
   const { name, nickname, role, image, position, text } = member;
   const [isClicked, setIsClicked] = useState(false);
   const location = useLocation();
-  const randomKey = useMemo(
-    () => Math.random().toString(),
-    [location.pathname],
-  );
   return (
     <AnimatePresence>
       <LayoutGroup>
@@ -143,57 +133,52 @@ const MemberCardV2: React.FC<IMemberCardProps> = ({
           exit="exit"
           isSquare={isSquare}
         >
-          <picture>
-            <MemberCardInner layoutId={`card-inner-${nickname}-${randomKey}`}>
-              <CardTextWrapper isClicked={isClicked}>
-                {!isClicked ? (
-                  <>
-                    <Nickname layoutId={`nickname-${nickname}-${randomKey}`}>
-                      {nickname}
-                    </Nickname>
-                    <Name layoutId={`name-${nickname}-${randomKey}`}>
-                      {name}
-                    </Name>
-                    <Role
-                      layoutId={`role-${nickname}-${randomKey}`}
-                      variants={memberCardAnimate}
-                    >
-                      {role}
-                    </Role>
-                  </>
-                ) : (
-                  <>
-                    <Position
-                      layoutId={`position-${nickname}-${randomKey}`}
-                      variants={memberCardAnimate}
-                      positionColor={positionColorHandler(position)}
-                    >
-                      {position}
-                    </Position>
-                    <Nickname layoutId={`nickname-${nickname}-${randomKey}`}>
-                      {nickname}
-                    </Nickname>
-                    <Name layoutId={`name-${nickname}-${randomKey}`}>
-                      {name}
-                    </Name>
-                    <CardText
-                      layoutId={`text-${nickname}-${randomKey}`}
-                      variants={memberCardAnimate}
-                    >
-                      {text}
-                    </CardText>
-                  </>
-                )}
-              </CardTextWrapper>
-
+          <MemberCardInner layoutId={`card-inner-${nickname}`}>
+            <CardTextWrapper isClicked={isClicked}>
+              {!isClicked ? (
+                <>
+                  <Nickname layoutId={`nickname-${nickname}`}>
+                    {nickname}
+                  </Nickname>
+                  <Name layoutId={`name-${nickname}`}>{name}</Name>
+                  <Role
+                    layoutId={`role-${nickname}`}
+                    variants={memberCardAnimate}
+                  >
+                    {role}
+                  </Role>
+                </>
+              ) : (
+                <>
+                  <Position
+                    layoutId={`position-${nickname}`}
+                    variants={memberCardAnimate}
+                    positionColor={positionColorHandler(position)}
+                  >
+                    {position}
+                  </Position>
+                  <Nickname layoutId={`nickname-${nickname}`}>
+                    {nickname}
+                  </Nickname>
+                  <Name layoutId={`name-${nickname}`}>{name}</Name>
+                  <CardText
+                    layoutId={`text-${nickname}`}
+                    variants={memberCardAnimate}
+                  >
+                    {text}
+                  </CardText>
+                </>
+              )}
+            </CardTextWrapper>
+            <picture>
               <MemberCardImage
                 alt={`${nickname}-profile-image`}
                 src={image}
                 isSquare={isSquare}
-                layoutId={`background-${nickname}-${randomKey}`}
+                layoutId={`background-${nickname}`}
               />
-            </MemberCardInner>
-          </picture>
+            </picture>
+          </MemberCardInner>
         </MemberCardContainer>
       </LayoutGroup>
     </AnimatePresence>
