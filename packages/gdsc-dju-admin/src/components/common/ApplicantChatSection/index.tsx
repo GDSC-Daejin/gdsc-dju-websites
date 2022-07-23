@@ -86,7 +86,7 @@ const ApplicantChatSection: React.FC<IApplicantChatSectionProps> = ({
         text: trimmedMessage,
         createdAt: Date.now(),
         uid: adminUser.uid,
-        displayName: adminUser.nickname,
+        displayName: adminUser.username,
         isRead: false,
       });
 

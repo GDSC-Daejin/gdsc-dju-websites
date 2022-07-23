@@ -1,4 +1,5 @@
 import React, { ChangeEvent, useState } from 'react';
+import TokenService from '../../apis/TokenService';
 import {
   AuthBoxInner,
   AuthBoxWrapper,
@@ -79,6 +80,9 @@ const SignIn = () => {
       setPassword(value);
     }
   };
+  const googleLogin = () => {
+    return TokenService.getRedirectURL();
+  };
 
   return (
     <SignInWrapper>
@@ -133,28 +137,26 @@ const SignIn = () => {
             <AuthLine />
           </AuthElementWrapper>
           <ButtonWrapper>
-            <GoogleLoginButton />
-            <GithubLoginButton />
+            <OAuthLoginButton
+              type={'google'}
+              onClick={() => (location.href = googleLogin())}
+            />
           </ButtonWrapper>
         </AuthBoxInner>
       </AuthBoxWrapper>
     </SignInWrapper>
   );
 };
-const GoogleLoginButton = () => {
+const OAuthLoginButton: React.FC<{
+  onClick?: () => void;
+  type: 'google' | 'github';
+}> = ({ onClick, type }) => {
   return (
-    <OAuthButton>
-      <OAuthImage src={GoogleLogo} />
-      <OAuthText weight={'bold'}>Google</OAuthText>
-      <OAuthText>로 계속</OAuthText>
-    </OAuthButton>
-  );
-};
-const GithubLoginButton = () => {
-  return (
-    <OAuthButton>
-      <OAuthImage src={GithubLogo} />
-      <OAuthText weight={'bold'}>Github</OAuthText>
+    <OAuthButton onClick={onClick}>
+      <OAuthImage src={type === 'google' ? GoogleLogo : GithubLogo} />
+      <OAuthText weight={'bold'}>
+        {type === 'google' ? 'Google' : 'Github'}
+      </OAuthText>
       <OAuthText>로 계속</OAuthText>
     </OAuthButton>
   );

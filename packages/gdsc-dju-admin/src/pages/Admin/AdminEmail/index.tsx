@@ -114,7 +114,7 @@ const AdminEmail: React.FC<{ template: string }> = ({ template }) => {
   ) => {
     applicants.map(async (applicant) => {
       emailjs.init('RsM6o4WUsb5rzJGXG');
-      if (admin.nickname) {
+      if (admin.username) {
         try {
           const result = await emailjs.send('default_service', template, {
             email: applicant.email,
@@ -127,7 +127,7 @@ const AdminEmail: React.FC<{ template: string }> = ({ template }) => {
             name: applicant.name,
             applicantID: applicant.id,
             applicantStatus: applicant.status,
-            sender: admin.nickname,
+            sender: admin.username,
             status: result.status,
             uploadDate: new Date(),
           };

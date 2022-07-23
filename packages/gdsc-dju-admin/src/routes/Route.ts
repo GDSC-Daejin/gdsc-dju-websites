@@ -1,7 +1,7 @@
-export const ROUTE = [
-  { label: '홈', route: '/admin' },
-  // { label: '멤버 관리', route: '/admin/member' },
-  { label: '지원자 관리', route: '/admin/recruit' },
-  { label: '이메일', route: '/admin/email' },
-  { label: '이메일 로그', route: '/admin/email-log' },
-];
+export const ROUTES = {
+  HOME: { LABEL: '홈', ROUTE: '/' },
+  REDIRECT: { LABEL: '로딩', ROUTE: '/redirect' },
+  APPLICANTS: { LABEL: '지원자 관리', ROUTE: '/certified/recruit' },
+  EMAIL: { LABEL: '이메일', ROUTE: '/certified/email' },
+  EMAIL_LOG: { LABEL: '이메일 로그', ROUTE: '/certified/email-log' },
+};

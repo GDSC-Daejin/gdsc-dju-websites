@@ -1,7 +1,7 @@
 import { collection, limit, orderBy, query } from 'firebase/firestore';
-import EmailLogCard from 'gdsc-dju-web/src/components/admin/EmailLogCard';
 import React, { useRef } from 'react';
 import { GDSCButton } from '../../../components/common/Button';
+import EmailLogCard from '../../../components/common/EmailLogCard';
 import { TextInput } from '../../../components/common/TextInput';
 
 import { db } from '../../../firebase/firebase';

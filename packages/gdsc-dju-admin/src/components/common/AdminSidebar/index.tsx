@@ -1,7 +1,9 @@
 import React, { memo } from 'react';
-import { useLocation } from 'react-router';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useLocation } from 'react-ROUTEr';
+import { useNavigate, useSearchParams } from 'react-ROUTEr-dom';
 import { SidebarContainer } from '../../../pages/Admin/styled';
+import { ROUTES } from '../../../routes/Route';
+
 import {
   SideElementChildrenWrapper,
   SideElementSelectBar,
@@ -18,20 +20,13 @@ const position = {
   design: 'Designer',
   ml: 'Machine Learning',
 };
-const ROUTES = [
-  { label: '홈', route: '/' },
-  { label: '멤버 관리', route: '/member' },
-  { label: '지원자 관리', route: '/recruit' },
-  { label: '이메일', route: '/email' },
-  { label: '이메일 로그', route: '/email-log' },
-];
 
 const AdminSidebar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const routeHandler = (route: string) => {
-    navigate(`/certified${route}`);
+  const ROUTEHandler = (ROUTE: string) => {
+    navigate(ROUTE);
   };
   const [searchParams, setSearchParams] = useSearchParams();
   const setParams = (key: string) => {
@@ -39,26 +34,26 @@ const AdminSidebar = () => {
   };
 
   const positionList = Object.keys(position);
-
+  const ROUTEArray = Object.values(ROUTES);
   return (
     <SidebarContainer>
-      {ROUTES.map((item) => {
-        const isCurrent = location.pathname === item.route;
-        const isRecruitRoute = location.pathname.includes('/certified/recruit');
-        const isRecruit = item.label === '지원자 관리';
+      {ROUTEArray.map((item) => {
+        const isCurrent = location.pathname === item.ROUTE;
+        const isRecruitROUTE = location.pathname.includes('/certified/recruit');
+        const isRecruit = item.LABEL === '지원자 관리';
         return (
           <>
             <SideElementWrapper
-              key={item.route}
-              onClick={() => routeHandler(item.route)}
+              key={item.ROUTE}
+              onClick={() => ROUTEHandler(item.ROUTE)}
             >
               <SideElementSelectBar isCurrent={isCurrent} id={'bar'} />
               <SideElementText isCurrent={isCurrent}>
-                {item.label}
+                {item.LABEL}
               </SideElementText>
             </SideElementWrapper>
             {isRecruit &&
-              isRecruitRoute &&
+              isRecruitROUTE &&
               positionList.map((data) => {
                 const selectedPosition = searchParams.get('type') === data;
                 return (

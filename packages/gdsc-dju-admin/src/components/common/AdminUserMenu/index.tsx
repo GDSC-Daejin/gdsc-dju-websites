@@ -5,6 +5,7 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { modalAtom } from '../../../atoms/modalAtom';
 import { auth } from '../../../firebase/firebase';
+import { ROUTES } from '../../../routes/Route';
 import { AdminUserMenuWrapper, MenuElement } from './styled';
 
 const AdminUserMenu = (props: {
@@ -58,7 +59,7 @@ const AdminUserMenu = (props: {
             onClick={async () => {
               setIsOpen(false);
               await signOut(auth);
-              navigate('/auth');
+              navigate(ROUTES.HOME.ROUTE);
             }}
           >
             로그아웃

@@ -50,11 +50,11 @@ const Navigation: React.FC<{
               setIsOpen={setAdminMenuHandler}
             />
             <ThemeToggleButton theme={theme} toggleButton={toggleTheme} />
-            {user.nickname && (
+            {user.username && (
               <StyledUserName
                 onClick={() => setAdminMenuHandler(!adminMenuHandler)}
               >
-                Hi {user.nickname}
+                Hi {user.username}
               </StyledUserName>
             )}
           </AdminNavCategoryWrapper>

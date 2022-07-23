@@ -18,9 +18,8 @@ const CheckAdminUser = () => {
       setAdminUser({
         ...adminUser,
         uid: uid,
-        nickname: userData?.nickname,
-        name: userData?.name,
-        phoneNumber: userData?.phoneNumber,
+        username: userData?.username,
+        memberInfo: userData?.memberInfo,
       });
     }
   };

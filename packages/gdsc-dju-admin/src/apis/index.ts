@@ -4,13 +4,12 @@ import {
   recruitmentInfoDataType,
 } from 'gdsc-dju-web/src/apis/types';
 
-class GDSCApi {
+export class Api {
   protected API: string;
   protected FIREBASE_API: string;
-
   constructor() {
     if (process.env.NODE_ENV === 'development') {
-      this.API = 'https://gdsc-dju.kro.kr';
+      this.API = 'https://gdsc-dju-dev.kro.kr';
     } else {
       this.API = 'https://gdsc-dju.com';
     }
@@ -29,4 +28,4 @@ class GDSCApi {
     );
   };
 }
-export default new GDSCApi();
+export default new Api();
