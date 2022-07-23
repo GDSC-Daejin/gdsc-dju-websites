@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
-import { useLocation } from 'react-ROUTEr';
-import { useNavigate, useSearchParams } from 'react-ROUTEr-dom';
+import { useLocation, useNavigate } from 'react-router';
+import { useSearchParams } from 'react-router-dom';
+
 import { SidebarContainer } from '../../../pages/Admin/styled';
 import { ROUTES } from '../../../routes/Route';
 
