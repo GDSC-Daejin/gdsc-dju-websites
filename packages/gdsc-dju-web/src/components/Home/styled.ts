@@ -16,11 +16,6 @@ export const HomeSectionContainer = styled(motion.div)<{
     css`
       background: ${(props) => props.theme.colors[color]};
     `};
-
-  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
-    min-height: 100vh;
-    padding: 40px 0;
-  }
 `;
 export const HomeSectionContainerInner = styled(motion.div)`
   position: relative;
@@ -28,18 +23,17 @@ export const HomeSectionContainerInner = styled(motion.div)`
   align-items: center;
   width: 100vw;
   min-height: 100vh;
-  max-width: 1160px;
+  max-width: 70%;
   margin: 0 auto;
   min-width: 320px;
   @media (max-width: ${({ theme }) => theme.windowSize.desk}px) {
-    max-width: 900px;
+    max-width: 1160px;
   }
   @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
     max-width: 800px;
   }
 `;
 export const HomeSectionWrapper = styled(motion.div)`
-  width: fit-content;
   margin: 0 auto;
   max-width: 1090px;
   padding: 0 2rem;

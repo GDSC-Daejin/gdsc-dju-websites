@@ -8,16 +8,10 @@ import {
 import { useLocation } from 'react-router';
 
 export const Footer: React.FC<{ disable?: boolean }> = ({ disable = true }) => {
-  const [footer, setFooter] = useState(true);
-  const location = useLocation();
-  useEffect(() => {
-    location.pathname === '/' ? setFooter(false) : setFooter(true);
-  }, [location.pathname]);
-
   return (
     <>
-      {footer && (
-        <FooterWrapper disable={disable}>
+      {disable && (
+        <FooterWrapper>
           <FooterLogo>
             <FooterText google={true} href={'https://developers.google.com/'}>
               Google

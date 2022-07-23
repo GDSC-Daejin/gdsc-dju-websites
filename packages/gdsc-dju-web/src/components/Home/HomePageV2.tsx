@@ -1,24 +1,23 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
 import {
-  BannerTitleWrapper,
   ButtonWrapper,
   GoogleColorText,
   GoogleColorTextWrapper,
-  HomeWrapper,
   MainBannerText,
   RecruitingWrapper,
   StyledRecruitmentButton,
 } from '../../pages/Home/styled';
-import { bannerItemAnimate } from '../common/Variants/Variants';
-import { useRecoilState } from 'recoil';
 import { recruitmentState } from '../../store/recruitHandler';
 import DownArrow from '../common/DownArrow';
-import { useNavigate } from 'react-router-dom';
+import { bannerItemAnimate } from '../common/Variants/Variants';
+import { HomeSectionContainer, HomeSectionContainerInner } from './styled';
 
 const HomePageV2 = () => {
   return (
-    <HomeWrapper>
-      <BannerTitleWrapper>
+    <HomeSectionContainer>
+      <HomeSectionContainerInner>
         <RecruitingWrapper variants={bannerItemAnimate}>
           <GoogleColorTextWrapper>
             <GoogleColorText color={'googleBlue'}>2</GoogleColorText>
@@ -32,9 +31,9 @@ const HomePageV2 = () => {
           </MainBannerText>
           <HomeRecruitmentButton />
         </RecruitingWrapper>
-      </BannerTitleWrapper>
-      <DownArrow />
-    </HomeWrapper>
+        <DownArrow />
+      </HomeSectionContainerInner>
+    </HomeSectionContainer>
   );
 };
 const HomeRecruitmentButton = () => {

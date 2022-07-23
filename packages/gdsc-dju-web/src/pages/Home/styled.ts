@@ -25,15 +25,6 @@ export const HomeContainer = styled.div`
     scroll-snap-align: start;
   }
 `;
-export const HomeWrapper = styled(motion.div)`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
-`;
 export const StyledRecruitmentButton = styled.button<{ disable?: boolean }>`
   width: 22rem;
   height: 6rem;
@@ -61,80 +52,26 @@ export const StyledRecruitmentButton = styled.button<{ disable?: boolean }>`
     font-size: 1.3rem;
   }
 `;
-export const StyledMainBanner = styled(motion.div)`
+
+export const RecruitingWrapper = styled(motion.div)`
   position: absolute;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  overflow-x: hidden;
-  z-index: -1;
-  top: 0;
-`;
-export const BannerTitleWrapper = styled(motion.section)`
-  position: absolute;
-  bottom: 14%;
-  left: 10%;
+  left: 20px;
+  bottom: 12%;
   display: flex;
   box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
   @media (max-width: ${({ theme }) => theme.windowSize.desk}px) {
     bottom: 14%;
-    left: 10%;
   }
   @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
     bottom: 10%;
-    left: 10%;
   }
   @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
-    bottom: 12%;
-    left: 10%;
+    bottom: 10%;
   }
   @media (max-width: 320px) {
     bottom: 10%;
-    left: 10%;
-  }
-`;
-export const RecruitingWrapper = styled(motion.div)`
-  position: relative;
-  justify-content: flex-start;
-  left: 0;
-  z-index: 50;
-`;
-
-export const LeftColorLinesWrapper = styled(motion.div)`
-  z-index: 1;
-  position: absolute;
-  max-width: 500px;
-  width: 40%;
-  left: -200px;
-  @media (max-width: ${({ theme }) => theme.windowSize.desk}px) {
-    width: 45%;
-  }
-  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
-    bottom: 100px;
-    width: 300px;
-    left: -100px;
-  }
-`;
-export const RightColorLinesWrapper = styled(motion.div)`
-  z-index: 1;
-  position: absolute;
-  max-width: 50rem;
-  width: 40%;
-  right: -20rem;
-  @media (max-width: ${({ theme }) => theme.windowSize.desk}px) {
-    width: 45%;
-  }
-  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
-    top: 200px;
-    width: 30rem;
-    right: -10rem;
-  }
-  @media (max-width: 760px) {
-    top: -5rem;
   }
 `;
 
@@ -176,7 +113,8 @@ export const DownArrowWrapper = styled(motion.div)`
   position: absolute;
   bottom: 5%;
   display: flex;
-  width: 100vw;
+  width: 100%;
+  z-index: 2;
   justify-content: center;
   opacity: 50;
 `;
