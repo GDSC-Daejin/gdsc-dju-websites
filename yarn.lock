@@ -11283,6 +11283,8 @@ __metadata:
     "@types/react-dom": ^18.0.6
     "@vitejs/plugin-react": ^2.0.0
     babel-loader: ^8.2.5
+    firebase: ^9.9.1
+    firebase-tools: ^11.3.0
     react: ^18.2.0
     react-dom: ^18.2.0
     typescript: ^4.6.4

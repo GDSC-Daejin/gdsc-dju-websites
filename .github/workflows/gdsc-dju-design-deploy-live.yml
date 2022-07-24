@@ -1,29 +1,29 @@
-name: Deploy to GDSC DJU ADMIN Live Channel
+name: Deploy to GDSC DJU design Live Channel
 
 on:
   push:
     branches:
       - master
     paths:
-      - "packages/gdsc-dju-admin/*"
-      - ".github/workflows/gdsc-dju-admin-deploy-live.yml"
+      - "packages/gdsc-dju-design/*"
+      - ".github/workflows/gdsc-dju-design-deploy-live.yml"
   pull_request:
     branches:
       - master
     types:
       - closed
     paths:
-      - "packages/gdsc-dju-admin/*"
-      - ".github/workflows/gdsc-dju-admin-deploy-live.yml"
+      - "packages/gdsc-dju-design/*"
+      - ".github/workflows/gdsc-dju-design-deploy-live.yml"
 jobs:
   Deploy_Live_channel:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
-      working-directory: ./packages/gdsc-dju-admin
+      working-directory: ./packages/gdsc-dju-design
     environment:
-      name: GDSC DJU admin Production
-      url: https://gdsc-dju.admin.web.app
+      name: GDSC DJU design Production
+      url: https://gdsc-dju.design.web.app
     steps:
       - uses: actions/checkout@v2
       - name: Setting .env
@@ -40,8 +40,8 @@ jobs:
         working-directory: ${{ env.working-directory }}
       - name: install package
         run: yarn install
-      - name: Project Build
-        run: yarn build
+      - name: build-storybook
+        run: yarn build-storybook
         working-directory: ${{ env.working-directory }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: run_firebase_deploy
@@ -50,16 +50,16 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GDSC_DJU }}'
           channelId: live
           projectId: gdsc-dju
-          entryPoint: './packages/gdsc-dju-admin'
+          entryPoint: './packages/gdsc-dju-design'
       - name: Discord Message Notify
         uses: appleboy/discord-action@0.0.3
         with:
-          webhook_id: ${{ secrets.DISCORD_ADMIN_WEBHOOK_ID }}
-          webhook_token: ${{ secrets.DISCORD_ADMIN_WEBHOOK_TOKEN }}
+          webhook_id: ${{ secrets.DISCORD_DESIGN_WEBHOOK_ID }}
+          webhook_token: ${{ secrets.DISCORD_DESIGN_WEBHOOK_TOKEN }}
           color: "#4285f4"
           args: |
-            gdsc-dju-admin has been deployed to Live channel
+            gdsc-dju-design has been deployed to Live channel
             `Contributor` ${{github.actor}}
             `Event Status` ${{github.event_name}}
-            `URL` https://gdsc-dju.admin.app
+            `URL` https://gdsc-dju.design.app
             `Build Time` ${{steps.run_firebase_deploy.outputs.expire_time}}
