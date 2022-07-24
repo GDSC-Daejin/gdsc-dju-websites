@@ -1,43 +1,33 @@
-import { onAuthStateChanged } from 'firebase/auth';
-import { doc, getDoc } from 'firebase/firestore';
 import { useAtom } from 'jotai';
 import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useGetMyData } from '../../apis/hooks/useGetMyData';
 import { userAtom } from '../../atoms/userAtom';
-import { auth, db } from '../../firebase/firebase';
 
 const CheckAdminUser = () => {
   const [adminUser, setAdminUser] = useAtom(userAtom);
   const navigate = useNavigate();
   const location = useLocation();
-
-  const getAdminUser = async (uid: string) => {
-    const adminUserRef = await getDoc(doc(db, 'adminUsers', uid));
-    const userData = adminUserRef.data();
-    if (adminUserRef.exists()) {
+  const refreshToken = localStorage.getItem('refresh_token');
+  const token = localStorage.getItem('token');
+  const { userData } = useGetMyData();
+  const checkAdminUser = () => {
+    if (refreshToken && token && userData) {
       setAdminUser({
         ...adminUser,
-        uid: uid,
-        username: userData?.username,
-        memberInfo: userData?.memberInfo,
+        role: userData.role,
+        nickname: userData.memberInfo.nickname,
+        uid: userData.userId,
+        memberInfo: userData.memberInfo,
       });
     }
+    if (!refreshToken && !token && location.pathname.includes('/certified')) {
+      navigate('/');
+    }
   };
-  const checkAdminUser = async () => {
-    await onAuthStateChanged(auth, (user) => {
-      if (user) {
-        try {
-          getAdminUser(user.uid);
-        } catch (error) {
-          navigate('/');
-        }
-      }
-    });
-  };
-
   useEffect(() => {
     checkAdminUser();
-  }, [location.pathname]);
+  }, [userData]);
   return null;
 };
 

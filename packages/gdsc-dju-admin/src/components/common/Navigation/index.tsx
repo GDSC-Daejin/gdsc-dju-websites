@@ -45,17 +45,19 @@ const Navigation: React.FC<{
             </NavTask>
           </NavTaskWrapper>
           <AdminNavCategoryWrapper>
-            <AdminUserMenu
-              isOpen={adminMenuHandler}
-              setIsOpen={setAdminMenuHandler}
-            />
             <ThemeToggleButton theme={theme} toggleButton={toggleTheme} />
-            {user.username && (
-              <StyledUserName
-                onClick={() => setAdminMenuHandler(!adminMenuHandler)}
-              >
-                Hi {user.username}
-              </StyledUserName>
+            {user.nickname && (
+              <>
+                <StyledUserName
+                  onClick={() => setAdminMenuHandler(!adminMenuHandler)}
+                >
+                  Hi {user.nickname}
+                </StyledUserName>
+                <AdminUserMenu
+                  isOpen={adminMenuHandler}
+                  setIsOpen={setAdminMenuHandler}
+                />
+              </>
             )}
           </AdminNavCategoryWrapper>
         </NavInner>

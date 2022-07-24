@@ -1,26 +1,15 @@
-import { signOut } from 'firebase/auth';
 import { AnimatePresence } from 'framer-motion';
-import { useAtom } from 'jotai';
 import React, { useCallback, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { modalAtom } from '../../../atoms/modalAtom';
-import { auth } from '../../../firebase/firebase';
 import { ROUTES } from '../../../routes/Route';
 import { AdminUserMenuWrapper, MenuElement } from './styled';
 
-const AdminUserMenu = (props: {
+const AdminUserMenu: React.FC<{
   isOpen: boolean;
   setIsOpen: (data: boolean) => void;
-}) => {
-  const { isOpen, setIsOpen } = props;
-  const [modal, setModal] = useAtom(modalAtom);
+}> = ({ isOpen, setIsOpen }) => {
   const navigate = useNavigate();
   const userMenuRef = useRef<HTMLDivElement>(null);
-
-  const hoverMotion = {
-    cursor: 'pointer',
-    backgroundColor: '#E5E8EB',
-  };
 
   const handleClickOutside = useCallback(
     (e: Event) => {
@@ -55,25 +44,25 @@ const AdminUserMenu = (props: {
         >
           <MenuElement
             layout
-            whileHover={hoverMotion}
             onClick={async () => {
               setIsOpen(false);
-              await signOut(auth);
+              localStorage.removeItem('token');
+              localStorage.removeItem('refresh_token');
               navigate(ROUTES.HOME.ROUTE);
             }}
           >
             로그아웃
           </MenuElement>
-          <MenuElement
-            layout
-            whileHover={hoverMotion}
-            onClick={() => {
-              setIsOpen(false);
-              setModal({ ...modal, USER_MENU: true });
-            }}
-          >
-            회원가입
-          </MenuElement>
+          {/*<MenuElement*/}
+          {/*  layout*/}
+          {/*  whileHover={hoverMotion}*/}
+          {/*  onClick={() => {*/}
+          {/*    setIsOpen(false);*/}
+          {/*    setModal({ ...modal, USER_MENU: true });*/}
+          {/*  }}*/}
+          {/*>*/}
+          {/*  회원가입*/}
+          {/*</MenuElement>*/}
         </AdminUserMenuWrapper>
       )}
     </AnimatePresence>

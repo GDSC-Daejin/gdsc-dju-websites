@@ -6,15 +6,18 @@ import {
 
 export class Api {
   protected API: string;
-  protected FIREBASE_API: string;
+  protected ACCOUNT_API: string;
+  protected TOKEN: string;
+  protected REFRESH_TOKEN: string;
   constructor() {
     if (process.env.NODE_ENV === 'development') {
       this.API = 'https://gdsc-dju-dev.kro.kr';
     } else {
       this.API = 'https://gdsc-dju.com';
     }
-    this.FIREBASE_API =
-      'https://firestore.googleapis.com/v1/projects/gdsc-dju/databases/(default)';
+    this.ACCOUNT_API = 'https://accounts.gdsc-dju.com';
+    this.TOKEN = localStorage.getItem('token') ?? '';
+    this.REFRESH_TOKEN = localStorage.getItem('refresh_token') ?? '';
   }
   getRecruitStatus = () => {
     return axios.get<getRecruitmentInfoDataType>(

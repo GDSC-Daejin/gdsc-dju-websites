@@ -9,15 +9,20 @@ export const AdminUserMenuWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   text-align: center;
-  background: white;
   padding: 5px 5px;
   border: 1px solid ${({ theme }) => theme.colors.grey200};
   border-radius: 10px;
+  background-color: ${({ theme }) => theme.colors.background};
 `;
 export const MenuElement = styled(motion.button)`
-  font-size: 1.6rem;
+  font-size: ${({ theme }) => theme.fontSize.body1};
   padding: 5px 15px;
   border: 0 solid;
   border-radius: 5px;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.grey900};
+  cursor: pointer;
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.grey500};
+  }
 `;

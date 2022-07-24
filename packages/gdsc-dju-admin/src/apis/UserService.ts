@@ -4,7 +4,7 @@ import { RowMemberDataType } from '../types/userDataType';
 import { Api } from './index';
 
 class UserService extends Api {
-  getMyData = (token?: string) => {
+  getMyData = (token: string) => {
     return axios.get<RowMemberDataType>(
       `${this.API}/member-route/api/guest/v1/me`,
       {

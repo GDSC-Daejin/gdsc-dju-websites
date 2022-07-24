@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyledLabel, StyledLi, StyledUl, Underline } from './styled';
 
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { StyledLabel, StyledLi, StyledUl, Underline } from './styled';
 
 type Props = {
   tabs: { label: string; route: string }[];

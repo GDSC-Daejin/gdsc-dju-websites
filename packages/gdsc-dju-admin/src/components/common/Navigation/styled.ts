@@ -159,12 +159,12 @@ export const AdminNavCategoryWrapper = styled.nav`
 `;
 export const StyledUserName = styled.div`
   color: ${(props) => props.theme.colors.grey700};
-  font-size: 1.4rem;
+  font-size: ${({ theme }) => theme.fontSize.body2};
   font-weight: bold;
   white-space: nowrap;
   margin-left: 20px;
   @media (max-width: 500px) {
-    font-size: 1.3rem;
+    font-size: ${({ theme }) => theme.fontSize.body3};
   }
   &:hover {
     cursor: pointer;

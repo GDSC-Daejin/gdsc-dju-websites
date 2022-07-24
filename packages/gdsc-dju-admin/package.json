@@ -6,9 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.0.10",
+    "@tanstack/react-query-devtools": "^4.0.10",
     "axios": "^0.27.2",
     "firebase": "^9.9.1",
     "firebase-tools": "^11.3.0",
@@ -16,8 +19,7 @@
     "jotai": "^1.7.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-error-boundary": "^3.1.4",
-    "react-query": "^4.0.0"
+    "react-error-boundary": "^3.1.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",
