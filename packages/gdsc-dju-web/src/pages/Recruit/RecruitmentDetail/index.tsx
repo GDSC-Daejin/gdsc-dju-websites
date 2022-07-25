@@ -1,11 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { recruitDefaultText } from '../../../pageData/recruitDetails';
-import { RecruitDetails } from '../../../pageData/recruitDetails';
 import Banner from '../../../components/common/Banner';
 import { SubtitleContent } from '../../../components/common/BulletList';
-import ReactHelmet from '../../../components/common/ReactHelmet';
 import { Title } from '../../../components/common/Title/title';
+import {
+  RecruitDetails,
+  recruitDefaultText,
+} from '../../../pageData/recruitDetails';
 import {
   ContainerInner,
   LayoutContainer,
@@ -27,7 +28,6 @@ const RecruitmentDetail: React.FC = () => {
   const aboutTeam = RecruitDetails.find((aboutTeam) => aboutTeam.id === id);
   return (
     <>
-      <ReactHelmet title={aboutTeam?.name} />
       <Banner color={'blue'} />
       {aboutTeam && (
         <LayoutContainer>

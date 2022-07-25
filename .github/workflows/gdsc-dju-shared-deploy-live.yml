@@ -7,7 +7,7 @@ on:
     types:
       - closed
     paths:
-      - "packages/gdsc-dju-shared/**"
+      - "packages/gdsc-dju-shared/*"
       - ".github/workflows/gdsc-dju-shared-deploy-live.yml"
 jobs:
   Deploy_Live_channel:

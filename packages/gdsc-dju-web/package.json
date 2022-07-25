@@ -6,7 +6,8 @@
     "start": "vite --host",
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
@@ -16,13 +17,11 @@
     "firebase": "^9.9.0",
     "firebase-tools": "^11.2.2",
     "framer-motion": "^6.3.0",
-    "html2canvas": "^1.3.3",
     "lottie-web": "^5.8.1",
     "react": "^18.2.0",
     "react-error-boundary": "^3.1.4",
-    "react-helmet": "^6.1.0",
+    "react-helmet-async": "^1.3.0",
     "react-hook-form": "^7.32.0",
-    "react-is": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "react-router-sitemap": "^1.2.0",
     "recoil": "^0.7.0",

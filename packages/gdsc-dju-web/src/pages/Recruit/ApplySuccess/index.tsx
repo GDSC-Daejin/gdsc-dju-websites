@@ -20,7 +20,6 @@ const ApplySuccess = () => {
 
   return (
     <>
-      <ReactHelmet title={'지원 완료'} />
       <LayoutContainer>
         <ContainerInner>
           <RecruitFormWrapper>

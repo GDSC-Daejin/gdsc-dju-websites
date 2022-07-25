@@ -1,5 +1,8 @@
+import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState } from 'react';
+import Banner from '../../components/common/Banner';
 import { Title } from '../../components/common/Title/title';
+import { FaqData } from '../../pageData/faq';
 import {
   ContainerInner,
   LayoutContainer,
@@ -14,15 +17,10 @@ import {
   QuestionMark,
   QuestionWrapper,
 } from './styled';
-import { FaqData } from '../../pageData/faq';
-import { AnimatePresence, motion } from 'framer-motion';
-import Banner from '../../components/common/Banner';
-import ReactHelmet from '../../components/common/ReactHelmet';
 
 const Faq = () => {
   return (
     <>
-      <ReactHelmet title={'자주 묻는 질문'} description={'자주 묻는 질문'} />
       <Banner color={'green'} />
       <LayoutContainer>
         <ContainerInner>

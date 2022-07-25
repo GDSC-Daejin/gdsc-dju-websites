@@ -24,11 +24,11 @@ const SubtitleContent: React.FC<{
   bulletText?: string | undefined;
 }> = ({ title, text, bulletText }) => {
   return (
-    <MainText>
+    <div>
       <SubCategory>{title}</SubCategory>
       {bulletText && <BulletList text={bulletText} />}
       {text && <>{text}</>}
-    </MainText>
+    </div>
   );
 };
 

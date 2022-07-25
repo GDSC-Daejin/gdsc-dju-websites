@@ -45,12 +45,7 @@ export const FooterCopyRight = styled.span`
     font-size: ${(props) => props.theme.fontSize.body4};
   }
 `;
-export const FooterWrapper = styled.div<{ disable: boolean }>`
-  ${({ disable }) =>
-    disable &&
-    css`
-      display: none;
-    `}
+export const FooterWrapper = styled.div`
   display: flex;
   bottom: 0;
   padding: 30px 40px;

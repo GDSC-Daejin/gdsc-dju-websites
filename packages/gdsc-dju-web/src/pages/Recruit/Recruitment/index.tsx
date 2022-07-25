@@ -28,10 +28,6 @@ const removeBracket = (str: string) => {
 const Recruitment = () => {
   return (
     <>
-      <ReactHelmet
-        title={'모집 중인 포지션'}
-        description={'모집 중인 포지션'}
-      />
       <Banner color={'blue'} />
       <LayoutContainer>
         <ContainerInner>
