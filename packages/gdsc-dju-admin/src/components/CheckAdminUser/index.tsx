@@ -22,13 +22,11 @@ const CheckAdminUser = () => {
         memberInfo: userData.memberInfo,
       });
     }
-    if (
-      !refreshToken &&
-      !token &&
-      !isAdmin &&
-      location.pathname.includes('/certified')
-    ) {
+    if (!refreshToken && !token && location.pathname.includes('/certified')) {
       navigate('/');
+      if (!isAdmin) {
+        navigate('/');
+      }
     }
   };
   useEffect(() => {
