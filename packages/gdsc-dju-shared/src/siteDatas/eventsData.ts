@@ -7,12 +7,12 @@ export const eventsData: EventsDataType = [
     title: 'GDSC DJU \n public Session #2',
     description: '모두가 참여할 수 있는 public Session',
     start: '2022-08-03 21:00',
-    end: '2022-08-03 22:00',
+    end: '2022-08-03 22:15',
     applyLink: 'https://festa.io/events/jzANzyaSGSBxi9BJYgRB5w/',
     sessions: [
       {
         title: '비전공 개발자에서 동아리 내 백엔드 최강자가 되기까지',
-        time: '21:00 - 20:15',
+        time: '21:00 - 21:15',
         profileImage: userData.Rocoli.profileImage,
         name: userData.Rocoli.name,
         position: userData.Rocoli.position,
@@ -33,7 +33,7 @@ export const eventsData: EventsDataType = [
       },
       {
         title: 'GDSC에 대해',
-        time: '22:00 - 21:15',
+        time: '22:00 - 22:15',
         profileImage: userData.Jim.profileImage,
         name: userData.Jim.name,
         position: userData.Jim.position,
