@@ -6,7 +6,7 @@ import { Api } from './index';
 class UserService extends Api {
   getMyData = (token: string) => {
     return axios.get<RowMemberDataType>(
-      `${this.API}/member-route/api/guest/v1/me`,
+      `${this.ACCOUNT_API}/member-route/api/guest/v1/me`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
