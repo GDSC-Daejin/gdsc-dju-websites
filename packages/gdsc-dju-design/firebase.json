@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist",
+    "public": "storybook-static",
     "target": "gdsc-dju-design",
     "headers": [
       {
