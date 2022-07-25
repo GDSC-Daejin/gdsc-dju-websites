@@ -23,7 +23,7 @@ jobs:
       working-directory: ./packages/gdsc-dju-design
     environment:
       name: GDSC DJU design Production
-      url: https://gdsc-dju.design.web.app
+      url: https://gdsc-dju-design.web.app
     steps:
       - uses: actions/checkout@v2
       - name: Setting .env
