@@ -11,6 +11,7 @@ const CheckAdminUser = () => {
   const refreshToken = localStorage.getItem('refresh_token');
   const token = localStorage.getItem('token');
   const { userData } = useGetMyData();
+  const isAdmin = userData?.role === 'LEAD' || 'CORE';
   const checkAdminUser = () => {
     if (refreshToken && token && userData) {
       setAdminUser({
@@ -21,7 +22,12 @@ const CheckAdminUser = () => {
         memberInfo: userData.memberInfo,
       });
     }
-    if (!refreshToken && !token && location.pathname.includes('/certified')) {
+    if (
+      !refreshToken &&
+      !token &&
+      !isAdmin &&
+      location.pathname.includes('/certified')
+    ) {
       navigate('/');
     }
   };

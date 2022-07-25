@@ -12,7 +12,7 @@ class TokenService extends Api {
     }`;
   }
   getRefresh = (refreshToken: string, token: string) => {
-    return axios.get(`${this.API}/refresh`, {
+    return axios.get(`${this.ACCOUNT_API}/refresh`, {
       headers: {
         Authorization: `Bearer ${token}`,
         RefreshToken: `Bearer ${refreshToken}`,
