@@ -49,6 +49,7 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GDSC_DJU }}'
           projectId: gdsc-dju
+          target: gdsc-dju-admin
           expires: 3d
           channelId: ' ${{ steps.slug.outputs.sha8 }}-${{ github.event.pull_request.head.ref }} '
           entryPoint: './packages/gdsc-dju-admin'

@@ -50,6 +50,7 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GDSC_DJU }}'
           channelId: live
           projectId: gdsc-dju
+          target: gdsc-dju-design
           entryPoint: './packages/gdsc-dju-design'
       - name: Discord Message Notify
         uses: appleboy/discord-action@0.0.3
