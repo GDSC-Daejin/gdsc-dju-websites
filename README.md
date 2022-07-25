@@ -2,11 +2,11 @@
 
 [![Deploy to GDSC DJU Web Live Channel](https://github.com/GDSC-Daejin/gdsc-dju-websites/actions/workflows/gdsc-dju-web-deploy-live.yml/badge.svg)](https://github.com/GDSC-Daejin/gdsc-dju-websites/actions/workflows/gdsc-dju-web-deploy-live.yml)
 
-[![Deploy to GDSC DJU Web Preview Channel](https://github.com/GDSC-Daejin/gdsc-dju-websites/actions/workflows/gdsc-dju-web-deploy-preview.yml/badge.svg)](https://github.com/GDSC-Daejin/gdsc-dju-websites/actions/workflows/gdsc-dju-web-deploy-preview.yml)
-
 [![Deploy to GDSC DJU Shared Live Channel](https://github.com/GDSC-Daejin/gdsc-dju-websites/actions/workflows/gdsc-dju-shared-deploy-live.yml/badge.svg)](https://github.com/GDSC-Daejin/gdsc-dju-websites/actions/workflows/gdsc-dju-shared-deploy-live.yml)
 
-[![Deploy to GDSC DJU Shared Preview Channel](https://github.com/GDSC-Daejin/gdsc-dju-websites/actions/workflows/gdsc-dju-shared-deploy-preview.yml/badge.svg)](https://github.com/GDSC-Daejin/gdsc-dju-websites/actions/workflows/gdsc-dju-shared-deploy-preview.yml)
+[![Deploy to GDSC DJU ADMIN Live Channel](https://github.com/GDSC-Daejin/gdsc-dju-websites/actions/workflows/gdsc-dju-admin-deploy-live.yml/badge.svg)](https://github.com/GDSC-Daejin/gdsc-dju-websites/actions/workflows/gdsc-dju-admin-deploy-live.yml)
+
+[![Deploy to GDSC DJU design Live Channel](https://github.com/GDSC-Daejin/gdsc-dju-websites/actions/workflows/gdsc-dju-design-deploy-live.yml/badge.svg)](https://github.com/GDSC-Daejin/gdsc-dju-websites/actions/workflows/gdsc-dju-design-deploy-live.yml)
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FGDSC-Daejin%2Fgdsc-dju-frontend&count_bg=%23EA4335&title_bg=%234285F4&icon=google.svg&icon_color=%23FFFFFF&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
@@ -15,11 +15,13 @@ GDSC Daejin Univ. 에서 관리되는 서비스의 모노레포입니다.
 
 [GDSC DJU WEB](https://gdsc-dju.web.app/) 소개사이트
 
-[GDSC DJU SHARED](https://gdsc-dju.share.web.app/) 이벤트 사이트
+[GDSC DJU SHARED](https://gdsc-dju-share.web.app/) 이벤트 사이트
 
-[GDSC DJU BLOG](https://gdsc-dju.blog.web.app/) 기술 블로그(개발중)
+[GDSC DJU BLOG](https://gdsc-dju-blog.web.app/) 기술 블로그(개발중)
 
-[GDSC DJU HEY TEDDY](https://hey-teddy.vercel.app/) 칭찬시스템
+[GDSC DJU HEY TEDDY](https://hey-teddy.vercel.app/) 칭찬 시스템
+
+[GDSC DJU DESIGN SYSTEM](https://gdsc-dju-design.web.app/?) 디자인 시스템
 
 ## Git Flow / Commit convention rule
 
