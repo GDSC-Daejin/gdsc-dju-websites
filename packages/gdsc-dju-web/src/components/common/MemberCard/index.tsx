@@ -1,9 +1,9 @@
-import React, { memo, useMemo, useState } from 'react';
-import styled, { css } from 'styled-components';
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
+import React, { memo, useState } from 'react';
+import { useLocation } from 'react-router';
+import styled, { css } from 'styled-components';
 import { IMemberCardType } from '../../../types/member';
 import { positionColorHandler } from '../../../utils/positionColorHandler';
-import { useLocation } from 'react-router';
 import { memberCardAnimate } from '../Variants/Variants';
 
 const MemberCardContainer = styled(motion.div)<{ isSquare: boolean }>`
@@ -21,7 +21,7 @@ const MemberCardContainer = styled(motion.div)<{ isSquare: boolean }>`
 const MemberCardInner = styled(motion.div)`
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 300px;
   box-sizing: border-box;
   cursor: pointer;
   display: flex;

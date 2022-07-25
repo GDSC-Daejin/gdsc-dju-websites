@@ -6,7 +6,7 @@ import {
   HomeSectionTitle,
   HomeSectionWrapper,
 } from './styled';
-import MemberCardV2 from '../common/MemberCard';
+import MemberCard from '../common/MemberCard';
 import { motion } from 'framer-motion';
 import { managerData } from '../../pageData/managerData';
 import { listAnimate, listItemAnimate } from '../common/Variants/Variants';
@@ -33,6 +33,7 @@ const MemberCardV2Section = styled(motion.section)`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  height: 100%;
   gap: 30px;
 `;
 const MemberCardV2Wrapper = styled(motion.div)`
@@ -41,7 +42,7 @@ const MemberCardV2Wrapper = styled(motion.div)`
   justify-content: center;
   min-width: 250px;
   min-height: 300px;
-
+  z-index: 2;
   @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
     width: 100%;
   }
@@ -77,7 +78,7 @@ const SectionManager = () => {
                 whileInView={'end'}
                 viewport={{ once: true }}
               >
-                <MemberCardV2 member={member} />
+                <MemberCard member={member} />
               </MemberCardV2Wrapper>
             ))}
           </MemberCardV2Section>
