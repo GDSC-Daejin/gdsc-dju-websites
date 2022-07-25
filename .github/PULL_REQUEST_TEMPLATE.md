@@ -12,7 +12,7 @@
 ## Merge 전 필요 작업 (Checklist before merge)
 - [ ] component 대소문자 확인
 - [ ] conflict 해결
-- [ ] develop branch로 merge하나요?
+- [ ] tsc 오류 확인
 
 ## Merge 후 필요 작업 (Checklist after merge)
 - PR이 생성되면 코드 리뷰 요청한 개발자에게 슬랙으로 알려주세요.
