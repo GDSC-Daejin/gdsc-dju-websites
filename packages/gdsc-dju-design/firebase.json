@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "storybook-static",
+    "target": "gdsc-dju-design",
     "ignore": [
       "firebase.json",
       "**/.*",
