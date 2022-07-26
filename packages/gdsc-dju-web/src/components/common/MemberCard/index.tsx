@@ -7,6 +7,7 @@ import { positionColorHandler } from '../../../utils/positionColorHandler';
 import { memberCardAnimate } from '../Variants/Variants';
 
 const MemberCardContainer = styled(motion.div)<{ isSquare: boolean }>`
+  position: relative;
   min-width: 250px;
   min-height: 300px;
   border-radius: 16px;
@@ -19,9 +20,9 @@ const MemberCardContainer = styled(motion.div)<{ isSquare: boolean }>`
     `}
 `;
 const MemberCardInner = styled(motion.div)`
-  position: relative;
+  position: absolute;
   width: 100%;
-  height: 300px;
+  height: max-content;
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
@@ -32,7 +33,6 @@ const MemberCardInner = styled(motion.div)`
   z-index: 0;
 `;
 const MemberCardImage = styled(motion.img)<{ isSquare: boolean }>`
-  position: absolute;
   z-index: -1;
   height: 300px;
   top: 0;
