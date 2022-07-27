@@ -15,6 +15,12 @@
   # Default build command.
   command = "echo 'default context'"
 
+  command = "yarn run install"
+  publish = "install"
+
+  command = "yarn run build"
+  publish = "build"
+
 [[plugins]]
   # Installs the Lighthouse Build Plugin for all deploy contexts
   package = "@netlify/plugin-lighthouse"
@@ -24,9 +30,4 @@
 # these settings. You can define environment variables
 # here but we recommend using the Netlify UI for sensitive
 # values to keep them out of your source repository.
-[package.install]
-  command = "yarn run install"
-  publish = "install"
-[package.build]
-  command = "yarn run build"
-  publish = "build"
+
