@@ -25,8 +25,8 @@
 # here but we recommend using the Netlify UI for sensitive
 # values to keep them out of your source repository.
 [package.install]
-  command = "yarn install"
+  command = "yarn run install"
   publish = "install"
 [package.build]
-  command = "yarn build"
+  command = "yarn run build"
   publish = "build"
