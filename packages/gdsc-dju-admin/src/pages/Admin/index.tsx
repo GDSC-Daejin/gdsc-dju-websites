@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import AdminSidebar from '../../components/common/AdminSidebar';
-import AdminSignUp from '../../components/common/AdminSignUp';
 
 import AdminApplicants from './AdminApplicants';
 import AdminEmail from './AdminEmail';
@@ -18,7 +17,6 @@ const Admin = () => {
 
   return (
     <>
-      <AdminSignUp />
       <AdminContainerWrapper>
         <AdminSidebar />
         <AdminContainer>

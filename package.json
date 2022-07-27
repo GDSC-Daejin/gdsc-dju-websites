@@ -10,14 +10,14 @@
       "packages/*"
     ]
   },
-  "packageManager": "yarn@3.2.1",
+  "packageManager": "yarn@3.2.2",
   "devDependencies": {
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
-    "@yarnpkg/pnpify": "^4.0.0-rc.12",
+    "@yarnpkg/pnpify": "^4.0.0-rc.14",
     "@yarnpkg/sdks": "^3.0.0-rc.12",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
@@ -28,8 +28,8 @@
     "vite": "^3.0.1"
   },
   "dependencies": {
-    "netlify-cli": "^10.12.1",
     "react": "^18.2.0",
+    "react-is": "^18.2.0",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0"
   }

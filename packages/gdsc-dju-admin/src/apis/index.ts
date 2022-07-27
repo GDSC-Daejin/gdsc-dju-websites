@@ -2,7 +2,7 @@ import axios from 'axios';
 import {
   getRecruitmentInfoDataType,
   recruitmentInfoDataType,
-} from 'gdsc-dju-web/src/apis/types';
+} from '../types/recruitmentInfo';
 
 export class Api {
   protected API: string;
