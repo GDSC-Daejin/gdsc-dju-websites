@@ -24,6 +24,9 @@
 # these settings. You can define environment variables
 # here but we recommend using the Netlify UI for sensitive
 # values to keep them out of your source repository.
-[build]
+[package.install]
+  command = "yarn install"
+  publish = "install"
+[package.build]
   command = "yarn build"
   publish = "build"
