@@ -16,5 +16,5 @@
     package = "@netlify/plugin-lighthouse"
   [context.production]
     publish = "dist/"
-    command = "make publish"
-    environment = { NODE_VERSION = "14.15.3" }
+    command = "yarn build"
+    environment = { NODE_VERSION = "18.3.0" }
