@@ -3,7 +3,7 @@
   # This is where we will look for package.json/.nvmrc/etc.
  # If not set, defaults to the root directory.
   command = "yarn install"
-  base = "packages/"
+  base = "packages/gdsc-dju-web"
 
   [project.build]
     command = "yarn run build"
