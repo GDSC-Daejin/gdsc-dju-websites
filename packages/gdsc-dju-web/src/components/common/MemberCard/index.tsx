@@ -133,16 +133,22 @@ const MemberCardV2: React.FC<IMemberCardProps> = ({
           exit="exit"
           isSquare={isSquare}
         >
-          <MemberCardInner layoutId={`card-inner-${nickname}`}>
+          <MemberCardInner
+            layoutId={`card-inner-${nickname}-${location.pathname}`}
+          >
             <CardTextWrapper isClicked={isClicked}>
               {!isClicked ? (
                 <>
-                  <Nickname layoutId={`nickname-${nickname}`}>
+                  <Nickname
+                    layoutId={`nickname-${nickname}-${location.pathname}`}
+                  >
                     {nickname}
                   </Nickname>
-                  <Name layoutId={`name-${nickname}`}>{name}</Name>
+                  <Name layoutId={`name-${nickname}-${location.pathname}`}>
+                    {name}
+                  </Name>
                   <Role
-                    layoutId={`role-${nickname}`}
+                    layoutId={`role-${nickname}-${location.pathname}`}
                     variants={memberCardAnimate}
                   >
                     {role}
@@ -151,18 +157,22 @@ const MemberCardV2: React.FC<IMemberCardProps> = ({
               ) : (
                 <>
                   <Position
-                    layoutId={`position-${nickname}`}
+                    layoutId={`position-${nickname}-${location.pathname}`}
                     variants={memberCardAnimate}
                     positionColor={positionColorHandler(position)}
                   >
                     {position}
                   </Position>
-                  <Nickname layoutId={`nickname-${nickname}`}>
+                  <Nickname
+                    layoutId={`nickname-${nickname}-${location.pathname}`}
+                  >
                     {nickname}
                   </Nickname>
-                  <Name layoutId={`name-${nickname}`}>{name}</Name>
+                  <Name layoutId={`name-${nickname}-${location.pathname}`}>
+                    {name}
+                  </Name>
                   <CardText
-                    layoutId={`text-${nickname}`}
+                    layoutId={`text-${nickname}-${location.pathname}`}
                     variants={memberCardAnimate}
                   >
                     {text}
@@ -175,7 +185,7 @@ const MemberCardV2: React.FC<IMemberCardProps> = ({
                 alt={`${nickname}-profile-image`}
                 src={image}
                 isSquare={isSquare}
-                layoutId={`background-${nickname}`}
+                layoutId={`background-${nickname}-${location.pathname}`}
               />
             </picture>
           </MemberCardInner>
