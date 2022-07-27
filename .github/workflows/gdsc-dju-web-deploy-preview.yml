@@ -38,7 +38,9 @@ jobs:
         working-directory: ${{ env.working-directory }}
       - name: Root yarn install
         run: yarn install
-      - name: Root yarn install
+      - name: yarn install
+        run: yarn install
+      - name: yarn build
         run: tsc && yarn build
         working-directory: ${{ env.working-directory }}
       - name: Get short SHA
