@@ -14,6 +14,8 @@
   [[plugins]]
     # Installs the Lighthouse Build Plugin for all deploy contexts
     package = "@netlify/plugin-lighthouse"
+  [context.install]
+    command = "yarn install"
   [context.production]
     publish = "dist/"
     command = "yarn build"
