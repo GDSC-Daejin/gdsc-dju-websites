@@ -17,4 +17,4 @@
   [context.production]
     publish = "dist/"
     command = "yarn build"
-    environment = { NODE_VERSION = "18.3.0" }
+    environment = { NODE_VERSION = "14.15.3" }
