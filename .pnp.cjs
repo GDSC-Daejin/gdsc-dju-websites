@@ -33,6 +33,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/gdsc-dju-shared"\
       },\
       {\
+        "name": "gdsc-dju-teddy",\
+        "reference": "workspace:packages/gdsc-dju-teddy"\
+      },\
+      {\
         "name": "gdsc-dju-web",\
         "reference": "workspace:packages/gdsc-dju-web"\
       }\
@@ -44,6 +48,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["gdsc-dju-design", ["workspace:packages/gdsc-dju-design"]],\
       ["gdsc-dju-frontend", ["workspace:."]],\
       ["gdsc-dju-shared", ["workspace:packages/gdsc-dju-shared"]],\
+      ["gdsc-dju-teddy", ["workspace:packages/gdsc-dju-teddy"]],\
       ["gdsc-dju-web", ["workspace:packages/gdsc-dju-web"]]\
     ],\
     "fallbackPool": [\
@@ -17152,6 +17157,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"],\
             ["vite", "virtual:4d684cb317bf579f075303c0478e1cef1ea15dfa8ce290651bcc6b72c39087c220f0060beff3a6b4206a26f48551b2efa9fbb9054dfa1952f770281fc07f3fa0#npm:3.0.3"],\
             ["zustand", "virtual:7ff2bb5ca22a6c3ebfa67492be5c8e60951420030fb0955d91aecb9e831549a34f6fd52a95b12789475a0bf014c0fef31173e12f9080ccb9666ef245029a6df5#npm:4.0.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["gdsc-dju-teddy", [\
+        ["workspace:packages/gdsc-dju-teddy", {\
+          "packageLocation": "./packages/gdsc-dju-teddy/",\
+          "packageDependencies": [\
+            ["gdsc-dju-teddy", "workspace:packages/gdsc-dju-teddy"],\
+            ["@types/react", "npm:18.0.15"],\
+            ["@types/react-dom", "npm:18.0.6"],\
+            ["@vitejs/plugin-react", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:2.0.0"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:18.2.0"],\
+            ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"],\
+            ["vite", "virtual:4d684cb317bf579f075303c0478e1cef1ea15dfa8ce290651bcc6b72c39087c220f0060beff3a6b4206a26f48551b2efa9fbb9054dfa1952f770281fc07f3fa0#npm:3.0.3"]\
           ],\
           "linkType": "SOFT"\
         }]\
