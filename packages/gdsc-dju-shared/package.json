@@ -12,6 +12,7 @@
   },
   "author": "JunHyeok <jhjeong00@gmail.com>",
   "dependencies": {
+    "babel-register": "^6.26.0",
     "dayjs": "^1.11.3",
     "firebase": "^9.9.0",
     "firebase-tools": "^11.2.1",
