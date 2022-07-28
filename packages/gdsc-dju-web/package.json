@@ -1,7 +1,6 @@
 {
   "name": "gdsc-dju-web",
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "start": "vite --host",
     "dev": "vite",
