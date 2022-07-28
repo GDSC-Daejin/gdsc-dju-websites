@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "dist",
+    "target": "gdsc-dju-teddy",
     "ignore": [
       "firebase.json",
       "**/.*",

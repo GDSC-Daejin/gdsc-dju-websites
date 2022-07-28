@@ -50,7 +50,7 @@ jobs:
           target: gdsc-dju-design
           expires: 3d
           channelId: ' ${{ steps.slug.outputs.sha8 }}-${{ github.event.pull_request.head.ref }} '
-          entryPoint: './packages/gdsc-dju-shared'
+          entryPoint: './packages/gdsc-dju-design'
       - name: Discord Message Notify
         uses: appleboy/discord-action@0.0.3
         with:
