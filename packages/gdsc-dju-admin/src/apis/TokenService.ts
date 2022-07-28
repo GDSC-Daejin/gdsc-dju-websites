@@ -3,8 +3,10 @@ import { Api } from './index';
 
 class TokenService extends Api {
   getRedirectURL() {
-    localStorage.setItem('hostname', location.origin);
-    const OAUTH2_REDIRECT_URI = `${localStorage.getItem('hostname')}/redirect`;
+    sessionStorage.setItem('hostname', location.origin);
+    const OAUTH2_REDIRECT_URI = `${sessionStorage.getItem(
+      'hostname',
+    )}/redirect`;
     return `${this.ACCOUNT_API}/oauth2/authorization/google?redirect_uri=${OAUTH2_REDIRECT_URI}`;
   }
   getRefresh = (refreshToken: string, token: string) => {
