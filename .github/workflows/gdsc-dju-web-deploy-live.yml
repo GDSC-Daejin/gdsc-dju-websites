@@ -23,7 +23,7 @@ jobs:
       working-directory: ./packages/gdsc-dju-web
     environment:
       name: GDSC DJU WEB Production
-      url: https://gdsc-dju.web.app
+      url: https://web.gdsc-dju.com
     steps:
       - uses: actions/checkout@v2
       - name: Setting .env
@@ -42,7 +42,6 @@ jobs:
         run: yarn install
       - name: install sitemap package
         run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register
-        working-directory: ${{ env.working-directory }}
       - name: Project Build
         run: yarn build
         working-directory: ${{ env.working-directory }}
