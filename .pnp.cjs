@@ -17127,6 +17127,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:4d684cb317bf579f075303c0478e1cef1ea15dfa8ce290651bcc6b72c39087c220f0060beff3a6b4206a26f48551b2efa9fbb9054dfa1952f770281fc07f3fa0#npm:5.31.0"],\
             ["@typescript-eslint/parser", "virtual:4d684cb317bf579f075303c0478e1cef1ea15dfa8ce290651bcc6b72c39087c220f0060beff3a6b4206a26f48551b2efa9fbb9054dfa1952f770281fc07f3fa0#npm:5.31.0"],\
             ["@vitejs/plugin-react", "npm:1.3.2"],\
+            ["babel-cli", "npm:6.26.0"],\
+            ["babel-preset-es2015", "npm:6.24.1"],\
+            ["babel-preset-react", "npm:6.24.1"],\
             ["babel-register", "npm:6.26.0"],\
             ["dayjs", "npm:1.11.4"],\
             ["eslint", "npm:8.20.0"],\
@@ -17170,6 +17173,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vitejs/plugin-react", "npm:1.3.2"],\
             ["autoprefixer", "virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:10.4.7"],\
             ["axios", "npm:0.26.1"],\
+            ["babel-cli", "npm:6.26.0"],\
+            ["babel-preset-es2015", "npm:6.24.1"],\
+            ["babel-preset-react", "npm:6.24.1"],\
             ["babel-register", "npm:6.26.0"],\
             ["browser-detect", "npm:0.2.28"],\
             ["cookie", "npm:0.5.0"],\
