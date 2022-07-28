@@ -40,8 +40,6 @@ jobs:
         working-directory: ${{ env.working-directory }}
       - name: install package
         run: yarn install
-      - name: install sitemap package
-        run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register
       - name: Project Build
         run: yarn build
         working-directory: ${{ env.working-directory }}

@@ -1,4 +1,4 @@
-name: Deploy to GDSC DJU design Live Channel
+name: Deploy to GDSC DJU Design Live Channel
 
 on:
   push:
