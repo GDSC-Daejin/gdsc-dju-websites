@@ -1,5 +1,5 @@
 import TokenService from '../TokenService';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from 'react-query';
 
 export const getMyToken = async (refreshToken: string, token: string) => {
   const response = await TokenService.getRefresh(refreshToken, token);

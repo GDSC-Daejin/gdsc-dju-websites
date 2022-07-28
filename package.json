@@ -26,11 +26,11 @@
     "vite": "^3.0.1"
   },
   "dependencies": {
+    "@yarnpkg/pnpify": "^4.0.0-rc.14",
+    "@yarnpkg/sdks": "^3.0.0-rc.12",
     "react": "^18.2.0",
     "react-is": "^18.2.0",
     "react-router": "^6.3.0",
-    "react-router-dom": "^6.3.0",
-    "@yarnpkg/pnpify": "^4.0.0-rc.14",
-    "@yarnpkg/sdks": "^3.0.0-rc.12"
+    "react-router-dom": "^6.3.0"
   }
 }
