@@ -1,0 +1,15 @@
+.transparent{
+    background: transparent;
+}
+.white{
+    background: white;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.03);
+}
+.active{
+    color: #A35D29 !important;
+    font-weight: bold;
+}
+.unActive{
+    color: #CECECE;
+
+}
