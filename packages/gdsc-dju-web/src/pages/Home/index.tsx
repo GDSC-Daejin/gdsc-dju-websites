@@ -25,6 +25,7 @@ export const HomeContainer = styled.div`
     scroll-snap-align: start;
   }
 `;
+
 const Home = () => {
   return (
     <HomeContainer>
