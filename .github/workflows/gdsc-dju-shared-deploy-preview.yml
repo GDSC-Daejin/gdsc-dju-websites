@@ -41,6 +41,9 @@ jobs:
       - name: Project Build
         run: yarn build
         working-directory: ${{ env.working-directory }}
+      - name: sitemap-package
+        run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register
+        working-directory: ${{ env.working-directory }}
       - name: Get short SHA
         id: slug
         run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
