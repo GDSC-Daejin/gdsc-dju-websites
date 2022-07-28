@@ -2959,7 +2959,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-backgrounds@npm:6.5.9":
+"@storybook/addon-backgrounds@npm:6.5.9, @storybook/addon-backgrounds@npm:^6.5.9":
   version: 6.5.9
   resolution: "@storybook/addon-backgrounds@npm:6.5.9"
   dependencies:
@@ -3182,7 +3182,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-measure@npm:6.5.9":
+"@storybook/addon-measure@npm:6.5.9, @storybook/addon-measure@npm:^6.5.9":
   version: 6.5.9
   resolution: "@storybook/addon-measure@npm:6.5.9"
   dependencies:
@@ -3206,7 +3206,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-outline@npm:6.5.9":
+"@storybook/addon-outline@npm:6.5.9, @storybook/addon-outline@npm:^6.5.9":
   version: 6.5.9
   resolution: "@storybook/addon-outline@npm:6.5.9"
   dependencies:
@@ -3282,7 +3282,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addons@npm:6.5.9":
+"@storybook/addons@npm:6.5.9, @storybook/addons@npm:^6.5.9":
   version: 6.5.9
   resolution: "@storybook/addons@npm:6.5.9"
   dependencies:
@@ -3332,7 +3332,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/builder-vite@npm:^0.2.0":
+"@storybook/builder-vite@npm:^0.2.2":
   version: 0.2.2
   resolution: "@storybook/builder-vite@npm:0.2.2"
   dependencies:
@@ -3422,7 +3422,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/channel-postmessage@npm:6.5.9":
+"@storybook/channel-postmessage@npm:6.5.9, @storybook/channel-postmessage@npm:^6.5.9":
   version: 6.5.9
   resolution: "@storybook/channel-postmessage@npm:6.5.9"
   dependencies:
@@ -3437,7 +3437,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/channel-websocket@npm:6.5.9":
+"@storybook/channel-websocket@npm:6.5.9, @storybook/channel-websocket@npm:^6.5.9":
   version: 6.5.9
   resolution: "@storybook/channel-websocket@npm:6.5.9"
   dependencies:
@@ -3461,7 +3461,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/client-api@npm:6.5.9":
+"@storybook/client-api@npm:6.5.9, @storybook/client-api@npm:^6.5.9":
   version: 6.5.9
   resolution: "@storybook/client-api@npm:6.5.9"
   dependencies:
@@ -3889,7 +3889,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/preview-web@npm:6.5.9":
+"@storybook/preview-web@npm:6.5.9, @storybook/preview-web@npm:^6.5.9":
   version: 6.5.9
   resolution: "@storybook/preview-web@npm:6.5.9"
   dependencies:
@@ -4468,9 +4468,9 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:^14.0.10 || ^16.0.0, @types/node@npm:^14.14.20 || ^16.0.0":
-  version: 16.11.45
-  resolution: "@types/node@npm:16.11.45"
-  checksum: 57d61c951024f66d796e71e4a972faef266007398cd4e93a195822fea2d5deb41d0615f394a99ece89772b145ff057321d138c7e3442455dc7d785ff67cebde3
+  version: 16.11.46
+  resolution: "@types/node@npm:16.11.46"
+  checksum: 9fff6b70fc8a47019c28f080ead5484bd4620fad1d25bfa3c55ebe444a1adbb7e339db5fcc33227d8a272232039221a31bf0b026c1b77410c49760976fa4cce1
   languageName: node
   linkType: hard
 
@@ -7724,7 +7724,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.30001109, caniuse-lite@npm:^1.0.30001335, caniuse-lite@npm:^1.0.30001370":
+"caniuse-lite@npm:^1.0.30001109":
+  version: 1.0.30001372
+  resolution: "caniuse-lite@npm:1.0.30001372"
+  checksum: 21d3508a6aa741ac7b2c5a16376d42e3d6451fa069ca5714ba85c0f4f87eb3e951f7e6a29c53e9ca11dbad5f2b6ad0518346f39a64cb7abf0aecde5bfec3b029
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001335, caniuse-lite@npm:^1.0.30001370":
   version: 1.0.30001370
   resolution: "caniuse-lite@npm:1.0.30001370"
   checksum: 28e1fd4d623a52945220b189b703556178ec8a185d317e4ae2557a24f68f88bd8168db67700970164690dbf7d29df69efbd318b54457b335a4361314bb530792
@@ -11819,11 +11826,19 @@ __metadata:
     "@babel/core": ^7.18.9
     "@mdx-js/react": ^1.6.22
     "@storybook/addon-actions": ^6.5.9
+    "@storybook/addon-backgrounds": ^6.5.9
     "@storybook/addon-docs": ^6.5.9
     "@storybook/addon-essentials": ^6.5.9
     "@storybook/addon-interactions": ^6.5.9
     "@storybook/addon-links": ^6.5.9
-    "@storybook/builder-vite": ^0.2.0
+    "@storybook/addon-measure": ^6.5.9
+    "@storybook/addon-outline": ^6.5.9
+    "@storybook/addons": ^6.5.9
+    "@storybook/builder-vite": ^0.2.2
+    "@storybook/channel-postmessage": ^6.5.9
+    "@storybook/channel-websocket": ^6.5.9
+    "@storybook/client-api": ^6.5.9
+    "@storybook/preview-web": ^6.5.9
     "@storybook/react": ^6.5.9
     "@storybook/testing-library": ^0.0.13
     "@types/react": ^18.0.15
@@ -11881,6 +11896,10 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.6.0
     "@typescript-eslint/parser": ^5.6.0
     "@vitejs/plugin-react": ^1.3.0
+    babel-cli: ^6.26.0
+    babel-preset-es2015: ^6.24.1
+    babel-preset-react: ^6.24.1
+    babel-register: ^6.26.0
     dayjs: ^1.11.3
     eslint: ^8.2.0
     eslint-config-prettier: ^8.3.0
@@ -11921,6 +11940,10 @@ __metadata:
     "@vitejs/plugin-react": ^1.3.0
     autoprefixer: ^10.4.4
     axios: ^0.26.1
+    babel-cli: ^6.26.0
+    babel-preset-es2015: ^6.24.1
+    babel-preset-react: ^6.24.1
+    babel-register: ^6.26.0
     browser-detect: ^0.2.28
     cookie: ^0.5.0
     firebase: ^9.9.0

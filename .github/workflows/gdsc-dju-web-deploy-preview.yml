@@ -36,12 +36,13 @@ jobs:
           echo "VITE_FIREBASE_MEASUREMENT_ID=${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}" >> .env
           cat .env
         working-directory: ${{ env.working-directory }}
-      - name: Root yarn install
+      - name: Yarn install
         run: yarn install
-      - name: Project yarn install
-        run: yarn install
-      - name: yarn build
+      - name: Project Build
         run: yarn build
+        working-directory: ${{ env.working-directory }}
+      - name: sitemap-package
+        run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register
         working-directory: ${{ env.working-directory }}
       - name: Get short SHA
         id: slug
