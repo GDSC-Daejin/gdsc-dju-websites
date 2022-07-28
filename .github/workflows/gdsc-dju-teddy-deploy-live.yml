@@ -1,0 +1,60 @@
+name: Deploy to GDSC DJU TEDDY Live Channel
+
+on:
+  pull_request:
+    branches:
+      - master
+    types:
+      - closed
+    paths:
+      - "packages/gdsc-dju-teddy/**"
+      - ".github/workflows/gdsc-dju-teddy-deploy-live.yml"
+jobs:
+  Deploy_Live_channel:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./packages/gdsc-dju-teddy
+    environment:
+      name: GDSC DJU Teddy Production
+      url: https://teddy.gdsc-dju.com
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setting .env
+        run: |
+          echo "VITE_FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }}" >> .env
+          echo "VITE_FIREBASE_AUTH_DOMAIN=${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}" >> .env
+          echo "VITE_FIREBASE_DATABASE_URL=${{ secrets.VITE_FIREBASE_DATABASE_URL }}" >> .env
+          echo "VITE_FIREBASE_PROJECT_ID=${{ secrets.VITE_FIREBASE_PROJECT_ID }}" >> .env
+          echo "VITE_FIREBASE_STORAGE_BUCKET=${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}" >> .env
+          echo "VITE_FIREBASE_MESSAGING_SENDER_ID=${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}" >> .env
+          echo "VITE_FIREBASE_APPID=${{ secrets.VITE_FIREBASE_APPID }}" >> .env
+          echo "VITE_FIREBASE_MEASUREMENT_ID=${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}" >> .env
+          cat .env
+        working-directory: ${{ env.working-directory }}
+      - name: install package
+        run: yarn install
+      - name: Project Build
+        run: yarn build
+        working-directory: ${{ env.working-directory }}
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        id: run_firebase_deploy
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GDSC_DJU }}'
+          channelId: live
+          projectId: gdsc-dju
+          target: gdsc-dju-teddy
+          entryPoint: './packages/gdsc-dju-teddy'
+      - name: Discord Message Notify
+        uses: appleboy/discord-action@0.0.3
+        with:
+          webhook_id: ${{ secrets.DISCORD_TEDDY_WEBHOOK_ID }}
+          webhook_token: ${{ secrets.DISCORD_TEDDY_WEBHOOK_TOKEN }}
+          color: "#4285f4"
+          args: |
+            gdsc-dju-teddy has been deployed to Live channel
+            `Contributor` ${{github.actor}}
+            `Event Status` ${{github.event_name}}
+            `URL` https://teddy.gdsc-dju.com
+            `Build Time` ${{steps.run_firebase_deploy.outputs.expire_time}}
