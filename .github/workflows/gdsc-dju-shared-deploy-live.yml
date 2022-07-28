@@ -36,6 +36,8 @@ jobs:
         run: yarn install
       - name: Project Build
         run: yarn build
+      - name: sitemap-package
+        run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register
         working-directory: ${{ env.working-directory }}
       - name: Generate sitemap
         run: node sitemap-builder.js
