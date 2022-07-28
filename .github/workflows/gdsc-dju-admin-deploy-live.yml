@@ -62,5 +62,5 @@ jobs:
             gdsc-dju-admin has been deployed to Live channel
             `Contributor` ${{github.actor}}
             `Event Status` ${{github.event_name}}
-            `URL` https://gdsc-dju-admin.web.app
+            `URL` https://admin.gdsc-dju.com
             `Build Time` ${{steps.run_firebase_deploy.outputs.expire_time}}

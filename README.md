@@ -13,15 +13,15 @@
 
 GDSC Daejin Univ. 에서 관리되는 서비스의 모노레포입니다.
 
-[GDSC DJU WEB](https://gdsc-dju.web.app/) 소개사이트
+[GDSC DJU WEB](https://web.gdsc-dju.com) 소개사이트
 
-[GDSC DJU SHARED](https://gdsc-dju-share.web.app/) 이벤트 사이트
+[GDSC DJU SHARED](https://shared.gdsc-dju.com) 이벤트 사이트
 
-[GDSC DJU BLOG](https://gdsc-dju-blog.web.app/) 기술 블로그(개발중)
+[GDSC DJU BLOG](https://blog.gdsc-dju.com) 기술 블로그(개발중)
 
-[GDSC DJU HEY TEDDY](https://hey-teddy.vercel.app/) 칭찬 시스템
+[GDSC DJU HEY TEDDY](https://teddy.gdsc-dju.com) 칭찬 시스템
 
-[GDSC DJU DESIGN SYSTEM](https://gdsc-dju-design.web.app/?) 디자인 시스템
+[GDSC DJU DESIGN SYSTEM](https://design.gdsc-dju.com) 디자인 시스템
 
 ## Git Flow / Commit convention rule
 

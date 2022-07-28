@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from 'react-query';
 import TokenService from '../TokenService';
 import UserService from '../UserService';
 
