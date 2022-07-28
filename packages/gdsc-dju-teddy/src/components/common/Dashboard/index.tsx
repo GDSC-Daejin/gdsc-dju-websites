@@ -1,18 +1,18 @@
-import React, { Suspense, useState } from 'react';
-import { userDataType, userStateDataType } from '../../../types';
-import { ContainerInner, LayoutContainer } from '../../../styles/layouts';
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
+import React, { useState } from 'react';
+import API from '../../../api';
 import {
   Background,
   CardElementWrapper,
   CardList,
 } from '../../../pages/Home/styled';
+import { ContainerInner, LayoutContainer } from '../../../styles/layouts';
+import { userDataType, userStateDataType } from '../../../types';
 import OutsideClickHandler from '../../../utils/OutSideClickHandler';
-import DetailMemberCard from '../DetailMemberCard';
-import { listAnimate, listItemAnimate } from '../motions/variants';
-import MemberCard from '../MemberCard';
-import API from '../../../api';
 import GoogleSpinner from '../../GoogleSpinner';
+import DetailMemberCard from '../DetailMemberCard';
+import MemberCard from '../MemberCard';
+import { listAnimate, listItemAnimate } from '../motions/variants';
 
 const Dashboard: React.FC<{ scoreboard: userDataType[] | undefined }> = ({
   scoreboard,

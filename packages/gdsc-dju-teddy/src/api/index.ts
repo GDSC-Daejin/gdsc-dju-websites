@@ -1,10 +1,5 @@
 import axios from 'axios';
-import {
-  rowScoreBoardType,
-  rowUserStateDataType,
-  scoreBoardType,
-  userStateDataType,
-} from '../types';
+import { rowScoreBoardType, rowUserStateDataType } from '../types';
 
 export class TeddyBearApi {
   private API: string;
