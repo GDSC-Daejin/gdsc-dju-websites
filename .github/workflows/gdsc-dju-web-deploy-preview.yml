@@ -18,7 +18,7 @@ jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest
     env:
-      working-directory: ./packages/gdsc-dju-web
+      working-directory: ./packages/@gdscdju/gdsc-dju-web
     environment:
       name: GDSC DJU Web Preview
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
@@ -54,7 +54,7 @@ jobs:
           projectId: gdsc-dju
           expires: 3d
           channelId: ' ${{ steps.slug.outputs.sha8 }}-${{ github.event.pull_request.head.ref }} '
-          entryPoint: './packages/gdsc-dju-web'
+          entryPoint: './packages/@gdscdju/gdsc-dju-web'
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
       - name: Discord Message Notify
