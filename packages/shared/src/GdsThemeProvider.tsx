@@ -1,9 +1,9 @@
 import React from 'react';
 import { DefaultTheme, ThemeProvider } from 'styled-components';
 import { DarkModeContext } from './DarkModeContext';
-import { ColorScheme } from './styles/colors/types';
-import { fontSize } from './styles/fontSize';
 import { colors } from './styles';
+import { ColorScheme, SemanticColorScheme } from './styles/colors/types';
+import { fontSize } from './styles/fontSize';
 import { windowSize } from './styles/windowSize';
 
 import { BehaviorMode, getThemeName } from './types/utils';
@@ -14,12 +14,14 @@ interface ThemeProviderProps {
   mode: BehaviorMode;
 }
 
+export type GdsTheme = {
+  colors: SemanticColorScheme & ColorScheme;
+  windowSize: typeof windowSize;
+  fontSize: typeof fontSize;
+};
+
 declare module 'styled-components' {
-  export interface DefaultTheme {
-    colors: ColorScheme;
-    windowSize: typeof windowSize;
-    fontSize: typeof fontSize;
-  }
+  export interface DefaultTheme extends GdsTheme {}
 }
 
 export const GdsThemeProvider: React.FC<ThemeProviderProps> = ({

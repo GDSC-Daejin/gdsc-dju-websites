@@ -16,7 +16,7 @@ export function isColorGroup(str: string): str is ColorGroup {
 
 type MakeColorTokenSet<
   TokenName extends ColorGroup,
-  TokenNumber extends number[],
+  TokenNumber extends number[] | string[],
 > = `${TokenName}${TokenNumber[number]}`;
 
 export type ColorToken =
@@ -30,10 +30,9 @@ export type ColorToken =
 
 export type ColorScheme = Record<ColorToken, string>;
 
-export type SemanticColor = {
+export type SemanticColorScheme = {
   background: ColorToken | string;
   backgroundLow: ColorToken | string;
 };
-export type SemanticColorKey = keyof SemanticColor;
 
-export type ColorTheme = ColorScheme | SemanticColor;
+export type ColorTheme = ColorScheme & SemanticColorScheme;
