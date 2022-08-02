@@ -1,3 +1,5 @@
+import { ColorToken } from '@gdscdju/shared';
+
 export const position: PositionType = {
   frontend: 'blue900',
   backend: 'red900',
@@ -7,17 +9,9 @@ export const position: PositionType = {
   // ml: 'Machine Learning',
 } as const;
 interface PositionType {
-  [x: string]: string;
+  [x: string]: ColorToken;
 }
 
 export function positionColorHandler(input: string) {
-  const positionKey = Object.keys(position);
-  const inputToLowerCase = input.toLowerCase();
-  let result = '#fff';
-  positionKey.map((key) => {
-    if (inputToLowerCase.includes(key)) {
-      result = position[key as keyof typeof position];
-    }
-  });
-  return result;
+  return position[input.toLowerCase() as keyof typeof position];
 }

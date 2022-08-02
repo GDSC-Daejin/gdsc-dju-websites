@@ -99,7 +99,7 @@ const lightSemanticScheme = {
     '0 0.8px 2px rgba(0,0,0,0.03), 0 2.7px 6.7px rgba(0,0,0,0.05),0 12px 30px rgba(0,0,0,0.1)',
 };
 const darkSemanticScheme = {
-  background: '#111111',
+  background: '#202124',
   backgroundLow: 'grey100',
   boxShadow100:
     '0 0.8px 2px rgba(0,0,0,0.03), 0 2.7px 6.7px rgba(0,0,0,0.05),0 12px 30px rgba(0,0,0,0.1)',

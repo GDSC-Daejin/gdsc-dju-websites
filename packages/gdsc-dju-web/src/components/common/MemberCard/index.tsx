@@ -1,3 +1,7 @@
+import {
+  ColorScheme,
+  ColorToken,
+} from '@gdscdju/shared/src/styles/colors/types';
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import React, { memo, useState } from 'react';
 import { useLocation } from 'react-router';
@@ -48,13 +52,17 @@ const MemberCardImage = styled(motion.img)<{ isSquare: boolean }>`
       height: 250px;
     `}
 `;
-const Position = styled(motion.p)<{ positionColor?: string }>`
+const Position = styled(motion.p)<{ positionColor: ColorToken | undefined }>`
   height: 24px;
   margin: 0 0 8px 0;
   overflow-y: hidden;
   font-size: ${({ theme }) => theme.fontSize.body2};
   line-height: 24px;
-  color: ${({ positionColor }) => positionColor};
+  ${({ positionColor }) =>
+    positionColor &&
+    css`
+      color: ${({ theme }) => theme.colors[positionColor]};
+    `};
 `;
 const Nickname = styled(motion.p)`
   margin: 0 0 8px 0;
@@ -80,7 +88,7 @@ const Role = styled(motion.p)`
 const CardText = styled(motion.div)`
   margin-top: 8px;
   font-size: ${({ theme }) => theme.fontSize.body1};
-  color: ${({ theme }) => theme.colors.white};
+  color: #fff;
   display: block;
 `;
 const CardTextWrapper = styled(motion.div)<{ isClicked?: boolean }>`
