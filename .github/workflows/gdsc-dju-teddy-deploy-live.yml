@@ -14,7 +14,7 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
-      working-directory: ./packages/@gdscdju/gdsc-dju-teddy
+      working-directory: ./packages/gdsc-dju-teddy
     environment:
       name: GDSC DJU Teddy Production
       url: https://teddy.gdsc-dju.com
@@ -45,7 +45,7 @@ jobs:
           channelId: live
           projectId: gdsc-dju
           target: gdsc-dju-teddy
-          entryPoint: './packages/@gdscdju/gdsc-dju-teddy'
+          entryPoint: './packages/gdsc-dju-teddy'
       - name: Discord Message Notify
         uses: appleboy/discord-action@0.0.3
         with:

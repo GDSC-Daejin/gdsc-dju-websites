@@ -6531,9 +6531,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gdsc-dju-admin@workspace:packages/@gdscdju/gdsc-dju-admin":
+"gdsc-dju-admin@workspace:packages/gdsc-dju-admin":
   version: 0.0.0-use.local
-  resolution: "gdsc-dju-admin@workspace:packages/@gdscdju/gdsc-dju-admin"
+  resolution: "gdsc-dju-admin@workspace:packages/gdsc-dju-admin"
   dependencies:
     "@emailjs/browser": ^3.6.2
     "@firebase/app": ^0.7.29
@@ -6592,9 +6592,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"gdsc-dju-shared@workspace:packages/@gdscdju/gdsc-dju-shared":
+"gdsc-dju-shared@workspace:packages/gdsc-dju-shared":
   version: 0.0.0-use.local
-  resolution: "gdsc-dju-shared@workspace:packages/@gdscdju/gdsc-dju-shared"
+  resolution: "gdsc-dju-shared@workspace:packages/gdsc-dju-shared"
   dependencies:
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6
@@ -6633,9 +6633,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"gdsc-dju-teddy@workspace:packages/@gdscdju/gdsc-dju-teddy":
+"gdsc-dju-teddy@workspace:packages/gdsc-dju-teddy":
   version: 0.0.0-use.local
-  resolution: "gdsc-dju-teddy@workspace:packages/@gdscdju/gdsc-dju-teddy"
+  resolution: "gdsc-dju-teddy@workspace:packages/gdsc-dju-teddy"
   dependencies:
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6
@@ -6660,9 +6660,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"gdsc-dju-web@workspace:packages/@gdscdju/gdsc-dju-web":
+"gdsc-dju-web@workspace:packages/gdsc-dju-web":
   version: 0.0.0-use.local
-  resolution: "gdsc-dju-web@workspace:packages/@gdscdju/gdsc-dju-web"
+  resolution: "gdsc-dju-web@workspace:packages/gdsc-dju-web"
   dependencies:
     "@firebase/app": ^0.7.28
     "@firebase/app-compat": ^0.1.29
