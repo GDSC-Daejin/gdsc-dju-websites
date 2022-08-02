@@ -1,9 +1,9 @@
+import { ColorToken } from '@gdscdju/shared';
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
-import { lightColors } from '../../styles/lightColors';
 
 export const HomeSectionContainer = styled(motion.div)<{
-  color?: keyof typeof lightColors;
+  color?: ColorToken;
 }>`
   flex: 1;
   display: flex;
@@ -14,7 +14,7 @@ export const HomeSectionContainer = styled(motion.div)<{
   ${({ color }) =>
     color &&
     css`
-      background: ${(props) => props.theme.colors[color]};
+      background: ${({ theme }) => theme.colors[color]};
     `};
 `;
 export const HomeSectionContainerInner = styled(motion.div)`

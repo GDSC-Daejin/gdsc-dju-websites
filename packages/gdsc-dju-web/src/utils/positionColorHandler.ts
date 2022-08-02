@@ -1,11 +1,9 @@
-import { lightColors } from '../styles/lightColors';
-
 export const position: PositionType = {
-  frontend: lightColors.googleBlue,
-  backend: lightColors.googleRed,
-  android: lightColors.googleGreen,
-  beginner: lightColors.orange900,
-  designer: lightColors.googleYellow,
+  frontend: 'blue900',
+  backend: 'red900',
+  android: 'green900',
+  beginner: 'orange900',
+  designer: 'yellow900',
   // ml: 'Machine Learning',
 } as const;
 interface PositionType {

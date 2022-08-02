@@ -1,32 +1,33 @@
+import { ColorToken } from '@gdscdju/shared';
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
-import { lightColors } from '../styles/lightColors';
 
 export const StyledRecruitmentButton = styled.button<{ disable?: boolean }>`
   width: 22rem;
   height: 6rem;
   border-radius: 7.5rem;
   border-style: solid;
-  background: ${({ theme }) => theme.colors.tossBlueActive};
+  background: ${({ theme }) => theme.colors.blue600};
+
   border-width: 0;
   color: white;
-  font-size: 1.6rem;
+  font-size: ${({ theme }) => theme.fontSize.body1};
   cursor: pointer;
   ${({ disable }) =>
     disable &&
     css`
-      background: ${({ theme }) => theme.colors.tossBlue200};
+      background: ${({ theme }) => theme.colors.blue200};
       cursor: not-allowed;
     `};
   @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
     width: 18rem;
     height: 5.5rem;
-    font-size: 1.5rem;
+    font-size: ${({ theme }) => theme.fontSize.body2};
   }
   @media (max-width: 500px) {
     width: 150px;
     height: 45px;
-    font-size: 1.3rem;
+    font-size: ${({ theme }) => theme.fontSize.body3};
   }
 `;
 
@@ -61,7 +62,7 @@ export const GoogleColorTextWrapper = styled.div`
   flex-direction: row;
 `;
 export const GoogleColorText = styled.h1<{
-  color?: keyof typeof lightColors;
+  color?: ColorToken;
 }>`
   font-size: 70px;
   font-weight: bold;
@@ -80,10 +81,7 @@ export const MainBannerText = styled(motion.p)`
   font-size: ${({ theme }) => theme.fontSize.body1};
   color: ${({ theme }) => theme.colors.grey500};
   @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
-    font-size: 1.5rem;
-  }
-  @media (max-width: 320px) {
-    font-size: 1.5rem;
+    font-size: ${({ theme }) => theme.fontSize.body2};
   }
 `;
 export const HomeSolarSystemWrapper = styled.div`

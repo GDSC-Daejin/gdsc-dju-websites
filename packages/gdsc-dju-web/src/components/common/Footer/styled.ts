@@ -17,32 +17,32 @@ export const FooterContent = styled.div`
 `;
 
 export const FooterText = styled.a<{ google?: boolean }>`
-  font-size: ${(props) => props.theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSize.body2};
   font-weight: 600;
   margin-right: 20px;
-  color: ${(props) => props.theme.colors.grey600};
+  color: ${({ theme }) => theme.colors.grey600};
   cursor: pointer;
   white-space: nowrap;
-  @media (max-width: ${(props) => props.theme.windowSize.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
     margin-top: 10px;
   }
   ${(props) =>
     props.google &&
     css`
-      font-size: ${(props) => props.theme.fontSize.h7};
+      font-size: ${({ theme }) => theme.fontSize.h7};
       font-weight: 700;
-      color: ${(props) => props.theme.colors.grey700};
+      color: ${({ theme }) => theme.colors.grey700};
     `}
 `;
 
 export const FooterCopyRight = styled.span`
   display: inline-block;
   position: relative;
-  font-size: ${(props) => props.theme.fontSize.body3};
-  color: ${(props) => props.theme.colors.grey600};
+  font-size: ${({ theme }) => theme.fontSize.body3};
+  color: ${({ theme }) => theme.colors.grey600};
   white-space: nowrap;
-  @media (max-width: ${(props) => props.theme.windowSize.mobile}px) {
-    font-size: ${(props) => props.theme.fontSize.body4};
+  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
+    font-size: ${({ theme }) => theme.fontSize.body4};
   }
 `;
 export const FooterWrapper = styled.div`
@@ -55,7 +55,7 @@ export const FooterWrapper = styled.div`
   align-items: flex-end;
   background-color: rgba(0, 0, 0, 0.01);
   backdrop-filter: blur(10px);
-  @media (max-width: ${(props) => props.theme.windowSize.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
     padding: 30px 20px;
   }
 `;
@@ -64,7 +64,7 @@ export const FooterLogo = styled.div`
   align-items: center;
   flex-direction: row;
   flex: 1;
-  @media (max-width: ${(props) => props.theme.windowSize.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
     height: 100%;
     flex-direction: column;
     justify-content: flex-start;

@@ -14,7 +14,7 @@ export const CategoryWrapper = styled(motion.div)`
     clip-path: inset(0% round 1%);
     background: ${({ theme }) => theme.colors.grey100};
   }
-  @media (max-width: ${(props) => props.theme.windowSize.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
     margin-right: 10px;
   }
   @media (max-width: 500px) {
@@ -60,13 +60,13 @@ export const SubCategory = styled.div`
   width: 300px;
   font-size: 1.3rem;
   color: ${({ theme }) => theme.colors.grey600};
-  @media (max-width: ${(props) => props.theme.windowSize.desk}px) {
+  @media (max-width: ${({ theme }) => theme.windowSize.desk}px) {
     width: 300px;
   }
-  @media (max-width: ${(props) => props.theme.windowSize.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
     width: 200px;
   }
-  @media (max-width: ${(props) => props.theme.windowSize.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
     width: 200px;
   }
 `;
@@ -94,13 +94,13 @@ export const Category = styled.div`
   width: 500px;
   font-size: 1.8rem;
   color: ${({ theme }) => theme.colors.grey800};
-  @media (max-width: ${(props) => props.theme.windowSize.desk}px) {
+  @media (max-width: ${({ theme }) => theme.windowSize.desk}px) {
     width: 500px;
   }
-  @media (max-width: ${(props) => props.theme.windowSize.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
     width: 300px;
   }
-  @media (max-width: ${(props) => props.theme.windowSize.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
     width: 200px;
   }
   @media (max-width: 320px) {

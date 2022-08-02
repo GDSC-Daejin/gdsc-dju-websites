@@ -955,7 +955,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gdscdju/shared@workspace:^0.0.0, @gdscdju/shared@workspace:packages/shared":
+"@gdscdju/shared@^0.0.0, @gdscdju/shared@workspace:packages/shared":
   version: 0.0.0-use.local
   resolution: "@gdscdju/shared@workspace:packages/shared"
   dependencies:
@@ -6678,6 +6678,7 @@ __metadata:
   dependencies:
     "@firebase/app": ^0.7.28
     "@firebase/app-compat": ^0.1.29
+    "@gdscdju/shared": ^0.0.0
     "@types/lodash": ^4.14.181
     "@types/node": ^18.0.4
     "@types/react": ^18.0.15
@@ -13304,7 +13305,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "vite-project@workspace:packages/vite-project"
   dependencies:
-    "@gdscdju/shared": "workspace:^0.0.0"
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6
     "@types/styled-components": ^5.1.25

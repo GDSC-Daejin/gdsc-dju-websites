@@ -18,12 +18,12 @@ export const AlertInnerWrapper = styled.div<{ alertColor: string }>`
     `}
 `;
 export const AlertText = styled.div`
-  font-size: ${(props) => props.theme.fontSize.h7};
+  font-size: ${({ theme }) => theme.fontSize.h7};
   opacity: 100%;
   margin-left: 5px;
   display: flex;
   align-items: center;
-  color: ${(props) => props.theme.colors.grey900};
+  color: ${({ theme }) => theme.colors.grey900};
   @media (max-width: 500px) {
     font-size: ${({ theme }) => theme.fontSize.body1};
   }

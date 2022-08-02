@@ -16,15 +16,15 @@ export const ApplyCardBlueLine = styled.div`
   height: 10px;
   width: calc(100% + 80px);
   top: -20px;
-  background: ${(props) => props.theme.colors.googleBlue};
+  background: ${({ theme }) => theme.colors.blue900};
 `;
 export const ApplyCardInner = styled.div`
   display: flex;
   flex-direction: column;
 `;
 export const ApplyCardContent = styled.p`
-  font-size: ${(props) => props.theme.fontSize.body2};
-  color: ${(props) => props.theme.colors.grey800};
+  font-size: ${({ theme }) => theme.fontSize.body2};
+  color: ${({ theme }) => theme.colors.grey800};
   min-width: 70px;
   &:first-child {
     margin-top: 0;

@@ -1,7 +1,10 @@
 import React from 'react';
 import { useLocation } from 'react-router';
 import GDSCLogo from '../../../../assets/logos/GDSCLogo.svg';
+import ThemeToggleButton from '../../../ThemeToggleButton';
 import MenuToggleIcon from '../../MenuToggleIcon';
+import DeskNavCategory from '../DeskNavCategory';
+import MobileMenu from '../MobileMenu';
 import {
   NavDesign,
   NavInner,
@@ -14,10 +17,6 @@ import {
   StyledLogo,
   StyledLogoWrapper,
 } from './styled';
-import DeskNavCategory from '../DeskNavCategory';
-import MobileMenu from '../MobileMenu';
-import ThemeToggleButton from '../../../ThemeToggleButton';
-import { ThemeType } from '../../../../hooks/useTheme';
 
 export const ROUTES = [
   {
@@ -33,25 +32,12 @@ export const ROUTES = [
     title: 'FAQ',
   },
 ];
-export const Navigation: React.FC<{
-  theme: ThemeType | undefined;
-  toggleTheme: () => void;
-}> = ({ theme, toggleTheme }) => {
+export const Navigation: React.FC = () => {
   const location = useLocation();
   const checkLocation = location.pathname == ('/' || '/main');
-  const disableNavigation = () => {
-    let result = false;
-    if (location.pathname.includes('auth')) {
-      result = true;
-    }
-    if (location.pathname.includes('admin')) {
-      result = true;
-    }
-    return result;
-  };
 
   return (
-    <NavDesign background={checkLocation} disable={disableNavigation()}>
+    <NavDesign background={checkLocation}>
       <NavWrapper>
         <NavInner>
           <NavTaskWrapper>
@@ -65,7 +51,7 @@ export const Navigation: React.FC<{
               <DeskNavCategory />
             </NavTask>
           </NavTaskWrapper>
-          <ThemeToggleButton theme={theme} toggleButton={toggleTheme} />
+          <ThemeToggleButton />
           <MenuToggleIcon />
         </NavInner>
       </NavWrapper>

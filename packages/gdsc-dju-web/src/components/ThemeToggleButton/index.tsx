@@ -1,8 +1,8 @@
-import React from 'react';
+import { DarkModeContext } from '@gdscdju/shared/src/DarkModeContext';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import DarkModeIcon from '../../assets/icons/darkModeIcon';
 import LightModeIcon from '../../assets/icons/lightModeIcon';
-import { ThemeType } from '../../hooks/useTheme';
 
 const ThemeButton = styled.button`
   padding: 7px;
@@ -13,13 +13,11 @@ const ThemeButton = styled.button`
   cursor: pointer;
 `;
 
-const ThemeToggleButton: React.FC<{
-  theme: ThemeType | undefined;
-  toggleButton: () => void;
-}> = ({ theme, toggleButton }) => {
+const ThemeToggleButton = () => {
+  const { isDarkMode, toggleTheme } = useContext(DarkModeContext);
   return (
-    <ThemeButton onClick={toggleButton}>
-      {theme === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
+    <ThemeButton onClick={toggleTheme}>
+      {isDarkMode ? <LightModeIcon /> : <DarkModeIcon />}
     </ThemeButton>
   );
 };

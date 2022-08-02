@@ -20,8 +20,8 @@ export const NavDesign = styled(motion.nav)<{
         `
       : css`
           background: ${({ theme }) => theme.colors.background};
-          box-shadow: 0 4px 30px ${({ theme }) => theme.colors.greyOpacity100};
-          border-bottom: 1px solid ${(props) => props.theme.colors.grey200};
+          box-shadow: 0 4px 30px rgba(0, 0, 255, 0.1);
+          border-bottom: 1px solid ${({ theme }) => theme.colors.grey200};
         `}
   ${(props) =>
     props.disable &&
@@ -53,21 +53,21 @@ export const StyledImg = styled.img`
   padding: 0 8px;
 `;
 export const StyledLogo = styled.div`
-  color: ${(props) => props.theme.colors.grey800};
+  color: ${({ theme }) => theme.colors.grey800};
   margin-right: 5px;
   font-weight: bold;
   font-size: 2rem;
 `;
 export const SchoolNameUni = styled.div`
-  color: ${(props) => props.theme.colors.grey600};
-  font-size: ${(props) => props.theme.fontSize.body3};
+  color: ${({ theme }) => theme.colors.grey600};
+  font-size: ${({ theme }) => theme.fontSize.body3};
   margin-top: 4px;
   margin-right: 5px;
   font-weight: 500;
 `;
 export const SchoolName = styled.div`
-  color: ${(props) => props.theme.colors.grey600};
-  font-size: ${(props) => props.theme.fontSize.body3};
+  color: ${({ theme }) => theme.colors.grey600};
+  font-size: ${({ theme }) => theme.fontSize.body3};
   margin-top: 4px;
   margin-right: 3px;
   display: flex;
@@ -76,7 +76,7 @@ export const SchoolName = styled.div`
 export const WideNavigation = styled.div`
   z-index: 999;
   margin-left: 20px;
-  @media (max-width: ${(props) => props.theme.windowSize.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
     display: none;
   }
 `;
@@ -108,10 +108,10 @@ export const StyledLink = styled(motion.div)<{ isRoute?: boolean }>`
   ${({ isRoute }) =>
     isRoute &&
     css`
-      color: ${({ theme }) => theme.colors.tossBlueActive};
+      color: ${({ theme }) => theme.colors.blue900};
     `};
   &:hover {
-    color: ${({ theme }) => theme.colors.tossBlueActive};
+    color: ${({ theme }) => theme.colors.blue600};
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     text-decoration: none;
@@ -123,7 +123,7 @@ export const NavTask = styled.li`
   align-items: center;
   margin: 0 5px;
   cursor: pointer;
-  color: ${(props) => props.theme.colors.grey800};
+  color: ${({ theme }) => theme.colors.grey800};
   font-size: 1.4rem;
   font-weight: 500;
   word-break: keep-all;
@@ -138,18 +138,4 @@ export const NavTaskWrapper = styled.ul`
   align-items: center;
   list-style: none;
   padding-left: 0;
-`;
-export const NavIconWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  margin-right: 15px;
-  padding: 7px 7px;
-  border-radius: 10px;
-  transition-delay: 0.05s;
-  transition-duration: 0.2s;
-  transition-timing-function: ease;
-  :hover {
-    background: ${(props) => props.theme.colors.grey100};
-    cursor: pointer;
-  }
 `;

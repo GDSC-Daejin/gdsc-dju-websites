@@ -6,33 +6,33 @@ export const StyledInputInner = styled.input<{ disabled?: boolean }>`
   border: 0;
   border-radius: 10px;
   height: 48px;
-  font-size: ${(props) => props.theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSize.body1};
   outline: none;
   width: 100%;
   flex-grow: 1;
   background: none;
   font-weight: 400;
   box-sizing: border-box;
-  color: ${(props) => props.theme.colors.grey700};
+  color: ${({ theme }) => theme.colors.grey700};
   &::placeholder {
-    color: ${(props) => props.theme.colors.grey400};
+    color: ${({ theme }) => theme.colors.grey400};
     font-weight: 300;
   }
   ${(props) =>
     props.disabled &&
     css`
-      background: ${(props) => props.theme.colors.grey100};
-      color: ${(props) => props.theme.colors.grey400};
+      background: ${({ theme }) => theme.colors.grey100};
+      color: ${({ theme }) => theme.colors.grey400};
     `}
 `;
 export const StyledFileInput = styled.div`
-  color: ${(props) => props.theme.colors.grey500};
+  color: ${({ theme }) => theme.colors.grey500};
   cursor: pointer;
   overflow: hidden;
   white-space: nowrap;
   flex-grow: 1;
   font-weight: 300;
-  font-size: ${(props) => props.theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSize.body1};
   padding: 0 18px;
 `;
 
@@ -51,22 +51,22 @@ export const StyledInputWrapper = styled.div<{
   outline: none;
   appearance: none;
   border-radius: 10px;
-  box-shadow: inset 0 0 0 1px ${(props) => props.theme.colors.grey300};
+  box-shadow: inset 0 0 0 1px ${({ theme }) => theme.colors.grey300};
   cursor: auto;
   &:hover {
-    box-shadow: inset 0 0 0 2px ${(props) => props.theme.colors.tossBlue200};
+    box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.blue200};
     ${(props) =>
       props.error &&
       css`
-        box-shadow: inset 0 0 0 2px ${props.theme.colors.tossRed};
+        box-shadow: inset 0 0 0 2px ${props.theme.colors.red900};
       `}
   }
   .formInput:focus {
-    box-shadow: inset 0 0 0 2px ${(props) => props.theme.colors.tossBlue500};
+    box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.blue600};
     ${(props) =>
       props.error &&
       css`
-        box-shadow: inset 0 0 0 2px ${props.theme.colors.tossRed}!important;
+        box-shadow: inset 0 0 0 2px ${props.theme.colors.red900}!important;
       `}
   }
   ${({ disabled }) =>
@@ -79,7 +79,7 @@ export const StyledInputWrapper = styled.div<{
   ${({ error }) =>
     error &&
     css`
-      box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.tossRed};
+      box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.red900};
     `}
   transition: 0.3s;
 `;
@@ -96,8 +96,8 @@ export const ErrorBox = styled.div`
   height: 20px;
   display: flex;
   align-items: center;
-  color: ${(props) => props.theme.colors.tossRed};
-  font-size: ${(props) => props.theme.fontSize.body2};
+  color: ${({ theme }) => theme.colors.red900};
+  font-size: ${({ theme }) => theme.fontSize.body2};
   padding-left: 5px;
 `;
 export const StyledInput = styled.input<{
@@ -110,49 +110,49 @@ export const StyledInput = styled.input<{
   border: 0;
   border-radius: 10px;
   height: 50px;
-  font-size: ${(props) => props.theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSize.body1};
   outline: none;
   flex-grow: 1;
   background: none;
   font-weight: 400;
-  color: ${(props) => props.theme.colors.grey700};
+  color: ${({ theme }) => theme.colors.grey700};
   box-sizing: border-box;
-  box-shadow: inset 0 0 0 1px ${(props) => props.theme.colors.grey300};
+  box-shadow: inset 0 0 0 1px ${({ theme }) => theme.colors.grey300};
   cursor: text;
   &::placeholder {
-    color: ${(props) => props.theme.colors.grey400};
+    color: ${({ theme }) => theme.colors.grey400};
     font-weight: 300;
   }
   &:hover {
-    box-shadow: inset 0 0 0 2px ${(props) => props.theme.colors.tossBlue200};
+    box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.blue200};
     ${(props) =>
       props.error &&
       css`
-        box-shadow: inset 0 0 0 2px ${props.theme.colors.tossRed};
+        box-shadow: inset 0 0 0 2px ${props.theme.colors.red900};
       `}
   }
   &:focus {
     box-sizing: border-box;
-    box-shadow: inset 0 0 0 2px ${(props) => props.theme.colors.tossBlue500};
+    box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.blue600};
     ${(props) =>
       props.error &&
       css`
-        box-shadow: inset 0 0 0 2px ${props.theme.colors.tossRed}!important;
+        box-shadow: inset 0 0 0 2px ${props.theme.colors.red900}!important;
       `}
   }
   ${(props) =>
     props.disabled &&
     css`
-      background: ${(props) => props.theme.colors.grey100};
+      background: ${({ theme }) => theme.colors.grey100};
       &:hover {
-        box-shadow: inset 0 0 0 1px ${(props) => props.theme.colors.grey300};
+        box-shadow: inset 0 0 0 1px ${({ theme }) => theme.colors.grey300};
         cursor: not-allowed;
       }
     `}
   ${(props) =>
     props.error &&
     css`
-      box-shadow: inset 0 0 0 2px ${props.theme.colors.tossRed};
+      box-shadow: inset 0 0 0 2px ${props.theme.colors.red900};
     `}
   transition: 0.3s;
 `;

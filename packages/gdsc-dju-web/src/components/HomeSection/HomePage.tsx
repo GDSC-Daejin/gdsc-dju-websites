@@ -21,10 +21,10 @@ const HomePage = () => {
       <HomeSectionContainerInner>
         <RecruitingWrapper variants={bannerItemAnimate}>
           <GoogleColorTextWrapper>
-            <GoogleColorText color={'googleBlue'}>2</GoogleColorText>
-            <GoogleColorText color={'googleRed'}>n</GoogleColorText>
-            <GoogleColorText color={'googleYellow'}>d</GoogleColorText>
-            <GoogleColorText color={'googleGreen'}>.</GoogleColorText>
+            <GoogleColorText color={'blue900'}>2</GoogleColorText>
+            <GoogleColorText color={'red900'}>n</GoogleColorText>
+            <GoogleColorText color={'yellow900'}>d</GoogleColorText>
+            <GoogleColorText color={'green900'}>.</GoogleColorText>
           </GoogleColorTextWrapper>
           <GoogleColorText>Recruit</GoogleColorText>
           <MainBannerText variants={bannerItemAnimate}>

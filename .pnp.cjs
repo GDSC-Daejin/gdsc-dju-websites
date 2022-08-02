@@ -8217,6 +8217,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gdsc-dju-web", "workspace:packages/gdsc-dju-web"],\
             ["@firebase/app", "npm:0.7.29"],\
             ["@firebase/app-compat", "npm:0.1.30"],\
+            ["@gdscdju/shared", "workspace:packages/shared"],\
             ["@types/lodash", "npm:4.14.182"],\
             ["@types/node", "npm:18.6.1"],\
             ["@types/react", "npm:18.0.15"],\
@@ -15908,7 +15909,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/vite-project/",\
           "packageDependencies": [\
             ["vite-project", "workspace:packages/vite-project"],\
-            ["@gdscdju/shared", "workspace:packages/shared"],\
             ["@types/react", "npm:18.0.15"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["@types/styled-components", "npm:5.1.25"],\

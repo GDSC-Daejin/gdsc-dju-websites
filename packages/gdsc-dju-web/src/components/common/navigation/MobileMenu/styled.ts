@@ -19,5 +19,5 @@ export const MobileNavBackGround = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-color: ${(props) => props.theme.colors.grey200};
+  border-color: ${({ theme }) => theme.colors.grey200};
 `;

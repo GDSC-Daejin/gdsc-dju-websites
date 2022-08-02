@@ -1,9 +1,9 @@
+import { ColorToken } from '@gdscdju/shared/src/styles/colors/types';
 import styled, { css } from 'styled-components';
-import { lightColors } from '../../../styles/lightColors';
 
 export const StyledButton = styled.button<{
-  color?: keyof typeof lightColors;
-  background?: keyof typeof lightColors;
+  color?: ColorToken;
+  background?: ColorToken;
   size?: string;
   disable?: boolean;
   border?: string;
@@ -11,8 +11,8 @@ export const StyledButton = styled.button<{
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 0 solid ${(props) => props.theme.colors.grey300};
-  font-size: ${(props) => props.theme.fontSize.body2};
+  border: 0 solid ${({ theme }) => theme.colors.grey300};
+  font-size: ${({ theme }) => theme.fontSize.body2};
   padding: 10px 30px;
   cursor: pointer;
   box-shadow: 0 2px 12px rgba(25, 31, 40, 0.08);

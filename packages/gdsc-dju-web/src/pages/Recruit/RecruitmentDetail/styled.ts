@@ -14,10 +14,10 @@ export const SectionWrapper = styled.div`
 export const IntroduceWrapper = styled.article`
   margin-right: 20px;
   box-sizing: inherit;
-  @media (max-width: ${(props) => props.theme.windowSize.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
     max-width: 320px;
   }
-  @media (max-width: ${(props) => props.theme.windowSize.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
     max-width: 550px;
   }
 `;
@@ -56,12 +56,8 @@ export const MobileTopElementWrapper = styled.div`
 `;
 export const MobileBottomElementWrapper = styled.div`
   display: none;
-  background: -webkit-linear-gradient(
-    bottom,
-    ${({ theme }) => theme.colors.backgroundOpacity900} 83%,
-    ${({ theme }) => theme.colors.backgroundOpacity}
-  );
-  padding-top: 20px;
+  background: ${({ theme }) => theme.colors.background};
+  padding: 5px 0;
   @media (max-width: 500px) {
     display: flex;
     flex-direction: column;

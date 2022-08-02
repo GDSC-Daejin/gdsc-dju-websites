@@ -16,22 +16,22 @@ export const StyledTextAreaWrapper = styled(StyledInputWrapper)<{
   outline: none;
   appearance: none;
   border-radius: 10px;
-  box-shadow: inset 0 0 0 1px ${(props) => props.theme.colors.grey300};
+  box-shadow: inset 0 0 0 1px ${({ theme }) => theme.colors.grey300};
   cursor: auto;
   &:hover {
-    box-shadow: inset 0 0 0 2px ${(props) => props.theme.colors.tossBlue200};
+    box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.blue200};
     ${(props) =>
       props.error &&
       css`
-        box-shadow: inset 0 0 0 2px ${props.theme.colors.tossRed};
+        box-shadow: inset 0 0 0 2px ${props.theme.colors.blue200};
       `}
   }
   .formInput:focus {
-    box-shadow: inset 0 0 0 2px ${(props) => props.theme.colors.tossBlue500};
+    box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.blue200};
     ${(props) =>
       props.error &&
       css`
-        box-shadow: inset 0 0 0 2px ${props.theme.colors.tossRed}!important;
+        box-shadow: inset 0 0 0 2px ${props.theme.colors.blue200}!important;
       `}
   }
   ${({ disabled }) =>
@@ -44,7 +44,7 @@ export const StyledTextAreaWrapper = styled(StyledInputWrapper)<{
   ${({ error }) =>
     error &&
     css`
-      box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.tossRed};
+      box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.red900};
     `}
   transition: 0.3s;
 `;
@@ -67,33 +67,33 @@ export const StyledTextArea = styled.textarea<{
   border-radius: 10px;
   font-size: ${({ theme }) => theme.fontSize.body2};
   color: ${({ theme }) => theme.colors.grey800};
-  box-shadow: inset 0 0 0 1px ${(props) => props.theme.colors.grey300};
+  box-shadow: inset 0 0 0 1px ${({ theme }) => theme.colors.grey300};
   cursor: auto;
   transition: box-shadow 0.3s;
   resize: vertical;
   &::placeholder {
-    color: ${(props) => props.theme.colors.grey400};
+    color: ${({ theme }) => theme.colors.grey400};
     font-weight: 300;
   }
   &:hover {
-    box-shadow: inset 0 0 0 2px ${(props) => props.theme.colors.tossBlue200};
+    box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.blue200};
     ${(props) =>
       props.error &&
       css`
-        box-shadow: inset 0 0 0 2px ${props.theme.colors.tossRed};
+        box-shadow: inset 0 0 0 2px ${props.theme.colors.red900};
       `}
   }
   &:focus {
-    box-shadow: inset 0 0 0 2px ${(props) => props.theme.colors.tossBlue500};
+    box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.blue600};
     ${(props) =>
       props.error &&
       css`
-        box-shadow: inset 0 0 0 2px ${props.theme.colors.tossRed}!important;
+        box-shadow: inset 0 0 0 2px ${props.theme.colors.red900}!important;
       `}
   }
   ${({ error }) =>
     error &&
     css`
-      box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.tossRed};
+      box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.red900};
     `}
 `;

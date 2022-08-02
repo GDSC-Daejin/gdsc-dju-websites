@@ -21,7 +21,7 @@ type MakeColorTokenSet<
 
 export type ColorToken =
   | 'white'
-  | MakeColorTokenSet<'grey', [100, 200, 300, 400, 500, 600, 700, 900]>
+  | MakeColorTokenSet<'grey', [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]>
   | MakeColorTokenSet<'orange', [100, 200, 300, 400, 500, 600, 700, 900]>
   | MakeColorTokenSet<'yellow', [100, 200, 300, 400, 500, 600, 900]>
   | MakeColorTokenSet<'green', [100, 200, 300, 400, 500, 600, 900]>
@@ -33,6 +33,7 @@ export type ColorScheme = Record<ColorToken, string>;
 export type SemanticColorScheme = {
   background: ColorToken | string;
   backgroundLow: ColorToken | string;
+  boxShadow100: ColorToken | string;
 };
 
 export type ColorTheme = ColorScheme & SemanticColorScheme;

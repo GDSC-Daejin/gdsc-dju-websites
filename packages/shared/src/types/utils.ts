@@ -1,4 +1,4 @@
-import { ThemeName } from './theme';
+export type ThemeName = 'light' | 'dark';
 
 export type BehaviorMode = 'auto' | 'light-only' | 'dark-only';
 

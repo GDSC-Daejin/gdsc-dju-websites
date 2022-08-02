@@ -60,14 +60,14 @@ const Nickname = styled(motion.p)`
   margin: 0 0 8px 0;
   overflow-y: hidden;
   font-size: ${({ theme }) => theme.fontSize.h5};
-  color: ${({ theme }) => theme.colors.white};
+  color: #fff;
 `;
 const Name = styled(motion.p)`
   height: 24px;
   overflow-y: hidden;
   font-size: ${({ theme }) => theme.fontSize.body1};
   line-height: 24px;
-  color: ${({ theme }) => theme.colors.white};
+  color: #fff;
 `;
 const Role = styled(motion.p)`
   height: 24px;
@@ -75,7 +75,7 @@ const Role = styled(motion.p)`
   overflow-y: hidden;
   font-size: ${({ theme }) => theme.fontSize.body2};
   line-height: 24px;
-  color: ${({ theme }) => theme.colors.tossBlue};
+  color: ${({ theme }) => theme.colors.blue900};
 `;
 const CardText = styled(motion.div)`
   margin-top: 8px;
@@ -90,21 +90,21 @@ const CardTextWrapper = styled(motion.div)<{ isClicked?: boolean }>`
   left: 0;
   right: 0;
   bottom: 0;
-  background: ${({ theme }) => theme.colors.greyOpacity100};
+  background: rgba(0, 0, 0, 0) 40%;
   border: 0 solid transparent;
   border-radius: 16px;
   ${({ isClicked }) =>
     isClicked
       ? css`
-          background: ${({ theme }) => theme.colors.greyOpacity500};
+          background: rgba(0, 0, 0, 0.4) 40%;
           backdrop-filter: blur(2px);
         `
       : css`
           background: linear-gradient(
             0deg,
             rgba(0, 0, 0, 0) 0%,
-            ${({ theme }) => theme.colors.greyOpacity50} 40%,
-            ${({ theme }) => theme.colors.greyOpacity400} 100%
+            rgba(0, 0, 0, 0.1) 40%,
+            rgba(0, 0, 0, 0.4) 100%
           );
           transition: background 0.2s ease-in-out;
         `}

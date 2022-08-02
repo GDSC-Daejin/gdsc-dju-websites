@@ -1,10 +1,11 @@
+import { ColorToken } from '@gdscdju/shared';
 import React from 'react';
-import { lightColors } from '../../../styles/lightColors';
+
 import { StyledButton } from './styled';
 
 interface ButtonProps {
   text: string;
-  color?: keyof typeof lightColors;
+  color?: ColorToken;
   disable?: boolean;
   onClick?: (e?: any) => void;
   type?: 'button' | 'submit' | 'reset';

@@ -23,7 +23,7 @@ const RecruitFaqButton = (props: { name: string }) => {
   return (
     <RecruitFaqButtonWrapper>
       <StyledButton
-        background={'tossBlue'}
+        background={'blue900'}
         onClick={() => {
           navigate('/faq');
         }}
@@ -32,7 +32,7 @@ const RecruitFaqButton = (props: { name: string }) => {
       </StyledButton>
       {recruit[`${keyTyped}`] ? (
         <StyledButton
-          background={'tossBlue'}
+          background={'blue900'}
           onClick={() => {
             navigate('/recruit/form/' + keyTyped);
           }}
@@ -40,10 +40,7 @@ const RecruitFaqButton = (props: { name: string }) => {
           지원하기
         </StyledButton>
       ) : (
-        <StyledButton
-          disable={!recruit[`${keyTyped}`]}
-          background={'tossBlue200'}
-        >
+        <StyledButton disable={!recruit[`${keyTyped}`]} background={'blue200'}>
           지원기간이 아닙니다.
         </StyledButton>
       )}

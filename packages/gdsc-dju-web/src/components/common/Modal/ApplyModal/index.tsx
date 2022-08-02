@@ -77,7 +77,7 @@ const ApplyModal: React.FC<Props> = ({
                 <GDSCButton
                   text={'제출하기'}
                   onClick={() => onClick()}
-                  color={'googleBlue'}
+                  color={'blue900'}
                 />
                 <ApplyModalButtonWrapper>
                   <GDSCButton
