@@ -955,6 +955,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gdscdju/shared@workspace:^0.0.0, @gdscdju/shared@workspace:packages/shared":
+  version: 0.0.0-use.local
+  resolution: "@gdscdju/shared@workspace:packages/shared"
+  dependencies:
+    "@types/react": ^18.0.15
+    "@types/styled-components": ^5.1.25
+    react: ^18.2.0
+    styled-components: ^5.3.5
+    typescript: ^4.6.3
+  languageName: unknown
+  linkType: soft
+
 "@google-cloud/paginator@npm:^4.0.0":
   version: 4.0.0
   resolution: "@google-cloud/paginator@npm:4.0.0"
@@ -13287,6 +13299,23 @@ __metadata:
   checksum: c431df0bedf2088b227a4e051e0ff4ca54df2c114096b0c01e1cbaadb021c30a04d7dd5b41ab277bcd51246ca135bf931d4c4c796ecae7a4fef6d744ecef36ea
   languageName: node
   linkType: hard
+
+"vite-project@workspace:packages/vite-project":
+  version: 0.0.0-use.local
+  resolution: "vite-project@workspace:packages/vite-project"
+  dependencies:
+    "@gdscdju/shared": "workspace:^0.0.0"
+    "@types/react": ^18.0.15
+    "@types/react-dom": ^18.0.6
+    "@types/styled-components": ^5.1.25
+    "@vitejs/plugin-react": ^2.0.0
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    styled-components: ^5.3.5
+    typescript: ^4.6.4
+    vite: ^3.0.0
+  languageName: unknown
+  linkType: soft
 
 "vite@npm:^3.0.0, vite@npm:^3.0.1":
   version: 3.0.3

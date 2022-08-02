@@ -1,5 +1,6 @@
 {
   "name": "@gdscdju/shared",
+  "version": "0.0.0",
   "packageManager": "yarn@3.2.2",
   "dependencies": {
     "styled-components": "^5.3.5"
