@@ -22,7 +22,7 @@ declare module 'styled-components' {
   }
 }
 
-const GdsThemeProvider: React.FC<ThemeProviderProps> = ({
+export const GdsThemeProvider: React.FC<ThemeProviderProps> = ({
   children,
   mode = 'auto',
 }) => {
@@ -43,5 +43,3 @@ const GdsThemeProvider: React.FC<ThemeProviderProps> = ({
     </DarkModeContext.Provider>
   );
 };
-
-export default GdsThemeProvider;
