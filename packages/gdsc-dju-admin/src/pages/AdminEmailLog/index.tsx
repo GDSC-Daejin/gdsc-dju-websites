@@ -1,13 +1,13 @@
 import { collection, limit, orderBy, query } from 'firebase/firestore';
 import React, { useRef } from 'react';
-import { GDSCButton } from '../../../components/common/Button';
-import EmailLogCard from '../../../components/common/EmailLogCard';
-import { TextInput } from '../../../components/common/TextInput';
+import { GDSCButton } from '../../components/common/Button';
+import EmailLogCard from '../../components/common/EmailLogCard';
+import { TextInput } from '../../components/common/TextInput';
 
-import { db } from '../../../firebase/firebase';
-import { useFirestoreQuery } from '../../../hooks/useFirebaseQuery';
+import { db } from '../../firebase/firebase';
+import { useFirestoreQuery } from '../../hooks/useFirebaseQuery';
 
-import { EmailLogTypeWithID } from '../../../types/applicant';
+import { EmailLogTypeWithID } from '../../types/applicant';
 import { TemplateEmailWrapper, TemplateText } from '../AdminEmail/styled';
 import { LogWrapper, TemplateSelectWrapper } from './styled';
 

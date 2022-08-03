@@ -9,7 +9,7 @@ import {
   InformationHeader,
   Switch,
   ToggleButton,
-} from '../../../pages/Admin/AdminApplicants/styled';
+} from '../../../pages/AdminApplicants/styled';
 import { IApplicantTypeWithID, StatusType } from '../../../types/applicant';
 import { getApplicants } from '../../../utils/applicantsHandler';
 import ApplicantCard from '../ApplicantCard';
