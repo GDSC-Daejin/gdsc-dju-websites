@@ -39,10 +39,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {\
         "name": "@gdscdju/shared",\
         "reference": "workspace:packages/shared"\
-      },\
-      {\
-        "name": "vite-project",\
-        "reference": "workspace:packages/vite-project"\
       }\
     ],\
     "enableTopLevelFallback": true,\
@@ -53,8 +49,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["gdsc-dju-frontend", ["workspace:."]],\
       ["gdsc-dju-shared", ["workspace:packages/gdsc-dju-shared"]],\
       ["gdsc-dju-teddy", ["workspace:packages/gdsc-dju-teddy"]],\
-      ["gdsc-dju-web", ["workspace:packages/gdsc-dju-web"]],\
-      ["vite-project", ["workspace:packages/vite-project"]]\
+      ["gdsc-dju-web", ["workspace:packages/gdsc-dju-web"]]\
     ],\
     "fallbackPool": [\
     ],\
@@ -8217,7 +8212,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gdsc-dju-web", "workspace:packages/gdsc-dju-web"],\
             ["@firebase/app", "npm:0.7.29"],\
             ["@firebase/app-compat", "npm:0.1.30"],\
-            ["@gdscdju/shared", "workspace:packages/shared"],\
             ["@types/lodash", "npm:4.14.182"],\
             ["@types/node", "npm:18.6.1"],\
             ["@types/react", "npm:18.0.15"],\
@@ -15902,24 +15896,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "terser"\
           ],\
           "linkType": "HARD"\
-        }]\
-      ]],\
-      ["vite-project", [\
-        ["workspace:packages/vite-project", {\
-          "packageLocation": "./packages/vite-project/",\
-          "packageDependencies": [\
-            ["vite-project", "workspace:packages/vite-project"],\
-            ["@types/react", "npm:18.0.15"],\
-            ["@types/react-dom", "npm:18.0.6"],\
-            ["@types/styled-components", "npm:5.1.25"],\
-            ["@vitejs/plugin-react", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:2.0.0"],\
-            ["react", "npm:18.2.0"],\
-            ["react-dom", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:18.2.0"],\
-            ["styled-components", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:5.3.5"],\
-            ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"],\
-            ["vite", "virtual:4d684cb317bf579f075303c0478e1cef1ea15dfa8ce290651bcc6b72c39087c220f0060beff3a6b4206a26f48551b2efa9fbb9054dfa1952f770281fc07f3fa0#npm:3.0.3"]\
-          ],\
-          "linkType": "SOFT"\
         }]\
       ]],\
       ["vm2", [\
