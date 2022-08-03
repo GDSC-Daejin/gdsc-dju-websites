@@ -1,4 +1,4 @@
-import { DarkModeContext } from '@gdscdju/shared/src/DarkModeContext';
+import { DarkModeContext } from '@gdsc-dju/styled-components';
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import DarkModeIcon from '../../assets/icons/darkModeIcon';

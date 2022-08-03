@@ -955,6 +955,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gdsc-dju/styled-components@npm:^0.0.6":
+  version: 0.0.6
+  resolution: "@gdsc-dju/styled-components@npm:0.0.6"
+  peerDependencies:
+    react: ^18.2.0
+    styled-components: ^5.3.5
+  checksum: cb04f42ebfe47a6c69044d564b7e54fde6759fa4866dac5608bde3b650c5ace39ed155097551f481af996d8f06bcc674f92aa1bcdc54b917adeeab680266a04c
+  languageName: node
+  linkType: hard
+
 "@gdscdju/shared@workspace:packages/shared":
   version: 0.0.0-use.local
   resolution: "@gdscdju/shared@workspace:packages/shared"
@@ -6678,6 +6688,7 @@ __metadata:
   dependencies:
     "@firebase/app": ^0.7.28
     "@firebase/app-compat": ^0.1.29
+    "@gdsc-dju/styled-components": ^0.0.6
     "@types/lodash": ^4.14.181
     "@types/node": ^18.0.4
     "@types/react": ^18.0.15

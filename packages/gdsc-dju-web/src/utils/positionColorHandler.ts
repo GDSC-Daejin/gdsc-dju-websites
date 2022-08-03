@@ -1,4 +1,4 @@
-import { ColorToken } from '@gdscdju/shared';
+import { ColorToken } from '@gdsc-dju/styled-components';
 
 export const position: PositionType = {
   frontend: 'blue900',

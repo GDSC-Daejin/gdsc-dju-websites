@@ -1,7 +1,4 @@
-import {
-  ColorScheme,
-  ColorToken,
-} from '@gdscdju/shared/src/styles/colors/types';
+import { ColorToken } from '@gdsc-dju/styled-components';
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import React, { memo, useState } from 'react';
 import { useLocation } from 'react-router';

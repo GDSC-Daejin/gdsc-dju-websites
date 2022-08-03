@@ -1678,6 +1678,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@gdsc-dju/styled-components", [\
+        ["npm:0.0.6", {\
+          "packageLocation": "./.yarn/cache/@gdsc-dju-styled-components-npm-0.0.6-b36173ea05-cb04f42ebf.zip/node_modules/@gdsc-dju/styled-components/",\
+          "packageDependencies": [\
+            ["@gdsc-dju/styled-components", "npm:0.0.6"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:0.0.6", {\
+          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-virtual-aede0ada0f/0/cache/@gdsc-dju-styled-components-npm-0.0.6-b36173ea05-cb04f42ebf.zip/node_modules/@gdsc-dju/styled-components/",\
+          "packageDependencies": [\
+            ["@gdsc-dju/styled-components", "virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:0.0.6"],\
+            ["@types/react", "npm:18.0.15"],\
+            ["@types/styled-components", "npm:5.1.25"],\
+            ["react", "npm:18.2.0"],\
+            ["styled-components", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:5.3.5"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "@types/styled-components",\
+            "react",\
+            "styled-components"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@gdscdju/shared", [\
         ["workspace:packages/shared", {\
           "packageLocation": "./packages/shared/",\
@@ -8212,6 +8238,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gdsc-dju-web", "workspace:packages/gdsc-dju-web"],\
             ["@firebase/app", "npm:0.7.29"],\
             ["@firebase/app-compat", "npm:0.1.30"],\
+            ["@gdsc-dju/styled-components", "virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:0.0.6"],\
             ["@types/lodash", "npm:4.14.182"],\
             ["@types/node", "npm:18.6.1"],\
             ["@types/react", "npm:18.0.15"],\

@@ -1,4 +1,4 @@
-import { ColorToken } from '@gdscdju/shared/src/styles/colors/types';
+import { ColorToken } from '@gdsc-dju/styled-components';
 import styled, { css } from 'styled-components';
 
 export const StyledButton = styled.button<{

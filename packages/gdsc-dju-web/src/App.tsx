@@ -1,4 +1,4 @@
-import { GdsThemeProvider } from '@gdscdju/shared';
+import { GdsThemeProvider } from '@gdsc-dju/styled-components';
 import React from 'react';
 
 import Navigation from './components/common/navigation/DeskNavigation';

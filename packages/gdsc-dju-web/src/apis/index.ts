@@ -1,5 +1,6 @@
 // https://firestore.googleapis.com/v1/projects/gdsc-dju/databases/(default)/documents/members?key=AIzaSyDrAEizOXHcCXYrQa96w6TxfddOS2Yb0tU
 import axios from 'axios';
+import { memberWarning } from '../types/admin';
 import {
   UserDataState,
   getRecruitmentInfoDataType,
@@ -7,9 +8,6 @@ import {
   onBoardingMember,
   recruitmentInfoDataType,
 } from './types';
-
-import { OnboardingUserState } from '../store/onboardingUser';
-import { memberWarning } from '../types/admin';
 
 export class GDSCApi {
   private API: string;

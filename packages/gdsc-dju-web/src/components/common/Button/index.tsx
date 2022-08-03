@@ -1,4 +1,4 @@
-import { ColorToken } from '@gdscdju/shared';
+import { ColorToken } from '@gdsc-dju/styled-components';
 import React from 'react';
 
 import { StyledButton } from './styled';
