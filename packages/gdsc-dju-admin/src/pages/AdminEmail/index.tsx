@@ -3,25 +3,25 @@ import { addDoc, collection } from 'firebase/firestore';
 import { AnimatePresence } from 'framer-motion';
 import { useAtom } from 'jotai';
 import React, { useEffect, useState } from 'react';
-import { alertAtom } from '../../../atoms/alertAtom';
-import { loaderAtom } from '../../../atoms/loaderAtom';
-import { modalAtom } from '../../../atoms/modalAtom';
-import { userAtom } from '../../../atoms/userAtom';
-import { db } from '../../../firebase/firebase';
-import { GDSCButton } from '../../../components/common/Button';
-import CheckBoxCard from '../../../components/common/CheckBoxCard';
-import AdminEmailCheckModal from '../../../components/common/modal/AdminEmailCheckModal';
-import ApplicantModal from '../../../components/common/modal/ApplicantModal';
-import StatusBadgeBox from '../../../components/common/StatusBadgeBox';
+import { alertAtom } from '../../atoms/alertAtom';
+import { loaderAtom } from '../../atoms/loaderAtom';
+import { modalAtom } from '../../atoms/modalAtom';
+import { userAtom } from '../../atoms/userAtom';
+import { db } from '../../firebase/firebase';
+import { GDSCButton } from '../../components/common/Button';
+import CheckBoxCard from '../../components/common/CheckBoxCard';
+import AdminEmailCheckModal from '../../components/common/modal/AdminEmailCheckModal';
+import ApplicantModal from '../../components/common/modal/ApplicantModal';
+import StatusBadgeBox from '../../components/common/StatusBadgeBox';
 
-import { isDevelop } from '../../../pageData/recruitInfo';
+import { isDevelop } from '../../pageData/recruitInfo';
 
 import {
   EmailLogType,
   IApplicantTypeWithID,
   StatusType,
-} from '../../../types/applicant';
-import { getApplicants } from '../../../utils/applicantsHandler';
+} from '../../types/applicant';
+import { getApplicants } from '../../utils/applicantsHandler';
 import {
   AdminSectionWrapper,
   EmailButtonWrapper,
@@ -51,7 +51,7 @@ const AdminEmail: React.FC<{ template: string }> = ({ template }) => {
   const openModal = (id: string) => {
     setModal({
       ...modal,
-      ADMIN_EMAIL: true,
+      ADMIN_APPLICANT: true,
       selectedID: id,
     });
   };
@@ -216,7 +216,7 @@ const AdminEmail: React.FC<{ template: string }> = ({ template }) => {
                   onClick={() =>
                     setModal(() => ({
                       ...modal,
-                      adminEmailCheck: true,
+                      ADMIN_EMAIL: true,
                     }))
                   }
                   type={'button'}

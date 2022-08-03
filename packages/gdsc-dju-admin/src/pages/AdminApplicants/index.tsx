@@ -2,11 +2,11 @@ import { useAtom } from 'jotai';
 import React, { useEffect } from 'react';
 import { AdminSectionWrapper } from './styled';
 import { useRecoilValue } from 'recoil';
-import { recruitmentAtom } from '../../../atoms/recruitmentAtom';
-import API from '../../../apis/index';
+import { recruitmentAtom } from '../../atoms/recruitmentAtom';
+import API from '../../apis/index';
 import { useSearchParams } from 'react-router-dom';
 import { useLocation } from 'react-router';
-import AdminApplicantSection from '../../../components/common/AdminApplicantSection';
+import AdminApplicantSection from '../../components/common/AdminApplicantSection';
 
 const AdminApplicants = () => {
   const [recruit] = useAtom(recruitmentAtom);

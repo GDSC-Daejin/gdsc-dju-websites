@@ -1,6 +1,4 @@
-import { collection, getDocs, query, where } from 'firebase/firestore';
 import React from 'react';
-import { db } from '../../../firebase/firebase';
 import { AdminContainerWrapper } from '../styled';
 
 const AdminHome = () => {

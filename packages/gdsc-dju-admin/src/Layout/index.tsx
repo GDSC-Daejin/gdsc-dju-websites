@@ -3,7 +3,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { Route, Routes } from 'react-router';
 import CheckAdminUser from '../components/CheckAdminUser';
 import { GoogleSpinnerStatic } from '../components/Lottie/GoogleSpinner';
-import Admin from '../pages/Admin';
+import Admin from '../pages';
 import Error from '../pages/Error';
 import Redirect from '../pages/Redirect';
 import SignIn from '../pages/SignIn';
