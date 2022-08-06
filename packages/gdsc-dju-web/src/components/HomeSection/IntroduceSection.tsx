@@ -55,7 +55,7 @@ const ContentText = styled.span`
   }
 `;
 
-const SectionIntroduce = () => {
+const IntroduceSection = () => {
   return (
     <HomeSectionContainer>
       <HomeSectionContainerInner>
@@ -110,4 +110,4 @@ const SectionIntroduce = () => {
   );
 };
 
-export default SectionIntroduce;
+export default IntroduceSection;

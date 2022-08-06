@@ -1,35 +1,23 @@
 import React from 'react';
-import styled from 'styled-components';
-import HomeLayout from '../../Layout/home';
-
-export const HomeContainer = styled.div`
-  overflow-y: auto;
-  overflow-x: hidden;
-  position: relative;
-  .container {
-    scroll-behavior: smooth;
-    height: 100vh;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    @media (max-width: 1040px) {
-      scroll-snap-type: none;
-      height: auto;
-    }
-  }
-  .container::-webkit-scrollbar {
-    width: 0;
-    background: transparent;
-    display: none;
-  }
-  .container > div {
-    scroll-snap-align: start;
-  }
-`;
+import { Footer } from '../../components/common/Footer';
+import HomePage from '../../components/HomeSection/HomePage';
+import CultureSection from '../../components/HomeSection/CultureSection';
+import IntroduceSection from '../../components/HomeSection/IntroduceSection';
+import ManagementSection from '../../components/HomeSection/ManagementSection';
+import SolarSystem from '../../components/SolarSystem';
+import { HomeContainer, HomeSolarSystemWrapper } from './styled';
 
 const Home = () => {
   return (
     <HomeContainer>
-      <HomeLayout />
+      <HomeSolarSystemWrapper>
+        <SolarSystem />
+      </HomeSolarSystemWrapper>
+      <HomePage />
+      <IntroduceSection />
+      <CultureSection />
+      <ManagementSection />
+      <Footer />
     </HomeContainer>
   );
 };

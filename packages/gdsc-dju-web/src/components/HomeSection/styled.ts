@@ -10,7 +10,7 @@ export const HomeSectionContainer = styled(motion.div)<{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  overflow: hidden;
+  height: 100vh;
   ${({ color }) =>
     color &&
     css`
@@ -20,13 +20,13 @@ export const HomeSectionContainer = styled(motion.div)<{
 export const HomeSectionContainerInner = styled(motion.div)`
   position: relative;
   display: flex;
-  align-items: center;
   width: 100vw;
   min-height: 100vh;
   max-width: 80%;
   margin: 0 auto;
   min-width: 320px;
-
+  align-items: center;
+  justify-content: center;
   @media (max-width: ${({ theme }) => theme.windowSize.desk}px) {
     max-width: 1160px;
   }
@@ -35,12 +35,14 @@ export const HomeSectionContainerInner = styled(motion.div)`
   }
 `;
 export const HomeSectionWrapper = styled(motion.div)`
-  margin: 50px auto;
+  margin: 0 auto;
   max-width: 1090px;
-  padding: 0 2rem;
+  width: fit-content;
+  padding: 50px 2rem;
   display: flex;
   flex-wrap: wrap;
-
+  box-sizing: border-box;
+  position: relative;
   @media (max-width: ${({ theme }) => theme.windowSize.desk}px) {
     max-width: 700px;
   }
@@ -53,7 +55,7 @@ export const HomeSectionWrapper = styled(motion.div)`
 `;
 export const HomeSectionTitle = styled(motion.h1)`
   display: block;
-  width: 100%;
+  width: fit-content;
   margin-bottom: 25px;
   font-size: ${({ theme }) => theme.fontSize.h2};
   font-style: normal;
@@ -68,5 +70,87 @@ export const HomeSectionTitle = styled(motion.h1)`
   }
   @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
     font-size: ${({ theme }) => theme.fontSize.h4};
+  }
+`;
+export const StyledRecruitmentButton = styled.button<{ disable?: boolean }>`
+  width: 22rem;
+  height: 6rem;
+  border-radius: 7.5rem;
+  border-style: solid;
+  background: ${({ theme }) => theme.colors.blue600};
+
+  border-width: 0;
+  color: white;
+  font-size: ${({ theme }) => theme.fontSize.body1};
+  cursor: pointer;
+  ${({ disable }) =>
+    disable &&
+    css`
+      background: ${({ theme }) => theme.colors.blue200};
+      cursor: not-allowed;
+    `};
+  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
+    width: 18rem;
+    height: 5.5rem;
+    font-size: ${({ theme }) => theme.fontSize.body2};
+  }
+  @media (max-width: 500px) {
+    width: 150px;
+    height: 45px;
+    font-size: ${({ theme }) => theme.fontSize.body3};
+  }
+`;
+
+export const RecruitingWrapper = styled(motion.div)`
+  position: absolute;
+  left: 20px;
+  bottom: 12%;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  flex-direction: column;
+  @media (max-width: ${({ theme }) => theme.windowSize.desk}px) {
+    bottom: 12%;
+  }
+  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
+    bottom: 10%;
+  }
+  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
+    bottom: 10%;
+  }
+  @media (max-width: 320px) {
+    bottom: 10%;
+  }
+`;
+
+export const ButtonWrapper = styled(motion.div)`
+  margin-top: 30px;
+`;
+
+export const GoogleColorTextWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+export const GoogleColorText = styled.h1<{
+  color?: ColorToken;
+}>`
+  font-size: 70px;
+  font-weight: bold;
+  color: ${({ color, theme }) =>
+    color ? theme.colors[color] : theme.colors.grey900};
+  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
+    font-size: ${({ theme }) => theme.fontSize.h2};
+  }
+  @media (max-width: 320px) {
+    font-size: ${({ theme }) => theme.fontSize.h3};
+  }
+`;
+export const MainBannerText = styled(motion.p)`
+  display: flex;
+  margin-top: 10px;
+  font-size: ${({ theme }) => theme.fontSize.body1};
+  color: ${({ theme }) => theme.colors.grey500};
+  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
+    font-size: ${({ theme }) => theme.fontSize.body2};
   }
 `;

@@ -10,11 +10,7 @@ export class Api {
   protected TOKEN: string;
   protected REFRESH_TOKEN: string;
   constructor() {
-    if (process.env.NODE_ENV === 'development') {
-      this.API = 'https://gdsc-dju-dev.kro.kr';
-    } else {
-      this.API = 'https://gdsc-dju.com';
-    }
+    this.API = 'https://accounts.gdsc-dju.com';
     this.ACCOUNT_API = 'https://accounts.gdsc-dju.com';
     this.TOKEN = localStorage.getItem('token') ?? '';
     this.REFRESH_TOKEN = localStorage.getItem('refresh_token') ?? '';

@@ -51,7 +51,7 @@ const CultureText = styled.p`
   }
 `;
 
-const SectionCulture = () => {
+const CultureSection = () => {
   return (
     <HomeSectionContainer>
       <HomeSectionContainerInner>
@@ -84,4 +84,4 @@ const SectionCulture = () => {
   );
 };
 
-export default SectionCulture;
+export default CultureSection;
