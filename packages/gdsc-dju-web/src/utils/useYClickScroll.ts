@@ -1,4 +1,5 @@
 import { MouseEvent, useEffect, useRef, useState, useTransition } from 'react';
+import { debounce } from './debounce';
 
 export const useYClickScroll = () => {
   const [sectionWidth, setSectionWidth] = useState(0);
@@ -12,7 +13,6 @@ export const useYClickScroll = () => {
     width: window.innerWidth,
     height: window.innerHeight,
   });
-  const [isPending, startTransition] = useTransition();
   const sectionRef = useRef<HTMLDivElement>(null);
   const sessionRef = useRef<HTMLDivElement>(null);
 
@@ -46,14 +46,14 @@ export const useYClickScroll = () => {
     }
   };
 
-  const windowSizeHandler = () => {
-    startTransition(() => {
+  const windowSizeHandler = debounce(
+    () =>
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
-      });
-    });
-  };
+      }),
+    100,
+  );
 
   useEffect(() => {
     window.addEventListener('resize', windowSizeHandler);
@@ -64,7 +64,7 @@ export const useYClickScroll = () => {
 
   useEffect(() => {
     sectionRef.current && setSectionWidth(sectionRef.current?.offsetWidth);
-  }, [sectionRef]);
+  }, [sectionRef, windowSize]);
 
   return {
     windowSize,

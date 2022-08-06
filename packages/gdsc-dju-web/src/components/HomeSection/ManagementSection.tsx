@@ -23,7 +23,9 @@ const ManagerSectionInner = styled(HomeSectionContainerInner)`
     max-width: 800px;
   }
 `;
-
+const ManagerSectionWrapper = styled(HomeSectionWrapper)`
+  padding-top: 0;
+`;
 const ManagerSubTitle = styled(motion.div)`
   font-size: ${({ theme }) => theme.fontSize.h6};
   font-style: normal;
@@ -92,12 +94,13 @@ const ManagementSection = () => {
     mouseMoveHandler,
     mouseUpHandler,
   } = useYClickScroll();
-
+  console.log(windowSize);
+  console.log(sectionWidth);
   return (
     <>
       <HomeSectionContainer>
         <ManagerSectionInner ref={sectionRef}>
-          <HomeSectionWrapper>
+          <ManagerSectionWrapper>
             <HomeSectionTitle
               variants={listItemAnimate}
               initial={'start'}
@@ -114,7 +117,7 @@ const ManagementSection = () => {
             >
               구성원의 도움을 받아 커뮤니티의 문화를 만들어나가고 있어요
             </ManagerSubTitle>
-          </HomeSectionWrapper>
+          </ManagerSectionWrapper>
         </ManagerSectionInner>
         <MemberCardSection
           variants={listAnimate}

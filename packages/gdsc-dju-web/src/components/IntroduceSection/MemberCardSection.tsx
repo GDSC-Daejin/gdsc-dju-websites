@@ -12,6 +12,7 @@ const MemberCardSection = () => {
       <CardList variants={listAnimate}>
         {memberList.map((memberInfo, id) => (
           <MemberCardWrapper
+            key={id}
             variants={memberCardAnimate}
             initial={'start'}
             whileInView={'end'}
