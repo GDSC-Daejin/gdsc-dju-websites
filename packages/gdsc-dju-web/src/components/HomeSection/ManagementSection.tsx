@@ -94,8 +94,7 @@ const ManagementSection = () => {
     mouseMoveHandler,
     mouseUpHandler,
   } = useYClickScroll();
-  console.log(windowSize);
-  console.log(sectionWidth);
+
   return (
     <>
       <HomeSectionContainer>
