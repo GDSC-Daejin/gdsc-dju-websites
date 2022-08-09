@@ -3,25 +3,11 @@ import { addDoc, collection } from 'firebase/firestore';
 import { AnimatePresence } from 'framer-motion';
 import { useAtom } from 'jotai';
 import React, { useEffect, useState } from 'react';
-import { alertAtom } from '../../../store/alertAtom';
-import { loaderAtom } from '../../../store/loaderAtom';
-import { modalAtom } from '../../../store/modalAtom';
-import { userAtom } from '../../../store/userAtom';
-import { db } from '../../../firebase/firebase';
-import { GDSCButton } from '../../../components/common/Button';
-import CheckBoxCard from '../../../components/common/CheckBoxCard';
-import AdminEmailCheckModal from '../../../components/common/modal/AdminEmailCheckModal';
-import ApplicantModal from '../../../components/common/modal/ApplicantModal';
-import StatusBadgeBox from '../../../components/common/StatusBadgeBox';
+import { db } from '../../firebase/firebase';
 
-import { isDevelop } from '../../../pageData/recruitInfo';
-
-import {
-  EmailLogType,
-  IApplicantTypeWithID,
-  StatusType,
-} from '../../../types/applicant';
-import { getApplicants } from '../../../utils/applicantsHandler';
+import { alertAtom } from '../../store/alertAtom';
+import { userAtom } from '../../store/userAtom';
+import { loaderAtom } from '../../store/loaderAtom';
 import {
   AdminSectionWrapper,
   EmailButtonWrapper,
@@ -37,6 +23,19 @@ import {
   EmailRightWrapper,
   SelectedBoxSection,
 } from './styled';
+import {
+  EmailLogType,
+  IApplicantTypeWithID,
+  StatusType,
+} from '../../types/applicant';
+import { modalAtom } from '../../store/modalAtom';
+import { isDevelop } from '../../pageData/recruitInfo';
+import { getApplicants } from '../../utils/applicantsHandler';
+import ApplicantModal from '../../components/common/modal/ApplicantModal';
+import AdminEmailCheckModal from '../../components/common/modal/AdminEmailCheckModal';
+import { GDSCButton } from '../../components/common/Button';
+import StatusBadgeBox from '../../components/common/StatusBadgeBox';
+import CheckBoxCard from '../../components/common/CheckBoxCard';
 
 const AdminEmail: React.FC<{ template: string }> = ({ template }) => {
   const [alert, setAlert] = useAtom(alertAtom);
