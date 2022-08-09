@@ -965,18 +965,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gdscdju/shared@workspace:packages/shared":
-  version: 0.0.0-use.local
-  resolution: "@gdscdju/shared@workspace:packages/shared"
-  dependencies:
-    "@types/react": ^18.0.15
-    "@types/styled-components": ^5.1.25
-    react: ^18.2.0
-    styled-components: ^5.3.5
-    typescript: ^4.6.3
-  languageName: unknown
-  linkType: soft
-
 "@google-cloud/paginator@npm:^4.0.0":
   version: 4.0.0
   resolution: "@google-cloud/paginator@npm:4.0.0"
@@ -6675,8 +6663,6 @@ __metadata:
     react-router: ^6.3.0
     react-router-dom: ^6.3.0
     react-router-sitemap: ^1.2.0
-    recoil: ^0.7.0
-    recoil-persist: ^4.0.0
     styled-components: ^5.3.5
     styled-normalize: ^8.0.7
     swr: ^1.0.1
@@ -11115,16 +11101,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"recoil-persist@npm:^4.0.0":
-  version: 4.2.0
-  resolution: "recoil-persist@npm:4.2.0"
-  peerDependencies:
-    recoil: ^0.7.2
-  checksum: 1c8a6be4bb914b383429603e910aba80734311d8657ddf9f94a39513da0eb41fd6a2b74439f93658daf465d2e66a2d890e9f6b2f8a047e4fb99dc5b31f301515
-  languageName: node
-  linkType: hard
-
-"recoil@npm:^0.7.0, recoil@npm:^0.7.4":
+"recoil@npm:^0.7.4":
   version: 0.7.4
   resolution: "recoil@npm:0.7.4"
   dependencies:
