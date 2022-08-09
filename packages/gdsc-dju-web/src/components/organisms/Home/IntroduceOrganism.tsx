@@ -6,8 +6,9 @@ import {
   HomeSectionTitle,
   HomeSectionWrapper,
 } from './styled';
-import { listAnimate, listItemAnimate } from '../common/Variants/Variants';
+
 import { motion } from 'framer-motion';
+import { listAnimate, listItemAnimate } from '../../Variants/Variants';
 
 const ContentWrapper = styled(motion.div)`
   display: flex;
@@ -55,7 +56,7 @@ const ContentText = styled.span`
   }
 `;
 
-const IntroduceSection = () => {
+const IntroduceOrganism = () => {
   return (
     <HomeSectionContainer>
       <HomeSectionContainerInner>
@@ -114,4 +115,4 @@ const IntroduceSection = () => {
   );
 };
 
-export default IntroduceSection;
+export default IntroduceOrganism;

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { HomeSectionWrapper } from '../../components/HomeSection/styled';
 
 export const HomeContainer = styled.div`
   overflow-x: hidden;

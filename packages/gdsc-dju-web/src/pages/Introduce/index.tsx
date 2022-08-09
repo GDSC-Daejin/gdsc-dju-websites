@@ -1,8 +1,7 @@
 import React from 'react';
-
-import Banner from '../../components/common/Banner';
-import { MainText, Title } from '../../components/common/Title/title';
-import MemberCardSection from '../../components/IntroduceSection/MemberCardSection';
+import { MainText, Title } from '../../components/atoms/Title/title';
+import Banner from '../../components/molecules/Banner';
+import MemberSectionOrganism from '../../components/organisms/Introduce/MemberSectionOrganism';
 
 import { memberList } from '../../pageData/MemberList';
 import {
@@ -27,7 +26,7 @@ const Introduce = () => {
             </MainText>
           </div>
           <TopMargin />
-          <MemberCardSection />
+          <MemberSectionOrganism />
           <TopMargin />
         </ContainerInner>
       </LayoutContainer>

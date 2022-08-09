@@ -3,8 +3,9 @@ import { useAtom } from 'jotai';
 import React from 'react';
 import { MODAL_KEY, modalAtom } from '../../../../store/modalAtom';
 import OutsideClickHandler from '../../../../utils/OutsideClickHandler';
-import { GDSCButton } from '../../Button';
-import { modalVariants } from '../../Variants/modalVariants';
+import { GDSCButton } from '../../../atoms/Button';
+import { modalVariants } from '../../../Variants/modalVariants';
+
 import {
   ApplyButtonWrapper,
   ApplyModalButtonWrapper,

@@ -1,12 +1,12 @@
 import { LayoutGroup } from 'framer-motion';
 import React, { memo } from 'react';
-import { memberList } from '../../pageData/MemberList';
-import { MemberCardWrapper } from '../../pages/Introduce/styled';
-import { CardList } from '../../styles/layouts';
-import MemberCard from '../common/MemberCard';
-import { listAnimate, memberCardAnimate } from '../common/Variants/Variants';
+import { memberList } from '../../../pageData/MemberList';
+import { MemberCardWrapper } from '../../../pages/Introduce/styled';
+import { CardList } from '../../../styles/layouts';
+import { listAnimate, memberCardAnimate } from '../../Variants/Variants';
+import MemberCard from '../../molecules/MemberCard';
 
-const MemberCardSection = () => {
+const MemberSectionOrganism = () => {
   return (
     <LayoutGroup>
       <CardList variants={listAnimate}>
@@ -26,4 +26,4 @@ const MemberCardSection = () => {
   );
 };
 
-export default memo(MemberCardSection);
+export default memo(MemberSectionOrganism);

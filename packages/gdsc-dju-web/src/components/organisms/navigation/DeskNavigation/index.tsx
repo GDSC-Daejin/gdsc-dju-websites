@@ -1,8 +1,8 @@
 import React from 'react';
 import { useLocation } from 'react-router';
 import GDSCLogo from '../../../../assets/logos/GDSCLogo.svg';
-import ThemeToggleButton from '../../../ThemeToggleButton';
-import MenuToggleIcon from '../../MenuToggleIcon';
+import MenuToggleIcon from '../../../atoms/MenuToggleIcon';
+import ThemeToggleButton from '../../../atoms/ThemeToggleButton';
 import DeskNavCategory from '../DeskNavCategory';
 import MobileMenu from '../MobileMenu';
 import {

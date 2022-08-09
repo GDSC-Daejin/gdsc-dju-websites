@@ -1,10 +1,12 @@
 import React from 'react';
-import { Footer } from '../../components/common/Footer';
-import HomePage from '../../components/HomeSection/HomePage';
-import CultureSection from '../../components/HomeSection/CultureSection';
-import IntroduceSection from '../../components/HomeSection/IntroduceSection';
-import ManagementSection from '../../components/HomeSection/ManagementSection';
-import SolarSystem from '../../components/SolarSystem';
+
+import SolarSystem from '../../components/molecules/SolarSystem';
+import { Footer } from '../../components/organisms/Footer';
+import CultureOrganism from '../../components/organisms/Home/CultureOrganism';
+import HomePageOrganism from '../../components/organisms/Home/HomePageOrganism';
+import IntroduceOrganism from '../../components/organisms/Home/IntroduceOrganism';
+import ManagementOrganism from '../../components/organisms/Home/ManagementOrganism';
+
 import { HomeContainer, HomeSolarSystemWrapper } from './styled';
 
 const Home = () => {
@@ -13,10 +15,10 @@ const Home = () => {
       <HomeSolarSystemWrapper>
         <SolarSystem />
       </HomeSolarSystemWrapper>
-      <HomePage />
-      <IntroduceSection />
-      <CultureSection />
-      <ManagementSection />
+      <HomePageOrganism />
+      <IntroduceOrganism />
+      <CultureOrganism />
+      <ManagementOrganism />
       <Footer />
     </HomeContainer>
   );

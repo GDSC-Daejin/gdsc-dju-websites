@@ -1,6 +1,6 @@
 import React from 'react';
+import { SubCategory } from '../../atoms/Title/title';
 import { StyledLi } from './styled';
-import { MainText, SubCategory } from '../Title/title';
 
 const BulletList = (props: { text: string }) => {
   const { text } = props;

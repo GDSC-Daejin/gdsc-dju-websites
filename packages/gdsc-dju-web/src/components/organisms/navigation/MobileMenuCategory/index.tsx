@@ -3,7 +3,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import GDSCLogo from '../../../../assets/logos/GDSCLogo.svg';
 import { menuAtom } from '../../../../store/menuAtom';
-import { navigationAnimate } from '../../Variants/NavigationAnimation';
+import { navigationAnimate } from '../../../Variants/NavigationAnimation';
+
 import { ROUTES } from '../DeskNavigation';
 import { StyledLink } from '../DeskNavigation/styled';
 import './MobileMenu.css';

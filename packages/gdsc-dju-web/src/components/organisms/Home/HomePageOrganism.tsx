@@ -2,10 +2,10 @@ import { useAtom } from 'jotai';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { recruitmentAtom } from '../../../store/recruitmentStatusAtom';
+import DownArrow from '../../atoms/DownArrow';
+import { bannerItemAnimate } from '../../Variants/Variants';
 
-import { recruitmentAtom } from '../../store/recruitmentStatusAtom';
-import DownArrow from '../common/DownArrow';
-import { bannerItemAnimate } from '../common/Variants/Variants';
 import {
   ButtonWrapper,
   GoogleColorText,
@@ -23,7 +23,7 @@ export const HomeMainWrapper = styled(HomeSectionWrapper)`
   height: 100%;
 `;
 
-const HomePage = () => {
+const HomePageOrganism = () => {
   return (
     <HomeSectionContainer>
       <HomeSectionContainerInner>
@@ -69,4 +69,4 @@ const HomeRecruitmentButton = () => {
   );
 };
 
-export default HomePage;
+export default HomePageOrganism;

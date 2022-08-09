@@ -5,14 +5,15 @@ import React, { memo, useLayoutEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FieldValues } from 'react-hook-form/dist/types/fields';
 import { createSearchParams, useNavigate, useParams } from 'react-router-dom';
-import FileInput from '../../../components/common/input/FileInput';
-import { StyledTextArea } from '../../../components/common/input/TextArea/styled';
+import FileInput from '../../../components/atoms/input/FileInput';
+import { StyledTextArea } from '../../../components/atoms/input/TextArea/styled';
 import {
   ErrorBox,
   StyledInput,
-} from '../../../components/common/input/TextInput/styled';
-import ApplyModal from '../../../components/common/Modal/ApplyModal';
-import { SubTitle, Title } from '../../../components/common/Title/title';
+} from '../../../components/atoms/input/TextInput/styled';
+import { SubTitle, Title } from '../../../components/atoms/Title/title';
+import ApplyModal from '../../../components/organisms/Modal/ApplyModal';
+
 import { formValidation } from '../../../components/Validation/recuitForm';
 import { db } from '../../../firebase/firebase';
 import { storage } from '../../../firebase/firebase.config';

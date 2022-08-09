@@ -6,9 +6,10 @@ import {
   HomeSectionTitle,
   HomeSectionWrapper,
 } from './styled';
-import { culture } from '../../pageData/culture';
+
 import { motion } from 'framer-motion';
-import { listAnimate, listItemAnimate } from '../common/Variants/Variants';
+import { listAnimate, listItemAnimate } from '../../Variants/Variants';
+import { culture } from '../../../pageData/culture';
 
 const CultureContentSection = styled(motion.section)`
   display: grid;
@@ -51,7 +52,7 @@ const CultureText = styled.p`
   }
 `;
 
-const CultureSection = () => {
+const CultureOrganism = () => {
   return (
     <HomeSectionContainer>
       <HomeSectionContainerInner>
@@ -84,4 +85,4 @@ const CultureSection = () => {
   );
 };
 
-export default CultureSection;
+export default CultureOrganism;

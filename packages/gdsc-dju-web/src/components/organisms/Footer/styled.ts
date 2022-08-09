@@ -1,21 +1,5 @@
 import styled, { css } from 'styled-components';
 
-export const Footer = styled.footer`
-  display: flex;
-  justify-content: center;
-  max-width: 1064px;
-  margin: auto;
-  padding: 0 67px;
-  box-sizing: border-box;
-`;
-
-export const FooterContent = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-`;
-
 export const FooterText = styled.a<{ google?: boolean }>`
   font-size: ${({ theme }) => theme.fontSize.body2};
   font-weight: 600;
@@ -69,16 +53,5 @@ export const FooterLogo = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-  }
-`;
-export const FooterLogoWrapper = styled.div`
-  margin-right: 20px;
-`;
-export const FooterGDSCLogo = styled.img`
-  height: 30px;
-
-  padding-right: 5px;
-  @media (max-width: 500px) {
-    height: 30px;
   }
 `;

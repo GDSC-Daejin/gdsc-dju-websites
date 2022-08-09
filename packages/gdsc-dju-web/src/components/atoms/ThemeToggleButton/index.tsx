@@ -1,8 +1,8 @@
 import { DarkModeContext } from '@gdsc-dju/styled-components';
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import DarkModeIcon from '../../assets/icons/darkModeIcon';
-import LightModeIcon from '../../assets/icons/lightModeIcon';
+import DarkModeIcon from '../../../assets/icons/darkModeIcon';
+import LightModeIcon from '../../../assets/icons/lightModeIcon';
 
 const ThemeButton = styled.button`
   padding: 7px;

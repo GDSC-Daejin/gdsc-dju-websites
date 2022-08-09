@@ -1,8 +1,8 @@
 import { useAtom } from 'jotai';
 import React from 'react';
 import { menuAtom } from '../../../../store/menuAtom';
+import { sidebar } from '../../../Variants/NavigationAnimation';
 
-import { sidebar } from '../../Variants/NavigationAnimation';
 import { ShortNavigation } from '../DeskNavigation/styled';
 import MobileMenuCategory from '../MobileMenuCategory';
 import { MobileNavBackGround } from './styled';

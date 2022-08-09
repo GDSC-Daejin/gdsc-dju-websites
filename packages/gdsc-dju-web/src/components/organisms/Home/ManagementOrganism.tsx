@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { managerData } from '../../pageData/managerData';
-import { useYClickScroll } from '../../utils/useYClickScroll';
-import MemberCard from '../common/MemberCard';
-import { listAnimate, listItemAnimate } from '../common/Variants/Variants';
+import { managerData } from '../../../pageData/managerData';
+import { useYClickScroll } from '../../../utils/useYClickScroll';
+import MemberCard from '../../molecules/MemberCard';
+import { listAnimate, listItemAnimate } from '../../Variants/Variants';
+
 import {
   HomeSectionContainer,
   HomeSectionContainerInner,
@@ -77,7 +78,7 @@ const MemberCardWrapper = styled(motion.div)<{
     `}
 `;
 
-const ManagementSection = () => {
+const ManagementOrganism = () => {
   const {
     windowSize,
     sessionRef,
@@ -137,4 +138,4 @@ const ManagementSection = () => {
   );
 };
 
-export default ManagementSection;
+export default ManagementOrganism;

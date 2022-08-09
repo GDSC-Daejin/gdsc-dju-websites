@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSearchParams } from 'react-router-dom';
-import ApplySuccessCard from '../../../components/common/ApplySuccessCard';
-import ReactHelmet from '../../../components/common/ReactHelmet';
-import { MainText } from '../../../components/common/Title/title';
+import { MainText } from '../../../components/atoms/Title/title';
+import ApplySuccessCard from '../../../components/organisms/ApplySuccessCard';
+
 import { ContainerInner, LayoutContainer } from '../../../styles/layouts';
 import {
   RecruitFormCardWrapper,

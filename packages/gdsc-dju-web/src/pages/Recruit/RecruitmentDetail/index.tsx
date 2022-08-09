@@ -1,8 +1,9 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Banner from '../../../components/common/Banner';
-import { SubtitleContent } from '../../../components/common/BulletList';
-import { Title } from '../../../components/common/Title/title';
+import { Title } from '../../../components/atoms/Title/title';
+import Banner from '../../../components/molecules/Banner';
+import { SubtitleContent } from '../../../components/molecules/BulletList';
+
 import {
   RecruitDetails,
   recruitDefaultText,

@@ -1,7 +1,7 @@
 import { GdsThemeProvider } from '@gdsc-dju/styled-components';
 import React from 'react';
+import Navigation from './components/organisms/navigation/DeskNavigation';
 
-import Navigation from './components/common/navigation/DeskNavigation';
 import Layout from './Layout';
 import ElementLayoutBox from './Layout/ElementLayoutBox';
 import GlobalStyles from './styles/globalStyles';
