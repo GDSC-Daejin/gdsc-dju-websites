@@ -22,8 +22,13 @@ export class Api {
   };
   putRecruitStatus = (payload: recruitmentInfoDataType) => {
     return axios.put<recruitmentInfoDataType>(
-      `${this.API}/api/admin/v1/support/limit/update`,
+      `${this.API}/member-route/api/admin/v1/support/limit/update`,
       payload,
+      {
+        headers: {
+          Authorization: `Bearer ${this.TOKEN}`,
+        },
+      },
     );
   };
 }
