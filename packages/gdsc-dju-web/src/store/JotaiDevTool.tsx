@@ -6,7 +6,6 @@ const isProduction = process.env.NODE_ENV !== 'production';
 export const AtomDevtools: React.FC<{
   children: ReactElement;
 }> = ({ children }) => {
-  useAtomsDevtools('atomDevtools', { enabled: !isProduction });
-
+  !isProduction && useAtomsDevtools('atomDevtools', { enabled: !isProduction });
   return children;
 };
