@@ -11,13 +11,13 @@ import { motion } from 'framer-motion';
 import { listAnimate, listItemAnimate } from '../common/Variants/Variants';
 
 const CultureContentSection = styled(motion.section)`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   margin-top: 80px;
+  grid-gap: 50px;
   @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
     margin-top: 40px;
-    gap: 30px;
+    grid-gap: 30px;
   }
 `;
 const CultureContentWrapper = styled(motion.div)`

@@ -1,4 +1,10 @@
+import { AnimatePresence } from 'framer-motion';
+import { useAtom } from 'jotai';
 import React from 'react';
+import { MODAL_KEY, modalAtom } from '../../../../store/modalAtom';
+import OutsideClickHandler from '../../../../utils/OutsideClickHandler';
+import { GDSCButton } from '../../Button';
+import { modalVariants } from '../../Variants/modalVariants';
 import {
   ApplyButtonWrapper,
   ApplyModalButtonWrapper,
@@ -9,12 +15,6 @@ import {
   ApplyModalTitle,
   ApplyModalWrapper,
 } from './styled';
-import { GDSCButton } from '../../Button';
-import { MODAL_KEY, modalState } from '../../../../store/modal';
-import { useRecoilState } from 'recoil';
-import OutsideClickHandler from '../../../../utils/OutsideClickHandler';
-import { AnimatePresence } from 'framer-motion';
-import { modalVariants } from '../../Variants/modalVariants';
 
 interface Props {
   name: string;
@@ -31,7 +31,7 @@ const ApplyModal: React.FC<Props> = ({
   phoneNumber,
   onClick,
 }) => {
-  const [modal, setModal] = useRecoilState(modalState);
+  const [modal, setModal] = useAtom(modalAtom);
   return (
     <AnimatePresence>
       {modal.applyCheck && (

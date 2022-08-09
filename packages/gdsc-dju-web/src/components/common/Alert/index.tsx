@@ -1,13 +1,13 @@
-import React, { memo, useEffect, useState } from 'react';
-import { useRecoilState } from 'recoil';
+import { AnimatePresence } from 'framer-motion';
+import { useAtom } from 'jotai';
+import React, { memo, useEffect } from 'react';
+import { alertAtom } from '../../../store/alertAtom';
 import {
   AlertInner,
   AlertInnerWrapper,
   AlertText,
   AlertWrapper,
 } from './styled';
-import { alertState } from '../../../store/alert';
-import { AnimatePresence } from 'framer-motion';
 
 const variants = {
   active: {
@@ -20,26 +20,29 @@ const variants = {
   },
 };
 const Alert = () => {
-  const [alert, setAlert] = useRecoilState(alertState);
+  const [alert, setAlert] = useAtom(alertAtom);
 
   useEffect(() => {
-    const alertTimer = setTimeout(() => {
-      setAlert({
-        ...alert,
-        alertHandle: false,
-      });
-      clearTimeout(alertTimer);
-    }, 4000);
-  }, [alert.alertHandle]);
-  const alertStatusColor = {
-    success: '#55af7a',
-    error: '#f44336',
-    warning: '#ffa50e',
+    if (alert.alertHandle) {
+      const alertTimer = setTimeout(() => {
+        setAlert({
+          ...alert,
+          alertHandle: false,
+        });
+        clearTimeout(alertTimer);
+      }, 4000);
+    }
+  }, [alert]);
+
+  const ALERT_STATUS_COLOR = {
+    SUCCESS: '#55af7a',
+    ERROR: '#f44336',
+    WARNING: '#ffa50e',
   };
 
   return (
     <AnimatePresence>
-      {alert.alertHandle && (
+      {alert && alert.alertHandle && (
         <AlertWrapper>
           <AlertInner
             variants={variants}
@@ -48,7 +51,9 @@ const Alert = () => {
             initial={{ opacity: 0, scale: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <AlertInnerWrapper alertColor={alertStatusColor[alert.alertStatus]}>
+            <AlertInnerWrapper
+              alertColor={ALERT_STATUS_COLOR[alert.alertStatus]}
+            >
               <AlertText>{alert.alertMessage}</AlertText>
             </AlertInnerWrapper>
           </AlertInner>

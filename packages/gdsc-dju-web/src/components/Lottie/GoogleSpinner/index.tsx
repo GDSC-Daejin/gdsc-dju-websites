@@ -1,15 +1,15 @@
-import React, { useEffect, useRef } from 'react';
-import { GoogleLoader, LoaderBackground } from './styled';
-import lottie from 'lottie-web';
-import googleAnimation from './GoogleAnimation.json';
 import { AnimatePresence } from 'framer-motion';
-import { useRecoilValue } from 'recoil';
-import { loaderState } from '../../../store/loader';
+import { useAtom } from 'jotai';
+import lottie from 'lottie-web';
+import React, { useEffect, useRef } from 'react';
+import { loaderAtom } from '../../../store/loaderAtom';
+import googleAnimation from './GoogleAnimation.json';
+import { GoogleLoader, LoaderBackground } from './styled';
 
 const GoogleSpinner = (props: { background?: boolean }) => {
   const { background } = props;
   const googleContainer = useRef<HTMLDivElement>(null);
-  const loading = useRecoilValue(loaderState);
+  const [loading] = useAtom(loaderAtom);
 
   useEffect(
     () =>
@@ -20,11 +20,11 @@ const GoogleSpinner = (props: { background?: boolean }) => {
         autoplay: true,
         animationData: googleAnimation,
       }),
-    [loading.load],
+    [loading],
   );
   return (
     <AnimatePresence>
-      {loading.load && (
+      {loading && (
         <LoaderBackground
           background={background}
           initial={{ opacity: 0 }}
@@ -45,7 +45,7 @@ const GoogleSpinner = (props: { background?: boolean }) => {
 const GoogleSpinnerStatic = (props: { background?: boolean }) => {
   const { background } = props;
   const googleContainer = useRef<HTMLDivElement>(null);
-  const loading = useRecoilValue(loaderState);
+  const [loading] = useAtom(loaderAtom);
 
   useEffect(
     () =>
@@ -56,8 +56,9 @@ const GoogleSpinnerStatic = (props: { background?: boolean }) => {
         autoplay: true,
         animationData: googleAnimation,
       }),
-    [loading.load],
+    [loading],
   );
+
   return (
     <LoaderBackground
       background={background}

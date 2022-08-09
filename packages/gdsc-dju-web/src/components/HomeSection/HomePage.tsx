@@ -1,9 +1,9 @@
+import { useAtom } from 'jotai';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 
-import { recruitmentState } from '../../store/recruitHandler';
+import { recruitmentAtom } from '../../store/recruitmentStatusAtom';
 import DownArrow from '../common/DownArrow';
 import { bannerItemAnimate } from '../common/Variants/Variants';
 import {
@@ -48,7 +48,7 @@ const HomePage = () => {
   );
 };
 const HomeRecruitmentButton = () => {
-  const [recruit] = useRecoilState(recruitmentState);
+  const [recruit] = useAtom(recruitmentAtom);
   const navigate = useNavigate();
   return (
     <ButtonWrapper variants={bannerItemAnimate}>

@@ -1,7 +1,12 @@
+import { useAtom } from 'jotai';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import GDSCLogo from '../../../../assets/logos/GDSCLogo.svg';
+import { menuAtom } from '../../../../store/menuAtom';
+import { navigationAnimate } from '../../Variants/NavigationAnimation';
+import { ROUTES } from '../DeskNavigation';
 import { StyledLink } from '../DeskNavigation/styled';
-import { useRecoilState } from 'recoil';
-import { MENU_KEY, menuState } from '../../../../store/menu';
+import './MobileMenu.css';
 import {
   CategoryLine,
   MenuInner,
@@ -9,15 +14,10 @@ import {
   MenuRouteWrapper,
   MenuWrapper,
 } from './styled';
-import './MobileMenu.css';
-import { useNavigate } from 'react-router-dom';
-import { navigationAnimate } from '../../Variants/NavigationAnimation';
-import { ROUTES } from '../DeskNavigation';
-import GDSCLogo from '../../../../assets/logos/GDSCLogo.svg';
 
 const MobileMenuCategory = () => {
   const navigate = useNavigate();
-  const [menu, setMenu] = useRecoilState(menuState);
+  const [menu, setMenu] = useAtom(menuAtom);
   return (
     <MenuWrapper>
       <picture>
@@ -34,7 +34,7 @@ const MobileMenuCategory = () => {
             key={id}
             onClick={() => {
               navigate(data.route);
-              setMenu({ ...menu, [MENU_KEY.APPMENU]: false });
+              setMenu(false);
             }}
           >
             <StyledLink>{data.title}</StyledLink>

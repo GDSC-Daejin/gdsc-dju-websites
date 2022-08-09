@@ -1,9 +1,11 @@
-import React, { Suspense, lazy } from 'react';
+import { useAtom } from 'jotai';
+import React, { Suspense, lazy, useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { Route, Routes } from 'react-router';
 import ScrollTop from '../components/common/ScrollTop';
 import { GoogleSpinnerStatic } from '../components/Lottie/GoogleSpinner';
 import Error from '../pages/Error';
+import { asyncGetRecruitmentStatusAtom } from '../store/recruitmentStatusAtom';
 
 const Home = lazy(() =>
   import('../pages/Home').then((module) => ({
@@ -27,6 +29,11 @@ const Faq = lazy(() =>
   })),
 );
 const Layout = () => {
+  const [, getRecruitment] = useAtom(asyncGetRecruitmentStatusAtom);
+  useEffect(() => {
+    getRecruitment();
+  }, []);
+
   return (
     <ErrorBoundary FallbackComponent={Error}>
       <Suspense fallback={<GoogleSpinnerStatic />}>

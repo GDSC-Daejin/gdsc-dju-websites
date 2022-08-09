@@ -22,7 +22,7 @@ export const HomeSectionContainerInner = styled(motion.div)`
   display: flex;
   width: 100vw;
   min-height: 100vh;
-  max-width: 80%;
+  max-width: 92%;
   margin: 0 auto;
   min-width: 320px;
   align-items: center;
@@ -36,16 +36,14 @@ export const HomeSectionContainerInner = styled(motion.div)`
 `;
 export const HomeSectionWrapper = styled(motion.div)`
   margin: 0 auto;
-  max-width: 1090px;
-  width: fit-content;
+  max-width: 92%;
+  width: 92%;
   padding: 50px 2rem;
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
   position: relative;
-  @media (max-width: ${({ theme }) => theme.windowSize.desk}px) {
-    max-width: 700px;
-  }
+
   @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
     max-width: 600px;
   }
@@ -55,13 +53,14 @@ export const HomeSectionWrapper = styled(motion.div)`
 `;
 export const HomeSectionTitle = styled(motion.h1)`
   display: block;
-  width: fit-content;
+
   margin-bottom: 25px;
   font-size: ${({ theme }) => theme.fontSize.h2};
   font-style: normal;
   font-weight: bold;
   font-stretch: normal;
   line-height: 52px;
+  width: 100%;
   color: ${({ theme }) => theme.colors.grey900};
   letter-spacing: normal;
   word-break: keep-all;

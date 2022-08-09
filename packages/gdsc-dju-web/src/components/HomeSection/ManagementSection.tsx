@@ -1,27 +1,20 @@
-import React, { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+import React from 'react';
 import styled, { css } from 'styled-components';
+import { managerData } from '../../pageData/managerData';
 import { useYClickScroll } from '../../utils/useYClickScroll';
+import MemberCard from '../common/MemberCard';
+import { listAnimate, listItemAnimate } from '../common/Variants/Variants';
 import {
   HomeSectionContainer,
   HomeSectionContainerInner,
   HomeSectionTitle,
   HomeSectionWrapper,
 } from './styled';
-import MemberCard from '../common/MemberCard';
-import { motion } from 'framer-motion';
-import { managerData } from '../../pageData/managerData';
-import { listAnimate, listItemAnimate } from '../common/Variants/Variants';
 
 const ManagerSectionInner = styled(HomeSectionContainerInner)`
-  width: fit-content;
   min-width: 320px;
   min-height: fit-content;
-  @media (max-width: ${({ theme }) => theme.windowSize.desk}px) {
-    max-width: 1160px;
-  }
-  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
-    max-width: 800px;
-  }
 `;
 const ManagerSectionWrapper = styled(HomeSectionWrapper)`
   padding-top: 0;
@@ -98,8 +91,8 @@ const ManagementSection = () => {
   return (
     <>
       <HomeSectionContainer>
-        <ManagerSectionInner ref={sectionRef}>
-          <ManagerSectionWrapper>
+        <ManagerSectionInner>
+          <ManagerSectionWrapper ref={sectionRef}>
             <HomeSectionTitle
               variants={listItemAnimate}
               initial={'start'}

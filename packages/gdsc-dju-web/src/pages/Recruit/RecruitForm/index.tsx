@@ -1,11 +1,10 @@
 import { addDoc, collection } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
+import { useAtom } from 'jotai';
 import React, { memo, useLayoutEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FieldValues } from 'react-hook-form/dist/types/fields';
 import { createSearchParams, useNavigate, useParams } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
-import { recruitInfo } from '../../../pageData/recruitInfo';
 import FileInput from '../../../components/common/input/FileInput';
 import { StyledTextArea } from '../../../components/common/input/TextArea/styled';
 import {
@@ -13,14 +12,15 @@ import {
   StyledInput,
 } from '../../../components/common/input/TextInput/styled';
 import ApplyModal from '../../../components/common/Modal/ApplyModal';
-import ReactHelmet from '../../../components/common/ReactHelmet';
 import { SubTitle, Title } from '../../../components/common/Title/title';
 import { formValidation } from '../../../components/Validation/recuitForm';
 import { db } from '../../../firebase/firebase';
 import { storage } from '../../../firebase/firebase.config';
-import { alertState } from '../../../store/alert';
-import { loaderState } from '../../../store/loader';
-import { MODAL_KEY, modalState } from '../../../store/modal';
+import { recruitInfo } from '../../../pageData/recruitInfo';
+import { alertAtom } from '../../../store/alertAtom';
+import { loaderAtom } from '../../../store/loaderAtom';
+
+import { MODAL_KEY, modalAtom } from '../../../store/modalAtom';
 import { ContainerInner, LayoutContainer } from '../../../styles/layouts';
 import {
   IApplicantParams,
@@ -44,9 +44,9 @@ import {
 const RecruitForm = () => {
   const { id } = useParams();
   const [position, setPosition] = useState('');
-  const [loading, setLoading] = useRecoilState(loaderState);
-  const [modal, setModal] = useRecoilState(modalState);
-  const [alert, setAlert] = useRecoilState(alertState);
+  const [loading, setLoading] = useAtom(loaderAtom);
+  const [modal, setModal] = useAtom(modalAtom);
+  const [alert, setAlert] = useAtom(alertAtom);
   const [file, setFile] = useState<null | File>(null);
   const navigate = useNavigate();
   const [data, setData] = useState<null | IInputRegister>(null);
@@ -64,7 +64,7 @@ const RecruitForm = () => {
           alertMessage: `지원서 파일 사이즈는 ${Math.floor(
             size / 1000000,
           )}MB 이하로 선택해주세요.`,
-          alertStatus: 'error',
+          alertStatus: 'ERROR',
           alertHandle: true,
         });
       } else if (file.type !== type) {
@@ -72,7 +72,7 @@ const RecruitForm = () => {
         setAlert({
           ...alert,
           alertMessage: `${typeName} 파일만 업로드 가능합니다.`,
-          alertStatus: 'error',
+          alertStatus: 'ERROR',
           alertHandle: true,
         });
         return;
@@ -99,7 +99,7 @@ const RecruitForm = () => {
       uploadDate: new Date(),
       position: position,
     };
-    setLoading({ ...loading, load: true });
+    setLoading(true);
     setModal({ ...modal, [MODAL_KEY.APPLY_CHECK]: false });
     try {
       if (file) {
@@ -120,15 +120,15 @@ const RecruitForm = () => {
           params as Record<string, string | string[]>,
         )}`,
       });
-      setLoading({ ...loading, load: false });
+      setLoading(false);
     } catch (e) {
       setAlert({
         ...modal,
         alertMessage: '어딘가 문제가 생겼어요.',
-        alertStatus: 'error',
+        alertStatus: 'ERROR',
         alertHandle: true,
       });
-      setLoading({ ...loading, load: false });
+      setLoading(false);
     }
   };
 

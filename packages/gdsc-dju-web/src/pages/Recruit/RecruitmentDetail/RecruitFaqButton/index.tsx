@@ -1,9 +1,9 @@
+import { useAtom } from 'jotai';
 import React from 'react';
-import { StyledButton } from '../../../../components/common/Button/styled';
-import { useRecoilState } from 'recoil';
-import { recruitmentState } from '../../../../store/recruitHandler';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { StyledButton } from '../../../../components/common/Button/styled';
+import { recruitmentAtom } from '../../../../store/recruitmentStatusAtom';
 
 const RecruitFaqButtonWrapper = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const RecruitFaqButtonWrapper = styled.div`
 
 const RecruitFaqButton = (props: { name: string }) => {
   const { name } = props;
-  const [recruit] = useRecoilState(recruitmentState);
+  const [recruit] = useAtom(recruitmentAtom);
   const keyTyped = name as keyof typeof recruit;
   const navigate = useNavigate();
   return (
