@@ -1,3 +1,5 @@
+import { addDoc, collection, limit, orderBy, query } from 'firebase/firestore';
+import { useAtom } from 'jotai';
 import React, {
   PropsWithChildren,
   forwardRef,
@@ -8,7 +10,7 @@ import React, {
 } from 'react';
 import { db } from '../../../firebase/firebase';
 import { useFirestoreQuery } from '../../../hooks/useFirebaseQuery';
-import { useRecoilValue } from 'recoil';
+import { userAtom } from '../../../store/userAtom';
 
 import { IApplicantChatType } from '../../../types/applicant';
 import ChatCard from '../ChatCard';
@@ -20,9 +22,6 @@ import {
   ApplicantChatSendButton,
   ChatCardWrapper,
 } from './styled';
-import { addDoc, collection, limit, orderBy, query } from 'firebase/firestore';
-import { useAtom } from 'jotai';
-import { userAtom } from '../../../atoms/userAtom';
 
 interface IApplicantChatProps {
   newMessages: IApplicantChatType[];
@@ -64,7 +63,7 @@ const ApplicantChatSection: React.FC<IApplicantChatSectionProps> = ({
 
   const q = query(
     collection(db, `chats-${applicantId}`),
-    orderBy('createdAt', 'asc'),
+    orderBy('createdAt', 'desc'),
     limit(100),
   );
   const chatRef = collection(db, `chats-${applicantId}`);
@@ -101,11 +100,11 @@ const ApplicantChatSection: React.FC<IApplicantChatSectionProps> = ({
       handleOnSubmit();
     }
   };
+
   useEffect(() => {
-    chatSectionRef.current?.scrollIntoView({
-      behavior: 'smooth',
-    });
+    chatSectionRef.current?.scrollIntoView();
   }, [newMessages]);
+
   return (
     <ApplicantChatSectionWrapper>
       <>

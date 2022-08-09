@@ -2,7 +2,7 @@ import { doc, updateDoc } from 'firebase/firestore';
 import { AnimatePresence } from 'framer-motion';
 import { useAtom } from 'jotai';
 import React, { memo, useCallback, useEffect, useState } from 'react';
-import { modalAtom } from '../../../../atoms/modalAtom';
+import { modalAtom } from '../../../../store/modalAtom';
 import { db } from '../../../../firebase/firebase';
 import {
   QuestionType,

@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { useNavigate } from 'react-router';
+import { MainText, Title } from '../../../components/atoms/Title/title';
+import Banner from '../../../components/molecules/Banner';
 import { RecruitDetails } from '../../../pageData/recruitDetails';
-import Banner from '../../../components/common/Banner';
-import ReactHelmet from '../../../components/common/ReactHelmet';
-import { MainText, Title } from '../../../components/common/Title/title';
+
 import {
   ContainerInner,
   LayoutContainer,

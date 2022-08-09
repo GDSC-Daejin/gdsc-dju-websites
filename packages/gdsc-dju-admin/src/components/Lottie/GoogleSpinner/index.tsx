@@ -1,6 +1,6 @@
 import { useAtom } from 'jotai';
 import React, { useEffect, useRef } from 'react';
-import { loaderAtom } from '../../../atoms/loaderAtom';
+import { loaderAtom } from '../../../store/loaderAtom';
 import { GoogleLoader, LoaderBackground } from './styled';
 import lottie from 'lottie-web';
 import googleAnimation from './GoogleAnimation.json';

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
-import Alert from '../components/common/Alert';
-import { Footer } from '../components/common/Footer';
-import ReactHelmet from '../components/common/ReactHelmet';
-
-import { GoogleSpinner } from '../components/Lottie/GoogleSpinner';
+import { GoogleSpinner } from '../components/atoms/Lottie/GoogleSpinner';
+import Alert from '../components/organisms/Alert';
+import { Footer } from '../components/organisms/Footer';
+import ReactHelmet from '../components/ReactHelmet';
 
 const ElementLayoutBox: React.FC<{ children: React.ReactNode }> = ({
   children,

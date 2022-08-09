@@ -1,14 +1,14 @@
 import React from 'react';
-import { HelmetProvider } from 'react-helmet-async';
-import App from './App';
-import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
-import { RecoilRoot } from 'recoil';
+import { HelmetProvider } from 'react-helmet-async';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+import { AtomDevtools } from './store/JotaiDevTool';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <RecoilRoot>
+      <AtomDevtools>
         <HelmetProvider>
           <div
             style={{
@@ -21,7 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <App />
           </div>
         </HelmetProvider>
-      </RecoilRoot>
+      </AtomDevtools>
     </BrowserRouter>
   </React.StrictMode>,
 );

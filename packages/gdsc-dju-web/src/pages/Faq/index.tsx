@@ -1,7 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState } from 'react';
-import Banner from '../../components/common/Banner';
-import { Title } from '../../components/common/Title/title';
+import { Title } from '../../components/atoms/Title/title';
+import Banner from '../../components/molecules/Banner';
+
 import { FaqData } from '../../pageData/faq';
 import {
   ContainerInner,

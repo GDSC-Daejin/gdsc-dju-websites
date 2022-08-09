@@ -2,7 +2,7 @@ import { useAtom } from 'jotai';
 import React, { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useGetMyData } from '../../apis/hooks/useGetMyData';
-import { userAtom } from '../../atoms/userAtom';
+import { userAtom } from '../../store/userAtom';
 import { GoogleSpinnerStatic } from '../../components/Lottie/GoogleSpinner';
 
 const Redirect = () => {

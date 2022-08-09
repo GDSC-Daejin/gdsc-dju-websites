@@ -17,7 +17,7 @@ import {
 import { useLocation } from 'react-router';
 import GDSCLogo from '../../../assets/logos/GDSCLogo.svg';
 import AdminUserMenu from '../AdminUserMenu';
-import { userAtom } from '../../../atoms/userAtom';
+import { userAtom } from '../../../store/userAtom';
 import { useAtom } from 'jotai';
 import { ThemeType } from '../../../hooks/useTheme';
 import ThemeToggleButton from '../../ThemeToggleButton';

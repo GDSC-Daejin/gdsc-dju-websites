@@ -8,7 +8,7 @@ export const MinTitle = styled.div`
   color: ${({ theme }) => theme.colors.grey800};
 `;
 export const MinText = styled.div`
-  color: ${({ theme }) => theme.colors.tossBlue};
+  color: ${({ theme }) => theme.colors.blue900};
   font-size: ${({ theme }) => theme.fontSize.body2};
 `;
 

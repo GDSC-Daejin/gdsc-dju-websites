@@ -10,11 +10,7 @@ export class Api {
   protected TOKEN: string;
   protected REFRESH_TOKEN: string;
   constructor() {
-    if (process.env.NODE_ENV === 'development') {
-      this.API = 'https://gdsc-dju-dev.kro.kr';
-    } else {
-      this.API = 'https://gdsc-dju.com';
-    }
+    this.API = 'https://api.gdsc-dju.com';
     this.ACCOUNT_API = 'https://accounts.gdsc-dju.com';
     this.TOKEN = localStorage.getItem('token') ?? '';
     this.REFRESH_TOKEN = localStorage.getItem('refresh_token') ?? '';
@@ -26,8 +22,13 @@ export class Api {
   };
   putRecruitStatus = (payload: recruitmentInfoDataType) => {
     return axios.put<recruitmentInfoDataType>(
-      `${this.API}/api/admin/v1/support/limit/update`,
+      `${this.API}/member-route/api/admin/v1/support/limit/update`,
       payload,
+      {
+        headers: {
+          Authorization: `Bearer ${this.TOKEN}`,
+        },
+      },
     );
   };
 }

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { recruitmentInfoDataType } from '../types/recruitmentInfo';
 import { RowMemberDataType } from '../types/userDataType';
 
 import { Api } from './index';

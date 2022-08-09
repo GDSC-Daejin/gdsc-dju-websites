@@ -2,7 +2,7 @@ import { useAtom } from 'jotai';
 import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useGetMyData } from '../../apis/hooks/useGetMyData';
-import { userAtom } from '../../atoms/userAtom';
+import { userAtom } from '../../store/userAtom';
 
 const CheckAdminUser = () => {
   const [adminUser, setAdminUser] = useAtom(userAtom);

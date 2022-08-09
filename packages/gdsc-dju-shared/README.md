@@ -48,11 +48,11 @@ or
 │   ├── layout //페이지 레이아웃을 저장하는 폴더입니다.
 │   │   ├── home.home.styled.ts // 홈 레이아웃 스타일을 저장하는 파일입니다.
 │   │   ├── home.tsx //홈 레이아웃 파일입니다.
-│   │   └── index.tsx //route를 위한 파일입니다.
+│   │   └── ScrollTop.tsx //route를 위한 파일입니다.
 │   ├── main.tsx
 │   ├── pages // 페이지를 저장하는 폴더입니다.
 │   │   └── Home
-│   │       └── index.tsx
+│   │       └── ScrollTop.tsx
 │   ├── store // 상태를 저장하는 폴더입니다.
 │   │   └── menuStore.ts
 │   ├── styles // 스타일을 저장하는 폴더입니다.
@@ -60,7 +60,7 @@ or
 │   │   ├── fontSize.ts // 폰트 크기를 저장하는 파일입니다.
 │   │   ├── globalStyles.ts // 전역 스타일을 저장하는 파일입니다.
 │   │   ├── layouts.ts // 레이아웃을 저장하는 파일입니다.
-│   │   ├── lightColors.ts // 색상을 저장하는 파일입니다.
+│   │   ├── index.ts // 색상을 저장하는 파일입니다.
 │   │   ├── theme.ts // 각 에셋을 합쳐주는 파일입니다.
 │   │   └── windowSize.ts // 윈도우 크기를 저장하는 파일입니다.
 │   ├── types // 타입을 저장하는 폴더입니다.

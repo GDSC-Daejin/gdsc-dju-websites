@@ -1,22 +1,20 @@
+import { GdsThemeProvider } from '@gdsc-dju/styled-components';
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import Navigation from './components/common/navigation/DeskNavigation';
-import { useTheme } from './hooks/useTheme';
+import Navigation from './components/organisms/navigation/DeskNavigation';
+
 import Layout from './Layout';
 import ElementLayoutBox from './Layout/ElementLayoutBox';
 import GlobalStyles from './styles/globalStyles';
-import { darkTheme, lightTheme } from './styles/theme';
 
 function App() {
-  const { theme, toggleTheme } = useTheme();
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <GdsThemeProvider mode={'auto'}>
       <GlobalStyles />
-      <Navigation theme={theme} toggleTheme={toggleTheme} />
+      <Navigation />
       <ElementLayoutBox>
         <Layout />
       </ElementLayoutBox>
-    </ThemeProvider>
+    </GdsThemeProvider>
   );
 }
 

@@ -5,7 +5,7 @@ export const QuestionWrapper = styled(motion.a)<{ isOpen: boolean }>`
   cursor: pointer;
   padding: 24px 10px;
   display: flex;
-  color: ${(props) => props.theme.colors.grey700};
+  color: ${({ theme }) => theme.colors.grey700};
   flex-direction: column;
   border-radius: 10px;
   font-size: ${({ theme }) => theme.fontSize.h6};
@@ -14,7 +14,7 @@ export const QuestionWrapper = styled(motion.a)<{ isOpen: boolean }>`
   ${({ isOpen }) =>
     isOpen &&
     css`
-      color: ${({ theme }) => theme.colors.googleBlue};
+      color: ${({ theme }) => theme.colors.blue900};
     `}
   &:hover {
     clip-path: inset(0% round 1%);
@@ -56,7 +56,7 @@ export const QuestionMark = styled.div`
     margin-right: 16px;
     margin-bottom: 2px;
     font-weight: 600;
-    color: ${(props) => props.theme.colors.grey700};
+    color: ${({ theme }) => theme.colors.grey700};
     content: 'Q';
   }
 `;
