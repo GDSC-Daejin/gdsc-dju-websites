@@ -1,7 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import { useAtom } from 'jotai';
 import React from 'react';
-import { modalAtom } from '../../../../atoms/modalAtom';
+import { modalAtom } from '../../../../store/modalAtom';
 import { IApplicantTypeWithID } from '../../../../types/applicant';
 import OutsideClickHandler from '../../../../utils/OutsideClickHandler';
 

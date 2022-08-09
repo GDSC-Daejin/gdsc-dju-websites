@@ -10,7 +10,7 @@ export class Api {
   protected TOKEN: string;
   protected REFRESH_TOKEN: string;
   constructor() {
-    this.API = 'https://accounts.gdsc-dju.com';
+    this.API = 'https://api.gdsc-dju.com';
     this.ACCOUNT_API = 'https://accounts.gdsc-dju.com';
     this.TOKEN = localStorage.getItem('token') ?? '';
     this.REFRESH_TOKEN = localStorage.getItem('refresh_token') ?? '';

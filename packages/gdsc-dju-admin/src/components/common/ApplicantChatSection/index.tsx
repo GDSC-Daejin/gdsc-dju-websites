@@ -22,7 +22,7 @@ import {
 } from './styled';
 import { addDoc, collection, limit, orderBy, query } from 'firebase/firestore';
 import { useAtom } from 'jotai';
-import { userAtom } from '../../../atoms/userAtom';
+import { userAtom } from '../../../store/userAtom';
 
 interface IApplicantChatProps {
   newMessages: IApplicantChatType[];

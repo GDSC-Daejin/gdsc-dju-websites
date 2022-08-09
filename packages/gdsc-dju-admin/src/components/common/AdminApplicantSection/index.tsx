@@ -2,8 +2,8 @@ import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useAtom } from 'jotai';
 import React, { memo, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { modalAtom } from '../../../atoms/modalAtom';
-import { recruitmentAtom } from '../../../atoms/recruitmentAtom';
+import { modalAtom } from '../../../store/modalAtom';
+import { recruitmentAtom } from '../../../store/recruitmentAtom';
 import {
   Handle,
   InformationHeader,

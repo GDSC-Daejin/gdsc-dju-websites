@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { recruitmentInfoDataType } from '../types/recruitmentInfo';
 import { RowMemberDataType } from '../types/userDataType';
 
 import { Api } from './index';
@@ -12,6 +13,12 @@ class UserService extends Api {
           Authorization: `Bearer ${token}`,
         },
       },
+    );
+  };
+  putRecruitStatus = (payload: recruitmentInfoDataType) => {
+    return axios.put<recruitmentInfoDataType>(
+      `${this.API}/member-route/api/admin/v1/support/limit/update`,
+      payload,
     );
   };
 }

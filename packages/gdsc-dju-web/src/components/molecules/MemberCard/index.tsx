@@ -131,7 +131,8 @@ const MemberCardV2: React.FC<IMemberCardProps> = ({
     <AnimatePresence>
       <LayoutGroup>
         <MemberCardContainer
-          onClick={() => setIsClicked(!isClicked)}
+          onMouseOver={() => setIsClicked(true)}
+          onMouseLeave={() => setIsClicked(false)}
           variants={memberCardAnimate}
           initial="hidden"
           animate={'visible'}
