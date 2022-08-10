@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
+import { position } from '../../../pageData/recruitInfo';
 
 import { SidebarContainer } from '../../../pages/styled';
 import { ROUTES } from '../../../routes/Route';
@@ -12,17 +13,7 @@ import {
   SideElementWrapper,
 } from './styled';
 
-const position = {
-  home: 'Home',
-  frontend: 'Frontend Developer',
-  backend: 'Backend Developer',
-  android: 'Android Developer',
-  beginner: 'Beginner',
-  design: 'Designer',
-  ml: 'Machine Learning',
-};
-
-const AdminSidebar = () => {
+const SideMenu = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -55,11 +46,11 @@ const AdminSidebar = () => {
             </SideElementWrapper>
             {isRecruit &&
               isRecruitROUTE &&
-              positionList.map((data) => {
+              positionList.map((data, id) => {
                 const selectedPosition = searchParams.get('type') === data;
                 return (
                   <SideElementChildrenWrapper
-                    key={data}
+                    key={id}
                     onClick={() => setParams(data)}
                   >
                     <SideElementText isCurrent={selectedPosition}>
@@ -75,4 +66,4 @@ const AdminSidebar = () => {
   );
 };
 
-export default memo(AdminSidebar);
+export default SideMenu;

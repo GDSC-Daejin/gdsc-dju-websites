@@ -1,14 +1,19 @@
+import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useAtom } from 'jotai';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
 import API from '../../apis';
-import AdminApplicantSection from '../../components/organisms/AdminApplicantSection';
-
+import ApplicantModal from '../../components/molecules/modal/ApplicantModal';
+import ApplicantsLayout from '../../components/organisms/ApplicantsLayout';
+import { useModalHandle } from '../../hooks/useModalHandle';
+import { position } from '../../pageData/recruitInfo';
 import {
   recruitmentReadOnlyAtom,
   recruitmentWriteOnlyAtom,
 } from '../../store/recruitmentAtom';
+import { IApplicantTypeWithID } from '../../types/applicant';
+import { getApplicants } from '../../utils/applicantsHandler';
 import { AdminSectionWrapper } from './styled';
 
 const Applicants = () => {
@@ -16,6 +21,37 @@ const Applicants = () => {
   const [, writeRecruitStatus] = useAtom(recruitmentWriteOnlyAtom);
   const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
+
+  const { modal } = useModalHandle('APPLICANT');
+
+  const [applicants, setApplicants] = useState<IApplicantTypeWithID[]>();
+
+  const currentParam = searchParams.get('type') as string;
+
+  const filterApplicantsAsPosition = async (
+    applicants: IApplicantTypeWithID[],
+  ) => {
+    const currentPosition =
+      position[currentParam as keyof typeof position].toLowerCase();
+    if (applicants) {
+      const list = [...applicants];
+      const filteredApplicantsByPosition =
+        currentParam !== 'home'
+          ? list.filter((data) =>
+              data.position.toLowerCase().includes(currentPosition),
+            )
+          : list;
+      await setApplicants(filteredApplicantsByPosition);
+    }
+  };
+  const applicantHandler = async () => {
+    const applicants = await getApplicants(null);
+    await filterApplicantsAsPosition(applicants);
+  };
+
+  useEffect(() => {
+    applicantHandler();
+  }, [currentParam, modal]);
 
   useEffect(() => {
     writeRecruitStatus();
@@ -37,7 +73,17 @@ const Applicants = () => {
 
   return (
     <AdminSectionWrapper>
-      <AdminApplicantSection />
+      <AnimatePresence>
+        <LayoutGroup>
+          {modal.isOpen === 'APPLICANT' && <ApplicantModal />}
+          {applicants && (
+            <ApplicantsLayout
+              applicants={applicants}
+              currentParam={currentParam}
+            />
+          )}
+        </LayoutGroup>
+      </AnimatePresence>
     </AdminSectionWrapper>
   );
 };

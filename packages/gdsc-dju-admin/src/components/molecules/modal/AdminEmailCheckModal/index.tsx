@@ -45,6 +45,7 @@ const AdminEmailCheckModal: React.FC<Props> = ({
             <ModalInner>
               <ModalTitle>최종 전송 전, 확인해주세요.</ModalTitle>
               <ModalP>선택한 이메일은 총 {applicants.length}개에요.</ModalP>
+              <ModalP>선택한 템플릿은 {template}에요.</ModalP>
               <ButtonWrapper>
                 <GDSCButton
                   text={'돌아가기'}

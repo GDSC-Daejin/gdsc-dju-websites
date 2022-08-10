@@ -19,6 +19,21 @@ export const ApplicantCardWrapper = styled.div`
   }
 `;
 
+export const ApplicantContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 40px;
+  box-sizing: border-box;
+`;
+export const ApplicantHeadWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 95%;
+`;
 export const ApplicantCardSection = styled.section`
   display: flex;
   flex-wrap: wrap;

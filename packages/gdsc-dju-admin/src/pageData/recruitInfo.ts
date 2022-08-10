@@ -11,6 +11,17 @@ export const recruitInfo: IRecruitInfo = {
   GENERATION: `${GENERATION}`,
   COLLECTION: `applicants-${GENERATION}`,
 };
+
+export const position = {
+  home: 'Home',
+  frontend: 'Frontend Developer',
+  backend: 'Backend Developer',
+  android: 'Android Developer',
+  beginner: 'Beginner',
+  design: 'Designer',
+  ml: 'Machine Learning',
+};
+
 export type QuestionType =
   | 'question1'
   | 'question2'

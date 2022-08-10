@@ -2,12 +2,12 @@ import emailjs from '@emailjs/browser';
 import { addDoc, collection } from 'firebase/firestore';
 import { AnimatePresence } from 'framer-motion';
 import { useAtom } from 'jotai';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { GDSCButton } from '../../components/atoms/Button';
+import { TextInput } from '../../components/atoms/TextInput';
 import CheckBoxCard from '../../components/molecules/CheckBoxCard';
 import AdminEmailCheckModal from '../../components/molecules/modal/AdminEmailCheckModal';
 import ApplicantModal from '../../components/molecules/modal/ApplicantModal';
-import StatusBadgeBox from '../../components/molecules/StatusBadgeBox';
 import { db } from '../../firebase/firebase';
 import { useModalHandle } from '../../hooks/useModalHandle';
 import { isDevelop } from '../../pageData/recruitInfo';
@@ -15,17 +15,14 @@ import { isDevelop } from '../../pageData/recruitInfo';
 import { alertAtom } from '../../store/alertAtom';
 import { loaderAtom } from '../../store/loaderAtom';
 import { userAtom } from '../../store/userAtom';
-import {
-  EmailLogType,
-  IApplicantTypeWithID,
-  StatusType,
-} from '../../types/applicant';
+import { EmailLogType, IApplicantTypeWithID } from '../../types/applicant';
 import { getApplicants } from '../../utils/applicantsHandler';
 import {
   AdminSectionWrapper,
   EmailButtonWrapper,
   InformationHeader,
 } from '../Applicants/styled';
+import { TemplateSelectWrapper } from '../EmailLog/styled';
 import {
   CheckboxSection,
   CheckboxWrapper,
@@ -35,9 +32,11 @@ import {
   EmailRightInner,
   EmailRightWrapper,
   SelectedBoxSection,
+  TemplateEmailWrapper,
+  TemplateText,
 } from './styled';
 
-const Email: React.FC<{ template: string | null }> = ({ template }) => {
+const Email = () => {
   const [alert, setAlert] = useAtom(alertAtom);
   const [loading, setLoading] = useAtom(loaderAtom);
   const [admin] = useAtom(userAtom);
@@ -45,8 +44,9 @@ const Email: React.FC<{ template: string | null }> = ({ template }) => {
   const [filteredApplicants, setFilteredApplicants] =
     useState<IApplicantTypeWithID[]>();
   const [checkedApplicants, setCheckedApplicants] = useState(new Set());
-  const [filter, setFilter] = useState<StatusType | null>(null);
 
+  const [template, setTemplate] = useState<string | null>(null);
+  const templateRef = useRef<HTMLInputElement>(null);
   const { openModal, closeModal } = useModalHandle('EMAIL');
 
   const checkedApplicantHandler = (id: string, isChecked: boolean) => {
@@ -79,6 +79,7 @@ const Email: React.FC<{ template: string | null }> = ({ template }) => {
     template: string | null,
     applicants: IApplicantTypeWithID[],
   ) => {
+    setLoading({ ...loading, isLoading: true });
     closeModal();
     if (applicants.length === 0) {
       setAlert({
@@ -88,7 +89,6 @@ const Email: React.FC<{ template: string | null }> = ({ template }) => {
       });
     }
     if (template) {
-      setLoading({ ...loading, isLoading: true });
       await sendEmail(template, applicants);
     } else {
       setAlert({
@@ -97,6 +97,7 @@ const Email: React.FC<{ template: string | null }> = ({ template }) => {
         alertMessage: '템플릿을 선택하지 않았어요.',
       });
     }
+    setLoading({ ...loading, isLoading: false });
   };
 
   const sendEmail = async (
@@ -142,10 +143,7 @@ const Email: React.FC<{ template: string | null }> = ({ template }) => {
       }
     });
   };
-  const applicantHandler = async () => {
-    const applicants = await getApplicants(filter);
-    setFilteredApplicants(applicants);
-  };
+
   const applyButtonHandler = () =>
     checkedApplicants.size > 0
       ? openModal()
@@ -156,8 +154,11 @@ const Email: React.FC<{ template: string | null }> = ({ template }) => {
         });
 
   useEffect(() => {
-    applicantHandler();
-  }, [filter]);
+    (async function () {
+      const applicants = await getApplicants(null);
+      setFilteredApplicants(applicants);
+    })();
+  }, []);
 
   const selectApplicants = filteredApplicants?.filter((applicant) => {
     return checkedApplicants.has(applicant.id);
@@ -174,16 +175,14 @@ const Email: React.FC<{ template: string | null }> = ({ template }) => {
             template={template}
           />
         )}
+
         <EmailLeftWrapper>
           <EmailLeftInner>
             <EmailCategory>선택한 이메일</EmailCategory>
             {selectApplicants && (
               <SelectedBoxSection>
                 {selectApplicants.map((applicant) => (
-                  <div
-                    onDoubleClick={() => openModal(applicant.id)}
-                    key={`check-${applicant.id}`}
-                  >
+                  <div key={`check-${applicant.id}`}>
                     <CheckBoxCard {...applicant} disabled={true} />
                   </div>
                 ))}
@@ -194,14 +193,22 @@ const Email: React.FC<{ template: string | null }> = ({ template }) => {
         <EmailRightWrapper>
           <EmailRightInner>
             <InformationHeader>
-              {filteredApplicants && (
-                <StatusBadgeBox
-                  status={filter}
-                  setStatus={setFilter}
-                  filteredApplicants={filteredApplicants}
-                  setFilteredApplicants={setFilteredApplicants}
+              <TemplateSelectWrapper>
+                {template && (
+                  <TemplateText>선택한 템플릿: {template}</TemplateText>
+                )}
+                <TemplateEmailWrapper>
+                  <TextInput
+                    ref={templateRef}
+                    placeholder={'템플릿을 입력해주세요.'}
+                  />
+                </TemplateEmailWrapper>
+                <GDSCButton
+                  color={'blue900'}
+                  text={'템플릿 선택'}
+                  onClick={() => setTemplate(templateRef.current?.value ?? '')}
                 />
-              )}
+              </TemplateSelectWrapper>
               <EmailButtonWrapper>
                 <GDSCButton
                   color={!isAllChecked ? 'blue200' : 'blue900'}

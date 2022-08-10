@@ -9,7 +9,7 @@ const CheckBoxCardWrapper = styled.div<{ disabled?: boolean }>`
   text-align: center;
   justify-content: space-between;
   box-sizing: border-box;
-  box-shadow: 0 0 10px ${({ theme }) => theme.colors.boxShadow100};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow100};
   background: ${({ theme }) => theme.colors.white};
   padding: 12px 16px;
   height: 46px;

@@ -7,7 +7,6 @@ export const InformationHeader = styled.div`
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  height: 70px;
   box-sizing: border-box;
   flex-direction: row;
   margin-bottom: 30px;
@@ -20,7 +19,6 @@ export const EmailButtonWrapper = styled.div`
 `;
 
 export const AdminSectionWrapper = styled.div`
-  position: relative;
   display: flex;
   flex-direction: row;
   width: 100%;

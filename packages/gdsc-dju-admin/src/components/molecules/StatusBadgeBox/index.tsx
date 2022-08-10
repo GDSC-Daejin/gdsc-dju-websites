@@ -20,18 +20,10 @@ export const ApplicantsBadgeWrapper = styled.div`
 `;
 
 interface Props {
-  status: StatusType | null;
-  setStatus: (status: StatusType | null) => void;
   filteredApplicants: IApplicantTypeWithID[];
-  setFilteredApplicants: (list: IApplicantTypeWithID[]) => void;
 }
 
-const StatusBadgeBox: React.FC<Props> = ({
-  status,
-  setStatus,
-  filteredApplicants,
-  setFilteredApplicants,
-}) => {
+const StatusBadgeBox: React.FC<Props> = ({ filteredApplicants }) => {
   const filtered = applicantFilterByStatus(filteredApplicants);
   const statusBadgeList = {
     DOCS: filtered.DOCS.length,
@@ -41,19 +33,12 @@ const StatusBadgeBox: React.FC<Props> = ({
     HIRED: filtered.HIRED.length,
   } as const;
   const keyArray = Object.keys(statusBadgeList) as StatusType[];
-  const handleClick = (type: StatusType) => {
-    status === type ? setStatus(null) : setStatus(type);
-  };
-
-  useEffect(() => {
-    setFilteredApplicants(status ? filtered[status] : filteredApplicants);
-  }, [status]);
 
   return (
     <ApplicantsStatusWrapper>
       {keyArray.map((type) => (
-        <ApplicantsBadgeWrapper key={type} onClick={() => handleClick(type)}>
-          <StatusBadge status={type} disable={!(type === status)} />
+        <ApplicantsBadgeWrapper key={type}>
+          <StatusBadge status={type} />
           {statusBadgeList[type]}
         </ApplicantsBadgeWrapper>
       ))}

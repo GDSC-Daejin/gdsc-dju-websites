@@ -5,8 +5,8 @@ export const StyledInputInner = styled.input<{ disabled?: boolean }>`
   margin: 2px 0;
   border: 0;
   border-radius: 10px;
-  height: 48px;
-  font-size: ${(props) => props.theme.fontSize.body1};
+  height: 40px;
+  font-size: ${(props) => props.theme.fontSize.body2};
   outline: none;
   width: 100%;
   flex-grow: 1;
@@ -46,7 +46,7 @@ export const StyledInputWrapper = styled.div<{
   align-items: center;
   justify-content: center;
   margin: 1px auto 0;
-  height: 48px;
+  height: 40px;
   border: none;
   outline: none;
   appearance: none;
@@ -84,22 +84,6 @@ export const StyledInputWrapper = styled.div<{
   transition: 0.3s;
 `;
 
-export const InputImageWrapper = styled.div`
-  height: 20px;
-  width: 20px;
-  margin: 0 -8px 0 18px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-`;
-export const ErrorBox = styled.div`
-  height: 20px;
-  display: flex;
-  align-items: center;
-  color: ${(props) => props.theme.colors.red900};
-  font-size: ${(props) => props.theme.fontSize.body2};
-  padding-left: 5px;
-`;
 export const StyledInput = styled.input<{
   color?: string;
   disabled?: boolean;
