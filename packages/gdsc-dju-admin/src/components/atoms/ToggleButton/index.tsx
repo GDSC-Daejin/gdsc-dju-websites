@@ -25,8 +25,8 @@ export const Switch = styled.div`
 export const Handle = styled(motion.div)`
   width: 18px;
   height: 18px;
-  background: ${({ theme }) => theme.colors.grey900};
-  border: 1px solid ${({ theme }) => theme.colors.grey800};
+  background: #fff;
+  border: 1px solid #fff;
   border-radius: 40px;
 `;
 

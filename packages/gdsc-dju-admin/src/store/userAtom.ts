@@ -1,5 +1,6 @@
 import { atom } from 'jotai';
 import { getMyData } from '../apis/hooks/useGetMyData';
+import UserService from '../apis/UserService';
 import { IUserInfoDataType } from '../types/userInfoData';
 
 interface UserAtomType {
@@ -15,15 +16,17 @@ export const userAtom = atom<UserAtomType>({
   uid: null,
   memberInfo: null,
 });
-const token = localStorage.getItem('token');
-export const userInfoWriteOnlyAtom = atom(null, async (get, set) => {
-  const response = await getMyData(token);
-  if (response) {
-    set(userAtom, {
-      role: response.role,
-      nickname: response.memberInfo.nickname,
-      uid: response.userId,
-      memberInfo: response.memberInfo,
+
+export const userInfoWriteOnlyAtom = atom(
+  null,
+  async (get, set, token: string) => {
+    await getMyData(token).then((userData) => {
+      set(userAtom, {
+        role: userData.role,
+        nickname: userData.memberInfo.nickname,
+        uid: userData.userId,
+        memberInfo: userData.memberInfo,
+      });
     });
-  }
-});
+  },
+);

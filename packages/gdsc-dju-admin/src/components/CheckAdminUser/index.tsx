@@ -1,5 +1,5 @@
-import { useAtom } from 'jotai';
 import React, { useEffect } from 'react';
+import { useAtom } from 'jotai';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useGetMyData } from '../../apis/hooks/useGetMyData';
 import { userInfoWriteOnlyAtom } from '../../store/userAtom';
@@ -13,9 +13,6 @@ const CheckAdminUser = () => {
   const { userData } = useGetMyData();
   const isAdmin = userData?.role === 'LEAD' || 'CORE';
   const checkAdminUser = () => {
-    if (refreshToken && token && userData) {
-      writeAdminUser();
-    }
     if (!refreshToken && !token && location.pathname.includes('/certified')) {
       navigate('/');
       if (!isAdmin) {
@@ -24,8 +21,11 @@ const CheckAdminUser = () => {
     }
   };
   useEffect(() => {
-    checkAdminUser();
-  }, [userData]);
+    (async function () {
+      token && (await writeAdminUser(token));
+      checkAdminUser();
+    })();
+  }, [userData, token]);
   return null;
 };
 
