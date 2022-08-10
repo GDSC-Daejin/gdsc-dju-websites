@@ -1,8 +1,8 @@
 import { collection, limit, orderBy, query } from 'firebase/firestore';
 import React, { useRef } from 'react';
-import { GDSCButton } from '../../components/common/Button';
-import EmailLogCard from '../../components/common/EmailLogCard';
-import { TextInput } from '../../components/common/TextInput';
+import { GDSCButton } from '../../components/atoms/Button';
+import { TextInput } from '../../components/atoms/TextInput';
+import EmailLogCard from '../../components/molecules/EmailLogCard';
 
 import { db } from '../../firebase/firebase';
 import { useFirestoreQuery } from '../../hooks/useFirebaseQuery';
@@ -12,8 +12,8 @@ import { TemplateEmailWrapper, TemplateText } from '../Email/styled';
 import { LogWrapper, TemplateSelectWrapper } from './styled';
 
 const EmailLog: React.FC<{
-  template: string;
-  setTemplate: (template: string) => void;
+  template: string | null;
+  setTemplate: (template: string | null) => void;
 }> = ({ template, setTemplate }) => {
   const templateRef = useRef<HTMLInputElement>(null);
   const emailLogQuery = query(
@@ -28,7 +28,7 @@ const EmailLog: React.FC<{
     <>
       <TemplateSelectWrapper>
         <TemplateText>
-          {template !== '템플릿이 없어요 :(' && '선택한 템플릿 '}
+          {template ? '템플릿이 없어요 :(' : '선택한 템플릿 '}
           {template}
         </TemplateText>
         <TemplateEmailWrapper>

@@ -3,7 +3,8 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
 import API from '../../apis';
-import AdminApplicantSection from '../../components/common/AdminApplicantSection';
+import AdminApplicantSection from '../../components/organisms/AdminApplicantSection';
+
 import {
   recruitmentReadOnlyAtom,
   recruitmentWriteOnlyAtom,
@@ -11,11 +12,11 @@ import {
 import { AdminSectionWrapper } from './styled';
 
 const Applicants = () => {
-  const [recruit, getRecruitStatus] = useAtom(recruitmentReadOnlyAtom);
+  const [recruit] = useAtom(recruitmentReadOnlyAtom);
   const [, writeRecruitStatus] = useAtom(recruitmentWriteOnlyAtom);
   const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
-  //TODO:
+
   useEffect(() => {
     writeRecruitStatus();
   }, []);
@@ -26,7 +27,6 @@ const Applicants = () => {
       API.putRecruitStatus(recruit, token);
     }
   }, [recruit]);
-  console.log(getRecruitStatus);
 
   useEffect(() => {
     !searchParams.get('type') &&

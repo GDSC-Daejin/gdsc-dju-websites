@@ -1,9 +1,13 @@
 import { atom } from 'jotai';
 
-export const modalAtom = atom({
-  ADMIN_EMAIL: false,
-  ADMIN_SIGNUP: false,
-  USER_MENU: false,
-  ADMIN_APPLICANT: false,
+export type ModalKey = 'EMAIL' | 'SIGNUP' | 'USER_MENU' | 'APPLICANT';
+
+export interface ModalAtom {
+  isOpen: ModalKey | null;
+  selectedID: string;
+}
+
+export const modalAtom = atom<ModalAtom>({
+  isOpen: null,
   selectedID: '',
 });

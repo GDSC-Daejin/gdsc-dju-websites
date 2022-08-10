@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import AdminSidebar from '../components/common/AdminSidebar';
+import AdminSidebar from '../components/organisms/AdminSidebar';
 
 import AdminApplicants from './Applicants';
 import Email from './Email';
@@ -13,7 +13,7 @@ import {
 } from './styled';
 
 const Admin = () => {
-  const [template, setTemplate] = useState<string>('템플릿이 없어요 :(');
+  const [template, setTemplate] = useState<string | null>(null);
 
   return (
     <>

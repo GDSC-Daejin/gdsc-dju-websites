@@ -10,6 +10,7 @@ export const InformationHeader = styled.div`
   height: 70px;
   box-sizing: border-box;
   flex-direction: row;
+  margin-bottom: 30px;
 `;
 
 export const EmailButtonWrapper = styled.div`

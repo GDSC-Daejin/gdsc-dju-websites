@@ -2,10 +2,10 @@ import { useAtom } from 'jotai';
 import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useGetMyData } from '../../apis/hooks/useGetMyData';
-import { userAtom } from '../../store/userAtom';
+import { userInfoWriteOnlyAtom } from '../../store/userAtom';
 
 const CheckAdminUser = () => {
-  const [adminUser, setAdminUser] = useAtom(userAtom);
+  const [, writeAdminUser] = useAtom(userInfoWriteOnlyAtom);
   const navigate = useNavigate();
   const location = useLocation();
   const refreshToken = localStorage.getItem('refresh_token');
@@ -14,13 +14,7 @@ const CheckAdminUser = () => {
   const isAdmin = userData?.role === 'LEAD' || 'CORE';
   const checkAdminUser = () => {
     if (refreshToken && token && userData) {
-      setAdminUser({
-        ...adminUser,
-        role: userData.role,
-        nickname: userData.memberInfo.nickname,
-        uid: userData.userId,
-        memberInfo: userData.memberInfo,
-      });
+      writeAdminUser();
     }
     if (!refreshToken && !token && location.pathname.includes('/certified')) {
       navigate('/');

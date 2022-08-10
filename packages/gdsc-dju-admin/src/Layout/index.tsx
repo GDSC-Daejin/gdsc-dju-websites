@@ -3,6 +3,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { Route, Routes } from 'react-router';
 import CheckAdminUser from '../components/CheckAdminUser';
 import { GoogleSpinnerStatic } from '../components/Lottie/GoogleSpinner';
+import Alert from '../components/molecules/Alert';
 import Admin from '../pages';
 import Error from '../pages/Error';
 import Redirect from '../pages/Redirect';
@@ -13,6 +14,7 @@ const Layout = () => {
     <ErrorBoundary FallbackComponent={Error}>
       <Suspense fallback={<GoogleSpinnerStatic />}>
         <CheckAdminUser />
+        <Alert />
         <Routes>
           <Route path={'/'} element={<SignIn />} />
           <Route path={'/redirect'} element={<Redirect />} />

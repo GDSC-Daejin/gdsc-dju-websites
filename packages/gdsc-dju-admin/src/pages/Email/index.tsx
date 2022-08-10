@@ -3,11 +3,24 @@ import { addDoc, collection } from 'firebase/firestore';
 import { AnimatePresence } from 'framer-motion';
 import { useAtom } from 'jotai';
 import React, { useEffect, useState } from 'react';
+import { GDSCButton } from '../../components/atoms/Button';
+import CheckBoxCard from '../../components/molecules/CheckBoxCard';
+import AdminEmailCheckModal from '../../components/molecules/modal/AdminEmailCheckModal';
+import ApplicantModal from '../../components/molecules/modal/ApplicantModal';
+import StatusBadgeBox from '../../components/molecules/StatusBadgeBox';
 import { db } from '../../firebase/firebase';
+import { useModalHandle } from '../../hooks/useModalHandle';
+import { isDevelop } from '../../pageData/recruitInfo';
 
 import { alertAtom } from '../../store/alertAtom';
-import { userAtom } from '../../store/userAtom';
 import { loaderAtom } from '../../store/loaderAtom';
+import { userAtom } from '../../store/userAtom';
+import {
+  EmailLogType,
+  IApplicantTypeWithID,
+  StatusType,
+} from '../../types/applicant';
+import { getApplicants } from '../../utils/applicantsHandler';
 import {
   AdminSectionWrapper,
   EmailButtonWrapper,
@@ -23,21 +36,8 @@ import {
   EmailRightWrapper,
   SelectedBoxSection,
 } from './styled';
-import {
-  EmailLogType,
-  IApplicantTypeWithID,
-  StatusType,
-} from '../../types/applicant';
-import { modalAtom } from '../../store/modalAtom';
-import { isDevelop } from '../../pageData/recruitInfo';
-import { getApplicants } from '../../utils/applicantsHandler';
-import ApplicantModal from '../../components/common/modal/ApplicantModal';
-import AdminEmailCheckModal from '../../components/common/modal/AdminEmailCheckModal';
-import { GDSCButton } from '../../components/common/Button';
-import StatusBadgeBox from '../../components/common/StatusBadgeBox';
-import CheckBoxCard from '../../components/common/CheckBoxCard';
 
-const Email: React.FC<{ template: string }> = ({ template }) => {
+const Email: React.FC<{ template: string | null }> = ({ template }) => {
   const [alert, setAlert] = useAtom(alertAtom);
   const [loading, setLoading] = useAtom(loaderAtom);
   const [admin] = useAtom(userAtom);
@@ -46,14 +46,9 @@ const Email: React.FC<{ template: string }> = ({ template }) => {
     useState<IApplicantTypeWithID[]>();
   const [checkedApplicants, setCheckedApplicants] = useState(new Set());
   const [filter, setFilter] = useState<StatusType | null>(null);
-  const [modal, setModal] = useAtom(modalAtom);
-  const openModal = (id: string) => {
-    setModal({
-      ...modal,
-      ADMIN_EMAIL: true,
-      selectedID: id,
-    });
-  };
+
+  const { openModal, closeModal } = useModalHandle('EMAIL');
+
   const checkedApplicantHandler = (id: string, isChecked: boolean) => {
     const newCheckedApplicants = new Set(checkedApplicants);
     if (isChecked) {
@@ -81,13 +76,10 @@ const Email: React.FC<{ template: string }> = ({ template }) => {
     );
   };
   const sendEmailHandler = async (
-    template: string,
+    template: string | null,
     applicants: IApplicantTypeWithID[],
   ) => {
-    setModal({
-      ...modal,
-      ADMIN_EMAIL: false,
-    });
+    closeModal();
     if (applicants.length === 0) {
       setAlert({
         ...alert,
@@ -95,15 +87,15 @@ const Email: React.FC<{ template: string }> = ({ template }) => {
         alertMessage: '지원자를 선택해주세요.',
       });
     }
-    if (template === '템플릿이 없어요 :(') {
+    if (template) {
+      setLoading({ ...loading, isLoading: true });
+      await sendEmail(template, applicants);
+    } else {
       setAlert({
         ...alert,
         alertHandle: true,
         alertMessage: '템플릿을 선택하지 않았어요.',
       });
-    } else {
-      setLoading({ ...loading, isLoading: true });
-      await sendEmail(template, applicants);
     }
   };
 
@@ -154,6 +146,14 @@ const Email: React.FC<{ template: string }> = ({ template }) => {
     const applicants = await getApplicants(filter);
     setFilteredApplicants(applicants);
   };
+  const applyButtonHandler = () =>
+    checkedApplicants.size > 0
+      ? openModal()
+      : setAlert({
+          ...alert,
+          alertHandle: true,
+          alertMessage: '선택된 지원자가 없습니다.',
+        });
 
   useEffect(() => {
     applicantHandler();
@@ -212,12 +212,7 @@ const Email: React.FC<{ template: string }> = ({ template }) => {
                 <GDSCButton
                   color={'blue900'}
                   text={'이메일 전송'}
-                  onClick={() =>
-                    setModal(() => ({
-                      ...modal,
-                      adminEmailCheck: true,
-                    }))
-                  }
+                  onClick={applyButtonHandler}
                   type={'button'}
                 />
               </EmailButtonWrapper>

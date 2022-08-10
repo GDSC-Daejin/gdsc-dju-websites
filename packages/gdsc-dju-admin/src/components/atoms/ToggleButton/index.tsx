@@ -8,13 +8,11 @@ export const ToggleButtonWrapper = styled.div`
   margin: 10px 10px;
 `;
 export const Switch = styled.div`
-  width: 36px;
-  height: 18px;
-  background-color: ${({ theme }) => theme.colors.grey700};
+  width: 40px;
+  height: 20px;
+  background-color: ${({ theme }) => theme.colors.grey200};
   display: flex;
   justify-content: flex-start;
-  border: 0 solid transparent;
-  border-color: ${({ theme }) => theme.colors.grey700};
   border-radius: 50px;
   padding: 3px;
   cursor: pointer;
@@ -27,7 +25,8 @@ export const Switch = styled.div`
 export const Handle = styled(motion.div)`
   width: 18px;
   height: 18px;
-  background-color: #fff;
+  background: ${({ theme }) => theme.colors.grey900};
+  border: 1px solid ${({ theme }) => theme.colors.grey800};
   border-radius: 40px;
 `;
 
