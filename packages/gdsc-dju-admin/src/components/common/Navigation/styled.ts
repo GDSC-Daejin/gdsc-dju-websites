@@ -33,7 +33,7 @@ export const NavDesign = styled(motion.nav)<{
         `
       : css`
           background: ${({ theme }) => theme.colors.background};
-          box-shadow: 0 4px 30px ${({ theme }) => theme.colors.greyOpacity100};
+          box-shadow: 0 4px 30px ${({ theme }) => theme.colors.boxShadow100};
           border-bottom: 1px solid ${(props) => props.theme.colors.grey200};
         `}
   ${(props) =>
@@ -121,10 +121,10 @@ export const StyledLink = styled(motion.div)<{ isRoute?: boolean }>`
   ${({ isRoute }) =>
     isRoute &&
     css`
-      color: ${({ theme }) => theme.colors.tossBlueActive};
+      color: ${({ theme }) => theme.colors.blue600};
     `};
   &:hover {
-    color: ${({ theme }) => theme.colors.tossBlueActive};
+    color: ${({ theme }) => theme.colors.blue600};
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     text-decoration: none;

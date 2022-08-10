@@ -8,10 +8,10 @@ import { db } from '../../firebase/firebase';
 import { useFirestoreQuery } from '../../hooks/useFirebaseQuery';
 
 import { EmailLogTypeWithID } from '../../types/applicant';
-import { TemplateEmailWrapper, TemplateText } from '../AdminEmail/styled';
+import { TemplateEmailWrapper, TemplateText } from '../Email/styled';
 import { LogWrapper, TemplateSelectWrapper } from './styled';
 
-const AdminEmailLog: React.FC<{
+const EmailLog: React.FC<{
   template: string;
   setTemplate: (template: string) => void;
 }> = ({ template, setTemplate }) => {
@@ -35,7 +35,7 @@ const AdminEmailLog: React.FC<{
           <TextInput ref={templateRef} placeholder={'템플릿을 입력해주세요.'} />
         </TemplateEmailWrapper>
         <GDSCButton
-          color={'googleBlue'}
+          color={'blue900'}
           text={'템플릿 선택'}
           onClick={() => setTemplate(templateRef.current?.value ?? '')}
         />
@@ -49,4 +49,4 @@ const AdminEmailLog: React.FC<{
   );
 };
 
-export default AdminEmailLog;
+export default EmailLog;

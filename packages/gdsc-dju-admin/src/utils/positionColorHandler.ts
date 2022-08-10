@@ -1,16 +1,16 @@
-import { lightColors } from '../styles/lightColors';
+import { ColorScheme } from '@gdsc-dju/styled-components';
+
+interface PositionType {
+  [x: string]: keyof ColorScheme;
+}
 
 export const position: PositionType = {
-  frontend: lightColors.googleBlue,
-  backend: lightColors.googleRed,
-  android: lightColors.googleGreen,
-  beginner: lightColors.orange900,
-  designer: lightColors.googleYellow,
-  // ml: 'Machine Learning',
-} as const;
-interface PositionType {
-  [x: string]: string;
-}
+  frontend: 'blue900',
+  backend: 'red900',
+  android: 'green900',
+  beginner: 'orange900',
+  designer: 'yellow900',
+};
 
 export function positionColorHandler(input: string) {
   const positionKey = Object.keys(position);

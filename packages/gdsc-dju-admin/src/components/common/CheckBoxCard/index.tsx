@@ -63,7 +63,7 @@ const CheckBox = styled.input`
   cursor: pointer;
 
   &:checked {
-    background: ${({ theme }) => theme.colors.googleBlue};
+    background: ${({ theme }) => theme.colors.blue900};
   }
 `;
 interface ICheckBoxCardProps {

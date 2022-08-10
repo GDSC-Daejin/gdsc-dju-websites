@@ -54,19 +54,19 @@ export const StyledInputWrapper = styled.div<{
   box-shadow: inset 0 0 0 1px ${(props) => props.theme.colors.grey300};
   cursor: auto;
   &:hover {
-    box-shadow: inset 0 0 0 2px ${(props) => props.theme.colors.tossBlue200};
+    box-shadow: inset 0 0 0 2px ${(props) => props.theme.colors.blue200};
     ${(props) =>
       props.error &&
       css`
-        box-shadow: inset 0 0 0 2px ${props.theme.colors.tossRed};
+        box-shadow: inset 0 0 0 2px ${props.theme.colors.red900};
       `}
   }
   .formInput:focus {
-    box-shadow: inset 0 0 0 2px ${(props) => props.theme.colors.tossBlue500};
+    box-shadow: inset 0 0 0 2px ${(props) => props.theme.colors.blue500};
     ${(props) =>
       props.error &&
       css`
-        box-shadow: inset 0 0 0 2px ${props.theme.colors.tossRed}!important;
+        box-shadow: inset 0 0 0 2px ${props.theme.colors.red900}!important;
       `}
   }
   ${({ disabled }) =>
@@ -79,7 +79,7 @@ export const StyledInputWrapper = styled.div<{
   ${({ error }) =>
     error &&
     css`
-      box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.tossRed};
+      box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.red900};
     `}
   transition: 0.3s;
 `;
@@ -96,7 +96,7 @@ export const ErrorBox = styled.div`
   height: 20px;
   display: flex;
   align-items: center;
-  color: ${(props) => props.theme.colors.tossRed};
+  color: ${(props) => props.theme.colors.red900};
   font-size: ${(props) => props.theme.fontSize.body2};
   padding-left: 5px;
 `;
@@ -124,20 +124,20 @@ export const StyledInput = styled.input<{
     font-weight: 300;
   }
   &:hover {
-    box-shadow: inset 0 0 0 2px ${(props) => props.theme.colors.tossBlue200};
+    box-shadow: inset 0 0 0 2px ${(props) => props.theme.colors.blue200};
     ${(props) =>
       props.error &&
       css`
-        box-shadow: inset 0 0 0 2px ${props.theme.colors.tossRed};
+        box-shadow: inset 0 0 0 2px ${props.theme.colors.red900};
       `}
   }
   &:focus {
     box-sizing: border-box;
-    box-shadow: inset 0 0 0 2px ${(props) => props.theme.colors.tossBlue500};
+    box-shadow: inset 0 0 0 2px ${(props) => props.theme.colors.blue500};
     ${(props) =>
       props.error &&
       css`
-        box-shadow: inset 0 0 0 2px ${props.theme.colors.tossRed}!important;
+        box-shadow: inset 0 0 0 2px ${props.theme.colors.red900}!important;
       `}
   }
   ${(props) =>
@@ -152,7 +152,7 @@ export const StyledInput = styled.input<{
   ${(props) =>
     props.error &&
     css`
-      box-shadow: inset 0 0 0 2px ${props.theme.colors.tossRed};
+      box-shadow: inset 0 0 0 2px ${props.theme.colors.red900};
     `}
   transition: 0.3s;
 `;

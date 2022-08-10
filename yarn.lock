@@ -965,6 +965,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gdsc-dju/styled-components@npm:^0.0.16":
+  version: 0.0.16
+  resolution: "@gdsc-dju/styled-components@npm:0.0.16"
+  peerDependencies:
+    react: ^18.2.0
+    react-is: ^18.2.0
+    styled-components: ^5.3.5
+  checksum: bcae5e085b6b93b3999235c517cc74fbb510e4057fb69b3c63e9f706d533ec3932ed084e7d8c3a815421f557b57f9ab1bd985d06adf100b3f9742c1f37ad7264
+  languageName: node
+  linkType: hard
+
 "@google-cloud/paginator@npm:^4.0.0":
   version: 4.0.0
   resolution: "@google-cloud/paginator@npm:4.0.0"
@@ -6506,6 +6517,7 @@ __metadata:
     "@emailjs/browser": ^3.6.2
     "@firebase/app": ^0.7.29
     "@firebase/app-compat": ^0.1.30
+    "@gdsc-dju/styled-components": ^0.0.16
     "@types/node": ^18.6.1
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6

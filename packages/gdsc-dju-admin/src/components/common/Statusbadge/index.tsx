@@ -1,10 +1,11 @@
+import { ColorScheme } from '@gdsc-dju/styled-components';
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { lightTheme } from '../../../styles/theme';
+
 import { StatusBadgeType, StatusType } from '../../../types/applicant';
 
 const StatusBadgeWrapper = styled.div<{
-  color?: keyof typeof lightTheme.colors;
+  color?: keyof ColorScheme;
   disable?: boolean;
 }>`
   padding: 2px;
@@ -63,7 +64,7 @@ const StatusBadge = ({
     <>
       {status && (
         <StatusBadgeWrapper
-          color={statusData[status].color as keyof typeof lightTheme.colors}
+          color={statusData[status].color as keyof ColorScheme}
           disable={disable}
         >
           {statusData[status].text}

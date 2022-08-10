@@ -32,7 +32,7 @@ export const SideElementSelectBar = styled.div<{ isCurrent: boolean }>`
   position: absolute;
   left: 0;
   width: 4px;
-  background: ${({ theme }) => theme.colors.googleBlue};
+  background: ${({ theme }) => theme.colors.blue900};
   border-radius: 0 3px 3px 0;
   height: 0;
   transition: all 0.2s ease-in-out;
@@ -50,10 +50,10 @@ export const SideElementText = styled.div<{ isCurrent: boolean }>`
   ${({ isCurrent }) =>
     isCurrent &&
     css`
-      color: ${({ theme }) => theme.colors.googleBlue};
+      color: ${({ theme }) => theme.colors.blue900};
     `}
   &:hover {
     cursor: pointer;
-    color: ${({ theme }) => theme.colors.googleBlue};
+    color: ${({ theme }) => theme.colors.blue900};
   }
 `;

@@ -1,9 +1,9 @@
+import { ColorScheme } from '@gdsc-dju/styled-components';
 import styled, { css } from 'styled-components';
-import { lightColors } from '../../../styles/lightColors';
 
 export const StyledButton = styled.button<{
-  color?: keyof typeof lightColors;
-  background?: keyof typeof lightColors;
+  color?: keyof ColorScheme;
+  background?: keyof ColorScheme;
   size?: string;
   disable?: boolean;
   border?: string;

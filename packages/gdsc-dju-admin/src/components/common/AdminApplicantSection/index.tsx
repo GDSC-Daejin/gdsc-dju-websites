@@ -2,16 +2,15 @@ import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useAtom } from 'jotai';
 import React, { memo, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { InformationHeader } from '../../../pages/Applicants/styled';
 import { modalAtom } from '../../../store/modalAtom';
-import { recruitmentAtom } from '../../../store/recruitmentAtom';
 import {
-  Handle,
-  InformationHeader,
-  Switch,
-  ToggleButton,
-} from '../../../pages/AdminApplicants/styled';
+  RecruitmentAtom,
+  recruitmentAtom,
+} from '../../../store/recruitmentAtom';
 import { IApplicantTypeWithID, StatusType } from '../../../types/applicant';
 import { getApplicants } from '../../../utils/applicantsHandler';
+import ToggleButton from '../../atoms/ToggleButton';
 import ApplicantCard from '../ApplicantCard';
 import ApplicantModal from '../modal/ApplicantModal';
 
@@ -34,6 +33,7 @@ const position = {
 
 const AdminApplicantSection = () => {
   const [modal, setModal] = useAtom(modalAtom);
+  const [recruitStatus, setRecruitStatus] = useAtom(recruitmentAtom);
   const [applicants, setApplicants] = useState<IApplicantTypeWithID[]>();
   const [status, setStatus] = useState<StatusType | null>(null);
 
@@ -68,6 +68,20 @@ const AdminApplicantSection = () => {
     const applicants = await getApplicants(status);
     await filterApplicantsAsPosition(applicants);
   };
+  const currentRouteRecruitStatus = () => {
+    if (recruitStatus) {
+      return recruitStatus[currentParam as keyof RecruitmentAtom];
+    }
+  };
+  const currentRouteRecruitStatusHandler = () => {
+    if (recruitStatus) {
+      setRecruitStatus({
+        ...recruitStatus,
+        [currentParam]: recruitStatus[currentParam as keyof RecruitmentAtom],
+      });
+    }
+  };
+  console.log(recruitStatus);
 
   useEffect(() => {
     applicantHandler();
@@ -79,7 +93,10 @@ const AdminApplicantSection = () => {
         {modal.ADMIN_APPLICANT && <ApplicantModal />}
         <ApplicantSection>
           <InformationHeader>
-            <AnnouncementToggle currentParam={currentParam} />
+            <ToggleButton
+              isOn={currentRouteRecruitStatus()}
+              toggle={currentRouteRecruitStatusHandler}
+            />
             {applicants && (
               <StatusBadgeBox
                 status={status}
@@ -104,32 +121,6 @@ const AdminApplicantSection = () => {
         </ApplicantSection>
       </LayoutGroup>
     </AnimatePresence>
-  );
-};
-
-const AnnouncementToggle = ({ currentParam }: { currentParam: string }) => {
-  const [recruit, setRecruit] = useAtom(recruitmentAtom);
-
-  const switchHandler = (key: keyof typeof recruit) => {
-    return setRecruit({ ...recruit, [key]: !recruit[key] });
-  };
-  const isOn = (key: keyof typeof recruit) => {
-    return recruit[key];
-  };
-  const spring = {
-    type: 'spring',
-    stiffness: 700,
-    damping: 30,
-  };
-  return (
-    <ToggleButton>
-      <Switch
-        data-ison={isOn(currentParam as keyof typeof recruit)}
-        onClick={() => switchHandler(currentParam as keyof typeof recruit)}
-      >
-        <Handle layout transition={spring} />
-      </Switch>
-    </ToggleButton>
   );
 };
 

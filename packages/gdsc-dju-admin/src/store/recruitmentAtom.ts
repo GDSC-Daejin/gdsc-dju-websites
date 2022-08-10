@@ -1,15 +1,17 @@
 import { atom } from 'jotai';
 import API from '../apis/index';
 
-export const recruitmentAtom = atom({
-  home: true,
-  frontend: true,
-  backend: true,
-  android: true,
-  design: true,
-  ml: true,
-  beginner: true,
-});
+export interface RecruitmentAtom {
+  home: boolean;
+  frontend: boolean;
+  backend: boolean;
+  android: boolean;
+  design: boolean;
+  ml: boolean;
+  beginner: boolean;
+}
+
+export const recruitmentAtom = atom<RecruitmentAtom | null>(null);
 
 export const recruitmentWriteOnlyAtom = atom(null, async (get, set) => {
   const response = await API.getRecruitStatus();

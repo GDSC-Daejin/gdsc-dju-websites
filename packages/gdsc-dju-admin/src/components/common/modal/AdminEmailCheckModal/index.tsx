@@ -46,12 +46,12 @@ const AdminEmailCheckModal: React.FC<IAdminEmailCheckModalProps> = ({
               <ButtonWrapper>
                 <GDSCButton
                   text={'돌아가기'}
-                  color={'tossBlue'}
+                  color={'blue900'}
                   onClick={() => setModal({ ...modal, ADMIN_EMAIL: false })}
                 />
                 <GDSCButton
                   text={'전송하기'}
-                  color={'tossRed'}
+                  color={'red900'}
                   onClick={() => sendEmail(template, applicants)}
                 />
               </ButtonWrapper>

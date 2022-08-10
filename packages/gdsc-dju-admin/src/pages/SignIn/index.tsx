@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import TokenService from '../../apis/TokenService';
 import GDSCImage from '../../assets/logos/GDSCLogo.svg';
 import GithubLogo from '../../assets/logos/GithubLogo.svg';

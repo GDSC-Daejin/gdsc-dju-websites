@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import AdminSidebar from '../components/common/AdminSidebar';
 
-import AdminApplicants from './AdminApplicants';
-import AdminEmail from './AdminEmail';
-import AdminEmailLog from './AdminEmailLog';
-import AdminHome from './AdminHome';
+import AdminApplicants from './Applicants';
+import Email from './Email';
+import AdminEmailLog from './EmailLog';
+import Home from './Home';
 import {
   AdminContainer,
   AdminContainerInner,
@@ -22,12 +22,9 @@ const Admin = () => {
         <AdminContainer>
           <AdminContainerInner>
             <Routes>
-              <Route path={'/*'} element={<AdminHome />} />
+              <Route path={'/*'} element={<Home />} />
               <Route path={'/recruit'} element={<AdminApplicants />} />
-              <Route
-                path={'/email'}
-                element={<AdminEmail template={template} />}
-              />
+              <Route path={'/email'} element={<Email template={template} />} />
               <Route
                 path={'/email-log'}
                 element={

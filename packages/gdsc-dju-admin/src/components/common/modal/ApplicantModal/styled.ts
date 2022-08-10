@@ -96,7 +96,7 @@ export const ApplicantInfoText = styled(motion.p)`
 `;
 export const ApplicantInfoLink = styled.a`
   font-size: ${({ theme }) => theme.fontSize.body3};
-  color: ${({ theme }) => theme.colors.tossBlue};
+  color: ${({ theme }) => theme.colors.blue900};
   min-width: 60px;
   max-width: 150px;
   text-decoration: none;

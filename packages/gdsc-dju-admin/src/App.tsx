@@ -1,21 +1,19 @@
-import React, { useState } from 'react';
-import { ThemeProvider } from 'styled-components';
+import { GdsThemeProvider } from '@gdsc-dju/styled-components';
+import React from 'react';
 import Navigation from './components/common/Navigation';
 import { GoogleSpinner } from './components/Lottie/GoogleSpinner';
-import { useTheme } from './hooks/useTheme';
+
 import Layout from './Layout';
 import GlobalStyles from './styles/globalStyles';
-import { darkTheme, lightTheme } from './styles/theme';
 
 function App() {
-  const { theme, toggleTheme } = useTheme();
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <GdsThemeProvider mode={'auto'}>
       <GlobalStyles />
       <GoogleSpinner background={true} />
-      <Navigation theme={theme} toggleTheme={toggleTheme} />
+      <Navigation />
       <Layout />
-    </ThemeProvider>
+    </GdsThemeProvider>
   );
 }
 

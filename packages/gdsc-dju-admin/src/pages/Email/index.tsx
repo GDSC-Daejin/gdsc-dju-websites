@@ -12,7 +12,7 @@ import {
   AdminSectionWrapper,
   EmailButtonWrapper,
   InformationHeader,
-} from '../AdminApplicants/styled';
+} from '../Applicants/styled';
 import {
   CheckboxSection,
   CheckboxWrapper,
@@ -37,7 +37,7 @@ import { GDSCButton } from '../../components/common/Button';
 import StatusBadgeBox from '../../components/common/StatusBadgeBox';
 import CheckBoxCard from '../../components/common/CheckBoxCard';
 
-const AdminEmail: React.FC<{ template: string }> = ({ template }) => {
+const Email: React.FC<{ template: string }> = ({ template }) => {
   const [alert, setAlert] = useAtom(alertAtom);
   const [loading, setLoading] = useAtom(loaderAtom);
   const [admin] = useAtom(userAtom);
@@ -204,13 +204,13 @@ const AdminEmail: React.FC<{ template: string }> = ({ template }) => {
               )}
               <EmailButtonWrapper>
                 <GDSCButton
-                  color={!isAllChecked ? 'tossBlue200' : 'tossBlueActive'}
+                  color={!isAllChecked ? 'blue200' : 'blue900'}
                   text={!isAllChecked ? '모두 선택' : '모두 해제'}
                   onClick={() => checkAllHandler(!isAllChecked)}
                   type={'button'}
                 />
                 <GDSCButton
-                  color={'googleBlue'}
+                  color={'blue900'}
                   text={'이메일 전송'}
                   onClick={() =>
                     setModal(() => ({
@@ -245,4 +245,4 @@ const AdminEmail: React.FC<{ template: string }> = ({ template }) => {
   );
 };
 
-export default AdminEmail;
+export default Email;

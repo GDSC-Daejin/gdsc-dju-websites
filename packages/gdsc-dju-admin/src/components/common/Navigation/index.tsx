@@ -1,4 +1,11 @@
+import { useAtom } from 'jotai';
 import React, { useState } from 'react';
+import { useLocation } from 'react-router';
+import GDSCLogo from '../../../assets/logos/GDSCLogo.svg';
+import { userAtom } from '../../../store/userAtom';
+import ThemeToggleButton from '../../atoms/ThemeToggleButton';
+
+import AdminUserMenu from '../AdminUserMenu';
 
 import {
   AdminNavCategoryWrapper,
@@ -14,18 +21,8 @@ import {
   StyledLogoWrapper,
   StyledUserName,
 } from './styled';
-import { useLocation } from 'react-router';
-import GDSCLogo from '../../../assets/logos/GDSCLogo.svg';
-import AdminUserMenu from '../AdminUserMenu';
-import { userAtom } from '../../../store/userAtom';
-import { useAtom } from 'jotai';
-import { ThemeType } from '../../../hooks/useTheme';
-import ThemeToggleButton from '../../ThemeToggleButton';
 
-const Navigation: React.FC<{
-  theme: ThemeType | undefined;
-  toggleTheme: () => void;
-}> = ({ theme, toggleTheme }) => {
+const Navigation = () => {
   const [adminMenuHandler, setAdminMenuHandler] = useState(false);
   const [user] = useAtom(userAtom);
   const location = useLocation();
@@ -45,7 +42,7 @@ const Navigation: React.FC<{
             </NavTask>
           </NavTaskWrapper>
           <AdminNavCategoryWrapper>
-            <ThemeToggleButton theme={theme} toggleButton={toggleTheme} />
+            <ThemeToggleButton />
             {user.nickname && (
               <>
                 <StyledUserName
