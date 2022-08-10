@@ -51,10 +51,10 @@ const Alert = () => {
             initial={{ opacity: 0, scale: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <AlertInnerWrapper
-              alertColor={ALERT_STATUS_COLOR[alert.alertStatus]}
-            >
-              <AlertText>{alert.alertMessage}</AlertText>
+            <AlertInnerWrapper>
+              <AlertText alertColor={ALERT_STATUS_COLOR[alert.alertStatus]}>
+                {alert.alertMessage}
+              </AlertText>
             </AlertInnerWrapper>
           </AlertInner>
         </AlertWrapper>
