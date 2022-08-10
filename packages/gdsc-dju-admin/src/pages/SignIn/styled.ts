@@ -65,7 +65,7 @@ export const AuthErrorText = styled.p`
   padding: 0 10px;
   margin-bottom: 10px;
   font-size: 1.4rem;
-  color: ${({ theme }) => theme.colors.tossRed};
+  color: ${({ theme }) => theme.colors.red900};
 `;
 export const AuthButtonWrapper = styled.div`
   display: flex;
@@ -81,7 +81,7 @@ export const AuthSignButton = styled.button`
   color: white;
   font-size: ${({ theme }) => theme.fontSize.body1};
   font-weight: bold;
-  background: ${({ theme }) => theme.colors.tossBlueActive};
+  background: ${({ theme }) => theme.colors.blue600};
   &:hover {
     cursor: pointer;
   }

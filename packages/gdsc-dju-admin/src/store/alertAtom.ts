@@ -3,11 +3,11 @@ import { atom } from 'jotai';
 export interface IAlertState {
   alertHandle: boolean;
   alertMessage: string;
-  alertStatus: 'warning' | 'success' | 'error';
+  alertStatus: 'WARNING' | 'SUCCESS' | 'ERROR';
 }
 
-export const alertAtom = atom({
+export const alertAtom = atom<IAlertState>({
   alertHandle: false,
-  alertMessage: '테스트테스트테스트',
-  alertStatus: 'warning' as const,
+  alertMessage: 'Test Alert',
+  alertStatus: 'WARNING' as const,
 });

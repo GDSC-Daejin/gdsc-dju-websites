@@ -1,3 +1,5 @@
+import { ColorScheme } from '@gdsc-dju/styled-components';
+
 export interface IApplicantParams {
   name: string;
   position: string;
@@ -83,7 +85,7 @@ export interface IApplicantChatType {
 }
 export type StatusBadgeType = {
   [key in StatusType]: {
-    color: keyof typeof theme.colors;
+    color: keyof ColorScheme;
     text: string;
   };
 };

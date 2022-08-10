@@ -1681,6 +1681,34 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
+        ["npm:0.0.16", {\
+          "packageLocation": "./.yarn/cache/@gdsc-dju-styled-components-npm-0.0.16-80885be146-bcae5e085b.zip/node_modules/@gdsc-dju/styled-components/",\
+          "packageDependencies": [\
+            ["@gdsc-dju/styled-components", "npm:0.0.16"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:0.0.16", {\
+          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-virtual-cf8786678e/0/cache/@gdsc-dju-styled-components-npm-0.0.16-80885be146-bcae5e085b.zip/node_modules/@gdsc-dju/styled-components/",\
+          "packageDependencies": [\
+            ["@gdsc-dju/styled-components", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:0.0.16"],\
+            ["@types/react", "npm:18.0.15"],\
+            ["@types/react-is", null],\
+            ["@types/styled-components", "npm:5.1.25"],\
+            ["react", "npm:18.2.0"],\
+            ["react-is", null],\
+            ["styled-components", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:5.3.5"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-is",\
+            "@types/react",\
+            "@types/styled-components",\
+            "react-is",\
+            "react",\
+            "styled-components"\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:0.0.11", {\
           "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-virtual-013502966f/0/cache/@gdsc-dju-styled-components-npm-0.0.11-64af160335-1afabfdc03.zip/node_modules/@gdsc-dju/styled-components/",\
           "packageDependencies": [\
@@ -7992,6 +8020,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emailjs/browser", "npm:3.6.2"],\
             ["@firebase/app", "npm:0.7.29"],\
             ["@firebase/app-compat", "npm:0.1.30"],\
+            ["@gdsc-dju/styled-components", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:0.0.16"],\
             ["@types/node", "npm:18.6.1"],\
             ["@types/react", "npm:18.0.15"],\
             ["@types/react-dom", "npm:18.0.6"],\

@@ -5,6 +5,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import { AtomDevtools } from './utils/JotaiDevTool';
 
 const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -12,16 +13,18 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            flex: '1 0 auto',
-            minHeight: '100vh',
-          }}
-        >
-          <App />
-        </div>
+        <AtomDevtools>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              flex: '1 0 auto',
+              minHeight: '100vh',
+            }}
+          >
+            <App />
+          </div>
+        </AtomDevtools>
       </QueryClientProvider>
     </BrowserRouter>
   </React.StrictMode>,

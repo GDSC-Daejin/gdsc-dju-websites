@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const AdminContainerInner = styled.div`
   background: ${({ theme }) => theme.colors.grey50};
-  min-height: 100%;
+  height: 100%;
   padding: 30px 30px;
   overflow: scroll;
 `;
@@ -14,7 +14,7 @@ export const AdminContainer = styled.div`
   overflow: hidden;
 `;
 export const AdminContainerWrapper = styled.div`
-  height: calc(100vh - 70px - 82px);
+  height: calc(100vh - 60px);
   display: flex;
   overflow: hidden;
 `;
