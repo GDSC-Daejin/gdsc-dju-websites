@@ -5,6 +5,7 @@ export interface IAlertState {
   alertMessage: string;
   alertStatus: 'WARNING' | 'SUCCESS' | 'ERROR';
 }
+
 const defaultAlertState: IAlertState = {
   alertHandle: false,
   alertMessage: 'Test Alert',
