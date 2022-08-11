@@ -3,9 +3,9 @@ import { addDoc, collection } from 'firebase/firestore';
 import { AnimatePresence } from 'framer-motion';
 import { useAtom } from 'jotai';
 import React, { useEffect, useState } from 'react';
-import AdminEmailCheckModal from '../../components/molecules/modal/AdminEmailCheckModal';
-import ApplicantModal from '../../components/organisms/ApplicantModal';
+
 import EmailContainer from '../../components/organisms/EmailContainer';
+import AdminEmailCheckModal from '../../components/organisms/modal/AdminEmailCheckModal';
 import SelectedEmailContainer from '../../components/organisms/SelectedEmailContainer';
 import { isDevelop } from '../../context/recruitInfo';
 import { db } from '../../firebase/firebase';

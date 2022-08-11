@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import RightArrow from '../../../assets/icons/RightArrowIcon.svg';
+import ClearIcon from '../../../assets/icons/ClearIcon';
 import LeftArrow from '../../../assets/icons/LeftArrowIcon.svg';
-import Clear from '../../../assets/icons/ClearIcon.svg';
+import RightArrow from '../../../assets/icons/RightArrowIcon.svg';
 
 const ModalButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => theme.colors.grey50};
   width: 30px;
   height: 30px;
   border-radius: 7px;
-  border: 1px solid ${({ theme }) => theme.colors.grey50};
+  border: 1px solid ${({ theme }) => theme.colors.grey400};
   cursor: pointer;
   &:hover {
     background: ${({ theme }) => theme.colors.grey200};
@@ -44,7 +44,7 @@ export const LeftArrowButton: React.FC<IButtonProps> = ({ onClick }) => {
 export const ClearButton: React.FC<IButtonProps> = ({ onClick }) => {
   return (
     <ModalButton onClick={onClick}>
-      <ModalButtonIcon src={Clear} />
+      <ClearIcon />
     </ModalButton>
   );
 };

@@ -1,12 +1,11 @@
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useAtom } from 'jotai';
 import React, { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
-import { useSearchParams } from 'react-router-dom';
+import { useLocation, useParams, useSearchParams } from 'react-router-dom';
 import API from '../../apis';
-import ApplicantModal from '../../components/organisms/ApplicantModal';
+
 import ApplicantsLayout from '../../components/organisms/ApplicantsLayout';
-import { useModalHandle } from '../../hooks/useModalHandle';
+import ApplicantModal from '../../components/organisms/modal/ApplicantModal';
 import { position } from '../../context/recruitInfo';
 import {
   recruitmentReadOnlyAtom,
@@ -14,8 +13,8 @@ import {
 } from '../../store/recruitmentAtom';
 import { IApplicantTypeWithID } from '../../types/applicant';
 import { getApplicants } from '../../utils/applicantsHandler';
-import { AdminSectionWrapper } from './styled';
 import { AdminContainerInner } from '../styled';
+import { AdminSectionWrapper } from './styled';
 
 const Applicants = () => {
   const [recruit] = useAtom(recruitmentReadOnlyAtom);

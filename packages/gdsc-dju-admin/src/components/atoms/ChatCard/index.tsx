@@ -33,7 +33,11 @@ const ChatCard: React.FC<IChatCardProps> = ({
     <ChatCardWrapper>
       <ChatCardInner isUser={adminUser === uid}>
         <ChatUser>{displayName}</ChatUser>
-        <ChatText>{text}</ChatText>
+        <div>
+          {text.split('\n').map((text, id) => (
+            <ChatText key={id}>{text}</ChatText>
+          ))}
+        </div>
       </ChatCardInner>
       <ChatDate>{filteredDate}</ChatDate>
     </ChatCardWrapper>

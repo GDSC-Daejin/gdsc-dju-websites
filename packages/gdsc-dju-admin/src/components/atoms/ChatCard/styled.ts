@@ -16,7 +16,7 @@ export const ChatCardInner = styled.div<{ isUser: boolean }>`
   ${({ isUser }) =>
     isUser &&
     css`
-      background: ${({ theme }) => theme.colors.blue300};
+      border: 1px solid ${({ theme }) => theme.colors.blue600};
       box-shadow: ${({ theme }) => theme.colors.boxShadow100};
     `}
 `;
@@ -25,9 +25,11 @@ export const ChatUser = styled.p`
   color: ${({ theme }) => theme.colors.grey900};
   font-weight: bold;
 `;
+
 export const ChatText = styled.p`
   font-size: ${({ theme }) => theme.fontSize.body2};
   color: ${({ theme }) => theme.colors.grey900};
+  min-height: 18px;
 `;
 export const ChatDate = styled.p`
   font-size: ${({ theme }) => theme.fontSize.body3};

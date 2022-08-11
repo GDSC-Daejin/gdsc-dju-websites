@@ -36,7 +36,6 @@ export const ApplicantInfoWrapper = styled.div`
   width: 100%;
   padding: 10px 10px;
   box-sizing: border-box;
-  border-radius: 20px 0 0 20px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -49,7 +48,7 @@ export const ApplicantInfoSection = styled.div`
   height: 100%;
 `;
 export const ApplicantInfoHeader = styled.div`
-  height: 40px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: flex-end;

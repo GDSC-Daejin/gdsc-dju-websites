@@ -1,14 +1,14 @@
 import { AnimatePresence } from 'framer-motion';
 import React, { memo, useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { IApplicantTypeWithID } from '../../../types/applicant';
-import { getApplicant } from '../../../utils/applicantsHandler';
-import { modalVariants } from '../../animations/modalVariants';
-import { ClearButton } from '../../atoms/ModalButton';
-import ApplicantChatSection from '../../molecules/ApplicantChatSection';
-import ApplicantInfoCard from '../../molecules/ApplicantInfoCard';
-import ApplicantInfoState from '../../molecules/ApplicantInfoState';
-import Application from '../../molecules/Applicantion';
+import { useNavigate } from 'react-router-dom';
+import { IApplicantTypeWithID } from '../../../../types/applicant';
+import { getApplicant } from '../../../../utils/applicantsHandler';
+import { modalVariants } from '../../../animations/modalVariants';
+import { ClearButton } from '../../../atoms/ModalButton';
+import ApplicantChatSection from '../../../molecules/ApplicantChatContainer';
+import ApplicantInfoCard from '../../../molecules/ApplicantInfoCard';
+import ApplicantInfoState from '../../../molecules/ApplicantInfoState';
+import Application from '../../../molecules/Applicantion';
 
 import {
   ApplicantDataWrapper,
