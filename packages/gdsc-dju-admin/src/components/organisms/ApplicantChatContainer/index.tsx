@@ -6,7 +6,7 @@ import { useFirestoreQuery } from '../../../hooks/useFirebaseQuery';
 import { userAtom } from '../../../store/userAtom';
 
 import { IApplicantChatType } from '../../../types/applicant';
-import ApplicantChatSection from '../ApplicantChatSection';
+import ApplicantChatSection from '../../molecules/ApplicantChatSection';
 
 import {
   ApplicantChatBottomBar,

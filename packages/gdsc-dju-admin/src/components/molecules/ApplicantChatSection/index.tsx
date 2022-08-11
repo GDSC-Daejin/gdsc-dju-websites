@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, forwardRef } from 'react';
 import { IApplicantChatType } from '../../../types/applicant';
-import ChatCard from '../../atoms/ChatCard';
+import ChatCard from '../ChatCard';
 import { ApplicantChatList, ChatCardWrapper } from './styled';
 
 interface Props {
