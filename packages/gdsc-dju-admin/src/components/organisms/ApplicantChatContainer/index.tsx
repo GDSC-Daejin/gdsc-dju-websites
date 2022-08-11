@@ -62,11 +62,12 @@ const ApplicantChatContainer: React.FC<IApplicantChatSectionProps> = ({
   };
 
   const handleOnKeyPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === 'Enter') {
+    const keyCode = e.which || e.keyCode;
+    if (keyCode === 13 && !e.shiftKey) {
+      // Don't generate a new line
       e.preventDefault();
-      if (!e.shiftKey) {
-        handleOnSubmit();
-      }
+      handleOnSubmit();
+      // Do something else such as send the message to back-end ...
     }
   };
 
