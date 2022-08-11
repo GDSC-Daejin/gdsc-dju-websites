@@ -1,14 +1,14 @@
 import { AnimatePresence } from 'framer-motion';
 import React, { memo, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { IApplicantTypeWithID } from '../../../../types/applicant';
-import { getApplicant } from '../../../../utils/applicantsHandler';
-import { modalVariants } from '../../../animations/modalVariants';
-import { ClearButton } from '../../../atoms/ModalButton';
-import ApplicantChatSection from '../../../organisms/ApplicantChatContainer';
-import ApplicantInfoCard from '../../../molecules/ApplicantInfoCard';
-import ApplicantInfoState from '../../../molecules/ApplicantInfoState';
-import Application from '../../../molecules/Applicantion';
+import { IApplicantTypeWithID } from '../../../types/applicant';
+import { getApplicant } from '../../../utils/applicantsHandler';
+import { modalVariants } from '../../animations/modalVariants';
+import { ClearButton } from '../../atoms/ModalButton';
+import ApplicantInfoCard from '../../molecules/ApplicantInfoCard';
+import ApplicantInfoState from '../../molecules/ApplicantInfoState';
+import Application from '../../molecules/Applicantion';
+import ApplicantChatContainer from '../../organisms/ApplicantChatContainer';
 
 import {
   ApplicantDataWrapper,
@@ -57,7 +57,7 @@ const ApplicantModal = ({ userid }: Props) => {
           {applicantData && (
             <ApplicantDataWrapper>
               <Application applicantData={applicantData} />
-              <ApplicantChatSection applicantId={applicantData.id} />
+              <ApplicantChatContainer applicantId={applicantData.id} />
             </ApplicantDataWrapper>
           )}
         </ApplicantInfoSection>

@@ -1,10 +1,9 @@
 import { AnimatePresence } from 'framer-motion';
 import React from 'react';
-import { useModalHandle } from '../../../../hooks/useModalHandle';
-import { IApplicantTypeWithID } from '../../../../types/applicant';
-import OutsideClickHandler from '../../../../utils/OutsideClickHandler';
-
-import { GDSCButton } from '../../../atoms/Button';
+import { useModalHandle } from '../../../hooks/useModalHandle';
+import { IApplicantTypeWithID } from '../../../types/applicant';
+import OutsideClickHandler from '../../../utils/OutsideClickHandler';
+import { GDSCButton } from '../../atoms/Button';
 
 import {
   ButtonWrapper,

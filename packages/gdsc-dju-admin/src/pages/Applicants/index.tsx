@@ -3,9 +3,10 @@ import { useAtom } from 'jotai';
 import React, { useEffect, useState } from 'react';
 import { useLocation, useParams, useSearchParams } from 'react-router-dom';
 import API from '../../apis';
+import ApplicantModal from '../../components/modal/ApplicantModal';
 
 import ApplicantsLayout from '../../components/organisms/ApplicantsLayout';
-import ApplicantModal from '../../components/organisms/modal/ApplicantModal';
+
 import { position } from '../../context/recruitInfo';
 import {
   recruitmentReadOnlyAtom,
@@ -19,8 +20,8 @@ import { AdminSectionWrapper } from './styled';
 const Applicants = () => {
   const [recruit] = useAtom(recruitmentReadOnlyAtom);
   const [, writeRecruitStatus] = useAtom(recruitmentWriteOnlyAtom);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const location = useLocation();
+  const [searchParams] = useSearchParams();
+
   const { userid } = useParams<{ userid: string }>();
 
   const [applicants, setApplicants] = useState<IApplicantTypeWithID[]>();
