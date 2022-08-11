@@ -1,10 +1,10 @@
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useAtom } from 'jotai';
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router';
+import { useLocation, useParams } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 import API from '../../apis';
-import ApplicantModal from '../../components/molecules/modal/ApplicantModal';
+import ApplicantModal from '../../components/organisms/ApplicantModal';
 import ApplicantsLayout from '../../components/organisms/ApplicantsLayout';
 import { useModalHandle } from '../../hooks/useModalHandle';
 import { position } from '../../context/recruitInfo';
@@ -22,8 +22,7 @@ const Applicants = () => {
   const [, writeRecruitStatus] = useAtom(recruitmentWriteOnlyAtom);
   const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
-
-  const { modal } = useModalHandle('APPLICANT');
+  const { userid } = useParams<{ userid: string }>();
 
   const [applicants, setApplicants] = useState<IApplicantTypeWithID[]>();
 
@@ -52,7 +51,7 @@ const Applicants = () => {
 
   useEffect(() => {
     applicantHandler();
-  }, [currentParam, modal]);
+  }, [currentParam]);
 
   useEffect(() => {
     writeRecruitStatus();
@@ -65,19 +64,12 @@ const Applicants = () => {
     }
   }, [recruit]);
 
-  useEffect(() => {
-    !searchParams.get('type') &&
-      setSearchParams({
-        type: 'home',
-      });
-  }, [location.pathname]);
-
   return (
     <AdminContainerInner>
       <AdminSectionWrapper>
         <AnimatePresence>
           <LayoutGroup>
-            {modal.isOpen === 'APPLICANT' && <ApplicantModal />}
+            {userid && <ApplicantModal userid={userid} />}
             {applicants && (
               <ApplicantsLayout
                 applicants={applicants}

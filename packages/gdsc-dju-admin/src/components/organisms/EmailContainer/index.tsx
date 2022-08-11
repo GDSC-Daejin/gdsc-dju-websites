@@ -25,6 +25,7 @@ interface Props {
   checkedApplicants: Set<string>;
   checkAllHandler: (isChecked: boolean) => void;
   isAllChecked: boolean;
+  checkedApplicantHandler: (id: string, isChecked: boolean) => void;
 }
 
 const EmailContainer = ({
@@ -32,28 +33,35 @@ const EmailContainer = ({
   checkAllHandler,
   isAllChecked,
   filteredApplicants,
+  checkedApplicantHandler,
 }: Props) => {
   const [alert, setAlert] = useAtom(alertAtom);
   const [template, setTemplate] = useAtom(templateAtom);
 
   const { openModal } = useModalHandle('EMAIL');
   const templateRef = useRef<HTMLInputElement>(null);
-  const checkedApplicantHandler = (id: string, isChecked: boolean) => {
-    const newCheckedApplicants = new Set(checkedApplicants);
-    if (isChecked) {
-      newCheckedApplicants.add(id);
-    } else if (checkedApplicants.has(id)) {
-      newCheckedApplicants.delete(id);
+
+  const applyButtonHandler = () => {
+    if (!template) {
+      setAlert({
+        ...alert,
+        alertHandle: true,
+        alertStatus: 'ERROR',
+        alertMessage: '템플릿을 입력해주세요.',
+      });
+    }
+    if (checkedApplicants.size < 1) {
+      setAlert({
+        ...alert,
+        alertHandle: true,
+        alertStatus: 'ERROR',
+        alertMessage: '선택된 지원자가 없어요.',
+      });
+    }
+    if (template && checkedApplicants.size > 0) {
+      openModal();
     }
   };
-  const applyButtonHandler = () =>
-    checkedApplicants.size > 0
-      ? openModal()
-      : setAlert({
-          ...alert,
-          alertHandle: true,
-          alertMessage: '선택된 지원자가 없습니다.',
-        });
   return (
     <EmailContainerWrapper>
       <InformationHeader>
@@ -89,10 +97,7 @@ const EmailContainer = ({
       {filteredApplicants && (
         <CheckboxSection>
           {filteredApplicants.map((applicant) => (
-            <CheckboxWrapper
-              key={applicant.id}
-              onDoubleClick={() => openModal(applicant.id)}
-            >
+            <CheckboxWrapper key={applicant.id}>
               <CheckBoxCard
                 {...applicant}
                 checkedList={checkedApplicants}

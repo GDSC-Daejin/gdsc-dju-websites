@@ -72,7 +72,7 @@ const ApplicantChatSection: React.FC<IApplicantChatSectionProps> = ({
   const newMessages = useFirestoreQuery(q);
 
   const newMessageHandler = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
+    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
       setNewMessage(e.target.value);
     },
     [],
@@ -96,9 +96,11 @@ const ApplicantChatSection: React.FC<IApplicantChatSectionProps> = ({
     }
   };
 
-  const handleOnKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleOnKeyPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter') {
-      handleOnSubmit();
+      if (!e.shiftKey) {
+        handleOnSubmit();
+      }
     }
   };
 

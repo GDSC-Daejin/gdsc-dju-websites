@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 
 export const CheckboxSection = styled.section`
-  display: flex;
   flex-wrap: wrap;
   min-width: 450px;
   box-sizing: border-box;
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 1900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 1550px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 export const CheckboxWrapper = styled.div`
   width: 100%;
@@ -14,15 +21,6 @@ export const CheckboxWrapper = styled.div`
   align-items: center;
   height: fit-content;
   margin-bottom: 10px;
-  @media (min-width: 1000px) {
-    width: 100%;
-  }
-  @media (min-width: 1580px) {
-    width: 50%;
-  }
-  @media (min-width: 1950px) {
-    width: 33%;
-  }
 `;
 
 export const TemplateEmailWrapper = styled.div`

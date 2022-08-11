@@ -3,20 +3,6 @@ import styled from 'styled-components';
 export const ApplicantCardWrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 25%;
-  margin-bottom: 1%;
-  @media (max-width: 2450px) {
-    width: 25%;
-  }
-  @media (max-width: 1950px) {
-    width: 33.33%;
-  }
-  @media (max-width: 1525px) {
-    width: 50%;
-  }
-  @media (max-width: 1100px) {
-    width: 100%;
-  }
 `;
 
 export const ApplicantContainer = styled.section`
@@ -35,10 +21,17 @@ export const ApplicantHeadWrapper = styled.div`
   width: 95%;
 `;
 export const ApplicantCardSection = styled.section`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 10px;
   width: 100%;
   box-sizing: border-box;
+  @media (max-width: 1530px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 1110px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 export const ApplicantSection = styled.div`
   display: flex;

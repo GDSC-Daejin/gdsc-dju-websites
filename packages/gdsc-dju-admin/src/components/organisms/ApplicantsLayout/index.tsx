@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAtom } from 'jotai';
+import { useNavigate } from 'react-router-dom';
 
-import { useModalHandle } from '../../../hooks/useModalHandle';
 import {
   RecruitmentAtom,
   recruitmentAtom,
@@ -23,8 +23,8 @@ interface Props {
 }
 
 const ApplicantsLayout = ({ applicants, currentParam }: Props) => {
-  const { openModal } = useModalHandle('APPLICANT');
   const [recruitStatus, setRecruitStatus] = useAtom(recruitmentAtom);
+  const navigate = useNavigate();
   const currentRouteRecruitStatus = () => {
     if (recruitStatus) {
       return recruitStatus[currentParam as keyof RecruitmentAtom];
@@ -51,7 +51,7 @@ const ApplicantsLayout = ({ applicants, currentParam }: Props) => {
         {applicants.map((applicant) => (
           <ApplicantCardWrapper
             key={applicant.id}
-            onClick={() => openModal(applicant.id)}
+            onClick={() => navigate(`/certified/recruit/${applicant.id}`)}
           >
             <ApplicantCard {...applicant} />
           </ApplicantCardWrapper>

@@ -4,7 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import { useAtom } from 'jotai';
 import React, { useEffect, useState } from 'react';
 import AdminEmailCheckModal from '../../components/molecules/modal/AdminEmailCheckModal';
-import ApplicantModal from '../../components/molecules/modal/ApplicantModal';
+import ApplicantModal from '../../components/organisms/ApplicantModal';
 import EmailContainer from '../../components/organisms/EmailContainer';
 import SelectedEmailContainer from '../../components/organisms/SelectedEmailContainer';
 import { isDevelop } from '../../context/recruitInfo';
@@ -25,25 +25,35 @@ const Email = () => {
   const [alert, setAlert] = useAtom(alertAtom);
   const [loading, setLoading] = useAtom(loaderAtom);
   const [admin] = useAtom(userAtom);
-
+  const [template] = useAtom(templateAtom);
   const [filteredApplicants, setFilteredApplicants] =
     useState<IApplicantTypeWithID[]>();
   const [checkedApplicants, setCheckedApplicants] = useState<Set<string>>(
     new Set(),
   );
-
-  const [template] = useAtom(templateAtom);
-
   const { closeModal } = useModalHandle('EMAIL');
 
   const isAllChecked = checkedApplicants.size === filteredApplicants?.length;
 
+  const selectApplicants = filteredApplicants?.filter((applicant) => {
+    return checkedApplicants.has(applicant.id);
+  });
+
   const checkAllHandler = () => {
     if (isAllChecked) {
-      setCheckedApplicants(new Set(filteredApplicants?.map((data) => data.id)));
-    } else {
       setCheckedApplicants(new Set());
+    } else {
+      setCheckedApplicants(new Set(filteredApplicants?.map((data) => data.id)));
     }
+  };
+  const checkedApplicantHandler = (id: string, isChecked: boolean) => {
+    const newCheckedApplicants = new Set(checkedApplicants);
+    if (isChecked) {
+      newCheckedApplicants.add(id);
+    } else if (checkedApplicants.has(id)) {
+      newCheckedApplicants.delete(id);
+    }
+    setCheckedApplicants(newCheckedApplicants);
   };
 
   const sendLogHandler = async (log: EmailLogType) => {
@@ -52,7 +62,8 @@ const Email = () => {
       log,
     );
   };
-  const sendEmailHandler = async (
+
+  const emailCheckHandler = async (
     template: string | null,
     applicants: IApplicantTypeWithID[],
   ) => {
@@ -66,7 +77,7 @@ const Email = () => {
       });
     }
     if (template) {
-      await sendEmail(template, applicants);
+      await sendEmailHandler(template, applicants);
     } else {
       setAlert({
         ...alert,
@@ -76,19 +87,27 @@ const Email = () => {
     }
     setLoading({ ...loading, isLoading: false });
   };
-
   const sendEmail = async (
+    template: string,
+    applicant: IApplicantTypeWithID,
+  ) => {
+    emailjs.init('RsM6o4WUsb5rzJGXG');
+    const result = await emailjs.send('default_service', template, {
+      email: applicant.email,
+      name: applicant.name,
+    });
+    return result;
+  };
+
+  const sendEmailHandler = async (
     template: string,
     applicants: IApplicantTypeWithID[],
   ) => {
+    setLoading({ ...loading, isLoading: true });
     applicants.map(async (applicant) => {
-      emailjs.init('RsM6o4WUsb5rzJGXG');
       if (admin.nickname) {
         try {
-          const result = await emailjs.send('default_service', template, {
-            email: applicant.email,
-            name: applicant.name,
-          });
+          const result = await sendEmail(template, applicant);
           //로그 생성
           const emailLog: EmailLogType = {
             email: applicant.email,
@@ -100,11 +119,11 @@ const Email = () => {
             uploadDate: new Date(),
           };
           await sendLogHandler(emailLog);
-
           if (emailLog) {
             setAlert({
               ...alert,
               alertHandle: true,
+              alertStatus: 'SUCCESS',
               alertMessage: '메일이 전송되었어요. 로그를 확인해주세요.',
             });
             setLoading({ ...loading, isLoading: false });
@@ -115,9 +134,11 @@ const Email = () => {
             alertHandle: true,
             alertMessage: '어딘가 문제가 생겼어요. 콘솔을 확인해주세요.',
           });
+          setLoading({ ...loading, isLoading: false });
         }
       }
     });
+    setLoading({ ...loading, isLoading: false });
   };
 
   useEffect(() => {
@@ -127,19 +148,14 @@ const Email = () => {
     })();
   }, []);
 
-  const selectApplicants = filteredApplicants?.filter((applicant) => {
-    return checkedApplicants.has(applicant.id);
-  });
-
   return (
     <AdminContainerInner>
       <AnimatePresence>
         <AdminSectionWrapper>
-          <ApplicantModal />
           {selectApplicants && (
             <AdminEmailCheckModal
               applicants={selectApplicants}
-              sendEmail={sendEmailHandler}
+              emailCheckHandler={emailCheckHandler}
               template={template}
             />
           )}
@@ -151,6 +167,7 @@ const Email = () => {
           <EmailRightWrapper>
             {filteredApplicants && (
               <EmailContainer
+                checkedApplicantHandler={checkedApplicantHandler}
                 checkedApplicants={checkedApplicants}
                 checkAllHandler={checkAllHandler}
                 filteredApplicants={filteredApplicants}
