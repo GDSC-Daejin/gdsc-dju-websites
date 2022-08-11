@@ -4,8 +4,9 @@ export const ChatCardInner = styled.div<{ isUser: boolean }>`
   padding: 10px 16px;
   width: fit-content;
   min-width: 100px;
-  max-width: 200px;
-  box-shadow: 0 2px 3px ${({ theme }) => theme.colors.grey300};
+  max-width: 230px;
+  box-shadow: ${({ theme }) => theme.colors.boxShadow100};
+  border: 1px solid ${({ theme }) => theme.colors.green600};
   margin-top: 10px;
   border-radius: 4px 16px 16px 16px;
   display: flex;
@@ -22,7 +23,7 @@ export const ChatCardInner = styled.div<{ isUser: boolean }>`
     `}
 `;
 export const ChatUser = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.body3};
+  font-size: ${({ theme }) => theme.fontSize.body2};
   color: ${({ theme }) => theme.colors.grey900};
   font-weight: bold;
 `;

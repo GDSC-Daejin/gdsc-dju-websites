@@ -47,6 +47,8 @@ const ApplicantChatContainer: React.FC<IApplicantChatSectionProps> = ({
       return;
     }
     const message = textAreaRef.current.value;
+    textAreaRef.current.value = '';
+    handleResizeHeight();
     if (message) {
       // Add new message in Firestore
       await addDoc(chatRef, {
@@ -56,13 +58,12 @@ const ApplicantChatContainer: React.FC<IApplicantChatSectionProps> = ({
         displayName: adminUser.nickname,
         isRead: false,
       });
-      textAreaRef.current.value = '';
-      handleResizeHeight();
     }
   };
 
   const handleOnKeyPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter') {
+      e.preventDefault();
       if (!e.shiftKey) {
         handleOnSubmit();
       }
@@ -83,18 +84,18 @@ const ApplicantChatContainer: React.FC<IApplicantChatSectionProps> = ({
             newMessages={newMessages as IApplicantChatType[]}
           />
         )}
-        <ApplicantChatBottomBar>
-          <ApplicantChatInput
-            onKeyPress={handleOnKeyPress}
-            onInput={handleResizeHeight}
-            placeholder={'메모를 입력하세요.'}
-            ref={textAreaRef}
-          />
-          <ApplicantChatSendButton onClick={handleOnSubmit}>
-            전송
-          </ApplicantChatSendButton>
-        </ApplicantChatBottomBar>
       </>
+      <ApplicantChatBottomBar>
+        <ApplicantChatInput
+          onKeyPress={handleOnKeyPress}
+          onInput={handleResizeHeight}
+          placeholder={'메모를 입력하세요.'}
+          ref={textAreaRef}
+        />
+        <ApplicantChatSendButton onClick={handleOnSubmit}>
+          전송
+        </ApplicantChatSendButton>
+      </ApplicantChatBottomBar>
     </ApplicantChatContainerWrapper>
   );
 };
