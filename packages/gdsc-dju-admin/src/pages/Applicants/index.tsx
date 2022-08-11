@@ -7,7 +7,7 @@ import API from '../../apis';
 import ApplicantModal from '../../components/molecules/modal/ApplicantModal';
 import ApplicantsLayout from '../../components/organisms/ApplicantsLayout';
 import { useModalHandle } from '../../hooks/useModalHandle';
-import { position } from '../../pageData/recruitInfo';
+import { position } from '../../context/recruitInfo';
 import {
   recruitmentReadOnlyAtom,
   recruitmentWriteOnlyAtom,
@@ -15,6 +15,7 @@ import {
 import { IApplicantTypeWithID } from '../../types/applicant';
 import { getApplicants } from '../../utils/applicantsHandler';
 import { AdminSectionWrapper } from './styled';
+import { AdminContainerInner } from '../styled';
 
 const Applicants = () => {
   const [recruit] = useAtom(recruitmentReadOnlyAtom);
@@ -72,19 +73,21 @@ const Applicants = () => {
   }, [location.pathname]);
 
   return (
-    <AdminSectionWrapper>
-      <AnimatePresence>
-        <LayoutGroup>
-          {modal.isOpen === 'APPLICANT' && <ApplicantModal />}
-          {applicants && (
-            <ApplicantsLayout
-              applicants={applicants}
-              currentParam={currentParam}
-            />
-          )}
-        </LayoutGroup>
-      </AnimatePresence>
-    </AdminSectionWrapper>
+    <AdminContainerInner>
+      <AdminSectionWrapper>
+        <AnimatePresence>
+          <LayoutGroup>
+            {modal.isOpen === 'APPLICANT' && <ApplicantModal />}
+            {applicants && (
+              <ApplicantsLayout
+                applicants={applicants}
+                currentParam={currentParam}
+              />
+            )}
+          </LayoutGroup>
+        </AnimatePresence>
+      </AdminSectionWrapper>
+    </AdminContainerInner>
   );
 };
 

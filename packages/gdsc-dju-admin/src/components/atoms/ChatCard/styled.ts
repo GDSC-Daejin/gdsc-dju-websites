@@ -32,4 +32,14 @@ export const ChatText = styled.p`
 export const ChatDate = styled.p`
   font-size: ${({ theme }) => theme.fontSize.body3};
   color: ${({ theme }) => theme.colors.grey600};
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 4px;
+  box-sizing: border-box;
+`;
+export const ChatCardWrapper = styled.div`
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
 `;

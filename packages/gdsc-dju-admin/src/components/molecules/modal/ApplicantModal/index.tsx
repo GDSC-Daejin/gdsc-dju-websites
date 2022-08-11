@@ -7,7 +7,7 @@ import {
   QuestionType,
   applicationQuestions,
   recruitInfo,
-} from '../../../../pageData/recruitInfo';
+} from '../../../../context/recruitInfo';
 import { IApplicantTypeWithID, StatusType } from '../../../../types/applicant';
 import { getApplicant } from '../../../../utils/applicantsHandler';
 import OutsideClickHandler from '../../../../utils/OutsideClickHandler';

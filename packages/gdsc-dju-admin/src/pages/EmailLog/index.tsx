@@ -14,9 +14,7 @@ const EmailLog = () => {
     orderBy('uploadDate', 'desc'),
     limit(100),
   );
-
   const emailLogs = useFirestoreQuery<EmailLogTypeWithID[]>(emailLogQuery);
-
   return (
     <LogWrapper>
       {emailLogs && emailLogs.length > 0 && (

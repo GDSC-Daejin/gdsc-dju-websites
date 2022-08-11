@@ -1,6 +1,12 @@
 import React, { memo } from 'react';
 import { IApplicantChatType } from '../../../types/applicant';
-import { ChatCardInner, ChatDate, ChatText, ChatUser } from './styled';
+import {
+  ChatCardInner,
+  ChatCardWrapper,
+  ChatDate,
+  ChatText,
+  ChatUser,
+} from './styled';
 
 interface IChatCardProps extends IApplicantChatType {
   adminUser: string;
@@ -11,18 +17,26 @@ const ChatCard: React.FC<IChatCardProps> = ({
   createdAt,
   uid,
   displayName,
-  isRead,
   adminUser,
 }) => {
-  const uploadDate = new Date(createdAt).toString().split('GMT')[0];
+  const uploadDate = new Date(createdAt);
+  const year = uploadDate.getFullYear();
+  const month = uploadDate.getMonth() + 1;
+  const date = uploadDate.getDate();
+  const time = uploadDate.getHours() + ':' + uploadDate.getMinutes();
+
+  const filteredDate = `${year}-${month >= 10 ? month : '0' + month}-${
+    date >= 10 ? date : '0' + date
+  } ${time}`;
+
   return (
-    <ChatCardInner isUser={adminUser === uid}>
-      <ChatUser>{displayName}</ChatUser>
-      <ChatText>{text}</ChatText>
-      {/*<p>{uid}</p>*/}
-      {/*<p>{isRead}</p>*/}
-      <ChatDate>{uploadDate}</ChatDate>
-    </ChatCardInner>
+    <ChatCardWrapper>
+      <ChatCardInner isUser={adminUser === uid}>
+        <ChatUser>{displayName}</ChatUser>
+        <ChatText>{text}</ChatText>
+      </ChatCardInner>
+      <ChatDate>{filteredDate}</ChatDate>
+    </ChatCardWrapper>
   );
 };
 

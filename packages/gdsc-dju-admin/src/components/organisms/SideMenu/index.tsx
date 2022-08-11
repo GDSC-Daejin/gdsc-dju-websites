@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
-import { position } from '../../../pageData/recruitInfo';
+import { position } from '../../../context/recruitInfo';
 
 import { SidebarContainer } from '../../../pages/styled';
 import { ROUTES } from '../../../routes/Route';
