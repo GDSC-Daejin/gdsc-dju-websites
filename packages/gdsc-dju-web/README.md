@@ -1,95 +1,43 @@
 # Google Developer Student Clubs Daejin University Web
 
-### Get Started
-```angular2html
+GDSC DJU 소개, 모집사이트입니다.
+
+## Get Started
+```bash
 yarn install && yarn
 ```
 
-### Run
-```angular2html
-vite
+## Run
+```bash
+vite && yarn dev
 ```
 
 ## Preview
 
-### WEB
+### V1
 
-V1
+![](https://user-images.githubusercontent.com/61281239/145563400-395d4b5d-6e61-4bb3-a36b-a9a53b730938.png)
 
-<img width="50%" alt="Screen Shot 2021-12-10 at 7 57 55 PM" src="https://user-images.githubusercontent.com/61281239/145563400-395d4b5d-6e61-4bb3-a36b-a9a53b730938.png">
+### V2
 
-V2
+![Screenshot 2022-08-12 at 3 01 03 AM](https://user-images.githubusercontent.com/61281239/184207853-e2302767-cfe8-477f-a198-fa701594ac9c.png)
 
-<img width="50%" alt="Screen Shot 2021-12-10 at 7 57 55 PM" src="https://user-images.githubusercontent.com/61281239/170768025-d804d27c-e1b0-4f3c-b4a1-c5ce32d1e3b8.png">
-
-
-
-### Mobile
-
-
-V2
-
-<img width="360px" alt="Screen Shot 2021-12-10 at 7 57 55 PM" src="https://user-images.githubusercontent.com/61281239/170768158-76e128da-7841-437b-844f-41dbe31e07ef.png">
-
-## Admin 
-
-### 지원자 관리 페이지
-![스크린샷 2022-06-11 오후 7 43 57](https://user-images.githubusercontent.com/61281239/173184510-446dc9c7-c827-4f2a-b209-d530bd1c0936.png)
-
-
-### 지원자 코멘트 기능
-
-![스크린샷 2022-06-11 오후 7 44 12](https://user-images.githubusercontent.com/61281239/173184521-31cea412-e428-4f37-8bab-49364a8e201d.png)
-
-
-### 이메일 전송 페이지
-
-![스크린샷 2022-06-11 오후 7 44 48](https://user-images.githubusercontent.com/61281239/173184540-3b836092-992e-4ae3-ab91-d1759f387f58.png)
+![Screenshot 2022-08-12 at 3 02 31 AM](https://user-images.githubusercontent.com/61281239/184208122-9ca4c812-7d9e-47a1-918e-7793babefec1.png)
 
 
 ## Stack
 
-
-
 - React.js(TypeScript)
 
+- Styled-Components
 
+- Jotai
 
-- Styled-Component
-
-
-
-- Recoil
-
-
-
-- SWR
-
-
+- React-Query
 
 - Axios
 
-
-
 - Framer-motion
-
-
-
-- Webpack
-
-
-
-- Babel
-
-
-
-- Prettier
-
-
-
-- eslint
-
-
 
 ### FolderIcon Structure
 
