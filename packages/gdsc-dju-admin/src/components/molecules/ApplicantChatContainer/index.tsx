@@ -10,8 +10,8 @@ import ApplicantChatSection from '../ApplicantChatSection';
 
 import {
   ApplicantChatBottomBar,
+  ApplicantChatContainerWrapper,
   ApplicantChatInput,
-  ApplicantChatSectionWrapper,
   ApplicantChatSendButton,
 } from './styled';
 
@@ -74,7 +74,7 @@ const ApplicantChatContainer: React.FC<IApplicantChatSectionProps> = ({
   }, [newMessages]);
 
   return (
-    <ApplicantChatSectionWrapper>
+    <ApplicantChatContainerWrapper>
       <>
         {chatSectionRef && newMessages && adminUser.uid && (
           <ApplicantChatSection
@@ -95,7 +95,7 @@ const ApplicantChatContainer: React.FC<IApplicantChatSectionProps> = ({
           </ApplicantChatSendButton>
         </ApplicantChatBottomBar>
       </>
-    </ApplicantChatSectionWrapper>
+    </ApplicantChatContainerWrapper>
   );
 };
 

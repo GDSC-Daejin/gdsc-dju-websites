@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const ApplicantChatSectionWrapper = styled.div`
+export const ApplicantChatContainerWrapper = styled.div`
   width: 100%;
   display: flex;
   height: calc(100vh - 50px);
@@ -38,7 +38,7 @@ export const ApplicantChatInput = styled.textarea`
     border: 1px solid ${({ theme }) => theme.colors.blue600};
   }
   &::placeholder {
-    color: :${({ theme }) => theme.colors.grey600};
+    color: ${({ theme }) => theme.colors.grey600};
   }
 `;
 export const ApplicantChatSendButton = styled.button`
@@ -48,6 +48,7 @@ export const ApplicantChatSendButton = styled.button`
   color: #fff;
   border-radius: 7px;
   background: ${({ theme }) => theme.colors.blue500};
-  padding: 7px 16px;
+  padding: 7px;
+  width: 100%;
   cursor: pointer;
 `;

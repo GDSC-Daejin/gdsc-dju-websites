@@ -5,8 +5,12 @@ export const ApplicantChatList = styled.div`
   height: 100%;
   overflow-y: scroll;
   position: relative;
-  padding: 10px;
+  padding: 10px 20px;
   box-sizing: border-box;
+  scrollbar-width: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 export const ChatCardWrapper = styled.div<{ isUser: boolean }>`
   display: flex;
