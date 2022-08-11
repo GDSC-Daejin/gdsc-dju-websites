@@ -5,7 +5,8 @@ export const ChatCardInner = styled.div<{ isUser: boolean }>`
   width: fit-content;
   min-width: 100px;
   max-width: 200px;
-  box-shadow: 0 2px 3px ${({ theme }) => theme.colors.grey300};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow100};
+  border: 1px solid ${({ theme }) => theme.colors.green600};
   margin-top: 10px;
   border-radius: 4px 16px 16px 16px;
   display: flex;
