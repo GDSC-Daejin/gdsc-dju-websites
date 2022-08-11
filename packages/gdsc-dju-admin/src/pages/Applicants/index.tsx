@@ -1,28 +1,28 @@
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useAtom } from 'jotai';
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router';
-import { useSearchParams } from 'react-router-dom';
+import { useLocation, useParams, useSearchParams } from 'react-router-dom';
 import API from '../../apis';
-import ApplicantModal from '../../components/molecules/modal/ApplicantModal';
+import ApplicantModal from '../../components/modal/ApplicantModal';
+
 import ApplicantsLayout from '../../components/organisms/ApplicantsLayout';
-import { useModalHandle } from '../../hooks/useModalHandle';
-import { position } from '../../pageData/recruitInfo';
+
+import { position } from '../../context/recruitInfo';
 import {
   recruitmentReadOnlyAtom,
   recruitmentWriteOnlyAtom,
 } from '../../store/recruitmentAtom';
 import { IApplicantTypeWithID } from '../../types/applicant';
 import { getApplicants } from '../../utils/applicantsHandler';
+import { AdminContainerInner } from '../styled';
 import { AdminSectionWrapper } from './styled';
 
 const Applicants = () => {
   const [recruit] = useAtom(recruitmentReadOnlyAtom);
   const [, writeRecruitStatus] = useAtom(recruitmentWriteOnlyAtom);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const location = useLocation();
+  const [searchParams] = useSearchParams();
 
-  const { modal } = useModalHandle('APPLICANT');
+  const { userid } = useParams<{ userid: string }>();
 
   const [applicants, setApplicants] = useState<IApplicantTypeWithID[]>();
 
@@ -51,7 +51,7 @@ const Applicants = () => {
 
   useEffect(() => {
     applicantHandler();
-  }, [currentParam, modal]);
+  }, [currentParam]);
 
   useEffect(() => {
     writeRecruitStatus();
@@ -64,27 +64,22 @@ const Applicants = () => {
     }
   }, [recruit]);
 
-  useEffect(() => {
-    !searchParams.get('type') &&
-      setSearchParams({
-        type: 'home',
-      });
-  }, [location.pathname]);
-
   return (
-    <AdminSectionWrapper>
-      <AnimatePresence>
-        <LayoutGroup>
-          {modal.isOpen === 'APPLICANT' && <ApplicantModal />}
-          {applicants && (
-            <ApplicantsLayout
-              applicants={applicants}
-              currentParam={currentParam}
-            />
-          )}
-        </LayoutGroup>
-      </AnimatePresence>
-    </AdminSectionWrapper>
+    <AdminContainerInner>
+      <AdminSectionWrapper>
+        <AnimatePresence>
+          <LayoutGroup>
+            {userid && <ApplicantModal userid={userid} />}
+            {applicants && (
+              <ApplicantsLayout
+                applicants={applicants}
+                currentParam={currentParam}
+              />
+            )}
+          </LayoutGroup>
+        </AnimatePresence>
+      </AdminSectionWrapper>
+    </AdminContainerInner>
   );
 };
 

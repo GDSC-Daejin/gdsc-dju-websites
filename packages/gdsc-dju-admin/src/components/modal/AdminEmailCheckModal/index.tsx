@@ -1,10 +1,9 @@
 import { AnimatePresence } from 'framer-motion';
 import React from 'react';
-import { useModalHandle } from '../../../../hooks/useModalHandle';
-import { IApplicantTypeWithID } from '../../../../types/applicant';
-import OutsideClickHandler from '../../../../utils/OutsideClickHandler';
-
-import { GDSCButton } from '../../../atoms/Button';
+import { useModalHandle } from '../../../hooks/useModalHandle';
+import { IApplicantTypeWithID } from '../../../types/applicant';
+import OutsideClickHandler from '../../../utils/OutsideClickHandler';
+import { GDSCButton } from '../../atoms/Button';
 
 import {
   ButtonWrapper,
@@ -15,7 +14,7 @@ import {
 } from '../styled';
 
 interface Props {
-  sendEmail: (
+  emailCheckHandler: (
     template: string | null,
     applicants: IApplicantTypeWithID[],
   ) => void;
@@ -24,7 +23,7 @@ interface Props {
 }
 
 const AdminEmailCheckModal: React.FC<Props> = ({
-  sendEmail,
+  emailCheckHandler,
   template,
   applicants,
 }) => {
@@ -55,7 +54,7 @@ const AdminEmailCheckModal: React.FC<Props> = ({
                 <GDSCButton
                   text={'전송하기'}
                   color={'red900'}
-                  onClick={() => sendEmail(template, applicants)}
+                  onClick={() => emailCheckHandler(template, applicants)}
                 />
               </ButtonWrapper>
             </ModalInner>

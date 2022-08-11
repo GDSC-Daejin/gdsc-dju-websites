@@ -6,25 +6,20 @@ import AdminApplicants from './Applicants';
 import Email from './Email';
 import AdminEmailLog from './EmailLog';
 import Home from './Home';
-import {
-  AdminContainer,
-  AdminContainerInner,
-  AdminContainerWrapper,
-} from './styled';
+import { AdminContainer, AdminContainerWrapper } from './styled';
 
 const Admin = () => {
   return (
     <AdminContainerWrapper>
       <SideMenu />
       <AdminContainer>
-        <AdminContainerInner>
-          <Routes>
-            <Route path={'/*'} element={<Home />} />
-            <Route path={'/recruit'} element={<AdminApplicants />} />
-            <Route path={'/email'} element={<Email />} />
-            <Route path={'/email-log'} element={<AdminEmailLog />} />
-          </Routes>
-        </AdminContainerInner>
+        <Routes>
+          <Route path={'/*'} element={<Home />} />
+          <Route path={'/recruit/*'} element={<AdminApplicants />} />
+          <Route path={'/recruit/:userid'} element={<AdminApplicants />} />
+          <Route path={'/email'} element={<Email />} />
+          <Route path={'/email-log'} element={<AdminEmailLog />} />
+        </Routes>
       </AdminContainer>
     </AdminContainerWrapper>
   );

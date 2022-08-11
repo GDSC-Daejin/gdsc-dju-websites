@@ -4,7 +4,7 @@ import {
   StatusType,
 } from '../types/applicant';
 import { db } from '../firebase/firebase';
-import { recruitInfo } from '../pageData/recruitInfo';
+import { recruitInfo } from '../context/recruitInfo';
 import {
   collection,
   doc,
