@@ -1,13 +1,10 @@
 import React from 'react';
-import {
-  NavTask,
-  NavTaskWrapper,
-  StyledLink,
-  WideNavigation,
-} from '../DeskNavigation/styled';
+
 import { useNavigate } from 'react-router-dom';
-import { ROUTES } from '../DeskNavigation';
+
 import { useLocation } from 'react-router';
+import { NavTask, NavTaskWrapper, StyledLink, WideNavigation } from '../styled';
+import { ROUTES } from '..';
 
 const DeskNavCategory = () => {
   const location = useLocation();

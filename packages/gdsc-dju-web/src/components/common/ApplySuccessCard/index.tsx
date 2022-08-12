@@ -7,14 +7,14 @@ import {
   ApplyCardWrapper,
 } from './styled';
 
-interface Iprops {
+interface Props {
   name?: string;
   email?: string;
   phoneNumber?: string;
   position?: string;
 }
 
-const ApplySuccessCard = (props: Iprops) => {
+const ApplySuccessCard = (props: Props) => {
   const { name, email, phoneNumber, position } = props;
   return (
     <ApplyCardWrapper>

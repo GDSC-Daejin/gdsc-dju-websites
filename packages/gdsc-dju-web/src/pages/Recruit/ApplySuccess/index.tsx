@@ -1,14 +1,16 @@
 import React from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { MainText } from '../../../components/atoms/Title/title';
-import ApplySuccessCard from '../../../components/organisms/ApplySuccessCard';
 
-import { ContainerInner, LayoutContainer } from '../../../styles/layouts';
+import ApplySuccessCard from '@common/ApplySuccessCard';
+import { MainText } from '@common/Title/title';
+import { ContainerInner, LayoutContainer } from '@styles/layouts';
+
+import { useSearchParams } from 'react-router-dom';
 import {
   RecruitFormCardWrapper,
   RecruitFormInner,
   RecruitFormWrapper,
 } from '../RecruitForm/styled';
+
 import { ApplyLink, ApplyLinkWrapper, ApplyMargin, ApplyTitle } from './styled';
 
 const ApplySuccess = () => {

@@ -1,12 +1,12 @@
+import { navigationAnimate } from '@animations/NavigationAnimation';
+import { menuAtom } from '@src/store/menuAtom';
 import { useAtom } from 'jotai';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ROUTES } from '..';
 import GDSCLogo from '../../../../assets/logos/GDSCLogo.svg';
-import { menuAtom } from '../../../../store/menuAtom';
-import { navigationAnimate } from '../../../Variants/NavigationAnimation';
+import { StyledLink } from '../styled';
 
-import { ROUTES } from '../DeskNavigation';
-import { StyledLink } from '../DeskNavigation/styled';
 import './MobileMenu.css';
 import {
   CategoryLine,

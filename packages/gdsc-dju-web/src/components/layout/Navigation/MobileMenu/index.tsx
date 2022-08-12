@@ -1,10 +1,10 @@
+import { sidebar } from '@animations/NavigationAnimation';
+import { menuAtom } from '@src/store/menuAtom';
 import { useAtom } from 'jotai';
 import React from 'react';
-import { menuAtom } from '../../../../store/menuAtom';
-import { sidebar } from '../../../Variants/NavigationAnimation';
 
-import { ShortNavigation } from '../DeskNavigation/styled';
 import MobileMenuCategory from '../MobileMenuCategory';
+import { ShortNavigation } from '../styled';
 import { MobileNavBackGround } from './styled';
 
 const MobileMenu = () => {

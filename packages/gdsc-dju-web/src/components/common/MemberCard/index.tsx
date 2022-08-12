@@ -5,7 +5,7 @@ import { useLocation } from 'react-router';
 import styled, { css } from 'styled-components';
 import { IMemberCardType } from '../../../types/member';
 import { positionColorHandler } from '../../../utils/positionColorHandler';
-import { memberCardAnimate } from '../../Variants/Variants';
+import { memberCardAnimate } from '../../animations/Variants';
 
 const MemberCardContainer = styled(motion.div)<{ isSquare: boolean }>`
   position: relative;

@@ -8,7 +8,7 @@ import {
 } from './styled';
 
 import { motion } from 'framer-motion';
-import { listAnimate, listItemAnimate } from '../../Variants/Variants';
+import { listAnimate, listItemAnimate } from '../../animations/Variants';
 
 const ContentWrapper = styled(motion.div)`
   display: flex;
@@ -56,7 +56,7 @@ const ContentText = styled.span`
   }
 `;
 
-const IntroduceOrganism = () => {
+const IntroduceSection = () => {
   return (
     <HomeSectionContainer>
       <HomeSectionContainerInner>
@@ -115,4 +115,4 @@ const IntroduceOrganism = () => {
   );
 };
 
-export default IntroduceOrganism;
+export default IntroduceSection;

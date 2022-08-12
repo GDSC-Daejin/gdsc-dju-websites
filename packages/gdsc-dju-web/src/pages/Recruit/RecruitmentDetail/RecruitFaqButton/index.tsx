@@ -2,7 +2,7 @@ import { useAtom } from 'jotai';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { StyledButton } from '../../../../components/atoms/Button/styled';
+import { StyledButton } from '../../../../components/common/Button/styled';
 import { recruitmentAtom } from '../../../../store/recruitmentStatusAtom';
 
 const RecruitFaqButtonWrapper = styled.div`

@@ -8,7 +8,7 @@ import {
 } from './styled';
 
 import { motion } from 'framer-motion';
-import { listAnimate, listItemAnimate } from '../../Variants/Variants';
+import { listAnimate, listItemAnimate } from '../../animations/Variants';
 import { culture } from '../../../contents/culture';
 
 const CultureContentSection = styled(motion.section)`
@@ -53,7 +53,7 @@ const CultureText = styled.p`
   }
 `;
 
-const CultureOrganism = () => {
+const CultureSection = () => {
   return (
     <HomeSectionContainer>
       <HomeSectionContainerInner>
@@ -86,4 +86,4 @@ const CultureOrganism = () => {
   );
 };
 
-export default CultureOrganism;
+export default CultureSection;

@@ -3,8 +3,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { recruitmentAtom } from '../../../store/recruitmentStatusAtom';
-import DownArrow from '../../atoms/DownArrow';
-import { bannerItemAnimate } from '../../Variants/Variants';
+import DownArrow from '../../common/DownArrow';
+import { bannerItemAnimate } from '../../animations/Variants';
 
 import {
   ButtonWrapper,
@@ -23,7 +23,7 @@ export const HomeMainWrapper = styled(HomeSectionWrapper)`
   height: 100%;
 `;
 
-const HomePageOrganism = () => {
+const HomePageSection = () => {
   return (
     <HomeSectionContainer>
       <HomeSectionContainerInner>
@@ -69,4 +69,4 @@ const HomeRecruitmentButton = () => {
   );
 };
 
-export default HomePageOrganism;
+export default HomePageSection;

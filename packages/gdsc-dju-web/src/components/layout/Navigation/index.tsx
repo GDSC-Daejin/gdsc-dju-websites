@@ -1,10 +1,10 @@
 import React from 'react';
 import { useLocation } from 'react-router';
-import GDSCLogo from '../../../../assets/logos/GDSCLogo.svg';
-import MenuToggleIcon from '../../../atoms/MenuToggleIcon';
-import ThemeToggleButton from '../../../atoms/ThemeToggleButton';
-import DeskNavCategory from '../DeskNavCategory';
-import MobileMenu from '../MobileMenu';
+import DeskNavCategory from './DeskNavCategory';
+import MobileMenu from './MobileMenu';
+import MenuToggleIcon from '@common/MenuToggleIcon';
+import ThemeToggleButton from '@common/ThemeToggleButton';
+import GDSCLogo from '@assets/logos/GDSCLogo.svg';
 import {
   NavDesign,
   NavInner,

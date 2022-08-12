@@ -3,8 +3,9 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { managerData } from '../../../contents/managerData';
 import { useYClickScroll } from '../../../utils/useYClickScroll';
-import MemberCard from '../../molecules/MemberCard';
-import { listAnimate, listItemAnimate } from '../../Variants/Variants';
+
+import { listAnimate, listItemAnimate } from '../../animations/Variants';
+import MemberCard from '../../common/MemberCard';
 
 import {
   HomeSectionContainer,
@@ -78,7 +79,7 @@ const MemberCardWrapper = styled(motion.div)<{
     `}
 `;
 
-const ManagementOrganism = () => {
+const ManagementSection = () => {
   const {
     windowSize,
     sessionRef,
@@ -138,4 +139,4 @@ const ManagementOrganism = () => {
   );
 };
 
-export default ManagementOrganism;
+export default ManagementSection;

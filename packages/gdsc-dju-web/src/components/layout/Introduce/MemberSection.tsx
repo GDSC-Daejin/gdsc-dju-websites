@@ -3,10 +3,10 @@ import React, { memo } from 'react';
 import { memberList } from '../../../contents/MemberList';
 import { MemberCardWrapper } from '../../../pages/Introduce/styled';
 import { CardList } from '../../../styles/layouts';
-import { listAnimate, memberCardAnimate } from '../../Variants/Variants';
-import MemberCard from '../../molecules/MemberCard';
+import { listAnimate, memberCardAnimate } from '../../animations/Variants';
+import MemberCard from '../../common/MemberCard';
 
-const MemberSectionOrganism = () => {
+const MemberSection = () => {
   return (
     <LayoutGroup>
       <CardList variants={listAnimate}>
@@ -26,4 +26,4 @@ const MemberSectionOrganism = () => {
   );
 };
 
-export default memo(MemberSectionOrganism);
+export default memo(MemberSection);
