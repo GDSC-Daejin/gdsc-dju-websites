@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const ApplicationWrapper = styled.div`
   width: 100%;
   padding: 20px;
-  height: 100%;
+  height: calc(100vh - 50px);
   box-sizing: border-box;
   overflow: scroll;
 `;
