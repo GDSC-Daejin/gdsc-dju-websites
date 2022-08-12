@@ -8,7 +8,7 @@ import AdminEmailLog from './EmailLog';
 import Home from './Home';
 import { AdminContainer, AdminContainerWrapper } from './styled';
 
-const Admin = () => {
+const Pages = () => {
   return (
     <AdminContainerWrapper>
       <SideMenu />
@@ -25,4 +25,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default Pages;

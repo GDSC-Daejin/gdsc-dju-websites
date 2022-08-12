@@ -1,15 +1,13 @@
 import React, { Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { Route, Routes } from 'react-router';
-import Alert from '../components/Alert';
-
+import Redirect from '@pages/Redirect';
+import SignIn from '@pages/SignIn';
+import Error from '@pages/Error';
+import Pages from '@src/pages';
+import CheckAdminUser from '@utils/CheckAdminUser';
 import { GoogleSpinnerStatic } from '../components/Lottie/GoogleSpinner';
-
-import Admin from '../pages';
-import Error from '../pages/Error';
-import Redirect from '../pages/Redirect';
-import SignIn from '../pages/SignIn';
-import CheckAdminUser from '../utils/CheckAdminUser';
+import Alert from '@common/Alert';
 
 const Core = () => {
   return (
@@ -20,7 +18,7 @@ const Core = () => {
         <Routes>
           <Route path={'/'} element={<SignIn />} />
           <Route path={'/redirect'} element={<Redirect />} />
-          <Route path={'/certified/*'} element={<Admin />} />
+          <Route path={'/certified/*'} element={<Pages />} />
         </Routes>
       </Suspense>
     </ErrorBoundary>
