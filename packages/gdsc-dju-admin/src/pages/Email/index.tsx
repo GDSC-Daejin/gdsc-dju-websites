@@ -4,9 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import { useAtom } from 'jotai';
 import React, { useEffect, useState } from 'react';
 
-import EmailContainer from '../../components/organisms/EmailContainer';
-import AdminEmailCheckModal from '../../components/modal/AdminEmailCheckModal';
-import SelectedEmailContainer from '../../components/organisms/SelectedEmailContainer';
+import AdminEmailCheckModal from '../../components/modal/EmailCheckModal';
 import { isDevelop } from '../../context/recruitInfo';
 import { db } from '../../firebase/firebase';
 import { useModalHandle } from '../../hooks/useModalHandle';
@@ -19,6 +17,8 @@ import { EmailLogType, IApplicantTypeWithID } from '../../types/applicant';
 import { getApplicants } from '../../utils/applicantsHandler';
 import { AdminSectionWrapper } from '../Applicants/styled';
 import { AdminContainerInner } from '../styled';
+import EmailContainer from './EmailContainer';
+import SelectedEmailContainer from './SelectedEmailContainer';
 import { EmailLeftWrapper, EmailRightWrapper } from './styled';
 
 const Email = () => {

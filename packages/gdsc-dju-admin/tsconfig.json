@@ -14,7 +14,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+    "paths": {
+      "@assets/*": [ "./assets/*" ],
+      "@layout/*": [ "./components/layout/*" ],
+      "@common/*": [ "./components/common/*" ],
+      "@utils/*": [ "./utils/*" ],
+      "@type/*": [ "./types/*" ],
+      "@src/*": [ "*" ]
+    }
   },
   "include": ["src", "./vite.config.ts"],
   "extends": "../../tsconfig.base.json",

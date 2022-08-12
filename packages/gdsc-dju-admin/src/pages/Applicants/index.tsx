@@ -1,32 +1,59 @@
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useAtom } from 'jotai';
 import React, { useEffect, useState } from 'react';
-import { useLocation, useParams, useSearchParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import API from '../../apis';
-import ApplicantModal from '../../components/modal/ApplicantModal';
+import ToggleButton from '../../components/common/ToggleButton';
 
-import ApplicantsLayout from '../../components/organisms/ApplicantsLayout';
+import {
+  ApplicantCardSection,
+  ApplicantCardWrapper,
+  ApplicantContainerInner,
+  ApplicantHeadWrapper,
+} from './styled';
+import StatusBadgeBox from '../../components/layout/StatusBadgeBox';
 
 import { position } from '../../context/recruitInfo';
 import {
+  RecruitmentAtom,
+  recruitmentAtom,
   recruitmentReadOnlyAtom,
   recruitmentWriteOnlyAtom,
 } from '../../store/recruitmentAtom';
 import { IApplicantTypeWithID } from '../../types/applicant';
 import { getApplicants } from '../../utils/applicantsHandler';
+import ApplicantDetailModal from '../ApplicantDetailModal';
 import { AdminContainerInner } from '../styled';
+
 import { AdminSectionWrapper } from './styled';
+import ApplicantCard from '../../components/common/cards/ApplicantCard';
 
 const Applicants = () => {
   const [recruit] = useAtom(recruitmentReadOnlyAtom);
   const [, writeRecruitStatus] = useAtom(recruitmentWriteOnlyAtom);
   const [searchParams] = useSearchParams();
-
+  const navigate = useNavigate();
   const { userid } = useParams<{ userid: string }>();
 
   const [applicants, setApplicants] = useState<IApplicantTypeWithID[]>();
 
   const currentParam = searchParams.get('type') as string;
+
+  const [recruitStatus, setRecruitStatus] = useAtom(recruitmentAtom);
+
+  const currentRouteRecruitStatus = () => {
+    if (recruitStatus) {
+      return recruitStatus[currentParam as keyof RecruitmentAtom];
+    }
+  };
+  const currentRouteRecruitStatusHandler = () => {
+    if (recruitStatus) {
+      setRecruitStatus({
+        ...recruitStatus,
+        [currentParam]: !recruitStatus[currentParam as keyof RecruitmentAtom],
+      });
+    }
+  };
 
   const filterApplicantsAsPosition = async (
     applicants: IApplicantTypeWithID[],
@@ -48,15 +75,12 @@ const Applicants = () => {
     const applicants = await getApplicants(null);
     await filterApplicantsAsPosition(applicants);
   };
-
-  useEffect(() => {
-    applicantHandler();
-  }, [currentParam]);
-
   useEffect(() => {
     writeRecruitStatus();
   }, []);
-
+  useEffect(() => {
+    applicantHandler();
+  }, [currentParam]);
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (recruit && token) {
@@ -69,12 +93,29 @@ const Applicants = () => {
       <AdminSectionWrapper>
         <AnimatePresence>
           <LayoutGroup>
-            {userid && <ApplicantModal userid={userid} />}
+            {userid && <ApplicantDetailModal userid={userid} />}
             {applicants && (
-              <ApplicantsLayout
-                applicants={applicants}
-                currentParam={currentParam}
-              />
+              <ApplicantContainerInner>
+                <ApplicantHeadWrapper>
+                  <StatusBadgeBox filteredApplicants={applicants} />
+                  <ToggleButton
+                    isOn={currentRouteRecruitStatus()}
+                    toggle={currentRouteRecruitStatusHandler}
+                  />
+                </ApplicantHeadWrapper>
+                <ApplicantCardSection>
+                  {applicants.map((applicant) => (
+                    <ApplicantCardWrapper
+                      key={applicant.id}
+                      onClick={() =>
+                        navigate(`/certified/recruit/${applicant.id}`)
+                      }
+                    >
+                      <ApplicantCard {...applicant} />
+                    </ApplicantCardWrapper>
+                  ))}
+                </ApplicantCardSection>
+              </ApplicantContainerInner>
             )}
           </LayoutGroup>
         </AnimatePresence>
