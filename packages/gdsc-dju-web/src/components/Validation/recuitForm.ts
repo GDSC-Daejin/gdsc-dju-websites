@@ -1,4 +1,4 @@
-import { applicationQuestions } from '../../pageData/recruitInfo';
+import { applicationQuestions } from '../../contents/recruitInfo';
 import { FormElementsType, FormValue } from '../../types/recruitForm';
 
 export const formValidation: FormElementsType<keyof FormValue> = {

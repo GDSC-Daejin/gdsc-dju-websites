@@ -3,7 +3,7 @@ import { MainText, Title } from '../../components/atoms/Title/title';
 import Banner from '../../components/molecules/Banner';
 import MemberSectionOrganism from '../../components/organisms/Introduce/MemberSectionOrganism';
 
-import { memberList } from '../../pageData/MemberList';
+import { memberList } from '../../contents/MemberList';
 import {
   ContainerInner,
   LayoutContainer,

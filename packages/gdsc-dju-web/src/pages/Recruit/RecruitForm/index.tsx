@@ -17,7 +17,7 @@ import ApplyModal from '../../../components/organisms/Modal/ApplyModal';
 import { formValidation } from '../../../components/Validation/recuitForm';
 import { db } from '../../../firebase/firebase';
 import { storage } from '../../../firebase/firebase.config';
-import { recruitInfo } from '../../../pageData/recruitInfo';
+import { recruitInfo } from '../../../contents/recruitInfo';
 import { alertAtom } from '../../../store/alertAtom';
 import { loaderAtom } from '../../../store/loaderAtom';
 

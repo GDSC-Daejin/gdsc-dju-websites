@@ -3,7 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 import { MainText, Title } from '../../../components/atoms/Title/title';
 import Banner from '../../../components/molecules/Banner';
-import { RecruitDetails } from '../../../pageData/recruitDetails';
+import { RecruitDetails } from '../../../contents/recruitDetails';
 
 import {
   ContainerInner,

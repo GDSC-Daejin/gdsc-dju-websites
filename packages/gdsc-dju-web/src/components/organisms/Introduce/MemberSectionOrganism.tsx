@@ -1,6 +1,6 @@
 import { LayoutGroup } from 'framer-motion';
 import React, { memo } from 'react';
-import { memberList } from '../../../pageData/MemberList';
+import { memberList } from '../../../contents/MemberList';
 import { MemberCardWrapper } from '../../../pages/Introduce/styled';
 import { CardList } from '../../../styles/layouts';
 import { listAnimate, memberCardAnimate } from '../../Variants/Variants';
