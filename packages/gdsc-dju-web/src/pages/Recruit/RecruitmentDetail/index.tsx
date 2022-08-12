@@ -7,7 +7,7 @@ import { SubtitleContent } from '../../../components/molecules/BulletList';
 import {
   RecruitDetails,
   recruitDefaultText,
-} from '../../../pageData/recruitDetails';
+} from '../../../contents/recruitDetails';
 import {
   ContainerInner,
   LayoutContainer,

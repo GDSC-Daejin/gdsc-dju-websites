@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Title } from '../../components/atoms/Title/title';
 import Banner from '../../components/molecules/Banner';
 
-import { FaqData } from '../../pageData/faq';
+import { FaqData } from '../../contents/faq';
 import {
   ContainerInner,
   LayoutContainer,

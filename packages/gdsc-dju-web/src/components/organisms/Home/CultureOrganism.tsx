@@ -9,7 +9,7 @@ import {
 
 import { motion } from 'framer-motion';
 import { listAnimate, listItemAnimate } from '../../Variants/Variants';
-import { culture } from '../../../pageData/culture';
+import { culture } from '../../../contents/culture';
 
 const CultureContentSection = styled(motion.section)`
   display: grid;
@@ -17,6 +17,7 @@ const CultureContentSection = styled(motion.section)`
   margin-top: 80px;
   grid-gap: 50px;
   @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
+    grid-template-columns: repeat(1, 1fr);
     margin-top: 40px;
     grid-gap: 30px;
   }
