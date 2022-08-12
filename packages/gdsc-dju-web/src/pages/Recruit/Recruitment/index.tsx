@@ -1,11 +1,15 @@
 import React from 'react';
 
 import { useNavigate } from 'react-router';
+import { MainText, Title } from '../../../components/atoms/Title/title';
+import Banner from '../../../components/molecules/Banner';
+import { RecruitDetails } from '../../../contents/recruitDetails';
 
-import Banner from '@common/Banner';
-import { MainText, Title } from '@common/Title/title';
-import { RecruitDetails } from '@src/contents/recruitDetails';
-import { ContainerInner, LayoutContainer, TopMargin } from '@styles/layouts';
+import {
+  ContainerInner,
+  LayoutContainer,
+  TopMargin,
+} from '../../../styles/layouts';
 
 import {
   Category,

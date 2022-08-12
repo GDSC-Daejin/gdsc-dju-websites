@@ -1,10 +1,10 @@
 import { GdsThemeProvider } from '@gdsc-dju/styled-components';
 import React from 'react';
-import Navigation from './components/layout/Navigation';
 
 import { GoogleSpinner } from './components/Lottie/GoogleSpinner';
+import Navigation from './components/molecules/Navigation';
 
-import Layout from './Core';
+import Layout from './Layout';
 import GlobalStyles from './styles/globalStyles';
 
 function App() {

@@ -1,9 +1,14 @@
-import Banner from '@common/Banner';
-import { MainText, Title } from '@common/Title/title';
-import MemberSection from '@layout/Introduce/MemberSection';
-import { memberList } from '@src/contents/MemberList';
-import { ContainerInner, LayoutContainer, TopMargin } from '@styles/layouts';
 import React from 'react';
+import { MainText, Title } from '../../components/atoms/Title/title';
+import Banner from '../../components/molecules/Banner';
+import MemberSectionOrganism from '../../components/organisms/Introduce/MemberSectionOrganism';
+
+import { memberList } from '../../contents/MemberList';
+import {
+  ContainerInner,
+  LayoutContainer,
+  TopMargin,
+} from '../../styles/layouts';
 
 const Introduce = () => {
   return (
@@ -21,7 +26,7 @@ const Introduce = () => {
             </MainText>
           </div>
           <TopMargin />
-          <MemberSection />
+          <MemberSectionOrganism />
           <TopMargin />
         </ContainerInner>
       </LayoutContainer>

@@ -1,8 +1,9 @@
-import React, { Suspense, lazy, useEffect } from 'react';
 import { useAtom } from 'jotai';
+import React, { Suspense, lazy, useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { Route, Routes } from 'react-router';
-import { GoogleSpinnerStatic } from '@src/components/Lottie/GoogleSpinner';
+import { GoogleSpinnerStatic } from '../components/atoms/Lottie/GoogleSpinner';
+
 import Error from '../pages/Error';
 import { asyncGetRecruitmentStatusAtom } from '../store/recruitmentStatusAtom';
 import ScrollTop from '../utils/ScrollTop';

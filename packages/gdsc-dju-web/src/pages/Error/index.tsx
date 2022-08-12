@@ -1,6 +1,6 @@
-import { MainText, Title } from '@common/Title/title';
-import ErrorLottie from '@src/components/Lottie/ErrorLottie';
 import React from 'react';
+import ErrorLottie from '../../components/atoms/Lottie/ErrorLottie';
+import { MainText, Title } from '../../components/atoms/Title/title';
 
 import { ErrorContainer, ErrorContentWrapper } from './styled';
 
