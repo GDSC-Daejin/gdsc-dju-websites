@@ -3,7 +3,8 @@ import TokenService from '../../apis/TokenService';
 import GDSCImage from '../../assets/logos/GDSCLogo.svg';
 import GithubLogo from '../../assets/logos/GithubLogo.svg';
 import GoogleLogo from '../../assets/logos/GoogleLogo.svg';
-import SolarSystem from '../../components/SolarSystem';
+import SolarSystem from '../../components/layout/SolarSystem';
+
 import {
   AuthBoxInner,
   AuthBoxWrapper,

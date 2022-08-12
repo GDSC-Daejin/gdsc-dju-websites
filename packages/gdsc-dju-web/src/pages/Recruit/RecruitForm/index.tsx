@@ -1,35 +1,28 @@
-import { addDoc, collection } from 'firebase/firestore';
-import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
-import { useAtom } from 'jotai';
 import React, { memo, useLayoutEffect, useState } from 'react';
+import { useAtom } from 'jotai';
 import { useForm } from 'react-hook-form';
-import { FieldValues } from 'react-hook-form/dist/types/fields';
 import { createSearchParams, useNavigate, useParams } from 'react-router-dom';
-import FileInput from '../../../components/atoms/input/FileInput';
-import { StyledTextArea } from '../../../components/atoms/input/TextArea/styled';
-import {
-  ErrorBox,
-  StyledInput,
-} from '../../../components/atoms/input/TextInput/styled';
-import { SubTitle, Title } from '../../../components/atoms/Title/title';
-import ApplyModal from '../../../components/organisms/Modal/ApplyModal';
 
-import { formValidation } from '../../../components/Validation/recuitForm';
-import { db } from '../../../firebase/firebase';
-import { storage } from '../../../firebase/firebase.config';
-import { recruitInfo } from '../../../contents/recruitInfo';
-import { alertAtom } from '../../../store/alertAtom';
-import { loaderAtom } from '../../../store/loaderAtom';
-
-import { MODAL_KEY, modalAtom } from '../../../store/modalAtom';
-import { ContainerInner, LayoutContainer } from '../../../styles/layouts';
+import FileInput from '@common/input/FileInput';
+import ApplyModal from '@common/Modal/ApplyModal';
+import { formValidation } from '@src/components/Validation/recuitForm';
+import { recruitInfo } from '@src/contents/recruitInfo';
+import { db } from '@src/firebase/firebase';
+import { alertAtom } from '@src/store/alertAtom';
+import { loaderAtom } from '@src/store/loaderAtom';
+import { MODAL_KEY, modalAtom } from '@src/store/modalAtom';
 import {
   IApplicantParams,
   IInputRegister,
   IRegisterApplicantType,
-} from '../../../types/applicant';
-import { FormValue } from '../../../types/recruitForm';
-import { isObjEmpty } from '../../../utils/objectCheck';
+} from '@type/applicant';
+import { FormValue } from '@type/recruitForm';
+import { isObjEmpty } from '@utils/objectCheck';
+import { addDoc, collection } from 'firebase/firestore';
+import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
+
+import { FieldValues } from 'react-hook-form/dist/types/fields';
+
 import { positionSelect } from './FormFunctions';
 import {
   FormContentWrapper,
@@ -41,6 +34,11 @@ import {
   RecruitFormInner,
   RecruitFormWrapper,
 } from './styled';
+import { storage } from '@src/firebase/firebase.config';
+import { ContainerInner, LayoutContainer } from '@styles/layouts';
+import { SubTitle, Title } from '@common/Title/title';
+import { ErrorBox, StyledInput } from '@common/input/TextInput/styled';
+import { StyledTextArea } from '@common/input/TextArea/styled';
 
 const RecruitForm = () => {
   const { id } = useParams();

@@ -1,25 +1,25 @@
+import React, { useEffect, useState } from 'react';
+
 import emailjs from '@emailjs/browser';
+import { isDevelop } from '@src/context/recruitInfo';
+import { db } from '@src/firebase/firebase';
+import { useModalHandle } from '@src/hooks/useModalHandle';
+import { alertAtom } from '@src/store/alertAtom';
+import { loaderAtom } from '@src/store/loaderAtom';
+import { templateAtom } from '@src/store/templateAtom';
+import { userAtom } from '@src/store/userAtom';
+import { EmailLogType, IApplicantTypeWithID } from '@type/applicant';
+import { getApplicants } from '@utils/applicantsHandler';
 import { addDoc, collection } from 'firebase/firestore';
 import { AnimatePresence } from 'framer-motion';
 import { useAtom } from 'jotai';
-import React, { useEffect, useState } from 'react';
 
-import EmailContainer from '../../components/organisms/EmailContainer';
-import AdminEmailCheckModal from '../../components/modal/AdminEmailCheckModal';
-import SelectedEmailContainer from '../../components/organisms/SelectedEmailContainer';
-import { isDevelop } from '../../context/recruitInfo';
-import { db } from '../../firebase/firebase';
-import { useModalHandle } from '../../hooks/useModalHandle';
-
-import { alertAtom } from '../../store/alertAtom';
-import { loaderAtom } from '../../store/loaderAtom';
-import { templateAtom } from '../../store/templateAtom';
-import { userAtom } from '../../store/userAtom';
-import { EmailLogType, IApplicantTypeWithID } from '../../types/applicant';
-import { getApplicants } from '../../utils/applicantsHandler';
 import { AdminSectionWrapper } from '../Applicants/styled';
 import { AdminContainerInner } from '../styled';
+import EmailContainer from './EmailContainer';
+import SelectedEmailContainer from './SelectedEmailContainer';
 import { EmailLeftWrapper, EmailRightWrapper } from './styled';
+import EmailCheckModal from '@common/modal/EmailCheckModal';
 
 const Email = () => {
   const [alert, setAlert] = useAtom(alertAtom);
@@ -153,7 +153,7 @@ const Email = () => {
       <AnimatePresence>
         <AdminSectionWrapper>
           {selectApplicants && (
-            <AdminEmailCheckModal
+            <EmailCheckModal
               applicants={selectApplicants}
               emailCheckHandler={emailCheckHandler}
               template={template}
