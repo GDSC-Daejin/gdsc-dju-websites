@@ -14,7 +14,7 @@ on:
       - closed
     paths:
       - "packages/gdsc-dju-blog/**"
-      - ".github/workflows/gdsc-dju-admin-deploy-live.yml"
+      - ".github/workflows/gdsc-dju-blog-deploy-live.yml"
 jobs:
   Deploy_Live_channel:
     if: github.event.pull_request.merged == true
@@ -22,7 +22,7 @@ jobs:
     env:
       working-directory: ./packages/gdsc-dju-blog
     environment:
-      name: GDSC DJU admin Production
+      name: GDSC DJU blog Production
       url: https://blog.gdsc-dju.com
     steps:
       - uses: actions/checkout@v2
@@ -51,7 +51,7 @@ jobs:
           channelId: live
           projectId: gdsc-dju
           target: gdsc-dju-devlog
-          entryPoint: './packages/gdsc-dju-admin'
+          entryPoint: './packages/gdsc-dju-blog'
       - name: Discord Message Notify
         uses: appleboy/discord-action@0.0.3
         with:
