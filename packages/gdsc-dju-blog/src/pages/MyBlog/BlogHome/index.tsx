@@ -143,6 +143,7 @@ const BlogHome = () => {
                 <ButtonWrapper>
                   <GDSCButton
                     text={'스크랩'}
+                    disable={true}
                     onClick={() => navigate(`/${name}/likes`)}
                   />
                   <GDSCButton
