@@ -15,4 +15,4 @@ Disallow: /api*/
 Disallow: /oauth*/
 Disallow: /userprofile*/
 
-Sitemap: https://gdsc-dju-shared.web.app/sitemap.xml
+Sitemap: https://shared.gdsc-dju.com/sitemap.xml
