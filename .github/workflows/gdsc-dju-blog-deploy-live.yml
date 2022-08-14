@@ -5,22 +5,22 @@ on:
     branches:
       - master
     paths:
-      - "packages/gdsc-dju-blog123/**"
-      - ".github/workflows/gdsc-dju-blog123-deploy-live.yml"
+      - "packages/gdsc-dju-blog/**"
+      - ".github/workflows/gdsc-dju-blog-deploy-live.yml"
   pull_request:
     branches:
       - master
     types:
       - closed
     paths:
-      - "packages/gdsc-dju-blog123/**"
+      - "packages/gdsc-dju-blog/**"
       - ".github/workflows/gdsc-dju-admin-deploy-live.yml"
 jobs:
   Deploy_Live_channel:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
-      working-directory: ./packages/gdsc-dju-blog123
+      working-directory: ./packages/gdsc-dju-blog
     environment:
       name: GDSC DJU admin Production
       url: https://blog.gdsc-dju.com
@@ -55,8 +55,8 @@ jobs:
       - name: Discord Message Notify
         uses: appleboy/discord-action@0.0.3
         with:
-          webhook_id: ${{ secrets.DISCORD_ADMIN_WEBHOOK_ID }}
-          webhook_token: ${{ secrets.DISCORD_ADMIN_WEBHOOK_TOKEN }}
+          webhook_id: ${{ secrets.DISCORD_BLOG_WEBHOOK_ID }}
+          webhook_token: ${{ secrets.DISCORD_BLOG_WEBHOOK_TOKEN }}
           color: "#4285f4"
           args: |
             gdsc-dju-blog has been deployed to Live channel
