@@ -1,0 +1,15 @@
+{
+  "hosting": {
+    "public": "dist",
+    "target": "gdsc-dju-devlog",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [ {
+      "source": "**",
+      "destination": "/index.html"
+    } ]
+  }
+}
