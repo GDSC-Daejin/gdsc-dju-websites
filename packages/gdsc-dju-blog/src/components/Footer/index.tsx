@@ -14,8 +14,7 @@ import {
   StyledColumn,
   StyledTr,
 } from './styled';
-import BlogIcon from '../../assets/BlogIcon';
-import { useNavigate } from 'react-router';
+import {useNavigate} from 'react-router';
 import GdscBlogLogo from '../../assets/logos/GdscBlogLogo';
 
 const Footer = () => {

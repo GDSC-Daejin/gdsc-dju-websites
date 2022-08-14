@@ -118,6 +118,8 @@ export const Copyright = styled.span`
   display: flex;
   right: 10px;
   bottom: 10px;
+  white-space: nowrap;
+  word-break: keep-all;
   font-size: ${({ theme }) => theme.fontSize.body3};
   color: ${({ theme }) => theme.colors.grey600};
 `;
