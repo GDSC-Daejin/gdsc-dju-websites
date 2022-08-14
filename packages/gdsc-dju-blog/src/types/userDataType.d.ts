@@ -6,7 +6,7 @@ export interface IUserDataType {
   password: string;
   profileImageUrl: string;
   providerType: string;
-  role: string;
+  role: 'GUEST' | 'MEMBER' | 'CORE' | 'LEAD';
   uploadDate: string;
   userId: string;
   username: string;
@@ -27,7 +27,7 @@ export interface ValidationMemberInfo {
   gitEmail: string;
   studentID: string;
   hashTag: string;
-  githubUrl: string;
+  gitHubUrl: string;
   blogUrl: string;
   etcUrl: string;
   birthday: string;

@@ -67,7 +67,7 @@ const ProfileEditForm = ({ userData }: { userData: IUserDataType }) => {
       studentID: userData.memberInfo.studentID,
       positionType: userData.memberInfo.positionType,
       hashTag: userData.memberInfo.hashTag,
-      githubUrl: userData.memberInfo.githubUrl,
+      gitHubUrl: userData.memberInfo.gitHubUrl,
       blogUrl: userData.memberInfo.blogUrl,
       etcUrl: userData.memberInfo.etcUrl,
       birthday: dateFilter(userData.memberInfo.birthday),

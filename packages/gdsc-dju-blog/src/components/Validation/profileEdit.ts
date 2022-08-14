@@ -154,7 +154,7 @@ export const formValidation: FormElementsType<keyof ValidationMemberInfo> = {
       message: '10글자 이상 입력해주세요.',
     },
   },
-  githubUrl: {
+  gitHubUrl: {
     label: '깃허브 주소',
     placeholder: 'https://',
     pattern: {
