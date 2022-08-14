@@ -12,7 +12,7 @@ import { formValidation } from '../../../components/Validation/profileEdit';
 import { alertState } from '../../../store/alert';
 import { ContainerInner, LayoutContainer } from '../../../styles/layouts';
 import { IUserDataType, MemberInfo } from '../../../types/userDataType';
-import { dateFilter } from '../../../Utils/dateFilter';
+import { dateFilter, toIsoString } from '../../../Utils/dateFilter';
 
 import {
   FormButtonWrapper,
@@ -44,10 +44,7 @@ const ProfileEditForm = ({ userData }: { userData: IUserDataType }) => {
   const { errors } = formState;
 
   const onSubmit = async (values: MemberInfo) => {
-
     const convertDate = new Date(values.birthday)
-    console.log(values);
-    console.log(convertDate.toISOString());
     await UserService.updateMyData({...values, birthday: convertDate.toISOString()});
     setAlert({
       ...alert,
