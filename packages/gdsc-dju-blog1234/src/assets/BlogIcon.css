@@ -1,0 +1,14 @@
+
+.blog-icon{
+    height: 40px;
+    width: 200px;
+}
+@media (max-width: 512px) {
+    .LogoText{
+        display: none;
+    }
+    .blog-icon{
+        height: 40px;
+        width: 60px;
+    }
+}
