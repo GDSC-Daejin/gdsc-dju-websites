@@ -3,8 +3,8 @@ name: Deploy to GDSC DJU Blog Preview Channel
 on:
   push:
     paths:
-      - "packages/gdsc-dju-blog/**"
-      - ".github/workflows/gdsc-dju-blog-deploy-preview.yml"
+      - "packages/gdsc-dju-blog123/**"
+      - ".github/workflows/gdsc-dju-blog123-deploy-preview.yml"
     branches-ignore:
       - master
   pull_request:
@@ -12,13 +12,13 @@ on:
       - master
       - develop
     paths:
-      - "packages/gdsc-dju-blog/**"
-      - ".github/workflows/gdsc-dju-blog-deploy-preview.yml"
+      - "packages/gdsc-dju-blog123/**"
+      - ".github/workflows/gdsc-dju-blog123-deploy-preview.yml"
 jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest
     env:
-      working-directory: ./packages/gdsc-dju-blog
+      working-directory: ./packages/gdsc-dju-blog123
     environment:
       name: GDSC DJU Blog Preview
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
@@ -54,7 +54,7 @@ jobs:
           target: gdsc-dju-devlog
           expires: 3d
           channelId: ' ${{ steps.slug.outputs.sha8 }}-${{ github.event.pull_request.head.ref }} '
-          entryPoint: './packages/gdsc-dju-blog'
+          entryPoint: './packages/gdsc-dju-blog123'
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
       - name: Discord Message Notify
