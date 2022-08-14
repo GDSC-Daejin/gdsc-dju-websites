@@ -24,8 +24,6 @@ jobs:
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
     steps:
       - uses: actions/checkout@v2
-      - name: Root yarn install
-        run: yarn install
       - name: Project yarn install
         run: yarn install
       - name: yarn build
