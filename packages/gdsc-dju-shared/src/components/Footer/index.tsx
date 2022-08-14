@@ -16,10 +16,10 @@ export const Footer: React.FC<{ disable?: boolean }> = ({ disable = true }) => {
         <FooterText href={'https://developers.google.com/community-guidelines'}>
           Community guidelines
         </FooterText>{' '}
-        <FooterText href={'https://gdsc-dju-blog.web.app/'}>
+        <FooterText href={'https://blog.gdsc-dju.com/'}>
           GDSC DJU Tech Blog
         </FooterText>
-        <FooterText href={'https://gdsc-dju.web.app/'}>
+        <FooterText href={'https://web.gdsc-dju.com/'}>
           GDSC DJU Site
         </FooterText>
       </FooterLogo>

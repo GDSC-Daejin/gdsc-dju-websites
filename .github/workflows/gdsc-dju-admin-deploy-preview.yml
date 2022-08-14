@@ -1,4 +1,4 @@
-name: Deploy to GDSC DJU ADMIN Preview Channel
+name: Deploy to GDSC DJU Admin Preview Channel
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
     env:
       working-directory: ./packages/gdsc-dju-admin
     environment:
-      name: GDSC DJU admin Preview
+      name: GDSC DJU Admin Preview
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
     steps:
       - uses: actions/checkout@v2
@@ -36,8 +36,6 @@ jobs:
           echo "VITE_FIREBASE_MEASUREMENT_ID=${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}" >> .env
           cat .env
         working-directory: ${{ env.working-directory }}
-      - name: Root yarn install
-        run: yarn install
       - name: Project yarn install
         run: yarn install
       - name: yarn build
