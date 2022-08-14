@@ -20,7 +20,7 @@ jobs:
     env:
       working-directory: ./packages/gdsc-dju-blog123
     environment:
-      name: GDSC DJU blog Preview
+      name: GDSC DJU Blog Preview
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
     steps:
       - uses: actions/checkout@v2
