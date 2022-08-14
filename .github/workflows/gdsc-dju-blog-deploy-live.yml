@@ -5,22 +5,22 @@ on:
     branches:
       - master
     paths:
-      - "packages/gdsc-dju-blog/**"
-      - ".github/workflows/gdsc-dju-blog-deploy-live.yml"
+      - "packages/gdsc-dju-blog123/**"
+      - ".github/workflows/gdsc-dju-blog123-deploy-live.yml"
   pull_request:
     branches:
       - master
     types:
       - closed
     paths:
-      - "packages/gdsc-dju-blog/**"
+      - "packages/gdsc-dju-blog123/**"
       - ".github/workflows/gdsc-dju-admin-deploy-live.yml"
 jobs:
   Deploy_Live_channel:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
-      working-directory: ./packages/gdsc-dju-blog
+      working-directory: ./packages/gdsc-dju-blog123
     environment:
       name: GDSC DJU admin Production
       url: https://blog.gdsc-dju.com
