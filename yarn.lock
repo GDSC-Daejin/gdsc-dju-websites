@@ -3644,6 +3644,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/js-cookie@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@types/js-cookie@npm:3.0.2"
+  checksum: 7ab964288dd26373e134ed0bcde4a7dbea7e6f5de1805e2d1e48eac847e89a0e7f5fdc9164c37931680ec97c6e6e5a73e3e4039e0d08527c2e21badd7bee62d1
+  languageName: node
+  linkType: hard
+
 "@types/json-buffer@npm:~3.0.0":
   version: 3.0.0
   resolution: "@types/json-buffer@npm:3.0.0"
@@ -11834,6 +11841,7 @@ __metadata:
     "@toast-ui/editor-plugin-table-merged-cell": ^3.0.2
     "@toast-ui/react-editor": ^3.1.3
     "@types/jest": ^26.0.15
+    "@types/js-cookie": ^3.0.2
     "@types/node": ^16.7.13
     "@types/prismjs": ^1.26.0
     "@types/react": ^18.0.0
