@@ -1,4 +1,4 @@
-name: Deploy to GDSC DJU ADMIN Preview Channel
+name: Deploy to GDSC DJU Admin Preview Channel
 
 on:
   push:
