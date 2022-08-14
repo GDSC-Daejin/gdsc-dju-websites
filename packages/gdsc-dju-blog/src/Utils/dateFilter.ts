@@ -11,3 +11,13 @@ export const dateFilter = (date: string) => {
   ].join('.');
 };
 
+export function toIsoString(date:Date) {
+  const thisDate = new Date(date);
+  return date.getFullYear() +
+      '-' + padTo2Digits(thisDate.getMonth() + 1) +
+      '-' + padTo2Digits(thisDate.getDate()) +
+      'T' + padTo2Digits(thisDate.getHours()) +
+      ':' + padTo2Digits(thisDate.getMinutes()) +
+      ':' + padTo2Digits(thisDate.getSeconds()) +'-00' +
+      ':' + '00';
+}
