@@ -9,6 +9,7 @@ export type FormElement = {
   isModifyBlock?: boolean;
   isBlock?: boolean;
   valueAsDate?: true;
+  type?: string;
   required?: {
     value: boolean;
     message: string;
@@ -74,6 +75,7 @@ export const formValidation: FormElementsType<keyof ValidationMemberInfo> = {
     label: '생일',
     placeholder: '2000.01.01',
     valueAsDate: true,
+    type: 'date',
     required: {
       value: true,
       message: '필수 입력 값이에요.',

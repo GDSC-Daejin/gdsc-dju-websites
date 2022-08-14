@@ -44,7 +44,11 @@ const ProfileEditForm = ({ userData }: { userData: IUserDataType }) => {
   const { errors } = formState;
 
   const onSubmit = async (values: MemberInfo) => {
-    await UserService.updateMyData(values);
+
+    const convertDate = new Date(values.birthday)
+    console.log(values);
+    console.log(convertDate.toISOString());
+    await UserService.updateMyData({...values, birthday: convertDate.toISOString()});
     setAlert({
       ...alert,
       alertStatus: 'success',

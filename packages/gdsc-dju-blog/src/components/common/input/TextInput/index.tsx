@@ -12,9 +12,10 @@ export interface Iprops {
   type?: string;
   value?: string | null;
   disabled?: boolean;
+  defaultValue?: string | number;
 }
 const TextInput = forwardRef<HTMLInputElement, Iprops>(
-  ({ name, placeholder, onChange, type, disabled, error, value }, ref) => {
+  ({ name, placeholder, onChange, type, disabled, error, value, defaultValue }, ref) => {
     return (
       <>
         <StyledInputWrapper error={false} disabled={!disabled}>
@@ -23,6 +24,7 @@ const TextInput = forwardRef<HTMLInputElement, Iprops>(
             name={name}
             type={type}
             ref={ref}
+            defaultValue={defaultValue}
             onChange={onChange && onChange}
             placeholder={placeholder}
             disabled={disabled}
