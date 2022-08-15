@@ -31,7 +31,6 @@ const SearchResult = () => {
           <SearchResultTitle>
             {postContent}
             <SearchResultSubTitle>
-              {' '}
               를(을) 검색하신 결과입니다.
             </SearchResultSubTitle>
           </SearchResultTitle>
