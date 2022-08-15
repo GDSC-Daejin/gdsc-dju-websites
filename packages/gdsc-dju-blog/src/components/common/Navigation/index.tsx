@@ -43,8 +43,8 @@ const SearchInput: React.FC<{ onClick?: () => void }> = ({ onClick }) => {
   const navigate = useNavigate();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     if (searchData.trim() !== '') navigate(`/search/${searchData}?page=1`);
+    setSearchData('');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,6 +56,7 @@ const SearchInput: React.FC<{ onClick?: () => void }> = ({ onClick }) => {
       <form onSubmit={handleSubmit}>
         <Search
           name="search"
+          value={searchData}
           onChange={handleChange}
           type="text"
           placeholder="궁금한 정보나 계정을 입력해주세요"
