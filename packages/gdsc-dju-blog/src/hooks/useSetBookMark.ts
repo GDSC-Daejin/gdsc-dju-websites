@@ -1,4 +1,3 @@
-import Cookies from 'js-cookie';
 import React from 'react';
 import { useQueryClient } from 'react-query';
 import { useRecoilState } from 'recoil';
