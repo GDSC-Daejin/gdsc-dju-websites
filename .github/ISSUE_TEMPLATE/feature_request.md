@@ -7,9 +7,22 @@ assignees: ''
 
 ---
 
-### **어떤 기능을 추가/요청하나요?**
-/* A clear and concise description of what the problem is. Ex. I'm always frustrated when [...] */
+# **어떤 기능을 추가/요청하나요?**
 
-### 작업 상세 내용
+[//]: # ( A clear and concise description of what the problem is. Ex. I'm always frustrated when I can't find a way to do X. )
 
-### 참고사항
+## ISSUE (BUG)
+
+- [ ]
+
+## ISSUE (Enhancement)
+
+- [ ]
+
+## 작업 상세 내용
+
+- [ ]
+
+## 참고사항
+
+- [ ]
