@@ -1,4 +1,4 @@
-import { ValidationMemberInfo } from '../../types/userDataType';
+import { ValidationMemberInfo } from '@type/userDataType';
 
 export type FormElementsType<T extends string> = {
   [key in T]: FormElement;

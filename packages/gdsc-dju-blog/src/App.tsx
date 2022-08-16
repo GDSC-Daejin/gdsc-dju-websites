@@ -8,6 +8,7 @@ import { darkTheme, lightTheme } from './styles/theme';
 
 function App() {
   const { theme, toggleTheme } = useTheme();
+
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>

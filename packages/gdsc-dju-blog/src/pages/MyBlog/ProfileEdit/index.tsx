@@ -4,16 +4,12 @@ import { useNavigate } from 'react-router';
 import { useRecoilState } from 'recoil';
 import { useGetMyData } from '../../../api/hooks/useGetMyData';
 import UserService from '../../../api/UserService';
-import { GDSCButton } from '../../../components/common/Button';
-import TextInput from '../../../components/common/input/TextInput';
-import ProfileEditImage from '../../../components/common/ProfileEditImage';
-import ProfileImage from '../../../components/common/ProfileImage';
+
 import { formValidation } from '../../../components/Validation/profileEdit';
 import { alertState } from '../../../store/alert';
 import { ContainerInner, LayoutContainer } from '../../../styles/layouts';
 import { IUserDataType, MemberInfo } from '../../../types/userDataType';
-import { dateFilter, toIsoString } from '../../../Utils/dateFilter';
-
+import { dateFilter } from '../../../utils/dateFilter';
 import {
   FormButtonWrapper,
   FormElementWrapper,
@@ -23,10 +19,12 @@ import {
   FormTitleWrapper,
   FormWrapper,
 } from './styled';
+import ProfileImage from '../../../components/atoms/ProfileImage';
+import { GDSCButton } from '../../../components/atoms/Button';
+import TextInput from '../../../components/atoms/input/TextInput';
 
 const ProfileEdit = () => {
   const { userData } = useGetMyData();
-
   return (
     <LayoutContainer>
       <ContainerInner>
@@ -44,8 +42,11 @@ const ProfileEditForm = ({ userData }: { userData: IUserDataType }) => {
   const { errors } = formState;
 
   const onSubmit = async (values: MemberInfo) => {
-    const convertDate = new Date(values.birthday)
-    await UserService.updateMyData({...values, birthday: convertDate.toISOString()});
+    const convertDate = new Date(values.birthday);
+    await UserService.updateMyData({
+      ...values,
+      birthday: convertDate.toISOString(),
+    });
     setAlert({
       ...alert,
       alertStatus: 'success',
@@ -85,7 +86,6 @@ const ProfileEditForm = ({ userData }: { userData: IUserDataType }) => {
             position={userData.memberInfo.positionType}
           />
         </FormTitleWrapper>
-
         {formElements.map((element) => {
           const elementName = formValidation[element];
           return (

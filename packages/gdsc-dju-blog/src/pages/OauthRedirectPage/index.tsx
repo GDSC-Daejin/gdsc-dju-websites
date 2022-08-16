@@ -3,7 +3,8 @@ import { useCookies } from 'react-cookie';
 import { useSearchParams } from 'react-router-dom';
 import { getUserData } from '../../api/hooks/useGetMyData';
 import TokenService from '../../api/TokenService';
-import GoogleLoader from '../../components/common/GoogleLoader';
+import GoogleLoader from '../../components/atoms/GoogleLoader';
+
 import { IUserDataType } from '../../types/userDataType';
 
 type SelectedUserType = Pick<

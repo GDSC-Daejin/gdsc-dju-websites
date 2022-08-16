@@ -12,15 +12,14 @@ import 'prismjs/themes/prism.css';
 import React, { ChangeEvent, Dispatch, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
+import { ModalType, modalState } from '@src/store/modal';
+import { PostPostDataType } from '@type/postData';
+import PostService from '@src/api/PostService';
+import PostWriteLayout from '@src/Layout/postWrite';
+import { alertState } from '@src/store/alert';
+import { useGetMyPostData } from '@src/api/hooks/useGetMyPostData';
+import { ContainerInner, LayoutContainer } from '@styles/layouts';
 /*color plugin*/
-
-import { useGetMyPostData } from '../../api/hooks/useGetMyPostData';
-import PostService from '../../api/PostService';
-import PostWriteLayout from '../../Layout/postWrite';
-import { alertState } from '../../store/alert';
-import { ModalType, modalState } from '../../store/modal';
-import { ContainerInner, LayoutContainer } from '../../styles/layouts';
-import { PostPostDataType } from '../../types/postData';
 
 export const PostCategoryMenuData = [
   {

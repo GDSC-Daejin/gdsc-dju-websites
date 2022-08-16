@@ -12,13 +12,9 @@ import React, {
   useState,
 } from 'react';
 import { useNavigate } from 'react-router-dom';
-import PostThumbnail from '../assets/PostThumbnail';
-import { GDSCButton } from '../components/common/Button';
-import PostCategoryMenu from '../components/common/PostCategoryMenu';
-import { useTheme } from '../hooks/ThemeHandler';
-import { ContentBox } from '../pages/Post/styled';
 
-import { DetailPostDataType, PostPostDataType } from '../types/postData';
+import { useTheme } from '../hooks/ThemeHandler';
+
 import {
   PostBottomButtonBox,
   PostBottomButtonWrapper,
@@ -33,6 +29,11 @@ import {
   PostTitle,
   ThumbnailText,
 } from './postWrite.styled';
+import PostThumbnail from '@assets/mocks/PostThumbnail';
+import PostCategoryMenu from '@src/components/layouts/PostCategoryMenu';
+import { DetailPostDataType, PostPostDataType } from '@type/postData';
+import { GDSCButton } from '@src/components/atoms/Button';
+import { ContentBox } from '@pages/Post/styled';
 
 interface PostWriteProps {
   postData: DetailPostDataType | undefined;

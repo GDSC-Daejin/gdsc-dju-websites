@@ -1,6 +1,7 @@
+import { IFormStructure, errorCheck } from '@type/SignUpFormType';
 import React, { useState } from 'react';
 import BottomArrowIcon from '../../../assets/icons/BottomArrowIcon';
-import { IFormStructure, errorCheck } from '../../../types/SignUpFormType';
+
 import {
   ArrowWrapper,
   SelectBoxWrapper,

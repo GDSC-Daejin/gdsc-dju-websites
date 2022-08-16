@@ -5,12 +5,11 @@ import { Viewer } from '@toast-ui/react-editor';
 import Prism from 'prismjs';
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useGetDetailPost } from '../../api/hooks/useGetDetailPost';
-import { useGetScrap } from '../../hooks/useGetScrap';
 
-import { LayoutContainer, PostContainerInner } from '../../styles/layouts';
 import PostHeader from './PostHeader';
 import { ContentBox, ContentWrapper, GiscusWrapper } from './styled';
+import { useGetDetailPost } from '@src/api/hooks/useGetDetailPost';
+import { LayoutContainer, PostContainerInner } from '@styles/layouts';
 
 const Post = () => {
   const { postId } = useParams<'postId'>();
