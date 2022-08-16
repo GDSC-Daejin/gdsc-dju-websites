@@ -4,6 +4,16 @@ import colorSyntax from '@toast-ui/editor-plugin-color-syntax';
 import tableMergedCell from '@toast-ui/editor-plugin-table-merged-cell';
 import { Editor } from '@toast-ui/react-editor';
 import Prism from 'prismjs';
+import 'prismjs/components/prism-java';
+import 'prismjs/components/prism-json';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-kotlin';
+import 'prismjs/components/prism-python';
+import 'prismjs/components/prism-c';
+import 'prismjs/components/prism-bash';
+import 'prismjs/components/prism-css';
+
 import React, {
   ChangeEvent,
   Dispatch,

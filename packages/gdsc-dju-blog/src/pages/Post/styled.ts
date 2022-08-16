@@ -124,7 +124,6 @@ export const ContentBox = styled.article`
   span > span,
   pre > span {
     font-size: ${({ theme }) => theme.fontSize.body2};
-    font-family: 'D2Coding ligature', sans-serif;
   }
   .toastui-editor-defaultUI {
     border: 1px solid ${({ theme }) => theme.colors.grey200};
@@ -400,7 +399,6 @@ export const ContentBox = styled.article`
   .toastui-editor-contents kbd {
     display: inline-block;
     padding: 3px 5px;
-    font-family: 'D2Coding ligature', sans-serif;
     font-size: ${({ theme }) => theme.fontSize.body2};
     line-height: 10px;
     color: ${({ theme }) => theme.colors.grey900};
@@ -486,14 +484,13 @@ export const ContentBox = styled.article`
 
   .toastui-editor-contents tt,
   .toastui-editor-contents code {
-    font-family: 'D2Coding ligature', sans-serif;
     font-size: ${({ theme }) => theme.fontSize.body2};
   }
 
   .toastui-editor-contents pre {
     margin-top: 0;
     margin-bottom: 0;
-    font-family: 'D2Coding ligature', sans-serif;
+
     font-size: ${({ theme }) => theme.fontSize.body2};
     word-wrap: normal;
   }
@@ -1130,7 +1127,7 @@ export const ContentBox = styled.article`
   pre[class*='language-'] {
     color: #ccc;
     background: none;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-family: 'Google Sans Display', 'Noto Sans KR', sans-serif !important;
     font-size: 1em;
     text-align: left;
     white-space: pre;
@@ -1257,6 +1254,7 @@ export const ContentBox = styled.article`
     font-size: ${({ theme }) => theme.fontSize.body2};
   }
   .toastui-editor-md-code-block-line-background {
+    font-family: 'Google Sans Display', 'Noto Sans KR', sans-serif !important;
     background: ${({ theme }) => theme.colors.background};
   }
   .ProseMirror > div {
@@ -1277,6 +1275,21 @@ export const ContentBox = styled.article`
     font-size: ${({ theme }) => theme.fontSize.body2};
   }
   .toastui-editor-md-block-quote {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+    font-size: ${({ theme }) => theme.fontSize.body2};
+  }
+  .toastui-editor-md-delimiter {
+    font-size: unset;
+  }
+  .toastui-editor-md-marked-text {
+    font-size: unset;
+  }
+  .toastui-editor-md-heading1 {
+    font-size: ${({ theme }) => theme.fontSize.h3};
+  }
+  .toastui-editor-md-heading2 {
+    font-size: ${({ theme }) => theme.fontSize.h4};
+  }
+  .toastui-editor-md-heading3 {
+    font-size: ${({ theme }) => theme.fontSize.h5};
   }
 `;
