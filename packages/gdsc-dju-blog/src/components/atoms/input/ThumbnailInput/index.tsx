@@ -5,7 +5,6 @@ import {
   PostThumbnailWrapper,
   ThumbnailText,
 } from './styled';
-import PostThumbnail from '@assets/mocks/PostThumbnail';
 import ImageIcon from '@assets/icons/imageIcon';
 
 interface Props {

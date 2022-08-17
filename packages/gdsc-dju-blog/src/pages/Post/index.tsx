@@ -6,7 +6,7 @@ import PostHeader from './PostHeader';
 import { ContentWrapper, GiscusWrapper } from './styled';
 import { useGetDetailPost } from '@src/api/hooks/useGetDetailPost';
 import { LayoutContainer, PostContainerInner } from '@styles/layouts';
-import { ContentViewer } from '@src/components/atoms/toastUi';
+import { ContentViewer } from '@src/components/atoms/ToastUi';
 
 const Post = () => {
   const { postId } = useParams<'postId'>();

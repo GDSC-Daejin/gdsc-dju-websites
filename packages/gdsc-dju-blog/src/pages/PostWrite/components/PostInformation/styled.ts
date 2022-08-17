@@ -40,6 +40,10 @@ export const PostTitleInput = styled.input`
   @media screen and (max-width: 530px) {
     font-size: ${(props) => props.theme.fontSize.h6};
     padding-bottom: 4px;
+  }
+  &:focus {
+    outline: none;
+  }
 `;
 export const PostHashTagInput = styled.input`
   display: flex;
@@ -53,4 +57,8 @@ export const PostHashTagInput = styled.input`
   border: none;
   @media screen and (max-width: 530px) {
     font-size: ${({ theme }) => theme.fontSize.body3};
+  }
+  &:focus {
+    outline: none;
+  }
 `;

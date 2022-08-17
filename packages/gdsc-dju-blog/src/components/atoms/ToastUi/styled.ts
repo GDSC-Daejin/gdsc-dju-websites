@@ -1,6 +1,27 @@
 import styled from 'styled-components';
 
 export const ContentBox = styled.article`
+  .toastui-editor > div {
+    font-size: ${({ theme }) => theme.fontSize.body1};
+  }
+  .toastui-editor-defaultUI {
+    border: 0 solid !important;
+  }
+  .toastui-editor-mode-switch {
+    border: 0 solid !important;
+  }
+  .toastui-editor-mode-switch .tab-item {
+    border: 0 solid !important;
+    background: ${({ theme }) => theme.colors.background}!important;
+    font-size: ${({ theme }) => theme.fontSize.body2};
+    color: ${({ theme }) => theme.colors.grey300};
+    .active {
+      color: ${({ theme }) => theme.colors.grey900};
+    }
+  }
+  .toastui-editor-main .toastui-editor-md-splitter {
+    background: ${({ theme }) => theme.colors.grey300}!important;
+  }
   .hljs,
   .hljs-template-variable,
   span > span,
@@ -1140,7 +1161,7 @@ export const ContentBox = styled.article`
     background: ${({ theme }) => theme.colors.background};
   }
   .ProseMirror > div {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSize.body1};
     color: ${({ theme }) => theme.colors.grey900};
   }
   .toastui-editor-md-link {
@@ -1151,13 +1172,16 @@ export const ContentBox = styled.article`
   }
 
   .toastui-editor-md-strong {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSize.body1};
+  }
+  .toastui-editor-md-meta {
+    font-size: ${({ theme }) => theme.fontSize.body1};
   }
   .toastui-editor-md-code-block {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSize.body1};
   }
   .toastui-editor-md-block-quote {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSize.body1};
   }
   .toastui-editor-md-delimiter {
     font-size: unset;
@@ -1173,5 +1197,8 @@ export const ContentBox = styled.article`
   }
   .toastui-editor-md-heading3 {
     font-size: ${({ theme }) => theme.fontSize.h5};
+  }
+  .toastui-editor-md-list-item {
+    font-size: ${({ theme }) => theme.fontSize.body1} !important;
   }
 `;

@@ -6,11 +6,26 @@ import {
   PostCategoryText,
   PostCategoryTextWrapper,
 } from './styled';
-import { PostCategoryMenuData } from '../../../pages/PostWrite';
 
 import { positionColor } from '../../../store/positionColor';
 import { PostCategoryAnimation, PostCircleAnimation } from '../../Animation';
-
+export const PostCategoryMenuData = [
+  {
+    title: 'Frontend',
+  },
+  {
+    title: 'Backend',
+  },
+  {
+    title: 'Android',
+  },
+  {
+    title: 'Design',
+  },
+  {
+    title: 'Common',
+  },
+];
 const PostCategoryMenu: React.FC<{
   onClick: (category: string) => void;
   category?: string;

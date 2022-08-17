@@ -53,17 +53,22 @@ const ContentViewer = ({ content }: ViewerProps) => {
 const ContentEditor = forwardRef<Editor, EditorProps>(
   ({ content, onChange }, ref) => {
     const { theme } = useTheme();
+
     return (
       <ContentBox>
         <Editor
           theme={theme}
           previewStyle="vertical"
-          height="600px"
           initialEditType="markdown"
           initialValue={content}
           ref={ref}
+          minHeight={'600px'}
+          height={'600px'}
+          onChange={onChange}
           useCommandShortcut={true}
-          // onChange={onChange}
+          previewHighlight={false}
+          usageStatistics={false}
+          frontMatter={false}
           plugins={[
             colorSyntax,
             [codeSyntaxHighlight, { highlighter: Prism }],

@@ -10,7 +10,7 @@ export const useFileToBase64 = (ref: RefObject<HTMLInputElement>) => {
 
   reader.onload = () => {
     // Make a fileInfo Object
-    setBase64(reader.result?.toString().split(',')[1]);
+    setBase64(reader.result?.toString());
   };
 
   return { base64 };

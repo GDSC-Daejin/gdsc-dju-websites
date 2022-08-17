@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { PostLayoutWrapper } from './postWrite.styled';
+import { PostLayoutWrapper } from './styled';
 import { DetailPostDataType, PostPostDataType } from '@type/postData';
 
-import { ContentEditor } from '@src/components/atoms/toastUi';
+import { ContentEditor } from '@src/components/atoms/ToastUi';
 import PostButtons from '@pages/PostWrite/components/PostButtons';
 import { ModalType, modalState } from '@src/store/modal';
 import { alertState } from '@src/store/alert';
@@ -18,11 +18,7 @@ interface PostWriteProps {
   id: string | undefined;
 }
 
-const PostWriteLayout: React.FC<PostWriteProps> = ({
-  postData,
-
-  id,
-}) => {
+const Index: React.FC<PostWriteProps> = ({ postData, id }) => {
   const [detailPostData, setDetailPostData] = useState<PostPostDataType>({
     title: '',
     content: '',
@@ -162,6 +158,7 @@ const PostWriteLayout: React.FC<PostWriteProps> = ({
       return { ...detailPostData, category: { categoryName: category } };
     });
   };
+
   useEffect(() => {
     if (!postData) return;
     setDetailPostData({
@@ -211,4 +208,4 @@ const PostWriteLayout: React.FC<PostWriteProps> = ({
   );
 };
 
-export default PostWriteLayout;
+export default Index;

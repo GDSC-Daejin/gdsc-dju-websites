@@ -2,29 +2,11 @@ import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { modalState } from '@src/store/modal';
-import PostWriteLayout from '@src/Layout/postWrite';
-import { alertState } from '@src/store/alert';
-import { useGetMyPostData } from '@src/api/hooks/useGetMyPostData';
-import { ContainerInner, LayoutContainer } from '@styles/layouts';
-/*color plugin*/
 
-export const PostCategoryMenuData = [
-  {
-    title: 'Frontend'.toLowerCase(),
-  },
-  {
-    title: 'Backend'.toLowerCase(),
-  },
-  {
-    title: 'Android'.toLowerCase(),
-  },
-  {
-    title: 'Design'.toLowerCase(),
-  },
-  {
-    title: 'Common'.toLowerCase(),
-  },
-];
+import { useGetMyPostData } from '@src/api/hooks/useGetMyPostData';
+import { LayoutContainer } from '@styles/layouts';
+import PostWriteLayout from '@src/components/layouts/PostWriteLayout';
+/*color plugin*/
 
 const PostWrite = () => {
   const [modal, setModal] = useRecoilState(modalState);

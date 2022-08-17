@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useRef } from 'react';
+import React, { Dispatch, SetStateAction, useEffect, useRef } from 'react';
 import PostCategoryMenu from '@src/components/layouts/PostCategoryMenu';
 import ThumbnailInput from '@src/components/atoms/input/ThumbnailInput';
 
@@ -24,6 +24,15 @@ const PostWriteHeader = ({ postData, setPostData, setCategory }: Props) => {
   const navigate = useNavigate();
   const input = useRef<HTMLInputElement>(null);
   const { base64 } = useFileToBase64(input);
+  useEffect(() => {
+    base64 &&
+      setPostData({
+        ...postData,
+        base64Thumbnail: base64,
+      });
+    console.log(base64);
+  }, [base64]);
+
   return (
     <>
       <PostCategoryMenu
