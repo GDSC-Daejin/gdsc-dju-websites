@@ -3,7 +3,7 @@ import UserService from '../UserService';
 
 export function useCheckNickname() {
   const {
-    data: CheckNicknameData,
+    data: validationData,
     mutate,
     isLoading,
     isError,
@@ -12,7 +12,7 @@ export function useCheckNickname() {
   } = useMutation(UserService.checkUserNickname);
 
   return {
-    CheckNicknameData,
+    validationData,
     mutate,
     isLoading,
     isError,
