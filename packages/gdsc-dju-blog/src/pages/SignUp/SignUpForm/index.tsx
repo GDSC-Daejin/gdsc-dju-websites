@@ -7,6 +7,7 @@ import { GDSCButton } from '../../../components/common/Button';
 import TextInput from '../../../components/common/input/TextInput';
 import { formValidation } from '../../../components/Validation/profileEdit';
 import { FormElementWrapper, FormLabel } from '../../MyBlog/ProfileEdit/styled';
+import NicknameValidationButton from '../NicknameValidationButton';
 
 import { SignUpFormStyle } from './styled';
 
@@ -59,6 +60,9 @@ const SignUpForm = () => {
               placeholder={elementName.placeholder}
               {...register(element, elementName)}
             />
+            {element === 'nickname' && (
+              <NicknameValidationButton nickname="At" />
+            )}
           </FormElementWrapper>
         );
       })}
