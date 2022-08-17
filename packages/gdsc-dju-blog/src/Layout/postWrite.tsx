@@ -1,70 +1,168 @@
-import React, { Dispatch, useLayoutEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
 
-import {
-  PostContentWrapper,
-  PostGDSCButtonWrapper,
-  PostHashtag,
-  PostInformation,
-  PostLayoutWrapper,
-  PostTitle,
-} from './postWrite.styled';
-import PostCategoryMenu from '@src/components/layouts/PostCategoryMenu';
+import { PostLayoutWrapper } from './postWrite.styled';
 import { DetailPostDataType, PostPostDataType } from '@type/postData';
-import { GDSCButton } from '@src/components/atoms/Button';
 
 import { ContentEditor } from '@src/components/atoms/toastUi';
 import PostButtons from '@pages/PostWrite/components/PostButtons';
-import ThumbnailInput from '@src/components/atoms/input/ThumbnailInput';
-import { useFileToBase64 } from '@src/hooks/useFileToBase64';
+import { ModalType, modalState } from '@src/store/modal';
+import { alertState } from '@src/store/alert';
+import { useRecoilState } from 'recoil';
+import PostWriteHeader from '@pages/PostWrite/components/PostInformation';
+import PostService from '@src/api/PostService';
+import { useNavigate } from 'react-router-dom';
+import { ContainerInner } from '@styles/layouts';
 
 interface PostWriteProps {
   postData: DetailPostDataType | undefined;
-  submitHandler: (postData: PostPostDataType, type: string) => void;
-  setFileImage: Dispatch<React.SetStateAction<string | null>>;
-
   id: string | undefined;
 }
 
 const PostWriteLayout: React.FC<PostWriteProps> = ({
   postData,
-  submitHandler,
-  setFileImage,
+
   id,
 }) => {
   const [detailPostData, setDetailPostData] = useState<PostPostDataType>({
-    base64Thumbnail: '',
-    fileName: '',
     title: '',
-    category: {
-      categoryName: '',
-    },
     content: '',
+    base64Thumbnail: '',
+    category: { categoryName: '' },
     postHashTags: '',
-    tmpStore: undefined,
+    tmpStore: false,
+    fileName: '',
   });
-  const editorRef: any = useRef();
-  const input = useRef<HTMLInputElement>(null);
-  const { base64 } = useFileToBase64(input);
-  const navigate = useNavigate();
+  const [modal, setModal] = useRecoilState(modalState);
+  const [alert, setAlert] = useRecoilState(alertState);
+  const editorRef = useRef<any>();
 
+  const navigate = useNavigate();
   const isUpdate = id !== undefined;
   const isButtonBlock =
-    !detailPostData.category.categoryName ||
-    !detailPostData.title ||
-    detailPostData.content.length < 10;
+    detailPostData &&
+    (!detailPostData.category.categoryName ||
+      !detailPostData.title ||
+      detailPostData.content.length < 10);
+
+  const submitHandler = (type: string) => {
+    //포스트
+    if (type === 'uploadPost') {
+      setModal({
+        ...modal,
+        isOpen: true,
+        type: type as ModalType,
+        onClick: () => handleSubmit(detailPostData, false),
+      });
+    }
+    // 임시저장
+    if (type === 'draft') {
+      handleDraft(detailPostData, true);
+    }
+    if (type === 'update') {
+      setModal({
+        ...modal,
+        isOpen: true,
+        type: type as ModalType,
+        onClick: () => updatePost(detailPostData),
+      });
+    }
+    if (type === 'backBlock') {
+      setModal({
+        ...modal,
+        isOpen: true,
+        type: type as ModalType,
+        onClick: () => navigate(`/category/all`),
+      });
+    }
+  };
+  const handleDraft = async (
+    detailPostData: PostPostDataType,
+    temp: boolean,
+  ) => {
+    const postData = { ...detailPostData, tmpStore: temp };
+    try {
+      await PostService.postMyPostData(postData);
+      await setAlert({
+        ...alert,
+        alertStatus: 'success',
+        alertHandle: true,
+        alertMessage: '임시 저장에 성공했어요',
+      });
+      await navigate(`/category/all`);
+    } catch (e) {
+      setAlert({
+        ...alert,
+        alertStatus: 'error',
+        alertHandle: true,
+        alertMessage: '임시 저장에 실패했어요',
+      });
+    }
+  };
+
+  const handleSubmit = async (
+    detailPostData: PostPostDataType,
+    temp: boolean,
+  ) => {
+    const postData = { ...detailPostData, tmpStore: temp };
+    setModal({
+      ...modal,
+      isOpen: false,
+    });
+    try {
+      await PostService.postMyPostData(postData);
+      await navigate(`/category/all`);
+      await setAlert({
+        ...alert,
+        alertStatus: 'success',
+        alertHandle: true,
+        alertMessage: '업로드에 성공했어요',
+      });
+    } catch (error) {
+      setAlert({
+        ...alert,
+        alertStatus: 'error',
+        alertHandle: true,
+        alertMessage: '포스트 업로드에 실패했어요.',
+      });
+    }
+  };
+  const updatePost = async (detailPostData: PostPostDataType) => {
+    const postData = { ...detailPostData, tmpStore: false };
+    setModal({
+      ...modal,
+      isOpen: false,
+    });
+    try {
+      id && (await PostService.updateMyPostData(postData, id));
+      await setAlert({
+        ...alert,
+        alertStatus: 'success',
+        alertHandle: true,
+        alertMessage: '업데이트에 성공했어요',
+      });
+      await navigate(`/category/all`);
+    } catch (error) {
+      setAlert({
+        ...alert,
+        alertStatus: 'error',
+        alertHandle: true,
+        alertMessage: '업데이트에 실패했어요',
+      });
+    }
+  };
   const setEditorValue = () => {
     const editorContent = editorRef.current.getInstance().getMarkdown();
     setDetailPostData(() => {
       return { ...detailPostData, content: editorContent };
     });
   };
+
   const setCategory = (category: string) => {
     setDetailPostData(() => {
       return { ...detailPostData, category: { categoryName: category } };
     });
   };
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!postData) return;
     setDetailPostData({
       ...detailPostData,
@@ -76,67 +174,39 @@ const PostWriteLayout: React.FC<PostWriteProps> = ({
       base64Thumbnail: postData.imagePath,
       postHashTags: postData.postHashTags,
     });
-  }, [postData]);
+  }, [postData, id]);
+
   return (
     <PostLayoutWrapper>
-      <PostCategoryMenu
-        onClick={setCategory}
-        category={detailPostData.category.categoryName}
-      />
-      <PostInformation>
-        <ThumbnailInput
-          ref={input}
-          imageValue={detailPostData.base64Thumbnail}
+      <ContainerInner>
+        <PostWriteHeader
+          postData={detailPostData}
+          setPostData={setDetailPostData}
+          setCategory={setCategory}
         />
-        <PostContentWrapper>
-          <PostTitle
-            placeholder="제목을 입력하세요."
-            value={detailPostData.title}
-            onChange={(e) => {
-              setDetailPostData(() => {
-                return { ...detailPostData, title: e.target.value };
-              });
-            }}
-          />
-          <PostHashtag
-            placeholder={'#해시태그 ,로 구분하세요'}
-            value={detailPostData.postHashTags}
-            onChange={(e) => {
-              setDetailPostData(() => {
-                return { ...detailPostData, postHashTags: e.target.value };
-              });
-            }}
-          />
-        </PostContentWrapper>
-      </PostInformation>
-      <PostGDSCButtonWrapper>
-        <GDSCButton
-          text="임시글"
-          onClick={() => {
-            navigate(`/post/saves`);
-          }}
-        />
-      </PostGDSCButtonWrapper>
-
+      </ContainerInner>
       {id ? (
         detailPostData.content !== '' && (
-          <ContentEditor content={detailPostData.content} ref={editorRef} />
+          <ContentEditor
+            content={detailPostData.content}
+            onChange={setEditorValue}
+            ref={editorRef}
+          />
         )
       ) : (
-        <ContentEditor content={detailPostData.content} ref={editorRef} />
+        <ContentEditor
+          content={detailPostData.content}
+          onChange={setEditorValue}
+          ref={editorRef}
+        />
       )}
-
-      <PostButtons
-        isUpdate={isUpdate}
-        postCancel={() => submitHandler(detailPostData, 'backBlock')}
-        postSubmit={() => {
-          submitHandler(detailPostData, isUpdate ? 'update' : 'uploadPost');
-        }}
-        disable={isButtonBlock}
-        draft={() => {
-          submitHandler(detailPostData, 'draft');
-        }}
-      />
+      <ContainerInner>
+        <PostButtons
+          isUpdate={isUpdate}
+          disable={isButtonBlock}
+          submitHandler={submitHandler}
+        />
+      </ContainerInner>
     </PostLayoutWrapper>
   );
 };

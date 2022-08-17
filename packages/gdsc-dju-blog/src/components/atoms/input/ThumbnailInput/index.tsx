@@ -44,7 +44,7 @@ const ThumbnailInput = forwardRef<HTMLInputElement, Props>(
           {fileImage ? '썸네일 수정하기' : '썸네일 선택하기'}
         </ThumbnailText>
         <PostThumbnailInner>
-          {fileImage ? <PostFileImage src={fileImage} /> : <PostThumbnail />}
+          {fileImage && <PostFileImage src={fileImage} />}
         </PostThumbnailInner>
         <input
           ref={ref}

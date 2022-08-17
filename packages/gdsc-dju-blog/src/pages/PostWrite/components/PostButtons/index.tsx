@@ -10,20 +10,23 @@ export const PostBottomButtonBox = styled.div`
   gap: 11px;
 `;
 const PostButtons: React.FC<{
-  postCancel: () => void;
-  postSubmit: () => void;
-  draft: () => void;
+  submitHandler: (type: string) => void;
   disable: boolean;
   isUpdate: boolean;
-}> = ({ postCancel, postSubmit, draft, disable, isUpdate }) => {
+}> = ({ disable, isUpdate, submitHandler }) => {
   return (
     <PostBottomButtonBox>
-      <GDSCButton text="작성취소" onClick={postCancel} />
-      <GDSCButton text="임시저장" onClick={draft} disable={disable} />
+      <GDSCButton text="작성취소" onClick={() => submitHandler('backBlock')} />
+      <GDSCButton
+        text="임시저장"
+        onClick={() => submitHandler('draft')}
+        disable={disable}
+      />
       <GDSCButton
         text={isUpdate ? '수정하기' : '업로드'}
         onClick={() => {
-          !disable && (isUpdate ? postSubmit() : postSubmit());
+          !disable &&
+            (isUpdate ? submitHandler('update') : submitHandler('uploadPost'));
         }}
         color={'googleBlue'}
         disable={disable}
