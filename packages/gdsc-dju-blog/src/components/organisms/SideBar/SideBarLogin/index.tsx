@@ -11,7 +11,7 @@ import {
   WriteButtonWrapper,
 } from '../styled';
 
-import { GDSCButton, GDSCButtonL } from '@src/components/atoms/Button';
+import { GDSCButton } from '@src/components/atoms/Button';
 import { useNavigate } from 'react-router';
 import ProfileImage from '@src/components/atoms/ProfileImage';
 import { IUserDataType } from '@type/userDataType';
@@ -72,7 +72,8 @@ const SideBarLogin: React.FC<{
             </SettingIconWrapper>
           </ProfileInformation>
           <MyBlogButtonWrapper>
-            <GDSCButtonL
+            <GDSCButton
+              size={'large'}
               text="내 블로그"
               onClick={() => {
                 navigate(`/${userData.memberInfo.nickname}`);

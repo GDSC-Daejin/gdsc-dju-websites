@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import {
   AlertIcon,
@@ -8,10 +8,10 @@ import {
   AlertWrapper,
 } from './styled';
 
-import ErrorIcon from '@assets/ErrorIcon.svg';
+import ErrorIcon from '@assets/icons/ErrorIcon.svg';
 import { AnimatePresence } from 'framer-motion';
 import { alertState } from '@src/store/alert';
-import CheckIcon from '@assets/icons/CheckIcon';
+import CheckIcon from '@assets/icons/CheckIcon.svg';
 
 const variants = {
   active: {
@@ -57,8 +57,7 @@ const Alert = () => {
             transition={{ duration: 0.5 }}
           >
             <AlertInnerWrapper alertColor={alertStatusColor[alert.alertStatus]}>
-              //TODO: 아이콘 설정
-              {/*<AlertIcon src={alertIcon[alert.alertStatus]} alt={'alertIcon'} />*/}
+              <AlertIcon src={alertIcon[alert.alertStatus]} alt={'alertIcon'} />
               <AlertText>{alert.alertMessage}</AlertText>
             </AlertInnerWrapper>
           </AlertInner>
