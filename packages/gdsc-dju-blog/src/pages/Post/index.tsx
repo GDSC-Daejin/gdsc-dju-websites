@@ -7,9 +7,10 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 import PostHeader from './PostHeader';
-import { ContentBox, ContentWrapper, GiscusWrapper } from './styled';
+import { ContentWrapper, GiscusWrapper } from './styled';
 import { useGetDetailPost } from '@src/api/hooks/useGetDetailPost';
 import { LayoutContainer, PostContainerInner } from '@styles/layouts';
+import { ContentViewer } from '@src/components/atoms/toastUi';
 
 const Post = () => {
   const { postId } = useParams<'postId'>();
@@ -22,15 +23,7 @@ const Post = () => {
         {postId && postData && (
           <ContentWrapper>
             <PostHeader postId={Number(postId)} postData={postData} />
-            <ContentBox>
-              <Viewer
-                initialValue={postData.content}
-                plugins={[
-                  [codeSyntaxHighlight, { highlighter: Prism }],
-                  tableMergedCell,
-                ]}
-              />
-            </ContentBox>
+            <ContentViewer content={postData.content} />
           </ContentWrapper>
         )}
         <GiscusWrapper>

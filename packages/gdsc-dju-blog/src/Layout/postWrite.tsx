@@ -1,19 +1,3 @@
-import chart from '@toast-ui/editor-plugin-chart';
-import codeSyntaxHighlight from '@toast-ui/editor-plugin-code-syntax-highlight';
-import colorSyntax from '@toast-ui/editor-plugin-color-syntax';
-import tableMergedCell from '@toast-ui/editor-plugin-table-merged-cell';
-import { Editor } from '@toast-ui/react-editor';
-import Prism from 'prismjs';
-import 'prismjs/components/prism-java';
-import 'prismjs/components/prism-json';
-import 'prismjs/components/prism-javascript';
-import 'prismjs/components/prism-typescript';
-import 'prismjs/components/prism-kotlin';
-import 'prismjs/components/prism-python';
-import 'prismjs/components/prism-c';
-import 'prismjs/components/prism-bash';
-import 'prismjs/components/prism-css';
-
 import React, {
   ChangeEvent,
   Dispatch,
@@ -43,7 +27,8 @@ import PostThumbnail from '@assets/mocks/PostThumbnail';
 import PostCategoryMenu from '@src/components/layouts/PostCategoryMenu';
 import { DetailPostDataType, PostPostDataType } from '@type/postData';
 import { GDSCButton } from '@src/components/atoms/Button';
-import { ContentBox } from '@pages/Post/styled';
+
+import { ContentEditor } from '@src/components/atoms/toastUi';
 
 interface PostWriteProps {
   postData: DetailPostDataType | undefined;
@@ -176,43 +161,15 @@ const PostWriteLayout: React.FC<PostWriteProps> = ({
           }}
         />
       </PostGDSCButtonWrapper>
-      <ContentBox>
-        {id ? (
-          detailPostData.content !== '' && (
-            <Editor
-              theme={theme}
-              previewStyle="vertical"
-              height="627px"
-              initialEditType="markdown"
-              initialValue={detailPostData.content}
-              ref={editorRef}
-              onChange={setEditorValue}
-              plugins={[
-                colorSyntax,
-                [codeSyntaxHighlight, { highlighter: Prism }],
-                chart,
-                tableMergedCell,
-              ]}
-            />
-          )
-        ) : (
-          <Editor
-            theme={theme}
-            previewStyle="vertical"
-            height="627px"
-            initialEditType="markdown"
-            initialValue={detailPostData.content}
-            ref={editorRef}
-            onChange={setEditorValue}
-            plugins={[
-              colorSyntax,
-              [codeSyntaxHighlight, { highlighter: Prism }],
-              chart,
-              tableMergedCell,
-            ]}
-          />
-        )}
-      </ContentBox>
+
+      {id ? (
+        detailPostData.content !== '' && (
+          <ContentEditor content={detailPostData.content} ref={editorRef} />
+        )
+      ) : (
+        <ContentEditor content={detailPostData.content} ref={editorRef} />
+      )}
+
       <BottomPostButtonBox
         isUpdate={isUpdate}
         postCancel={() => submitHandler(detailPostData, 'backBlock')}
