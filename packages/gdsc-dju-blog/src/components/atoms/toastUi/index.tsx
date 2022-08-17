@@ -30,7 +30,6 @@ const ContentViewer = ({ content }: ViewerProps) => {
       <Viewer
         initialValue={content}
         plugins={[
-          colorSyntax,
           [codeSyntaxHighlight, { highlighter: Prism }],
           chart,
           tableMergedCell,
@@ -43,20 +42,22 @@ const ContentViewer = ({ content }: ViewerProps) => {
 const ContentEditor = forwardRef<Editor, EditorProps>(({ content }, ref) => {
   const { theme } = useTheme();
   return (
-    <Editor
-      theme={theme}
-      previewStyle="vertical"
-      height="627px"
-      initialEditType="markdown"
-      initialValue={content}
-      ref={ref}
-      plugins={[
-        colorSyntax,
-        [codeSyntaxHighlight, { highlighter: Prism }],
-        chart,
-        tableMergedCell,
-      ]}
-    />
+    <ContentBox>
+      <Editor
+        theme={theme}
+        previewStyle="vertical"
+        height="627px"
+        initialEditType="markdown"
+        initialValue={content}
+        ref={ref}
+        plugins={[
+          colorSyntax,
+          [codeSyntaxHighlight, { highlighter: Prism }],
+          chart,
+          tableMergedCell,
+        ]}
+      />
+    </ContentBox>
   );
 });
 

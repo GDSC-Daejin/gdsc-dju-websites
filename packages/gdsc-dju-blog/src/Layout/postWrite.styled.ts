@@ -9,8 +9,11 @@ export const PostInformation = styled.div`
   align-items: center;
   margin: 50px 0 12px 0;
 `;
-export const PostThumbnailWrapper = styled.div`
+export const PostGDSCButtonWrapper = styled.div`
+  width: 100%;
   display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 20px;
 `;
 export const PostContentWrapper = styled.div`
   display: flex;
@@ -53,61 +56,4 @@ export const PostHashtag = styled.input`
   border: none;
   @media screen and (max-width: 530px) {
     font-size: ${({ theme }) => theme.fontSize.body3};
-`;
-export const PostGDSCButtonWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row-reverse;
-  margin-bottom: 20px;
-`;
-export const PostBottomButtonBox = styled.div`
-  display: flex;
-  justify-content: end;
-  margin: 40px 0px 200px 0px;
-`;
-export const PostBottomButtonWrapper = styled.div`
-  display: flex;
-  padding-right: 12px;
-  .cancel-button {
-    @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
-    }
-  }
-  &:last-child {
-    padding-right: 0;
-  }
-`;
-
-export const PostThumbnailInner = styled.div`
-  cursor: pointer;
-  position: relative;
-  background: ${({ theme }) => theme.colors.greyOpacity500}
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 170px;
-  height: 100px;
-  @media screen and (max-width: 530px) {
-    & svg {
-      width: 100px;
-      height: 58px;
-    }
-  }
-`;
-export const PostFileImage = styled.img`
-  width: 170px;
-  height: 100px;
-  border-radius: 10px;
-  z-index: -1;
-  @media screen and (max-width: 530px) {
-    width: 100px;
-    height: 58px;
-  }
-`;
-export const ThumbnailText = styled.div`
-  text-align: center;
-  position: absolute;
-  top: 50px;
-  font-size: ${({ theme }) => theme.fontSize.body3};
-  color: ${({ theme }) => theme.colors.grey900};
 `;

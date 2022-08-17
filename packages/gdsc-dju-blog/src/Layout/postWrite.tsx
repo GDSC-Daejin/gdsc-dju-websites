@@ -1,53 +1,34 @@
-import React, {
-  ChangeEvent,
-  Dispatch,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { Dispatch, useLayoutEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { useTheme } from '../hooks/ThemeHandler';
-
 import {
-  PostBottomButtonBox,
-  PostBottomButtonWrapper,
   PostContentWrapper,
-  PostFileImage,
   PostGDSCButtonWrapper,
   PostHashtag,
   PostInformation,
   PostLayoutWrapper,
-  PostThumbnailInner,
-  PostThumbnailWrapper,
   PostTitle,
-  ThumbnailText,
 } from './postWrite.styled';
-import PostThumbnail from '@assets/mocks/PostThumbnail';
 import PostCategoryMenu from '@src/components/layouts/PostCategoryMenu';
 import { DetailPostDataType, PostPostDataType } from '@type/postData';
 import { GDSCButton } from '@src/components/atoms/Button';
 
 import { ContentEditor } from '@src/components/atoms/toastUi';
+import PostButtons from '@pages/PostWrite/components/PostButtons';
+import ThumbnailInput from '@src/components/atoms/input/ThumbnailInput';
+import { useFileToBase64 } from '@src/hooks/useFileToBase64';
 
 interface PostWriteProps {
   postData: DetailPostDataType | undefined;
   submitHandler: (postData: PostPostDataType, type: string) => void;
-  fileHandler: (
-    e: ChangeEvent<HTMLInputElement>,
-    setDetailPostData: Dispatch<React.SetStateAction<PostPostDataType>>,
-    files: FileList | undefined | null,
-  ) => void;
   setFileImage: Dispatch<React.SetStateAction<string | null>>;
-  fileImage: string | null;
+
   id: string | undefined;
 }
 
 const PostWriteLayout: React.FC<PostWriteProps> = ({
   postData,
   submitHandler,
-  fileHandler,
-  fileImage,
   setFileImage,
   id,
 }) => {
@@ -64,10 +45,9 @@ const PostWriteLayout: React.FC<PostWriteProps> = ({
   });
   const editorRef: any = useRef();
   const input = useRef<HTMLInputElement>(null);
-
+  const { base64 } = useFileToBase64(input);
   const navigate = useNavigate();
 
-  const { theme } = useTheme();
   const isUpdate = id !== undefined;
   const isButtonBlock =
     !detailPostData.category.categoryName ||
@@ -85,18 +65,18 @@ const PostWriteLayout: React.FC<PostWriteProps> = ({
     });
   };
   useLayoutEffect(() => {
-    postData &&
-      setDetailPostData({
-        ...detailPostData,
-        title: postData.title,
-        category: {
-          categoryName: postData.category.categoryName.toLowerCase(),
-        },
-        content: postData.content,
-        postHashTags: postData.postHashTags,
-      });
-    postData && setFileImage(postData.imagePath);
-  }, [postData, id]);
+    if (!postData) return;
+    setDetailPostData({
+      ...detailPostData,
+      title: postData.title,
+      category: {
+        categoryName: postData.category.categoryName.toLowerCase(),
+      },
+      content: postData.content,
+      base64Thumbnail: postData.imagePath,
+      postHashTags: postData.postHashTags,
+    });
+  }, [postData]);
   return (
     <PostLayoutWrapper>
       <PostCategoryMenu
@@ -104,34 +84,10 @@ const PostWriteLayout: React.FC<PostWriteProps> = ({
         category={detailPostData.category.categoryName}
       />
       <PostInformation>
-        <PostThumbnailWrapper>
-          <PostThumbnailInner onClick={() => input.current?.click()}>
-            <ThumbnailText>
-              {fileImage
-                ? '썸네일을 수정하려면 다시 눌러주세요!'
-                : '썸네일을 선택해주세요!'}
-            </ThumbnailText>
-            {fileImage ? (
-              <>
-                <PostThumbnail />
-                <PostFileImage src={fileImage} />
-              </>
-            ) : (
-              <PostThumbnail />
-            )}
-          </PostThumbnailInner>
-          <input
-            ref={input}
-            style={{ display: 'none' }}
-            type="file"
-            name="imgFile"
-            id="imgFile"
-            onChange={(e) =>
-              fileHandler(e, setDetailPostData, input.current?.files)
-            }
-          />
-        </PostThumbnailWrapper>
-
+        <ThumbnailInput
+          ref={input}
+          imageValue={detailPostData.base64Thumbnail}
+        />
         <PostContentWrapper>
           <PostTitle
             placeholder="제목을 입력하세요."
@@ -170,7 +126,7 @@ const PostWriteLayout: React.FC<PostWriteProps> = ({
         <ContentEditor content={detailPostData.content} ref={editorRef} />
       )}
 
-      <BottomPostButtonBox
+      <PostButtons
         isUpdate={isUpdate}
         postCancel={() => submitHandler(detailPostData, 'backBlock')}
         postSubmit={() => {
@@ -182,34 +138,6 @@ const PostWriteLayout: React.FC<PostWriteProps> = ({
         }}
       />
     </PostLayoutWrapper>
-  );
-};
-const BottomPostButtonBox: React.FC<{
-  postCancel: () => void;
-  postSubmit: () => void;
-  draft: () => void;
-  disable: boolean;
-  isUpdate: boolean;
-}> = ({ postCancel, postSubmit, draft, disable, isUpdate }) => {
-  return (
-    <PostBottomButtonBox>
-      <PostBottomButtonWrapper className={'cancel-button'}>
-        <GDSCButton text="작성취소" onClick={postCancel} />
-      </PostBottomButtonWrapper>
-      <PostBottomButtonWrapper>
-        <GDSCButton text="임시저장" onClick={draft} disable={disable} />
-      </PostBottomButtonWrapper>
-      <PostBottomButtonWrapper>
-        <GDSCButton
-          text={isUpdate ? '수정하기' : '업로드'}
-          onClick={() => {
-            !disable && (isUpdate ? postSubmit() : postSubmit());
-          }}
-          color={'googleBlue'}
-          disable={disable}
-        />
-      </PostBottomButtonWrapper>
-    </PostBottomButtonBox>
   );
 };
 

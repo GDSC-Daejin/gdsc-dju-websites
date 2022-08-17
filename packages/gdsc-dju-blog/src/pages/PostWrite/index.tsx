@@ -157,40 +157,6 @@ const PostWrite = () => {
     }
   };
 
-  const fileHandler = (
-    e: ChangeEvent<HTMLInputElement>,
-    setDetailPostData: Dispatch<React.SetStateAction<PostPostDataType>>,
-    files: FileList | undefined | null,
-  ) => {
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      const base64 = reader.result?.toString();
-
-      if (base64) {
-        setDetailPostData((prev) => {
-          return {
-            ...prev,
-            base64Thumbnail: base64.split(',')[1],
-          };
-        });
-      }
-    };
-    if (files) {
-      const selectFile = files[0];
-      if (selectFile && e.target.files) {
-        setFileImage(URL.createObjectURL(selectFile));
-        setDetailPostData((prev) => {
-          return {
-            ...prev,
-            fileName: selectFile.name,
-          };
-        });
-        reader.readAsDataURL(selectFile);
-        setFile(e.target.files[0]);
-      }
-    }
-  };
-
   useEffect(() => {
     const preventGoBack = () => {
       // change start
@@ -206,7 +172,6 @@ const PostWrite = () => {
         },
       });
     };
-
     if (!location.pathname.includes('edit')) {
       history.pushState(null, '', location.href);
       window.addEventListener('popstate', preventGoBack);
@@ -221,9 +186,7 @@ const PostWrite = () => {
           <PostWriteLayout
             postData={postData}
             submitHandler={submitHandler}
-            fileHandler={fileHandler}
             id={id}
-            fileImage={fileImage}
             setFileImage={setFileImage}
           />
         </ContainerInner>

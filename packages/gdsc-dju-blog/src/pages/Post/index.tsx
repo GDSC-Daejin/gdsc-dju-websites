@@ -1,9 +1,5 @@
-import { Giscus } from '@giscus/react';
-import codeSyntaxHighlight from '@toast-ui/editor-plugin-code-syntax-highlight';
-import tableMergedCell from '@toast-ui/editor-plugin-table-merged-cell';
-import { Viewer } from '@toast-ui/react-editor';
-import Prism from 'prismjs';
 import React from 'react';
+import { Giscus } from '@giscus/react';
 import { useParams } from 'react-router-dom';
 
 import PostHeader from './PostHeader';
