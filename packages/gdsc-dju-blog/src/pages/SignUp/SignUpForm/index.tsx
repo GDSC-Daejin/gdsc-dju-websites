@@ -15,7 +15,6 @@ const SignUpForm = () => {
     handleSubmit,
     register,
     reset,
-
     formState: { errors, isValid },
   } = useForm({ mode: 'onTouched' });
   // { mode: 'onChange' }

@@ -15,7 +15,10 @@ export interface Iprops {
   defaultValue?: string | number;
 }
 const TextInput = forwardRef<HTMLInputElement, Iprops>(
-  ({ name, placeholder, onChange, type, disabled, error, value, defaultValue }, ref) => {
+  (
+    { name, placeholder, onChange, type, disabled, error, value, defaultValue },
+    ref,
+  ) => {
     return (
       <>
         <StyledInputWrapper error={false} disabled={!disabled}>
