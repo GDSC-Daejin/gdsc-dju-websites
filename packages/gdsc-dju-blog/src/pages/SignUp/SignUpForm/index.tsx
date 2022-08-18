@@ -9,7 +9,11 @@ import { formValidation } from '../../../components/Validation/profileEdit';
 import { FormElementWrapper, FormLabel } from '../../MyBlog/ProfileEdit/styled';
 import NicknameValidationButton from '../NicknameValidationButton';
 
-import { SignUpFormStyle } from './styled';
+import {
+  NicknameValidationButtonWrapper,
+  SignUpFormStyle,
+  TextInputWrapper,
+} from './styled';
 
 const SignUpForm = () => {
   const [isChecked, setIsChecked] = React.useState(false);
@@ -50,31 +54,29 @@ const SignUpForm = () => {
   return (
     <SignUpFormStyle>
       {formElements.map((element) => {
-        const elementName =
-          element === 'nickname'
-            ? {
-                ...formValidation[element],
-                validate: {
-                  checked: () => isChecked || '닉네임 중복 확인이 필요합니다',
-                },
-                onChange: () => setIsChecked(false),
-              }
-            : formValidation[element];
+        const elementName = formValidation[element];
 
         return (
           <FormElementWrapper key={element}>
             <FormLabel essential={!!elementName.required}>
               {elementName.label}
             </FormLabel>
-            <TextInput
-              disabled={elementName.isBlock}
-              error={errors[element]}
-              placeholder={elementName.placeholder}
-              {...register(element, elementName)}
-            />
-            {element === 'nickname' && (
-              <NicknameValidationButton nickname={watch('nickname')} />
-            )}
+            <TextInputWrapper>
+              <TextInput
+                disabled={elementName.isBlock}
+                error={errors[element]}
+                placeholder={elementName.placeholder}
+                {...register(element, elementName)}
+              />
+              {element === 'nickname' && (
+                <NicknameValidationButtonWrapper>
+                  <NicknameValidationButton
+                    nickname={watch('nickname')}
+                    setIsChecked={setIsChecked}
+                  />
+                </NicknameValidationButtonWrapper>
+              )}
+            </TextInputWrapper>
           </FormElementWrapper>
         );
       })}
