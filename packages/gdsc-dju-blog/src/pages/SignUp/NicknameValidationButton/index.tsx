@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCheckNickname } from '../../../api/hooks/useCheckNickname';
+import { GDSCButton, GDSCButtonL } from '../../../components/common/Button';
 
 export interface INicknameValidationButton
   extends React.DetailedHTMLProps<
@@ -14,19 +15,16 @@ const NicknameValidationButton: React.FC<INicknameValidationButton> = ({
 }) => {
   const { validationData, mutate, isLoading, isError, error, isSuccess } =
     useCheckNickname();
-
-  console.log(validationData);
-
+  const handleClick = () => {
+    mutate(nickname);
+  };
   return (
-    <button
-      disabled={isLoading}
+    <GDSCButton
+      text="중복 확인"
       type="button"
-      onClick={() => {
-        mutate(nickname);
-      }}
-    >
-      중복확인
-    </button>
+      color="grey500"
+      onClick={handleClick}
+    />
   );
 };
 

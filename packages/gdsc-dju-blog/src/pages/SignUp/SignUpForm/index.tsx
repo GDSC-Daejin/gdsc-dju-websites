@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { SyntheticEvent, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 import { useGetMyData } from '../../../api/hooks/useGetMyData';
@@ -16,6 +16,7 @@ const SignUpForm = () => {
     handleSubmit,
     register,
     reset,
+    watch,
     formState: { errors, isValid },
   } = useForm({ mode: 'onTouched' });
   // { mode: 'onChange' }
@@ -49,6 +50,7 @@ const SignUpForm = () => {
     <SignUpFormStyle>
       {formElements.map((element) => {
         const elementName = formValidation[element];
+
         return (
           <FormElementWrapper key={element}>
             <FormLabel essential={!!elementName.required}>
@@ -61,7 +63,7 @@ const SignUpForm = () => {
               {...register(element, elementName)}
             />
             {element === 'nickname' && (
-              <NicknameValidationButton nickname="At" />
+              <NicknameValidationButton nickname={watch('nickname')} />
             )}
           </FormElementWrapper>
         );

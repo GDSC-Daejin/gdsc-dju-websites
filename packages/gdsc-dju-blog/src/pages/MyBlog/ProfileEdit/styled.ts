@@ -34,22 +34,21 @@ export const FormLabel = styled.label<{ essential?: boolean }>`
   font-weight: 400;
   line-height: 1.5;
   color: ${({ theme }) => theme.colors.grey900};
-   {
-    ${({ essential }) =>
-      essential &&
-      css`
-        &::after {
-          display: inline-block;
-          margin: 0 0 2px 6px;
-          content: '';
-          width: 6px;
-          height: 6px;
-          background-color: ${({ theme }) => theme.colors.tossRed};
-          border-radius: 3px;
-        }
-      `}
-  }
+  ${({ essential }) =>
+    essential &&
+    css`
+      &::after {
+        display: inline-block;
+        margin: 0 0 2px 6px;
+        content: '';
+        width: 6px;
+        height: 6px;
+        background-color: ${({ theme }) => theme.colors.tossRed};
+        border-radius: 3px;
+      }
+    `}
 `;
+
 export const FormElementWrapper = styled.div`
   margin-bottom: 20px;
   width: 100%;
