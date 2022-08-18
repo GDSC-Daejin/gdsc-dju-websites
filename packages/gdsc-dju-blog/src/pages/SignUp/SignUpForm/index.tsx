@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 import { useGetMyData } from '../../../api/hooks/useGetMyData';
@@ -12,6 +12,8 @@ import NicknameValidationButton from '../NicknameValidationButton';
 import { SignUpFormStyle } from './styled';
 
 const SignUpForm = () => {
+  const [isChecked, setIsChecked] = React.useState(false);
+
   const {
     handleSubmit,
     register,
@@ -19,7 +21,6 @@ const SignUpForm = () => {
     watch,
     formState: { errors, isValid },
   } = useForm({ mode: 'onTouched' });
-  // { mode: 'onChange' }
   const navigate = useNavigate();
   const { userData } = useGetMyData();
 
@@ -49,7 +50,16 @@ const SignUpForm = () => {
   return (
     <SignUpFormStyle>
       {formElements.map((element) => {
-        const elementName = formValidation[element];
+        const elementName =
+          element === 'nickname'
+            ? {
+                ...formValidation[element],
+                validate: {
+                  checked: () => isChecked || '닉네임 중복 확인이 필요합니다',
+                },
+                onChange: () => setIsChecked(false),
+              }
+            : formValidation[element];
 
         return (
           <FormElementWrapper key={element}>
