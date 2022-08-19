@@ -22,6 +22,19 @@ export const position = {
   ml: 'Machine Learning',
 };
 
+// const QuestionGroupNames = ['FE', 'BE', 'DE', 'AN', 'ML', 'NB', 'DEV'] as const;
+//
+// export type QuestionGroup = typeof QuestionGroupNames[number];
+//
+// type MakeQuestionTokenSet<
+//     TokenName extends QuestionGroup,
+//     TokenNumber extends number[],
+//     > = `${TokenName}${TokenNumber[number]}`;
+//
+// export type QuestionType = MakeQuestionTokenSet<'DEV', [1, 2, 3, 4, 5]>;
+// export type IApplicationQuestions = {
+//   [key in QuestionType]: string;
+// };
 export type QuestionType =
   | 'question1'
   | 'question2'
