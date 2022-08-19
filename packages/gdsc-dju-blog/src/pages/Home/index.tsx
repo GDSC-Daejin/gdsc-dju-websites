@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { Link } from 'react-router-dom';
-import { useScroll } from 'react-use';
 import { useGetMyScrapData } from '../../api/hooks/useGetMyScrapData';
 import { useGetMyScrapList } from '../../api/hooks/useGetMyScrapList';
 import { useGetPostsData } from '../../api/hooks/useGetPostsData';
@@ -9,6 +8,7 @@ import Plus from '../../assets/Plus';
 import BlogCard from '../../components/common/BlogCard';
 import CategoryMenu from '../../components/common/CategoryMenu';
 import HomePhrase from '../../components/common/HomePhrase';
+import { useScroll } from '../../hooks/useScroll';
 import BlogCardScrollButton from './BlogCardButton';
 import {
   BlogCardWrapper,
@@ -22,13 +22,14 @@ import {
 
 function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const { x } = useScroll(scrollRef);
+  const scrollX = useScroll(scrollRef);
   const [isDrag, setIsDrag] = useState(false);
   const [startX, setStartX] = useState(0);
   const [category, setCategory] = useState('all');
   const [homeWidth, setHomeWidth] = useState(0);
   const { postListData } = useGetPostsData(category, 0, 11);
   const { scrapList } = useGetMyScrapList();
+
   const onDragStart = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsDrag(true);
@@ -74,8 +75,8 @@ function Home() {
       </HomeLayoutContainer>
       <CardSectionWrapper>
         <CardSection
-          isDrag={isDrag}
           ref={scrollRef}
+          isDrag={isDrag}
           onMouseDown={onDragStart}
           onMouseMove={isDrag ? onDragMove : undefined}
           onMouseUp={onDragEnd}
@@ -109,7 +110,7 @@ function Home() {
       </CardSectionWrapper>
       <HomeLayoutContainer>
         <ButtonWrapper>
-          <BlogCardScrollButton scrollX={x} scrollRef={scrollRef} />
+          <BlogCardScrollButton scrollX={scrollX} scrollRef={scrollRef} />
         </ButtonWrapper>
       </HomeLayoutContainer>
     </>
