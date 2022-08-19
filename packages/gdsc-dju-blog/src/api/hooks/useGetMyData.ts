@@ -9,11 +9,11 @@ export const getUserData = async (token: string) => {
 };
 export const getMyToken = async (refreshToken: string, token: string) => {
   const response = await TokenService.getRefresh(refreshToken, token);
-  if (response.data.header.code !== 200 || response.status !== 200) {
-    Cookies.remove('token');
-    Cookies.remove('refresh_token');
-  }
-  return response.data.body.data.token;
+  return response.data;
+};
+
+export const setMyToken = async (refreshToken: string, token: string) => {
+  getMyToken(refreshToken, token);
 };
 
 export const useGetMyData = () => {
