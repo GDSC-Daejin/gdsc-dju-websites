@@ -1,8 +1,4 @@
-import {
-  IApplicantType,
-  IApplicantTypeWithID,
-  StatusType,
-} from '../types/applicant';
+import { StatusType } from '../types/applicant';
 import { db } from '../firebase/firebase';
 import { recruitInfo } from '../context/recruitInfo';
 import {
@@ -14,10 +10,9 @@ import {
   query,
   where,
 } from 'firebase/firestore';
+import { Application, ApplicationWithoutID } from '@gdsc-dju/shared';
 
-export const applicantFilterByStatus = (
-  filteredApplicants: IApplicantTypeWithID[],
-) => {
+export const applicantFilterByStatus = (filteredApplicants: Application[]) => {
   const DOCS = filteredApplicants.filter((data) => data.status === 'DOCS');
   const INTERVIEW = filteredApplicants.filter(
     (data) => data.status === 'INTERVIEW',
@@ -46,11 +41,11 @@ export const getApplicants = async (status: StatusType | null) => {
   const res = await getDocs(q);
 
   const applicantsList = res.docs.map((doc) => {
-    return { id: doc.id, ...(doc.data() as IApplicantType) };
+    return { id: doc.id, ...(doc.data() as ApplicationWithoutID) };
   });
   return applicantsList;
 };
 export const getApplicant = async (id: string) => {
   const res = await getDoc(doc(db, recruitInfo.COLLECTION, id));
-  return { id: res.id, ...(res.data() as IApplicantType) };
+  return { id: res.id, ...(res.data() as ApplicationWithoutID) };
 };

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "composite": true,
+    "incremental": true,
+    "rootDir": "./src",
+    "outDir": "./lib",
+    "declaration": true,
+    "declarationDir": "./lib"
+  },
+  "moduleResolution": "node",
+
+  "include": [
+    "./src/**/*.ts"
+  ],
+}

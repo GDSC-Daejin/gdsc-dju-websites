@@ -1,15 +1,15 @@
 import React from 'react';
 import CheckBoxCard from '@src/components/common/cards/CheckBoxCard';
-import { IApplicantTypeWithID } from '@src/types/applicant';
 
 import {
   EmailCategory,
   SelectEmailsWrapper,
   SelectedBoxSection,
 } from './styled';
+import { Application } from '@gdsc-dju/shared/types';
 
 interface Props {
-  selectApplicants: IApplicantTypeWithID[];
+  selectApplicants: Application[];
 }
 const SelectedEmailContainer = ({ selectApplicants }: Props) => {
   return (

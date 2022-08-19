@@ -3,12 +3,10 @@ import { AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ClearButton } from '@common/ModalButton';
 import { modalVariants } from '@src/components/animations/modalVariants';
-import { IApplicantTypeWithID } from '@type/applicant';
 import { getApplicant } from '@utils/applicantsHandler';
 import ApplicantChatContainer from './ApplicantChat';
 import ApplicantInfoCard from './ApplicantInformation';
 import ApplicantInfoState from './ApplicantState';
-import Application from './Applicantion';
 
 import {
   ApplicantDataWrapper,
@@ -17,13 +15,15 @@ import {
   ApplicantInfoWrapper,
   ApplicantModalInner,
 } from './styled';
+import ApplicationContent from './ApplicationContent';
+import { Application } from '@gdsc-dju/shared/types';
 
 interface Props {
   userid: string;
 }
 
 const ApplicantDetailModal = ({ userid }: Props) => {
-  const [applicantData, setApplicantData] = useState<IApplicantTypeWithID>();
+  const [applicantData, setApplicantData] = useState<Application>();
 
   const navigate = useNavigate();
 
@@ -56,7 +56,7 @@ const ApplicantDetailModal = ({ userid }: Props) => {
           </ApplicantInfoHeader>
           {applicantData && (
             <ApplicantDataWrapper>
-              <Application applicantData={applicantData} />
+              <ApplicationContent applicantData={applicantData} />
               <ApplicantChatContainer applicantId={applicantData.id} />
             </ApplicantDataWrapper>
           )}

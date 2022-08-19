@@ -1,17 +1,6 @@
+import { Application } from '@gdsc-dju/shared/types';
 import { useAtom } from 'jotai';
 import React, { useRef } from 'react';
-import { GDSCButton } from '../../../components/common/Button';
-import { TextInput } from '../../../components/common/TextInput';
-import CheckBoxCard from '../../../components/common/cards/CheckBoxCard';
-import { useModalHandle } from '../../../hooks/useModalHandle';
-import {
-  EmailButtonWrapper,
-  InformationHeader,
-} from '../../../pages/Applicants/styled';
-import { TemplateSelectWrapper } from '../../../pages/EmailLog/styled';
-import { alertAtom } from '../../../store/alertAtom';
-import { templateAtom } from '../../../store/templateAtom';
-import { IApplicantTypeWithID } from '../../../types/applicant';
 
 import {
   CheckboxSection,
@@ -20,9 +9,20 @@ import {
   TemplateEmailWrapper,
   TemplateText,
 } from './styled';
+import { templateAtom } from '@src/store/templateAtom';
+import { alertAtom } from '@src/store/alertAtom';
+import CheckBoxCard from '@common/cards/CheckBoxCard';
+import { useModalHandle } from '@src/hooks/useModalHandle';
+import { GDSCButton } from '@common/Button';
+import { TextInput } from '@common/TextInput';
+import {
+  EmailButtonWrapper,
+  InformationHeader,
+} from '@pages/Applicants/styled';
+import { TemplateSelectWrapper } from '@pages/EmailLog/styled';
 
 interface Props {
-  filteredApplicants: IApplicantTypeWithID[];
+  filteredApplicants: Application[];
   checkedApplicants: Set<string>;
   checkAllHandler: (isChecked: boolean) => void;
   isAllChecked: boolean;

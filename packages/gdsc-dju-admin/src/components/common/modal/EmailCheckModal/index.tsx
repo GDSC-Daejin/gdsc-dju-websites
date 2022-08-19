@@ -2,7 +2,6 @@ import React from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { GDSCButton } from '@common/Button';
 import { useModalHandle } from '@src/hooks/useModalHandle';
-import { IApplicantTypeWithID } from '@type/applicant';
 import OutsideClickHandler from '@utils/OutsideClickHandler';
 
 import {
@@ -12,14 +11,15 @@ import {
   ModalP,
   ModalTitle,
 } from '../styled';
+import { Application } from '@gdsc-dju/shared/types';
 
 interface Props {
   emailCheckHandler: (
     template: string | null,
-    applicants: IApplicantTypeWithID[],
+    applicants: Application[],
   ) => void;
   template: string | null;
-  applicants: IApplicantTypeWithID[];
+  applicants: Application[];
 }
 
 const EmailCheckModal: React.FC<Props> = ({

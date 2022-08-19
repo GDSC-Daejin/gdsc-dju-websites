@@ -8,7 +8,7 @@ import { alertAtom } from '@src/store/alertAtom';
 import { loaderAtom } from '@src/store/loaderAtom';
 import { templateAtom } from '@src/store/templateAtom';
 import { userAtom } from '@src/store/userAtom';
-import { EmailLogType, IApplicantTypeWithID } from '@type/applicant';
+import { EmailLogType } from 'types/applicant';
 import { getApplicants } from '@utils/applicantsHandler';
 import { addDoc, collection } from 'firebase/firestore';
 import { AnimatePresence } from 'framer-motion';
@@ -20,14 +20,14 @@ import EmailContainer from './EmailContainer';
 import SelectedEmailContainer from './SelectedEmailContainer';
 import { EmailLeftWrapper, EmailRightWrapper } from './styled';
 import EmailCheckModal from '@common/modal/EmailCheckModal';
+import { Application } from '@gdsc-dju/shared/types';
 
 const Email = () => {
   const [alert, setAlert] = useAtom(alertAtom);
   const [loading, setLoading] = useAtom(loaderAtom);
   const [admin] = useAtom(userAtom);
   const [template] = useAtom(templateAtom);
-  const [filteredApplicants, setFilteredApplicants] =
-    useState<IApplicantTypeWithID[]>();
+  const [filteredApplicants, setFilteredApplicants] = useState<Application[]>();
   const [checkedApplicants, setCheckedApplicants] = useState<Set<string>>(
     new Set(),
   );
@@ -65,7 +65,7 @@ const Email = () => {
 
   const emailCheckHandler = async (
     template: string | null,
-    applicants: IApplicantTypeWithID[],
+    applicants: Application[],
   ) => {
     setLoading({ ...loading, isLoading: true });
     closeModal();
@@ -87,10 +87,7 @@ const Email = () => {
     }
     setLoading({ ...loading, isLoading: false });
   };
-  const sendEmail = async (
-    template: string,
-    applicant: IApplicantTypeWithID,
-  ) => {
+  const sendEmail = async (template: string, applicant: Application) => {
     emailjs.init('RsM6o4WUsb5rzJGXG');
     const result = await emailjs.send('default_service', template, {
       email: applicant.email,
@@ -101,7 +98,7 @@ const Email = () => {
 
   const sendEmailHandler = async (
     template: string,
-    applicants: IApplicantTypeWithID[],
+    applicants: Application[],
   ) => {
     setLoading({ ...loading, isLoading: true });
     applicants.map(async (applicant) => {

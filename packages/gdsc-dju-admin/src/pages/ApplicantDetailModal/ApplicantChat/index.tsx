@@ -1,10 +1,7 @@
 import { addDoc, collection, limit, orderBy, query } from 'firebase/firestore';
 import { useAtom } from 'jotai';
 import React, { useCallback, useEffect, useRef } from 'react';
-import { db } from '../../../firebase/firebase';
-import { useFirestoreQuery } from '../../../hooks/useFirebaseQuery';
-import { userAtom } from '../../../store/userAtom';
-import { IApplicantChatType } from '../../../types/applicant';
+
 import ApplicantChatCardSection from './ApplicantChatCardSection';
 
 import {
@@ -13,6 +10,10 @@ import {
   ApplicantChatInput,
   ApplicantChatSendButton,
 } from './styled';
+import { useFirestoreQuery } from '@src/hooks/useFirebaseQuery';
+import { userAtom } from '@src/store/userAtom';
+import { db } from '@src/firebase/firebase';
+import { ApplicantChat } from '@src/types/applicant';
 
 interface IApplicantChatSectionProps {
   applicantId: string;
@@ -81,7 +82,7 @@ const ApplicantChatContainer: React.FC<IApplicantChatSectionProps> = ({
           <ApplicantChatCardSection
             ref={chatSectionRef}
             adminUser={adminUser.uid}
-            newMessages={newMessages as IApplicantChatType[]}
+            newMessages={newMessages as ApplicantChat[]}
           />
         )}
       </>

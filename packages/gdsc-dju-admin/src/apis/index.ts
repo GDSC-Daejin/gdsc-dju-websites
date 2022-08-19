@@ -1,8 +1,8 @@
 import axios from 'axios';
 import {
-  getRecruitmentInfoDataType,
-  recruitmentInfoDataType,
-} from '../types/recruitmentInfo';
+  RecruitmentInfoDataType,
+  RowRecruitmentInfoDataType,
+} from 'types/recruitmentInfo';
 
 export class Api {
   protected API: string;
@@ -13,12 +13,12 @@ export class Api {
     this.ACCOUNT_API = 'https://accounts.gdsc-dju.com';
   }
   getRecruitStatus = () => {
-    return axios.get<getRecruitmentInfoDataType>(
+    return axios.get<RowRecruitmentInfoDataType>(
       `${this.API}/member-route/api/v1/support/limit`,
     );
   };
-  putRecruitStatus = (payload: recruitmentInfoDataType, token: string) => {
-    return axios.put<recruitmentInfoDataType>(
+  putRecruitStatus = (payload: RecruitmentInfoDataType, token: string) => {
+    return axios.put<RecruitmentInfoDataType>(
       `${this.API}/member-route/api/admin/v1/support/limit/update`,
       payload,
       {

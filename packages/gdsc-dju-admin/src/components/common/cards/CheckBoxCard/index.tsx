@@ -1,4 +1,4 @@
-import { IApplicantTypeWithID } from '@src/types/applicant';
+import { Application } from '@gdsc-dju/shared/types';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -67,13 +67,13 @@ const CheckBox = styled.input`
     background: ${({ theme }) => theme.colors.blue900};
   }
 `;
-interface ICheckBoxCardProps {
+interface Props {
   setCheckedList?: (id: string, isChecked: boolean) => void;
   checkedList?: Set<unknown>;
   disabled?: boolean;
 }
 
-const CheckBoxCard: React.FC<IApplicantTypeWithID & ICheckBoxCardProps> = ({
+const CheckBoxCard: React.FC<Application & Props> = ({
   id,
   name,
   email,

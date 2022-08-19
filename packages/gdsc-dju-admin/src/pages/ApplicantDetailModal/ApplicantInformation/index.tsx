@@ -1,6 +1,6 @@
+import { Application } from '@gdsc-dju/shared/types';
 import React from 'react';
 import StatusBadge from '../../../components/common/Statusbadge';
-import { IApplicantTypeWithID } from '../../../types/applicant';
 import { timeFilter } from '../../../utils/timeFilter';
 
 import {
@@ -13,7 +13,7 @@ import {
 } from './styled';
 
 const ApplicantInfoCard: React.FC<{
-  applicantData: IApplicantTypeWithID;
+  applicantData: Application;
 }> = ({ applicantData }) => {
   function removeHttp(address: string) {
     return address === ''

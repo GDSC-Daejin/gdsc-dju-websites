@@ -8,8 +8,13 @@ export const ApplicationWrapper = styled.div`
   box-sizing: border-box;
   overflow: scroll;
 `;
-export const ApplicationHeader = styled.div`
+export const ApplicationTitle = styled.div`
   font-size: ${({ theme }) => theme.fontSize.h7};
+  color: ${({ theme }) => theme.colors.grey900};
+  margin-bottom: 6px;
+`;
+export const ApplicationSubTitle = styled.div`
+  font-size: ${({ theme }) => theme.fontSize.body1};
   color: ${({ theme }) => theme.colors.grey900};
   margin-bottom: 6px;
 `;

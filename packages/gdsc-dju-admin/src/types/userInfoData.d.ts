@@ -1,4 +1,4 @@
-export interface IUserInfoDataType {
+export interface UserInfoData {
   generation: number;
   gitEmail: string;
   hashTag: string;

@@ -40,6 +40,8 @@ jobs:
         working-directory: ${{ env.working-directory }}
       - name: install package
         run: yarn install
+      - name: Shared Build
+        run: yarn workspace @gdsc-dju/shared build
       - name: Project Build
         run: yarn build
         working-directory: ${{ env.working-directory }}

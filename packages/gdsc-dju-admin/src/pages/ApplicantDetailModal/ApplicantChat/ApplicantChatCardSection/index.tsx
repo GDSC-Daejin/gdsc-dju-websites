@@ -1,11 +1,11 @@
 import ChatCard from '@common/cards/ChatCard';
-import { IApplicantChatType } from '@type/applicant';
+import { ApplicantChat } from 'types/applicant';
 import React, { PropsWithChildren, forwardRef } from 'react';
 
 import { ApplicantChatList, ChatCardWrapper } from './styled';
 
 interface Props {
-  newMessages: IApplicantChatType[];
+  newMessages: ApplicantChat[];
   adminUser: string;
 }
 const ApplicantSection = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(

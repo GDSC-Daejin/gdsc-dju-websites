@@ -1,13 +1,12 @@
 import { atom } from 'jotai';
 import { getMyData } from '../apis/hooks/useGetMyData';
-import UserService from '../apis/UserService';
-import { IUserInfoDataType } from '../types/userInfoData';
+import { UserInfoData } from '../types/userInfoData';
 
 interface UserAtomType {
   role: string | null;
   nickname: string | null;
   uid: string | null;
-  memberInfo: IUserInfoDataType | null;
+  memberInfo: UserInfoData | null;
 }
 
 export const userAtom = atom<UserAtomType>({

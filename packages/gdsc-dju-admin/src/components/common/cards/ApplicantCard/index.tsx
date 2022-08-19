@@ -1,9 +1,9 @@
+import { Application } from '@gdsc-dju/shared/types';
 import React from 'react';
-import { IApplicantTypeWithID } from '../../../../types/applicant';
 import StatusBadge from '../../Statusbadge';
 import { ApplicantCardWrapper, ApplicantEmail, ApplicantText } from './styled';
 
-const ApplicantCard: React.FC<IApplicantTypeWithID> = ({
+const ApplicantCard: React.FC<Application> = ({
   name,
   email,
   position,

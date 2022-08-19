@@ -6,6 +6,7 @@ import API from '../../apis';
 import ToggleButton from '../../components/common/ToggleButton';
 
 import {
+  AdminSectionWrapper,
   ApplicantCardSection,
   ApplicantCardWrapper,
   ApplicantContainerInner,
@@ -20,13 +21,11 @@ import {
   recruitmentReadOnlyAtom,
   recruitmentWriteOnlyAtom,
 } from '../../store/recruitmentAtom';
-import { IApplicantTypeWithID } from '../../types/applicant';
 import { getApplicants } from '../../utils/applicantsHandler';
 import ApplicantDetailModal from '../ApplicantDetailModal';
 import { AdminContainerInner } from '../styled';
-
-import { AdminSectionWrapper } from './styled';
 import ApplicantCard from '../../components/common/cards/ApplicantCard';
+import { Application } from '@gdsc-dju/shared/types';
 
 const Applicants = () => {
   const [recruit] = useAtom(recruitmentReadOnlyAtom);
@@ -35,7 +34,7 @@ const Applicants = () => {
   const navigate = useNavigate();
   const { userid } = useParams<{ userid: string }>();
 
-  const [applicants, setApplicants] = useState<IApplicantTypeWithID[]>();
+  const [applicants, setApplicants] = useState<Application[]>();
 
   const currentParam = searchParams.get('type') as string;
 
@@ -55,9 +54,7 @@ const Applicants = () => {
     }
   };
 
-  const filterApplicantsAsPosition = async (
-    applicants: IApplicantTypeWithID[],
-  ) => {
+  const filterApplicantsAsPosition = async (applicants: Application[]) => {
     const currentPosition =
       position[currentParam as keyof typeof position].toLowerCase();
     if (applicants) {

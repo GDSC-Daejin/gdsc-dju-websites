@@ -1,15 +1,16 @@
+import { Application } from '@gdsc-dju/shared/types';
 import { doc, updateDoc } from 'firebase/firestore';
 import React, { useCallback } from 'react';
 import StatusBadge from '../../../components/common/Statusbadge';
 import { recruitInfo } from '../../../context/recruitInfo';
 import { db } from '../../../firebase/firebase';
-import { IApplicantTypeWithID, StatusType } from '../../../types/applicant';
+import { StatusType } from '../../../types/applicant';
 
 import { ApplicantBadgeWrapper, ApplicantInfoStateWrapper } from './styled';
 
 const ApplicantState: React.FC<{
-  applicantData: IApplicantTypeWithID;
-  setApplicantData: (data: IApplicantTypeWithID) => void;
+  applicantData: Application;
+  setApplicantData: (data: Application) => void;
 }> = ({ applicantData, setApplicantData }) => {
   const applicantRef = doc(db, recruitInfo.COLLECTION, applicantData.id);
 

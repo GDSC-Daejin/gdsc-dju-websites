@@ -1,4 +1,3 @@
-import { IApplicantChatType } from '@src/types/applicant';
 import React, { memo } from 'react';
 
 import {
@@ -8,8 +7,9 @@ import {
   ChatText,
   ChatUser,
 } from './styled';
+import { ApplicantChat } from '@src/types/applicant';
 
-interface Props extends IApplicantChatType {
+interface Props extends ApplicantChat {
   adminUser: string;
 }
 

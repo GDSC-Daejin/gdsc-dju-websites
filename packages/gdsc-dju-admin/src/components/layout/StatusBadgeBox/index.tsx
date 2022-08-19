@@ -1,7 +1,8 @@
+import { Application, StatusType } from '@gdsc-dju/shared/types';
+import { applicantFilterByStatus } from '@utils/applicantsHandler';
 import React from 'react';
 import styled from 'styled-components';
-import { IApplicantTypeWithID, StatusType } from '../../../types/applicant';
-import { applicantFilterByStatus } from '../../../utils/applicantsHandler';
+
 import StatusBadge from '../../common/Statusbadge';
 
 export const ApplicantsStatusWrapper = styled.div`
@@ -20,7 +21,7 @@ export const ApplicantsBadgeWrapper = styled.div`
 `;
 
 interface Props {
-  filteredApplicants: IApplicantTypeWithID[];
+  filteredApplicants: Application[];
 }
 
 const StatusBadgeBox: React.FC<Props> = ({ filteredApplicants }) => {
