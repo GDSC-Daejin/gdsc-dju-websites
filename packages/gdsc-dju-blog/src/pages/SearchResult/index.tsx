@@ -1,9 +1,8 @@
+import { useGetSearchPosts } from '@src/api/hooks/useGetSearchPost';
+import { LayoutContainer } from '@styles/layouts';
 import React from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
-import { useGetSearchPosts } from '../../api/hooks/useGetSearchPost';
-import BlogCardGridLayout from '../../components/common/BlogCardGridLayout';
-import PageBar from '../../components/common/PageBar';
-import { LayoutContainer } from '../../styles/layouts';
+
 import {
   BlogCardGridLayoutWrapper,
   LayoutInner,
@@ -14,6 +13,8 @@ import {
   SearchResultTitle,
   SearchResultTitleWrapper,
 } from './styled';
+import BlogCardSection from '@src/components/molecules/BlogCardSection';
+import PageBar from '@src/components/atoms/PageBar';
 
 const SearchResult = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -44,7 +45,7 @@ const SearchResult = () => {
             <BlogCardGridLayoutWrapper>
               {!postListData.empty ? (
                 <>
-                  <BlogCardGridLayout postData={postListData.content} />
+                  <BlogCardSection postData={postListData.content} />
                   <PageBarWrapper>
                     <PageBar
                       page={Number(page)}

@@ -1,7 +1,5 @@
 import React from 'react';
-import { useGetMyData } from '../../../api/hooks/useGetMyData';
-import { positionColor } from '../../../store/positionColor';
-import { DetailPostDataType } from '../../../types/postData';
+
 import AuthorBox from '../AuthorBox';
 import PostIconBox from '../PostIconBox';
 import {
@@ -13,6 +11,9 @@ import {
   PostTitle,
   PostTitleWrapper,
 } from '../styled';
+import { positionColor } from '@src/store/positionColor';
+import { DetailPostDataType } from '@type/postData';
+import { useGetMyData } from '@src/api/hooks/useGetMyData';
 
 interface Props {
   postData: DetailPostDataType;

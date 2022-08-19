@@ -1,14 +1,14 @@
 import { AnimatePresence } from 'framer-motion';
 import React from 'react';
 import { useRecoilState } from 'recoil';
-import Alert from '../components/common/Alert';
-import GoogleLoader from '../components/common/GoogleLoader';
-import Modal from '../components/common/modal';
-import Navigation from '../components/common/Navigation';
-import SideBar from '../components/common/SideBar';
-import { loaderState } from '../store/loader';
-import GlobalStyles from '../styles/globalStyles';
-import { NavigationBlock } from '../styles/layouts';
+import Alert from '@src/components/atoms/Alert';
+import GoogleLoader from '@src/components/atoms/GoogleLoader';
+import { loaderState } from '@src/store/loader';
+import Navigation from '@src/components/layouts/Navigation';
+import Modal from '@src/components/molecules/modal';
+import SideBar from '@src/components/organisms/SideBar';
+import GlobalStyles from '@styles/globalStyles';
+import { NavigationBlock } from '@styles/layouts';
 
 const ComponentLayout: React.FC<{ children: React.ReactNode }> = ({
   children,

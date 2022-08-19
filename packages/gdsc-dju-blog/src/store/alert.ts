@@ -1,5 +1,5 @@
 import { atom } from 'recoil';
-import { IAlertState } from '../types/alert';
+import { IAlertState } from '@type/alert';
 
 export const ALERT = 'alert';
 

@@ -5,12 +5,6 @@ import {
   useParams,
   useSearchParams,
 } from 'react-router-dom';
-import { useGetPostsData } from '../../api/hooks/useGetPostsData';
-import BlogCardGridLayout from '../../components/common/BlogCardGridLayout';
-import CategoryMenu from '../../components/common/CategoryMenu';
-import PageBar from '../../components/common/PageBar';
-
-import { LayoutContainer } from '../../styles/layouts';
 import { Notice } from '../MyBlog/BlogHome/styled';
 import {
   CategoryMenuWrapper,
@@ -19,6 +13,11 @@ import {
   PostLayoutWrapper,
   PostSectionWrapper,
 } from './styled';
+import BlogCardSection from '../../components/molecules/BlogCardSection';
+import CategoryMenu from '@src/components/atoms/CategoryMenu';
+import { useGetPostsData } from '@src/api/hooks/useGetPostsData';
+import PageBar from '@src/components/atoms/PageBar';
+import { LayoutContainer } from '@styles/layouts';
 
 const Category = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -75,7 +74,7 @@ const Category = () => {
                 {postListData.empty ? (
                   <Notice>포스팅된 글이 없습니다</Notice>
                 ) : (
-                  <BlogCardGridLayout postData={postListData.content} />
+                  <BlogCardSection postData={postListData.content} />
                 )}
               </>
             )}

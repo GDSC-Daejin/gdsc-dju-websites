@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
-import { useGetMyData } from '../../../api/hooks/useGetMyData';
-import UserService from '../../../api/UserService';
-import { GDSCButton } from '../../../components/common/Button';
-import TextInput from '../../../components/common/input/TextInput';
-import { formValidation } from '../../../components/Validation/profileEdit';
+
 import { FormElementWrapper, FormLabel } from '../../MyBlog/ProfileEdit/styled';
 
 import { SignUpFormStyle } from './styled';
+import UserService from '@src/api/UserService';
+import { GDSCButton } from '@src/components/atoms/Button';
+import { useGetMyData } from '@src/api/hooks/useGetMyData';
+import TextInput from '@src/components/atoms/input/TextInput';
+import { formValidation } from '@src/components/Validation/profileEdit';
 
 const SignUpForm = () => {
   const {

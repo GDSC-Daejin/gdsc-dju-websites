@@ -9,7 +9,7 @@ class UserService extends Api {
       ...this.Header,
     });
   };
-  getMyData = (token?: string) => {
+  getMyData = (token: string) => {
     return axios.get<RowMemberDataType>(
       `${this.API}/member-route/api/guest/v1/me`,
       {

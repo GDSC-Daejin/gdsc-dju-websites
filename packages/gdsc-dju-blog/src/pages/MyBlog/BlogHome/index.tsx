@@ -1,19 +1,7 @@
 import React, { Suspense, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { createSearchParams, useSearchParams } from 'react-router-dom';
-import { useGetMyData } from '../../../api/hooks/useGetMyData';
-import { useGetMyPostsNotTempData } from '../../../api/hooks/useGetMyPostsNotTempData';
-import { useGetMyScrapList } from '../../../api/hooks/useGetMyScrapList';
-import Setting from '../../../assets/Setting';
-import { GDSCButton } from '../../../components/common/Button';
-import CategoryMenu from '../../../components/common/CategoryMenu';
-import { HashTageWrapper } from '../../../components/common/HashTage/styled';
-import PageBar from '../../../components/common/PageBar';
-import PostCard from '../../../components/common/PostCard';
-import ProfileImage from '../../../components/common/ProfileImage';
-import { positionColor } from '../../../store/positionColor';
-import { ContainerInner, LayoutContainer } from '../../../styles/layouts';
-import { hashTageSpreader } from '../../../Utils/hashTageSpreader';
+
 import { HashTageSection } from '../../Post/styled';
 import {
   BlogName,
@@ -32,6 +20,21 @@ import {
   SettingIconWrapper,
   TopMenuWrapper,
 } from './styled';
+import PostCard from '../../../components/molecules/PostCard';
+import CategoryMenu from '../../../components/atoms/CategoryMenu';
+import PageBar from '../../../components/atoms/PageBar';
+import ProfileImage from '../../../components/atoms/ProfileImage';
+import { positionColor } from '@src/store/positionColor';
+import { useGetMyScrapList } from '@src/api/hooks/useGetMyScrapList';
+
+import { GDSCButton } from '@src/components/atoms/Button';
+import { useGetMyData } from '@src/api/hooks/useGetMyData';
+import { useGetMyPostsNotTempData } from '@src/api/hooks/useGetMyPostsNotTempData';
+import { ContainerInner, LayoutContainer } from '@styles/layouts';
+
+import { HashTageWrapper } from '@src/components/atoms/HashTage/styled';
+import SettingIcon from '@assets/icons/SettingIcon';
+import { hashTageSpreader } from '@utils/hashTageSpreader';
 
 const BlogHome = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -118,7 +121,7 @@ const BlogHome = () => {
                         })
                       }
                     >
-                      <Setting />
+                      <SettingIcon />
                     </SettingIconWrapper>
                   </BlogNameWrapper>
                   <IntroduceText>{userInfoData.introduce ?? ''}</IntroduceText>

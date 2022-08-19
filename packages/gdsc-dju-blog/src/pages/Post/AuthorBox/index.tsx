@@ -1,8 +1,5 @@
 import React from 'react';
-import { HashTageDark } from '../../../components/common/HashTage';
-import { AuthorProps } from '../../../types/postData';
-import { dateFilter } from '../../../Utils/dateFilter';
-import { hashTageSpreader } from '../../../Utils/hashTageSpreader';
+
 import {
   Author,
   AuthorImage,
@@ -10,6 +7,10 @@ import {
   Date,
   HashTageSection,
 } from '../styled';
+import { AuthorProps } from '@type/postData';
+import { HashTageDark } from '@src/components/atoms/HashTage';
+import { hashTageSpreader } from '@utils/hashTageSpreader';
+import { dateFilter } from '@utils/dateFilter';
 
 interface Props extends AuthorProps {
   uploadDate: string;

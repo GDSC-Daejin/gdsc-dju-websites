@@ -4,19 +4,20 @@ import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
 import PostService from '../../../api/PostService';
-import Bookmark from '../../../assets/Bookmark';
-import PostEditIcon from '../../../assets/PostEditIcon';
-import PostTrashIcon from '../../../assets/PostTrashIcon';
-import { useGetScrap } from '../../../hooks/useGetScrap';
-import { useSetBookMark } from '../../../hooks/useSetBookMark';
-import { alertState } from '../../../store/alert';
-import { modalState } from '../../../store/modal';
+
 import {
   BookmarkWrapper,
   PostEditIconWrapper,
   PostIconWrapper,
   PostTrashIconWrapper,
 } from '../styled';
+import { modalState } from '@src/store/modal';
+import { useSetBookMark } from '@src/hooks/useSetBookMark';
+import { alertState } from '@src/store/alert';
+import { useGetScrap } from '@src/hooks/useGetScrap';
+import BookmarkIcon from '@assets/icons/BookmarkIcon';
+import PostEditIcon from '@assets/icons/PostEditIcon';
+import TrashIcon from '@assets/icons/TrashIcon';
 
 interface Props {
   isUser: boolean;
@@ -68,7 +69,7 @@ const PostIconBox = ({ isUser, postId }: Props) => {
   return (
     <PostIconWrapper>
       <BookmarkWrapper onClick={bookMarkHandler}>
-        <Bookmark marked={isMarked} height={'25'} />
+        <BookmarkIcon marked={isMarked} height={'25'} />
       </BookmarkWrapper>
       {isUser && (
         <>
@@ -80,7 +81,7 @@ const PostIconBox = ({ isUser, postId }: Props) => {
             <PostEditIcon marked={isUser} height={'25'} />
           </PostEditIconWrapper>
           <PostTrashIconWrapper onClick={isUser ? handleRemove : undefined}>
-            <PostTrashIcon marked={isUser} height={'25'} />
+            <TrashIcon marked={isUser} height={'25'} />
           </PostTrashIconWrapper>
         </>
       )}
