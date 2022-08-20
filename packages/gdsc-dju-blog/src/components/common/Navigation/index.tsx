@@ -43,7 +43,7 @@ const SearchInput: React.FC<{ onClick?: () => void }> = ({ onClick }) => {
   const navigate = useNavigate();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (searchData.trim() !== '') navigate(`/search/${searchData}?page=1`);
+    if (searchData.trim() !== '') navigate(`/search/${searchData}/all?page=1`);
     setSearchData('');
   };
 
