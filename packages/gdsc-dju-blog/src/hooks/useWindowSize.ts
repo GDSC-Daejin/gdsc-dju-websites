@@ -15,7 +15,7 @@ const useWindowSize = () => {
           height: window.innerHeight,
         };
       }),
-    1000,
+    300,
   );
 
   React.useEffect(() => {

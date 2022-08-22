@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { Link } from 'react-router-dom';
-import { useGetMyScrapData } from '../../api/hooks/useGetMyScrapData';
 import { useGetMyScrapList } from '../../api/hooks/useGetMyScrapList';
 import { useGetPostsData } from '../../api/hooks/useGetPostsData';
 import Plus from '../../assets/Plus';
