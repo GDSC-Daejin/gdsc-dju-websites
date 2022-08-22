@@ -9,6 +9,7 @@ import BlogCard from '../../components/common/BlogCard';
 import CategoryMenu from '../../components/common/CategoryMenu';
 import HomePhrase from '../../components/common/HomePhrase';
 import { useScroll } from '../../hooks/useScroll';
+import useWindowSize from '../../hooks/useWindowSize';
 import BlogCardScrollButton from './BlogCardButton';
 import {
   BlogCardWrapper,
@@ -27,6 +28,7 @@ function Home() {
   const [startX, setStartX] = useState(0);
   const [category, setCategory] = useState('all');
   const [homeWidth, setHomeWidth] = useState(0);
+  const { windowSize } = useWindowSize();
 
   const { postListData } = useGetPostsData(category, 0, 11);
   const { scrapList } = useGetMyScrapList();
@@ -62,26 +64,7 @@ function Home() {
 
   useEffect(() => {
     homeRef.current && setHomeWidth(homeRef.current?.offsetWidth);
-  }, [homeRef]);
-
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
-
-  const handleWindowSize = () => {
-    setWindowSize(() => {
-      return {
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    });
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', handleWindowSize);
-    return () => window.removeEventListener('resize', handleWindowSize);
-  }, []);
+  }, [windowSize.width]);
 
   return (
     <>

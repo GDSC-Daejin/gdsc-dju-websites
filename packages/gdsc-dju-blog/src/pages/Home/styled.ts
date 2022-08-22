@@ -17,10 +17,11 @@ export const HomeLayoutContainer = styled.div`
   z-index: 0;
   display: flex;
   flex-direction: column;
-  width: 100%;
   max-width: 1200px;
+  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
+    width: 100%;
+  }
   margin: 0 auto;
-  min-width: 320px;
   overflow: hidden;
 `;
 export const HomePhraseWrapper = styled(motion.div)`
