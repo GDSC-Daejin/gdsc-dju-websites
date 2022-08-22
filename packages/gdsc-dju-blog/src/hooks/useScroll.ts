@@ -9,7 +9,7 @@ export const useScroll = (ref: React.RefObject<HTMLDivElement>) => {
 
   React.useEffect(() => {
     ref.current?.addEventListener('scroll', onScroll);
-    return ref.current?.addEventListener('scroll', onScroll);
+    return ref.current?.removeEventListener('scroll', onScroll);
   }, []);
 
   return state;

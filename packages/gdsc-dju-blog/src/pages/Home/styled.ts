@@ -59,14 +59,19 @@ export const CardSection = styled(motion.section)<{ isDrag: boolean }>`
   }
 `;
 
-export const BlogCardWrapper = styled(motion.div)<{ homeWidth?: string }>`
+export const BlogCardWrapper = styled(motion.div)<{
+  homeWidth?: string;
+  windowWidth?: string;
+}>`
   width: 248px;
   height: 294px;
   margin: 0 15px;
-  ${({ homeWidth }) =>
+
+  ${({ windowWidth, homeWidth }) =>
     homeWidth &&
+    windowWidth &&
     css`
-      transform: translateX(calc((100vw - ${homeWidth}) / 2 + 20px));
+      transform: translateX(calc((${windowWidth} - ${homeWidth}) / 2 + 20px));
     `}
 
   :first-child {

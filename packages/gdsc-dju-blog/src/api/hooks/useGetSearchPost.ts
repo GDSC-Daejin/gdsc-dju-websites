@@ -17,7 +17,7 @@ export function useGetSearchPosts(props: UseGetSearchPosts) {
     [`post/search/${SearchContent}/${category}/${page}`],
     () => getSearchPostsData(props),
     {
-      cacheTime: 3 * 60 * 1000,
+      cacheTime: 60 * 1000,
     },
   );
   return { postListData };

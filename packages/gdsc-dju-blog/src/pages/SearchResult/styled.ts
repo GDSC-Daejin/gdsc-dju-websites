@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SearchResultTitleWrapper = styled.div`
-  width: 100%;
+  width: 1200px;
   display: flex;
   flex-direction: column;
   gap: 40px;
