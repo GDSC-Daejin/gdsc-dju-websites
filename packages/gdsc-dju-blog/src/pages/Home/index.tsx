@@ -11,6 +11,7 @@ import HomePhrase from '../../components/common/HomePhrase';
 import { useScroll } from '../../hooks/useScroll';
 import useWindowSize from '../../hooks/useWindowSize';
 import BlogCardScrollButton from './BlogCardButton';
+import onDrag from './onDrag';
 import {
   BlogCardWrapper,
   ButtonWrapper,
@@ -24,42 +25,19 @@ import {
 function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const scrollX = useScroll(scrollRef);
-  const [isDrag, setIsDrag] = useState(false);
-  const [startX, setStartX] = useState(0);
+  const { isDrag, onDragStart, onDragEnd, onDragMove } = onDrag(scrollRef);
+
   const [category, setCategory] = useState('all');
+  const changeCategory = (category: string) => {
+    setCategory(category);
+  };
+
   const [homeWidth, setHomeWidth] = useState(0);
   const { windowSize } = useWindowSize();
 
   const { postListData } = useGetPostsData(category, 0, 11);
   const { scrapList } = useGetMyScrapList();
 
-  const onDragStart = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    setIsDrag(true);
-    if (scrollRef.current?.scrollLeft !== undefined)
-      setStartX(e.pageX + scrollRef.current.scrollLeft);
-  };
-  const onDragEnd = () => {
-    setIsDrag(false);
-  };
-  const onDragMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (isDrag) {
-      if (scrollRef.current !== null) {
-        const { scrollWidth, clientWidth, scrollLeft } = scrollRef.current;
-        if (scrollRef.current?.scrollLeft !== undefined)
-          scrollRef.current.scrollLeft = startX - e.pageX;
-
-        if (scrollLeft === 0) {
-          setStartX(e.pageX);
-        } else if (scrollWidth <= clientWidth + scrollLeft) {
-          setStartX(e.pageX + scrollLeft);
-        }
-      }
-    }
-  };
-  const changeCategory = (category: string) => {
-    setCategory(category);
-  };
   const homeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
