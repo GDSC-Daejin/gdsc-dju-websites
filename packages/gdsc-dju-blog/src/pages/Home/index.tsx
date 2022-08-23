@@ -10,7 +10,7 @@ import HomePhrase from '../../components/common/HomePhrase';
 import { useScroll } from '../../hooks/useScroll';
 import useWindowSize from '../../hooks/useWindowSize';
 import BlogCardScrollButton from './BlogCardButton';
-import onDrag from './onDrag';
+import onDrag from '../../hooks/onDrag';
 import {
   BlogCardWrapper,
   ButtonWrapper,
