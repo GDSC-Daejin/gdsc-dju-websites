@@ -1,6 +1,6 @@
 import React from 'react';
-import { useCheckNickname } from '../../../api/hooks/useCheckNickname';
-import { GDSCButton, GDSCButtonL } from '../../../components/common/Button';
+import { useCheckNickname } from '@src/api/hooks/useCheckNickname';
+import { GDSCButton } from '@src/components/atoms/Button';
 
 export interface INicknameValidationButton
   extends React.DetailedHTMLProps<

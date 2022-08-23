@@ -1,16 +1,12 @@
-import { Giscus } from '@giscus/react';
-import codeSyntaxHighlight from '@toast-ui/editor-plugin-code-syntax-highlight';
-import tableMergedCell from '@toast-ui/editor-plugin-table-merged-cell';
-import { Viewer } from '@toast-ui/react-editor';
-import Prism from 'prismjs';
 import React from 'react';
+import { Giscus } from '@giscus/react';
 import { useParams } from 'react-router-dom';
-import { useGetDetailPost } from '../../api/hooks/useGetDetailPost';
-import { useGetScrap } from '../../hooks/useGetScrap';
 
-import { LayoutContainer, PostContainerInner } from '../../styles/layouts';
 import PostHeader from './PostHeader';
-import { ContentBox, ContentWrapper, GiscusWrapper } from './styled';
+import { ContentWrapper, GiscusWrapper } from './styled';
+import { useGetDetailPost } from '@src/api/hooks/useGetDetailPost';
+import { LayoutContainer, PostContainerInner } from '@styles/layouts';
+import { ContentViewer } from '@src/components/atoms/ToastUi';
 
 const Post = () => {
   const { postId } = useParams<'postId'>();
@@ -23,15 +19,7 @@ const Post = () => {
         {postId && postData && (
           <ContentWrapper>
             <PostHeader postId={Number(postId)} postData={postData} />
-            <ContentBox>
-              <Viewer
-                initialValue={postData.content}
-                plugins={[
-                  [codeSyntaxHighlight, { highlighter: Prism }],
-                  tableMergedCell,
-                ]}
-              />
-            </ContentBox>
+            <ContentViewer content={postData.content} />
           </ContentWrapper>
         )}
         <GiscusWrapper>

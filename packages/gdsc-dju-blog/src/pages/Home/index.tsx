@@ -1,16 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
-
 import { Link } from 'react-router-dom';
-import { useGetMyScrapList } from '../../api/hooks/useGetMyScrapList';
-import { useGetPostsData } from '../../api/hooks/useGetPostsData';
-import Plus from '../../assets/Plus';
-import BlogCard from '../../components/common/BlogCard';
-import CategoryMenu from '../../components/common/CategoryMenu';
-import HomePhrase from '../../components/common/HomePhrase';
-import { useScroll } from '../../hooks/useScroll';
-import useWindowSize from '../../hooks/useWindowSize';
+
+import PlusIcon from '@assets/icons/PlusIcon';
+import { useGetMyScrapList } from '@src/api/hooks/useGetMyScrapList';
+import { useGetPostsData } from '@src/api/hooks/useGetPostsData';
+import CategoryMenu from '@src/components/atoms/CategoryMenu';
+import BlogCard from '@src/components/molecules/BlogCard';
+import HomePhrase from '@src/components/molecules/HomePhrase';
+
+
+import { useScroll } from '@src/hooks/useScroll';
+import useWindowSize from '@src/hooks/useWindowSize';
 import BlogCardScrollButton from './BlogCardButton';
-import onDrag from '../../hooks/onDrag';
+import onDrag from '@src/hooks/onDrag';
 import {
   BlogCardWrapper,
   ButtonWrapper,
@@ -84,7 +86,7 @@ function Home() {
           >
             <Link to={`/category/${category}`}>
               <button type="button" className="viewmore-item__button">
-                <Plus />
+                <PlusIcon />
               </button>
             </Link>
           </BlogCardWrapper>
