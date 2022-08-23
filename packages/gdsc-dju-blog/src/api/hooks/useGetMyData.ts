@@ -12,8 +12,17 @@ export const getMyToken = async (refreshToken: string, token: string) => {
   return response.data;
 };
 
-export const setMyToken = async (refreshToken: string, token: string) => {
-  getMyToken(refreshToken, token);
+export const setMyToken = async (token: string) => {
+  Cookies.set('token', token);
+};
+const refreshHandler = async (refresh_token: string, token: string) => {
+  const response = await getMyToken(refresh_token, token);
+  if (response.header.code !== 200) {
+    Cookies.remove('token');
+    Cookies.remove('refresh_token');
+  } else {
+    await setMyToken(response.body.data.token);
+  }
 };
 
 export const useGetMyData = () => {
@@ -26,14 +35,10 @@ export const useGetMyData = () => {
     {
       refetchInterval: 20 * 60 * 1000,
       enabled: isEnabled,
+      retry: 1,
       onError: async () => {
-        if (!isEnabled) {
-          return;
-        }
-        const newToken = await getMyToken(refresh_token, token);
-        if (newToken) {
-          Cookies.set('token', newToken);
-        }
+        if (!isEnabled) return;
+        await refreshHandler(refresh_token, token);
       },
     },
   );
