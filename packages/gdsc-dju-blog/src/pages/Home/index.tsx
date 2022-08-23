@@ -8,7 +8,6 @@ import CategoryMenu from '@src/components/atoms/CategoryMenu';
 import BlogCard from '@src/components/molecules/BlogCard';
 import HomePhrase from '@src/components/molecules/HomePhrase';
 
-
 import { useScroll } from '@src/hooks/useScroll';
 import useWindowSize from '@src/hooks/useWindowSize';
 import BlogCardScrollButton from './BlogCardButton';
