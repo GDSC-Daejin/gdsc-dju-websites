@@ -1,38 +1,22 @@
 # GDSC DJU Event Site
 
-
-
-
 ## Getting Started
 
 ```bash
- > npx react-vite-todo-boilerplate my-project
  > yarn && yarn install
- > yarn dev && vite 
+ > yarn workspace gdsc-dju-shared dev
 ```
-
-or
-
-```bash
-> git clone https://github.com/GDSC-Daejin/react-vite-todo-boilerplate
-> yarn && yarn install
-> yarn dev && vite
-```
-
-
 
 ## Stack
 
 - React.js + TypeScript
 - [Vite](https://vitejs-kr.github.io/)
-- Eslint
-- Prettier
 - Styled-Components (CSS in JS)
-- [Zustand (상태관리)](https://zustand.surge.sh/)
+- [Zustand](https://zustand.surge.sh/)
 
 
 
-## FolderIcon Structure
+## Folder Structure
 
 ```
 ├── package-lock.json //프로젝트 초기
