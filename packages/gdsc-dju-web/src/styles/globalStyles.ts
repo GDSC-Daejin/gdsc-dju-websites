@@ -1,4 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
+import { throttle } from '@utils/throttle';
+
+window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -82,6 +88,7 @@ const GlobalStyles = createGlobalStyle`
     font-display: swap;
     unicode-range: U+AC00-U+D7A3;
   }
+ 
   * {
     margin: 0;
     font-size: 10px;
@@ -114,8 +121,8 @@ const GlobalStyles = createGlobalStyle`
   footer, header, hgroup, menu, nav, section {
     display: block;
   }
-  
-  html{
+
+  html {
     background: ${({ theme }) => theme.colors.background};
   }
   

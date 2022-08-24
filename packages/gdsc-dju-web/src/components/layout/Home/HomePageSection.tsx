@@ -1,10 +1,11 @@
+import { bannerItemAnimate } from '@animations/Variants';
+import { recruitmentAtom } from '@src/store/recruitmentStatusAtom';
 import { useAtom } from 'jotai';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { recruitmentAtom } from '../../../store/recruitmentStatusAtom';
+
 import DownArrow from '../../common/DownArrow';
-import { bannerItemAnimate } from '../../animations/Variants';
 
 import {
   ButtonWrapper,
@@ -20,7 +21,8 @@ import {
 
 export const HomeMainWrapper = styled(HomeSectionWrapper)`
   width: 100%;
-  height: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  position: relative;
 `;
 
 const HomePageSection = () => {
