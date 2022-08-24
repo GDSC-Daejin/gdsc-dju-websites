@@ -9,7 +9,7 @@ import { formValidation } from '../../../components/Validation/profileEdit';
 import { alertState } from '../../../store/alert';
 import { ContainerInner, LayoutContainer } from '../../../styles/layouts';
 import { IUserDataType, MemberInfo } from '../../../types/userDataType';
-import { dateFilter } from '../../../util/dateFilter';
+import { dateFilter } from '../../../utils/dateFilter';
 import {
   FormButtonWrapper,
   FormElementWrapper,
