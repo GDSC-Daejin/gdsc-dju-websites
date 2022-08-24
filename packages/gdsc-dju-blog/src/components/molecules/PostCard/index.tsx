@@ -15,9 +15,9 @@ import {
 } from './styled';
 import { HashTageDark } from '@src/components/atoms/HashTage';
 import { useSetBookMark } from '@src/hooks/useSetBookMark';
-import { hashTageSpreader } from '@utils/hashTageSpreader';
+import { hashTageSpreader } from '@src/util/hashTageSpreader';
 import { DetailPostDataType } from '@type/postData';
-import { dateFilter } from '@utils/dateFilter';
+import { dateFilter } from '@src/util/dateFilter';
 import BookmarkIcon from '@assets/icons/BookmarkIcon';
 
 interface Props extends DetailPostDataType {

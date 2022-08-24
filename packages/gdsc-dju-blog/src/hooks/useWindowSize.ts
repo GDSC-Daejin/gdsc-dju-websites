@@ -1,5 +1,5 @@
 import React from 'react';
-import { throttle } from '../utils/throttle';
+import { throttle } from '../util/throttle';
 
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = React.useState({

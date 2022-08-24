@@ -7,7 +7,7 @@ import {
   ModalContentWrapper,
   ModalInner,
 } from './styled';
-import OutsideClickHandler from '../../../utils/OutsideClickHandler';
+import OutsideClickHandler from '../../../util/OutsideClickHandler';
 import { IModalType, modalState } from '@src/store/modal';
 import { AnimatePresence } from 'framer-motion';
 import { GDSCButton } from '@src/components/atoms/Button';
