@@ -8,18 +8,18 @@ export interface INicknameValidationButton
     HTMLButtonElement
   > {
   nickname: string;
-  setIsChecked: React.Dispatch<React.SetStateAction<boolean>>;
+  // setIsChecked: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const NicknameValidationButton: React.FC<INicknameValidationButton> = ({
   nickname,
-  setIsChecked,
+  // setIsChecked,
 }) => {
   const { validationData, mutate, isLoading, isError, error, isSuccess } =
     useCheckNickname();
   const handleClick = () => {
     mutate(nickname);
-    validationData && setIsChecked(true);
+    // validationData && setIsChecked(true);
   };
 
   return (

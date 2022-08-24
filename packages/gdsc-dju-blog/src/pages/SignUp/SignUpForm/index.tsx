@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 
 import { FormElementWrapper, FormLabel } from '../../MyBlog/ProfileEdit/styled';
-import NicknameValidationButton from '../NicknameValidationButton';
+import NicknameValidationButton from '@src/components/atoms/NicknameValidationButton';
 
 import {
   NicknameValidationButtonWrapper,
@@ -69,14 +69,6 @@ const SignUpForm = () => {
                 placeholder={elementName.placeholder}
                 {...register(element, elementName)}
               />
-              {element === 'nickname' && (
-                <NicknameValidationButtonWrapper>
-                  <NicknameValidationButton
-                    nickname={watch('nickname')}
-                    setIsChecked={setIsChecked}
-                  />
-                </NicknameValidationButtonWrapper>
-              )}
             </TextInputWrapper>
           </FormElementWrapper>
         );
