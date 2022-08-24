@@ -46,15 +46,9 @@ const SignUpForm = () => {
       positionType: 'Beginner',
     });
   }, [userData]);
+  // const [isSuccess, setIsSuccess] = React.useState(false);
 
-  const {
-    validationData,
-    mutate,
-    isLoading,
-    isError,
-    error: mutateError,
-    isSuccess,
-  } = useCheckNickname();
+  const { mutate, isSuccess } = useCheckNickname();
   const validationCheck = () => {
     mutate(watch('nickname'));
   };
@@ -74,7 +68,10 @@ const SignUpForm = () => {
                   disabled={elementName.isBlock}
                   error={errors[element]}
                   placeholder={elementName.placeholder}
-                  {...register(element, elementName)}
+                  {...register(element, {
+                    ...elementName,
+                    validate: (v) => isSuccess || '닉네임 검사가 필요합니다',
+                  })}
                   validationCheck={validationCheck}
                   value={watch('nickname')}
                 />
