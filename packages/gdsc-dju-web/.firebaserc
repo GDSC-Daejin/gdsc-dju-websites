@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "gdsc-dju"
+    "gdsc-dju": "gdsc-dju"
   },
+  "targets": {},
+  "etags": {}
 }
