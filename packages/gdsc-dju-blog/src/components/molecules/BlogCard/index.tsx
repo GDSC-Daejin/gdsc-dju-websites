@@ -23,8 +23,8 @@ import { useSetBookMark } from '@src/hooks/useSetBookMark';
 import { DetailPostDataType } from '@type/postData';
 
 import BookmarkIcon from '@assets/icons/BookmarkIcon';
-import { hashTageSpreader } from '@src/util/hashTageSpreader';
-import { dateFilter } from '@src/util/dateFilter';
+import { dateFilter } from '@utils/dateFilter';
+import { hashTageSpreader } from '@utils/hashTageSpreader';
 
 const PostTextVariants = {
   initial: {

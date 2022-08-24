@@ -34,7 +34,7 @@ import { ContainerInner, LayoutContainer } from '@styles/layouts';
 
 import { HashTageWrapper } from '@src/components/atoms/HashTage/styled';
 import SettingIcon from '@assets/icons/SettingIcon';
-import { hashTageSpreader } from '@src/util/hashTageSpreader';
+import { hashTageSpreader } from '@utils/hashTageSpreader';
 
 const BlogHome = () => {
   const [searchParams, setSearchParams] = useSearchParams();

@@ -9,8 +9,8 @@ import {
 } from '../styled';
 import { AuthorProps } from '@type/postData';
 import { HashTageDark } from '@src/components/atoms/HashTage';
-import { hashTageSpreader } from '@src/util/hashTageSpreader';
-import { dateFilter } from '@src/util/dateFilter';
+import { dateFilter } from '@utils/dateFilter';
+import { hashTageSpreader } from '@utils/hashTageSpreader';
 
 interface Props extends AuthorProps {
   uploadDate: string;
