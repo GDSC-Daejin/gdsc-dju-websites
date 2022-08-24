@@ -1,9 +1,9 @@
-import React from 'react';
-import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useGetSearchPosts } from '@src/api/hooks/useGetSearchPost';
 import { LayoutContainer } from '@styles/layouts';
-
+import React from 'react';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import CategoryMenu from '@src/components/atoms/CategoryMenu';
+
 import {
   BlogCardGridLayoutWrapper,
   CategoryMenuWrapper,

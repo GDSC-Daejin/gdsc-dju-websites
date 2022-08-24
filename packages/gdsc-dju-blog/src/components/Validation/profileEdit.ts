@@ -1,4 +1,3 @@
-import { SyntheticEvent } from 'react';
 import { ValidationMemberInfo } from '@type/userDataType';
 
 export type FormElementsType<T extends string> = {

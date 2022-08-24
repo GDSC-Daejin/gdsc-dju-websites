@@ -15,14 +15,15 @@ const BlogCardSection = ({ postData }: Props) => {
 
   return (
     <BlogCardGridLayoutStyle>
-      {postData.map((data) => (
-        <BlogCardWrapper key={data.postId}>
-          <BlogCard
-            postData={data}
-            isScrap={!!scrapList?.find((id) => id == data.postId)}
-          />
-        </BlogCardWrapper>
-      ))}
+      {scrapList &&
+        postData.map((data) => (
+          <BlogCardWrapper key={data.postId}>
+            <BlogCard
+              postData={data}
+              isScrap={!!scrapList?.find((id) => id == data.postId)}
+            />
+          </BlogCardWrapper>
+        ))}
     </BlogCardGridLayoutStyle>
   );
 };
