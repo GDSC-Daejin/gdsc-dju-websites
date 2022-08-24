@@ -38,31 +38,33 @@ function Navigation() {
   );
 }
 
-const SearchInput: React.FC<{ onClick?: () => void }> = ({ onClick }) => {
+const SearchInput: React.FC<{ onClick?: () => void }> = () => {
   const [searchData, setSearchData] = React.useState('');
   const navigate = useNavigate();
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSearch = () => {
     if (searchData.trim() !== '') navigate(`/search/${searchData}/all?page=1`);
     setSearchData('');
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchData(e.target.value);
+  };
+  const handleOnKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.keyCode === 13) {
+      handleSearch();
+    }
   };
 
   return (
     <SearchInputWrapper>
-      <form onSubmit={handleSubmit}>
-        <Search
-          name="search"
-          value={searchData}
-          onChange={handleChange}
-          type="text"
-          placeholder="궁금한 정보나 계정을 입력해주세요"
-        />
-      </form>
-      <SearchIcon onClick={onClick} />
+      <Search
+        name="search"
+        value={searchData}
+        onChange={handleChange}
+        onKeyPress={handleOnKeyPress}
+        type="text"
+        placeholder="궁금한 정보나 계정을 입력해주세요"
+      />
+      <SearchIcon onClick={handleSearch} />
     </SearchInputWrapper>
   );
 };
