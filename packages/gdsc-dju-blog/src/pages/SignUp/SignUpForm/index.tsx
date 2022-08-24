@@ -3,29 +3,24 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 
 import { FormElementWrapper, FormLabel } from '../../MyBlog/ProfileEdit/styled';
-import NicknameValidationButton from '@src/components/atoms/NicknameValidationButton';
 
-import {
-  NicknameValidationButtonWrapper,
-  SignUpFormStyle,
-  TextInputWrapper,
-} from './styled';
+import { SignUpFormStyle, TextInputWrapper } from './styled';
 import UserService from '@src/api/UserService';
 import { GDSCButton } from '@src/components/atoms/Button';
 import { useGetMyData } from '@src/api/hooks/useGetMyData';
 import TextInput from '@src/components/atoms/input/TextInput';
 import { formValidation } from '@src/components/Validation/profileEdit';
+import ValidationInput from '@src/components/atoms/input/ValidationInput';
+import { useCheckNickname } from '@src/api/hooks/useCheckNickname';
 
 const SignUpForm = () => {
-  const [isChecked, setIsChecked] = React.useState(false);
-
   const {
     handleSubmit,
     register,
     reset,
     watch,
     formState: { errors, isValid },
-  } = useForm({ mode: 'onTouched' });
+  } = useForm({ mode: 'onChange' });
   const navigate = useNavigate();
   const { userData } = useGetMyData();
 
@@ -52,24 +47,48 @@ const SignUpForm = () => {
     });
   }, [userData]);
 
+  const {
+    validationData,
+    mutate,
+    isLoading,
+    isError,
+    error: mutateError,
+    isSuccess,
+  } = useCheckNickname();
+  const validationCheck = () => {
+    mutate(watch('nickname'));
+  };
+
   return (
     <SignUpFormStyle>
       {formElements.map((element) => {
         const elementName = formValidation[element];
-
         return (
           <FormElementWrapper key={element}>
             <FormLabel essential={!!elementName.required}>
               {elementName.label}
             </FormLabel>
-            <TextInputWrapper>
-              <TextInput
-                disabled={elementName.isBlock}
-                error={errors[element]}
-                placeholder={elementName.placeholder}
-                {...register(element, elementName)}
-              />
-            </TextInputWrapper>
+            {elementName.isValidate ? (
+              <TextInputWrapper>
+                <ValidationInput
+                  disabled={elementName.isBlock}
+                  error={errors[element]}
+                  placeholder={elementName.placeholder}
+                  {...register(element, elementName)}
+                  validationCheck={validationCheck}
+                  value={watch('nickname')}
+                />
+              </TextInputWrapper>
+            ) : (
+              <TextInputWrapper>
+                <TextInput
+                  disabled={elementName.isBlock}
+                  error={errors[element]}
+                  placeholder={elementName.placeholder}
+                  {...register(element, elementName)}
+                />
+              </TextInputWrapper>
+            )}
           </FormElementWrapper>
         );
       })}

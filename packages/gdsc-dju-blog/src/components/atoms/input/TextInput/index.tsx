@@ -1,9 +1,7 @@
 import React, { forwardRef } from 'react';
-import NicknameValidationButton from '@src/components/atoms/NicknameValidationButton';
-
 import { ErrorBox, StyledInput, StyledInputWrapper } from './styled';
 
-export interface Iprops {
+export interface TextInputProps {
   name?: string;
   error?: any;
   placeholder?: string;
@@ -15,7 +13,7 @@ export interface Iprops {
   disabled?: boolean;
   defaultValue?: string | number;
 }
-const TextInput = forwardRef<HTMLInputElement, Iprops>(
+const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
   (
     { name, placeholder, onChange, type, disabled, error, value, defaultValue },
     ref,
@@ -34,7 +32,6 @@ const TextInput = forwardRef<HTMLInputElement, Iprops>(
             disabled={disabled}
           />
         </StyledInputWrapper>
-        {name === 'nickname' && <NicknameValidationButton nickname="123" />}
         <ErrorBox>{error && <>{error.message}</>}</ErrorBox>
       </>
     );
