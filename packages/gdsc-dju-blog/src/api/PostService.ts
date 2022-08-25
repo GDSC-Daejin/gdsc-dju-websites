@@ -2,10 +2,10 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import {
   PostPostDataType,
-  RowDetailPostListType,
   RowPostDataType,
+  RowPostListType,
   RowScrapList,
-} from '../types/postData';
+} from '@type/postData';
 import { Api } from './index';
 
 class PostService extends Api {
@@ -17,7 +17,7 @@ class PostService extends Api {
     );
   };
   getPostsData = (params: string) => {
-    return axios.get<RowDetailPostListType>(
+    return axios.get<RowPostListType>(
       `${this.BLOG_API}/api/v1/post/list${params}`,
     );
   };
@@ -29,20 +29,20 @@ class PostService extends Api {
     );
   };
   getMyPostsData = (params: string) => {
-    return axios.get<RowDetailPostListType>(
+    return axios.get<RowPostListType>(
       `${this.BLOG_API}/api/guest/v1/myPost/${params}`,
       this.Header,
     );
   };
 
   getMyPostsTempData = (params: string) => {
-    return axios.get<RowDetailPostListType>(
+    return axios.get<RowPostListType>(
       `${this.BLOG_API}/api/guest/v1/myPost/temp${params}`,
       this.Header,
     );
   };
   getMyPostsNotTempData = (params: string) => {
-    return axios.get<RowDetailPostListType>(
+    return axios.get<RowPostListType>(
       `${this.BLOG_API}/api/guest/v1/myPost/notTemp${params}`,
       this.Header,
     );
@@ -73,8 +73,11 @@ class PostService extends Api {
       this.Header,
     );
   };
-  getMyScrapData = () => {
-    return axios.get(`${this.BLOG_API}/api/guest/v1/myScrap`, this.Header);
+  getMyScrapData = (params: string) => {
+    return axios.get<RowPostListType>(
+      `${this.BLOG_API}/api/guest/v1/myScrap${params}`,
+      this.Header,
+    );
   };
   updateMyScrapData = (postId: number) => {
     const token = Cookies.get('token');
@@ -95,7 +98,9 @@ class PostService extends Api {
     );
   };
   getSearchPosts = (postContent: string) => {
-    return axios.get(`${this.BLOG_API}/api/v1/post/search/${postContent}`);
+    return axios.get<RowPostListType>(
+      `${this.BLOG_API}/api/v1/post/search/${postContent}`,
+    );
   };
 }
 export default new PostService();

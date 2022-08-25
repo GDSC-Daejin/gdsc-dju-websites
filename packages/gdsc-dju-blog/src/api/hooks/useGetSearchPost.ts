@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import { SearchPostDataType } from '../../types/postData';
+import { RowPostListType } from '../../types/postData';
 import PostService from '../PostService';
 
 async function getSearchPostsData(params: string) {
@@ -7,7 +7,7 @@ async function getSearchPostsData(params: string) {
   return res.data.body.data;
 }
 export function useGetSearchPosts(postContent: string) {
-  const { data: postListData } = useQuery<SearchPostDataType>(
+  const { data: postListData } = useQuery(
     [`post/search/${postContent}`],
     () => getSearchPostsData(postContent),
     {

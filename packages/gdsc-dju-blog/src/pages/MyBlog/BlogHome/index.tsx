@@ -65,29 +65,21 @@ const BlogHome = () => {
   }, []);
 
   const pageHandler = (page: number, limit?: number) => {
-    if (page < 1) {
-      return;
-    }
-    if (page === limit) {
-      return;
-    } else {
-      navigate({
-        pathname: `/${userInfoData?.nickname}`,
-        search: `?${createSearchParams({
-          type: category,
-          page: page.toString(),
-        })}`,
+    if (page < 1) return;
+    if (page === limit) return;
+    else {
+      setSearchParams({
+        type: category,
+        page: page.toString(),
       });
     }
   };
   const categoryHandler = (category: string) =>
-    navigate({
-      pathname: `/${userInfoData?.nickname}`,
-      search: `?${createSearchParams({
-        type: category,
-        page: page.toString(),
-      })}`,
+    setSearchParams({
+      type: category,
+      page: page.toString(),
     });
+
   const postBlock = userData?.role === 'GUEST';
   const name = userData?.memberInfo.nickname ?? userData?.username;
   return (
@@ -143,7 +135,7 @@ const BlogHome = () => {
                 <ButtonWrapper>
                   <GDSCButton
                     text={'스크랩'}
-                    disable={true}
+                    disable={false}
                     onClick={() => navigate(`/${name}/likes`)}
                   />
                   <GDSCButton
@@ -155,7 +147,7 @@ const BlogHome = () => {
               </TopMenuWrapper>
             </>
           )}
-          {userPostNotTempData && (
+          {userPostNotTempData && scrapList && (
             <PostSectionWrapper isNull={userPostNotTempData.empty}>
               {!userPostNotTempData.empty ? (
                 userPostNotTempData.content.map((data) => (
@@ -167,7 +159,7 @@ const BlogHome = () => {
                   >
                     <PostCard
                       {...data}
-                      isScrap={!!scrapList?.find((id) => id == data.postId)}
+                      isScrap={!!scrapList.find((id) => id == data.postId)}
                     />
                   </PostCardWrapper>
                 ))
@@ -181,7 +173,7 @@ const BlogHome = () => {
               userInfoData &&
               !userPostNotTempData.empty && (
                 <PageBar
-                  page={page}
+                  currentPage={page}
                   totalPage={userPostNotTempData.totalPages}
                   nickname={userInfoData.nickname}
                   type={category}

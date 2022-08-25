@@ -108,7 +108,7 @@ const PostSaves = () => {
           <PageBarSection>
             {userPostTempData && userInfoData && !userPostTempData.empty && (
               <PageBar
-                page={page}
+                currentPage={page}
                 totalPage={userPostTempData.totalPages}
                 nickname={userInfoData.nickname}
                 type={category}

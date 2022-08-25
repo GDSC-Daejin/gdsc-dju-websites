@@ -54,7 +54,7 @@ const SearchResult = () => {
               {!postListData.empty && (
                 <PageBarWrapper>
                   <PageBar
-                    page={Number(page)}
+                    currentPage={Number(page)}
                     totalPage={postListData.totalPages}
                     onClick={handleClick}
                   />

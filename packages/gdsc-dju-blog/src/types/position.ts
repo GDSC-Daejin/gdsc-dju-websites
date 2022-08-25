@@ -1,7 +1,13 @@
-export type Position = 'frontend' | 'backend' | 'android' | 'design' | 'common';
+export type Position =
+  | 'all'
+  | 'frontend'
+  | 'backend'
+  | 'android'
+  | 'design'
+  | 'common';
 
 export const category: Capitalize<Position>[] = [
-  'ALL',
+  'All',
   'Frontend',
   'Backend',
   'Android',

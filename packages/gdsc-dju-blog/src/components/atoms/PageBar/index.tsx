@@ -1,6 +1,5 @@
 import RightArrowIcon from '@assets/icons/RightArrowIcon';
 import React from 'react';
-import { useNavigate } from 'react-router';
 import LeftArrowIcon from '../../../assets/icons/LeftArrowIcon';
 
 import {
@@ -23,14 +22,13 @@ const circleMotion = {
   },
 };
 const PageBar = (props: {
-  page: number;
+  currentPage: number;
   totalPage: number;
   nickname?: string;
   type?: string;
   onClick: (page: number, limit?: number) => void;
 }) => {
-  const { page, nickname, totalPage, type, onClick } = props;
-  const navigate = useNavigate();
+  const { currentPage, totalPage, onClick } = props;
 
   const division = (array: number[], num: number) => {
     const length = array.length;
@@ -53,14 +51,14 @@ const PageBar = (props: {
   const divideArray = () => {
     const PAGE_LENGTH = 8;
     const PAGES = division(array, PAGE_LENGTH - 1);
-    const pageNum = Math.floor(page / PAGE_LENGTH);
+    const pageNum = Math.floor(currentPage / PAGE_LENGTH);
     return PAGES[pageNum];
   };
 
   return (
     <PageBarWrapper>
       {totalPage !== 1 && (
-        <ArrowWrapper onClick={() => onClick(page - 1)}>
+        <ArrowWrapper onClick={() => onClick(currentPage - 1)}>
           <LeftArrowIcon />
         </ArrowWrapper>
       )}
@@ -69,18 +67,18 @@ const PageBar = (props: {
           <NumberWrapper
             key={id}
             onClick={() => onClick(num)}
-            active={page === num}
+            active={currentPage === num}
           >
             <NumberCircle
               variants={circleMotion}
-              animate={page === num ? 'isActive' : 'isUnActive'}
+              animate={currentPage === num ? 'isActive' : 'isUnActive'}
             />
             <Number>{num}</Number>
           </NumberWrapper>
         ))}
       </NumberSection>
       {totalPage !== 1 && (
-        <ArrowWrapper onClick={() => onClick(page + 1, totalPage + 1)}>
+        <ArrowWrapper onClick={() => onClick(currentPage + 1, totalPage + 1)}>
           <RightArrowIcon />
         </ArrowWrapper>
       )}

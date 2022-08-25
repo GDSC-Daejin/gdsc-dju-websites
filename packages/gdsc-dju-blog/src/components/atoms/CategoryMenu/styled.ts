@@ -29,6 +29,7 @@ export const CategoryTextWrapper = styled(motion.div)<{ isActive: boolean }>`
   ${({ isActive }) =>
     isActive &&
     css`
+      transform: translateY(-10px);
       border-bottom: 1px solid ${({ theme }) => theme.colors.grey900};
       color: ${({ theme }) => theme.colors.grey900};
     `}
@@ -43,7 +44,7 @@ export const CategoryMenuWrapper = styled(motion.div)`
 export const CategoryCircleWrapper = styled(motion.div)`
   position: absolute;
   left: 45%;
-  top: -10px;
+  top: -14px;
   display: flex;
   align-items: center;
   justify-content: center;
