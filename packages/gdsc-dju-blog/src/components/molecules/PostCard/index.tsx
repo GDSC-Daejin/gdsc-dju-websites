@@ -19,6 +19,7 @@ import { hashTageSpreader } from '@utils/hashTageSpreader';
 import { DetailPostDataType } from '@type/postData';
 import { dateFilter } from '@utils/dateFilter';
 import BookmarkIcon from '@assets/icons/BookmarkIcon';
+import { removeMarkdownInContent } from '@utils/removeMarkdownInContent';
 
 interface Props extends DetailPostDataType {
   isScrap: boolean;
@@ -40,13 +41,7 @@ const PostCard: React.FC<Props> = ({
   const { bookMarkHandler } = useSetBookMark(postId, cookie.token, () =>
     setIsMarked(!isMarked),
   );
-  const removeMarkdownInContent = content
-    .replace(/!\[.*\]/gi, '') // ![] 제거
-    .replace(/\(.*\)/gi, '') // ( ) 제거
-    .replace(/\|/gi, '') // | 제거
-    .replace(/#/gi, '') // # 제거
-    // .replace(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g, ' ') // # 제거
-    .replace(/-/gi, ''); // @ 제거
+  const removedMarkdownContent = removeMarkdownInContent(content);
 
   return (
     <PostCardWrapper
@@ -69,7 +64,7 @@ const PostCard: React.FC<Props> = ({
             ))}
           </PostHashTageSection>
         )}
-        <PostContent>{removeMarkdownInContent}</PostContent>
+        <PostContent>{removedMarkdownContent}</PostContent>
       </PostCardContentWrapper>
     </PostCardWrapper>
   );

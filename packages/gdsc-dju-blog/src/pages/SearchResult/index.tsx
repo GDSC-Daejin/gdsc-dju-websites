@@ -13,7 +13,7 @@ import {
   SearchResultTitle,
   SearchResultTitleWrapper,
 } from './styled';
-import BlogCardSection from '@src/components/molecules/BlogCardSection';
+import BlogCardSection from '@src/components/molecules/PostSectionContainer';
 import PageBar from '@src/components/atoms/PageBar';
 
 const SearchResult = () => {

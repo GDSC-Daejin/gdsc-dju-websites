@@ -13,7 +13,7 @@ import {
   PostLayoutWrapper,
   PostSectionWrapper,
 } from './styled';
-import BlogCardSection from '../../components/molecules/BlogCardSection';
+import BlogCardSection from '../../components/molecules/PostSectionContainer';
 import CategoryMenu from '@src/components/atoms/CategoryMenu';
 import { useGetPostsData } from '@src/api/hooks/useGetPostsData';
 import PageBar from '@src/components/atoms/PageBar';

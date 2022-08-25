@@ -2,7 +2,7 @@ import React from 'react';
 
 import BlogCard from '../BlogCard';
 
-import { BlogCardGridLayoutStyle, BlogCardWrapper } from './styled';
+import { BlogCardSection, BlogCardWrapper } from './styled';
 import { DetailPostDataType } from '@type/postData';
 import { useGetScrap } from '@src/hooks/useGetScrap';
 
@@ -10,11 +10,10 @@ interface Props {
   postData: DetailPostDataType[];
 }
 
-const BlogCardSection = ({ postData }: Props) => {
+const PostSectionContainer = ({ postData }: Props) => {
   const { scrapList } = useGetScrap();
-
   return (
-    <BlogCardGridLayoutStyle>
+    <BlogCardSection>
       {scrapList &&
         postData.map((data) => (
           <BlogCardWrapper key={data.postId}>
@@ -24,8 +23,8 @@ const BlogCardSection = ({ postData }: Props) => {
             />
           </BlogCardWrapper>
         ))}
-    </BlogCardGridLayoutStyle>
+    </BlogCardSection>
   );
 };
 
-export default BlogCardSection;
+export default PostSectionContainer;

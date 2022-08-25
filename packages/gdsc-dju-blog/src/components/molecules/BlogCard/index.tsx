@@ -24,33 +24,15 @@ import { DetailPostDataType } from '@type/postData';
 import { dateFilter } from '@utils/dateFilter';
 import { hashTageSpreader } from '@utils/hashTageSpreader';
 import BookmarkIcon from '@assets/icons/BookmarkIcon';
+import { removeMarkdownInContent } from '@utils/removeMarkdownInContent';
+import { PostTextVariants } from '@src/components/Animation';
 
-const PostTextVariants = {
-  initial: {
-    opacity: 0,
-  },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      delay: 0.1,
-      duration: 0.2,
-    },
-  },
-  exit: {
-    opacity: 0,
-    transition: {
-      duration: 0.1,
-    },
-  },
-};
-
-interface BlogCardProps {
+interface Props {
   postData: DetailPostDataType;
   isScrap: boolean;
 }
 
-const BlogCard: React.FC<BlogCardProps> = ({ postData, isScrap }) => {
+const BlogCard: React.FC<Props> = ({ postData, isScrap }) => {
   const [IsHovered, setIsHovered] = useState(false);
   const [isMarked, setIsMarked] = useState(isScrap);
   const [cookie] = useCookies(['token']);
@@ -66,12 +48,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ postData, isScrap }) => {
     navigate(`/${postData.memberInfo.nickname}/${postData.postId}`);
   }, [postData]);
 
-  const removeMarkdownInContent = postData.content
-    .replace(/!\[.*\]/gi, '') // ![] 제거
-    .replace(/\(.*\)/gi, '') // ( ) 제거
-    .replace(/\|/gi, '') // | 제거
-    .replace(/#/gi, '') // # 제거
-    .replace(/-/gi, ''); // @ 제거
+  const removedMarkDownContent = removeMarkdownInContent(postData.content);
 
   return (
     <AnimateSharedLayout>
@@ -113,7 +90,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ postData, isScrap }) => {
                 animate={'visible'}
                 exit={'exit'}
               >
-                <PostText>{removeMarkdownInContent}</PostText>
+                <PostText>{removedMarkDownContent}</PostText>
               </BlogCardPostText>
             )}
           </AnimatePresence>

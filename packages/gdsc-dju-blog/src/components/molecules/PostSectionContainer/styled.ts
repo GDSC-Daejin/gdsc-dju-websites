@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const BlogCardGridLayoutStyle = styled.section`
+export const BlogCardSection = styled.section`
   display: grid;
   grid-template-columns: repeat(4, 248px);
   grid-row-gap: 80px;
