@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 export const NavTask = styled.li`
@@ -36,7 +35,6 @@ export const NavDesign = styled.nav<{
   ${(props) =>
     props.background
       ? css`
-          //background-color: rgba(255, 255, 255, 0.1);
           backdrop-filter: saturate(50%) blur(8px);
         `
       : css`
@@ -48,7 +46,7 @@ export const NavDesign = styled.nav<{
     props.disable &&
     css`
       display: none;
-    `}
+    `};
   @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
     height: 60px;
   }
@@ -71,56 +69,7 @@ export const StyledLogoWrapper = styled.a`
   align-items: center;
   margin-left: 50px;
 `;
-export const BlogLogo = styled.img``;
-export const NavigationDesign = styled.nav`
-  background-color: ${({ theme }) => theme.colors.white};
-  position: fixed;
-  top: 0;
-  z-index: 990;
-  height: 70px;
-  width: 100%;
-`;
-export const NavigationWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 92%;
-  margin: 0 auto;
-  height: 100%;
-`;
-export const NavigationInner = styled.div`
-  padding: 0 20px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-`;
-export const BlogWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-export const LogoWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  margin-left: 50px;
-  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
-    display: none;
-  }
-`;
-export const DeskNavigationWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: space-between;
-  display: flex;
-  position: relative;
-`;
-export const VectorWrapper = styled.div`
-  @media (min-width: ${({ theme }) => theme.windowSize.tablet}px) {
-    display: none;
-  }
-`;
+
 export const SearchInputWrapper = styled.div`
   display: flex;
   position: relative;
@@ -134,16 +83,7 @@ export const SearchInputWrapper = styled.div`
     }
   }
 `;
-export const SearchWrapper = styled.label`
-  display: flex;
-  margin-right: 40px;
-  align-items: center;
-  flex: 1;
-  justify-content: flex-end;
-  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
-    display: none;
-  }
-`;
+
 export const Search = styled.input`
   min-width: 400px;
   height: 30px;
@@ -162,13 +102,4 @@ export const Search = styled.input`
   &::placeholder {
     color: ${({ theme }) => theme.colors.grey300};
   }
-`;
-
-export const GdscLogoWrapper = styled.div`
-  & svg {
-    width: 40px;
-    height: 20px;
-    @media(min-width:  ${({ theme }) => theme.windowSize.tablet}px) {
-      display: none;
-    }
 `;

@@ -39,23 +39,24 @@ export interface PostPostDataType {
 }
 export interface RowPostListType {
   body: {
-    data: {
-      content: DetailPostDataType[];
-      totalPages: number;
-      totalElements: number;
-      last: boolean;
-      first: boolean;
-      sort: {
-        sorted: boolean;
-        unsorted: boolean;
-        empty: boolean;
-      };
-      numberOfElements: number;
-      size: number;
-      number: number;
-      empty: boolean;
-    };
+    data: PostListResponse;
   };
+}
+interface PostListResponse {
+  content: DetailPostDataType[];
+  totalPages: number;
+  totalElements: number;
+  last: boolean;
+  first: boolean;
+  sort: {
+    sorted: boolean;
+    unsorted: boolean;
+    empty: boolean;
+  };
+  numberOfElements: number;
+  size: number;
+  number: number;
+  empty: boolean;
 }
 
 export interface RowScrapList {

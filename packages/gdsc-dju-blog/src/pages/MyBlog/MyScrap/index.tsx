@@ -1,13 +1,8 @@
 import { useGetMyScrapData } from '@src/api/hooks/useGetMyScrapData';
 import React, { useCallback, useEffect } from 'react';
-import PostSectionWithMenu from '@src/components/molecules/PostSectionWithMenu';
-import CategoryMenu from '@src/components/atoms/CategoryMenu';
 import { ContainerInner, LayoutContainer } from '@styles/layouts';
-import {
-  ScrapSectionInner,
-  ScrapSectionWrapper,
-} from '@pages/MyBlog/MyScrap/styled';
 import { useSearchParams } from 'react-router-dom';
+import MyScrapLayout from '@src/components/layouts/MyScrapLayout';
 
 const MyScrap = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -49,20 +44,13 @@ const MyScrap = () => {
   return (
     <LayoutContainer>
       <ContainerInner>
-        <ScrapSectionWrapper>
-          <ScrapSectionInner>
-            <CategoryMenu type={category} onClick={categoryHandler} />
-            {scrapData && (
-              <PostSectionWithMenu
-                postData={scrapData.content}
-                type={category}
-                currentPage={page}
-                totalPage={scrapData.totalPages}
-                pageHandler={pageHandler}
-              />
-            )}
-          </ScrapSectionInner>
-        </ScrapSectionWrapper>
+        <MyScrapLayout
+          page={page}
+          category={category}
+          scrapData={scrapData}
+          pageHandler={pageHandler}
+          categoryHandler={categoryHandler}
+        />
       </ContainerInner>
     </LayoutContainer>
   );

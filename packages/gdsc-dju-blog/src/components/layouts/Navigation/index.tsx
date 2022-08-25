@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FormEvent, useRef, useState } from 'react';
 
 import {
   NavDesign,
@@ -6,8 +6,6 @@ import {
   NavTask,
   NavTaskWrapper,
   NavWrapper,
-  Search,
-  SearchInputWrapper,
   StyledLogoWrapper,
 } from './styled';
 
@@ -15,9 +13,19 @@ import GdscBlogLogo from '../../../assets/logos/GdscBlogLogo';
 import { useNavigate } from 'react-router';
 import MenuToggleIcon from '@src/components/atoms/MenuToggleIcon';
 import SideBar from '@src/components/organisms/SideBar';
-import SearchIcon from '@assets/icons/SearchIcon';
+import SearchInput from '@src/components/atoms/input/SearchInput';
 
 function Navigation() {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    if (!inputRef.current) return;
+
+    if (inputRef.current.value.trim() !== '')
+      navigate(`/search/${inputRef.current.value}?type=all&page=1`);
+  };
+
   return (
     <NavDesign>
       <NavWrapper>
@@ -30,7 +38,7 @@ function Navigation() {
               </StyledLogoWrapper>
             </NavTask>
           </NavTaskWrapper>
-          <SearchInput />
+          <SearchInput onClick={handleSubmit} ref={inputRef} />
         </NavInner>
       </NavWrapper>
       <SideBar />
@@ -38,31 +46,4 @@ function Navigation() {
   );
 }
 
-const SearchInput: React.FC<{ onClick?: () => void }> = ({ onClick }) => {
-  const [searchData, setSearchData] = React.useState('');
-  const navigate = useNavigate();
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (searchData.trim() !== '') navigate(`/search/${searchData}?page=1`);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchData(e.target.value);
-  };
-
-  return (
-    <SearchInputWrapper>
-      <form onSubmit={handleSubmit}>
-        <Search
-          name="search"
-          onChange={handleChange}
-          type="text"
-          placeholder="궁금한 정보나 계정을 입력해주세요"
-        />
-      </form>
-      <SearchIcon onClick={onClick} />
-    </SearchInputWrapper>
-  );
-};
 export default Navigation;

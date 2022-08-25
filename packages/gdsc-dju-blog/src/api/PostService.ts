@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosPromise } from 'axios';
 import Cookies from 'js-cookie';
 import {
   PostPostDataType,
