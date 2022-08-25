@@ -1,5 +1,16 @@
 import React from 'react';
 
+export const circleMotion = {
+  isActive: {
+    opacity: 1,
+    y: 0,
+  },
+  isUnActive: {
+    y: -20,
+    opacity: 0,
+  },
+};
+
 export const SideBarAnimation = {
   isActive: {
     x: 0,

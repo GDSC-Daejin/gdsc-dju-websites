@@ -91,7 +91,7 @@ export const Notice = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: ${({ theme }) => theme.fontSize.h7};
+  font-size: ${({ theme }) => theme.fontSize.h6};
   color: ${({ theme }) => theme.colors.grey400};
 `;
 export const PostCardWrapper = styled.div`

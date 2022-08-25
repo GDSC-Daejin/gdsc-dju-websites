@@ -3,11 +3,12 @@ import styled from 'styled-components';
 export const SearchResultTitleWrapper = styled.div`
   width: 1200px;
   color: ${(props) => props.theme.colors.grey900};
+  margin-bottom: 80px;
 `;
 export const SearchResultTitle = styled.h1`
   display: flex;
   align-self: flex-end;
-  padding: 50px 0px;
+  padding: 12px 0;
   font-size: ${({ theme }) => theme.fontSize.h5};
   color: ${(props) => props.theme.colors.grey900};
 `;
@@ -42,7 +43,12 @@ export const LayoutInner = styled.div`
 `;
 
 export const BlogCardGridLayoutWrapper = styled.div`
-  padding: 10px 0px;
+  height: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const NoResult = styled.div`

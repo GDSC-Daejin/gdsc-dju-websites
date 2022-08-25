@@ -139,10 +139,7 @@ const BlogHome = () => {
                 </ProfileDetailWrapper>
               </ProfileWrapper>
               <TopMenuWrapper>
-                <CategoryMenu
-                  type={category as string}
-                  onClick={categoryHandler}
-                />
+                <CategoryMenu type={category} onClick={categoryHandler} />
                 <ButtonWrapper>
                   <GDSCButton
                     text={'스크랩'}

@@ -14,8 +14,8 @@ import { SideBarCircleAnimation } from '@src/components/Animation';
 import { MENU_KEY, menuState } from '@src/store/menu';
 import { positionColor } from '@src/store/positionColor';
 
-import { category } from '@src/api/pageData/category';
 import GdscLogo from '@assets/logos/GdscLogo';
+import { category } from '@type/position';
 
 const SideBarCategory = () => {
   const navigate = useNavigate();
