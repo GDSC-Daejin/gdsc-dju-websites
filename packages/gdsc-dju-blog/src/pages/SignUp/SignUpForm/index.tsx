@@ -56,8 +56,6 @@ const SignUpForm = () => {
     setIsSuccess(false);
   }, [watch('nickname')]);
 
-  console.log(isSuccess);
-
   return (
     <SignUpFormStyle>
       {formElements.map((element) => {

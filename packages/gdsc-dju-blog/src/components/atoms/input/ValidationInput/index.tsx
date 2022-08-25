@@ -51,7 +51,7 @@ const ValidationInput = forwardRef<HTMLInputElement, ValidationInputProps>(
             />
           </ValidationButtonWrapper>
         </StyledInputWrapper>
-        <ErrorBox>{error && <>{error.message}</>}</ErrorBox>
+        <ErrorBox>{error && !isSuccess && <>{error.message}</>}</ErrorBox>
       </>
     );
   },
