@@ -2,7 +2,11 @@ import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 
-import { FormElementWrapper, FormLabel } from '../../MyBlog/ProfileEdit/styled';
+import {
+  FormElementWrapper,
+  FormLabel,
+  FormLabelWrapper,
+} from '../../MyBlog/ProfileEdit/styled';
 
 import { SignUpFormStyle, TextInputWrapper } from './styled';
 import UserService from '@src/api/UserService';
@@ -12,8 +16,7 @@ import TextInput from '@src/components/atoms/input/TextInput';
 import { formValidation } from '@src/components/Validation/profileEdit';
 import ValidationInput from '@src/components/atoms/input/ValidationInput';
 import { useCheckNickname } from '@src/api/hooks/useCheckNickname';
-import ErrorIcon from '@assets/icons/ErrorIcon';
-import WarningIcon from '@assets/icons/WarningIcon';
+import CheckIcon from '@assets/icons/CheckIcon';
 
 const SignUpForm = () => {
   const {
@@ -67,9 +70,14 @@ const SignUpForm = () => {
         const elementName = formValidation[element];
         return (
           <FormElementWrapper key={element}>
-            <FormLabel essential={!!elementName.required}>
-              {elementName.label}
-            </FormLabel>
+            <FormLabelWrapper>
+              <FormLabel essential={!!elementName.required}>
+                {elementName.label}
+              </FormLabel>
+              {elementName.isValidate && (
+                <CheckIcon isSuccess={isSuccess} isError={isMutationError} />
+              )}
+            </FormLabelWrapper>
             {elementName.isValidate ? (
               <TextInputWrapper>
                 <ValidationInput
