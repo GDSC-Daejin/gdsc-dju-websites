@@ -13,7 +13,7 @@ export function useCheckNickname(
     error,
     isSuccess,
   } = useMutation(UserService.checkUserNickname, {
-    onSuccess: (data, variables, context) => {
+    onSuccess: () => {
       setIsSuccess(true);
     },
   });

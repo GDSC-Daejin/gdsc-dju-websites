@@ -12,6 +12,8 @@ import TextInput from '@src/components/atoms/input/TextInput';
 import { formValidation } from '@src/components/Validation/profileEdit';
 import ValidationInput from '@src/components/atoms/input/ValidationInput';
 import { useCheckNickname } from '@src/api/hooks/useCheckNickname';
+import ErrorIcon from '@assets/icons/ErrorIcon';
+import WarningIcon from '@assets/icons/WarningIcon';
 
 const SignUpForm = () => {
   const {
@@ -47,8 +49,11 @@ const SignUpForm = () => {
     });
   }, [userData]);
   const [isSuccess, setIsSuccess] = React.useState(false);
-  const { mutate, isSuccess: isMutationSuccess } =
-    useCheckNickname(setIsSuccess);
+  const {
+    mutate,
+    isSuccess: isMutationSuccess,
+    isError: isMutationError,
+  } = useCheckNickname(setIsSuccess);
   const validationCheck = () => {
     mutate(watch('nickname'));
   };

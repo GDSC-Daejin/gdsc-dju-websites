@@ -29,7 +29,8 @@ export const FormTitleWrapper = styled.div`
 
 export const FormLabel = styled.label<{ essential?: boolean }>`
   padding: 5px 0;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   font-size: ${({ theme }) => theme.fontSize.h7};
   font-weight: 400;
   line-height: 1.5;
