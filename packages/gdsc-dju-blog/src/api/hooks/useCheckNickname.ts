@@ -2,7 +2,9 @@ import React from 'react';
 import { useMutation } from 'react-query';
 import UserService from '../UserService';
 
-export function useCheckNickname() {
+export function useCheckNickname(
+  setIsSuccess: React.Dispatch<React.SetStateAction<boolean>>,
+) {
   const {
     data: validationData,
     mutate,
@@ -12,7 +14,7 @@ export function useCheckNickname() {
     isSuccess,
   } = useMutation(UserService.checkUserNickname, {
     onSuccess: (data, variables, context) => {
-      console.log(data);
+      setIsSuccess(true);
     },
   });
 

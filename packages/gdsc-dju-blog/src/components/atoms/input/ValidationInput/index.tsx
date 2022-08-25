@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect } from 'react';
+import React, { forwardRef } from 'react';
 import { ValidationButtonWrapper } from './styled';
 import { GDSCButton } from '../../Button';
 import { TextInputProps } from '../TextInput';
@@ -6,6 +6,7 @@ import { ErrorBox, StyledInput, StyledInputWrapper } from '../TextInput/styled';
 
 interface ValidationInputProps extends TextInputProps {
   validationCheck: () => void;
+  isSuccess: boolean;
 }
 
 const ValidationInput = forwardRef<HTMLInputElement, ValidationInputProps>(
@@ -20,6 +21,7 @@ const ValidationInput = forwardRef<HTMLInputElement, ValidationInputProps>(
       value,
       defaultValue,
       validationCheck,
+      isSuccess,
     },
     ref,
   ) => {

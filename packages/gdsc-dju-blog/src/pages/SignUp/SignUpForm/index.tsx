@@ -46,12 +46,17 @@ const SignUpForm = () => {
       positionType: 'Beginner',
     });
   }, [userData]);
-  // const [isSuccess, setIsSuccess] = React.useState(false);
-
-  const { mutate, isSuccess } = useCheckNickname();
+  const [isSuccess, setIsSuccess] = React.useState(false);
+  const { mutate, isSuccess: isMutationSuccess } =
+    useCheckNickname(setIsSuccess);
   const validationCheck = () => {
     mutate(watch('nickname'));
   };
+  useEffect(() => {
+    setIsSuccess(false);
+  }, [watch('nickname')]);
+
+  console.log(isSuccess);
 
   return (
     <SignUpFormStyle>
@@ -74,6 +79,7 @@ const SignUpForm = () => {
                   })}
                   validationCheck={validationCheck}
                   value={watch('nickname')}
+                  isSuccess={isSuccess}
                 />
               </TextInputWrapper>
             ) : (
