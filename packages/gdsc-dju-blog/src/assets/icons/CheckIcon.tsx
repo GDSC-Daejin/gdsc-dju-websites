@@ -2,19 +2,22 @@ import React from 'react';
 import { useTheme } from 'styled-components';
 
 interface CheckIconProps {
-  isSuccess?: boolean;
-  isError?: boolean;
+  type: 'none' | 'success' | string;
 }
 
-const CheckIcon = ({ isSuccess, isError }: CheckIconProps) => {
+const CheckIcon = ({ type }: CheckIconProps) => {
   const theme = useTheme();
   const selectColor = () => {
-    if (!isSuccess && !isError) return theme.colors.grey400;
-    else {
-      if (isSuccess) return theme.colors.green500;
-      else if (isError) return theme.colors.tossRed;
+    switch (type) {
+      case 'success':
+        return theme.colors.green500;
+      case 'error':
+        return theme.colors.tossRed;
+      default:
+        return theme.colors.grey400;
     }
   };
+
   return (
     <svg
       width="20"

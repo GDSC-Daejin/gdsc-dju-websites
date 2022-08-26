@@ -58,11 +58,17 @@ const SignUpForm = () => {
     isError: isMutationError,
   } = useCheckNickname(setIsSuccess);
   const validationCheck = () => {
-    mutate(watch('nickname'));
+    mutate(watch('nickname').trim());
   };
   useEffect(() => {
     setIsSuccess(false);
   }, [watch('nickname')]);
+
+  const handleType = () => {
+    if (isSuccess) return 'success';
+    else if (isMutationError) return 'error';
+    else return 'none';
+  };
 
   return (
     <SignUpFormStyle>
@@ -74,9 +80,7 @@ const SignUpForm = () => {
               <FormLabel essential={!!elementName.required}>
                 {elementName.label}
               </FormLabel>
-              {elementName.isValidate && (
-                <CheckIcon isSuccess={isSuccess} isError={isMutationError} />
-              )}
+              {elementName.isValidate && <CheckIcon type={handleType()} />}
             </FormLabelWrapper>
             {elementName.isValidate ? (
               <TextInputWrapper>

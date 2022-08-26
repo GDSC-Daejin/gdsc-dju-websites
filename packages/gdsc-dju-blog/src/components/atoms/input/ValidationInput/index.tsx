@@ -29,7 +29,6 @@ const ValidationInput = forwardRef<HTMLInputElement, ValidationInputProps>(
       (error && error.type !== 'validate') ||
       value?.length === 0 ||
       value === undefined;
-    //에러가 있거나 2보다 작다면 버튼 비활성화
 
     return (
       <>
