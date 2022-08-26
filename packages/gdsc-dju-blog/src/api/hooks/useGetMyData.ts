@@ -1,28 +1,11 @@
 import Cookies from 'js-cookie';
 import { useQuery } from 'react-query';
-import TokenService from '../TokenService';
 import UserService from '../UserService';
+import { getMyToken } from './useGetNewToken';
 
 export const getUserData = async (token: string) => {
   const response = await UserService.getMyData(token);
   return response.data.body.data;
-};
-export const getMyToken = async (refreshToken: string, token: string) => {
-  const response = await TokenService.getRefresh(refreshToken, token);
-  return response.data;
-};
-
-export const setMyToken = async (token: string) => {
-  Cookies.set('token', token);
-};
-const refreshHandler = async (refresh_token: string, token: string) => {
-  const response = await getMyToken(refresh_token, token);
-  if (response.header.code !== 200) {
-    Cookies.remove('token');
-    Cookies.remove('refresh_token');
-  } else {
-    await setMyToken(response.body.data.token);
-  }
 };
 
 export const useGetMyData = () => {
@@ -38,7 +21,8 @@ export const useGetMyData = () => {
       retry: 1,
       onError: async () => {
         if (!isEnabled) return;
-        await refreshHandler(refresh_token, token);
+        const newToken = await getMyToken(refresh_token, token);
+        await Cookies.set('token', newToken);
       },
     },
   );
