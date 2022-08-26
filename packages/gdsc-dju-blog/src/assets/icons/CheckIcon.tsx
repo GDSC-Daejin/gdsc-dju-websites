@@ -1,5 +1,5 @@
-import { assetGreen, assetGrey, assetRed } from '@styles/assetColors';
 import React from 'react';
+import { useTheme } from 'styled-components';
 
 interface CheckIconProps {
   isSuccess?: boolean;
@@ -7,11 +7,12 @@ interface CheckIconProps {
 }
 
 const CheckIcon = ({ isSuccess, isError }: CheckIconProps) => {
+  const theme = useTheme();
   const selectColor = () => {
-    if (!isSuccess && !isError) return assetGrey.grey400;
+    if (!isSuccess && !isError) return theme.colors.grey400;
     else {
-      if (isSuccess) return assetGreen.green500;
-      else if (isError) return assetRed.tossRed;
+      if (isSuccess) return theme.colors.green500;
+      else if (isError) return theme.colors.tossRed;
     }
   };
   return (
