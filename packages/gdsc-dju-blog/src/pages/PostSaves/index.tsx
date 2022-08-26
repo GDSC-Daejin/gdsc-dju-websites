@@ -3,13 +3,6 @@ import { useNavigate } from 'react-router';
 import { createSearchParams, useSearchParams } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
-import {
-  Notice,
-  PageBarSection,
-  PostCardWrapper,
-  PostSectionWrapper,
-  TopMenuWrapper,
-} from '../MyBlog/BlogHome/styled';
 import { ButtonWrapper, PostSavesTitle } from '../PostSaves/styled';
 import { useGetMyPostsTempData } from '@src/api/hooks/useGetMyPostsTempData';
 import PostCard from '@src/components/molecules/PostCard';
@@ -20,6 +13,13 @@ import { POST_KEY, postState } from '@src/store/postEdit';
 import { GDSCButton } from '@src/components/atoms/Button';
 import { useGetMyData } from '@src/api/hooks/useGetMyData';
 import { ContainerInner, LayoutContainer } from '@styles/layouts';
+import {
+  Notice,
+  PageBarSection,
+  PostCardWrapper,
+  PostSectionWrapper,
+  TopMenuWrapper,
+} from '@src/components/layouts/MyBlogLayout/styled';
 
 const PostSaves = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -29,8 +29,8 @@ const PostSaves = () => {
   const page = pageParams ? parseInt(pageParams) : 1;
   const { scrapList } = useGetMyScrapList();
 
-  const { userData } = useGetMyData();
-  const userInfoData = userData?.memberInfo;
+  const { myData } = useGetMyData();
+  const userInfoData = myData?.memberInfo;
   const { userPostTempData } = useGetMyPostsTempData(category, page - 1, 6);
   const navigate = useNavigate();
 

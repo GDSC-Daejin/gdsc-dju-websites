@@ -1,16 +1,10 @@
 import React, { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import { useSearchParams } from 'react-router-dom';
-import { getUserData } from '../../api/hooks/useGetMyData';
 import TokenService from '../../api/TokenService';
 import GoogleLoader from '../../components/atoms/GoogleLoader';
+import { getMyData } from '@src/api/hooks/useGetMyData';
 
-import { IUserDataType } from '../../types/userDataType';
-
-type SelectedUserType = Pick<
-  IUserDataType,
-  'role' | 'username' | 'userId' | 'memberInfo'
->;
 export default function OauthRedirectPage() {
   const [searchParams] = useSearchParams();
   const token = searchParams.get('token') ?? null;
@@ -28,7 +22,7 @@ export default function OauthRedirectPage() {
   useEffect(() => {
     (async function () {
       if (token) {
-        const userData = await getUserData(token || '');
+        const userData = await getMyData(token || '');
         TokenService.setToken(token);
         setCookieData();
         sessionStorage.setItem(

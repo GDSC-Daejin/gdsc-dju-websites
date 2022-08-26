@@ -13,6 +13,7 @@ export function useGetMyScrapList() {
     () => getMyScrapList(),
     {
       enabled: !!token,
+      suspense: true,
     },
   );
   return {

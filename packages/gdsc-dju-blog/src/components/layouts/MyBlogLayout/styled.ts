@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { lightColors } from '../../../styles/lightColors';
 
 export const ProfileWrapper = styled.section`
   display: flex;

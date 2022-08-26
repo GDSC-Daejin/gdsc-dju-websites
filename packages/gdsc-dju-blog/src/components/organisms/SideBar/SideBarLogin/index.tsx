@@ -14,12 +14,12 @@ import {
 import { GDSCButton } from '@src/components/atoms/Button';
 import { useNavigate } from 'react-router';
 import ProfileImage from '@src/components/atoms/ProfileImage';
-import { IUserDataType } from '@type/userDataType';
+import { UserData } from '@type/userDataType';
 import { useCookies } from 'react-cookie';
 import SettingIcon from '@assets/icons/SettingIcon';
 
 const SideBarLogin: React.FC<{
-  userData: IUserDataType | undefined;
+  userData: UserData | undefined;
   closeSideBar: () => void;
 }> = ({ userData, closeSideBar }) => {
   const navigate = useNavigate();

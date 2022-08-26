@@ -47,6 +47,11 @@ class PostService extends Api {
       this.Header,
     );
   };
+  getUserPostsNotTempData = (userId: string, params: string) => {
+    return axios.get<RowPostListType>(
+      `${this.BLOG_API}/api/v1/${userId}/notTemp/${params}`,
+    );
+  };
   postMyPostData = (postData: PostPostDataType) => {
     return axios.post(
       `${this.BLOG_API}/api/member/v2/post`,
@@ -79,6 +84,7 @@ class PostService extends Api {
       this.Header,
     );
   };
+
   updateMyScrapData = (postId: number) => {
     const token = Cookies.get('token');
     return axios.post(

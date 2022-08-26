@@ -21,8 +21,8 @@ interface Props {
 }
 
 const PostHeader = ({ postId, postData }: Props) => {
-  const { userData } = useGetMyData();
-  const userInfoData = userData?.memberInfo;
+  const { myData } = useGetMyData();
+  const userInfoData = myData?.memberInfo;
   const isUser = userInfoData?.nickname == postData.memberInfo.nickname;
   return (
     <PostHead>

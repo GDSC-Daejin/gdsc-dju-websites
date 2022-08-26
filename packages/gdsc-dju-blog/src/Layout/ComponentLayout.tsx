@@ -20,7 +20,7 @@ const ComponentLayout: React.FC<{ children: React.ReactNode }> = ({
   useEffect(() => {
     if (!newToken) return;
     Cookies.set('token', newToken);
-  }, []);
+  }, [newToken]);
   return (
     <div>
       <Alert />

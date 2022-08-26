@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { MemberInfo, RowMemberDataType } from '../types/userDataType';
+import { MemberInfo, RowUserData, RowUserGuest } from '@type/userDataType';
 
 import { Api } from './index';
 
@@ -10,13 +10,15 @@ class UserService extends Api {
     });
   };
   getMyData = (token: string) => {
-    return axios.get<RowMemberDataType>(
-      `${this.API}/member-route/api/guest/v1/me`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+    return axios.get<RowUserData>(`${this.API}/member-route/api/guest/v1/me`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
       },
+    });
+  };
+  getGuestData = (nickname: string) => {
+    return axios.get<RowUserGuest>(
+      `${this.API}/member-route/api/v1/memberInfo/${nickname}`,
     );
   };
 }

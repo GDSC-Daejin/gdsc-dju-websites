@@ -5,7 +5,7 @@ import {
   useParams,
   useSearchParams,
 } from 'react-router-dom';
-import { Notice } from '../MyBlog/BlogHome/styled';
+
 import {
   CategoryPageInner,
   PostLayoutWrapper,
@@ -15,6 +15,7 @@ import { useGetPostsData } from '@src/api/hooks/useGetPostsData';
 import { LayoutContainer } from '@styles/layouts';
 import PostSectionWithMenu from '@src/components/molecules/PostSectionWithMenu';
 import CategoryMenu from '@src/components/atoms/CategoryMenu';
+import { Notice } from '@src/components/layouts/MyBlogLayout/styled';
 
 const Category = () => {
   const [searchParams, setSearchParams] = useSearchParams();

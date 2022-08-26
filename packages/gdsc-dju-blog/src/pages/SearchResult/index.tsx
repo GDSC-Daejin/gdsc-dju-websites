@@ -14,8 +14,9 @@ import {
 } from './styled';
 import BlogCardSection from '@src/components/molecules/PostSectionContainer';
 import PageBar from '@src/components/atoms/PageBar';
-import { Notice } from '@pages/MyBlog/BlogHome/styled';
+
 import CategoryMenu from '@src/components/atoms/CategoryMenu';
+import { Notice } from '@src/components/layouts/MyBlogLayout/styled';
 
 const SearchResult = () => {
   const [searchParams, setSearchParams] = useSearchParams();

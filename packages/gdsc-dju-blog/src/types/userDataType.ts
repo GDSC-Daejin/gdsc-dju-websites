@@ -1,4 +1,4 @@
-export interface IUserDataType {
+export interface UserData {
   email: string;
   emailVerifiedYn: string;
   memberInfo: MemberInfo;
@@ -11,10 +11,25 @@ export interface IUserDataType {
   userId: string;
   username: string;
 }
-export interface RowMemberDataType {
+export interface RowUserData {
   header: { code: string };
   body: {
-    data: IUserDataType;
+    data: UserData;
+  };
+}
+export interface UserGuest {
+  hashTag: string | null;
+  introduce: string | null;
+  nickname: string;
+  profileImageUrl: string;
+  role: 'GUEST' | 'MEMBER' | 'CORE' | 'LEAD';
+  userId: string;
+  positionType: string | null;
+}
+export interface RowUserGuest {
+  header: { code: string };
+  body: {
+    memberInfo: UserGuest;
   };
 }
 
