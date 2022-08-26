@@ -52,11 +52,7 @@ const SignUpForm = () => {
     });
   }, [userData]);
   const [isSuccess, setIsSuccess] = React.useState(false);
-  const {
-    mutate,
-    isSuccess: isMutationSuccess,
-    isError: isMutationError,
-  } = useCheckNickname(setIsSuccess);
+  const { mutate, isError: isMutationError } = useCheckNickname(setIsSuccess);
   const validationCheck = () => {
     mutate(watch('nickname').trim());
   };
