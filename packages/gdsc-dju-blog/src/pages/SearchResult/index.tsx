@@ -6,7 +6,6 @@ import { useParams, useSearchParams } from 'react-router-dom';
 import {
   BlogCardGridLayoutWrapper,
   LayoutInner,
-  NoResult,
   PageBarWrapper,
   SearchResultContent,
   SearchResultSubTitle,
