@@ -12,7 +12,7 @@ export const useGetMyData = () => {
   const refresh_token = Cookies.get('refresh_token');
   const isEnabled = !!(token && refresh_token);
   const { data: newToken } = useQuery(
-    [`${token}-userdata`],
+    [`${token}-newToken`],
     () => getMyToken(refresh_token!, token!),
     {
       refetchInterval: 20 * 60 * 1000,
