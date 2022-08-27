@@ -17,7 +17,6 @@ const MyBlogLayout = ({ category, page }: Props) => {
   const { nickname } = useParams<{ nickname: string }>();
   const { guestData } = useGetGuestData(nickname!);
   const { myData } = useGetMyData();
-  console.log(category);
 
   const pageHandler = (page: number, limit?: number) => {
     if (page < 1) return;
