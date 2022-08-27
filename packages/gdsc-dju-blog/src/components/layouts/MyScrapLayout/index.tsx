@@ -4,9 +4,8 @@ import {
   ScrapSectionWrapper,
 } from '@pages/MyBlog/MyScrap/styled';
 import CategoryMenu from '@src/components/atoms/CategoryMenu';
-import PostSectionWithMenu from '@src/components/molecules/PostSectionWithMenu';
+import PostSectionWithMenu from '@src/components/organisms/PostsContainerWithMenu';
 import { PostListResponse } from '@type/postData';
-import { useSearchParams } from 'react-router-dom';
 
 interface Props {
   scrapData: PostListResponse | undefined;

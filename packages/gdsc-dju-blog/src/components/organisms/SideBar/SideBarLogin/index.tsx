@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import {
   BottomButtonWrapper,
   LogoutButtonWrapper,
@@ -14,20 +14,21 @@ import {
 import { GDSCButton } from '@src/components/atoms/Button';
 import { useNavigate } from 'react-router';
 import ProfileImage from '@src/components/atoms/ProfileImage';
-import { UserData } from '@type/userDataType';
 import { useCookies } from 'react-cookie';
 import SettingIcon from '@assets/icons/SettingIcon';
+import { useGetMyData } from '@src/api/hooks/useGetMyData';
 
 const SideBarLogin: React.FC<{
-  userData: UserData | undefined;
   closeSideBar: () => void;
-}> = ({ userData, closeSideBar }) => {
+}> = ({ closeSideBar }) => {
   const navigate = useNavigate();
   const [TokenCookies, setTokenCookie, removeTokenCookie] = useCookies([
     'token',
     'refresh_token',
   ]);
-  const postBlock = userData?.role === 'GUEST';
+
+  const { myData } = useGetMyData();
+  const postBlock = myData?.role === 'GUEST';
 
   const handleLogout = () => {
     removeTokenCookie('token', {
@@ -44,27 +45,27 @@ const SideBarLogin: React.FC<{
   };
 
   return (
-    <>
-      {userData && (
+    <Suspense fallback={<div>asds</div>}>
+      {myData && (
         <>
           <ProfileImageWrapper>
-            {userData.profileImageUrl && (
+            {myData.profileImageUrl && (
               <ProfileImage
-                image={userData.profileImageUrl}
-                position={userData.memberInfo.positionType}
+                image={myData.profileImageUrl}
+                position={myData.memberInfo.positionType}
               />
             )}
           </ProfileImageWrapper>
           <ProfileInformation>
             <ProfileName>
-              {userData.memberInfo.nickname ?? userData.username}
+              {myData.memberInfo.nickname ?? myData.username}
             </ProfileName>
             <ProfileJobPosition>
-              {userData.memberInfo.positionType}
+              {myData.memberInfo.positionType}
             </ProfileJobPosition>
             <SettingIconWrapper
               onClick={() => {
-                navigate(`/${userData.memberInfo.nickname}/edit`);
+                navigate(`/${myData.memberInfo.nickname}/edit`);
                 closeSideBar();
               }}
             >
@@ -76,7 +77,7 @@ const SideBarLogin: React.FC<{
               size={'large'}
               text="내 블로그"
               onClick={() => {
-                navigate(`/${userData.memberInfo.nickname}`);
+                navigate(`/${myData.memberInfo.nickname}`);
                 closeSideBar();
               }}
             />
@@ -98,7 +99,7 @@ const SideBarLogin: React.FC<{
           </BottomButtonWrapper>
         </>
       )}
-    </>
+    </Suspense>
   );
 };
 

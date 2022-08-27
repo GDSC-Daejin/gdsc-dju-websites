@@ -1,10 +1,7 @@
 import React from 'react';
-import PostSectionContainer from '@src/components/molecules/PostSectionContainer';
+import PostsContainer from '@src/components/molecules/PostsContainer';
 import { DetailPostDataType } from '@type/postData';
-import {
-  CategoryContainer,
-  PageBarWrapper,
-} from '@src/components/molecules/PostSectionWithMenu/styled';
+import { CategoryContainer, PageBarWrapper } from './styled';
 import PageBar from '@src/components/atoms/PageBar';
 
 interface Props {
@@ -15,7 +12,7 @@ interface Props {
   pageHandler: (page: number, limit?: number) => void;
 }
 
-const PostSectionWithMenu = ({
+const PostsContainerWithMenu = ({
   postData,
   type,
   currentPage,
@@ -24,10 +21,9 @@ const PostSectionWithMenu = ({
 }: Props) => {
   return (
     <CategoryContainer>
-      <PostSectionContainer postData={postData} />
+      <PostsContainer postData={postData} />
       <PageBarWrapper>
         <PageBar
-          type={type}
           currentPage={currentPage}
           totalPage={totalPage || 0}
           onClick={pageHandler}
@@ -37,4 +33,4 @@ const PostSectionWithMenu = ({
   );
 };
 
-export default PostSectionWithMenu;
+export default PostsContainerWithMenu;

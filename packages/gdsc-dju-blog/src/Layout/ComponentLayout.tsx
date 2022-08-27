@@ -9,18 +9,26 @@ import Modal from '@src/components/molecules/modal';
 import SideBar from '@src/components/organisms/SideBar';
 import GlobalStyles from '@styles/globalStyles';
 import { NavigationBlock } from '@styles/layouts';
-import { useGetMyData } from '@src/api/hooks/useGetNewToken';
+import { getMyToken } from '@src/api/hooks/useGetNewToken';
 import Cookies from 'js-cookie';
 
 const ComponentLayout: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [loader] = useRecoilState(loaderState);
-  const { newToken } = useGetMyData();
+  const token = Cookies.get('token');
+  const refresh_token = Cookies.get('refresh_token');
+
   useEffect(() => {
-    if (!newToken) return;
-    Cookies.set('token', newToken);
-  }, [newToken]);
+    (async () => {
+      if (token && refresh_token) {
+        const newToken = await getMyToken(refresh_token, token);
+        if (!newToken) return;
+        Cookies.set('token', newToken);
+      }
+    })();
+  }, [token, refresh_token]);
+
   return (
     <div>
       <Alert />

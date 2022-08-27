@@ -12,11 +12,11 @@ import {
   SearchResultTitle,
   SearchResultTitleWrapper,
 } from './styled';
-import BlogCardSection from '@src/components/molecules/PostSectionContainer';
+import BlogCardSection from '@src/components/molecules/PostsContainer';
 import PageBar from '@src/components/atoms/PageBar';
 
 import CategoryMenu from '@src/components/atoms/CategoryMenu';
-import { Notice } from '@src/components/layouts/MyBlogLayout/styled';
+import Notice from '@src/components/atoms/Notice';
 
 const SearchResult = () => {
   const [searchParams, setSearchParams] = useSearchParams();

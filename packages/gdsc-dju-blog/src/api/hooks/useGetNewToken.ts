@@ -4,10 +4,12 @@ import Cookies from 'js-cookie';
 
 export const getMyToken = async (refreshToken: string, token: string) => {
   const response = await TokenService.getRefresh(refreshToken, token);
+
+  if (response.data.header.code == 500) return;
   return response.data.body.data.token;
 };
 
-export const useGetMyData = () => {
+export const useGetNewToken = () => {
   const token = Cookies.get('token');
   const refresh_token = Cookies.get('refresh_token');
   const isEnabled = !!(token && refresh_token);
@@ -21,5 +23,5 @@ export const useGetMyData = () => {
     },
   );
 
-  return { newToken: newToken ?? newToken };
+  return { newToken: newToken && newToken };
 };

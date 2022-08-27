@@ -13,9 +13,9 @@ import {
 } from './styled';
 import { useGetPostsData } from '@src/api/hooks/useGetPostsData';
 import { LayoutContainer } from '@styles/layouts';
-import PostSectionWithMenu from '@src/components/molecules/PostSectionWithMenu';
+import PostSectionWithMenu from '@src/components/organisms/PostsContainerWithMenu';
 import CategoryMenu from '@src/components/atoms/CategoryMenu';
-import { Notice } from '@src/components/layouts/MyBlogLayout/styled';
+import Notice from '@src/components/atoms/Notice';
 
 const Category = () => {
   const [searchParams, setSearchParams] = useSearchParams();

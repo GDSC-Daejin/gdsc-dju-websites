@@ -1,6 +1,7 @@
 import Cookies from 'js-cookie';
 import { useQuery } from 'react-query';
 import UserService from '../UserService';
+import { getMyToken } from '@src/api/hooks/useGetNewToken';
 
 export const getMyData = async (token: string) => {
   const response = await UserService.getMyData(token);
@@ -15,8 +16,16 @@ export const useGetMyData = () => {
     [`${token}-userdata`],
     () => getMyData(token!),
     {
+      suspense: true,
       enabled: isEnabled,
       retry: 1,
+      onError: async () => {
+        if (token && refresh_token) {
+          const newToken = await getMyToken(refresh_token, token);
+          if (!newToken) return;
+          Cookies.set('token', newToken);
+        }
+      },
     },
   );
 

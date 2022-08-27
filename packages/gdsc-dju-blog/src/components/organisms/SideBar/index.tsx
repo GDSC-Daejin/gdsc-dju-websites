@@ -19,7 +19,6 @@ export const SideBar = () => {
   const [menu, setMenu] = useRecoilState(menuState);
 
   const [cookies] = useCookies(['token', 'refresh_token', 'user']);
-  const { myData } = useGetMyData();
 
   useEffect(() => {
     document.body.style.cssText = `
@@ -46,7 +45,6 @@ export const SideBar = () => {
           <SideBarDesign>
             {cookies.token && cookies.refresh_token ? (
               <SideBarLogin
-                userData={myData}
                 closeSideBar={() =>
                   setMenu({ ...menu, [MENU_KEY.APP_MENU]: false })
                 }
