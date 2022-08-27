@@ -1,7 +1,6 @@
 {
   "name": "gdsc-dju-blog",
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "start": "vite --host",
     "dev": "vite",
@@ -54,7 +53,12 @@
     "@types/styled-components": "^5.1.15",
     "@vitejs/plugin-react": "^1.3.0",
     "autoprefixer": "^10.4.4",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
     "prettier": "^2.6.2",
+    "react-router-sitemap": "^1.2.0",
     "typescript": "^4.6.3",
     "vite": "^3.0.1"
   }
