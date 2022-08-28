@@ -1,4 +1,8 @@
-import React, { memo, useCallback, useEffect } from 'react';
+import { useGetPostsData } from '@src/api/hooks/useGetPostsData';
+import CategoryMenu from '@src/components/atoms/CategoryMenu';
+import PagingPostsContainer from '@src/components/organisms/PagingPostsContainer';
+import { LayoutContainer } from '@styles/layouts';
+import React, { memo, useEffect } from 'react';
 import {
   createSearchParams,
   useNavigate,
@@ -11,11 +15,6 @@ import {
   PostLayoutWrapper,
   PostSectionWrapper,
 } from './styled';
-import { useGetPostsData } from '@src/api/hooks/useGetPostsData';
-import { LayoutContainer } from '@styles/layouts';
-import PostSectionWithMenu from '@src/components/organisms/PagingPostsContainer';
-import CategoryMenu from '@src/components/atoms/CategoryMenu';
-import Notice from '@src/components/atoms/Notice';
 
 const Category = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -51,7 +50,7 @@ const Category = () => {
           <CategoryMenu type={category} onClick={categoryHandler} />
           <PostSectionWrapper>
             {postListData && (
-              <PostSectionWithMenu
+              <PagingPostsContainer
                 postData={postListData.content}
                 totalPage={postListData.totalPages || 0}
                 currentPage={page}

@@ -4,7 +4,7 @@ import {
   ScrapSectionWrapper,
 } from '@pages/MyBlog/MyScrap/styled';
 import CategoryMenu from '@src/components/atoms/CategoryMenu';
-import PostSectionWithMenu from '@src/components/organisms/PagingPostsContainer';
+import PagingPostsContainer from '@src/components/organisms/PagingPostsContainer';
 import { PostListResponse } from '@type/postData';
 
 interface Props {
@@ -25,7 +25,7 @@ const MyScrapLayout = ({
       <ScrapSectionInner>
         <CategoryMenu type={category} onClick={categoryHandler} />
         {scrapData && (
-          <PostSectionWithMenu
+          <PagingPostsContainer
             isEmpty={scrapData.empty}
             postData={scrapData.content}
             currentPage={page}

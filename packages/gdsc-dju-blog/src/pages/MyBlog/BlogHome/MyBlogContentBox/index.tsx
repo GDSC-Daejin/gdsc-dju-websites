@@ -1,6 +1,6 @@
 import React from 'react';
 import { useGetUserPostsNotTempData } from '@src/api/hooks/useGetUserPostNotTempData';
-import WidthPostsContainerWithMenu from '@src/components/organisms/PagingWidthPostsContainer';
+import PagingWidthPostsContainer from '@src/components/organisms/PagingWidthPostsContainer';
 
 interface Props {
   category: string;
@@ -18,7 +18,7 @@ const MyBlogContentBox = ({ category, page, userId }: Props) => {
   return (
     <div>
       {userPostNotTempData && (
-        <WidthPostsContainerWithMenu
+        <PagingWidthPostsContainer
           postListResponse={userPostNotTempData}
           currentPage={page}
         />

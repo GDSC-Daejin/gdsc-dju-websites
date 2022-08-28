@@ -1,9 +1,9 @@
-import React, { Suspense } from 'react';
-import { PostSavesTitle } from '@pages/PostSaves/styled';
-import WidthPostsContainerWithMenu from '@src/components/organisms/PagingWidthPostsContainer';
-import { useGetMyPostsTempData } from '@src/api/hooks/useGetMyPostsTempData';
 import PostSavesMenuBox from '@pages/PostSaves/PostSavesMenuBox';
+import { PostSavesTitle } from '@pages/PostSaves/styled';
+import { useGetMyPostsTempData } from '@src/api/hooks/useGetMyPostsTempData';
 import { PostSavesLayoutContainer } from '@src/components/layouts/PostSavesLayout/styled';
+import PagingWidthPostsContainer from '@src/components/organisms/PagingWidthPostsContainer';
+import React from 'react';
 
 interface Props {
   category: string;
@@ -17,7 +17,7 @@ const PostSavesLayout = ({ category, page, categoryHandler }: Props) => {
     <PostSavesLayoutContainer>
       <PostSavesTitle>임시 저장된 글</PostSavesTitle>
       <PostSavesMenuBox category={category} categoryHandler={categoryHandler} />
-      <WidthPostsContainerWithMenu
+      <PagingWidthPostsContainer
         postListResponse={userPostTempData}
         currentPage={page}
       />
