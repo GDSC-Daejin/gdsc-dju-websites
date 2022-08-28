@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useState } from 'react';
-import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
+import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router';
 
@@ -51,7 +51,7 @@ const PostCard: React.FC<Props> = ({ postData, isScrap }) => {
   const removedMarkDownContent = removeMarkdownInContent(postData.content);
 
   return (
-    <AnimateSharedLayout>
+    <LayoutGroup>
       <PostCardInner onClick={linkToPost}>
         {/* 북마크 */}
         <BookMarkWrapper onClick={(e) => bookMarkHandler(e)}>
@@ -116,7 +116,7 @@ const PostCard: React.FC<Props> = ({ postData, isScrap }) => {
           </PostCardSubTextWrapper>
         </PostCardBottomBox>
       </PostCardInner>
-    </AnimateSharedLayout>
+    </LayoutGroup>
   );
 };
 

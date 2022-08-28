@@ -4,30 +4,30 @@ import { useGetGuestData } from '@src/api/hooks/useGetUserData';
 import { useGetMyData } from '@src/api/hooks/useGetMyData';
 import MyBlogProfileBox from '@pages/MyBlog/BlogHome/MyBlogProfileBox';
 import MyBlogMenuBox from '@pages/MyBlog/BlogHome/MyBlogMenuBox';
-import MyBlogContentBox from '@pages/MyBlog/BlogHome/MyBlogContentBox';
+
 import { MyBlogLayoutContainer } from '@src/components/layouts/MyBlogLayout/styled';
+import MyBlogContentBox from '@pages/MyBlog/BlogHome/MyBlogContentBox';
 
-interface Props {
-  category: string;
-  page: number;
-}
-
-const MyBlogLayout = ({ category, page }: Props) => {
+const MyBlogLayout = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { nickname } = useParams<{ nickname: string }>();
   const { guestData } = useGetGuestData(nickname!);
   const { myData } = useGetMyData();
+  const category = searchParams.get('type') ?? 'all';
+  const page = searchParams.get('page') ?? '1';
   const categoryHandler = (category: string) => {
     if (!category) return;
     setSearchParams({
+      ...searchParams,
       type: category,
-      page: page.toString(),
     });
   };
 
   return (
     <MyBlogLayoutContainer>
-      <MyBlogProfileBox guestData={guestData} />
+      <Suspense fallback={<div>profile</div>}>
+        <MyBlogProfileBox guestData={guestData} />
+      </Suspense>
       <Suspense fallback={<div>menu</div>}>
         <MyBlogMenuBox
           isGuest={myData?.role === 'GUEST'}
@@ -35,12 +35,12 @@ const MyBlogLayout = ({ category, page }: Props) => {
           category={category}
         />
       </Suspense>
-      <Suspense>
-        {category && guestData && (
+      <Suspense fallback={<div>posts loading</div>}>
+        {guestData && (
           <MyBlogContentBox
             category={category}
-            userId={guestData.userId}
-            page={page}
+            userId={guestData?.userId}
+            page={parseInt(page)}
           />
         )}
       </Suspense>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import Category from '../pages/Category';
@@ -15,19 +15,21 @@ import ComponentLayout from './ComponentLayout';
 const Layout = () => {
   return (
     <ComponentLayout>
-      <Routes>
-        <Route path={'/*'} element={<Home />} />
-        <Route path={'/:nickname/*'} element={<MyBlog />} />
-        <Route path={'/post'} element={<Post />} />
-        <Route path={'/post/write'} element={<PostWrite />} />
-        <Route path={'/post/edit/:id'} element={<PostWrite />} />
-        <Route path={'/category/*'} element={<Category />} />
-        <Route path={'/category/:categoryName'} element={<Category />} />
-        <Route path={'/signup'} element={<SignUp />} />
-        <Route path={'/redirect'} element={<OauthRedirectPage />} />
-        <Route path={'/search/:postContent'} element={<SearchResult />} />
-        <Route path={'/post/saves'} element={<PostSaves />} />
-      </Routes>
+      <Suspense>
+        <Routes>
+          <Route path={'/*'} element={<Home />} />
+          <Route path={'/:nickname/*'} element={<MyBlog />} />
+          <Route path={'/post'} element={<Post />} />
+          <Route path={'/post/write'} element={<PostWrite />} />
+          <Route path={'/post/edit/:id'} element={<PostWrite />} />
+          <Route path={'/category/*'} element={<Category />} />
+          <Route path={'/category/:categoryName'} element={<Category />} />
+          <Route path={'/signup'} element={<SignUp />} />
+          <Route path={'/redirect'} element={<OauthRedirectPage />} />
+          <Route path={'/search/:postContent'} element={<SearchResult />} />
+          <Route path={'/post/saves'} element={<PostSaves />} />
+        </Routes>
+      </Suspense>
     </ComponentLayout>
   );
 };

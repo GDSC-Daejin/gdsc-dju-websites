@@ -45,7 +45,7 @@ const SideMenuLogin: React.FC<{
   };
 
   return (
-    <Suspense fallback={<div>asds</div>}>
+    <Suspense fallback={<div>loading</div>}>
       {myData && (
         <>
           <ProfileImageWrapper>
@@ -77,7 +77,7 @@ const SideMenuLogin: React.FC<{
               size={'large'}
               text="내 블로그"
               onClick={() => {
-                navigate(`/${myData.memberInfo.nickname}`);
+                navigate(`/${myData.memberInfo.nickname}?type=all&page=1`);
                 closeSideMenu();
               }}
             />

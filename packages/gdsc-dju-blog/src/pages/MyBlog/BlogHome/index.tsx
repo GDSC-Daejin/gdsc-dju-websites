@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { ContainerInner, LayoutContainer } from '@styles/layouts';
 import MyBlogLayout from '@src/components/layouts/MyBlogLayout';
@@ -9,28 +9,21 @@ const BlogHome = () => {
 
   const pageParams = searchParams.get('page');
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!pageParams && !categoryParams) {
       setSearchParams({
         type: 'all',
         page: '1',
       });
     }
-  }, []);
+  }, [pageParams, categoryParams]);
 
   return (
-    <>
-      <LayoutContainer>
-        <ContainerInner>
-          {categoryParams && pageParams && (
-            <MyBlogLayout
-              category={categoryParams}
-              page={parseInt(pageParams)}
-            />
-          )}
-        </ContainerInner>
-      </LayoutContainer>
-    </>
+    <LayoutContainer>
+      <ContainerInner>
+        <MyBlogLayout />
+      </ContainerInner>
+    </LayoutContainer>
   );
 };
 

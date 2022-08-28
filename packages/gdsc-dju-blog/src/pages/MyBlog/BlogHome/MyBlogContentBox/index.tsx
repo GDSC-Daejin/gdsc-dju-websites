@@ -1,7 +1,6 @@
 import React from 'react';
 import { useGetUserPostsNotTempData } from '@src/api/hooks/useGetUserPostNotTempData';
 import WidthPostsContainerWithMenu from '@src/components/organisms/WidthPostsContainerWithMenu';
-import { MyBlogContentWrapper } from '@pages/MyBlog/BlogHome/MyBlogContentBox/styled';
 
 interface Props {
   category: string;
@@ -17,14 +16,14 @@ const MyBlogContentBox = ({ category, page, userId }: Props) => {
     6,
   );
   return (
-    <MyBlogContentWrapper>
+    <div>
       {userPostNotTempData && (
         <WidthPostsContainerWithMenu
           postListResponse={userPostNotTempData}
           currentPage={page}
         />
       )}
-    </MyBlogContentWrapper>
+    </div>
   );
 };
 
