@@ -9,8 +9,8 @@ export const getMyData = async (token: string) => {
 };
 
 export const useGetMyData = () => {
-  const { newToken } = useGetNewToken();
-  const token = newToken ?? Cookies.get('token');
+  const { newToken, isSuccess } = useGetNewToken();
+  const token = isSuccess ? newToken : newToken ?? Cookies.get('token');
   const refresh_token = Cookies.get('refresh_token');
   const isEnabled = !!(token && refresh_token);
 

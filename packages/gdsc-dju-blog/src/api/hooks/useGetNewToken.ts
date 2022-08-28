@@ -13,7 +13,7 @@ export const useGetNewToken = () => {
   const token = Cookies.get('token');
   const refresh_token = Cookies.get('refresh_token');
   const isEnabled = !!(token && refresh_token);
-  const { data: newToken } = useQuery(
+  const { data: newToken, isSuccess } = useQuery(
     [`${token}-newToken`],
     () => getMyToken(refresh_token!, token!),
     {
@@ -23,5 +23,5 @@ export const useGetNewToken = () => {
     },
   );
 
-  return { newToken: newToken && newToken };
+  return { newToken: newToken && newToken, isSuccess };
 };
