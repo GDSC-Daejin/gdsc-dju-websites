@@ -21,17 +21,15 @@ const PostSaves = () => {
   const categoryHandler = (category: string) =>
     setSearchParams({ ...searchParams, type: category });
   return (
-    <>
-      <LayoutContainer>
-        <ContainerInner>
-          <PostSavesLayout
-            page={page}
-            category={category}
-            categoryHandler={categoryHandler}
-          />
-        </ContainerInner>
-      </LayoutContainer>
-    </>
+    <LayoutContainer>
+      <ContainerInner>
+        <PostSavesLayout
+          page={page}
+          category={category}
+          categoryHandler={categoryHandler}
+        />
+      </ContainerInner>
+    </LayoutContainer>
   );
 };
 
