@@ -4,7 +4,7 @@ import {
   ScrapSectionWrapper,
 } from '@pages/MyBlog/MyScrap/styled';
 import CategoryMenu from '@src/components/atoms/CategoryMenu';
-import PostSectionWithMenu from '@src/components/organisms/PostsContainerWithMenu';
+import PostSectionWithMenu from '@src/components/organisms/PagingPostsContainer';
 import { PostListResponse } from '@type/postData';
 
 interface Props {

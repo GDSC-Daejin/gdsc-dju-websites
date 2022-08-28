@@ -12,7 +12,7 @@ interface Props {
   isEmpty: boolean;
 }
 
-const PostsContainerWithMenu = ({
+const PagingPostsContainer = ({
   postData,
   currentPage,
   totalPage,
@@ -36,4 +36,4 @@ const PostsContainerWithMenu = ({
   );
 };
 
-export default PostsContainerWithMenu;
+export default PagingPostsContainer;

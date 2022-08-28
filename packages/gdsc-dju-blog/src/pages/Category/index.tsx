@@ -13,7 +13,7 @@ import {
 } from './styled';
 import { useGetPostsData } from '@src/api/hooks/useGetPostsData';
 import { LayoutContainer } from '@styles/layouts';
-import PostSectionWithMenu from '@src/components/organisms/PostsContainerWithMenu';
+import PostSectionWithMenu from '@src/components/organisms/PagingPostsContainer';
 import CategoryMenu from '@src/components/atoms/CategoryMenu';
 import Notice from '@src/components/atoms/Notice';
 

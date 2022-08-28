@@ -12,7 +12,7 @@ import { GDSCButton } from '@src/components/atoms/Button';
 import { useGetMyData } from '@src/api/hooks/useGetMyData';
 import { ContainerInner, LayoutContainer } from '@styles/layouts';
 
-import WidthPostsContainerWithMenu from '@src/components/organisms/WidthPostsContainerWithMenu';
+import WidthPostsContainerWithMenu from '@src/components/organisms/PagingWidthPostsContainer';
 import PostSavesLayout from '@src/components/layouts/PostSavesLayout';
 
 const PostSaves = () => {

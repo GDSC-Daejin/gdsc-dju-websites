@@ -5,7 +5,7 @@ import { PostListResponse } from '@type/postData';
 import {
   CategoryContainer,
   PageBarWrapper,
-} from '@src/components/organisms/PostsContainerWithMenu/styled';
+} from '@src/components/organisms/PagingPostsContainer/styled';
 import Notice from '@src/components/atoms/Notice';
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
   postListResponse: PostListResponse | undefined;
 }
 
-const WidthPostsContainerWithMenu = ({
+const PagingWidthPostsContainer = ({
   postListResponse,
   currentPage,
 }: Props) => {
@@ -40,4 +40,4 @@ const WidthPostsContainerWithMenu = ({
   );
 };
 
-export default WidthPostsContainerWithMenu;
+export default PagingWidthPostsContainer;

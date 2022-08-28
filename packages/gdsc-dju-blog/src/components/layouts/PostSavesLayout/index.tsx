@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { PostSavesTitle } from '@pages/PostSaves/styled';
-import WidthPostsContainerWithMenu from '@src/components/organisms/WidthPostsContainerWithMenu';
+import WidthPostsContainerWithMenu from '@src/components/organisms/PagingWidthPostsContainer';
 import { useGetMyPostsTempData } from '@src/api/hooks/useGetMyPostsTempData';
 import PostSavesMenuBox from '@pages/PostSaves/PostSavesMenuBox';
 import { PostSavesLayoutContainer } from '@src/components/layouts/PostSavesLayout/styled';

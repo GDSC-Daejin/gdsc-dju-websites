@@ -1,6 +1,6 @@
 import React from 'react';
 import { useGetUserPostsNotTempData } from '@src/api/hooks/useGetUserPostNotTempData';
-import WidthPostsContainerWithMenu from '@src/components/organisms/WidthPostsContainerWithMenu';
+import WidthPostsContainerWithMenu from '@src/components/organisms/PagingWidthPostsContainer';
 
 interface Props {
   category: string;
