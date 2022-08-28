@@ -3,23 +3,27 @@ import React, { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import { useRecoilState } from 'recoil';
 
-import SideBarCategory from './SideBarCategory';
-import SideBarLogin from './SideBarLogin';
-import SideBarLogout from './SideBarLogout';
-import { GrayBox, SideBarDesign, SideBarInner, SideBarWrapper } from './styled';
+import {
+  GrayBox,
+  SideMenuDesign,
+  SideMenuInner,
+  SideMenuWrapper,
+} from './styled';
 import { MENU_KEY, menuState } from '@src/store/menu';
 import {
-  SideBarAnimation,
-  SideBarGrayBoxAnimation,
+  SideMenuAnimation,
+  SideMenuGrayBoxAnimation,
 } from '@src/components/Animation';
-import { useGetMyData } from '@src/api/hooks/useGetMyData';
 import TokenService from '@src/api/TokenService';
+import SideMenuLogin from './SideMenuLogin';
+import SideMenuLogout from './SideMenuLogout';
+import SideMenuCategory from './SideMenuCategory';
 
-export const SideBar = () => {
+export const SideMenu = () => {
   const [menu, setMenu] = useRecoilState(menuState);
 
   const [cookies] = useCookies(['token', 'refresh_token', 'user']);
-
+  const isLogin = cookies.token && cookies.refresh_token;
   useEffect(() => {
     document.body.style.cssText = `
     position: fixed; 
@@ -36,30 +40,30 @@ export const SideBar = () => {
 
   return (
     <>
-      <SideBarWrapper
+      <SideMenuWrapper
         initial={false}
-        variants={SideBarAnimation}
+        variants={SideMenuAnimation}
         animate={menu.appMenu ? 'isActive' : 'isUnActive'}
       >
-        <SideBarInner>
-          <SideBarDesign>
-            {cookies.token && cookies.refresh_token ? (
-              <SideBarLogin
-                closeSideBar={() =>
+        <SideMenuInner>
+          <SideMenuDesign>
+            {isLogin ? (
+              <SideMenuLogin
+                closeSideMenu={() =>
                   setMenu({ ...menu, [MENU_KEY.APP_MENU]: false })
                 }
               />
             ) : (
-              <SideBarLogout loginURL={TokenService.getRedirectURL()} />
+              <SideMenuLogout loginURL={TokenService.getRedirectURL()} />
             )}
-            <SideBarCategory />
-          </SideBarDesign>
-        </SideBarInner>
-      </SideBarWrapper>
+            <SideMenuCategory />
+          </SideMenuDesign>
+        </SideMenuInner>
+      </SideMenuWrapper>
       <AnimatePresence>
         {menu.appMenu && (
           <GrayBox
-            variants={SideBarGrayBoxAnimation}
+            variants={SideMenuGrayBoxAnimation}
             animate={'isActive'}
             exit={'isUnActive'}
             onClick={() => {
@@ -72,4 +76,4 @@ export const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default SideMenu;

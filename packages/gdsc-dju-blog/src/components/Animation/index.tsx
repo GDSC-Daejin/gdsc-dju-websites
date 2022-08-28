@@ -11,7 +11,7 @@ export const circleMotion = {
   },
 };
 
-export const SideBarAnimation = {
+export const SideMenuAnimation = {
   isActive: {
     x: 0,
     transition: {
@@ -26,7 +26,7 @@ export const SideBarAnimation = {
   },
 };
 
-export const SideBarCircleAnimation = {
+export const SideMenuCircleAnimation = {
   isActive: {
     opacity: 1,
     x: 0,
@@ -36,7 +36,7 @@ export const SideBarCircleAnimation = {
     opacity: 0,
   },
 };
-export const SideBarGrayBoxAnimation = {
+export const SideMenuGrayBoxAnimation = {
   isActive: {
     display: 'block',
     opacity: 0.6,

@@ -18,9 +18,9 @@ import { useCookies } from 'react-cookie';
 import SettingIcon from '@assets/icons/SettingIcon';
 import { useGetMyData } from '@src/api/hooks/useGetMyData';
 
-const SideBarLogin: React.FC<{
-  closeSideBar: () => void;
-}> = ({ closeSideBar }) => {
+const SideMenuLogin: React.FC<{
+  closeSideMenu: () => void;
+}> = ({ closeSideMenu }) => {
   const navigate = useNavigate();
   const [TokenCookies, setTokenCookie, removeTokenCookie] = useCookies([
     'token',
@@ -66,7 +66,7 @@ const SideBarLogin: React.FC<{
             <SettingIconWrapper
               onClick={() => {
                 navigate(`/${myData.memberInfo.nickname}/edit`);
-                closeSideBar();
+                closeSideMenu();
               }}
             >
               <SettingIcon />
@@ -78,7 +78,7 @@ const SideBarLogin: React.FC<{
               text="내 블로그"
               onClick={() => {
                 navigate(`/${myData.memberInfo.nickname}`);
-                closeSideBar();
+                closeSideMenu();
               }}
             />
           </MyBlogButtonWrapper>
@@ -89,7 +89,7 @@ const SideBarLogin: React.FC<{
                 disable={postBlock}
                 onClick={() => {
                   !postBlock && navigate(`/post/write`);
-                  !postBlock && closeSideBar();
+                  !postBlock && closeSideMenu();
                 }}
               />
             </WriteButtonWrapper>
@@ -103,4 +103,4 @@ const SideBarLogin: React.FC<{
   );
 };
 
-export default SideBarLogin;
+export default SideMenuLogin;

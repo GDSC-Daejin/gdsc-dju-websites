@@ -3,15 +3,6 @@ import styled from 'styled-components';
 export const SearchInputWrapper = styled.div`
   display: flex;
   position: relative;
-  & svg {
-    cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 8px;
-    &:hover {
-      fill: ${({ theme }) => theme.colors.grey300};
-    }
-  }
 `;
 
 export const Search = styled.input`
@@ -31,5 +22,18 @@ export const Search = styled.input`
   }
   &::placeholder {
     color: ${({ theme }) => theme.colors.grey300};
+  }
+`;
+export const SearchIconWrapper = styled.div`
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 5px;
+  right: 14px;
+  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
+    position: static;
   }
 `;

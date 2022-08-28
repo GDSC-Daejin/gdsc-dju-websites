@@ -28,7 +28,7 @@ export const SideCategoryTextWrapper = styled(motion.div)<{
   margin-bottom: 24px;
   transition: all 0.3s ease-in-out;
   &:hover {
-    .sideBarText {
+    .SideMenuText {
       border-bottom: 1px solid ${({ theme }) => theme.colors.grey900};
       transform: translateX(10px);
       color: ${({ theme }) => theme.colors.grey900};
@@ -65,7 +65,7 @@ export const SideCategoryCircle = styled.div<{
       background: ${color};
     `}
 `;
-export const SideBarGDSCLogoWrapper = styled(motion.div)`
+export const SideMenuGDSCLogoWrapper = styled(motion.div)`
   position: absolute;
   left: -6px;
   top: -1px;

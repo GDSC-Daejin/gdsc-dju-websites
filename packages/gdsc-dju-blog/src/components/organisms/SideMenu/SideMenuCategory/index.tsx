@@ -3,21 +3,21 @@ import { useLocation, useNavigate } from 'react-router';
 import { useRecoilState } from 'recoil';
 
 import {
-  SideBarGDSCLogoWrapper,
   SideCategoryCircle,
   SideCategoryCircleWrapper,
   SideCategoryMenuWrapper,
   SideCategoryText,
   SideCategoryTextWrapper,
+  SideMenuGDSCLogoWrapper,
 } from './styled';
-import { SideBarCircleAnimation } from '@src/components/Animation';
+import { SideMenuCircleAnimation } from '@src/components/Animation';
 import { MENU_KEY, menuState } from '@src/store/menu';
 import { positionColor } from '@src/store/positionColor';
 
 import GdscLogo from '@assets/logos/GdscLogo';
 import { category } from '@type/position';
 
-const SideBarCategory = () => {
+const SideMenuCategory = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [menu, setMenu] = useRecoilState(menuState);
@@ -40,20 +40,20 @@ const SideBarCategory = () => {
             }}
           >
             <SideCategoryCircleWrapper
-              variants={SideBarCircleAnimation}
+              variants={SideMenuCircleAnimation}
               animate={animate(categoryValue) ? 'isActive' : 'isUnActive'}
             >
               {categoryValue === 'all' ? (
-                <SideBarGDSCLogoWrapper>
+                <SideMenuGDSCLogoWrapper>
                   <GdscLogo />
-                </SideBarGDSCLogoWrapper>
+                </SideMenuGDSCLogoWrapper>
               ) : (
                 <SideCategoryCircle color={positionColor(categoryValue)} />
               )}
             </SideCategoryCircleWrapper>
             <SideCategoryText
               isActive={animate(categoryValue)}
-              className={'sideBarText'}
+              className={'SideMenuText'}
             >
               {data}
             </SideCategoryText>
@@ -64,4 +64,4 @@ const SideBarCategory = () => {
   );
 };
 
-export default SideBarCategory;
+export default SideMenuCategory;

@@ -12,7 +12,7 @@ import {
 import GdscBlogLogo from '../../../assets/logos/GdscBlogLogo';
 import { useNavigate } from 'react-router';
 import MenuToggleIcon from '@src/components/atoms/MenuToggleIcon';
-import SideBar from '@src/components/organisms/SideBar';
+import SideBar from '@src/components/organisms/SideMenu';
 import SearchInput from '@src/components/atoms/input/SearchInput';
 
 function Navigation() {

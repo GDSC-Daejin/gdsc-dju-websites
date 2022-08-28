@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-export const SideBarWrapper = styled(motion.div)`
+export const SideMenuWrapper = styled(motion.div)`
   display: flex;
   position: fixed;
   z-index: 1009;
@@ -14,7 +14,7 @@ export const SideBarWrapper = styled(motion.div)`
     height: 100vh;
   }
 `;
-export const SideBarInner = styled(motion.aside)`
+export const SideMenuInner = styled(motion.aside)`
   width: 100%;
   height: 100%;
   background-color: ${({ theme }) => theme.colors.white};
@@ -38,14 +38,13 @@ export const GrayBox = styled(motion.div)`
   left: 0;
   z-index: 1000;
 `;
-export const SideBarDesign = styled.div`
+export const SideMenuDesign = styled.div`
   display: flex;
   flex-direction: column;
   white-space: nowrap;
 `;
 export const ProfileImageWrapper = styled.div`
   display: flex;
-  margin-top: 60px;
   margin-left: 20px;
   margin-bottom: 24px;
   @media screen and (max-width: 500px) {

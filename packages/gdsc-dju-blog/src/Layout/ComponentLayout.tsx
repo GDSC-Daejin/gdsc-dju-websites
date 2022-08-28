@@ -6,7 +6,7 @@ import GoogleLoader from '@src/components/atoms/GoogleLoader';
 import { loaderState } from '@src/store/loader';
 
 import Modal from '@src/components/molecules/modal';
-import SideBar from '@src/components/organisms/SideBar';
+import SideBar from '@src/components/organisms/SideMenu';
 import GlobalStyles from '@styles/globalStyles';
 import { NavigationBlock } from '@styles/layouts';
 import { getMyToken } from '@src/api/hooks/useGetNewToken';
