@@ -1,35 +1,21 @@
-import { AnimatePresence } from 'framer-motion';
-import React, { useEffect } from 'react';
-import { useRecoilState } from 'recoil';
 import Alert from '@src/components/atoms/Alert';
 import GoogleLoader from '@src/components/atoms/GoogleLoader';
-import { loaderState } from '@src/store/loader';
 
 import Modal from '@src/components/molecules/modal';
+import Footer from '@src/components/organisms/Footer';
+import Navigation from '@src/components/organisms/Navigation';
 import SideBar from '@src/components/organisms/SideMenu';
+import { loaderState } from '@src/store/loader';
 import GlobalStyles from '@styles/globalStyles';
 import { NavigationBlock } from '@styles/layouts';
-import { getMyToken } from '@src/api/hooks/useGetNewToken';
-import Cookies from 'js-cookie';
-import Navigation from '@src/components/organisms/Navigation';
-import Footer from '@src/components/organisms/Footer';
+import { AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { useRecoilState } from 'recoil';
 
 const ComponentLayout: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [loader] = useRecoilState(loaderState);
-  const token = Cookies.get('token');
-  const refresh_token = Cookies.get('refresh_token');
-
-  useEffect(() => {
-    (async () => {
-      if (token && refresh_token) {
-        const newToken = await getMyToken(refresh_token, token);
-        if (!newToken) return;
-        Cookies.set('token', newToken);
-      }
-    })();
-  }, [token, refresh_token]);
 
   return (
     <div>

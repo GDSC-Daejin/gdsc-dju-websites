@@ -111,7 +111,7 @@ const PostCard: React.FC<Props> = ({ postData, isScrap }) => {
                 </PostCardAuthorWrapper>
               )}
             <PostCardSubText subText={true}>
-              {dateFilter(postData.category.uploadDate)}
+              {dateFilter(postData.uploadDate)}
             </PostCardSubText>
           </PostCardSubTextWrapper>
         </PostCardBottomBox>

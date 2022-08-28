@@ -13,9 +13,11 @@ export default function OauthRedirectPage() {
   const setCookieData = () => {
     setCookies('token', token, {
       path: '/',
+      expires: new Date(Date.now() + 3600 * 1000),
     });
     setCookies('refresh_token', refresh_token, {
       path: '/',
+      expires: new Date(Date.now() + 3600 * 1000),
     });
   };
 

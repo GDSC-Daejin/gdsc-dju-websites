@@ -28,6 +28,7 @@ const SideMenuLogin: React.FC<{
   ]);
 
   const { myData } = useGetMyData();
+
   const postBlock = myData?.role === 'GUEST';
 
   const handleLogout = () => {

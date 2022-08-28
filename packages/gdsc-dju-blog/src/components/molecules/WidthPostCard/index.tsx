@@ -55,7 +55,7 @@ const WidthPostCard: React.FC<Props> = ({ postData, isScrap }) => {
         <WidthPostCardImage src={postData.imagePath ?? MockPostImage} />
       </WidthPostCardImageWrapper>
       <WidthPostCardContentWrapper hover={hover}>
-        <PostDate>{dateFilter(postData.category.uploadDate)}</PostDate>
+        <PostDate>{dateFilter(postData.uploadDate)}</PostDate>
         <PostTitle>{postData.title}</PostTitle>
         {postData.postHashTags && (
           <PostHashTageSection>
