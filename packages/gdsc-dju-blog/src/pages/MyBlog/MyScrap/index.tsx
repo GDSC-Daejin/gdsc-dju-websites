@@ -24,22 +24,8 @@ const MyScrap = () => {
     }
   }, []);
 
-  const pageHandler = useCallback((page: number, limit?: number) => {
-    if (page < 1) return;
-    if (page === limit) return;
-    else {
-      setSearchParams({
-        type: category,
-        page: page.toString(),
-      });
-    }
-  }, []);
-
   const categoryHandler = (category: string) =>
-    setSearchParams({
-      type: category,
-      page: page.toString(),
-    });
+    setSearchParams({ ...searchParams, type: category });
 
   return (
     <LayoutContainer>
@@ -48,7 +34,6 @@ const MyScrap = () => {
           page={page}
           category={category}
           scrapData={scrapData}
-          pageHandler={pageHandler}
           categoryHandler={categoryHandler}
         />
       </ContainerInner>

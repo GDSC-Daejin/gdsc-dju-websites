@@ -5,8 +5,8 @@ import { useRecoilState } from 'recoil';
 
 import {
   GrayBox,
-  SideMenuDesign,
   SideMenuInner,
+  SideMenuSectionWrapper,
   SideMenuWrapper,
 } from './styled';
 import { MENU_KEY, menuState } from '@src/store/menu';
@@ -46,7 +46,7 @@ export const SideMenu = () => {
         animate={menu.appMenu ? 'isActive' : 'isUnActive'}
       >
         <SideMenuInner>
-          <SideMenuDesign>
+          <SideMenuSectionWrapper>
             {isLogin ? (
               <SideMenuLogin
                 closeSideMenu={() =>
@@ -57,7 +57,7 @@ export const SideMenu = () => {
               <SideMenuLogout loginURL={TokenService.getRedirectURL()} />
             )}
             <SideMenuCategory />
-          </SideMenuDesign>
+          </SideMenuSectionWrapper>
         </SideMenuInner>
       </SideMenuWrapper>
       <AnimatePresence>

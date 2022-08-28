@@ -17,17 +17,6 @@ const MyBlogLayout = ({ category, page }: Props) => {
   const { nickname } = useParams<{ nickname: string }>();
   const { guestData } = useGetGuestData(nickname!);
   const { myData } = useGetMyData();
-
-  const pageHandler = (page: number, limit?: number) => {
-    if (page < 1) return;
-    if (page === limit) return;
-    else {
-      setSearchParams({
-        type: category,
-        page: page.toString(),
-      });
-    }
-  };
   const categoryHandler = (category: string) => {
     if (!category) return;
     setSearchParams({
@@ -38,25 +27,20 @@ const MyBlogLayout = ({ category, page }: Props) => {
 
   return (
     <MyBlogLayoutContainer>
-      <Suspense fallback={<div>프로필 로딩</div>}>
-        <MyBlogProfileBox guestData={guestData} />
-      </Suspense>
+      <MyBlogProfileBox guestData={guestData} />
       <Suspense fallback={<div>menu</div>}>
-        {category && myData && categoryHandler && (
-          <MyBlogMenuBox
-            isGuest={myData?.role === 'GUEST'}
-            categoryHandler={categoryHandler}
-            category={category}
-          />
-        )}
+        <MyBlogMenuBox
+          isGuest={myData?.role === 'GUEST'}
+          categoryHandler={categoryHandler}
+          category={category}
+        />
       </Suspense>
-      <Suspense fallback={<div>isLoading</div>}>
-        {guestData && (
+      <Suspense>
+        {category && guestData && (
           <MyBlogContentBox
             category={category}
             userId={guestData.userId}
             page={page}
-            pageHandler={pageHandler}
           />
         )}
       </Suspense>

@@ -17,6 +17,7 @@ export const Role = styled.p`
   color: ${({ theme }) => theme.colors.grey500};
   font-size: ${({ theme }) => theme.fontSize.body1};
   font-family: 'Google Sans', sans-serif;
+  text-transform: capitalize;
 `;
 export const BlogNameWrapper = styled.div`
   display: flex;
@@ -35,7 +36,6 @@ export const BlogName = styled.h2`
 `;
 export const BlogNamePosition = styled.p<{ color: string }>`
   font-size: ${({ theme }) => theme.fontSize.h5};
-
   font-family: 'Google Sans', sans-serif;
   position: relative;
   bottom: -7px;
@@ -65,25 +65,4 @@ export const ButtonWrapper = styled.div`
   height: min-content;
   flex-direction: row;
   justify-content: space-between;
-`;
-export const TopMenuWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 59px;
-`;
-export const PostSectionWrapper = styled.section`
-  margin-bottom: 110px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
-  min-height: 600px;
-`;
-
-export const PageBarSection = styled.section`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-bottom: 215px;
 `;

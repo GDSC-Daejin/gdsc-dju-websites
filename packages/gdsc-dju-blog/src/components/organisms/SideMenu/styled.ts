@@ -20,7 +20,6 @@ export const SideMenuInner = styled(motion.aside)`
   background-color: ${({ theme }) => theme.colors.white};
   display: flex;
   justify-content: center;
-
   @media screen and (max-width: 500px) {
     align-items: center;
     padding-top: 0;
@@ -38,10 +37,11 @@ export const GrayBox = styled(motion.div)`
   left: 0;
   z-index: 1000;
 `;
-export const SideMenuDesign = styled.div`
+export const SideMenuSectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   white-space: nowrap;
+  margin-top: 76px;
 `;
 export const ProfileImageWrapper = styled.div`
   display: flex;

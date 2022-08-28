@@ -11,7 +11,6 @@ interface Props {
   scrapData: PostListResponse | undefined;
   category: string;
   page: number;
-  pageHandler: (page: number, limit?: number) => void;
   categoryHandler: (category: string) => void;
 }
 
@@ -20,7 +19,6 @@ const MyScrapLayout = ({
   category,
   scrapData,
   categoryHandler,
-  pageHandler,
 }: Props) => {
   return (
     <ScrapSectionWrapper>
@@ -28,11 +26,10 @@ const MyScrapLayout = ({
         <CategoryMenu type={category} onClick={categoryHandler} />
         {scrapData && (
           <PostSectionWithMenu
+            isEmpty={scrapData.empty}
             postData={scrapData.content}
-            type={category}
             currentPage={page}
             totalPage={scrapData.totalPages}
-            pageHandler={pageHandler}
           />
         )}
       </ScrapSectionInner>

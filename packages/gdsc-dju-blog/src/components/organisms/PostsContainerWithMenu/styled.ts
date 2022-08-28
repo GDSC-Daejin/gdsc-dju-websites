@@ -7,7 +7,10 @@ export const PageBarWrapper = styled.div`
   justify-content: center;
 `;
 export const CategoryContainer = styled.div`
-  gap: 120px;
   display: flex;
   flex-wrap: wrap;
+  gap: 120px;
+  min-height: 600px;
+  height: 100%;
+  width: 100%;
 `;

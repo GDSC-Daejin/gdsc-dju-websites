@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BlogCard from '../BlogCard';
+import BlogCard from '../PostCard';
 
 import { BlogCardSection, BlogCardWrapper } from './styled';
 import { DetailPostDataType } from '@type/postData';

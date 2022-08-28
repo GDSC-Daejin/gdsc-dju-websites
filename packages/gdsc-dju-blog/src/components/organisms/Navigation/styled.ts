@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 export const NavTask = styled.li`
@@ -64,7 +65,7 @@ export const NavInner = styled.div`
   display: flex;
   align-items: center;
 `;
-export const StyledLogoWrapper = styled.a`
+export const StyledLogoWrapper = styled(Link)`
   display: flex;
   align-items: center;
   margin-left: 50px;

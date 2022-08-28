@@ -2,7 +2,7 @@ import PlusIcon from '@assets/icons/PlusIcon';
 import { useGetMyScrapList } from '@src/api/hooks/useGetMyScrapList';
 import { useGetPostsData } from '@src/api/hooks/useGetPostsData';
 import CategoryMenu from '@src/components/atoms/CategoryMenu';
-import BlogCard from '@src/components/molecules/BlogCard';
+import BlogCard from '@src/components/molecules/PostCard';
 import HomePhrase from '@src/components/molecules/HomePhrase';
 import React, { useEffect, useRef, useState } from 'react';
 

@@ -1,4 +1,4 @@
-import React, { FormEvent, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 
 import {
   NavDesign,
@@ -33,7 +33,7 @@ function Navigation() {
           <NavTaskWrapper>
             <NavTask>
               <MenuToggleIcon />
-              <StyledLogoWrapper href={'/'}>
+              <StyledLogoWrapper to={'/'}>
                 <GdscBlogLogo />
               </StyledLogoWrapper>
             </NavTask>

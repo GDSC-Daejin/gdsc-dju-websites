@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { Suspense, memo } from 'react';
 import {
   BlogName,
   BlogNamePosition,
@@ -29,42 +29,44 @@ const MyBlogProfileBox = ({ guestData }: Props) => {
 
   return (
     <ProfileWrapper>
-      {guestData && (
-        <>
-          <ProfileImageWrapper>
-            <ProfileImage
-              image={guestData.profileImageUrl}
-              position={guestData.positionType ?? 'NONE'}
-            />
-          </ProfileImageWrapper>
-          <ProfileDetailWrapper>
-            <Role>{guestData.role}</Role>
-            <BlogNameWrapper>
-              <BlogName>{guestData.nickname}</BlogName>
-              <BlogNamePosition
-                color={positionColor(guestData.positionType ?? undefined)}
-              >
-                &apos;s Blog
-              </BlogNamePosition>
-              <SettingIconWrapper onClick={() => navigate(`/profile/edit`)}>
-                <SettingIcon />
-              </SettingIconWrapper>
-            </BlogNameWrapper>
-            <IntroduceText>{guestData.introduce ?? ''}</IntroduceText>
-            <HashTageSection>
-              {guestData.hashTag ? (
-                hashTageSpreader(guestData.hashTag).map((tag, id) => (
-                  <HashTageWrapper key={id} light={false}>
-                    # {tag}
-                  </HashTageWrapper>
-                ))
-              ) : (
-                <Notice>해시태그가 없어요.</Notice>
-              )}
-            </HashTageSection>
-          </ProfileDetailWrapper>
-        </>
-      )}
+      <Suspense fallback={<div>프로필 로딩</div>}>
+        {guestData && (
+          <>
+            <ProfileImageWrapper>
+              <ProfileImage
+                image={guestData.profileImageUrl}
+                position={guestData.positionType ?? 'NONE'}
+              />
+            </ProfileImageWrapper>
+            <ProfileDetailWrapper>
+              <Role>{guestData.role.toLowerCase()}</Role>
+              <BlogNameWrapper>
+                <BlogName>{guestData.nickname}</BlogName>
+                <BlogNamePosition
+                  color={positionColor(guestData.positionType ?? undefined)}
+                >
+                  &apos;s Blog
+                </BlogNamePosition>
+                <SettingIconWrapper onClick={() => navigate(`/profile/edit`)}>
+                  <SettingIcon />
+                </SettingIconWrapper>
+              </BlogNameWrapper>
+              <IntroduceText>{guestData.introduce ?? ''}</IntroduceText>
+              <HashTageSection>
+                {guestData.hashTag ? (
+                  hashTageSpreader(guestData.hashTag).map((tag, id) => (
+                    <HashTageWrapper key={id} light={false}>
+                      # {tag}
+                    </HashTageWrapper>
+                  ))
+                ) : (
+                  <Notice align={false}>해시태그가 없어요.</Notice>
+                )}
+              </HashTageSection>
+            </ProfileDetailWrapper>
+          </>
+        )}
+      </Suspense>
     </ProfileWrapper>
   );
 };

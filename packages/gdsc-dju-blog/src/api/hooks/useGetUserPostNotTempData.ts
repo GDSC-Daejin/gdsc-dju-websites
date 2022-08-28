@@ -8,22 +8,23 @@ export async function getUserPostsNotTempData(userId: string, params: string) {
 }
 export function useGetUserPostsNotTempData(
   userId: string | undefined,
-  category: string,
+  category: string | undefined,
   page = 0,
   size: number,
 ) {
+  const isAble = userId && category;
   const { data: userPostNotTempData } = useQuery(
     [
       `
-    ${userId}/temp${userPostTempUrlFilter(category, page, size)}`,
+    ${userId}/temp${userPostTempUrlFilter(category!, page, size)}`,
     ],
     () =>
       getUserPostsNotTempData(
         userId!,
-        userPostTempUrlFilter(category, page, size),
+        userPostTempUrlFilter(category!, page, size),
       ),
     {
-      enabled: !!userId,
+      enabled: !!isAble,
       suspense: true,
     },
   );

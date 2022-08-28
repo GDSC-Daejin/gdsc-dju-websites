@@ -1,35 +1,38 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import PostsContainer from '@src/components/molecules/PostsContainer';
 import { DetailPostDataType } from '@type/postData';
 import { CategoryContainer, PageBarWrapper } from './styled';
 import PageBar from '@src/components/atoms/PageBar';
+import Notice from '@src/components/atoms/Notice';
 
 interface Props {
   postData: DetailPostDataType[];
-  type: string;
   currentPage: number;
   totalPage: number;
-  pageHandler: (page: number, limit?: number) => void;
+  isEmpty: boolean;
 }
 
 const PostsContainerWithMenu = ({
   postData,
-  type,
   currentPage,
   totalPage,
-  pageHandler,
+  isEmpty,
 }: Props) => {
   return (
-    <CategoryContainer>
-      <PostsContainer postData={postData} />
-      <PageBarWrapper>
-        <PageBar
-          currentPage={currentPage}
-          totalPage={totalPage || 0}
-          onClick={pageHandler}
-        />
-      </PageBarWrapper>
-    </CategoryContainer>
+    <Suspense fallback={<div>isLoading</div>}>
+      <CategoryContainer>
+        {isEmpty ? (
+          <Notice>작성된 글이 없어요!</Notice>
+        ) : (
+          <>
+            <PostsContainer postData={postData} />
+            <PageBarWrapper>
+              <PageBar currentPage={currentPage} totalPage={totalPage || 0} />
+            </PageBarWrapper>
+          </>
+        )}
+      </CategoryContainer>
+    </Suspense>
   );
 };
 

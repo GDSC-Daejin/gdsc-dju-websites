@@ -1,5 +1,6 @@
 import RightArrowIcon from '@assets/icons/RightArrowIcon';
 import React, { memo } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import LeftArrowIcon from '../../../assets/icons/LeftArrowIcon';
 
 import {
@@ -21,13 +22,20 @@ const circleMotion = {
     opacity: 0,
   },
 };
-const PageBar = (props: {
+
+interface Props {
   currentPage: number;
   totalPage: number;
-
-  onClick: (page: number, limit?: number) => void;
-}) => {
-  const { currentPage, totalPage, onClick } = props;
+}
+const PageBar = ({ currentPage, totalPage }: Props) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const pageHandler = (page: number, limit?: number) => {
+    if (page < 1) return;
+    if (page === limit) return;
+    else {
+      setSearchParams({ ...searchParams, page: page.toString() });
+    }
+  };
 
   const division = (array: number[], num: number) => {
     const length = array.length;
@@ -58,7 +66,7 @@ const PageBar = (props: {
   return (
     <PageBarWrapper>
       {totalPage !== 1 && (
-        <ArrowWrapper onClick={() => onClick(currentPage - 1)}>
+        <ArrowWrapper onClick={() => pageHandler(currentPage - 1)}>
           <LeftArrowIcon />
         </ArrowWrapper>
       )}
@@ -67,7 +75,7 @@ const PageBar = (props: {
           arrayPage.map((num, id) => (
             <NumberWrapper
               key={id}
-              onClick={() => onClick(num)}
+              onClick={() => pageHandler(num)}
               active={currentPage === num}
             >
               <NumberCircle
@@ -79,7 +87,9 @@ const PageBar = (props: {
           ))}
       </NumberSection>
       {totalPage !== 1 && (
-        <ArrowWrapper onClick={() => onClick(currentPage + 1, totalPage + 1)}>
+        <ArrowWrapper
+          onClick={() => pageHandler(currentPage + 1, totalPage + 1)}
+        >
           <RightArrowIcon />
         </ArrowWrapper>
       )}

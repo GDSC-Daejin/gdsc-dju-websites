@@ -23,9 +23,6 @@ const SearchResult = () => {
   const { postContent } = useParams();
   const { postListData } = useGetSearchPosts(postContent!);
   const page = searchParams.get('page');
-  const handleClick = (page: number) => {
-    setSearchParams(`page=${page}`);
-  };
 
   return (
     <LayoutContainer>
@@ -56,7 +53,6 @@ const SearchResult = () => {
                   <PageBar
                     currentPage={Number(page)}
                     totalPage={postListData.totalPages}
-                    onClick={handleClick}
                   />
                 </PageBarWrapper>
               )}

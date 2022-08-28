@@ -36,19 +36,6 @@ const Category = () => {
     }
   }, []);
 
-  const pageHandler = useCallback((page: number, limit?: number) => {
-    if (page < 1) return;
-    if (page === limit) return;
-    else {
-      navigate({
-        pathname: `/category/${category}`,
-        search: `?${createSearchParams({
-          page: page.toString(),
-        })}`,
-      });
-    }
-  }, []);
-
   const categoryHandler = (category: string) =>
     navigate({
       pathname: `/category/${category}`,
@@ -64,19 +51,12 @@ const Category = () => {
           <CategoryMenu type={category} onClick={categoryHandler} />
           <PostSectionWrapper>
             {postListData && (
-              <>
-                {postListData.empty ? (
-                  <Notice>포스팅된 글이 없습니다</Notice>
-                ) : (
-                  <PostSectionWithMenu
-                    postData={postListData.content}
-                    type={category}
-                    totalPage={postListData.totalPages || 0}
-                    pageHandler={pageHandler}
-                    currentPage={page}
-                  />
-                )}
-              </>
+              <PostSectionWithMenu
+                postData={postListData.content}
+                totalPage={postListData.totalPages || 0}
+                currentPage={page}
+                isEmpty={postListData.empty}
+              />
             )}
           </PostSectionWrapper>
         </PostLayoutWrapper>
