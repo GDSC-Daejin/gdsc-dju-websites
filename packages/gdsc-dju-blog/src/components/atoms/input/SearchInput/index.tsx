@@ -1,9 +1,7 @@
 import React, { forwardRef } from 'react';
-import {
-  Search,
-  SearchInputWrapper,
-} from '@src/components/layouts/Navigation/styled';
+
 import SearchIcon from '@assets/icons/SearchIcon';
+import { Search, SearchInputWrapper } from './styled';
 
 interface Props {
   onClick: () => void;

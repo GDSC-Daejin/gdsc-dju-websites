@@ -14,8 +14,8 @@ import {
   StyledColumn,
   StyledTr,
 } from './styled';
-import {useNavigate} from 'react-router';
-import GdscBlogLogo from '../../assets/logos/GdscBlogLogo';
+import { useNavigate } from 'react-router';
+import GdscBlogLogo from '@assets/logos/GdscBlogLogo';
 
 const Footer = () => {
   const navigate = useNavigate();

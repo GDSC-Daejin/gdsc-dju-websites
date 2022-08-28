@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Footer from '../components/Footer';
+
 import Category from '../pages/Category';
 import SearchResult from '../pages/SearchResult';
 import MyBlog from '../pages/MyBlog';
@@ -28,7 +28,6 @@ const Layout = () => {
         <Route path={'/search/:postContent'} element={<SearchResult />} />
         <Route path={'/post/saves'} element={<PostSaves />} />
       </Routes>
-      <Footer />
     </ComponentLayout>
   );
 };

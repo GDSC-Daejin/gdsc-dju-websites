@@ -4,13 +4,15 @@ import { useRecoilState } from 'recoil';
 import Alert from '@src/components/atoms/Alert';
 import GoogleLoader from '@src/components/atoms/GoogleLoader';
 import { loaderState } from '@src/store/loader';
-import Navigation from '@src/components/layouts/Navigation';
+
 import Modal from '@src/components/molecules/modal';
 import SideBar from '@src/components/organisms/SideBar';
 import GlobalStyles from '@styles/globalStyles';
 import { NavigationBlock } from '@styles/layouts';
 import { getMyToken } from '@src/api/hooks/useGetNewToken';
 import Cookies from 'js-cookie';
+import Navigation from '@src/components/organisms/Navigation';
+import Footer from '@src/components/organisms/Footer';
 
 const ComponentLayout: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -41,6 +43,7 @@ const ComponentLayout: React.FC<{ children: React.ReactNode }> = ({
       </AnimatePresence>
       <GlobalStyles />
       {children}
+      <Footer />
     </div>
   );
 };
