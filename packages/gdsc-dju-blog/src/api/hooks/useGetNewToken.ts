@@ -5,7 +5,11 @@ import Cookies from 'js-cookie';
 export const getMyToken = async (refreshToken: string, token: string) => {
   const response = await TokenService.getRefresh(refreshToken, token);
 
-  if (response.data.header.code == 500) return;
+  if (response.data.header.code == 401) return;
+  if (response.data.header.code == 403) {
+    Cookies.remove('token');
+    Cookies.remove('refresh_token');
+  }
   return response.data.body.data.token;
 };
 
