@@ -15,10 +15,11 @@ import {
 } from './styled';
 import { HashTageDark } from '@src/components/atoms/HashTage';
 import { useSetBookMark } from '@src/hooks/useSetBookMark';
-import { hashTageSpreader } from '@utils/hashTageSpreader';
+
 import { DetailPostDataType } from '@type/postData';
-import { dateFilter } from '@utils/dateFilter';
 import BookmarkIcon from '@assets/icons/BookmarkIcon';
+import { dateFilter } from '@utils/dateFilter';
+import { hashTageSpreader } from '@utils/hashTageSpreader';
 
 interface Props extends DetailPostDataType {
   isScrap: boolean;

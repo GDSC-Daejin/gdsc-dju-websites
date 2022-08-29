@@ -6,6 +6,7 @@ import {
   RowPostDataType,
   RowScrapList,
 } from '../types/postData';
+import { UseGetSearchPosts } from './hooks/useGetSearchPost';
 import { Api } from './index';
 
 class PostService extends Api {
@@ -94,8 +95,12 @@ class PostService extends Api {
       },
     );
   };
-  getSearchPosts = (postContent: string) => {
-    return axios.get(`${this.BLOG_API}/api/v1/post/search/${postContent}`);
+  getSearchPosts = ({ SearchContent, category, page }: UseGetSearchPosts) => {
+    return axios.get(
+      `${
+        this.BLOG_API
+      }/api/v1/post/search/${SearchContent}?page=${page}&size=${16}`,
+    );
   };
 }
 export default new PostService();

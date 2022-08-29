@@ -21,9 +21,10 @@ import {
 import { HashTageLight } from '@src/components/atoms/HashTage';
 import { useSetBookMark } from '@src/hooks/useSetBookMark';
 import { DetailPostDataType } from '@type/postData';
+
+import BookmarkIcon from '@assets/icons/BookmarkIcon';
 import { dateFilter } from '@utils/dateFilter';
 import { hashTageSpreader } from '@utils/hashTageSpreader';
-import BookmarkIcon from '@assets/icons/BookmarkIcon';
 
 const PostTextVariants = {
   initial: {
