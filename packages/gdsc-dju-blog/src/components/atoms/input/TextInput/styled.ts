@@ -30,6 +30,7 @@ export const StyledInputWrapper = styled.div<{
   disabled?: boolean;
   error: boolean;
 }>`
+  position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;

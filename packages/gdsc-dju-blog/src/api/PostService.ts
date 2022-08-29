@@ -1,4 +1,4 @@
-import axios, { AxiosPromise } from 'axios';
+import axios from 'axios';
 import Cookies from 'js-cookie';
 import {
   PostPostDataType,
@@ -6,6 +6,7 @@ import {
   RowPostListType,
   RowScrapList,
 } from '@type/postData';
+
 import { Api } from './index';
 
 class PostService extends Api {
@@ -103,9 +104,19 @@ class PostService extends Api {
       },
     );
   };
-  getSearchPosts = (postContent: string) => {
-    return axios.get<RowPostListType>(
-      `${this.BLOG_API}/api/v1/post/search/${postContent}`,
+  getSearchPosts = ({
+    searchContent,
+    category,
+    page,
+  }: {
+    searchContent: string;
+    category: string;
+    page: number;
+  }) => {
+    return axios.get(
+      `${
+        this.BLOG_API
+      }/api/v1/post/search/${searchContent}?page=${page}&size=${16}`,
     );
   };
 }

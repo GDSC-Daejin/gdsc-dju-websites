@@ -2,8 +2,11 @@ import styled from 'styled-components';
 
 export const SearchResultTitleWrapper = styled.div`
   width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 100px 0px 80px;
   color: ${(props) => props.theme.colors.grey900};
-  margin-bottom: 80px;
 `;
 export const SearchResultTitle = styled.h1`
   display: flex;
@@ -12,18 +15,15 @@ export const SearchResultTitle = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.h5};
   color: ${(props) => props.theme.colors.grey900};
 `;
-export const SearchResultSubTitle = styled.h3`
-  display: flex;
-  align-self: flex-end;
-  padding: 0 4px;
-  font-size: ${({ theme }) => theme.fontSize.h6};
-  color: ${(props) => props.theme.colors.grey900};
-`;
+
 export const SearchResultContent = styled.p`
-  padding: 20px 0;
   font-size: ${({ theme }) => theme.fontSize.h7};
   line-height: 1.625rem;
   color: ${(props) => props.theme.colors.grey600};
+`;
+
+export const CategoryMenuWrapper = styled.div`
+  margin: 60px 0px;
 `;
 
 export const PageBarWrapper = styled.div`

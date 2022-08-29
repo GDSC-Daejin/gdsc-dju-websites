@@ -95,21 +95,19 @@ const PostCard: React.FC<Props> = ({ postData, isScrap }) => {
             )}
           </AnimatePresence>
           <PostCardSubTextWrapper>
-            {postData.memberInfo &&
-              postData.memberInfo.nickname &&
-              postData.memberInfo.profileImageUrl && (
-                <PostCardAuthorWrapper>
-                  <PostCardAuthorImage
-                    alt="AuthorImage"
-                    src={postData.memberInfo.profileImageUrl}
-                  />
+            {postData.memberInfo && (
+              <PostCardAuthorWrapper>
+                <PostCardAuthorImage
+                  alt="AuthorImage"
+                  src={postData.memberInfo.profileImageUrl}
+                />
 
-                  <PostCardSubText subText={true}>by</PostCardSubText>
-                  <PostCardSubText bold={true}>
-                    {postData.memberInfo.nickname}
-                  </PostCardSubText>
-                </PostCardAuthorWrapper>
-              )}
+                <PostCardSubText subText={true}>by</PostCardSubText>
+                <PostCardSubText bold={true}>
+                  {postData.memberInfo.nickname}
+                </PostCardSubText>
+              </PostCardAuthorWrapper>
+            )}
             <PostCardSubText subText={true}>
               {dateFilter(postData.uploadDate)}
             </PostCardSubText>

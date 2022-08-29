@@ -1,4 +1,5 @@
 import React from 'react';
+import { useQueryClient } from 'react-query';
 import { useRecoilState } from 'recoil';
 import PostService from '../api/PostService';
 import { alertState } from '../store/alert';
@@ -9,12 +10,16 @@ export const useSetBookMark = (
   setMarked: (check: boolean) => void,
 ) => {
   const [alert, setAlert] = useRecoilState(alertState);
+  const queryClient = useQueryClient();
 
   const bookMarkHandler = async (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
     if (token && id) {
       const result = await setBookMarkPostAPI(id);
-      if (result.body.message === 'SUCCESS') setMarked(true);
+      if (result.body.message === 'SUCCESS') {
+        setMarked(true);
+        queryClient.invalidateQueries([`${token}-scrapList`]);
+      }
     } else {
       setAlert({
         ...alert,

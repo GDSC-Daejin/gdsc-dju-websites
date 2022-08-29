@@ -1,17 +1,24 @@
+import { PostListResponse } from '@type/postData';
 import { useQuery } from 'react-query';
-import { RowPostListType } from '../../types/postData';
+
 import PostService from '../PostService';
 
-async function getSearchPostsData(params: string) {
+export interface Props {
+  searchContent: string;
+  category: string;
+  page: number;
+}
+async function getSearchPostsData(params: Props) {
   const res = await PostService.getSearchPosts(params);
   return res.data.body.data;
 }
-export function useGetSearchPosts(postContent: string) {
-  const { data: postListData } = useQuery(
-    [`post/search/${postContent}`],
-    () => getSearchPostsData(postContent),
+export function useGetSearchPosts(props: Props) {
+  const { searchContent, category, page } = props;
+  const { data: postListData } = useQuery<PostListResponse>(
+    [`post/search/${searchContent}/${category}/${page}`],
+    () => getSearchPostsData(props),
     {
-      cacheTime: 3 * 60 * 1000,
+      cacheTime: 60 * 1000,
     },
   );
   return { postListData };

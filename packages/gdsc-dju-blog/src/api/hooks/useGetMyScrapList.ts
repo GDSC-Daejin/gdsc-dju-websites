@@ -9,7 +9,7 @@ async function getMyScrapList() {
 export function useGetMyScrapList() {
   const token = Cookies.get('token');
   const { data: scrapList } = useQuery(
-    [`${token}scrapList`],
+    [`${token}-scrapList`],
     () => getMyScrapList(),
     {
       enabled: !!token,
@@ -17,6 +17,6 @@ export function useGetMyScrapList() {
     },
   );
   return {
-    scrapList: scrapList,
+    scrapList,
   };
 }

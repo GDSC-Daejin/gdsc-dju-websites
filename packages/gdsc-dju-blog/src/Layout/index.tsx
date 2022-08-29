@@ -18,7 +18,7 @@ const Layout = () => {
       <Suspense>
         <Routes>
           <Route path={'/*'} element={<Home />} />
-          <Route path={'/:nickname/*'} element={<MyBlog />} />
+          <Route path={'/:user_name/*'} element={<MyBlog />} />
           <Route path={'/post'} element={<Post />} />
           <Route path={'/post/write'} element={<PostWrite />} />
           <Route path={'/post/edit/:id'} element={<PostWrite />} />
@@ -26,7 +26,10 @@ const Layout = () => {
           <Route path={'/category/:categoryName'} element={<Category />} />
           <Route path={'/signup'} element={<SignUp />} />
           <Route path={'/redirect'} element={<OauthRedirectPage />} />
-          <Route path={'/search/:postContent'} element={<SearchResult />} />
+          <Route
+            path={'/search/:searchContent/:categoryName'}
+            element={<SearchResult />}
+          />
           <Route path={'/post/saves'} element={<PostSaves />} />
         </Routes>
       </Suspense>

@@ -8,6 +8,8 @@ export type FormElement = {
   placeholder?: string;
   isModifyBlock?: boolean;
   isBlock?: boolean;
+  isValidate?: boolean;
+  validateString?: string;
   valueAsDate?: true;
   type?: string;
   required?: {
@@ -46,6 +48,7 @@ export const formValidation: FormElementsType<keyof ValidationMemberInfo> = {
     label: '닉네임',
     placeholder: 'Googler',
     isModifyBlock: true,
+    isValidate: true,
     required: {
       value: true,
       message: '필수 입력 값이에요.',
