@@ -21,6 +21,7 @@ import {
   HomeLayoutContainer,
   HomePhraseWrapper,
 } from './styled';
+import useButtonEnable from '@src/hooks/useClickedButton';
 
 function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
