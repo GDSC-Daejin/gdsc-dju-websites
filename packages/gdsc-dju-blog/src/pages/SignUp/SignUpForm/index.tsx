@@ -1,25 +1,41 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
+<<<<<<< HEAD
 
 import { FormElementWrapper, FormLabel } from '../../MyBlog/ProfileEdit/styled';
 
 import { SignUpFormStyle } from './styled';
+=======
+
+import {
+  FormElementWrapper,
+  FormLabel,
+  FormLabelWrapper,
+} from '../../MyBlog/ProfileEdit/styled';
+
+import { SignUpFormStyle, TextInputWrapper } from './styled';
+>>>>>>> 5ec2cca35b4258a663fac6f7f27690ad215f7067
 import UserService from '@src/api/UserService';
 import { GDSCButton } from '@src/components/atoms/Button';
 import { useGetMyData } from '@src/api/hooks/useGetMyData';
 import TextInput from '@src/components/atoms/input/TextInput';
 import { formValidation } from '@src/components/Validation/profileEdit';
+<<<<<<< HEAD
+=======
+import ValidationInput from '@src/components/atoms/input/ValidationInput';
+import { useCheckNickname } from '@src/api/hooks/useCheckNickname';
+import CheckIcon from '@assets/icons/CheckIcon';
+>>>>>>> 5ec2cca35b4258a663fac6f7f27690ad215f7067
 
 const SignUpForm = () => {
   const {
     handleSubmit,
     register,
     reset,
-
+    watch,
     formState: { errors, isValid },
-  } = useForm({ mode: 'onTouched' });
-  // { mode: 'onChange' }
+  } = useForm({ mode: 'onChange' });
   const navigate = useNavigate();
   const { userData } = useGetMyData();
 
@@ -45,6 +61,20 @@ const SignUpForm = () => {
       positionType: 'Beginner',
     });
   }, [userData]);
+  const [isSuccess, setIsSuccess] = React.useState(false);
+  const { mutate, isError: isMutationError } = useCheckNickname(setIsSuccess);
+  const validationCheck = () => {
+    mutate(watch('nickname').trim());
+  };
+  useEffect(() => {
+    setIsSuccess(false);
+  }, [watch('nickname')]);
+
+  const handleType = () => {
+    if (isSuccess) return 'success';
+    else if (isMutationError) return 'error';
+    else return 'none';
+  };
 
   return (
     <SignUpFormStyle>
@@ -52,15 +82,37 @@ const SignUpForm = () => {
         const elementName = formValidation[element];
         return (
           <FormElementWrapper key={element}>
-            <FormLabel essential={!!elementName.required}>
-              {elementName.label}
-            </FormLabel>
-            <TextInput
-              disabled={elementName.isBlock}
-              error={errors[element]}
-              placeholder={elementName.placeholder}
-              {...register(element, elementName)}
-            />
+            <FormLabelWrapper>
+              <FormLabel essential={!!elementName.required}>
+                {elementName.label}
+              </FormLabel>
+              {elementName.isValidate && <CheckIcon type={handleType()} />}
+            </FormLabelWrapper>
+            {elementName.isValidate ? (
+              <TextInputWrapper>
+                <ValidationInput
+                  disabled={elementName.isBlock}
+                  error={errors[element]}
+                  placeholder={elementName.placeholder}
+                  {...register(element, {
+                    ...elementName,
+                    validate: (v) => isSuccess || '닉네임 검사가 필요합니다',
+                  })}
+                  validationCheck={validationCheck}
+                  value={watch('nickname')}
+                  isSuccess={isSuccess}
+                />
+              </TextInputWrapper>
+            ) : (
+              <TextInputWrapper>
+                <TextInput
+                  disabled={elementName.isBlock}
+                  error={errors[element]}
+                  placeholder={elementName.placeholder}
+                  {...register(element, elementName)}
+                />
+              </TextInputWrapper>
+            )}
           </FormElementWrapper>
         );
       })}

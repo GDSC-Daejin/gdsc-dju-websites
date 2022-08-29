@@ -8,3 +8,13 @@ export const SignUpFormStyle = styled.form`
     align-self: flex-end;
   }
 `;
+
+export const NicknameValidationButtonWrapper = styled.div`
+  position: absolute;
+  top: 6px;
+  right: 10px;
+`;
+
+export const TextInputWrapper = styled.div`
+  position: relative;
+`;

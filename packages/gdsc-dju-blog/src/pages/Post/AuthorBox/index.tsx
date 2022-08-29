@@ -9,6 +9,10 @@ import {
 } from '../styled';
 import { AuthorProps } from '@type/postData';
 import { HashTageDark } from '@src/components/atoms/HashTage';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5ec2cca35b4258a663fac6f7f27690ad215f7067
 import { hashTageSpreader } from '@utils/hashTageSpreader';
 import { dateFilter } from '@utils/dateFilter';
 

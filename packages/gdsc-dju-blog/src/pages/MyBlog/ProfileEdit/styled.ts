@@ -27,29 +27,33 @@ export const FormTitleWrapper = styled.div`
   gap: 50px;
 `;
 
+export const FormLabelWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+`;
+
 export const FormLabel = styled.label<{ essential?: boolean }>`
   padding: 5px 0;
-  display: inline-block;
   font-size: ${({ theme }) => theme.fontSize.h7};
   font-weight: 400;
   line-height: 1.5;
   color: ${({ theme }) => theme.colors.grey900};
-   {
-    ${({ essential }) =>
-      essential &&
-      css`
-        &::after {
-          display: inline-block;
-          margin: 0 0 2px 6px;
-          content: '';
-          width: 6px;
-          height: 6px;
-          background-color: ${({ theme }) => theme.colors.tossRed};
-          border-radius: 3px;
-        }
-      `}
-  }
+  ${({ essential }) =>
+    essential &&
+    css`
+      &::after {
+        display: inline-block;
+        margin: 0 0 2px 6px;
+        content: '';
+        width: 6px;
+        height: 6px;
+        background-color: ${({ theme }) => theme.colors.tossRed};
+        border-radius: 3px;
+      }
+    `}
 `;
+
 export const FormElementWrapper = styled.div`
   margin-bottom: 20px;
   width: 100%;

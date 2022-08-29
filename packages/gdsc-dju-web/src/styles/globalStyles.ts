@@ -1,11 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 import { throttle } from '@utils/throttle';
 
+<<<<<<< HEAD
 window.addEventListener('resize', () => {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
+=======
+>>>>>>> 5ec2cca35b4258a663fac6f7f27690ad215f7067
 const GlobalStyles = createGlobalStyle`
   @font-face {
     font-family: 'Google Sans Display';

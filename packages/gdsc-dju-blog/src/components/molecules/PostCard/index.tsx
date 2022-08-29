@@ -15,10 +15,18 @@ import {
 } from './styled';
 import { HashTageDark } from '@src/components/atoms/HashTage';
 import { useSetBookMark } from '@src/hooks/useSetBookMark';
+<<<<<<< HEAD:packages/gdsc-dju-blog/src/components/molecules/PostCard/index.tsx
 import { hashTageSpreader } from '@utils/hashTageSpreader';
 import { DetailPostDataType } from '@type/postData';
 import { dateFilter } from '@utils/dateFilter';
 import BookmarkIcon from '@assets/icons/BookmarkIcon';
+=======
+
+import { DetailPostDataType } from '@type/postData';
+import BookmarkIcon from '@assets/icons/BookmarkIcon';
+import { dateFilter } from '@utils/dateFilter';
+import { hashTageSpreader } from '@utils/hashTageSpreader';
+>>>>>>> 5ec2cca35b4258a663fac6f7f27690ad215f7067:packages/gdsc-dju-blog/src/components/common/PostCard/index.tsx
 
 interface Props extends DetailPostDataType {
   isScrap: boolean;

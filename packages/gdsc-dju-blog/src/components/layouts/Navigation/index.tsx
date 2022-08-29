@@ -38,21 +38,25 @@ function Navigation() {
   );
 }
 
-const SearchInput: React.FC<{ onClick?: () => void }> = ({ onClick }) => {
+const SearchInput: React.FC<{ onClick?: () => void }> = () => {
   const [searchData, setSearchData] = React.useState('');
   const navigate = useNavigate();
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (searchData.trim() !== '') navigate(`/search/${searchData}?page=1`);
+  const handleSearch = () => {
+    if (searchData.trim() !== '') navigate(`/search/${searchData}/all?page=1`);
+    setSearchData('');
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchData(e.target.value);
+  };
+  const handleOnKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.keyCode === 13) {
+      handleSearch();
+    }
   };
 
   return (
     <SearchInputWrapper>
+<<<<<<< HEAD:packages/gdsc-dju-blog/src/components/layouts/Navigation/index.tsx
       <form onSubmit={handleSubmit}>
         <Search
           name="search"
@@ -62,6 +66,17 @@ const SearchInput: React.FC<{ onClick?: () => void }> = ({ onClick }) => {
         />
       </form>
       <SearchIcon onClick={onClick} />
+=======
+      <Search
+        name="search"
+        value={searchData}
+        onChange={handleChange}
+        onKeyPress={handleOnKeyPress}
+        type="text"
+        placeholder="궁금한 정보나 계정을 입력해주세요"
+      />
+      <SearchIcon onClick={handleSearch} />
+>>>>>>> 5ec2cca35b4258a663fac6f7f27690ad215f7067:packages/gdsc-dju-blog/src/components/common/Navigation/index.tsx
     </SearchInputWrapper>
   );
 };

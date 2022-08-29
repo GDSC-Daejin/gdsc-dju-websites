@@ -1,5 +1,5 @@
 import { AnimatePresence } from 'framer-motion';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import Alert from '@src/components/atoms/Alert';
 import GoogleLoader from '@src/components/atoms/GoogleLoader';
@@ -9,12 +9,21 @@ import Modal from '@src/components/molecules/modal';
 import SideBar from '@src/components/organisms/SideBar';
 import GlobalStyles from '@styles/globalStyles';
 import { NavigationBlock } from '@styles/layouts';
+<<<<<<< HEAD
+=======
+import { useGetMyData } from '@src/api/hooks/useGetNewToken';
+import Cookies from 'js-cookie';
+>>>>>>> 5ec2cca35b4258a663fac6f7f27690ad215f7067
 
 const ComponentLayout: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [loader] = useRecoilState(loaderState);
-
+  const { newToken } = useGetMyData();
+  useEffect(() => {
+    if (!newToken) return;
+    Cookies.set('token', newToken);
+  }, []);
   return (
     <div>
       <Alert />

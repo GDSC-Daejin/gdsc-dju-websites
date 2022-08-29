@@ -19,5 +19,15 @@ class UserService extends Api {
       },
     );
   };
+  checkUserNickname = (nickname: string) => {
+    const result = axios.post(
+      `${this.API}/member-route/api/guest/v1/validation/nickname`,
+      nickname,
+      {
+        ...this.Header,
+      },
+    );
+    return result;
+  };
 }
 export default new UserService();
