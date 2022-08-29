@@ -1,19 +1,10 @@
 import Cookies from 'js-cookie';
 import { useQuery } from 'react-query';
-import TokenService from '../TokenService';
 import UserService from '../UserService';
 
 export const getUserData = async (token: string) => {
   const response = await UserService.getMyData(token);
   return response.data.body.data;
-};
-export const getMyToken = async (refreshToken: string, token: string) => {
-  const response = await TokenService.getRefresh(refreshToken, token);
-  if (response.data.header.code !== 200 || response.status !== 200) {
-    Cookies.remove('token');
-    Cookies.remove('refresh_token');
-  }
-  return response.data.body.data.token;
 };
 
 export const useGetMyData = () => {
@@ -24,19 +15,10 @@ export const useGetMyData = () => {
     [`${token}-userdata`],
     () => getUserData(token!),
     {
-      refetchInterval: 20 * 60 * 1000,
       enabled: isEnabled,
-      onError: async () => {
-        if (!isEnabled) {
-          return;
-        }
-        const newToken = await getMyToken(refresh_token, token);
-        if (newToken) {
-          Cookies.set('token', newToken);
-        }
-      },
+      retry: 1,
     },
   );
 
-  return { userData: userData ?? userData };
+  return { userData: userData && userData };
 };
