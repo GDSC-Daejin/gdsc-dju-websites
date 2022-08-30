@@ -1,5 +1,4 @@
 import { GdsThemeProvider } from '@gdsc-dju/styled-components';
-import Navigation from '@layout/Navigation';
 
 import React from 'react';
 
@@ -11,7 +10,6 @@ function App() {
   return (
     <GdsThemeProvider mode={'auto'}>
       <GlobalStyles />
-      <Navigation />
       <ElementLayoutBox>
         <Layout />
       </ElementLayoutBox>

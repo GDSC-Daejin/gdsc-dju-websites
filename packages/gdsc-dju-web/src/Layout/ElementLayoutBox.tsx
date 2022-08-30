@@ -1,3 +1,4 @@
+import Navigation from '@layout/Navigation';
 import React, { useEffect, useState } from 'react';
 
 import Alert from '@common/Alert';
@@ -14,13 +15,16 @@ const ElementLayoutBox: React.FC<{ children: React.ReactNode }> = ({
   useEffect(() => {
     location.pathname == '/' ? setFooter(true) : setFooter(false);
   }, [location.pathname]);
+  const isOnboard = location.pathname.includes('onboard');
   return (
     <>
       <ReactHelmet />
+
       <GoogleSpinner background={true} />
+      {!isOnboard && <Navigation />}
       <Alert />
       {children}
-      <Footer disable={!footer} />
+      <Footer disable={!footer && !isOnboard} />
     </>
   );
 };

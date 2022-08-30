@@ -20,6 +20,7 @@
     "firebase": "^9.9.0",
     "firebase-tools": "^11.2.2",
     "framer-motion": "^6.3.0",
+    "html2canvas": "^1.4.1",
     "jotai": "^1.7.7",
     "lottie-web": "^5.8.1",
     "react": "^18.2.0",
@@ -37,6 +38,7 @@
   "devDependencies": {
     "@firebase/app": "^0.7.28",
     "@firebase/app-compat": "^0.1.29",
+    "@types/html2canvas": "^1.0.0",
     "@types/node": "^18.0.4",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",

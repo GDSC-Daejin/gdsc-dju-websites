@@ -123,10 +123,10 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html {
+    height: 100vh;
     background: ${({ theme }) => theme.colors.background};
   }
   
-
   a {
     text-decoration: none;
   }

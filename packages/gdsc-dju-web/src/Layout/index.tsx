@@ -28,6 +28,11 @@ const Faq = lazy(() =>
     default: module.default,
   })),
 );
+const OnBoard = lazy(() =>
+  import('../pages/Onboard').then((module) => ({
+    default: module.default,
+  })),
+);
 const Layout = () => {
   const [, getRecruitment] = useAtom(asyncGetRecruitmentStatusAtom);
   useEffect(() => {
@@ -43,6 +48,7 @@ const Layout = () => {
           <Route path={'/introduce'} element={<Introduce />} />
           <Route path={'/recruit/*'} element={<Recruit />} />
           <Route path={'/faq/*'} element={<Faq />} />
+          <Route path={'/onboard/*'} element={<OnBoard />} />
         </Routes>
       </Suspense>
     </ErrorBoundary>
