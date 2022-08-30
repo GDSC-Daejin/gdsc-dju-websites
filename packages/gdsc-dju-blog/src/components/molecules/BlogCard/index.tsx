@@ -25,6 +25,7 @@ import { DetailPostDataType } from '@type/postData';
 import BookmarkIcon from '@assets/icons/BookmarkIcon';
 import { dateFilter } from '@utils/dateFilter';
 import { hashTageSpreader } from '@utils/hashTageSpreader';
+import { debounce } from '@utils/debounce';
 
 const PostTextVariants = {
   initial: {

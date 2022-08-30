@@ -1,3 +1,4 @@
+import { debounce } from '@utils/debounce';
 import React from 'react';
 import { throttle } from '../utils/throttle';
 
@@ -7,7 +8,7 @@ const useWindowSize = () => {
     height: window.innerHeight,
   });
 
-  const handleWindowSize = throttle(
+  const handleWindowSize = debounce(
     () =>
       setWindowSize(() => {
         return {
