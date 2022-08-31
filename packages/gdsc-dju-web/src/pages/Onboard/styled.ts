@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 export const OnboardSectionContainer = styled(motion.div)`
   display: flex;
-  height: 100%;
   justify-content: center;
   white-space: nowrap;
   min-width: 900px;
@@ -17,4 +16,23 @@ export const OnboardContainerWrapper = styled(motion.div)`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+`;
+
+export const OnboardContentBox = styled(motion.div)`
+  display: flex;
+  flex-direction: row;
+`;
+export const OnboardContentButtonWrapper = styled(motion.div)`
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+`;
+export const OnboardContentsWrapper = styled(motion.div)`
+  display: flex;
+  position: relative;
+  gap: 21px;
+  min-width: 900px;
+  height: 100%;
+  flex-direction: column;
+  margin-top: 93px;
 `;

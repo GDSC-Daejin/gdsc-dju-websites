@@ -42,9 +42,7 @@ import {
   BoardingTicketTopTextWrapper,
   BoardingTicketWrapper,
 } from './styled';
-import Gdscqr from '../../../img/onBoardingImg/GDSCQR';
 
-import DottedLine from '../../../img/DottedLine';
 import { getCurrentDate } from '@pages/Onboard/OnboardHome';
 
 const BoardingPass = () => {
@@ -96,12 +94,10 @@ const BoardingPass = () => {
                   <BoardingPassCategory>Arrival Time</BoardingPassCategory>
                   <BoardingPassCategoryText>2022. 8</BoardingPassCategoryText>
                 </BoardingPassArrivalTimeWrapper>
-                <BoardingPassQrWrapper>
-                  <Gdscqr />
-                </BoardingPassQrWrapper>
+                <BoardingPassQrWrapper>{/*<Gdscqr />*/}</BoardingPassQrWrapper>
               </BoardingPassBottomTextWrapper>
             </BoardingPassElementWrapper>
-            <DottedLine />
+            {/*<DottedLine />*/}
           </BoardingPassInner>
         </BoardingPassWrapper>
         <BoardingTicketWrapper>
@@ -127,9 +123,7 @@ const BoardingPass = () => {
                   </BoardingTicketCategoryText>
                 </BoardingTicketElementWrapper>
               </BoardingTicketTopTextWrapper>
-              <BoardingPassQrWrapper>
-                <Gdscqr />
-              </BoardingPassQrWrapper>
+              <BoardingPassQrWrapper>{/*<Gdscqr />*/}</BoardingPassQrWrapper>
             </BoardingTicketTopElementWrapper>
             <BoardingTicketBottomElementWrapper>
               <BoardingTicketElementWrapper>

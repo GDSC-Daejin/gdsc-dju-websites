@@ -25,33 +25,37 @@ interface BoardingPassBoxProps {
 
 const BoardingPassContainer = ({ children }: BoardingPassBoxProps) => {
   const theme = useTheme();
-  const isBoardingPass = false;
+  const path = window.location.pathname;
+  const isBoardingPass = path.includes('init');
   return (
-    <BoardingPassContainerInner isBoardingPass={isBoardingPass}>
-      <BoardingPassInner>{children}</BoardingPassInner>
-      <BoardingPassLeftContainerInner isBoardingPass={isBoardingPass}>
-        <BoardingPassTopLeftLine>
-          <LogoWrapper>
+    <BoardingPassContainerInner
+      isBoardingPass={isBoardingPass}
+      layoutId={'boardingPass-wrapper'}
+    >
+      <BoardingPassInner layout>{children}</BoardingPassInner>
+      <BoardingPassLeftContainerInner isBoardingPass={isBoardingPass} layout>
+        <BoardingPassTopLeftLine layout>
+          <LogoWrapper layout>
             <TopLineGDSCLogo src={GDSCLogo} />
             <BoardingPassHeaderText>GDSC DJU</BoardingPassHeaderText>
           </LogoWrapper>
         </BoardingPassTopLeftLine>
-        <ContainerBottomLeftLine />
+        <ContainerBottomLeftLine layout />
       </BoardingPassLeftContainerInner>
-      <BoardingPassRightContainerInner isBoardingPass={isBoardingPass}>
-        <BoardingPassTopRightLine>
-          <LogoWrapper>
+      <BoardingPassRightContainerInner isBoardingPass={isBoardingPass} layout>
+        <BoardingPassTopRightLine layout>
+          <LogoWrapper layout>
             <BoardingPassHeaderText>Boarding Pass</BoardingPassHeaderText>
             <TopLineGDSCLogo src={Airplane} />
           </LogoWrapper>
         </BoardingPassTopRightLine>
-        <ContainerBottomRightLine>
-          <BoardingPassContainerBottomText>
+        <ContainerBottomRightLine layout>
+          <BoardingPassContainerBottomText layout>
             Google Developer Student Clubs
           </BoardingPassContainerBottomText>
         </ContainerBottomRightLine>
       </BoardingPassRightContainerInner>
-      <BackgroundGDSCLogoWrapper>
+      <BackgroundGDSCLogoWrapper layoutId={'bottom-icon'}>
         <GDSCLogoClear color={theme.colors.blue300} />
       </BackgroundGDSCLogoWrapper>
     </BoardingPassContainerInner>

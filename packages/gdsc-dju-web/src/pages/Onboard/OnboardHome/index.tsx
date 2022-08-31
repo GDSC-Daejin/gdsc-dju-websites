@@ -1,17 +1,20 @@
-import { onboardAnimate, pageTransitionAnimate } from '@animations/onboard';
+import { pageTransitionAnimate } from '@animations/onboard';
 
 import GDSCLogo from '@assets/logos/GDSCLogo.svg';
 import OnboardButton from '@common/onboardButton';
 import {
-  OnboardHomeBox,
-  OnboardHomeBoxWrapper,
-  OnboardHomeButtonWrapper,
   OnboardHomeLogo,
   OnboardHomePhrase,
   OnboardHomePhraseWrapper,
 } from '@pages/Onboard/OnboardHome/styled';
 import React from 'react';
-import { OnboardSectionContainer } from '../styled';
+import { useNavigate } from 'react-router';
+import {
+  OnboardContentBox,
+  OnboardContentButtonWrapper,
+  OnboardContentsWrapper,
+  OnboardSectionContainer,
+} from '../styled';
 
 export const getCurrentDate = () => {
   const today = new Date();
@@ -27,15 +30,17 @@ export const getCurrentDate = () => {
 //         exit={'out'}
 //variants={onboardAnimate}
 const OnboardHome = () => {
+  const navigate = useNavigate();
   return (
-    <OnboardSectionContainer>
-      <OnboardHomeBoxWrapper
+    <OnboardSectionContainer layoutId={'content-box'}>
+      <OnboardContentsWrapper
         variants={pageTransitionAnimate}
         initial="start"
         animate="end"
         exit={'out'}
       >
-        <OnboardHomeBox>
+        <div></div>
+        <OnboardContentBox>
           <OnboardHomePhraseWrapper>
             <OnboardHomeLogo src={GDSCLogo} />
             <OnboardHomePhrase>GDSC DJU</OnboardHomePhrase>
@@ -43,11 +48,13 @@ const OnboardHome = () => {
               Member Onboarding
             </OnboardHomePhrase>
           </OnboardHomePhraseWrapper>
-        </OnboardHomeBox>
-        <OnboardHomeButtonWrapper>
+        </OnboardContentBox>
+        <OnboardContentButtonWrapper
+          onClick={() => navigate('/onboard/init/1')}
+        >
           <OnboardButton>시작하기</OnboardButton>
-        </OnboardHomeButtonWrapper>
-      </OnboardHomeBoxWrapper>
+        </OnboardContentButtonWrapper>
+      </OnboardContentsWrapper>
     </OnboardSectionContainer>
   );
 };

@@ -58,12 +58,13 @@ export const BoardingPassRightContainerInner = styled(motion.div)<{
       flex: 1;
     `}
 `;
-export const BoardingPassInner = styled.main`
+export const BoardingPassInner = styled(motion.main)`
   position: absolute;
   z-index: 2;
+  //transform: translate(50%, -50%);
 `;
 
-export const BoardingPassTopLeftLine = styled.div`
+export const BoardingPassTopLeftLine = styled(motion.div)`
   top: 0;
   position: relative;
   height: 66px;
@@ -82,7 +83,7 @@ export const BoardingPassTopRightLine = styled(BoardingPassTopLeftLine)`
   width: 100%;
 `;
 
-export const ContainerBottomLeftLine = styled.div`
+export const ContainerBottomLeftLine = styled(motion.div)`
   bottom: 0;
   position: absolute;
   display: flex;
@@ -98,7 +99,7 @@ export const ContainerBottomLeftLine = styled.div`
 export const ContainerBottomRightLine = styled(ContainerBottomLeftLine)`
   width: 100%;
 `;
-export const BoardingPassContainerBottomText = styled.span`
+export const BoardingPassContainerBottomText = styled(motion.span)`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSize.body4};
 `;
@@ -109,13 +110,13 @@ export const BoardingPassHeaderText = styled.span`
   font-weight: bold;
   margin-right: 8px;
 `;
-export const BackgroundGDSCLogoWrapper = styled.picture`
+export const BackgroundGDSCLogoWrapper = styled(motion.picture)`
   position: absolute;
   bottom: 60px;
   right: 20px;
   z-index: -1;
 `;
-export const LogoWrapper = styled.div`
+export const LogoWrapper = styled(motion.div)`
   display: flex;
   flex-direction: row;
   align-items: center;

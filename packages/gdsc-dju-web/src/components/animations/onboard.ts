@@ -6,7 +6,7 @@ export const pageAnimate = {
 export const pageTransitionAnimate = {
   start: {
     opacity: 0,
-    x: '100vw',
+    // x: '100vw',
   },
   end: {
     opacity: 1,
@@ -19,7 +19,7 @@ export const pageTransitionAnimate = {
   },
   out: {
     opacity: 0,
-    x: '-100vw',
+    // x: '-100vw',
     transition: {
       duration: 0.4,
       delayChildren: 0.3,
