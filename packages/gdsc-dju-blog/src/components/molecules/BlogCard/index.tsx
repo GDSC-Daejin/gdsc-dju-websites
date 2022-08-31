@@ -61,6 +61,14 @@ const BlogCard: React.FC<BlogCardProps> = ({ postData, isScrap }) => {
     cookie.token,
     () => setIsMarked(!isMarked),
   );
+  const debounceBookMarkHandler = debounce(
+    (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => bookMarkHandler(e),
+    400,
+  );
+  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.stopPropagation();
+    debounceBookMarkHandler(e);
+  };
 
   const navigate = useNavigate();
 
@@ -79,7 +87,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ postData, isScrap }) => {
     <AnimateSharedLayout>
       <BlogCardInner onClick={linkToPost}>
         {/* 북마크 */}
-        <BookMarkWrapper onClick={(e) => bookMarkHandler(e)}>
+        <BookMarkWrapper onClick={(e) => handleClick(e)}>
           <BookmarkIcon marked={isMarked} />
         </BookMarkWrapper>
         {/* 이미지 */}

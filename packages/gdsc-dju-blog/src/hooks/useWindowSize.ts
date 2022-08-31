@@ -1,6 +1,5 @@
 import { debounce } from '@utils/debounce';
 import React from 'react';
-import { throttle } from '../utils/throttle';
 
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = React.useState({

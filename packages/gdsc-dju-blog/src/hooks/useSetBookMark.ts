@@ -11,22 +11,24 @@ export const useSetBookMark = (
 ) => {
   const [alert, setAlert] = useRecoilState(alertState);
   const queryClient = useQueryClient();
+  let isSubmit = false;
 
   const bookMarkHandler = async (e: React.MouseEvent<HTMLDivElement>) => {
-    e.stopPropagation();
-    if (token && id) {
-      const result = await setBookMarkPostAPI(id);
-      if (result.body.message === 'SUCCESS') {
-        setMarked(true);
-        queryClient.invalidateQueries([`${token}-scrapList`]);
+    if (!isSubmit) {
+      if (token && id) {
+        const result = await setBookMarkPostAPI(id);
+        if (result.body.message === 'SUCCESS') {
+          setMarked(true);
+          queryClient.invalidateQueries([`${token}-scrapList`]);
+        }
+      } else {
+        setAlert({
+          ...alert,
+          alertStatus: 'error',
+          alertHandle: true,
+          alertMessage: '로그인이 필요해요.',
+        });
       }
-    } else {
-      setAlert({
-        ...alert,
-        alertStatus: 'error',
-        alertHandle: true,
-        alertMessage: '로그인이 필요해요.',
-      });
     }
   };
   return { bookMarkHandler };
