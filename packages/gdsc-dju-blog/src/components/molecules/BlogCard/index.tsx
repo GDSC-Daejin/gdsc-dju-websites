@@ -19,12 +19,13 @@ import {
   PostText,
 } from './styled';
 import { HashTageLight } from '@src/components/atoms/HashTage';
-import { useSetBookMark } from '@src/hooks/useSetBookMark';
+import { useSetBookMark } from '@src/hooks/useHandleBookMark';
 import { DetailPostDataType } from '@type/postData';
 
 import BookmarkIcon from '@assets/icons/BookmarkIcon';
 import { dateFilter } from '@utils/dateFilter';
 import { hashTageSpreader } from '@utils/hashTageSpreader';
+import { throttle } from '@utils/throttle';
 import { debounce } from '@utils/debounce';
 
 const PostTextVariants = {
@@ -61,13 +62,10 @@ const BlogCard: React.FC<BlogCardProps> = ({ postData, isScrap }) => {
     cookie.token,
     () => setIsMarked(!isMarked),
   );
-  const debounceBookMarkHandler = debounce(
-    (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => bookMarkHandler(e),
-    400,
-  );
+  const debounceBookMarkHandler = debounce(bookMarkHandler, 10000);
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
-    debounceBookMarkHandler(e);
+    debounceBookMarkHandler();
   };
 
   const navigate = useNavigate();

@@ -12,7 +12,7 @@ import {
   PostTrashIconWrapper,
 } from '../styled';
 import { modalState } from '@src/store/modal';
-import { useSetBookMark } from '@src/hooks/useSetBookMark';
+import { useSetBookMark } from '@src/hooks/useHandleBookMark';
 import { alertState } from '@src/store/alert';
 import { useGetScrap } from '@src/hooks/useGetScrap';
 import BookmarkIcon from '@assets/icons/BookmarkIcon';

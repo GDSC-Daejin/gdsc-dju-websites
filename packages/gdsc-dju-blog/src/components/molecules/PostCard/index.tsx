@@ -14,7 +14,7 @@ import {
   PostTitle,
 } from './styled';
 import { HashTageDark } from '@src/components/atoms/HashTage';
-import { useSetBookMark } from '@src/hooks/useSetBookMark';
+import { useSetBookMark } from '@src/hooks/useHandleBookMark';
 
 import { DetailPostDataType } from '@type/postData';
 import BookmarkIcon from '@assets/icons/BookmarkIcon';
