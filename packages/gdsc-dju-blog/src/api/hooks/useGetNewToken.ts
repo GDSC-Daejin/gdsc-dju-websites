@@ -19,11 +19,11 @@ export const useGetNewToken = () => {
   const isEnabled = !!(token && refresh_token);
   const { data: newToken, isSuccess } = useQuery(
     [`${token}-newToken`],
-    () => getMyToken(refresh_token!, token!),
+    async () => await getMyToken(refresh_token!, token!),
     {
       refetchInterval: 20 * 60 * 1000,
       enabled: isEnabled,
-      retry: 1,
+      retry: 0,
     },
   );
 

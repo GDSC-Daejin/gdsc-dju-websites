@@ -24,7 +24,7 @@ export const useGetMyData = () => {
     {
       suspense: true,
       enabled: isEnabled,
-      retry: 1,
+      retry: 0,
       onError: async () => {
         if (token && refresh_token) {
           const newToken = await getMyToken(refresh_token, token);
