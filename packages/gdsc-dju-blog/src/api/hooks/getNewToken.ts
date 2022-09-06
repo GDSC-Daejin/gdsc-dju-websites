@@ -20,6 +20,9 @@ const refresh = async (
         path: '/',
         expires: expires,
       });
+    } else if (response.data.header.code === 403) {
+      Cookies.remove('token');
+      Cookies.remove('refresh_token');
     }
   }
   config.headers = { Authorization: `Bearer ${token}` };
