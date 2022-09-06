@@ -10,23 +10,23 @@ export default function OauthRedirectPage() {
   const token = searchParams.get('token') ?? null;
   const refresh_token = searchParams.get('refreshToken') ?? null;
   const [cookies, setCookies] = useCookies(['token', 'refresh_token']);
+  const expires = new Date(new Date().getTime() + 30 * 60 * 1000);
+
   const setCookieData = () => {
     setCookies('token', token, {
-      path: '/',
-      expires: new Date(Date.now() + 3600 * 1000),
+      expires: expires,
     });
     setCookies('refresh_token', refresh_token, {
-      path: '/',
-      expires: new Date(Date.now() + 3600 * 1000),
+      expires: expires,
     });
   };
 
   useEffect(() => {
+    setCookieData();
     (async function () {
       if (token) {
-        const userData = await getMyData(token || '');
+        const userData = await getMyData();
         TokenService.setToken(token);
-        setCookieData();
         sessionStorage.setItem(
           'user',
           JSON.stringify({

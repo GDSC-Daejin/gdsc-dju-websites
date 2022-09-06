@@ -8,81 +8,60 @@ import {
 } from '@type/postData';
 
 import { Api } from './index';
+import Auth from './AuthService';
 
 class PostService extends Api {
   //전체 포스트
   getPostData = (postId: string) => {
-    return axios.get<RowPostDataType>(
-      `${this.BLOG_API}/api/v1/post/${postId}`,
-      this.Header,
-    );
+    return Auth.get<RowPostDataType>(`${this.BLOG_API}/api/v1/post/${postId}`);
   };
   getPostsData = (params: string) => {
-    return axios.get<RowPostListType>(
+    return Auth.get<RowPostListType>(
       `${this.BLOG_API}/api/v1/post/list${params}`,
     );
   };
   //내 포스트
   getMyPostData = (postId: string) => {
-    return axios.get<RowPostDataType>(
+    return Auth.get<RowPostDataType>(
       `${this.BLOG_API}/api/guest/v1/myPost/${postId}`,
-      this.Header,
     );
   };
   getMyPostsData = (params: string) => {
-    return axios.get<RowPostListType>(
+    return Auth.get<RowPostListType>(
       `${this.BLOG_API}/api/guest/v1/myPost/${params}`,
-      this.Header,
     );
   };
 
   getMyPostsTempData = (params: string) => {
-    return axios.get<RowPostListType>(
+    return Auth.get<RowPostListType>(
       `${this.BLOG_API}/api/guest/v1/myPost/temp${params}`,
-      this.Header,
     );
   };
   getMyPostsNotTempData = (params: string) => {
-    return axios.get<RowPostListType>(
+    return Auth.get<RowPostListType>(
       `${this.BLOG_API}/api/guest/v1/myPost/notTemp${params}`,
-      this.Header,
     );
   };
   getUserPostsNotTempData = (userId: string, params: string) => {
-    return axios.get<RowPostListType>(
+    return Auth.get<RowPostListType>(
       `${this.BLOG_API}/api/v1/${userId}/notTemp/${params}`,
     );
   };
   postMyPostData = (postData: PostPostDataType) => {
-    return axios.post(
-      `${this.BLOG_API}/api/member/v2/post`,
-      postData,
-      this.Header,
-    );
+    return Auth.post(`${this.BLOG_API}/api/member/v2/post`, postData);
   };
   updateMyPostData = (postData: PostPostDataType, postId: string) => {
-    return axios.put(
-      `${this.BLOG_API}/api/member/v2/post/${postId}`,
-      postData,
-      this.Header,
-    );
+    return Auth.put(`${this.BLOG_API}/api/member/v2/post/${postId}`, postData);
   };
   deleteMyPostData = (postId: number) => {
-    return axios.delete(
-      `${this.BLOG_API}/api/member/v2/post/${postId}`,
-      this.Header,
-    );
+    return Auth.delete(`${this.BLOG_API}/api/member/v2/post/${postId}`);
   };
   getMyScrapList = () => {
-    return axios.get<RowScrapList>(
-      `${this.BLOG_API}/api/guest/v1/myScrap/list`,
-      this.Header,
-    );
+    return Auth.get<RowScrapList>(`${this.BLOG_API}/api/guest/v1/myScrap/list`);
   };
   getMyScrapData = (params: string) => {
-    return axios.get<RowPostListType>(
+    return Auth.get<RowPostListType>(
       `${this.BLOG_API}/api/guest/v1/myScrap${params}`,
-      this.Header,
     );
   };
 

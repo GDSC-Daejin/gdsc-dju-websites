@@ -39,10 +39,7 @@ const SideMenuLogin: React.FC<{
       path: '/',
     });
     sessionStorage.removeItem('user');
-    window.location.href =
-      import.meta.env.MODE === 'development'
-        ? (window.location.href = 'http://localhost:3000/')
-        : (window.location.href = 'https://gdsc-dju-blog.web.app/');
+    window.location.href = `${location.origin}`;
   };
 
   return (

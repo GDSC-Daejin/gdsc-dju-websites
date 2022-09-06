@@ -11,7 +11,7 @@ import MyBlogContentBox from '@pages/MyBlog/BlogHome/MyBlogContentBox';
 const MyBlogLayout = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { nickname } = useParams<{ nickname: string }>();
-  const { guestData } = useGetGuestData(nickname!);
+  const { guestData } = useGetGuestData(nickname);
   const { myData } = useGetMyData();
   const category = searchParams.get('type') ?? 'all';
   const page = searchParams.get('page') ?? '1';

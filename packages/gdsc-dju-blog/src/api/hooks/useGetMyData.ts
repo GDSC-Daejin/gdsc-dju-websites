@@ -1,39 +1,17 @@
-import Cookies from 'js-cookie';
-import { useCookies } from 'react-cookie';
 import { useQuery } from 'react-query';
 import UserService from '../UserService';
-import { getMyToken, useGetNewToken } from '@src/api/hooks/useGetNewToken';
 
-export const getMyData = async (token: string) => {
-  const response = await UserService.getMyData(token);
+export const getMyData = async () => {
+  const response = await UserService.getMyData();
   return response.data.body.data;
 };
 
 export const useGetMyData = () => {
-  const [cookies, setCookies] = useCookies(['token', 'refresh_token']);
-  const { newToken, isSuccess } = useGetNewToken();
-  const token = newToken ?? cookies.token;
-  const refresh_token = cookies.refresh_token;
-  newToken && setCookies('token', newToken);
+  const { data: myData } = useQuery([`userdata`], () => getMyData(), {
+    suspense: true,
 
-  const isEnabled = !!(token && refresh_token && isSuccess);
-
-  const { data: myData } = useQuery(
-    [`${token}-userdata`],
-    () => getMyData(token!),
-    {
-      suspense: true,
-      enabled: isEnabled,
-      retry: 0,
-      onError: async () => {
-        if (token && refresh_token) {
-          const newToken = await getMyToken(refresh_token, token);
-          if (!newToken) return;
-          setCookies('token', newToken);
-        }
-      },
-    },
-  );
+    retry: 0,
+  });
 
   return { myData: myData && myData };
 };
