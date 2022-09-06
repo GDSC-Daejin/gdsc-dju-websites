@@ -15,13 +15,13 @@ export const useSetBookMark = (
   const queryClient = useQueryClient();
 
   const bookMarkHandler = async () => {
-    setMarked();
+    setMarked(true);
     if (token && id) {
       if (!isLoading) {
         mutate(id);
         if (isSuccess) {
           queryClient.invalidateQueries([`${token}-scrapList`]);
-        } else setMarked();
+        } else setMarked(false);
       }
     } else {
       setAlert({

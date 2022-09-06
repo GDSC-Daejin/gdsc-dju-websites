@@ -30,7 +30,7 @@ const PostIconBox = ({ isUser, postId }: Props) => {
   const { isScrap } = useGetScrap(postId);
   const [isMarked, setIsMarked] = useState(false);
   const { bookMarkHandler } = useSetBookMark(postId, cookie.token, (check) =>
-    setIsMarked(check),
+    setIsMarked(check!),
   );
 
   const navigate = useNavigate();
