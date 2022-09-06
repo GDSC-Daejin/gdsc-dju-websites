@@ -1,14 +1,13 @@
-import { usePostBookMark } from '@src/api/hooks/usePostBookMark';
 import React from 'react';
+import { usePostBookMark } from '@src/api/hooks/usePostBookMark';
 import { useQueryClient } from 'react-query';
 import { useRecoilState } from 'recoil';
-import PostService from '../api/PostService';
 import { alertState } from '../store/alert';
 
 export const useSetBookMark = (
   id: number | undefined,
   token: string,
-  setMarked: (check: boolean) => void,
+  setMarked: (check?: boolean) => void,
 ) => {
   const [alert, setAlert] = useRecoilState(alertState);
   const { mutate, isLoading, isSuccess } = usePostBookMark();
@@ -16,14 +15,13 @@ export const useSetBookMark = (
   const queryClient = useQueryClient();
 
   const bookMarkHandler = async () => {
-    setMarked(true);
-
+    setMarked();
     if (token && id) {
       if (!isLoading) {
         mutate(id);
         if (isSuccess) {
           queryClient.invalidateQueries([`${token}-scrapList`]);
-        } else setMarked(false);
+        } else setMarked();
       }
     } else {
       setAlert({
@@ -34,5 +32,5 @@ export const useSetBookMark = (
       });
     }
   };
-  return { bookMarkHandler };
+  return { bookMarkHandler, isLoading, isSuccess };
 };
