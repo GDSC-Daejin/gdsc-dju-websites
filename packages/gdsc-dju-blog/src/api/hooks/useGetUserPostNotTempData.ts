@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import { useQuery } from 'react-query';
 import PostService from '../PostService';
 import { userPostTempUrlFilter } from './postPagination';
@@ -13,6 +14,7 @@ export function useGetUserPostsNotTempData(
   size: number,
 ) {
   const isAble = userId && category;
+
   const { data: userPostNotTempData } = useQuery(
     [
       `

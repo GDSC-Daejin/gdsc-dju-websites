@@ -16,7 +16,7 @@ class PostService extends Api {
     return Auth.get<RowPostDataType>(`${this.BLOG_API}/api/v1/post/${postId}`);
   };
   getPostsData = (params: string) => {
-    return Auth.get<RowPostListType>(
+    return axios.get<RowPostListType>(
       `${this.BLOG_API}/api/v1/post/list${params}`,
     );
   };
@@ -43,7 +43,7 @@ class PostService extends Api {
     );
   };
   getUserPostsNotTempData = (userId: string, params: string) => {
-    return Auth.get<RowPostListType>(
+    return axios.get<RowPostListType>(
       `${this.BLOG_API}/api/v1/${userId}/notTemp/${params}`,
     );
   };

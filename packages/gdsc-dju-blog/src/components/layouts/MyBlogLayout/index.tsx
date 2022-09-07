@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
-import { useGetGuestData } from '@src/api/hooks/useGetUserData';
+import { useGetGuestData } from '@src/api/hooks/useGetGuestData';
 import { useGetMyData } from '@src/api/hooks/useGetMyData';
 import MyBlogProfileBox from '@pages/MyBlog/BlogHome/MyBlogProfileBox';
 import MyBlogMenuBox from '@pages/MyBlog/BlogHome/MyBlogMenuBox';

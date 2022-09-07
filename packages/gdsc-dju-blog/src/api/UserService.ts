@@ -1,3 +1,4 @@
+import axios from 'axios';
 import Auth from './AuthService';
 import { Api } from './index';
 import { MemberInfo, RowUserData, RowUserGuest } from '@type/userDataType';
@@ -10,7 +11,7 @@ class UserService extends Api {
     return Auth.get<RowUserData>(`${this.API}/member-route/api/guest/v1/me`);
   };
   getGuestData = (nickname: string) => {
-    return Auth.get<RowUserGuest>(
+    return axios.get<RowUserGuest>(
       `${this.API}/member-route/api/v1/memberInfo/${nickname}`,
     );
   };
