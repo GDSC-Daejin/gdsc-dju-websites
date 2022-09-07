@@ -11,6 +11,10 @@ const refresh = async (
 ): Promise<AxiosRequestConfig> => {
   const refresh_token = Cookies.get('refresh_token');
   let token = Cookies.get('token');
+
+  // cookieStore를 ts에서 접근하지 못함 -> ts ignore 설정
+  // @ts-ignore
+  // eslint-disable-next-line no-undef
   const { expires } = await cookieStore.get('token');
 
   const expireDate = new Date(new Date().getTime() + 30 * 60 * 1000);
