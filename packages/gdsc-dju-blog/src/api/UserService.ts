@@ -1,23 +1,21 @@
-import axios from 'axios';
-import Auth from './AuthService';
-import { Api } from './index';
+import { AuthInstance, Instance } from '@src/api/AuthService';
 import { MemberInfo, RowUserData, RowUserGuest } from '@type/userDataType';
 
-class UserService extends Api {
+class UserService {
   updateMyData = (userInfoData: MemberInfo) => {
-    return Auth.put(`${this.API}/member-route/api/guest/v1/me`, userInfoData);
+    return AuthInstance.put(`/member-route/api/guest/v1/me`, userInfoData);
   };
   getMyData = () => {
-    return Auth.get<RowUserData>(`${this.API}/member-route/api/guest/v1/me`);
+    return AuthInstance.get<RowUserData>(`/member-route/api/guest/v1/me`);
   };
   getGuestData = (nickname: string) => {
-    return axios.get<RowUserGuest>(
-      `${this.API}/member-route/api/v1/memberInfo/${nickname}`,
+    return Instance.get<RowUserGuest>(
+      `/member-route/api/v1/memberInfo/${nickname}`,
     );
   };
   checkUserNickname = (nickname: string) => {
-    return Auth.post(
-      `${this.API}/member-route/api/guest/v1/validation/nickname`,
+    return AuthInstance.post(
+      `/member-route/api/guest/v1/validation/nickname`,
       nickname,
     );
   };
