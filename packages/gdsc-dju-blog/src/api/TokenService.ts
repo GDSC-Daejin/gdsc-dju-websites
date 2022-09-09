@@ -1,4 +1,4 @@
-import { Instance } from '@src/api/AuthService';
+import { Instance } from '@src/api/Instance';
 import { RefreshToken } from '@type/token';
 
 class TokenService {

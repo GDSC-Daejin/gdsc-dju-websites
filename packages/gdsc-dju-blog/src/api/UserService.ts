@@ -1,4 +1,4 @@
-import { AuthInstance, Instance } from '@src/api/AuthService';
+import { AuthInstance, Instance } from '@src/api/Instance';
 import { MemberInfo, RowUserData, RowUserGuest } from '@type/userDataType';
 
 class UserService {

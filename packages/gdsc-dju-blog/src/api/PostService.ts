@@ -5,7 +5,7 @@ import {
   RowScrapList,
 } from '@type/postData';
 import Cookies from 'js-cookie';
-import { AuthBlogInstance, BlogInstance } from './AuthService';
+import { AuthBlogInstance, BlogInstance } from './Instance';
 
 class PostService {
   //전체 포스트
