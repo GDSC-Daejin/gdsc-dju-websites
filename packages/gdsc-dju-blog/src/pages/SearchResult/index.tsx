@@ -2,37 +2,38 @@ import { useGetSearchPosts } from '@src/api/hooks/useGetSearchPost';
 import { LayoutContainer } from '@styles/layouts';
 import React from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import CategoryMenu from '@src/components/atoms/CategoryMenu';
 
 import {
   BlogCardGridLayoutWrapper,
   CategoryMenuWrapper,
   LayoutInner,
-  NoResult,
   PageBarWrapper,
   SearchResultContent,
   SearchResultTitle,
   SearchResultTitleWrapper,
 } from './styled';
-import BlogCardSection from '@src/components/molecules/BlogCardSection';
+import PostsContainer from '@src/components/molecules/PostsContainer';
 import PageBar from '@src/components/atoms/PageBar';
+
+import CategoryMenu from '@src/components/atoms/CategoryMenu';
+import Notice from '@src/components/atoms/Notice';
 
 const SearchResult = () => {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const { searchContent, categoryName } = useParams();
-  const nowPage = Number(searchParams.get('page')) ?? 1;
+  const currentPage = Number(searchParams.get('page')) ?? 1;
   const category = categoryName ? categoryName : 'all';
 
   const { postListData } = useGetSearchPosts({
-    SearchContent: searchContent!,
+    searchContent: searchContent!,
     category,
-    page: nowPage,
+    page: currentPage,
   });
 
   const handleClick = (page: number, limit?: number) => {
     const limitPage = limit ?? postListData?.totalPages!;
-    if (nowPage > limitPage) navigate(`page=${limitPage}`);
+    if (currentPage > limitPage) navigate(`page=${limitPage}`);
     else setSearchParams(`page=${page}`);
   };
 
@@ -59,20 +60,17 @@ const SearchResult = () => {
           <>
             <BlogCardGridLayoutWrapper>
               {!postListData.empty ? (
-                <>
-                  <BlogCardSection postData={postListData.content} />
-                  <PageBarWrapper>
-                    <PageBar
-                      page={Number(nowPage)}
-                      totalPage={postListData.totalPages - 1}
-                      onClick={handleClick}
-                    />
-                  </PageBarWrapper>
-                </>
+                <PostsContainer postData={postListData.content} />
               ) : (
-                <NoResult>
-                  <span>검색결과가 없습니다.</span>
-                </NoResult>
+                <Notice>검색결과가 없습니다.</Notice>
+              )}
+              {!postListData.empty && (
+                <PageBarWrapper>
+                  <PageBar
+                    currentPage={Number(currentPage)}
+                    totalPage={postListData.totalPages}
+                  />
+                </PageBarWrapper>
               )}
             </BlogCardGridLayoutWrapper>
           </>

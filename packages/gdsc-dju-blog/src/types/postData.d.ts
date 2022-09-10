@@ -37,20 +37,12 @@ export interface PostPostDataType {
   postHashTags: string;
   tmpStore: boolean | undefined;
 }
-export interface RowDetailPostListType {
+export interface RowPostListType {
   body: {
-    data: {
-      content: DetailPostDataType[];
-      totalElements: number;
-      totalPages: number;
-      empty: boolean;
-      first: boolean;
-      last: boolean;
-    };
+    data: PostListResponse;
   };
 }
-
-export interface SearchPostDataType {
+interface PostListResponse {
   content: DetailPostDataType[];
   totalPages: number;
   totalElements: number;
@@ -67,62 +59,9 @@ export interface SearchPostDataType {
   empty: boolean;
 }
 
-export interface ScrapPostDataType {
-  content: {
-    post: DetailPostDataType[];
-  };
-  totalPages: number;
-  totalElements: number;
-  last: boolean;
-  first: boolean;
-  sort: {
-    sorted: boolean;
-    unsorted: boolean;
-    empty: boolean;
-  };
-  numberOfElements: number;
-  size: number;
-  number: number;
-  empty: boolean;
-}
-
-export interface RowScrapDataType {
-  body: {
-    data: {
-      content: ScrapDataType[];
-    };
-  };
-}
-
-interface ScrapDataType {
-  post: ScrapPostDetailType[];
-}
-
 export interface RowScrapList {
   body: {
     data: ScrapList;
   };
 }
 export type ScrapList = number[];
-
-export interface ScrapPostDetailType {
-  postId: number;
-  tmpStore: false;
-  modifiedAt: string;
-  uploadDate: string;
-  postHashTags: string;
-  memberInfo: {
-    member: {
-      profileImageUrl: string;
-    };
-    nickname: string;
-  };
-  category: {
-    categoryName: string;
-    modifiedAt: string;
-    uploadDate: string;
-  };
-  title: string;
-  imagePath: string;
-  content: string;
-}

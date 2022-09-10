@@ -5,22 +5,14 @@ export const CategoryPageInner = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  gap: 80px;
-  margin: 180px 0;
+  margin-top: 110px;
 `;
 
-export const PageBarWrapper = styled.div`
-  align-self: center;
-  margin: 30px 0px;
-`;
-export const CategoryMenuWrapper = styled.div`
-  margin-bottom: 52px;
-`;
 export const PostLayoutWrapper = styled.div`
-  min-width: 1082px;
+  max-width: 1082px;
+  width: 1082px;
   display: flex;
-  justify-content: center;
+  gap: 60px;
   flex-direction: column;
 `;
 export const PostSectionWrapper = styled.div`

@@ -40,6 +40,12 @@ export const AuthorWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
+  cursor: pointer;
+`;
+export const PostInformation = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
   margin-bottom: 50px;
 `;
 export const AuthorImage = styled.img`

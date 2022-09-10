@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { ThemeProvider } from 'styled-components';
 import ThemeButton from './assets/icons/ThemeButton';

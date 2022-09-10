@@ -2,23 +2,19 @@ import Cookies from 'js-cookie';
 import { useQuery } from 'react-query';
 import UserService from '../UserService';
 
-export const getUserData = async (token: string) => {
-  const response = await UserService.getMyData(token);
+export const getMyData = async () => {
+  const response = await UserService.getMyData();
   return response.data.body.data;
 };
 
 export const useGetMyData = () => {
   const token = Cookies.get('token');
   const refresh_token = Cookies.get('refresh_token');
-  const isEnabled = !!(token && refresh_token);
-  const { data: userData } = useQuery(
-    [`${token}-userdata`],
-    () => getUserData(token!),
-    {
-      enabled: isEnabled,
-      retry: 1,
-    },
-  );
+  const { data: myData } = useQuery([`userdata`], () => getMyData(), {
+    suspense: true,
+    enabled: !!token && !!refresh_token,
+    retry: 0,
+  });
 
-  return { userData: userData && userData };
+  return { myData: myData && myData };
 };
