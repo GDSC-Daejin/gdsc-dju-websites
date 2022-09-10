@@ -2,12 +2,6 @@ import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 
-import {
-  FormElementWrapper,
-  FormLabel,
-  FormLabelWrapper,
-} from '../../MyBlog/ProfileEdit/styled';
-
 import { SignUpFormStyle, TextInputWrapper } from './styled';
 import UserService from '@src/api/UserService';
 import { GDSCButton } from '@src/components/atoms/Button';
@@ -17,6 +11,11 @@ import { formValidation } from '@src/components/Validation/profileEdit';
 import ValidationInput from '@src/components/atoms/input/ValidationInput';
 import { useCheckNickname } from '@src/api/hooks/useCheckNickname';
 import CheckIcon from '@assets/icons/CheckIcon';
+import {
+  FormElementWrapper,
+  FormLabel,
+  FormLabelWrapper,
+} from '@src/components/layouts/ProfileEditLayout/styled';
 
 const SignUpForm = () => {
   const {
@@ -27,7 +26,7 @@ const SignUpForm = () => {
     formState: { errors, isValid },
   } = useForm({ mode: 'onChange' });
   const navigate = useNavigate();
-  const { userData } = useGetMyData();
+  const { myData } = useGetMyData();
 
   const onSubmit = async (values: any) => {
     const response = await UserService.updateMyData({ ...values });
@@ -40,17 +39,17 @@ const SignUpForm = () => {
     keyof typeof formValidation
   >;
   useEffect(() => {
-    if (!userData) {
+    if (!myData) {
       return;
     }
     reset({
-      id: userData.memberInfo.id,
-      memberInfoId: userData.memberInfo.memberInfoId,
+      id: myData.memberInfo.id,
+      memberInfoId: myData.memberInfo.memberInfoId,
       generation: 0,
       birthday: '',
       positionType: 'Beginner',
     });
-  }, [userData]);
+  }, [myData]);
   const [isSuccess, setIsSuccess] = React.useState(false);
   const { mutate, isError: isMutationError } = useCheckNickname(setIsSuccess);
   const validationCheck = () => {

@@ -1,105 +1,86 @@
-import axios from 'axios';
-import Cookies from 'js-cookie';
 import {
   PostPostDataType,
-  RowDetailPostListType,
   RowPostDataType,
+  RowPostListType,
   RowScrapList,
-} from '../types/postData';
-import { UseGetSearchPosts } from './hooks/useGetSearchPost';
-import { Api } from './index';
+} from '@type/postData';
+import Cookies from 'js-cookie';
+import { AuthBlogInstance, BlogInstance } from './Instance';
 
-class PostService extends Api {
+class PostService {
   //전체 포스트
   getPostData = (postId: string) => {
-    return axios.get<RowPostDataType>(
-      `${this.BLOG_API}/api/v1/post/${postId}`,
-      this.Header,
-    );
+    return AuthBlogInstance.get<RowPostDataType>(`/api/v1/post/${postId}`);
   };
   getPostsData = (params: string) => {
-    return axios.get<RowDetailPostListType>(
-      `${this.BLOG_API}/api/v1/post/list${params}`,
-    );
+    return BlogInstance.get<RowPostListType>(`/api/v1/post/list${params}`);
   };
   //내 포스트
   getMyPostData = (postId: string) => {
-    return axios.get<RowPostDataType>(
-      `${this.BLOG_API}/api/guest/v1/myPost/${postId}`,
-      this.Header,
+    return AuthBlogInstance.get<RowPostDataType>(
+      `/api/guest/v1/myPost/${postId}`,
     );
   };
   getMyPostsData = (params: string) => {
-    return axios.get<RowDetailPostListType>(
-      `${this.BLOG_API}/api/guest/v1/myPost/${params}`,
-      this.Header,
+    return AuthBlogInstance.get<RowPostListType>(
+      `/api/guest/v1/myPost/${params}`,
     );
   };
 
   getMyPostsTempData = (params: string) => {
-    return axios.get<RowDetailPostListType>(
-      `${this.BLOG_API}/api/guest/v1/myPost/temp${params}`,
-      this.Header,
+    return AuthBlogInstance.get<RowPostListType>(
+      `/api/guest/v1/myPost/temp${params}`,
     );
   };
   getMyPostsNotTempData = (params: string) => {
-    return axios.get<RowDetailPostListType>(
-      `${this.BLOG_API}/api/guest/v1/myPost/notTemp${params}`,
-      this.Header,
+    return AuthBlogInstance.get<RowPostListType>(
+      `/api/guest/v1/myPost/notTemp${params}`,
+    );
+  };
+  getUserPostsNotTempData = (userId: string, params: string) => {
+    return BlogInstance.get<RowPostListType>(
+      `/api/v1/${userId}/notTemp/${params}`,
     );
   };
   postMyPostData = (postData: PostPostDataType) => {
-    return axios.post(
-      `${this.BLOG_API}/api/member/v2/post`,
-      postData,
-      this.Header,
-    );
+    return AuthBlogInstance.post(`/api/member/v2/post`, postData);
   };
   updateMyPostData = (postData: PostPostDataType, postId: string) => {
-    return axios.put(
-      `${this.BLOG_API}/api/member/v2/post/${postId}`,
-      postData,
-      this.Header,
-    );
+    return AuthBlogInstance.put(`/api/member/v2/post/${postId}`, postData);
   };
   deleteMyPostData = (postId: number) => {
-    return axios.delete(
-      `${this.BLOG_API}/api/member/v2/post/${postId}`,
-      this.Header,
-    );
+    return AuthBlogInstance.delete(`/api/member/v2/post/${postId}`);
   };
   getMyScrapList = () => {
-    return axios.get<RowScrapList>(
-      `${this.BLOG_API}/api/guest/v1/myScrap/list`,
-      this.Header,
+    return AuthBlogInstance.get<RowScrapList>(`/api/guest/v1/myScrap/list`);
+  };
+  getMyScrapData = (params: string) => {
+    return AuthBlogInstance.get<RowPostListType>(
+      `/api/guest/v1/myScrap${params}`,
     );
   };
-  getMyScrapData = () => {
-    return axios.get(`${this.BLOG_API}/api/guest/v1/myScrap`, this.Header);
-  };
+
   updateMyScrapData = (postId: number) => {
     const token = Cookies.get('token');
-    return axios.post(
-      `${this.BLOG_API}/api/guest/v1/scrap/${postId}`,
-      {
-        authorities: [
-          {
-            authority: `Bearer ${token}`,
-          },
-        ],
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
+    return AuthBlogInstance.post(`/api/guest/v1/scrap/${postId}`, {
+      authorities: [
+        {
+          authority: `Bearer ${token}`,
         },
-      },
-    );
+      ],
+    });
   };
-  getSearchPosts = ({ SearchContent, category, page }: UseGetSearchPosts) => {
-    return axios.get(
-      `${
-        this.BLOG_API
-      }/api/v1/post/search/${SearchContent}?page=${page}&size=${16}`,
+  getSearchPosts = ({
+    searchContent,
+    category,
+    page,
+  }: {
+    searchContent: string;
+    category: string;
+    page: number;
+  }) => {
+    return BlogInstance.get(
+      `/api/v1/post/search/${searchContent}?page=${page}&size=${16}`,
     );
   };
 }

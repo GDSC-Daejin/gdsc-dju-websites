@@ -1,6 +1,6 @@
 import RightArrowIcon from '@assets/icons/RightArrowIcon';
-import React from 'react';
-import { useNavigate } from 'react-router';
+import React, { memo } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import LeftArrowIcon from '../../../assets/icons/LeftArrowIcon';
 
 import {
@@ -22,15 +22,20 @@ const circleMotion = {
     opacity: 0,
   },
 };
-const PageBar = (props: {
-  page: number;
+
+interface Props {
+  currentPage: number;
   totalPage: number;
-  nickname?: string;
-  type?: string;
-  onClick: (page: number, limit?: number) => void;
-}) => {
-  const { page, nickname, totalPage, type, onClick } = props;
-  const navigate = useNavigate();
+}
+const PageBar = ({ currentPage, totalPage }: Props) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const pageHandler = (page: number, limit?: number) => {
+    if (page < 1) return;
+    if (page === limit) return;
+    else {
+      setSearchParams({ ...searchParams, page: page.toString() });
+    }
+  };
 
   const division = (array: number[], num: number) => {
     const length = array.length;
@@ -44,43 +49,47 @@ const PageBar = (props: {
     return newArray;
   };
 
-  const array = Array(totalPage)
-    .fill(0)
-    .map((data, i) => {
-      return i + 1;
-    });
+  const array = new Array(totalPage).fill(0).map((data, i) => {
+    return i + 1;
+  });
 
   const divideArray = () => {
     const PAGE_LENGTH = 8;
     const PAGES = division(array, PAGE_LENGTH - 1);
-    const pageNum = Math.floor(page / PAGE_LENGTH);
+
+    const pageNum = Math.floor(currentPage / PAGE_LENGTH);
+
     return PAGES[pageNum];
   };
+  const arrayPage = divideArray();
 
   return (
     <PageBarWrapper>
       {totalPage !== 1 && (
-        <ArrowWrapper onClick={() => onClick(page - 1)}>
+        <ArrowWrapper onClick={() => pageHandler(currentPage - 1)}>
           <LeftArrowIcon />
         </ArrowWrapper>
       )}
       <NumberSection>
-        {divideArray().map((num, id) => (
-          <NumberWrapper
-            key={id}
-            onClick={() => onClick(num)}
-            active={page === num}
-          >
-            <NumberCircle
-              variants={circleMotion}
-              animate={page === num ? 'isActive' : 'isUnActive'}
-            />
-            <Number>{num}</Number>
-          </NumberWrapper>
-        ))}
+        {arrayPage &&
+          arrayPage.map((num, id) => (
+            <NumberWrapper
+              key={id}
+              onClick={() => pageHandler(num)}
+              active={currentPage === num}
+            >
+              <NumberCircle
+                variants={circleMotion}
+                animate={currentPage === num ? 'isActive' : 'isUnActive'}
+              />
+              <Number>{num}</Number>
+            </NumberWrapper>
+          ))}
       </NumberSection>
       {totalPage !== 1 && (
-        <ArrowWrapper onClick={() => onClick(page + 1, totalPage + 1)}>
+        <ArrowWrapper
+          onClick={() => pageHandler(currentPage + 1, totalPage + 1)}
+        >
           <RightArrowIcon />
         </ArrowWrapper>
       )}
@@ -88,4 +97,4 @@ const PageBar = (props: {
   );
 };
 
-export default PageBar;
+export default memo(PageBar);

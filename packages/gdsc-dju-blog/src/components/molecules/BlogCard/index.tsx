@@ -25,7 +25,6 @@ import { DetailPostDataType } from '@type/postData';
 import BookmarkIcon from '@assets/icons/BookmarkIcon';
 import { dateFilter } from '@utils/dateFilter';
 import { hashTageSpreader } from '@utils/hashTageSpreader';
-import { throttle } from '@utils/throttle';
 import { debounce } from '@utils/debounce';
 
 const PostTextVariants = {
@@ -86,7 +85,9 @@ const BlogCard: React.FC<BlogCardProps> = ({ postData, isScrap }) => {
       <BlogCardInner onClick={linkToPost}>
         {/* 북마크 */}
         <BookMarkWrapper
-          onClick={!isLoading ? (e) => handleClick(e) : undefined}
+          onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
+            handleClick(e)
+          }
         >
           <BookmarkIcon marked={isMarked} />
         </BookMarkWrapper>

@@ -1,6 +1,17 @@
 import React from 'react';
 
-export const SideBarAnimation = {
+export const circleMotion = {
+  isActive: {
+    opacity: 1,
+    y: 0,
+  },
+  isUnActive: {
+    y: -20,
+    opacity: 0,
+  },
+};
+
+export const SideMenuAnimation = {
   isActive: {
     x: 0,
     transition: {
@@ -15,7 +26,7 @@ export const SideBarAnimation = {
   },
 };
 
-export const SideBarCircleAnimation = {
+export const SideMenuCircleAnimation = {
   isActive: {
     opacity: 1,
     x: 0,
@@ -25,7 +36,7 @@ export const SideBarCircleAnimation = {
     opacity: 0,
   },
 };
-export const SideBarGrayBoxAnimation = {
+export const SideMenuGrayBoxAnimation = {
   isActive: {
     display: 'block',
     opacity: 0.6,
@@ -66,35 +77,22 @@ export const PostCircleAnimation = {
     opacity: 0,
   },
 };
-export const listAnimate = {
-  start: {
+export const PostTextVariants = {
+  initial: {
     opacity: 0,
   },
-  end: {
+  visible: {
+    y: 0,
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.1,
+      delay: 0.1,
+      duration: 0.2,
     },
   },
   exit: {
     opacity: 0,
-  },
-};
-
-export const blogCardAnimate = {
-  start: {
-    opacity: 0,
-    transform: 'translateX(50%)',
-  },
-  end: {
-    transform: 'translateX(calc(max(1160px, 100vw)/2 - 563px))',
-    opacity: 1,
     transition: {
-      duration: 0.3,
+      duration: 0.1,
     },
-  },
-  exit: {
-    opacity: 0,
   },
 };
