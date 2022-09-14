@@ -12,25 +12,14 @@ type SelectedUserType = Pick<
   'role' | 'username' | 'userId' | 'memberInfo'
 >;
 export default function OauthRedirectPage() {
-  const [searchParams] = useSearchParams();
-  const token = searchParams.get('token') ?? null;
-  const refresh_token = searchParams.get('refreshToken') ?? null;
-  const [cookies, setCookies] = useCookies(['token', 'refresh_token']);
-  const setCookieData = () => {
-    setCookies('token', token, {
-      path: '/',
-    });
-    setCookies('refresh_token', refresh_token, {
-      path: '/',
-    });
-  };
+  const [cookies, setCookies] = useCookies(['Authorization', 'refresh_token']);
+  const token = cookies.Authorization;
 
   useEffect(() => {
     (async function () {
       if (token) {
         const userData = await getUserData(token || '');
         TokenService.setToken(token);
-        setCookieData();
         sessionStorage.setItem(
           'user',
           JSON.stringify({

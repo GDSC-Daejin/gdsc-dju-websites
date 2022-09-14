@@ -6,6 +6,7 @@ import * as path from 'path';
 export default defineConfig({
   plugins: [react()],
   server: {
+    host: 'devlog.gdsc-dju.com',
     port: 3000,
   },
   resolve: {
