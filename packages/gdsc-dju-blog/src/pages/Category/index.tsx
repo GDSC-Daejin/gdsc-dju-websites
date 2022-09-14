@@ -1,23 +1,20 @@
-import React, { memo, useCallback, useEffect } from 'react';
+import { useGetPostsData } from '@src/api/hooks/useGetPostsData';
+import CategoryMenu from '@src/components/atoms/CategoryMenu';
+import PagingPostsContainer from '@src/components/organisms/PagingPostsContainer';
+import { LayoutContainer } from '@styles/layouts';
+import React, { memo, useEffect } from 'react';
 import {
   createSearchParams,
   useNavigate,
   useParams,
   useSearchParams,
 } from 'react-router-dom';
-import { Notice } from '../MyBlog/BlogHome/styled';
+
 import {
-  CategoryMenuWrapper,
   CategoryPageInner,
-  PageBarWrapper,
   PostLayoutWrapper,
   PostSectionWrapper,
 } from './styled';
-import BlogCardSection from '../../components/molecules/BlogCardSection';
-import CategoryMenu from '@src/components/atoms/CategoryMenu';
-import { useGetPostsData } from '@src/api/hooks/useGetPostsData';
-import PageBar from '@src/components/atoms/PageBar';
-import { LayoutContainer } from '@styles/layouts';
 
 const Category = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -31,28 +28,13 @@ const Category = () => {
 
   const navigate = useNavigate();
   useEffect(() => {
-    if (page) {
+    if (!page) {
       setSearchParams({
         page: '1',
       });
     }
   }, []);
 
-  const pageHandler = useCallback((page: number, limit?: number) => {
-    if (page < 1) {
-      return;
-    }
-    if (page === limit) {
-      return;
-    } else {
-      navigate({
-        pathname: `/category/${category}`,
-        search: `?${createSearchParams({
-          page: page.toString(),
-        })}`,
-      });
-    }
-  }, []);
   const categoryHandler = (category: string) =>
     navigate({
       pathname: `/category/${category}`,
@@ -65,31 +47,18 @@ const Category = () => {
     <LayoutContainer>
       <CategoryPageInner>
         <PostLayoutWrapper>
-          <CategoryMenuWrapper>
-            <CategoryMenu type={category} onClick={categoryHandler} />
-          </CategoryMenuWrapper>
+          <CategoryMenu type={category} onClick={categoryHandler} />
           <PostSectionWrapper>
             {postListData && (
-              <>
-                {postListData.empty ? (
-                  <Notice>포스팅된 글이 없습니다</Notice>
-                ) : (
-                  <BlogCardSection postData={postListData.content} />
-                )}
-              </>
+              <PagingPostsContainer
+                postData={postListData.content}
+                totalPage={postListData.totalPages || 0}
+                currentPage={page}
+                isEmpty={postListData.empty}
+              />
             )}
           </PostSectionWrapper>
         </PostLayoutWrapper>
-        {postListData && !postListData.empty && (
-          <PageBarWrapper>
-            <PageBar
-              type={category}
-              page={page}
-              totalPage={postListData?.totalPages || 0}
-              onClick={pageHandler}
-            />
-          </PageBarWrapper>
-        )}
       </CategoryPageInner>
     </LayoutContainer>
   );

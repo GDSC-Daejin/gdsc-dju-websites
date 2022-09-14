@@ -1,78 +1,120 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
+import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useCookies } from 'react-cookie';
-import MockPostImage from '../../../assets/mocks/MockPostImage.jpg';
+import { useNavigate } from 'react-router';
 
 import {
-  BookmarkWrapper,
-  PostCardContentWrapper,
-  PostCardImage,
-  PostCardImageWrapper,
-  PostCardWrapper,
-  PostContent,
-  PostDate,
-  PostHashTageSection,
-  PostTitle,
+  BookMarkWrapper,
+  PostCardAuthorImage,
+  PostCardAuthorWrapper,
+  PostCardBottomBox,
+  PostCardInner,
+  PostCardPostText,
+  PostCardSubText,
+  PostCardSubTextWrapper,
+  PostCardTagWrapper,
+  PostCardThumbnail,
+  PostCardThumbnailWrapper,
+  PostCardTitle,
+  PostText,
 } from './styled';
-import { HashTageDark } from '@src/components/atoms/HashTage';
+import { HashTageLight } from '@src/components/atoms/HashTage';
 import { useSetBookMark } from '@src/hooks/useSetBookMark';
-
 import { DetailPostDataType } from '@type/postData';
-import BookmarkIcon from '@assets/icons/BookmarkIcon';
 import { dateFilter } from '@utils/dateFilter';
 import { hashTageSpreader } from '@utils/hashTageSpreader';
+import BookmarkIcon from '@assets/icons/BookmarkIcon';
+import { removeMarkdownInContent } from '@utils/removeMarkdownInContent';
+import { PostTextVariants } from '@src/components/Animation';
 
-interface Props extends DetailPostDataType {
+interface Props {
+  postData: DetailPostDataType;
   isScrap: boolean;
 }
 
-const PostCard: React.FC<Props> = ({
-  title,
-  category,
-  content,
-  postId,
-  postHashTags,
-  memberInfo,
-  imagePath,
-  isScrap,
-}) => {
-  const [hover, setHover] = useState(false);
+const PostCard: React.FC<Props> = ({ postData, isScrap }) => {
+  const [IsHovered, setIsHovered] = useState(false);
   const [isMarked, setIsMarked] = useState(isScrap);
   const [cookie] = useCookies(['token']);
-  const { bookMarkHandler } = useSetBookMark(postId, cookie.token, () =>
-    setIsMarked(!isMarked),
+  const { bookMarkHandler } = useSetBookMark(
+    postData.postId,
+    cookie.token,
+    () => setIsMarked(!isMarked),
   );
-  const removeMarkdownInContent = content
-    .replace(/!\[.*\]/gi, '') // ![] 제거
-    .replace(/\(.*\)/gi, '') // ( ) 제거
-    .replace(/\|/gi, '') // | 제거
-    .replace(/#/gi, '') // # 제거
-    // .replace(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g, ' ') // # 제거
-    .replace(/-/gi, ''); // @ 제거
+
+  const navigate = useNavigate();
+
+  const linkToPost = useCallback(() => {
+    navigate(`/${postData.memberInfo.nickname}/${postData.postId}`);
+  }, [postData]);
+
+  const removedMarkDownContent = removeMarkdownInContent(postData.content);
 
   return (
-    <PostCardWrapper
-      onMouseOver={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
-      <BookmarkWrapper onClick={bookMarkHandler}>
-        <BookmarkIcon marked={isMarked} />
-      </BookmarkWrapper>
-      <PostCardImageWrapper>
-        <PostCardImage src={imagePath ?? MockPostImage} />
-      </PostCardImageWrapper>
-      <PostCardContentWrapper hover={hover}>
-        <PostDate>{dateFilter(category.uploadDate)}</PostDate>
-        <PostTitle>{title}</PostTitle>
-        {postHashTags && (
-          <PostHashTageSection>
-            {hashTageSpreader(postHashTags).map((data, id) => (
-              <HashTageDark text={data} key={id} />
-            ))}
-          </PostHashTageSection>
+    <LayoutGroup>
+      <PostCardInner onClick={linkToPost}>
+        {/* 북마크 */}
+        <BookMarkWrapper onClick={(e) => bookMarkHandler(e)}>
+          <BookmarkIcon marked={isMarked} />
+        </BookMarkWrapper>
+        {/* 이미지 */}
+        <PostCardThumbnailWrapper>
+          <PostCardThumbnail
+            src={postData.imagePath ?? '../../../assets/mocks/unknown.png'}
+            alt="PostCardThumbnail"
+          />
+        </PostCardThumbnailWrapper>
+        {/* 태그 */}
+        {postData.postHashTags && (
+          <PostCardTagWrapper IsHovered={IsHovered}>
+            {hashTageSpreader(postData.postHashTags)
+              .filter((data, index) => index < 2)
+              .map((data: string, index: number) => (
+                <HashTageLight key={index} text={data} />
+              ))}
+          </PostCardTagWrapper>
         )}
-        <PostContent>{removeMarkdownInContent}</PostContent>
-      </PostCardContentWrapper>
-    </PostCardWrapper>
+        {/* 하단 PostHeader */}
+        <PostCardBottomBox
+          isHovered={IsHovered}
+          onMouseOver={() => setIsHovered(true)}
+          onMouseOut={() => setIsHovered(false)}
+        >
+          <PostCardTitle>{postData.title}</PostCardTitle>
+          <AnimatePresence>
+            {IsHovered && (
+              <PostCardPostText
+                key="PostCardPostText"
+                variants={PostTextVariants}
+                initial={'initial'}
+                animate={'visible'}
+                exit={'exit'}
+              >
+                <PostText>{removedMarkDownContent}</PostText>
+              </PostCardPostText>
+            )}
+          </AnimatePresence>
+          <PostCardSubTextWrapper>
+            {postData.memberInfo && (
+              <PostCardAuthorWrapper>
+                <PostCardAuthorImage
+                  alt="AuthorImage"
+                  src={postData.memberInfo.profileImageUrl}
+                />
+
+                <PostCardSubText subText={true}>by</PostCardSubText>
+                <PostCardSubText bold={true}>
+                  {postData.memberInfo.nickname}
+                </PostCardSubText>
+              </PostCardAuthorWrapper>
+            )}
+            <PostCardSubText subText={true}>
+              {dateFilter(postData.uploadDate)}
+            </PostCardSubText>
+          </PostCardSubTextWrapper>
+        </PostCardBottomBox>
+      </PostCardInner>
+    </LayoutGroup>
   );
 };
 
