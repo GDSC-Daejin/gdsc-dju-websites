@@ -1,28 +1,28 @@
+import { getMyData } from '@src/api/hooks/useGetMyData';
 import React, { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
-import { useSearchParams } from 'react-router-dom';
-import TokenService from '../../api/TokenService';
 import GoogleLoader from '../../components/atoms/GoogleLoader';
-import { getMyData } from '@src/api/hooks/useGetMyData';
 
 export default function OauthRedirectPage() {
-  const [cookies, setCookies] = useCookies(['Authorization', 'refresh_token']);
-  const token = cookies.Authorization;
+  const [cookies, setCookies] = useCookies(['token', 'refresh_token']);
+  const token = cookies.token;
+  // const { myData } = useGetMyData();
 
   useEffect(() => {
     (async function () {
       if (token) {
-        const userData = await getMyData();
+        const myData = await getMyData();
+        console.log(myData);
         sessionStorage.setItem(
           'user',
           JSON.stringify({
-            role: userData?.role,
-            username: userData?.username,
-            userId: userData?.userId,
+            role: myData?.role,
+            username: myData?.username,
+            userId: myData?.userId,
           }),
         );
-        if (userData) {
-          if (userData.role.toUpperCase() === 'GUEST'.toUpperCase()) {
+        if (myData) {
+          if (myData.role.toUpperCase() === 'GUEST'.toUpperCase()) {
             window.location.href = `${location.origin}/signup`;
           } else {
             window.location.href = `${location.origin}`;

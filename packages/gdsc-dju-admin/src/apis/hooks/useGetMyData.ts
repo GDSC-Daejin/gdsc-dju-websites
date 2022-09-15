@@ -9,19 +9,17 @@ export const getMyData = async (token: string) => {
 
 export const useGetMyData = () => {
   const token = localStorage.getItem('token');
-  const refresh_token = localStorage.getItem('refresh_token');
   const navigate = useNavigate();
-  const isLoggedIn = token && refresh_token;
   const { data: userData } = useQuery(
     [token, token],
     () => getMyData(token as string),
     {
       retry: 2,
       refetchOnWindowFocus: false,
-      enabled: !!isLoggedIn,
+      enabled: !!token,
       onError: () => {
         localStorage.removeItem('token');
-        localStorage.removeItem('refresh_token');
+
         navigate('/');
       },
     },

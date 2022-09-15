@@ -1,4 +1,5 @@
 import { AnimatePresence } from 'framer-motion';
+import Cookies from 'js-cookie';
 import React, { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import { useRecoilState } from 'recoil';
@@ -22,8 +23,9 @@ import SideMenuCategory from './SideMenuCategory';
 export const SideMenu = () => {
   const [menu, setMenu] = useRecoilState(menuState);
 
-  const [cookies] = useCookies(['token', 'refresh_token', 'user']);
-  const isLogin = cookies.token && cookies.refresh_token;
+  const [cookies] = useCookies(['token', 'user']);
+  console.log(cookies);
+  const isLogin = cookies.token;
   useEffect(() => {
     document.body.style.cssText = `
     position: fixed; 
