@@ -10,6 +10,9 @@ const refresh = async (
   config: AxiosRequestConfig,
 ): Promise<AxiosRequestConfig> => {
   let token = Cookies.get('token');
+
+  //TODO http 환경에서 cookieStore 사용 불가 -> https 설정 필요
+
   // cookieStore를 ts에서 접근하지 못함 -> ts ignore 설정
   // @ts-ignore
   // eslint-disable-next-line no-undef
@@ -26,7 +29,6 @@ const refresh = async (
       });
     } else if (response.data.header.code === 403) {
       Cookies.remove('token');
-      Cookies.remove('refresh_token');
     }
   }
   config.headers = { Authorization: `Bearer ${token}` };

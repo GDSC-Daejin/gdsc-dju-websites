@@ -11,7 +11,7 @@ export const useGetMyData = () => {
   const token = localStorage.getItem('token');
   const navigate = useNavigate();
   const { data: userData } = useQuery(
-    [token, token],
+    [`myData-${token}`],
     () => getMyData(token as string),
     {
       retry: 2,
