@@ -2234,16 +2234,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gdsc-dju/styled-components@npm:^0.0.11":
-  version: 0.0.11
-  resolution: "@gdsc-dju/styled-components@npm:0.0.11"
-  peerDependencies:
-    react: ^18.2.0
-    styled-components: ^5.3.5
-  checksum: 1afabfdc03acb1a236547e4baaad13a5b176d92a0ba1d2b48d515c6d478e8ad3e5727b60722b9ecbaedbb8289d28f3c718eafff0eeb4575ec65d77c3390c0544
-  languageName: node
-  linkType: hard
-
 "@gdsc-dju/styled-components@npm:^0.0.16":
   version: 0.0.16
   resolution: "@gdsc-dju/styled-components@npm:0.0.16"
@@ -2252,6 +2242,17 @@ __metadata:
     react-is: ^18.2.0
     styled-components: ^5.3.5
   checksum: bcae5e085b6b93b3999235c517cc74fbb510e4057fb69b3c63e9f706d533ec3932ed084e7d8c3a815421f557b57f9ab1bd985d06adf100b3f9742c1f37ad7264
+  languageName: node
+  linkType: hard
+
+"@gdsc-dju/styled-components@npm:^0.0.22":
+  version: 0.0.22
+  resolution: "@gdsc-dju/styled-components@npm:0.0.22"
+  peerDependencies:
+    react: ^18.2.0
+    react-is: ^18.2.0
+    styled-components: ^5.3.5
+  checksum: c7d0f1a5aca991a2a4eec0cf9ae3700cc86460975fd4519a859cb1e75ec80b3e4e54038ff5957e47463ae1c8ad5531c9a8c5333a09c8f03816a71ed618ed8694
   languageName: node
   linkType: hard
 
@@ -10030,7 +10031,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:^2.22.1":
+"eslint-plugin-import@npm:^2.22.1, eslint-plugin-import@npm:^2.26.0":
   version: 2.26.0
   resolution: "eslint-plugin-import@npm:2.26.0"
   dependencies:
@@ -11809,6 +11810,7 @@ __metadata:
     babel-register: ^6.26.0
     eslint: ^8.19.0
     eslint-config-prettier: ^8.5.0
+    eslint-plugin-import: ^2.26.0
     eslint-plugin-prettier: ^4.2.1
     eslint-plugin-react: ^7.30.1
     prettier: ^2.7.1
@@ -11895,7 +11897,7 @@ __metadata:
   dependencies:
     "@firebase/app": ^0.7.28
     "@firebase/app-compat": ^0.1.29
-    "@gdsc-dju/styled-components": ^0.0.11
+    "@gdsc-dju/styled-components": ^0.0.22
     "@types/node": ^18.0.4
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6

@@ -65,7 +65,7 @@ export const StyledTextArea = styled.textarea<{
   padding: 18px 18px;
   margin: 0;
   border-radius: 10px;
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   color: ${({ theme }) => theme.colors.grey800};
   box-shadow: inset 0 0 0 1px ${({ theme }) => theme.colors.grey300};
   cursor: auto;

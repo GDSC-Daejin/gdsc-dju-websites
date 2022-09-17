@@ -8,7 +8,7 @@ export const QuestionWrapper = styled(motion.a)<{ isOpen: boolean }>`
   color: ${({ theme }) => theme.colors.grey700};
   flex-direction: column;
   border-radius: 10px;
-  font-size: ${({ theme }) => theme.fontSize.h6};
+  font-size: ${({ theme }) => theme.fontSizes.textXxl};
   transition: all 0.3s ease;
   clip-path: inset(1% round 1%);
   ${({ isOpen }) =>
@@ -24,12 +24,12 @@ export const QuestionWrapper = styled(motion.a)<{ isOpen: boolean }>`
   }
 `;
 export const QuestionInner = styled.div`
-  font-size: ${({ theme }) => theme.fontSize.h6};
+  font-size: ${({ theme }) => theme.fontSizes.textXxl};
   display: flex;
   align-items: center;
   flex-direction: row;
   @media (max-width: 500px) {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+    font-size: ${({ theme }) => theme.fontSizes.textXl};
   }
 `;
 export const AnswerWrapper = styled(motion.div)`
@@ -39,9 +39,9 @@ export const AnswerWrapper = styled(motion.div)`
   color: ${({ theme }) => theme.colors.grey800};
 `;
 export const AnswerText = styled.div`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   @media (max-width: 500px) {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
 `;
 export const QuestionBr = styled.div`
@@ -49,7 +49,7 @@ export const QuestionBr = styled.div`
 `;
 export const QuestionMark = styled.div`
   height: 100%;
-  font-size: ${({ theme }) => theme.fontSize.h6};
+  font-size: ${({ theme }) => theme.fontSizes.textXxl};
   ::before {
     display: flex;
     height: 100%;

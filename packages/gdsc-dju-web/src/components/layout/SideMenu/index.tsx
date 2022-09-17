@@ -1,11 +1,8 @@
 import { navigationAnimate } from '@animations/NavigationAnimation';
-import { menuAtom } from '@src/store/menuAtom';
-import { useAtom } from 'jotai';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ROUTES } from '..';
-import GDSCLogo from '../../../../assets/logos/GDSCLogo.svg';
-import { StyledLink } from '../styled';
+
+import GDSCLogo from '../../../assets/logos/GDSCLogo.svg';
 
 import './MobileMenu.css';
 import {
@@ -14,11 +11,27 @@ import {
   MenuLogo,
   MenuRouteWrapper,
   MenuWrapper,
+  StyledLink,
 } from './styled';
 
-const MobileMenuCategory = () => {
+export const ROUTES = [
+  {
+    route: '/introduce',
+    title: 'Introduce',
+  },
+  {
+    route: '/recruit',
+    title: 'Recruiting',
+  },
+  {
+    route: '/faq',
+    title: 'FAQ',
+  },
+];
+
+const SideMenu = () => {
   const navigate = useNavigate();
-  const [menu, setMenu] = useAtom(menuAtom);
+
   return (
     <MenuWrapper>
       <picture>
@@ -35,7 +48,6 @@ const MobileMenuCategory = () => {
             key={id}
             onClick={() => {
               navigate(data.route);
-              setMenu(false);
             }}
           >
             <StyledLink>{data.title}</StyledLink>
@@ -47,4 +59,4 @@ const MobileMenuCategory = () => {
   );
 };
 
-export default MobileMenuCategory;
+export default SideMenu;

@@ -6,7 +6,7 @@ export const StyledInputInner = styled.input<{ disabled?: boolean }>`
   border: 0;
   border-radius: 10px;
   height: 48px;
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   outline: none;
   width: 100%;
   flex-grow: 1;
@@ -32,7 +32,7 @@ export const StyledFileInput = styled.div`
   white-space: nowrap;
   flex-grow: 1;
   font-weight: 300;
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   padding: 0 18px;
 `;
 
@@ -97,7 +97,7 @@ export const ErrorBox = styled.div`
   display: flex;
   align-items: center;
   color: ${({ theme }) => theme.colors.red900};
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   padding-left: 5px;
 `;
 export const StyledInput = styled.input<{
@@ -110,7 +110,7 @@ export const StyledInput = styled.input<{
   border: 0;
   border-radius: 10px;
   height: 50px;
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   outline: none;
   flex-grow: 1;
   background: none;

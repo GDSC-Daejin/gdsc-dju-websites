@@ -18,7 +18,7 @@ export const ApplyButtonWrapper = styled.div`
   margin-top: 10px;
 `;
 export const ApplyModalP = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   color: ${({ theme }) => theme.colors.grey600};
   min-width: 80px;
   margin-bottom: 6px;
@@ -28,7 +28,7 @@ export const ApplyModalContentWrapper = styled.div`
   flex-direction: row;
 `;
 export const ApplyModalTitle = styled.h5`
-  font-size: ${({ theme }) => theme.fontSize.h6};
+  font-size: ${({ theme }) => theme.fontSizes.textXxl};
   color: ${({ theme }) => theme.colors.grey900};
   margin-bottom: 12px;
 `;

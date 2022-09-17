@@ -1,10 +1,10 @@
-import { useAtom } from 'jotai';
 import React from 'react';
+import { useAtom } from 'jotai';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { recruitmentAtom } from '../../../store/recruitmentStatusAtom';
+import { bannerItemAnimate } from '@animations/Variants';
+import { recruitmentAtom } from '@src/store/recruitmentStatusAtom';
 import DownArrow from '../../common/DownArrow';
-import { bannerItemAnimate } from '../../animations/Variants';
 
 import {
   ButtonWrapper,

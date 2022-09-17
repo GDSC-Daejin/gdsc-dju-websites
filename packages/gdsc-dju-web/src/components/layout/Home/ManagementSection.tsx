@@ -1,10 +1,9 @@
-import { motion } from 'framer-motion';
 import React from 'react';
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
-import { managerData } from '../../../contents/managerData';
-import { useYClickScroll } from '../../../utils/useYClickScroll';
-
-import { listAnimate, listItemAnimate } from '../../animations/Variants';
+import { listAnimate, listItemAnimate } from '@animations/Variants';
+import { managerData } from '@src/contents/managerData';
+import { useYClickScroll } from '@utils/useYClickScroll';
 import MemberCard from '../../common/MemberCard';
 
 import {
@@ -22,7 +21,7 @@ const ManagerSectionWrapper = styled(HomeSectionWrapper)`
   padding-top: 0;
 `;
 const ManagerSubTitle = styled(motion.div)`
-  font-size: ${({ theme }) => theme.fontSize.h6};
+  font-size: ${({ theme }) => theme.fontSizes.textXxl};
   font-style: normal;
   font-weight: normal;
   font-stretch: normal;
@@ -31,11 +30,11 @@ const ManagerSubTitle = styled(motion.div)`
   letter-spacing: normal;
   word-break: keep-all;
   -webkit-font-smoothing: subpixel-antialiased;
-  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+  @media (max-width: ${({ theme }) => theme.windowSizes.tablet}px) {
+    font-size: ${({ theme }) => theme.fontSizes.textXl};
   }
-  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+  @media (max-width: ${({ theme }) => theme.windowSizes.mobile}px) {
+    font-size: ${({ theme }) => theme.fontSizes.textXl};
   }
 `;
 const MemberCardSection = styled(motion.section)`
@@ -63,7 +62,7 @@ const MemberCardWrapper = styled(motion.div)<{
   min-width: 250px;
   min-height: 300px;
 
-  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.windowSizes.mobile}px) {
     width: 100%;
   }
   ${({ sectionWidth, windowWidth }) =>

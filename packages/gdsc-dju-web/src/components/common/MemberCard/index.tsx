@@ -53,7 +53,7 @@ const Position = styled(motion.p)<{ positionColor: ColorToken | undefined }>`
   height: 24px;
   margin: 0 0 8px 0;
   overflow-y: hidden;
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   line-height: 24px;
   ${({ positionColor }) =>
     positionColor &&
@@ -64,13 +64,13 @@ const Position = styled(motion.p)<{ positionColor: ColorToken | undefined }>`
 const Nickname = styled(motion.p)`
   margin: 0 0 8px 0;
   overflow-y: hidden;
-  font-size: ${({ theme }) => theme.fontSize.h5};
+  font-size: ${({ theme }) => theme.fontSizes.titleS};
   color: #fff;
 `;
 const Name = styled(motion.p)`
   height: 24px;
   overflow-y: hidden;
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   line-height: 24px;
   color: #fff;
 `;
@@ -78,13 +78,13 @@ const Role = styled(motion.p)`
   height: 24px;
   margin: 0 0 8px 0;
   overflow-y: hidden;
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   line-height: 24px;
   color: ${({ theme }) => theme.colors.blue900};
 `;
 const CardText = styled(motion.div)`
   margin-top: 8px;
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   color: #fff;
   display: block;
 `;

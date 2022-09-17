@@ -13,15 +13,15 @@ export const AlertInnerWrapper = styled.div`
   z-index: 3;
 `;
 export const AlertText = styled.div<{ alertColor: keyof ColorScheme }>`
-  font-size: ${({ theme }) => theme.fontSize.h7};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   display: flex;
   align-items: center;
   color: ${({ theme }) => theme.colors.grey900};
   @media (max-width: 500px) {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+    font-size: ${({ theme }) => theme.fontSizes.textXl};
   }
   @media (max-width: 320px) {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
   ${({ alertColor }) =>
     alertColor &&

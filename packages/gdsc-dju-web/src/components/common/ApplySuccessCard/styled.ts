@@ -23,7 +23,7 @@ export const ApplyCardInner = styled.div`
   flex-direction: column;
 `;
 export const ApplyCardContent = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   color: ${({ theme }) => theme.colors.grey800};
   min-width: 70px;
   &:first-child {

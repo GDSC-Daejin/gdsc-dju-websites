@@ -1,5 +1,8 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
+import { culture } from '../../../contents/culture';
+import { listAnimate, listItemAnimate } from '../../animations/Variants';
 import {
   HomeSectionContainer,
   HomeSectionContainerInner,
@@ -7,16 +10,12 @@ import {
   HomeSectionWrapper,
 } from './styled';
 
-import { motion } from 'framer-motion';
-import { listAnimate, listItemAnimate } from '../../animations/Variants';
-import { culture } from '../../../contents/culture';
-
 const CultureContentSection = styled(motion.section)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin-top: 80px;
   grid-gap: 50px;
-  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.windowSizes.tablet}px) {
     grid-template-columns: repeat(1, 1fr);
     margin-top: 40px;
     grid-gap: 30px;
@@ -27,29 +26,29 @@ const CultureContentWrapper = styled(motion.div)`
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.windowSizes.mobile}px) {
     gap: 20px;
   }
 `;
 const CultureTitle = styled.h2`
-  font-size: ${({ theme }) => theme.fontSize.h3};
+  font-size: ${({ theme }) => theme.fontSizes.titleL};
   color: ${({ theme }) => theme.colors.grey900};
-  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
-    font-size: ${({ theme }) => theme.fontSize.h4};
+  @media (max-width: ${({ theme }) => theme.windowSizes.tablet}px) {
+    font-size: ${({ theme }) => theme.fontSizes.titleM};
     max-width: 370px;
   }
-  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
-    font-size: ${({ theme }) => theme.fontSize.h5};
+  @media (max-width: ${({ theme }) => theme.windowSizes.mobile}px) {
+    font-size: ${({ theme }) => theme.fontSizes.titleS};
     max-width: 330px;
   }
 `;
 const CultureText = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   color: ${({ theme }) => theme.colors.grey600};
   line-height: 1.5;
   word-break: keep-all;
-  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+  @media (max-width: ${({ theme }) => theme.windowSizes.tablet}px) {
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
 `;
 

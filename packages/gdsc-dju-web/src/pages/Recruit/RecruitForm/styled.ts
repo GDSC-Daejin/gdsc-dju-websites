@@ -35,7 +35,7 @@ export const RecruitFormCardWrapper = styled.div`
 export const FormLabel = styled.label<{ essential?: boolean }>`
   padding: 5px 0;
   display: inline-block;
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   font-weight: 400;
   line-height: 1.5;
   color: ${({ theme }) => theme.colors.grey700};
@@ -61,7 +61,7 @@ export const FormContentWrapper = styled.div`
 `;
 export const FormText = styled.p`
   margin-bottom: 4px;
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   line-height: 24px;
   color: ${({ theme }) => theme.colors.grey600};
 `;
@@ -105,7 +105,7 @@ export const FormSubmitButton = styled.button<{ disable?: boolean }>`
   text-align: center;
   justify-content: center;
   width: 25%;
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   border-radius: 10px;
   cursor: pointer;
   background: ${({ theme }) => theme.colors.blue900};

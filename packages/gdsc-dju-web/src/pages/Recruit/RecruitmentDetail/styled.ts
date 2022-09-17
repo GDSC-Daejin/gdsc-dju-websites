@@ -14,10 +14,10 @@ export const SectionWrapper = styled.div`
 export const IntroduceWrapper = styled.article`
   margin-right: 20px;
   box-sizing: inherit;
-  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.windowSizes.mobile}px) {
     max-width: 320px;
   }
-  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.windowSizes.tablet}px) {
     max-width: 550px;
   }
 `;

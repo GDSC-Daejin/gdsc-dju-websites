@@ -8,10 +8,10 @@ export const MemberCardWrapper = styled(motion.div)`
 
   margin-bottom: 5px;
   box-sizing: border-box;
-  @media screen and (max-width: ${({ theme }) => theme.windowSize.desk}px) {
+  @media screen and (max-width: ${({ theme }) => theme.windowSizes.desk}px) {
     width: 50%;
   }
-  @media screen and (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
+  @media screen and (max-width: ${({ theme }) => theme.windowSizes.tablet}px) {
     width: 50%;
   }
   @media screen and (max-width: 650px) {
