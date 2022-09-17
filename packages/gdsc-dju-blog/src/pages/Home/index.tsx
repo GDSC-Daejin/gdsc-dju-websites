@@ -22,7 +22,6 @@ import {
   HomeLayoutContainer,
   HomePhraseWrapper,
 } from './styled';
-import useButtonEnable from '@src/hooks/useClickedButton';
 
 function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -71,8 +70,8 @@ function Home() {
                 return (
                   <BlogCardWrapper
                     key={postData.postId}
-                    homeWidth={`${homeWidth}px`}
                     windowWidth={`${windowSize.width}px`}
+                    homeWidth={`${homeWidth}px`}
                   >
                     <BlogCard
                       postData={postData}

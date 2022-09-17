@@ -19,13 +19,14 @@ import {
   PostText,
 } from './styled';
 import { HashTageLight } from '@src/components/atoms/HashTage';
-import { useSetBookMark } from '@src/hooks/useSetBookMark';
+import { useSetBookMark } from '@src/hooks/useHandleBookMark';
 import { DetailPostDataType } from '@type/postData';
 import { dateFilter } from '@utils/dateFilter';
 import { hashTageSpreader } from '@utils/hashTageSpreader';
 import BookmarkIcon from '@assets/icons/BookmarkIcon';
 import { removeMarkdownInContent } from '@utils/removeMarkdownInContent';
 import { PostTextVariants } from '@src/components/Animation';
+import { debounce } from '@utils/debounce';
 
 interface Props {
   postData: DetailPostDataType;
@@ -41,6 +42,11 @@ const PostCard: React.FC<Props> = ({ postData, isScrap }) => {
     cookie.token,
     () => setIsMarked(!isMarked),
   );
+  const debounceBookMarkHandler = debounce(bookMarkHandler, 300);
+  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.stopPropagation();
+    debounceBookMarkHandler();
+  };
 
   const navigate = useNavigate();
 
@@ -54,7 +60,11 @@ const PostCard: React.FC<Props> = ({ postData, isScrap }) => {
     <LayoutGroup>
       <PostCardInner onClick={linkToPost}>
         {/* 북마크 */}
-        <BookMarkWrapper onClick={(e) => bookMarkHandler(e)}>
+        <BookMarkWrapper
+          onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
+            handleClick(e)
+          }
+        >
           <BookmarkIcon marked={isMarked} />
         </BookMarkWrapper>
         {/* 이미지 */}

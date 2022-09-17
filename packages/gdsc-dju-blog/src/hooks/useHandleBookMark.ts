@@ -1,24 +1,26 @@
 import React from 'react';
+import { usePostBookMark } from '@src/api/hooks/usePostBookMark';
 import { useQueryClient } from 'react-query';
 import { useRecoilState } from 'recoil';
-import PostService from '../api/PostService';
 import { alertState } from '../store/alert';
 
 export const useSetBookMark = (
   id: number | undefined,
   token: string,
-  setMarked: (check: boolean) => void,
+  setMarked: (check?: boolean) => void,
 ) => {
   const [alert, setAlert] = useRecoilState(alertState);
+  const { mutate, isLoading, isSuccess } = usePostBookMark();
   const queryClient = useQueryClient();
 
-  const bookMarkHandler = async (e: React.MouseEvent<HTMLDivElement>) => {
-    e.stopPropagation();
+  const bookMarkHandler = async () => {
     if (token && id) {
-      const result = await setBookMarkPostAPI(id);
-      if (result.body.message === 'SUCCESS') {
-        setMarked(true);
-        queryClient.invalidateQueries([`${token}-scrapList`]);
+      if (!isLoading) {
+        mutate(id);
+        if (isSuccess) {
+          queryClient.invalidateQueries([`${token}-scrapList`]);
+          setMarked(true);
+        } else setMarked(false);
       }
     } else {
       setAlert({
@@ -29,10 +31,5 @@ export const useSetBookMark = (
       });
     }
   };
-  return { bookMarkHandler };
+  return { bookMarkHandler, isLoading, isSuccess };
 };
-
-export async function setBookMarkPostAPI(postId: number) {
-  const res = await PostService.updateMyScrapData(postId);
-  return res.data;
-}
