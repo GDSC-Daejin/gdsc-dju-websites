@@ -75,7 +75,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ postData, isScrap }) => {
 
   const removeMarkdownInContent = postData.content
     .replace(/!\[.*\]/gi, '') // ![] 제거
-    .replace(/\(.*\)/gi, '') // ( ) 제거
+    .replace(/\(z.*\)/gi, '') // ( ) 제거
     .replace(/\|/gi, '') // | 제거
     .replace(/#/gi, '') // # 제거
     .replace(/-/gi, ''); // @ 제거
