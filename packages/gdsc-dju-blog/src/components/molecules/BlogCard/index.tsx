@@ -53,10 +53,10 @@ interface BlogCardProps {
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({ postData, isScrap }) => {
-  const [IsHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const [isMarked, setIsMarked] = useState(isScrap);
   const [cookie] = useCookies(['token']);
-  const { bookMarkHandler, isLoading, isSuccess } = useSetBookMark(
+  const { bookMarkHandler } = useSetBookMark(
     postData.postId,
     cookie.token,
     () => setIsMarked(!isMarked),
@@ -100,7 +100,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ postData, isScrap }) => {
         </BlogCardThumbnailWrapper>
         {/* 태그 */}
         {postData.postHashTags && (
-          <BlogCardTagWrapper IsHovered={IsHovered}>
+          <BlogCardTagWrapper isHovered={isHovered}>
             {hashTageSpreader(postData.postHashTags)
               .filter((data, index) => index < 2)
               .map((data: string, index: number) => (
@@ -110,13 +110,13 @@ const BlogCard: React.FC<BlogCardProps> = ({ postData, isScrap }) => {
         )}
         {/* 하단 PostHeader */}
         <BlogCardBottomBox
-          isHovered={IsHovered}
+          isHovered={isHovered}
           onMouseOver={() => setIsHovered(true)}
           onMouseOut={() => setIsHovered(false)}
         >
           <BlogCardTitle>{postData.title}</BlogCardTitle>
           <AnimatePresence>
-            {IsHovered && (
+            {isHovered && (
               <BlogCardPostText
                 key="BlogCardPostText"
                 variants={PostTextVariants}

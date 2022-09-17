@@ -11,16 +11,15 @@ export const useSetBookMark = (
 ) => {
   const [alert, setAlert] = useRecoilState(alertState);
   const { mutate, isLoading, isSuccess } = usePostBookMark();
-
   const queryClient = useQueryClient();
 
   const bookMarkHandler = async () => {
-    setMarked(true);
     if (token && id) {
       if (!isLoading) {
         mutate(id);
         if (isSuccess) {
           queryClient.invalidateQueries([`${token}-scrapList`]);
+          setMarked(true);
         } else setMarked(false);
       }
     } else {

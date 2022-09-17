@@ -34,10 +34,10 @@ export const BlogCardThumbnail = styled.img`
   height: 294px;
 `;
 
-export const BlogCardTagWrapper = styled.div<{ IsHovered: boolean }>`
+export const BlogCardTagWrapper = styled.div<{ isHovered: boolean }>`
   display: flex;
   position: absolute;
-  bottom: ${({ IsHovered }) => (IsHovered ? '254px' : '92px')};
+  bottom: ${({ isHovered }) => (isHovered ? '254px' : '92px')};
   transition: all 0.3s ease;
   left: 9px;
 `;
