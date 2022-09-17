@@ -7,7 +7,7 @@ export const NavTask = styled.li`
   margin: 0 5px;
   cursor: pointer;
   color: ${({ theme }) => theme.colors.grey800};
-  font-size: ${({ theme }) => theme.fontSize.body2}
+  font-size: ${({ theme }) => theme.fontSizes.textL}
   font-weight: 500;
   word-break: keep-all;
   list-style: none;
@@ -40,7 +40,7 @@ export const NavDesign = styled.nav<{
         `
       : css`
           background: ${({ theme }) => theme.colors.background};
-          box-shadow: 0 4px 30px ${({ theme }) => theme.colors.greyOpacity100};
+          box-shadow: 0 4px 30px ${({ theme }) => theme.colors.boxShadow100};
           border-bottom: 1px solid ${({ theme }) => theme.colors.grey200};
         `}
   ${(props) =>
@@ -48,7 +48,7 @@ export const NavDesign = styled.nav<{
     css`
       display: none;
     `};
-  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.windowSizes.mobile}px) {
     height: 60px;
   }
 `;

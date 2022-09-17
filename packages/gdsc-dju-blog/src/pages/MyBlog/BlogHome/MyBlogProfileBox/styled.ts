@@ -15,7 +15,7 @@ export const ProfileDetailWrapper = styled.section`
 `;
 export const Role = styled.p`
   color: ${({ theme }) => theme.colors.grey500};
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   font-family: 'Google Sans', sans-serif;
   text-transform: capitalize;
 `;
@@ -28,14 +28,14 @@ export const BlogNameWrapper = styled.div`
 `;
 export const BlogName = styled.h2`
   margin-right: 10px;
-  font-size: ${({ theme }) => theme.fontSize.h2};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   color: ${({ theme }) => theme.colors.grey900};
   font-weight: bold;
   font-family: 'Google Sans', sans-serif;
   line-height: 1.2;
 `;
 export const BlogNamePosition = styled.p<{ color: string }>`
-  font-size: ${({ theme }) => theme.fontSize.h5};
+  font-size: ${({ theme }) => theme.fontSizes.titleS};
   font-family: 'Google Sans', sans-serif;
   position: relative;
   bottom: -7px;
@@ -54,7 +54,7 @@ export const SettingIconWrapper = styled.div`
   cursor: pointer;
 `;
 export const IntroduceText = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   color: ${({ theme }) => theme.colors.grey900};
   max-width: 555px;
 `;

@@ -67,7 +67,7 @@ export const PostCardBottomBox = styled(motion.div)<{ isHovered: boolean }>`
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  background: ${({ theme }) => theme.colors.cardBackground};
+  background: ${({ theme }) => theme.colors.grey50};
   padding: 8px 20px 12px;
   gap: ${({ isHovered }) => (isHovered ? '170px' : '8px')};
   transition: all 0.3s ease;
@@ -75,7 +75,7 @@ export const PostCardBottomBox = styled(motion.div)<{ isHovered: boolean }>`
   overflow: hidden;
 `;
 export const PostCardTitle = styled(motion.h6)`
-  font-size: ${({ theme }) => theme.fontSize.h6};
+  font-size: ${({ theme }) => theme.fontSizes.textXxl};
   font-weight: 400;
   color: ${({ theme }) => theme.colors.grey900};
   white-space: nowrap;
@@ -116,7 +116,7 @@ export const PostText = styled.article`
   -webkit-box-orient: vertical;
   overflow: hidden;
   -webkit-line-clamp: 7;
-  font-size: ${({ theme }) => theme.fontSize.body3};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   color: ${({ theme }) => theme.colors.grey700};
 `;
 
@@ -124,7 +124,7 @@ export const PostCardSubText = styled.div<{
   subText?: boolean;
   bold?: boolean;
 }>`
-  font-size: ${({ theme }) => theme.fontSize.body3};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   color: ${({ theme }) => theme.colors.grey900};
   ${({ subText }) =>
     subText &&

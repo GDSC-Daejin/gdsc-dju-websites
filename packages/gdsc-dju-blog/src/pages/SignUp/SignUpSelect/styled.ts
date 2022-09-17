@@ -1,5 +1,6 @@
+import { ColorScheme } from '@gdsc-dju/styled-components';
+import { useGetPositionColor } from '@src/hooks/useGetPositionColor';
 import styled from 'styled-components';
-import { assetColors } from '../../../styles/assetColors';
 
 export const SelectBoxWrapper = styled.div`
   position: relative;
@@ -35,7 +36,7 @@ export const SignUpSelectBox = styled.ul<{
   border-radius: 10px;
   border: 1px solid
     ${({ theme, errorCheck }) =>
-      errorCheck ? theme.colors.tossRed : theme.colors.grey400};
+      errorCheck ? theme.colors.red600 : theme.colors.grey400};
   li:first-child {
     display: flex;
     justify-content: space-between;
@@ -56,7 +57,7 @@ export const SignUpSelectOption = styled.li<{ selected: boolean }>`
   color: ${({ theme }) => theme.colors.grey400};
   font-style: normal;
   font-weight: 400;
-  font-size: ${({ theme }) => theme.fontSize.body4};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   line-height: 26px;
   background-color: ${({ theme, selected }) =>
     selected && theme.colors.grey100};
@@ -65,25 +66,10 @@ export const SignUpSelectOption = styled.li<{ selected: boolean }>`
   }
 `;
 
-const handleColorType = (position: string) => {
-  switch (position) {
-    case 'Frontend':
-      return assetColors.GDSC_Red;
-    case 'Backend':
-      return assetColors.GDSC_Blue;
-    case 'Designer':
-      return assetColors.GDSC_Yellow;
-    case 'Android':
-      return assetColors.GDSC_Green;
-    case 'Beginner':
-      return assetColors.GDSC_Beginner;
-  }
-};
-
-export const SignUpColorCircle = styled.div<{ position: string }>`
+export const SignUpColorCircle = styled.div<{ positionColor: string }>`
   width: 8px;
   height: 8px;
-  background-color: ${({ theme, position }) => handleColorType(position)};
+  background-color: ${({ positionColor }) => positionColor};
   border-radius: 50%;
 `;
 
@@ -103,7 +89,7 @@ export const SignUpInputLabel = styled.div`
 `;
 
 export const SignUpInputLabelText = styled.label`
-  font-size: ${({ theme }) => theme.fontSize.body4};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   font-style: normal;
   font-weight: 500;
   line-height: 26px;

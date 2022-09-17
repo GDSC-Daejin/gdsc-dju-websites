@@ -30,7 +30,7 @@ export const GrayBox = styled(motion.div)`
   display: flex;
   position: fixed;
   background: #191f28;
-  backdrop-filter: ${({ theme }) => theme.colors.blurBackground};
+  backdrop-filter: blur(10px);
   right: 0;
   top: 0;
   bottom: 0;
@@ -63,21 +63,21 @@ export const ProfileInformation = styled.div`
 export const ProfileName = styled.div`
   display: flex;
   padding-right: 10px;
-  font-size: ${({ theme }) => theme.fontSize.h4};
+  font-size: ${({ theme }) => theme.fontSizes.titleM};
   font-weight: bold;
   color: ${({ theme }) => theme.colors.grey900};
   @media screen and (max-width: 500px) {
-    font-size: ${({ theme }) => theme.fontSize.h5};
+    font-size: ${({ theme }) => theme.fontSizes.titleS};
   }
 `;
 export const ProfileJobPosition = styled.div`
   display: flex;
   padding-right: 10px;
   padding-bottom: 5px;
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.titleXl};
   color: ${({ theme }) => theme.colors.grey600};
   @media screen and (max-width: 500px) {
-    font-size: ${({ theme }) => theme.fontSize.body3};
+    font-size: ${({ theme }) => theme.fontSizes.titleM};
   }
 `;
 export const SettingIconWrapper = styled.div`

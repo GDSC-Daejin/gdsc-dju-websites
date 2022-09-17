@@ -12,12 +12,12 @@ export const SearchResultTitle = styled.h1`
   display: flex;
   align-self: flex-end;
   padding: 12px 0;
-  font-size: ${({ theme }) => theme.fontSize.h5};
+  font-size: ${({ theme }) => theme.fontSizes.titleS};
   color: ${(props) => props.theme.colors.grey900};
 `;
 
 export const SearchResultContent = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.h7};
+  font-size: ${({ theme }) => theme.fontSizes.textXxl};
   line-height: 1.625rem;
   color: ${(props) => props.theme.colors.grey600};
 `;
@@ -58,7 +58,7 @@ export const NoResult = styled.div`
   width: 1200px;
   height: 400px;
   span {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+    font-size: ${({ theme }) => theme.fontSizes.textXl};
     color: ${({ theme }) => theme.colors.grey400};
   }
 `;
