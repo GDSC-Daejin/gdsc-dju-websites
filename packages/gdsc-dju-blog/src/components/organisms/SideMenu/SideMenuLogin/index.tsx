@@ -1,4 +1,11 @@
+import SettingIcon from '@assets/icons/SettingIcon';
+import { useGetMyData } from '@src/api/hooks/useGetMyData';
+
+import { GDSCButton } from '@src/components/atoms/Button';
+import ProfileImage from '@src/components/atoms/ProfileImage';
 import React, { Suspense } from 'react';
+import { useCookies } from 'react-cookie';
+import { useNavigate } from 'react-router';
 import {
   BottomButtonWrapper,
   LogoutButtonWrapper,
@@ -11,33 +18,18 @@ import {
   WriteButtonWrapper,
 } from '../styled';
 
-import { GDSCButton } from '@src/components/atoms/Button';
-import { useNavigate } from 'react-router';
-import ProfileImage from '@src/components/atoms/ProfileImage';
-import { useCookies } from 'react-cookie';
-import SettingIcon from '@assets/icons/SettingIcon';
-import { useGetMyData } from '@src/api/hooks/useGetMyData';
-
 const SideMenuLogin: React.FC<{
   closeSideMenu: () => void;
 }> = ({ closeSideMenu }) => {
   const navigate = useNavigate();
-  const [TokenCookies, setTokenCookie, removeTokenCookie] = useCookies([
-    'token',
-    'refresh_token',
-  ]);
+  const [, , removeCookies] = useCookies(['token']);
 
   const { myData } = useGetMyData();
 
   const postBlock = myData?.role === 'GUEST';
 
   const handleLogout = () => {
-    removeTokenCookie('token', {
-      path: '/',
-    });
-    removeTokenCookie('refresh_token', {
-      path: '/',
-    });
+    removeCookies('token', { path: '/', domain: '.gdsc-dju.com' });
     sessionStorage.removeItem('user');
     window.location.href = `${location.origin}`;
   };

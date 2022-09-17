@@ -7,7 +7,7 @@ export const PageBarWrapper = styled.div`
   flex-direction: row;
 `;
 export const Number = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
 `;
 export const NumberCircle = styled(motion.div)`
   background: ${({ theme }) => theme.colors.grey900};

@@ -9,8 +9,9 @@ const refreshErrorHandler = () => {
 const refresh = async (
   config: AxiosRequestConfig,
 ): Promise<AxiosRequestConfig> => {
-  const refresh_token = Cookies.get('refresh_token');
   let token = Cookies.get('token');
+
+  //TODO http 환경에서 cookieStore 사용 불가 -> https 설정 필요
 
   // cookieStore를 ts에서 접근하지 못함 -> ts ignore 설정
   // @ts-ignore
@@ -18,8 +19,8 @@ const refresh = async (
   const { expires } = await cookieStore.get('token');
 
   const expireDate = new Date(new Date().getTime() + 30 * 60 * 1000);
-  if (expires - new Date().getTime() < 0 && refresh_token) {
-    const response = await TokenService.getRefresh(refresh_token, token!);
+  if (expires - new Date().getTime() < 0) {
+    const response = await TokenService.getRefresh();
     if (response.data.header.code === 200) {
       token = response.data.body.data.token;
       Cookies.set('token', token, {
@@ -28,7 +29,6 @@ const refresh = async (
       });
     } else if (response.data.header.code === 403) {
       Cookies.remove('token');
-      Cookies.remove('refresh_token');
     }
   }
   config.headers = { Authorization: `Bearer ${token}` };

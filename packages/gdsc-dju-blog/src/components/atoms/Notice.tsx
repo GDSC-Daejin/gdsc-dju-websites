@@ -6,7 +6,7 @@ export const NoticeText = styled.p<{ align: boolean }>`
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  font-size: ${({ theme }) => theme.fontSize.h6};
+  font-size: ${({ theme }) => theme.fontSizes.textXxl};
   color: ${({ theme }) => theme.colors.grey400};
   ${({ align }) =>
     align &&

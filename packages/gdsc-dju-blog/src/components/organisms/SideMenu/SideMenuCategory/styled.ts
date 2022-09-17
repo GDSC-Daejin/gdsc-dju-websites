@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
-import { lightColors } from '../../../../styles/lightColors';
 
 export const SideCategoryText = styled(motion.div)<{ isActive?: boolean }>`
-  font-size: ${({ theme }) => theme.fontSize.h7};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   font-weight: normal;
   font-family: 'Google Sans', sans-serif;
   color: ${({ theme }) => theme.colors.grey300};

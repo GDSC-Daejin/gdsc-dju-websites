@@ -96,7 +96,7 @@ const ProfileEditLayout = ({ myData }: { myData: UserData }) => {
         <FormButtonWrapper>
           <GDSCButton
             text={'저장하기'}
-            color={'googleBlue'}
+            color={'blue900'}
             onClick={handleSubmit(onSubmit)}
           />
         </FormButtonWrapper>

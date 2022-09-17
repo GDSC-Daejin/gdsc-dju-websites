@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
-import { lightTheme } from '../../../styles/theme';
+import { ColorToken } from '@gdsc-dju/styled-components';
 
 export const StyledButton = styled.button<{
-  color?: keyof typeof lightTheme.colors;
-  background?: keyof typeof lightTheme.colors;
+  color?: ColorToken;
+  background?: ColorToken;
   size?: string;
   disable?: boolean;
   border?: string;
@@ -11,7 +11,7 @@ export const StyledButton = styled.button<{
   display: flex;
   align-items: center;
   border: 1px solid ${({ theme }) => theme.colors.grey200};
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   padding: 8px 30px;
   cursor: pointer;
   box-shadow: 0 2px 12px rgba(25, 31, 40, 0.08);

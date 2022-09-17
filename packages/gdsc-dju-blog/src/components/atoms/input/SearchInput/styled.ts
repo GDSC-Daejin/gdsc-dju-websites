@@ -8,16 +8,16 @@ export const SearchInputWrapper = styled.div`
 export const Search = styled.input`
   min-width: 400px;
   height: 30px;
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   border-radius: 50px;
   border: 1px solid ${({ theme }) => theme.colors.grey300};
   padding-left: 20px;
   color: ${({ theme }) => theme.colors.grey900};
   background: ${({ theme }) => theme.colors.background};
-  @media (max-width: ${({ theme }) => theme.windowSize.desk}px) {
+  @media (max-width: ${({ theme }) => theme.windowSizes.desk}px) {
     min-width: 280px;
   }
-  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.windowSizes.tablet}px) {
     display: none;
   }
   &::placeholder {
@@ -33,7 +33,7 @@ export const SearchIconWrapper = styled.div`
   justify-content: center;
   top: 5px;
   right: 14px;
-  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.windowSizes.tablet}px) {
     position: static;
   }
 `;

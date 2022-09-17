@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ContentBox = styled.article`
   .toastui-editor > div {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+    font-size: ${({ theme }) => theme.fontSizes.textXl};
   }
   .toastui-editor-defaultUI {
     border: 0 solid !important;
@@ -13,7 +13,7 @@ export const ContentBox = styled.article`
   .toastui-editor-mode-switch .tab-item {
     border: 0 solid !important;
     background: ${({ theme }) => theme.colors.background}!important;
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
     color: ${({ theme }) => theme.colors.grey300};
     .active {
       color: ${({ theme }) => theme.colors.grey900};
@@ -26,7 +26,7 @@ export const ContentBox = styled.article`
   .hljs-template-variable,
   span > span,
   pre > span {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
   .toastui-editor-defaultUI {
     border: 1px solid ${({ theme }) => theme.colors.grey200};
@@ -60,7 +60,7 @@ export const ContentBox = styled.article`
     color: ${({ theme }) => theme.colors.grey900};
     background-color: ${({ theme }) => theme.colors.background};
     font-family: 'Google Sans Display', 'Noto Sans KR', sans-serif;
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
     line-height: 1.5;
     word-wrap: break-word;
   }
@@ -80,7 +80,7 @@ export const ContentBox = styled.article`
   li,
   ol,
   ul {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+    font-size: ${({ theme }) => theme.fontSizes.textXl};
     line-height: 1.7;
   }
 
@@ -115,7 +115,7 @@ export const ContentBox = styled.article`
 
   .toastui-editor-contents a {
     background-color: transparent;
-    color: ${({ theme }) => theme.colors.tossBlue};
+    color: ${({ theme }) => theme.colors.blue600};
     text-decoration: none;
   }
 
@@ -142,7 +142,7 @@ export const ContentBox = styled.article`
     margin: 0.67em 0;
     font-weight: 600;
     padding-bottom: 0.3em;
-    font-size: ${({ theme }) => theme.fontSize.h4};
+    font-size: ${({ theme }) => theme.fontSizes.titleM};
     border-bottom: 1px solid ${({ theme }) => theme.colors.grey400};
   }
 
@@ -152,12 +152,12 @@ export const ContentBox = styled.article`
   }
 
   .toastui-editor-contents small {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+    font-size: ${({ theme }) => theme.fontSizes.textXl};
   }
 
   .toastui-editor-contents sub,
   .toastui-editor-contents sup {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
     line-height: 0;
     position: relative;
     vertical-align: baseline;
@@ -183,7 +183,7 @@ export const ContentBox = styled.article`
   .toastui-editor-contents pre,
   .toastui-editor-contents samp {
     font-family: 'Google Sans Display', 'Noto Sans KR', sans-serif;
-    font-size: ${({ theme }) => theme.fontSize.body3};
+    font-size: ${({ theme }) => theme.fontSizes.textM};
   }
 
   .toastui-editor-contents figure {
@@ -207,7 +207,7 @@ export const ContentBox = styled.article`
     margin: 0;
     overflow: visible;
     font-family: 'Google Sans Display', 'Noto Sans KR', sans-serif;
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
     line-height: inherit;
   }
 
@@ -302,7 +302,7 @@ export const ContentBox = styled.article`
   .toastui-editor-contents kbd {
     display: inline-block;
     padding: 3px 5px;
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
     line-height: 10px;
     color: ${({ theme }) => theme.colors.grey900};
     vertical-align: middle;
@@ -329,23 +329,23 @@ export const ContentBox = styled.article`
   .toastui-editor-contents h2 {
     font-weight: 600;
     padding-bottom: 0.3em;
-    font-size: ${({ theme }) => theme.fontSize.h5};
+    font-size: ${({ theme }) => theme.fontSizes.titleS};
     border-bottom: ${({ theme }) => theme.colors.grey400};
   }
 
   .toastui-editor-contents h3 {
     font-weight: 600;
-    font-size: ${({ theme }) => theme.fontSize.h6};
+    font-size: ${({ theme }) => theme.fontSizes.textXxl};
   }
 
   .toastui-editor-contents h4 {
     font-weight: 600;
-    font-size: ${({ theme }) => theme.fontSize.h7};
+    font-size: ${({ theme }) => theme.fontSizes.textXl};
   }
 
   .toastui-editor-contents h5 {
     font-weight: 600;
-    font-size: ${({ theme }) => theme.fontSize.body1};
+    font-size: ${({ theme }) => theme.fontSizes.textXl};
   }
 
   .toastui-editor-contents p {
@@ -387,14 +387,14 @@ export const ContentBox = styled.article`
 
   .toastui-editor-contents tt,
   .toastui-editor-contents code {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
 
   .toastui-editor-contents pre {
     margin-top: 0;
     margin-bottom: 0;
 
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
     word-wrap: normal;
   }
 
@@ -423,7 +423,7 @@ export const ContentBox = styled.article`
 
   .toastui-editor-contents .pl-c1,
   .toastui-editor-contents .pl-s .pl-v {
-    color: ${({ theme }) => theme.colors.googleBlue};
+    color: ${({ theme }) => theme.colors.blue900};
   }
 
   .toastui-editor-contents .pl-e,
@@ -437,11 +437,11 @@ export const ContentBox = styled.article`
   }
 
   .toastui-editor-contents .pl-ent {
-    color: ${({ theme }) => theme.colors.googleGreen};
+    color: ${({ theme }) => theme.colors.green900};
   }
 
   .toastui-editor-contents .pl-k {
-    color: ${({ theme }) => theme.colors.googleRed};
+    color: ${({ theme }) => theme.colors.red900};
   }
 
   .toastui-editor-contents .pl-s,
@@ -451,7 +451,7 @@ export const ContentBox = styled.article`
   .toastui-editor-contents .pl-sr .pl-cce,
   .toastui-editor-contents .pl-sr .pl-sre,
   .toastui-editor-contents .pl-sr .pl-sra {
-    color: ${({ theme }) => theme.colors.googleBlue};
+    color: ${({ theme }) => theme.colors.blue900};
   }
 
   .toastui-editor-contents .pl-v,
@@ -475,7 +475,7 @@ export const ContentBox = styled.article`
 
   .toastui-editor-contents .pl-sr .pl-cce {
     font-weight: bold;
-    color: ${({ theme }) => theme.colors.googleGreen};
+    color: ${({ theme }) => theme.colors.green900};
   }
 
   .toastui-editor-contents .pl-ml {
@@ -486,7 +486,7 @@ export const ContentBox = styled.article`
   .toastui-editor-contents .pl-mh .pl-en,
   .toastui-editor-contents .pl-ms {
     font-weight: bold;
-    color: ${({ theme }) => theme.colors.googleBlue};
+    color: ${({ theme }) => theme.colors.blue900};
   }
 
   .toastui-editor-contents .pl-mi {
@@ -543,7 +543,7 @@ export const ContentBox = styled.article`
 
   .toastui-editor-contents g-emoji {
     font-family: 'Google Sans Display', 'Noto Sans KR', sans-serif;
-    font-size: ${({ theme }) => theme.fontSize.body3};
+    font-size: ${({ theme }) => theme.fontSizes.textM};
     font-style: normal !important;
     font-weight: 400;
     line-height: 1;
@@ -715,7 +715,7 @@ export const ContentBox = styled.article`
   .toastui-editor-contents dl dt {
     padding: 0;
     margin-top: 16px;
-    font-size: ${({ theme }) => theme.fontSize.body3};
+    font-size: ${({ theme }) => theme.fontSizes.textM};
     font-style: italic;
     font-weight: 600;
   }
@@ -728,18 +728,18 @@ export const ContentBox = styled.article`
   .toastui-editor-contents table th {
     padding: 6px 13px;
     font-weight: 500;
-    font-size: ${({ theme }) => theme.fontSize.body2};
-    background: ${({ theme }) => theme.colors.tossBlue200};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
+    background: ${({ theme }) => theme.colors.blue600};
   }
 
   .toastui-editor-contents table td {
     padding: 6px 13px;
-    font-size: ${({ theme }) => theme.fontSize.body3};
+    font-size: ${({ theme }) => theme.fontSizes.textM};
     border: 1px solid ${({ theme }) => theme.colors.grey300};
   }
 
   .toastui-editor-contents table tr {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
     background-color: ${({ theme }) => theme.colors.background};
     border-top: 1px solid ${({ theme }) => theme.colors.grey600};
   }
@@ -858,7 +858,7 @@ export const ContentBox = styled.article`
   .toastui-editor-contents tt {
     padding: 0.2em 0.4em;
     margin: 0;
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
     background-color: rgba(175, 184, 193, 0.2);
     border-radius: 6px;
   }
@@ -873,7 +873,7 @@ export const ContentBox = styled.article`
   }
 
   .toastui-editor-contents pre code {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
 
   .toastui-editor-contents pre > code {
@@ -921,7 +921,7 @@ export const ContentBox = styled.article`
   .toastui-editor-contents .csv-data th {
     padding: 5px;
     overflow: hidden;
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
     line-height: 1;
     text-align: left;
     white-space: nowrap;
@@ -944,7 +944,7 @@ export const ContentBox = styled.article`
   }
 
   .toastui-editor-contents .footnotes {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
     color: ${({ theme }) => theme.colors.grey600};
     border-top: 1px solid #d0d7de;
   }
@@ -1012,15 +1012,15 @@ export const ContentBox = styled.article`
     filter: invert(50%);
   }
   .toastui-editor-contents p > code {
-    color: ${({ theme }) => theme.colors.tossBlue};
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    color: ${({ theme }) => theme.colors.blue600};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
     font-family: 'Google Sans Display', 'Noto Sans KR', sans-serif !important;
   }
   .toastui-editor-contents ol > li::before {
     margin-left: -35px;
   }
   code > span {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
   .token.operator {
     background: transparent !important;
@@ -1154,34 +1154,34 @@ export const ContentBox = styled.article`
     color: #42a5f5;
   }
   .toastui-editor-md-thematic-break {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
   .toastui-editor-md-code-block-line-background {
     font-family: 'Google Sans Display', 'Noto Sans KR', sans-serif !important;
     background: ${({ theme }) => theme.colors.background};
   }
   .ProseMirror > div {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+    font-size: ${({ theme }) => theme.fontSizes.textXl};
     color: ${({ theme }) => theme.colors.grey900};
   }
   .toastui-editor-md-link {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
   .toastui-editor-md-code.toastui-editor-md-marked-text {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
 
   .toastui-editor-md-strong {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+    font-size: ${({ theme }) => theme.fontSizes.textXl};
   }
   .toastui-editor-md-meta {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+    font-size: ${({ theme }) => theme.fontSizes.textXl};
   }
   .toastui-editor-md-code-block {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+    font-size: ${({ theme }) => theme.fontSizes.textXl};
   }
   .toastui-editor-md-block-quote {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+    font-size: ${({ theme }) => theme.fontSizes.textXl};
   }
   .toastui-editor-md-delimiter {
     font-size: unset;
@@ -1190,15 +1190,15 @@ export const ContentBox = styled.article`
     font-size: unset;
   }
   .toastui-editor-md-heading1 {
-    font-size: ${({ theme }) => theme.fontSize.h3};
+    font-size: ${({ theme }) => theme.fontSizes.titleL};
   }
   .toastui-editor-md-heading2 {
-    font-size: ${({ theme }) => theme.fontSize.h4};
+    font-size: ${({ theme }) => theme.fontSizes.titleM};
   }
   .toastui-editor-md-heading3 {
-    font-size: ${({ theme }) => theme.fontSize.h5};
+    font-size: ${({ theme }) => theme.fontSizes.titleS};
   }
   .toastui-editor-md-list-item {
-    font-size: ${({ theme }) => theme.fontSize.body1} !important;
+    font-size: ${({ theme }) => theme.fontSizes.textXl} !important;
   }
 `;

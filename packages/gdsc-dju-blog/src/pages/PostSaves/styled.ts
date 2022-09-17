@@ -9,6 +9,6 @@ export const ButtonWrapper = styled.div`
 `;
 export const PostSavesTitle = styled.div`
   display: flex;
-  font-size: ${(props) => props.theme.fontSize.h4};
+  font-size: ${(props) => props.theme.fontSizes.titleM};
   font-weight: 700;
 `;

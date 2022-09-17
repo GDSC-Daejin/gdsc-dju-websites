@@ -12,7 +12,7 @@ const CheckIcon = ({ type }: CheckIconProps) => {
       case 'success':
         return theme.colors.green500;
       case 'error':
-        return theme.colors.tossRed;
+        return theme.colors.red600;
       default:
         return theme.colors.grey400;
     }

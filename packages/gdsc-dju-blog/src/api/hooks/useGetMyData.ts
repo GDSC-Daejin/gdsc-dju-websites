@@ -9,10 +9,10 @@ export const getMyData = async () => {
 
 export const useGetMyData = () => {
   const token = Cookies.get('token');
-  const refresh_token = Cookies.get('refresh_token');
+
   const { data: myData } = useQuery([`userdata`], () => getMyData(), {
     suspense: true,
-    enabled: !!token && !!refresh_token,
+    enabled: !!token,
     retry: 0,
   });
 

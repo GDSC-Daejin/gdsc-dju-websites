@@ -12,7 +12,7 @@ export const HashTageWrapper = styled.div<{ light: boolean; size?: 'S' | 'L' }>`
   align-items: center;
   white-space: nowrap;
   color: ${({ theme }) => theme.colors.grey900};
-  font-size: ${({ theme }) => theme.fontSize.body4};
+  font-size: ${({ theme }) => theme.fontSizes.textS};
   ${({ light }) =>
     light &&
     css`
@@ -23,7 +23,7 @@ export const HashTageWrapper = styled.div<{ light: boolean; size?: 'S' | 'L' }>`
   ${({ size }) =>
     size === 'L' &&
     css`
-      font-size: ${({ theme }) => theme.fontSize.body2};
+      font-size: ${({ theme }) => theme.fontSizes.textL};
     `};
   ${({ size }) =>
     size === 'S' &&
