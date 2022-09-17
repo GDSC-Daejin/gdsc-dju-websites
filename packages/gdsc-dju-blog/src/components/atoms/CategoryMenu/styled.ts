@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 export const CategoryText = styled.div<{ active?: boolean }>`
-  font-size: ${(props) => props.theme.fontSize.h5};
+  font-size: ${(props) => props.theme.fontSizes.titleS};
 
   font-weight: normal;
   font-family: 'Google Sans', sans-serif;

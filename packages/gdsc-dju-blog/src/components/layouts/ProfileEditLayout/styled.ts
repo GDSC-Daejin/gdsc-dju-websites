@@ -16,7 +16,7 @@ export const FormInner = styled.form`
 `;
 export const FormTitle = styled.h3`
   color: ${({ theme }) => theme.colors.grey900};
-  font-size: ${({ theme }) => theme.fontSize.h3};
+  font-size: ${({ theme }) => theme.fontSizes.titleL};
 `;
 export const FormTitleWrapper = styled.div`
   margin-top: 60px;
@@ -35,7 +35,7 @@ export const FormLabelWrapper = styled.div`
 
 export const FormLabel = styled.label<{ essential?: boolean }>`
   padding: 5px 0;
-  font-size: ${({ theme }) => theme.fontSize.h7};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   font-weight: 400;
   line-height: 1.5;
   color: ${({ theme }) => theme.colors.grey900};
@@ -48,7 +48,7 @@ export const FormLabel = styled.label<{ essential?: boolean }>`
         content: '';
         width: 6px;
         height: 6px;
-        background-color: ${({ theme }) => theme.colors.tossRed};
+        background-color: ${({ theme }) => theme.colors.red900};
         border-radius: 3px;
       }
     `}

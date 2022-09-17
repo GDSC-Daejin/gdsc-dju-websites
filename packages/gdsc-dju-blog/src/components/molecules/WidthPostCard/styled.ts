@@ -53,7 +53,7 @@ export const WidthPostCardContentWrapper = styled(motion.div)<{
     `}
 `;
 export const PostDate = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   color: ${({ theme }) => theme.colors.grey600};
   margin-bottom: 12px;
 `;
@@ -65,7 +65,7 @@ export const BookmarkWrapper = styled.div`
   z-index: 3;
 `;
 export const PostTitle = styled.h4`
-  font-size: ${({ theme }) => theme.fontSize.h5};
+  font-size: ${({ theme }) => theme.fontSizes.titleS};
   color: ${({ theme }) => theme.colors.grey900};
   margin-bottom: 16px;
   word-break: break-word;
@@ -80,7 +80,7 @@ export const PostHashTageSection = styled.section`
   transition: all 0.2s;
 `;
 export const PostContent = styled(motion.p)`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   color: ${({ theme }) => theme.colors.grey600};
   box-sizing: border-box;
   transition: all 0.3s ease;

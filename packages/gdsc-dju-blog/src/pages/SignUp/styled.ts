@@ -10,7 +10,7 @@ export const SignUpContentWrapper = styled.div`
 export const SignUpFormTitle = styled.h4`
   font-style: normal;
   font-weight: 700;
-  font-size: ${({ theme }) => theme.fontSize.h4};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   color: ${({ theme }) => theme.colors.grey900};
 `;
 
@@ -32,12 +32,12 @@ export const SignUpErrorMessage = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
-  color: ${({ theme }) => theme.colors.tossRed};
+  color: ${({ theme }) => theme.colors.red600};
   bottom: -20px;
   span {
     font-style: normal;
     font-weight: 400;
-    font-size: ${({ theme }) => theme.fontSize.body3};
+    font-size: ${({ theme }) => theme.fontSizes.textM};
   }
 `;
 
@@ -46,13 +46,6 @@ export const SignUpInputLabel = styled.div`
   align-items: center;
   gap: 6px;
   margin-bottom: 12px;
-`;
-
-export const SignUpInputLabelText = styled.label`
-  font-size: ${({ theme }) => theme.fontSize.h7};
-  font-style: normal;
-  font-weight: 500;
-  color: ${({ theme }) => theme.colors.grey900};
 `;
 
 export const SignUpInputLabelCircle = styled.div`
@@ -68,7 +61,7 @@ export const SignUpInputBox = styled.input<{ errorCheck: boolean }>`
   padding: 8px 20px;
   border: 1px solid
     ${({ theme, errorCheck }) =>
-      errorCheck ? theme.colors.tossRed : theme.colors.grey400};
+      errorCheck ? theme.colors.red600 : theme.colors.grey400};
   box-sizing: border-box;
   border-radius: 10px;
   ::placeholder {
@@ -90,7 +83,7 @@ export const SignUpButton = styled.button<{ isValid: boolean }>`
   width: 111px;
   height: 36px;
   background-color: ${({ isValid, theme }) =>
-    isValid ? '#4385F3' : theme.colors.tossBlue200};
+    isValid ? '#4385F3' : theme.colors.blue200};
   color: #fff;
   border: 1px solid ${({ theme }) => theme.colors.grey200};
   box-sizing: border-box;
@@ -98,7 +91,7 @@ export const SignUpButton = styled.button<{ isValid: boolean }>`
   border-radius: 18px;
   font-style: normal;
   font-weight: 500;
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   text-align: center;
   align-self: flex-end;
   cursor: ${({ isValid }) => (isValid ? 'pointer' : 'not-allowed')};

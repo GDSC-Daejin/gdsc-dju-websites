@@ -106,7 +106,7 @@ const SignUpForm = () => {
         );
       })}
       <GDSCButton
-        color={isValid ? 'googleBlue' : 'tossBlue200'}
+        color={isValid ? 'blue900' : 'blue200'}
         text="가입하기"
         disable={!isValid}
         onClick={handleSubmit(onSubmit)}

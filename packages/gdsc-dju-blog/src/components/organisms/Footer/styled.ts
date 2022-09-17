@@ -36,16 +36,16 @@ export const CreatorTitleWrapper = styled.thead`
 export const CreatorTitle = styled.tr`
   color: ${({ theme }) => theme.colors.grey700};
   font-weight: bold;
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
  
   @media (max-width: 512px) {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
 }
 `;
 export const CreatorName = styled.th`
   color: ${({ theme }) => theme.colors.grey600};
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   display: flex;
   justify-content: flex-start;
   max-width: 120px;
@@ -120,6 +120,6 @@ export const Copyright = styled.span`
   bottom: 10px;
   white-space: nowrap;
   word-break: keep-all;
-  font-size: ${({ theme }) => theme.fontSize.body3};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   color: ${({ theme }) => theme.colors.grey600};
 `;

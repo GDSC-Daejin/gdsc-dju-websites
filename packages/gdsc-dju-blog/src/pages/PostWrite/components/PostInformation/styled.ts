@@ -30,7 +30,7 @@ export const PostTitleInput = styled.input`
   border: none;
   width: 100%;
   padding-bottom: 10px;
-  font-size: ${({ theme }) => theme.fontSize.h4};
+  font-size: ${({ theme }) => theme.fontSizes.titleM};
   background: ${({ theme }) => theme.colors.background};
   caret-color: ${({ theme }) => theme.colors.grey400};
   color: ${({ theme }) => theme.colors.grey900};
@@ -38,7 +38,7 @@ export const PostTitleInput = styled.input`
     color: ${({ theme }) => theme.colors.grey400};
   }
   @media screen and (max-width: 530px) {
-    font-size: ${(props) => props.theme.fontSize.h6};
+    font-size: ${(props) => props.theme.fontSizes.textXxl};
     padding-bottom: 4px;
   }
   &:focus {
@@ -47,7 +47,7 @@ export const PostTitleInput = styled.input`
 `;
 export const PostHashTagInput = styled.input`
   display: flex;
-  font-size: ${(props) => props.theme.fontSize.body1};
+  font-size: ${(props) => props.theme.fontSizes.textXl};
   background: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.grey900};
   caret-color: ${({ theme }) => theme.colors.grey400};
@@ -56,7 +56,7 @@ export const PostHashTagInput = styled.input`
   }
   border: none;
   @media screen and (max-width: 530px) {
-    font-size: ${({ theme }) => theme.fontSize.body3};
+    font-size: ${({ theme }) => theme.fontSizes.textM};
   }
   &:focus {
     outline: none;
