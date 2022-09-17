@@ -12,7 +12,7 @@ export const ModalInner = styled(motion.div)`
 `;
 export const ModalContent = styled.div`
   font-weight: 400;
-  font-size: ${({ theme }) => theme.fontSize.h7};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   max-width: 200px;
   text-align: center;
   color: ${({ theme }) => theme.colors.grey900};

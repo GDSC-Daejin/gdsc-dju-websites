@@ -1,5 +1,5 @@
+import { ColorToken } from '@gdsc-dju/styled-components';
 import { atom } from 'recoil';
-import { lightTheme } from '../styles/theme';
 
 const MODAL = 'modal';
 
@@ -26,7 +26,7 @@ export type IModalType = {
     description: string;
     leftButton: string;
     rightButton: string;
-    rightColor: keyof typeof lightTheme.colors;
+    rightColor: ColorToken;
   };
 };
 

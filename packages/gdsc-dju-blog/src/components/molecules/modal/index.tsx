@@ -34,31 +34,31 @@ const modalType: IModalType = {
     description: '로그인이 필요한 서비스입니다.',
     leftButton: '뒤로가기',
     rightButton: '로그인',
-    rightColor: 'googleBlue',
+    rightColor: 'blue900',
   },
   backBlock: {
     description: '정말 이대로 나가시겠어요? 작성해둔 글이 사라져요!',
     leftButton: '아니요',
     rightButton: '삭제하기',
-    rightColor: 'googleRed',
+    rightColor: 'red900',
   },
   uploadPost: {
     description: '작성하신 글을 업로드 할까요?',
     leftButton: '뒤로가기',
     rightButton: '업로드',
-    rightColor: 'googleBlue',
+    rightColor: 'blue900',
   },
   deleteCheck: {
     description: '정말로 삭제하시겠어요?',
     leftButton: '뒤로가기',
     rightButton: '삭제하기',
-    rightColor: 'googleRed',
+    rightColor: 'red900',
   },
   update: {
     description: '작성하신 글을 수정할까요?',
     leftButton: '뒤로가기',
     rightButton: '업로드',
-    rightColor: 'googleBlue',
+    rightColor: 'blue900',
   },
 };
 const Modal: React.FC<ModalProps> = () => {

@@ -4,19 +4,19 @@ import React, { memo, useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const From = styled.div`
-  font-size: ${({ theme }) => theme.fontSize.h7};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   margin-bottom: 5px;
   color: ${({ theme }) => theme.colors.grey900};
 `;
 const Phrase = styled.h1`
-  font-size: ${({ theme }) => theme.fontSize.h3};
+  font-size: ${({ theme }) => theme.fontSizes.titleL};
   margin-bottom: 26px;
   color: ${({ theme }) => theme.colors.grey900};
   font-weight: 500;
   width: 600px;
 `;
 const By = styled.div`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   color: ${({ theme }) => theme.colors.grey900};
 `;
 const HomePhrase: React.FC = () => {

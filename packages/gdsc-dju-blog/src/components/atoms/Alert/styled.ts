@@ -14,17 +14,17 @@ export const AlertIcon = styled.img`
   margin-right: 3px;
 `;
 export const AlertText = styled.div`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   opacity: 100%;
   margin-left: 5px;
   display: flex;
   align-items: center;
   color: ${({ theme }) => theme.colors.grey800};
   @media (max-width: 500px) {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+    font-size: ${({ theme }) => theme.fontSizes.textXl};
   }
   @media (max-width: 320px) {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
 `;
 export const AlertInner = styled(motion.div)`

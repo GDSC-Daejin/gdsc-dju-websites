@@ -28,7 +28,7 @@ const PostButtons: React.FC<{
           !disable &&
             (isUpdate ? submitHandler('update') : submitHandler('uploadPost'));
         }}
-        color={'googleBlue'}
+        color={'blue900'}
         disable={disable}
       />
     </PostBottomButtonBox>

@@ -18,7 +18,7 @@ export const HomeLayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 1200px;
-  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.windowSizes.mobile}px) {
     width: 100%;
   }
   margin: 0 auto;

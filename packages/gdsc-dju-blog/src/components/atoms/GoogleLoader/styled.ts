@@ -3,13 +3,12 @@ import styled, { css } from 'styled-components';
 
 export const LoaderBackground = styled(motion.div)<{ background?: boolean }>`
   display: flex;
-  background: white;
+  background: rgba(0, 0, 0, 0.5);
   ${(props) =>
     props.background &&
     css`
       background: rgba(0, 0, 0, 0);
     `}
-
   width: 100vw;
   height: 100vh;
   align-items: center;

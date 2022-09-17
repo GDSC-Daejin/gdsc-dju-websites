@@ -19,7 +19,7 @@ const PostSavesMenuBox = ({ categoryHandler, category }: Props) => {
       <ButtonWrapper>
         <GDSCButton
           text={'새로작성'}
-          color={'googleBlue'}
+          color={'blue900'}
           onClick={() => navigate('/post/write')}
         />
       </ButtonWrapper>

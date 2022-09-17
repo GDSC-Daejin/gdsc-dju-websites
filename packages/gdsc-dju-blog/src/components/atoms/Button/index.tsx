@@ -1,12 +1,11 @@
 import React, { forwardRef } from 'react';
 import { useTheme } from 'styled-components';
 import { StyledButton } from './styled';
-import { lightColors } from '../../../styles/lightColors';
-import { lightTheme } from '../../../styles/theme';
+import { ColorToken } from '@gdsc-dju/styled-components';
 
 interface ButtonProps {
   text: string;
-  color?: keyof typeof lightTheme.colors;
+  color?: ColorToken;
   disable?: boolean;
   size?: 'small' | 'medium' | 'large';
   onClick?: () => void;
