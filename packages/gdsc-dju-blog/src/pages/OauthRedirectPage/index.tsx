@@ -12,7 +12,6 @@ export default function OauthRedirectPage() {
     (async function () {
       if (token) {
         const myData = await getMyData();
-        console.log(myData);
         sessionStorage.setItem(
           'user',
           JSON.stringify({

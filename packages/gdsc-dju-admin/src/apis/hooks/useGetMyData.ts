@@ -19,7 +19,6 @@ export const useGetMyData = () => {
       enabled: !!token,
       onError: () => {
         localStorage.removeItem('token');
-
         navigate('/');
       },
     },

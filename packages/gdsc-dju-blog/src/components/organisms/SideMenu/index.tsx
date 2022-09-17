@@ -22,10 +22,9 @@ import SideMenuCategory from './SideMenuCategory';
 
 export const SideMenu = () => {
   const [menu, setMenu] = useRecoilState(menuState);
-
   const [cookies] = useCookies(['token', 'user']);
-  console.log(cookies);
   const isLogin = cookies.token;
+
   useEffect(() => {
     document.body.style.cssText = `
     position: fixed; 
