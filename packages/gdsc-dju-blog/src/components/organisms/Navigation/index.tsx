@@ -16,16 +16,6 @@ import SideBar from '@src/components/organisms/SideMenu';
 import SearchInput from '@src/components/atoms/input/SearchInput';
 
 function Navigation() {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const navigate = useNavigate();
-
-  const handleSubmit = () => {
-    if (!inputRef.current) return;
-
-    if (inputRef.current.value.trim() !== '')
-      navigate(`/search/${inputRef.current.value}?type=all&page=1`);
-  };
-
   return (
     <NavDesign>
       <NavWrapper>
@@ -38,7 +28,6 @@ function Navigation() {
               </StyledLogoWrapper>
             </NavTask>
           </NavTaskWrapper>
-          <SearchInput onClick={handleSubmit} ref={inputRef} />
         </NavInner>
       </NavWrapper>
       <SideBar />

@@ -7,9 +7,11 @@ async function getDetailPost(postId: string) {
 }
 
 export function useGetDetailPost(postId: string | undefined) {
+  console.log(postId);
+  console.log(postId);
   const { data: postData } = useQuery(
     [postId, `/post/${postId}`],
-    () => getDetailPost(postId ?? ''),
+    () => getDetailPost(postId!),
     {
       enabled: !!postId,
     },

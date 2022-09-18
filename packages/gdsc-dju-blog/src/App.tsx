@@ -1,18 +1,18 @@
-import { GdsThemeProvider } from '@gdsc-dju/styled-components';
+import { DarkModeContext, GdsThemeProvider } from '@gdsc-dju/styled-components';
+import { useContext } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import ThemeButton from './assets/icons/ThemeButton';
-import { useTheme } from './hooks/ThemeHandler';
 import Layout from './Layout';
 import ErrorFallback from './pages/ErrorFallback';
 
 function App() {
-  const { theme, toggleTheme } = useTheme();
+  const { isDarkMode, toggleTheme } = useContext(DarkModeContext);
 
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <GdsThemeProvider mode={'auto'}>
         <Layout />
-        <ThemeButton toggleTheme={toggleTheme} theme={theme} />
+        <ThemeButton toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
       </GdsThemeProvider>
     </ErrorBoundary>
   );
