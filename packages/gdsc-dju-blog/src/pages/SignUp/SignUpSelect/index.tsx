@@ -1,4 +1,4 @@
-import { positionColor } from '@src/store/positionColor';
+import { positionColor } from '@src/utils/positionColor';
 import { IFormStructure, errorCheck } from '@type/SignUpFormType';
 import React, { useState } from 'react';
 import BottomArrowIcon from '../../../assets/icons/BottomArrowIcon';

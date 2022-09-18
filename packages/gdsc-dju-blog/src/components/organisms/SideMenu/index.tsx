@@ -1,25 +1,17 @@
-import { AnimatePresence } from 'framer-motion';
-import Cookies from 'js-cookie';
+import { MenuContext } from '@gdsc-dju/styled-components';
+import TokenService from '@src/api/TokenService';
+import { SideMenuAnimation } from '@src/components/Animation';
 import React, { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
-import { useRecoilState } from 'recoil';
+import SideMenuCategory from './SideMenuCategory';
+import SideMenuLogin from './SideMenuLogin';
+import SideMenuLogout from './SideMenuLogout';
 
 import {
-  GrayBox,
   SideMenuInner,
   SideMenuSectionWrapper,
   SideMenuWrapper,
 } from './styled';
-import { MENU_KEY, menuState } from '@src/store/menu';
-import {
-  SideMenuAnimation,
-  SideMenuGrayBoxAnimation,
-} from '@src/components/Animation';
-import TokenService from '@src/api/TokenService';
-import SideMenuLogin from './SideMenuLogin';
-import SideMenuLogout from './SideMenuLogout';
-import SideMenuCategory from './SideMenuCategory';
-import { MenuContext } from '@gdsc-dju/styled-components';
 
 export const SideMenu = () => {
   const [cookies] = useCookies(['token', 'user']);

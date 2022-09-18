@@ -50,9 +50,7 @@ const SideMenuLogin: React.FC<{
             <ProfileName>
               {myData.memberInfo.nickname ?? myData.username}
             </ProfileName>
-            <ProfileJobPosition>
-              {myData.memberInfo.positionType}
-            </ProfileJobPosition>
+            <ProfileJobPosition>{myData.role.toLowerCase()}</ProfileJobPosition>
             <SettingIconWrapper
               onClick={() => {
                 navigate(`/${myData.memberInfo.nickname}/edit`);

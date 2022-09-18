@@ -12,7 +12,7 @@ import {
 } from './styled';
 import { SideMenuCircleAnimation } from '@src/components/Animation';
 import { MENU_KEY, menuState } from '@src/store/menu';
-import { positionColor } from '@src/store/positionColor';
+import { positionColor } from '@src/utils/positionColor';
 
 import GdscLogo from '@assets/logos/GdscLogo';
 import { category } from '@type/position';

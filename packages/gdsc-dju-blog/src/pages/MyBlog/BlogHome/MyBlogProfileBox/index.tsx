@@ -11,7 +11,7 @@ import {
   SettingIconWrapper,
 } from './styled';
 import ProfileImage from '@src/components/atoms/ProfileImage';
-import { positionColor } from '@src/store/positionColor';
+import { positionColor } from '@src/utils/positionColor';
 import SettingIcon from '@assets/icons/SettingIcon';
 import { HashTageSection } from '@pages/Post/styled';
 import { hashTageSpreader } from '@utils/hashTageSpreader';

@@ -20,6 +20,7 @@ export const SideMenuInner = styled(motion.aside)`
   background-color: ${({ theme }) => theme.colors.white};
   display: flex;
   justify-content: center;
+  align-items: center;
   @media screen and (max-width: 500px) {
     align-items: center;
     padding-top: 0;
@@ -41,7 +42,6 @@ export const SideMenuSectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   white-space: nowrap;
-  margin-top: 76px;
 `;
 export const ProfileImageWrapper = styled.div`
   display: flex;
@@ -74,7 +74,8 @@ export const ProfileJobPosition = styled.div`
   display: flex;
   padding-right: 10px;
   padding-bottom: 5px;
-  font-size: ${({ theme }) => theme.fontSizes.titleXl};
+  text-transform: capitalize;
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   color: ${({ theme }) => theme.colors.grey600};
   @media screen and (max-width: 500px) {
     font-size: ${({ theme }) => theme.fontSizes.titleM};
@@ -98,6 +99,7 @@ export const MyBlogButtonWrapper = styled.div`
 export const BottomButtonWrapper = styled.div`
   display: flex;
   margin-bottom: 40px;
+  justify-content: space-between;
 `;
 export const WriteButtonWrapper = styled.div`
   display: flex;
@@ -106,10 +108,11 @@ export const WriteButtonWrapper = styled.div`
 export const LogoutButtonWrapper = styled.div`
   display: flex;
 `;
-export const GdscSideBlogLogoWrapper = styled.div`
+export const LogoutBoxWrapper = styled.div`
   display: flex;
-  margin-bottom: 8px;
-  padding-top: 227px;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 25px;
 `;
 export const GoogleLogoWrapper = styled.div`
   display: flex;
@@ -130,8 +133,5 @@ export const GoogleButtonWrapper = styled.div`
   padding-bottom: 60px;
   @media screen and (max-width: 500px) {
     padding-bottom: 22px;
-  }
-  & button {
-    padding: 5px 25px 8px 50px;
   }
 `;

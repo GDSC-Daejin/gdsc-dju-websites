@@ -7,7 +7,7 @@ import {
   CategoryTextWrapper,
   GDSCLogoWrapper,
 } from './styled';
-import { positionColor } from '@src/store/positionColor';
+import { positionColor } from '@src/utils/positionColor';
 import GdscLogo from '@assets/logos/GdscLogo';
 
 import { circleMotion } from '@src/components/Animation';

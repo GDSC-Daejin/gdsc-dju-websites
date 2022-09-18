@@ -11,7 +11,7 @@ import {
   PostTitle,
   PostTitleWrapper,
 } from '../styled';
-import { positionColor } from '@src/store/positionColor';
+import { positionColor } from '@src/utils/positionColor';
 import { DetailPostDataType } from '@type/postData';
 import { useGetMyData } from '@src/api/hooks/useGetMyData';
 
