@@ -32,6 +32,15 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+    "login": "dogdduddy",
+      "name": "dogdduddy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32217176?v=4",
+      "profile": "https://github.com/dogdduddy",
+      "contributions": [
+        "code"
+        ]
     }
   ],
   "contributorsPerLine": 7,
