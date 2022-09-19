@@ -1,6 +1,6 @@
 # gdsc-dju-frontend
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Deploy to GDSC DJU Web Live Channel](https://github.com/GDSC-Daejin/gdsc-dju-websites/actions/workflows/gdsc-dju-web-deploy-live.yml/badge.svg)](https://github.com/GDSC-Daejin/gdsc-dju-websites/actions/workflows/gdsc-dju-web-deploy-live.yml)
@@ -76,6 +76,7 @@ ex) feature/gdsc-dju-web/29-navigation
       <td align="center"><a href="https://github.com/BlaireLee"><img src="https://avatars.githubusercontent.com/u/97537672?v=4?s=100" width="100px;" alt=""/><br /><sub><b>BlaireLee</b></sub></a><br /><a href="#design-BlaireLee" title="Design">🎨</a></td>
       <td align="center"><a href="https://github.com/cin-dy"><img src="https://avatars.githubusercontent.com/u/97660878?v=4?s=100" width="100px;" alt=""/><br /><sub><b>suhyun park</b></sub></a><br /><a href="#design-cin-dy" title="Design">🎨</a></td>
       <td align="center"><a href="https://github.com/dogdduddy"><img src="https://avatars.githubusercontent.com/u/32217176?v=4?s=100" width="100px;" alt=""/><br /><sub><b>dogdduddy</b></sub></a><br /><a href="https://github.com/GDSC-Daejin/gdsc-dju-websites/commits?author=dogdduddy" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/HarryTylenol"><img src="https://avatars.githubusercontent.com/u/22587486?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Harry Park</b></sub></a><br /><a href="#design-HarryTylenol" title="Design">🎨</a></td>
     </tr>
   </tbody>
 </table>
