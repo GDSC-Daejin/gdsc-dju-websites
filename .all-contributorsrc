@@ -23,6 +23,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "cin-dy",
+      "name": "suhyun park",
+      "avatar_url": "https://avatars.githubusercontent.com/u/97660878?v=4",
+      "profile": "https://github.com/cin-dy",
+      "contributions": [
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
