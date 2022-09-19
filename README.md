@@ -1,4 +1,7 @@
 # gdsc-dju-frontend
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Deploy to GDSC DJU Web Live Channel](https://github.com/GDSC-Daejin/gdsc-dju-websites/actions/workflows/gdsc-dju-web-deploy-live.yml/badge.svg)](https://github.com/GDSC-Daejin/gdsc-dju-websites/actions/workflows/gdsc-dju-web-deploy-live.yml)
 
@@ -62,5 +65,20 @@ ex) feature/gdsc-dju-web/29-navigation
 ## Contributors
 
 <a href="https://github.com/GDSC-Daejin/gdsc-dju-frontend/graphs/contributors" style="display: flex; align-items: center; justify-content: center">
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/bjc1102"><img src="https://avatars.githubusercontent.com/u/71929440?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Byeong Ju Choi</b></sub></a><br /><a href="https://github.com/GDSC-Daejin/gdsc-dju-websites/commits?author=bjc1102" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
   <img src="https://contrib.rocks/image?repo=GDSC-Daejin/gdsc-dju-frontend" />
 </a>
