@@ -1,6 +1,6 @@
 # gdsc-dju-frontend
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Deploy to GDSC DJU Web Live Channel](https://github.com/GDSC-Daejin/gdsc-dju-websites/actions/workflows/gdsc-dju-web-deploy-live.yml/badge.svg)](https://github.com/GDSC-Daejin/gdsc-dju-websites/actions/workflows/gdsc-dju-web-deploy-live.yml)
@@ -72,6 +72,7 @@ ex) feature/gdsc-dju-web/29-navigation
   <tbody>
     <tr>
       <td align="center"><a href="https://github.com/bjc1102"><img src="https://avatars.githubusercontent.com/u/71929440?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Byeong Ju Choi</b></sub></a><br /><a href="https://github.com/GDSC-Daejin/gdsc-dju-websites/commits?author=bjc1102" title="Code">💻</a></td>
+      <td align="center"><a href="https://starlight-j-h.tistory.com/"><img src="https://avatars.githubusercontent.com/u/61281239?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hyeok_E</b></sub></a><br /><a href="https://github.com/GDSC-Daejin/gdsc-dju-websites/commits?author=HyeokE" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
