@@ -73,11 +73,9 @@ ex) feature/gdsc-dju-web/29-navigation
     <tr>
       <td align="center"><a href="https://github.com/bjc1102"><img src="https://avatars.githubusercontent.com/u/71929440?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Byeong Ju Choi</b></sub></a><br /><a href="https://github.com/GDSC-Daejin/gdsc-dju-websites/commits?author=bjc1102" title="Code">💻</a></td>
       <td align="center"><a href="https://starlight-j-h.tistory.com/"><img src="https://avatars.githubusercontent.com/u/61281239?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hyeok_E</b></sub></a><br /><a href="https://github.com/GDSC-Daejin/gdsc-dju-websites/commits?author=HyeokE" title="Code">💻</a></td>
-
+      <td align="center"><a href="https://github.com/BlaireLee"><img src="https://avatars.githubusercontent.com/u/97537672?v=4?s=100" width="100px;" alt=""/><br /><sub><b>BlaireLee</b></sub></a><br /><a href="#design-BlaireLee" title="Design">🎨</a></td>
       <td align="center"><a href="https://github.com/cin-dy"><img src="https://avatars.githubusercontent.com/u/97660878?v=4?s=100" width="100px;" alt=""/><br /><sub><b>suhyun park</b></sub></a><br /><a href="#design-cin-dy" title="Design">🎨</a></td>
-
       <td align="center"><a href="https://github.com/dogdduddy"><img src="https://avatars.githubusercontent.com/u/32217176?v=4?s=100" width="100px;" alt=""/><br /><sub><b>dogdduddy</b></sub></a><br /><a href="https://github.com/GDSC-Daejin/gdsc-dju-websites/commits?author=dogdduddy" title="Code">💻</a></td>
-
     </tr>
   </tbody>
 </table>
