@@ -80,5 +80,3 @@ ex) feature/gdsc-dju-web/29-navigation
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-  <img src="https://contrib.rocks/image?repo=GDSC-Daejin/gdsc-dju-frontend" />
-</a>
