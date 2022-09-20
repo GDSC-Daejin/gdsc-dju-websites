@@ -24,7 +24,7 @@ const SearchResult = () => {
   const { searchContent, categoryName } = useParams();
   const currentPage = Number(searchParams.get('page')) ?? 1;
   const category = categoryName ? categoryName : 'all';
-
+  console.log(searchParams);
   const { postListData } = useGetSearchPosts({
     searchContent: searchContent!,
     category,

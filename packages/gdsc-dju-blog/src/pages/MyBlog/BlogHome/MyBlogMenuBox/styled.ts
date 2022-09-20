@@ -6,6 +6,8 @@ export const ButtonWrapper = styled.div`
   height: min-content;
   flex-direction: row;
   justify-content: space-between;
+  position: relative;
+  bottom: 0;
 `;
 export const TopMenuWrapper = styled.div`
   display: flex;

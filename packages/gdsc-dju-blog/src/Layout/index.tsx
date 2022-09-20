@@ -2,14 +2,13 @@ import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import Category from '../pages/Category';
-import SearchResult from '../pages/SearchResult';
-import MyBlog from '../pages/MyBlog';
 import Home from '../pages/Home';
-import Post from '../pages/Post';
-import PostSaves from '../pages/PostSaves';
-import SignUp from '../pages/SignUp';
+import MyBlog from '../pages/MyBlog';
 import OauthRedirectPage from '../pages/OauthRedirectPage';
+import PostSaves from '../pages/PostSaves';
 import PostWrite from '../pages/PostWrite';
+import SearchResult from '../pages/SearchResult';
+import SignUp from '../pages/SignUp';
 import ComponentLayout from './ComponentLayout';
 
 const Layout = () => {
@@ -25,10 +24,7 @@ const Layout = () => {
           <Route path={'/category/:categoryName'} element={<Category />} />
           <Route path={'/signup'} element={<SignUp />} />
           <Route path={'/redirect'} element={<OauthRedirectPage />} />
-          <Route
-            path={'/search/:searchContent/:categoryName'}
-            element={<SearchResult />}
-          />
+          <Route path={'/search/:searchContent'} element={<SearchResult />} />
           <Route path={'/post/saves'} element={<PostSaves />} />
         </Routes>
       </Suspense>
