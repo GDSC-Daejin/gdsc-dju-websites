@@ -1,4 +1,10 @@
-import { Footer, MenuContext, Navigation } from '@gdsc-dju/styled-components';
+import ThemeButton from '@assets/icons/ThemeButton';
+import {
+  DarkModeContext,
+  Footer,
+  MenuContext,
+  Navigation,
+} from '@gdsc-dju/styled-components';
 import Alert from '@src/components/atoms/Alert';
 import GoogleLoader from '@src/components/atoms/GoogleLoader';
 
@@ -19,7 +25,7 @@ const ComponentLayout: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [loader] = useRecoilState(loaderState);
   const { isMenuOpen, toggleMenu, menuHandler } = useContext(MenuContext);
-
+  const { isDarkMode, toggleTheme } = useContext(DarkModeContext);
   return (
     <div>
       <Alert />
@@ -40,6 +46,7 @@ const ComponentLayout: React.FC<{ children: React.ReactNode }> = ({
       </AnimatePresence>
       <GlobalStyles />
       {children}
+      <ThemeButton toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
       <Footer pages={siteLinks} />
     </div>
   );

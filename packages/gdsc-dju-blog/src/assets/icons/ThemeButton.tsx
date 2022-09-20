@@ -17,7 +17,10 @@ const ThemeButton: React.FC<{
 }> = ({ toggleTheme, isDarkMode }) => {
   return (
     <ThemeButtonInner
-      onClick={toggleTheme}
+      onClick={() => {
+        toggleTheme();
+        console.log(isDarkMode);
+      }}
       src={isDarkMode ? LightModeIcon : DarkModeIcon}
     />
   );
