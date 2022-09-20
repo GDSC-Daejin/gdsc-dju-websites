@@ -14,8 +14,10 @@ export const WidthPostCardWrapper = styled(motion.div)`
   box-sizing: border-box;
 `;
 export const WidthPostCardImage = styled.img`
-  height: 100%;
   position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 export const WidthPostCardImageWrapper = styled.div`
   height: 100%;

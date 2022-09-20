@@ -25,15 +25,15 @@ export const BookMarkWrapper = styled.div`
 export const PostCardThumbnailWrapper = styled.div`
   width: 248px;
   height: 294px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+  margin: 0 auto;
   border-radius: 10px;
   border: none;
-  overflow: hidden;
 `;
 export const PostCardThumbnail = styled.img`
-  height: 294px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 export const PostCardTagWrapper = styled.div<{ IsHovered: boolean }>`
