@@ -15,4 +15,5 @@ export const OnBoardContentSubTitle = styled.span`
 export const OnBoardContentWrapper = styled.span`
   display: flex;
   flex-direction: column;
+  position: relative;
 `;

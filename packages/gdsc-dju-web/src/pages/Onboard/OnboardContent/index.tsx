@@ -7,7 +7,8 @@ import {
   OnBoardContentTitle,
   OnBoardContentWrapper,
 } from '@pages/Onboard/OnboardContent/styled';
-import { useParams } from 'react-router-dom';
+import { onBoardingData } from '@src/contents/onboard';
+import { useNavigate, useParams } from 'react-router-dom';
 import {
   OnboardContentBox,
   OnboardContentButtonWrapper,
@@ -18,30 +19,35 @@ import React from 'react';
 
 const OnboardContent = () => {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
+  const content = onBoardingData.find((data) => data.id === id);
   return (
     <OnboardSectionContainer layoutId={'content-box'}>
-      <OnboardContentsWrapper
-        variants={pageTransitionAnimate}
-        initial="start"
-        animate="end"
-        exit={'out'}
-      >
-        <div>
-          <AirplaneBreadcrumb />
-        </div>
-        <OnboardContentBox>
-          <OnBoardContentWrapper>
-            <OnBoardContentSubTitle>
-              여러분을 뭐라고 부르면 될까요?
-            </OnBoardContentSubTitle>
-            <OnBoardContentTitle>이름을 알려주세요.</OnBoardContentTitle>
-            <UnderlineInput placeholder={'Jason'} />
-          </OnBoardContentWrapper>
-        </OnboardContentBox>
-        <OnboardContentButtonWrapper>
-          <OnboardButton>다음으로</OnboardButton>
-        </OnboardContentButtonWrapper>
-      </OnboardContentsWrapper>
+      {content && (
+        <OnboardContentsWrapper
+          variants={pageTransitionAnimate}
+          initial="start"
+          animate="end"
+          exit={'out'}
+        >
+          <OnboardContentBox>
+            <OnBoardContentWrapper>
+              <OnBoardContentSubTitle>
+                {content.subTitle}
+              </OnBoardContentSubTitle>
+              <OnBoardContentTitle>{content.title}</OnBoardContentTitle>
+              <UnderlineInput placeholder={content.placeHolder} />
+            </OnBoardContentWrapper>
+          </OnboardContentBox>
+          <OnboardContentButtonWrapper>
+            <OnboardButton
+              onClick={() => navigate(`/onboard/init/${content.next}`)}
+            >
+              다음으로
+            </OnboardButton>
+          </OnboardContentButtonWrapper>
+        </OnboardContentsWrapper>
+      )}
     </OnboardSectionContainer>
   );
 };

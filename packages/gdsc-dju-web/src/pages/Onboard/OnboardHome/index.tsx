@@ -50,7 +50,7 @@ const OnboardHome = () => {
           </OnboardHomePhraseWrapper>
         </OnboardContentBox>
         <OnboardContentButtonWrapper
-          onClick={() => navigate('/onboard/init/1')}
+          onClick={() => navigate('/onboard/init/nickname')}
         >
           <OnboardButton>시작하기</OnboardButton>
         </OnboardContentButtonWrapper>

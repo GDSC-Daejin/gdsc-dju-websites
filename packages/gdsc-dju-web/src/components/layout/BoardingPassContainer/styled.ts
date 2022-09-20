@@ -61,7 +61,12 @@ export const BoardingPassRightContainerInner = styled(motion.div)<{
 export const BoardingPassInner = styled(motion.main)`
   position: absolute;
   z-index: 2;
-  //transform: translate(50%, -50%);
+`;
+export const AirplaneBreadCrumbWrapper = styled(motion.div)`
+  position: absolute;
+  top: 150px;
+  right: 100px;
+  z-index: 9999;
 `;
 
 export const BoardingPassTopLeftLine = styled(motion.div)`

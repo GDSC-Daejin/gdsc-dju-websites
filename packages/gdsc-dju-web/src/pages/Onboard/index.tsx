@@ -1,3 +1,4 @@
+import AirplaneBreadcrumb from '@common/AirplaneBreadcrumb';
 import BoardingPassContainer from '@layout/BoardingPassContainer';
 import OnboardContent from '@pages/Onboard/OnboardContent';
 import { AnimatePresence, LayoutGroup } from 'framer-motion';

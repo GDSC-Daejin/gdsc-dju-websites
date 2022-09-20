@@ -1,9 +1,11 @@
 import Airplane from '@assets/icons/airplaneIcon.svg';
 import GDSCLogoClear from '@assets/logos/GDSCLogoClear';
 import GDSCLogo from '@assets/logos/OnBoardTopGDSCLogo.svg';
+import AirplaneBreadcrumb from '@common/AirplaneBreadcrumb';
 import React from 'react';
 import { useTheme } from 'styled-components';
 import {
+  AirplaneBreadCrumbWrapper,
   BackgroundGDSCLogoWrapper,
   BoardingPassContainerBottomText,
   BoardingPassContainerInner,
@@ -42,6 +44,11 @@ const BoardingPassContainer = ({ children }: BoardingPassBoxProps) => {
         </BoardingPassTopLeftLine>
         <ContainerBottomLeftLine layout />
       </BoardingPassLeftContainerInner>
+      {path.includes('init') && (
+        <AirplaneBreadCrumbWrapper>
+          <AirplaneBreadcrumb currentRoute={path} />
+        </AirplaneBreadCrumbWrapper>
+      )}
       <BoardingPassRightContainerInner isBoardingPass={isBoardingPass} layout>
         <BoardingPassTopRightLine layout>
           <LogoWrapper layout>
@@ -49,6 +56,7 @@ const BoardingPassContainer = ({ children }: BoardingPassBoxProps) => {
             <TopLineGDSCLogo src={Airplane} />
           </LogoWrapper>
         </BoardingPassTopRightLine>
+
         <ContainerBottomRightLine layout>
           <BoardingPassContainerBottomText layout>
             Google Developer Student Clubs

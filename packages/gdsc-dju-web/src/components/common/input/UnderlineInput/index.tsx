@@ -13,6 +13,7 @@ const StyledUnderlineInput = styled.input`
   }
   &::placeholder {
     color: ${({ theme }) => theme.colors.grey300};
+    font-weight: 400;
   }
 `;
 
