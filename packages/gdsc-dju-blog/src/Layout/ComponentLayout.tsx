@@ -1,11 +1,12 @@
-import { MenuContext, Navigation } from '@gdsc-dju/styled-components';
+import { Footer, MenuContext, Navigation } from '@gdsc-dju/styled-components';
 import Alert from '@src/components/atoms/Alert';
 import GoogleLoader from '@src/components/atoms/GoogleLoader';
 
 import Modal from '@src/components/molecules/modal';
 import NavigationElementBox from '@src/components/molecules/NavigationElementBox';
-import Footer from '@src/components/organisms/Footer';
+
 import SideMenu from '@src/components/organisms/SideMenu';
+import { siteLinks } from '@src/contents/siteLinks';
 import { loaderState } from '@src/store/loader';
 import GlobalStyles from '@styles/globalStyles';
 import { NavigationBlock } from '@styles/layouts';
@@ -39,7 +40,7 @@ const ComponentLayout: React.FC<{ children: React.ReactNode }> = ({
       </AnimatePresence>
       <GlobalStyles />
       {children}
-      <Footer />
+      <Footer pages={siteLinks} />
     </div>
   );
 };

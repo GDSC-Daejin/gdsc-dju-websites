@@ -2255,14 +2255,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gdsc-dju/styled-components@npm:^0.0.29":
-  version: 0.0.29
-  resolution: "@gdsc-dju/styled-components@npm:0.0.29"
+"@gdsc-dju/styled-components@npm:^0.0.32":
+  version: 0.0.32
+  resolution: "@gdsc-dju/styled-components@npm:0.0.32"
   peerDependencies:
     react: ^18.2.0
     react-is: ^18.2.0
     styled-components: ^5.3.5
-  checksum: 8731ecee4fcce76cfc97eac512926e305b55983837d68dc621644c10ba6b5f9808a8c12fe5b020f69b8239876572429cb02558ededf339079639db2981eea63c
+  checksum: f5f23ac463343767858c62b628a2313c9846163526a4f7fdd769e12859afa0a0b38799674b35ca5f8b2bb72e6f83de9c6ffa3f27ab20663c0c419c7b0372edf3
   languageName: node
   linkType: hard
 
@@ -11873,7 +11873,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "gdsc-dju-blog@workspace:packages/gdsc-dju-blog"
   dependencies:
-    "@gdsc-dju/styled-components": ^0.0.29
+    "@gdsc-dju/styled-components": ^0.0.32
     "@giscus/react": ^1.1.2
     "@toast-ui/editor": ^3.2.0
     "@toast-ui/editor-plugin-chart": ^3.0.1

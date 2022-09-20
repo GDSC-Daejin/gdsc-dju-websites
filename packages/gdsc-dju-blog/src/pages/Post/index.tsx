@@ -11,8 +11,6 @@ import { ContentViewer } from '@src/components/atoms/ToastUi';
 const Post = () => {
   const { postId } = useParams<{ postId: string }>();
   const { postData } = useGetDetailPost(postId);
-  console.log(postId);
-  console.log(postData);
   const theme = localStorage.getItem('theme') || 'light';
 
   return (

@@ -4301,10 +4301,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["npm:0.0.29", {\
-          "packageLocation": "./.yarn/cache/@gdsc-dju-styled-components-npm-0.0.29-e60edbf962-8731ecee4f.zip/node_modules/@gdsc-dju/styled-components/",\
+        ["npm:0.0.32", {\
+          "packageLocation": "./.yarn/cache/@gdsc-dju-styled-components-npm-0.0.32-4f5e3a7684-f5f23ac463.zip/node_modules/@gdsc-dju/styled-components/",\
           "packageDependencies": [\
-            ["@gdsc-dju/styled-components", "npm:0.0.29"]\
+            ["@gdsc-dju/styled-components", "npm:0.0.32"]\
           ],\
           "linkType": "SOFT"\
         }],\
@@ -4346,10 +4346,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.29", {\
-          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-virtual-242658d95b/0/cache/@gdsc-dju-styled-components-npm-0.0.29-e60edbf962-8731ecee4f.zip/node_modules/@gdsc-dju/styled-components/",\
+        ["virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.32", {\
+          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-virtual-c6ec7f4d7a/0/cache/@gdsc-dju-styled-components-npm-0.0.32-4f5e3a7684-f5f23ac463.zip/node_modules/@gdsc-dju/styled-components/",\
           "packageDependencies": [\
-            ["@gdsc-dju/styled-components", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.29"],\
+            ["@gdsc-dju/styled-components", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.32"],\
             ["@types/react", "npm:18.0.17"],\
             ["@types/react-is", null],\
             ["@types/styled-components", "npm:5.1.26"],\
@@ -15718,7 +15718,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/gdsc-dju-blog/",\
           "packageDependencies": [\
             ["gdsc-dju-blog", "workspace:packages/gdsc-dju-blog"],\
-            ["@gdsc-dju/styled-components", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.29"],\
+            ["@gdsc-dju/styled-components", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.32"],\
             ["@giscus/react", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:1.1.2"],\
             ["@toast-ui/editor", "npm:3.2.0"],\
             ["@toast-ui/editor-plugin-chart", "npm:3.0.1"],\

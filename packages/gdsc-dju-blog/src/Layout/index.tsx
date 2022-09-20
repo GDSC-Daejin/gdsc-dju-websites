@@ -19,7 +19,6 @@ const Layout = () => {
         <Routes>
           <Route path={'/*'} element={<Home />} />
           <Route path={'/:nickname/*'} element={<MyBlog />} />
-          <Route path={'/post'} element={<Post />} />
           <Route path={'/post/write'} element={<PostWrite />} />
           <Route path={'/post/edit/:id'} element={<PostWrite />} />
           <Route path={'/category/*'} element={<Category />} />
