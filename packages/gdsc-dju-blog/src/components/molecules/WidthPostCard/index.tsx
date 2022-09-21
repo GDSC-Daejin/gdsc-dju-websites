@@ -69,7 +69,7 @@ const WidthPostCard: React.FC<Props> = ({ postData, isScrap }) => {
             <WidthPostCardImage src={postData.imagePath} alt="thumbnail" />
           ) : (
             <>
-              <source srcSet={thumbnailHandler(postData.postId).webp} />
+              <source srcSet={thumbnailHandler(postData.postId).jpg} />
               <WidthPostCardImage
                 src={thumbnailHandler(postData.postId).jpg}
                 alt="PostCardThumbnail"

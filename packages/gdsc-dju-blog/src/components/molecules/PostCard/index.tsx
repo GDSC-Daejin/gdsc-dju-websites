@@ -75,7 +75,7 @@ const PostCard: React.FC<Props> = ({ postData, isScrap }) => {
               <PostCardThumbnail src={postData.imagePath} alt="thumbnail" />
             ) : (
               <>
-                <source srcSet={thumbnailHandler(postData.postId).webp} />
+                <source srcSet={thumbnailHandler(postData.postId).jpg} />
                 <PostCardThumbnail
                   src={thumbnailHandler(postData.postId).jpg}
                   alt="PostCardThumbnail"
