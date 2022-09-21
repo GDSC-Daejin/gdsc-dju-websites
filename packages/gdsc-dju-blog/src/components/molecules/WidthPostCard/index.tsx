@@ -65,19 +65,17 @@ const WidthPostCard: React.FC<Props> = ({ postData, isScrap }) => {
 
       <WidthPostCardImageWrapper>
         <picture>
-          <Suspense fallback={<div>loading...</div>}>
-            {postData.imagePath ? (
-              <WidthPostCardImage src={postData.imagePath} alt="thumbnail" />
-            ) : (
-              <>
-                <source srcSet={thumbnailHandler(postData.postId).jpg} />
-                <WidthPostCardImage
-                  src={thumbnailHandler(postData.postId).jpg}
-                  alt="PostCardThumbnail"
-                />
-              </>
-            )}
-          </Suspense>
+          {postData.imagePath ? (
+            <WidthPostCardImage src={postData.imagePath} alt="thumbnail" />
+          ) : (
+            <>
+              <source srcSet={thumbnailHandler(postData.postId).webp} />
+              <WidthPostCardImage
+                src={thumbnailHandler(postData.postId).jpg}
+                alt="PostCardThumbnail"
+              />
+            </>
+          )}
         </picture>
       </WidthPostCardImageWrapper>
 

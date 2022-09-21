@@ -11,27 +11,27 @@ import jpg5 from '../assets/thumbnails/Rectangle-85.jpg';
 import webp6 from '../assets/thumbnails/Rectangle-86.webp';
 import jpg6 from '../assets/thumbnails/Rectangle-86.jpg';
 const thumbnails = {
-  '1': {
+  '0': {
     webp: webp1,
     jpg: jpg1,
   },
-  '2': {
+  '1': {
     webp: webp2,
     jpg: jpg2,
   },
-  '3': {
+  '2': {
     webp: webp3,
     jpg: jpg3,
   },
-  '4': {
+  '3': {
     webp: webp4,
     jpg: jpg4,
   },
-  '5': {
+  '4': {
     webp: webp5,
     jpg: jpg5,
   },
-  '6': {
+  '5': {
     webp: webp6,
     jpg: jpg6,
   },
