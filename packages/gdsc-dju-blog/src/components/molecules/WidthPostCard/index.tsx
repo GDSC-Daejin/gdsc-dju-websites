@@ -7,7 +7,7 @@ import { debounce } from '@utils/debounce';
 import { hashTageSpreader } from '@utils/hashTageSpreader';
 import { removeMarkdownInContent } from '@utils/removeMarkdownInContent';
 import { thumbnailHandler } from '@utils/thumbnailHandler';
-import React, { memo, useCallback, useState } from 'react';
+import React, { Suspense, memo, useCallback, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 
@@ -65,17 +65,19 @@ const WidthPostCard: React.FC<Props> = ({ postData, isScrap }) => {
 
       <WidthPostCardImageWrapper>
         <picture>
-          {postData.imagePath ? (
-            <WidthPostCardImage src={postData.imagePath} alt="thumbnail" />
-          ) : (
-            <>
-              <source srcSet={thumbnailHandler(postData.postId).jpg} />
-              <WidthPostCardImage
-                src={thumbnailHandler(postData.postId).jpg}
-                alt="PostCardThumbnail"
-              />
-            </>
-          )}
+          <Suspense fallback={<div>loading...</div>}>
+            {postData.imagePath ? (
+              <WidthPostCardImage src={postData.imagePath} alt="thumbnail" />
+            ) : (
+              <>
+                <source srcSet={thumbnailHandler(postData.postId).jpg} />
+                <WidthPostCardImage
+                  src={thumbnailHandler(postData.postId).jpg}
+                  alt="PostCardThumbnail"
+                />
+              </>
+            )}
+          </Suspense>
         </picture>
       </WidthPostCardImageWrapper>
 
