@@ -71,19 +71,17 @@ const PostCard: React.FC<Props> = ({ postData, isScrap }) => {
         {/* 이미지 */}
         <PostCardThumbnailWrapper>
           <picture>
-            <Suspense fallback={<div>loading...</div>}>
-              {postData.imagePath ? (
-                <PostCardThumbnail src={postData.imagePath} alt="thumbnail" />
-              ) : (
-                <>
-                  <source srcSet={thumbnailHandler(postData.postId).jpg} />
-                  <PostCardThumbnail
-                    src={thumbnailHandler(postData.postId).jpg}
-                    alt="PostCardThumbnail"
-                  />
-                </>
-              )}
-            </Suspense>
+            {postData.imagePath ? (
+              <PostCardThumbnail src={postData.imagePath} alt="thumbnail" />
+            ) : (
+              <>
+                <source srcSet={thumbnailHandler(postData.postId).webp} />
+                <PostCardThumbnail
+                  src={thumbnailHandler(postData.postId).jpg}
+                  alt="PostCardThumbnail"
+                />
+              </>
+            )}
           </picture>
         </PostCardThumbnailWrapper>
         {/* 태그 */}
