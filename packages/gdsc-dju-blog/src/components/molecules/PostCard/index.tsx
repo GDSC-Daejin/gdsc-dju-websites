@@ -1,5 +1,5 @@
 import { thumbnailHandler } from '@utils/thumbnailHandler';
-import React, { memo, useCallback, useState } from 'react';
+import React, { Suspense, memo, useCallback, useState } from 'react';
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router';
@@ -71,17 +71,19 @@ const PostCard: React.FC<Props> = ({ postData, isScrap }) => {
         {/* 이미지 */}
         <PostCardThumbnailWrapper>
           <picture>
-            {postData.imagePath ? (
-              <PostCardThumbnail src={postData.imagePath} alt="thumbnail" />
-            ) : (
-              <>
-                <source srcSet={thumbnailHandler(postData.postId).jpg} />
-                <PostCardThumbnail
-                  src={thumbnailHandler(postData.postId).jpg}
-                  alt="PostCardThumbnail"
-                />
-              </>
-            )}
+            <Suspense fallback={<div>loading...</div>}>
+              {postData.imagePath ? (
+                <PostCardThumbnail src={postData.imagePath} alt="thumbnail" />
+              ) : (
+                <>
+                  <source srcSet={thumbnailHandler(postData.postId).jpg} />
+                  <PostCardThumbnail
+                    src={thumbnailHandler(postData.postId).jpg}
+                    alt="PostCardThumbnail"
+                  />
+                </>
+              )}
+            </Suspense>
           </picture>
         </PostCardThumbnailWrapper>
         {/* 태그 */}
