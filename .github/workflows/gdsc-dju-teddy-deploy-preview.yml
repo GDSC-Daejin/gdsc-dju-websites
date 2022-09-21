@@ -18,7 +18,7 @@ jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest
     env:
-      working-directory: ./packages/shared/gdsc-dju-teddy
+      working-directory: ./packages/gdsc-dju-teddy
     environment:
       name: GDSC DJU Teddy Preview
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
