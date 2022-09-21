@@ -7,7 +7,7 @@ const Sitemap = require('react-router-sitemap').default;
 
 function generateSitemap() {
   return new Sitemap(router)
-    .build('https://gdsc-dju.web.app/')
+    .build('https://web.gdsc-dju.com/')
     .save('./dist/sitemap.xml');
 }
 

@@ -13,7 +13,7 @@ export const ApplicationHeader = styled.div`
   color: ${({ theme }) => theme.colors.grey900};
   margin-bottom: 6px;
 `;
-export const ApplicationText = styled(motion.p)`
+export const ApplicationText = styled.div`
   font-size: ${({ theme }) => theme.fontSize.body2};
   color: ${({ theme }) => theme.colors.grey800};
   margin-bottom: 20px;

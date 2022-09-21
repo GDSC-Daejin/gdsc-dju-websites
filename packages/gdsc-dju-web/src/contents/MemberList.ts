@@ -32,17 +32,9 @@ export const memberList = [
     position: 'Designer',
   },
   {
-    nickname: 'Samjong',
-    name: '김지훈',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02D2S7GQN5-c24df3df3cea-512',
-    text: '더 나은 미래',
-    position: 'Backend',
-  },
-  {
     nickname: 'Rocoli',
     name: '유형찬',
-    role: 'Core Member',
+    role: 'Member',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02C8B72LT1-e35fe9b38122-512',
     text: '내 죽음이 내 삶 보다 가취가 있기를',
     position: 'Backend',
@@ -55,6 +47,7 @@ export const memberList = [
     text: '돈 많은 백수가 꿈이에요',
     position: 'Android',
   },
+
   {
     nickname: 'Reese',
     name: '안주원',
@@ -78,6 +71,14 @@ export const memberList = [
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02CPD32N3D-6b7a165e5bb6-512',
     text: '낮밤 언제 바꾸지...',
     position: 'Frontend',
+  },
+  {
+    nickname: 'Samjong',
+    name: '김지훈',
+    role: 'Member',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02D2S7GQN5-c24df3df3cea-512',
+    text: '더 나은 미래',
+    position: 'Backend',
   },
   {
     nickname: 'Gabi	',

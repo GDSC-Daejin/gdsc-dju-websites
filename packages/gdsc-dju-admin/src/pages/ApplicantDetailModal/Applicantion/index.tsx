@@ -28,14 +28,21 @@ const Application: React.FC<{
   ) as QuestionType[];
   return (
     <ApplicationWrapper>
-      {questionArray.map((key, index) => (
-        <div key={index}>
-          <ApplicationHeader>{applicationQuestions[key]}</ApplicationHeader>
-          <ApplicationText>
-            {getQuestions(applicantData)[key] ?? '없음'}
-          </ApplicationText>
-        </div>
-      ))}
+      {questionArray.map((key, index) => {
+        return (
+          <div key={index}>
+            <ApplicationHeader>{applicationQuestions[key]}</ApplicationHeader>
+            <p>
+              {getQuestions(applicantData) &&
+                getQuestions(applicantData)
+                  [key].split('\n')
+                  .map((line, id) => (
+                    <ApplicationText key={id}>{line}</ApplicationText>
+                  ))}
+            </p>
+          </div>
+        );
+      })}
     </ApplicationWrapper>
   );
 };

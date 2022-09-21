@@ -115,7 +115,7 @@ export const RecruitingWrapper = styled(motion.div)`
     bottom: 10%;
   }
   @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
-    bottom: 10%;
+    bottom: 12%;
   }
   @media (max-width: 320px) {
     bottom: 10%;

@@ -1,6 +1,5 @@
-import Jason from '../assets/managerProfile/jason.jpeg';
-import Blaire from '../assets/managerProfile/blaire.jpg';
 import { IMemberCardType } from '../types/member';
+
 export const managerData: IMemberCardType[] = [
   {
     nickname: 'Jason',
@@ -13,7 +12,7 @@ export const managerData: IMemberCardType[] = [
   {
     nickname: 'Blaire',
     name: '이소희',
-    image: Blaire,
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02TWS2TDS5-084d87958c53-512',
     position: 'UX/UI Designer',
     role: '',
     text: '',
@@ -39,14 +38,6 @@ export const managerData: IMemberCardType[] = [
     name: '전병선',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02TKATKRBN-f37d39e0011d-512',
     position: 'Android Developer',
-    role: '',
-    text: '',
-  },
-  {
-    nickname: 'Rocoli',
-    name: '유형찬',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02C8B72LT1-dd9b1e6b25ad-512',
-    position: 'Backend Developer',
     role: '',
     text: '',
   },

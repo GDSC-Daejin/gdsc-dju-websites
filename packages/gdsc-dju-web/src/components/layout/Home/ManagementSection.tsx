@@ -114,7 +114,6 @@ const ManagementSection = () => {
           </ManagerSectionWrapper>
         </ManagerSectionInner>
         <MemberCardSection
-          variants={listAnimate}
           ref={sessionRef}
           onMouseDown={mouseDownHandler}
           onMouseUp={mouseUpHandler}
@@ -125,10 +124,6 @@ const ManagementSection = () => {
               windowWidth={`${windowSize.width}px`}
               sectionWidth={`${sectionWidth}px`}
               key={index}
-              variants={listItemAnimate}
-              initial={'start'}
-              whileInView={'end'}
-              viewport={{ once: true }}
             >
               <MemberCard member={member} />
             </MemberCardWrapper>

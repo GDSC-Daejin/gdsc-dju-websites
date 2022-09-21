@@ -10,12 +10,13 @@ import {
   SideCategoryTextWrapper,
   SideMenuGDSCLogoWrapper,
 } from './styled';
-import { SideMenuCircleAnimation } from '@src/components/Animation';
+
 import { MENU_KEY, menuState } from '@src/store/menu';
-import { positionColor } from '@src/utils/positionColor';
 
 import GdscLogo from '@assets/logos/GdscLogo';
 import { category } from '@type/position';
+import { SideMenuCircleAnimation } from '@src/components/Animation';
+import { positionColor } from '@utils/positionColor';
 
 const SideMenuCategory = () => {
   const navigate = useNavigate();
