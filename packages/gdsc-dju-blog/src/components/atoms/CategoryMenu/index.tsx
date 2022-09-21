@@ -7,24 +7,17 @@ import {
   CategoryTextWrapper,
   GDSCLogoWrapper,
 } from './styled';
-import { positionColor } from '@src/store/positionColor';
+import { positionColor } from '@src/utils/positionColor';
 import GdscLogo from '@assets/logos/GdscLogo';
-import { category } from '@src/api/pageData/category';
 
-const circleMotion = {
-  isActive: {
-    opacity: 1,
-    y: 0,
-  },
-  isUnActive: {
-    y: -20,
-    opacity: 0,
-  },
-};
+import { circleMotion } from '@src/components/Animation';
+import { category } from '@type/position';
+
 type CategoryMenuProps = {
   onClick?: (url: string) => void;
   type: string;
 };
+
 const CategoryMenu: React.FC<CategoryMenuProps> = ({ onClick, type }) => {
   const animate = (value: string, categoryValue: string) => {
     return value.toLowerCase() === categoryValue.toLowerCase();

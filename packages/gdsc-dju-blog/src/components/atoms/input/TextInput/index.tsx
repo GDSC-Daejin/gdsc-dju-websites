@@ -1,8 +1,7 @@
 import React, { forwardRef } from 'react';
-
 import { ErrorBox, StyledInput, StyledInputWrapper } from './styled';
 
-export interface Iprops {
+export interface TextInputProps {
   name?: string;
   error?: any;
   placeholder?: string;
@@ -14,8 +13,11 @@ export interface Iprops {
   disabled?: boolean;
   defaultValue?: string | number;
 }
-const TextInput = forwardRef<HTMLInputElement, Iprops>(
-  ({ name, placeholder, onChange, type, disabled, error, value, defaultValue }, ref) => {
+const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
+  (
+    { name, placeholder, onChange, type, disabled, error, value, defaultValue },
+    ref,
+  ) => {
     return (
       <>
         <StyledInputWrapper error={false} disabled={!disabled}>

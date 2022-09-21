@@ -1,3 +1,4 @@
+import { positionColor } from '@src/utils/positionColor';
 import { IFormStructure, errorCheck } from '@type/SignUpFormType';
 import React, { useState } from 'react';
 import BottomArrowIcon from '../../../assets/icons/BottomArrowIcon';
@@ -33,6 +34,7 @@ const SignUpSelect = ({
     'Android',
     'Beginner',
   ];
+
   const OptionOnClick = (data: string) => {
     setSelectOpen((prev) => {
       return !prev;
@@ -71,9 +73,9 @@ const SignUpSelect = ({
             <SignUpSelectOption
               key={index}
               onClick={() => OptionOnClick(data)}
-              selected={watch && watch('positionType') === data ? true : false}
+              selected={!!(watch && watch('positionType') === data)}
             >
-              <SignUpColorCircle position={data} />
+              <SignUpColorCircle positionColor={positionColor(data)} />
               {data}
             </SignUpSelectOption>
           ))}

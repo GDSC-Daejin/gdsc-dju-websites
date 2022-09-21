@@ -13,12 +13,15 @@ const ThemeButtonInner = styled.img`
 
 const ThemeButton: React.FC<{
   toggleTheme: () => void;
-  theme: string | undefined;
-}> = ({ toggleTheme, theme }) => {
+  isDarkMode: boolean | undefined;
+}> = ({ toggleTheme, isDarkMode }) => {
   return (
     <ThemeButtonInner
-      onClick={() => toggleTheme()}
-      src={theme === 'light' ? DarkModeIcon : LightModeIcon}
+      onClick={() => {
+        toggleTheme();
+        console.log(isDarkMode);
+      }}
+      src={isDarkMode ? LightModeIcon : DarkModeIcon}
     />
   );
 };

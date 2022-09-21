@@ -37,6 +37,6 @@ export const ThumbnailText = styled.div`
   z-index: 1;
   word-break: keep-all;
   white-space: nowrap;
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   color: #fff;
 `;

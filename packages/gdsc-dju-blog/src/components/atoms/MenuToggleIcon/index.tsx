@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { MENU_KEY, menuState } from '../../../store/menu';
 import { StyledMenuButton } from './styled';
-import { themeState } from '../../../store/theme';
 import { useTheme } from 'styled-components';
 
 const MenuToggleIcon = () => {

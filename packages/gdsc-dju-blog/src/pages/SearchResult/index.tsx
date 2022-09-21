@@ -1,63 +1,76 @@
 import { useGetSearchPosts } from '@src/api/hooks/useGetSearchPost';
 import { LayoutContainer } from '@styles/layouts';
 import React from 'react';
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 
 import {
   BlogCardGridLayoutWrapper,
+  CategoryMenuWrapper,
   LayoutInner,
-  NoResult,
   PageBarWrapper,
   SearchResultContent,
-  SearchResultSubTitle,
   SearchResultTitle,
   SearchResultTitleWrapper,
 } from './styled';
-import BlogCardSection from '@src/components/molecules/BlogCardSection';
+import PostsContainer from '@src/components/molecules/PostsContainer';
 import PageBar from '@src/components/atoms/PageBar';
 
+import CategoryMenu from '@src/components/atoms/CategoryMenu';
+import Notice from '@src/components/atoms/Notice';
+
 const SearchResult = () => {
+  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const { postContent } = useParams();
-  const { postListData } = useGetSearchPosts(postContent!);
-  const page = searchParams.get('page');
-  const handleClick = (page: number) => {
-    setSearchParams(`page=${page}`);
+  const { searchContent, categoryName } = useParams();
+  const currentPage = Number(searchParams.get('page')) ?? 1;
+  const category = categoryName ? categoryName : 'all';
+  console.log(searchParams);
+  const { postListData } = useGetSearchPosts({
+    searchContent: searchContent!,
+    category,
+    page: currentPage,
+  });
+
+  const handleClick = (page: number, limit?: number) => {
+    const limitPage = limit ?? postListData?.totalPages!;
+    if (currentPage > limitPage) navigate(`page=${limitPage}`);
+    else setSearchParams(`page=${page}`);
   };
+
+  const categoryHandler = (category: string) =>
+    navigate({
+      pathname: `/search/${searchContent}/${category}?page=1`,
+    });
 
   return (
     <LayoutContainer>
       <LayoutInner>
         <SearchResultTitleWrapper>
           <SearchResultTitle>
-            {postContent}
-            <SearchResultSubTitle>
-              {' '}
-              를(을) 검색하신 결과입니다.
-            </SearchResultSubTitle>
+            {searchContent} 를(을) 검색하신 결과입니다.
           </SearchResultTitle>
           <SearchResultContent>
             {postListData?.content.length}개의 검색결과가 있습니다
           </SearchResultContent>
         </SearchResultTitleWrapper>
+        <CategoryMenuWrapper>
+          <CategoryMenu type={category} onClick={categoryHandler} />
+        </CategoryMenuWrapper>
         {postListData && (
           <>
             <BlogCardGridLayoutWrapper>
               {!postListData.empty ? (
-                <>
-                  <BlogCardSection postData={postListData.content} />
-                  <PageBarWrapper>
-                    <PageBar
-                      page={Number(page)}
-                      totalPage={postListData.totalPages}
-                      onClick={handleClick}
-                    />
-                  </PageBarWrapper>
-                </>
+                <PostsContainer postData={postListData.content} />
               ) : (
-                <NoResult>
-                  <span>검색결과가 없습니다.</span>
-                </NoResult>
+                <Notice>검색결과가 없습니다.</Notice>
+              )}
+              {!postListData.empty && (
+                <PageBarWrapper>
+                  <PageBar
+                    currentPage={Number(currentPage)}
+                    totalPage={postListData.totalPages}
+                  />
+                </PageBarWrapper>
               )}
             </BlogCardGridLayoutWrapper>
           </>

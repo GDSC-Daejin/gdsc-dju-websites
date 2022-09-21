@@ -2,14 +2,17 @@ import PlusIcon from '@assets/icons/PlusIcon';
 import { useGetMyScrapList } from '@src/api/hooks/useGetMyScrapList';
 import { useGetPostsData } from '@src/api/hooks/useGetPostsData';
 import CategoryMenu from '@src/components/atoms/CategoryMenu';
-import BlogCard from '@src/components/molecules/BlogCard';
+import BlogCard from '@src/components/molecules/PostCard';
 import HomePhrase from '@src/components/molecules/HomePhrase';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { Suspense, useEffect, useRef, useState } from 'react';
 
 import { Link } from 'react-router-dom';
-import { useScroll } from 'react-use';
+
+import { useScroll } from '@src/hooks/useScroll';
+import useWindowSize from '@src/hooks/useWindowSize';
 
 import BlogCardScrollButton from './BlogCardButton';
+import onDrag from '@src/hooks/onDrag';
 import {
   BlogCardWrapper,
   ButtonWrapper,
@@ -22,45 +25,25 @@ import {
 
 function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const { x } = useScroll(scrollRef);
-  const [isDrag, setIsDrag] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [category, setCategory] = useState('all');
-  const [homeWidth, setHomeWidth] = useState(0);
-  const { postListData } = useGetPostsData(category, 0, 11);
-  const { scrapList } = useGetMyScrapList();
-  const onDragStart = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    setIsDrag(true);
-    if (scrollRef.current?.scrollLeft !== undefined)
-      setStartX(e.pageX + scrollRef.current.scrollLeft);
-  };
-  const onDragEnd = () => {
-    setIsDrag(false);
-  };
-  const onDragMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (isDrag) {
-      if (scrollRef.current !== null) {
-        const { scrollWidth, clientWidth, scrollLeft } = scrollRef.current;
-        if (scrollRef.current?.scrollLeft !== undefined)
-          scrollRef.current.scrollLeft = startX - e.pageX;
+  const scrollX = useScroll(scrollRef);
+  const { isDrag, onDragStart, onDragEnd, onDragMove } = onDrag(scrollRef);
 
-        if (scrollLeft === 0) {
-          setStartX(e.pageX);
-        } else if (scrollWidth <= clientWidth + scrollLeft) {
-          setStartX(e.pageX + scrollLeft);
-        }
-      }
-    }
-  };
+  const [category, setCategory] = useState('all');
   const changeCategory = (category: string) => {
     setCategory(category);
   };
+
+  const [homeWidth, setHomeWidth] = useState(0);
+  const { windowSize } = useWindowSize();
+
+  const { postListData } = useGetPostsData(category, 0, 11);
+  const { scrapList } = useGetMyScrapList();
+
   const homeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     homeRef.current && setHomeWidth(homeRef.current?.offsetWidth);
-  }, [homeRef]);
+  }, [windowSize.width]);
 
   return (
     <>
@@ -74,28 +57,32 @@ function Home() {
       </HomeLayoutContainer>
       <CardSectionWrapper>
         <CardSection
-          isDrag={isDrag}
           ref={scrollRef}
+          isDrag={isDrag}
           onMouseDown={onDragStart}
           onMouseMove={isDrag ? onDragMove : undefined}
           onMouseUp={onDragEnd}
           onMouseLeave={onDragEnd}
         >
-          {postListData &&
-            postListData.content.map((postData) => {
-              return (
-                <BlogCardWrapper
-                  key={postData.postId}
-                  homeWidth={`${homeWidth}px`}
-                >
-                  <BlogCard
-                    postData={postData}
-                    isScrap={!!scrapList?.find((id) => id == postData.postId)}
-                  />
-                </BlogCardWrapper>
-              );
-            })}
+          <Suspense fallback={<div>카드 로딩</div>}>
+            {postListData &&
+              postListData.content.map((postData) => {
+                return (
+                  <BlogCardWrapper
+                    key={postData.postId}
+                    homeWidth={`${homeWidth}px`}
+                    windowWidth={`${windowSize.width}px`}
+                  >
+                    <BlogCard
+                      postData={postData}
+                      isScrap={!!scrapList?.find((id) => id == postData.postId)}
+                    />
+                  </BlogCardWrapper>
+                );
+              })}
+          </Suspense>
           <BlogCardWrapper
+            windowWidth={`${windowSize.width}px`}
             homeWidth={`${homeWidth}px`}
             className="viewmore-item"
           >
@@ -109,7 +96,7 @@ function Home() {
       </CardSectionWrapper>
       <HomeLayoutContainer>
         <ButtonWrapper>
-          <BlogCardScrollButton scrollX={x} scrollRef={scrollRef} />
+          <BlogCardScrollButton scrollX={scrollX} scrollRef={scrollRef} />
         </ButtonWrapper>
       </HomeLayoutContainer>
     </>

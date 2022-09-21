@@ -17,10 +17,11 @@ export const HomeLayoutContainer = styled.div`
   z-index: 0;
   display: flex;
   flex-direction: column;
-  width: 100%;
   max-width: 1200px;
+  @media (max-width: ${({ theme }) => theme.windowSizes.mobile}px) {
+    width: 100%;
+  }
   margin: 0 auto;
-  min-width: 320px;
   overflow: hidden;
 `;
 export const HomePhraseWrapper = styled(motion.div)`
@@ -59,14 +60,19 @@ export const CardSection = styled(motion.section)<{ isDrag: boolean }>`
   }
 `;
 
-export const BlogCardWrapper = styled(motion.div)<{ homeWidth?: string }>`
+export const BlogCardWrapper = styled(motion.div)<{
+  homeWidth?: string;
+  windowWidth?: string;
+}>`
   width: 248px;
   height: 294px;
   margin: 0 15px;
-  ${({ homeWidth }) =>
+
+  ${({ windowWidth, homeWidth }) =>
     homeWidth &&
+    windowWidth &&
     css`
-      transform: translateX(calc((100vw - ${homeWidth}) / 2 + 20px));
+      transform: translateX(calc((${windowWidth} - ${homeWidth}) / 2 + 20px));
     `}
 
   :first-child {

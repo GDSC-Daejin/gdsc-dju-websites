@@ -6,7 +6,7 @@ export const StyledInput = styled.input<{ disabled?: boolean }>`
   border: 0;
   border-radius: 10px;
   height: 48px;
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   outline: none;
   flex-grow: 1;
   background: ${({ theme }) => theme.colors.background};
@@ -30,6 +30,7 @@ export const StyledInputWrapper = styled.div<{
   disabled?: boolean;
   error: boolean;
 }>`
+  position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -43,7 +44,7 @@ export const StyledInputWrapper = styled.div<{
     ${({ error }) =>
       error
         ? css`
-            box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.tossRed};
+            box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.red900};
           `
         : css`
             box-shadow: inset 0 0 0 1px ${({ theme }) => theme.colors.grey300};
@@ -56,16 +57,15 @@ export const StyledInputWrapper = styled.div<{
     ${({ error }) =>
       error
         ? css`
-            box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.tossRed};
+            box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.red900};
           `
         : css`
-            box-shadow: inset 0 0 0 2px
-              ${({ theme }) => theme.colors.tossBlue200};
+            box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.blue200};
           `}
   }
   .formInput:focus {
     box-sizing: border-box;
-    box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.tossBlue500};
+    box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.blue500};
   }
   ${({ disabled }) =>
     !disabled &&
@@ -86,7 +86,7 @@ export const ErrorBox = styled.div`
   height: 20px;
   display: flex;
   align-items: center;
-  color: ${({ theme }) => theme.colors.tossRed};
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  color: ${({ theme }) => theme.colors.red900};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   padding-left: 5px;
 `;

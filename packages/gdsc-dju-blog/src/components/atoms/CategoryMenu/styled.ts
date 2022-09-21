@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 export const CategoryText = styled.div<{ active?: boolean }>`
-  font-size: ${(props) => props.theme.fontSize.h5};
+  font-size: ${(props) => props.theme.fontSizes.titleS};
 
   font-weight: normal;
   font-family: 'Google Sans', sans-serif;
@@ -29,13 +29,14 @@ export const CategoryTextWrapper = styled(motion.div)<{ isActive: boolean }>`
   ${({ isActive }) =>
     isActive &&
     css`
+      transform: translateY(-10px);
       border-bottom: 1px solid ${({ theme }) => theme.colors.grey900};
       color: ${({ theme }) => theme.colors.grey900};
     `}
 `;
 export const CategoryMenuWrapper = styled(motion.div)`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   flex-direction: row;
   width: 713px;
   justify-content: space-between;
@@ -43,7 +44,7 @@ export const CategoryMenuWrapper = styled(motion.div)`
 export const CategoryCircleWrapper = styled(motion.div)`
   position: absolute;
   left: 45%;
-  top: -10px;
+  top: -14px;
   display: flex;
   align-items: center;
   justify-content: center;

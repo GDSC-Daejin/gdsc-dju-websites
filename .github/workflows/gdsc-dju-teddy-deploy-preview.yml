@@ -18,7 +18,7 @@ jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest
     env:
-      working-directory: ./packages/shared/gdsc-dju-teddy
+      working-directory: ./packages/gdsc-dju-teddy
     environment:
       name: GDSC DJU Teddy Preview
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
@@ -54,7 +54,7 @@ jobs:
           target: gdsc-dju-teddy
           expires: 3d
           channelId: ' ${{ steps.slug.outputs.sha8 }}-${{ github.event.pull_request.head.ref }} '
-          entryPoint: './packages/shared/gdsc-dju-teddy'
+          entryPoint: './packages/gdsc-dju-teddy'
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
       - name: Discord Message Notify

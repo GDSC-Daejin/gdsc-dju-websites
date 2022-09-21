@@ -1,9 +1,8 @@
 {
   "name": "gdsc-dju-blog",
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "start": "vite --host",
+    "start": "HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem vite",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
@@ -11,6 +10,7 @@
     "sitemap": "node sitemap-builder.js"
   },
   "dependencies": {
+    "@gdsc-dju/styled-components": "^0.0.32",
     "@giscus/react": "^1.1.2",
     "@toast-ui/editor": "^3.2.0",
     "@toast-ui/editor-plugin-chart": "^3.0.1",
@@ -36,7 +36,6 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "^4.0.3",
     "react-syntax-highlighter": "^15.5.0",
-    "react-use": "^17.3.2",
     "recoil": "^0.7.4",
     "recoil-persist": "^4.0.0",
     "styled-components": "^5.3.3"
@@ -54,8 +53,14 @@
     "@types/styled-components": "^5.1.15",
     "@vitejs/plugin-react": "^1.3.0",
     "autoprefixer": "^10.4.4",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
     "prettier": "^2.6.2",
+    "react-router-sitemap": "^1.2.0",
     "typescript": "^4.6.3",
-    "vite": "^3.0.1"
+    "vite": "^3.0.1",
+    "vite-plugin-mkcert": "^1.9.0"
   }
 }

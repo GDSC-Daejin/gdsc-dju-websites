@@ -2,27 +2,28 @@ import styled from 'styled-components';
 
 export const SearchResultTitleWrapper = styled.div`
   width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 100px 0px 80px;
   color: ${(props) => props.theme.colors.grey900};
 `;
 export const SearchResultTitle = styled.h1`
   display: flex;
   align-self: flex-end;
-  padding: 50px 0px;
-  font-size: ${({ theme }) => theme.fontSize.h5};
+  padding: 12px 0;
+  font-size: ${({ theme }) => theme.fontSizes.titleS};
   color: ${(props) => props.theme.colors.grey900};
 `;
-export const SearchResultSubTitle = styled.h3`
-  display: flex;
-  align-self: flex-end;
-  padding: 0 4px;
-  font-size: ${({ theme }) => theme.fontSize.h6};
-  color: ${(props) => props.theme.colors.grey900};
-`;
+
 export const SearchResultContent = styled.p`
-  padding: 20px 0;
-  font-size: ${({ theme }) => theme.fontSize.h7};
+  font-size: ${({ theme }) => theme.fontSizes.textXxl};
   line-height: 1.625rem;
   color: ${(props) => props.theme.colors.grey600};
+`;
+
+export const CategoryMenuWrapper = styled.div`
+  margin: 60px 0px;
 `;
 
 export const PageBarWrapper = styled.div`
@@ -42,7 +43,12 @@ export const LayoutInner = styled.div`
 `;
 
 export const BlogCardGridLayoutWrapper = styled.div`
-  padding: 10px 0px;
+  height: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const NoResult = styled.div`
@@ -52,7 +58,7 @@ export const NoResult = styled.div`
   width: 1200px;
   height: 400px;
   span {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+    font-size: ${({ theme }) => theme.fontSizes.textXl};
     color: ${({ theme }) => theme.colors.grey400};
   }
 `;

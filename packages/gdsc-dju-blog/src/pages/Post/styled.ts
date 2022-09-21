@@ -1,5 +1,6 @@
+import { ColorToken } from '@gdsc-dju/styled-components';
 import styled, { css } from 'styled-components';
-import { lightTheme } from '../../styles/theme';
+
 export const PostHead = styled.div`
   display: flex;
   flex-direction: column;
@@ -8,7 +9,7 @@ export const PostHead = styled.div`
 `;
 
 export const PostTitle = styled.h1`
-  font-size: ${({ theme }) => theme.fontSize.h4};
+  font-size: ${({ theme }) => theme.fontSizes.titleM};
   color: ${({ theme }) => theme.colors.grey900};
   width: 100%;
   word-break: break-word;
@@ -40,6 +41,12 @@ export const AuthorWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
+  cursor: pointer;
+`;
+export const PostInformation = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
   margin-bottom: 50px;
 `;
 export const AuthorImage = styled.img`
@@ -49,10 +56,10 @@ export const AuthorImage = styled.img`
   margin-right: 4px;
 `;
 export const Author = styled.div<{
-  color?: keyof typeof lightTheme.colors;
+  color?: ColorToken;
   marginRight?: number;
 }>`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   font-weight: 300;
   color: ${({ theme }) => theme.colors.grey900};
   ${({ color }) =>
@@ -67,7 +74,7 @@ export const Author = styled.div<{
     `};
 `;
 export const Date = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   color: ${({ theme }) => theme.colors.grey500};
   font-weight: 400;
 `;
@@ -83,7 +90,7 @@ export const CategoryWrapper = styled.div`
   width: fit-content;
 `;
 export const Category = styled.div`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   color: ${({ theme }) => theme.colors.grey900};
   font-weight: 400;
   flex-wrap: wrap;

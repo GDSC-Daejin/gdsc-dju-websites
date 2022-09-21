@@ -8,13 +8,16 @@ export const StyledMenuButton = styled(motion.button)`
   -moz-user-select: none;
   -ms-user-select: none;
   cursor: pointer;
-  width: 23px;
-  height: 23px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   background: transparent;
   z-index: 1001;
   padding: 0;
-  @media screen and (max-width: ${(props) => props.theme.windowSize.tablet}px) {
+  @media (max-width: ${(props) => props.theme.windowSizes.tablet}px) {
     margin-left: 0px;
     margin-right: 0px;
     padding: 0;

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 export const PostCategoryText = styled(motion.div)<{ active?: boolean }>`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
 
   font-weight: normal;
   font-family: 'Google Sans', sans-serif;
@@ -12,8 +12,8 @@ export const PostCategoryText = styled(motion.div)<{ active?: boolean }>`
       color: ${({ theme }) => theme.colors.grey900};
     `}
   padding: 2px 0;
-  @media screen and (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
-   font-size: ${({ theme }) => theme.fontSize.body2};
+  @media screen and (max-width: ${({ theme }) => theme.windowSizes.tablet}px) {
+   font-size: ${({ theme }) => theme.fontSizes.textL};
 `;
 export const PostCategoryTextWrapper = styled(motion.div)<{
   isActive: boolean;
@@ -44,7 +44,8 @@ export const PostCategoryMenuWrapper = styled(motion.div)`
   flex-direction: row;
   width: 378px;
   justify-content: space-between;
-  @media screen and (max-width: ${(props) => props.theme.windowSize.tablet}px) {
+  @media screen and (max-width: ${(props) =>
+      props.theme.windowSizes.tablet}px) {
     width: 320px;
   }
 `;

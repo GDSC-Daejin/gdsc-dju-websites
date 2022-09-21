@@ -11,7 +11,7 @@ import {
   PostTitle,
   PostTitleWrapper,
 } from '../styled';
-import { positionColor } from '@src/store/positionColor';
+import { positionColor } from '@src/utils/positionColor';
 import { DetailPostDataType } from '@type/postData';
 import { useGetMyData } from '@src/api/hooks/useGetMyData';
 
@@ -21,8 +21,8 @@ interface Props {
 }
 
 const PostHeader = ({ postId, postData }: Props) => {
-  const { userData } = useGetMyData();
-  const userInfoData = userData?.memberInfo;
+  const { myData } = useGetMyData();
+  const userInfoData = myData?.memberInfo;
   const isUser = userInfoData?.nickname == postData.memberInfo.nickname;
   return (
     <PostHead>

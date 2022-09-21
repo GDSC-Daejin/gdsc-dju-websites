@@ -7,7 +7,7 @@ import {
   PostCategoryTextWrapper,
 } from './styled';
 
-import { positionColor } from '../../../store/positionColor';
+import { positionColor } from '../../../utils/positionColor';
 import { PostCategoryAnimation, PostCircleAnimation } from '../../Animation';
 export const PostCategoryMenuData = [
   {
