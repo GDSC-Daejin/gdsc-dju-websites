@@ -1,6 +1,15 @@
+import BookmarkIcon from '@assets/icons/BookmarkIcon';
+import { HashTageDark } from '@src/components/atoms/HashTage';
+import { useSetBookMark } from '@src/hooks/useHandleBookMark';
+import { DetailPostDataType } from '@type/postData';
+import { dateFilter } from '@utils/dateFilter';
+import { debounce } from '@utils/debounce';
+import { hashTageSpreader } from '@utils/hashTageSpreader';
+import { removeMarkdownInContent } from '@utils/removeMarkdownInContent';
+import { thumbnailHandler } from '@utils/thumbnailHandler';
 import React, { memo, useCallback, useState } from 'react';
 import { useCookies } from 'react-cookie';
-import MockPostImage from '../../../assets/mocks/MockPostImage.jpg';
+import { useNavigate } from 'react-router-dom';
 
 import {
   BookmarkWrapper,
@@ -13,15 +22,6 @@ import {
   WidthPostCardImageWrapper,
   WidthPostCardWrapper,
 } from './styled';
-import { HashTageDark } from '@src/components/atoms/HashTage';
-import { useSetBookMark } from '@src/hooks/useHandleBookMark';
-import { hashTageSpreader } from '@utils/hashTageSpreader';
-import { DetailPostDataType } from '@type/postData';
-import { dateFilter } from '@utils/dateFilter';
-import BookmarkIcon from '@assets/icons/BookmarkIcon';
-import { removeMarkdownInContent } from '@utils/removeMarkdownInContent';
-import { useNavigate } from 'react-router-dom';
-import { debounce } from '@utils/debounce';
 
 interface Props {
   postData: DetailPostDataType;
@@ -62,9 +62,23 @@ const WidthPostCard: React.FC<Props> = ({ postData, isScrap }) => {
       >
         <BookmarkIcon marked={isMarked} />
       </BookmarkWrapper>
+
       <WidthPostCardImageWrapper>
-        <WidthPostCardImage src={postData.imagePath ?? MockPostImage} />
+        <picture>
+          {postData.imagePath ? (
+            <WidthPostCardImage src={postData.imagePath} alt="thumbnail" />
+          ) : (
+            <>
+              <source srcSet={thumbnailHandler(postData.postId).webp} />
+              <WidthPostCardImage
+                src={thumbnailHandler(postData.postId).jpg}
+                alt="PostCardThumbnail"
+              />
+            </>
+          )}
+        </picture>
       </WidthPostCardImageWrapper>
+
       <WidthPostCardContentWrapper hover={hover}>
         <PostDate>{dateFilter(postData.uploadDate)}</PostDate>
         <PostTitle>{postData.title}</PostTitle>

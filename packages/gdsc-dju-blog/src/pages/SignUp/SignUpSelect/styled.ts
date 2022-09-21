@@ -1,5 +1,3 @@
-import { ColorScheme } from '@gdsc-dju/styled-components';
-import { useGetPositionColor } from '@src/hooks/useGetPositionColor';
 import styled from 'styled-components';
 
 export const SelectBoxWrapper = styled.div`

@@ -7,11 +7,14 @@ export const StyledButton = styled.button<{
   size?: string;
   disable?: boolean;
   border?: string;
+  isIcon: boolean;
 }>`
   display: flex;
   align-items: center;
+  justify-content: center;
   border: 1px solid ${({ theme }) => theme.colors.grey200};
-  font-size: ${({ theme }) => theme.fontSizes.textL};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   padding: 8px 30px;
   cursor: pointer;
   box-shadow: 0 2px 12px rgba(25, 31, 40, 0.08);
@@ -27,11 +30,19 @@ export const StyledButton = styled.button<{
       cursor: not-allowed;
       opacity: 0.5;
     `}
+  ${({ isIcon }) =>
+    isIcon &&
+    css`
+      padding: 8px 25px;
+      gap: 4px;
+    `}
   ${({ size }) =>
     size === 'large' &&
     css`
+      width: 100%;
       padding: 8px 86px;
     `}
+  
   ${({ background }) =>
     background &&
     css`

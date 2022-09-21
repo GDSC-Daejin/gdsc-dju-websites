@@ -1,3 +1,4 @@
+import { thumbnailHandler } from '@utils/thumbnailHandler';
 import React, { memo, useCallback, useState } from 'react';
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useCookies } from 'react-cookie';
@@ -69,10 +70,19 @@ const PostCard: React.FC<Props> = ({ postData, isScrap }) => {
         </BookMarkWrapper>
         {/* 이미지 */}
         <PostCardThumbnailWrapper>
-          <PostCardThumbnail
-            src={postData.imagePath ?? '../../../assets/mocks/unknown.png'}
-            alt="PostCardThumbnail"
-          />
+          <picture>
+            {postData.imagePath ? (
+              <PostCardThumbnail src={postData.imagePath} alt="thumbnail" />
+            ) : (
+              <>
+                <source srcSet={thumbnailHandler(postData.postId).webp} />
+                <PostCardThumbnail
+                  src={thumbnailHandler(postData.postId).jpg}
+                  alt="PostCardThumbnail"
+                />
+              </>
+            )}
+          </picture>
         </PostCardThumbnailWrapper>
         {/* 태그 */}
         {postData.postHashTags && (

@@ -9,7 +9,7 @@ import { LayoutContainer, PostContainerInner } from '@styles/layouts';
 import { ContentViewer } from '@src/components/atoms/ToastUi';
 
 const Post = () => {
-  const { postId } = useParams<'postId'>();
+  const { postId } = useParams<{ postId: string }>();
   const { postData } = useGetDetailPost(postId);
   const theme = localStorage.getItem('theme') || 'light';
 

@@ -10,7 +10,7 @@ import { AuthBlogInstance, BlogInstance } from './Instance';
 class PostService {
   //전체 포스트
   getPostData = (postId: string) => {
-    return AuthBlogInstance.get<RowPostDataType>(`/api/v1/post/${postId}`);
+    return BlogInstance.get<RowPostDataType>(`/api/v1/post/${postId}`);
   };
   getPostsData = (params: string) => {
     return BlogInstance.get<RowPostListType>(`/api/v1/post/list${params}`);

@@ -70,8 +70,8 @@ function Home() {
                 return (
                   <BlogCardWrapper
                     key={postData.postId}
-                    windowWidth={`${windowSize.width}px`}
                     homeWidth={`${homeWidth}px`}
+                    windowWidth={`${windowSize.width}px`}
                   >
                     <BlogCard
                       postData={postData}

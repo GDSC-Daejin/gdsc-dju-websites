@@ -102,7 +102,7 @@ const Modal: React.FC<ModalProps> = () => {
                   />
                   <GDSCButton
                     text={modalType[modal.type].rightButton}
-                    color={modalType[modal.type].rightColor}
+                    background={modalType[modal.type].rightColor}
                     onClick={() =>
                       modal.onClick ? modal.onClick() : undefined
                     }

@@ -8,7 +8,8 @@ export const PostCardInner = styled(motion.article)`
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 19px 32px -1px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  box-shadow: ${({ theme }) => theme.colors.boxShadow100};
   cursor: pointer;
 `;
 
@@ -24,14 +25,15 @@ export const BookMarkWrapper = styled.div`
 export const PostCardThumbnailWrapper = styled.div`
   width: 248px;
   height: 294px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 13px;
   overflow: hidden;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: none;
 `;
 export const PostCardThumbnail = styled.img`
-  height: 294px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 export const PostCardTagWrapper = styled.div<{ IsHovered: boolean }>`
@@ -62,8 +64,11 @@ export const PostCardTag = styled.div`
 export const PostCardBottomBox = styled(motion.div)<{ isHovered: boolean }>`
   position: absolute;
   border-radius: 10px;
+  border: none;
   width: 100%;
   bottom: 0;
+  right: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -102,17 +107,16 @@ export const PostCardPostText = styled(motion.div)`
   position: absolute;
   transform: translate(-50%, 0%);
   top: 53px;
-
   min-height: 120px;
   max-height: 120px;
-  word-break: break-word;
-  overflow: hidden;
+  word-break: break-all;
   text-overflow: ellipsis;
 `;
 export const PostText = styled.article`
   width: 208px;
   white-space: normal;
   display: -webkit-box;
+  word-break: break-all;
   -webkit-box-orient: vertical;
   overflow: hidden;
   -webkit-line-clamp: 7;

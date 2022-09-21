@@ -1,14 +1,19 @@
 import React, { memo } from 'react';
-import { positionColor } from '../../../store/positionColor';
+import { positionColor } from '../../../utils/positionColor';
 import { PositionCircle, StyledImage, StyledImageWrapper } from './styled';
 
-type Props = { image: string; position: string | null };
-const ProfileImage = ({ image, position }: Props) => {
+interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {
+  image: string;
+  position?: string | null;
+  size?: 'medium' | 'small';
+}
+const ProfileImage = (props: Props) => {
+  const { image, position, size = 'medium' } = props;
   const imageUrl = image.replace('=s96-c', '');
   return (
-    <StyledImageWrapper>
+    <StyledImageWrapper isHaveClickEvent={!!props.onClick}>
       {position && <PositionCircle color={positionColor(position)} />}
-      <StyledImage src={imageUrl} />
+      <StyledImage src={imageUrl} size={size} {...props} />
     </StyledImageWrapper>
   );
 };

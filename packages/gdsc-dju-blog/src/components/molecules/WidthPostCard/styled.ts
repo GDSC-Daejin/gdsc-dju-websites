@@ -14,9 +14,10 @@ export const WidthPostCardWrapper = styled(motion.div)`
   box-sizing: border-box;
 `;
 export const WidthPostCardImage = styled.img`
-  //background: black;
-  height: 150%;
   position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 export const WidthPostCardImageWrapper = styled.div`
   height: 100%;
@@ -80,7 +81,7 @@ export const PostHashTageSection = styled.section`
   transition: all 0.2s;
 `;
 export const PostContent = styled(motion.p)`
-  font-size: ${({ theme }) => theme.fontSizes.textXl};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   color: ${({ theme }) => theme.colors.grey600};
   box-sizing: border-box;
   transition: all 0.3s ease;

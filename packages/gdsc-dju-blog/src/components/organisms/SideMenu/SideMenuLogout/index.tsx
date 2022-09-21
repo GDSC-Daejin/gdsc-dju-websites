@@ -1,35 +1,27 @@
-import React from 'react';
-import {
-  GdscSideBlogLogoWrapper,
-  GoogleButtonWrapper,
-  GoogleLogoWrapper,
-} from '../styled';
+import SideMenuLogo from '@assets/logos/SideMenuLogo';
 
 import { GDSCButton } from '@src/components/atoms/Button';
-import GoogleLogo from '@assets/logos/GoogleLogo';
-import GdscSideBarLogo from '@assets/logos/GDSCSideBarLogo';
+import React from 'react';
+import { GoogleButtonWrapper, LogoutBoxWrapper } from '../styled';
 
 interface IProps {
   loginURL: string;
 }
 const SideBarLogout: React.FC<IProps> = ({ loginURL }) => {
   return (
-    <>
-      <GdscSideBlogLogoWrapper>
-        <GdscSideBarLogo />
-      </GdscSideBlogLogoWrapper>
+    <LogoutBoxWrapper>
+      <SideMenuLogo />
       <GoogleButtonWrapper>
         <GDSCButton
+          size={'medium'}
+          isGoogle={true}
           text={' Google로 계속'}
           onClick={() => {
             location.href = loginURL;
           }}
         />
-        <GoogleLogoWrapper>
-          <GoogleLogo />
-        </GoogleLogoWrapper>
       </GoogleButtonWrapper>
-    </>
+    </LogoutBoxWrapper>
   );
 };
 

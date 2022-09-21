@@ -28,7 +28,7 @@ export const BlogNameWrapper = styled.div`
 `;
 export const BlogName = styled.h2`
   margin-right: 10px;
-  font-size: ${({ theme }) => theme.fontSizes.textL};
+  font-size: ${({ theme }) => theme.fontSizes.titleXl};
   color: ${({ theme }) => theme.colors.grey900};
   font-weight: bold;
   font-family: 'Google Sans', sans-serif;
