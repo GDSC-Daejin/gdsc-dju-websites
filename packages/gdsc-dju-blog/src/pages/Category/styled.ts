@@ -19,4 +19,5 @@ export const PostSectionWrapper = styled.div`
   min-height: 600px;
   display: flex;
   justify-content: center;
+  margin-bottom: 120px;
 `;
