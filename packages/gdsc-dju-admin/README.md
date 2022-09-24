@@ -25,7 +25,7 @@ vite && yarn dev
 
 ### 지원자 코멘트, 지원서 정보 확인
 
-![Screenshot 2022-08-12 at 2 50 27 AM](https://user-images.githubusercontent.com/61281239/184205714-8a2e27d1-607a-4154-8875-90fd1154fe51.png)
+![Group 299](https://user-images.githubusercontent.com/61281239/192085105-8fd46f37-5046-4930-9dd1-0e18e3a2b7f4.png)
 
 
 
