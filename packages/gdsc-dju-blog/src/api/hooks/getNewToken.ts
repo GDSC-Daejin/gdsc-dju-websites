@@ -13,9 +13,11 @@ function addSubscriber(callback: any) {
 
 function onAccessTokenFetched(token: string) {
   subscribers(token);
-
-  console.log(subscribers);
 }
+
+const logout = () => {
+  Cookies.remove('token', { path: '/', domain: '.gdsc-dju.com' });
+};
 
 export async function resetTokenAndReattemptRequest(
   instance: AxiosInstance,
@@ -36,7 +38,6 @@ export async function resetTokenAndReattemptRequest(
           if (!errorResponse) return;
           errorResponse.config.headers = { Authorization: `Bearer ${token}` };
           resolve(instance(errorResponse.config));
-          console.log(instance);
         } catch (error) {
           reject(error);
         }
@@ -51,15 +52,15 @@ export async function resetTokenAndReattemptRequest(
 
       isAlreadyFetchingAccessToken = false; // 문열기 (초기화)
       if (response.data.header.code == 403) {
-        Cookies.remove('token', { path: '/', domain: '.gdsc-dju.com' });
+        logout();
       }
       // TODO#2 callback 함수 실행 장소
       onAccessTokenFetched(response.data.body.data.token);
     }
-
-    return retryOriginalRequest; // pending 됐다가 onAccessTokenFetched가 호출될 때 resolve
+    // pending 상테에서 onAccessTokenFetched가 호출될 때 resolve
+    return retryOriginalRequest;
   } catch (error) {
-    Cookies.remove('token', { path: '/', domain: '.gdsc-dju.com' });
+    logout();
     return Promise.reject(error);
   }
 }
