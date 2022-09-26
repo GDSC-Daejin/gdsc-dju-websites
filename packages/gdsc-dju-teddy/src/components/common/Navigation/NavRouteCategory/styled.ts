@@ -19,7 +19,7 @@ export const StyledLi = styled(motion.li)`
   position: relative;
   user-select: none;
   font-size: 14px;
-  @media (max-width: ${(props) => props.theme.windowSize.mobile}px) {
+  @media (max-width: ${(props) => props.theme.windowSizes.mobile}px) {
     margin: 0 2px;
   }
 `;

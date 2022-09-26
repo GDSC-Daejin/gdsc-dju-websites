@@ -25,19 +25,6 @@ type Iprops = {
 };
 
 const Navigation = ({ setFilter, filter }: Iprops) => {
-  const location = useLocation();
-  const routeData = [
-    { label: 'Monthly', route: '/' },
-    { label: 'Weekly', route: '/weekly' },
-  ];
-  const filterData = [
-    { label: 'To', route: 'to' },
-    { label: 'From', route: 'from' },
-  ];
-  const [route, setRoute] = useState<string>('/');
-  useEffect(() => {
-    setRoute(location.pathname);
-  }, [filter, route]);
   return (
     <NavDesign className={'white'}>
       <NavInner>
@@ -53,18 +40,6 @@ const Navigation = ({ setFilter, filter }: Iprops) => {
               <SchoolName>powered by GDSC DJU</SchoolName>
             </StyledSubLogoWrapper>
           </NavTask>
-        </NavTaskWrapper>
-        <NavTaskWrapper>
-          <NavFilterCategory
-            filterData={filterData}
-            setFilter={setFilter}
-            filter={filter}
-          />
-          <NavRouteCategory
-            routeData={routeData}
-            setSelect={setRoute}
-            select={route}
-          />
         </NavTaskWrapper>
       </NavInner>
     </NavDesign>

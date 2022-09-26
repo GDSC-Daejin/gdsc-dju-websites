@@ -1,48 +1,20 @@
 import axios from 'axios';
 import { rowScoreBoardType, rowUserStateDataType } from '../types';
+import { FilterType } from '../types/filterType';
 
 export class TeddyBearApi {
-  private API: string;
+  protected API: string;
   constructor() {
-    this.API = 'https://gdsc-teddy-bear.herokuapp.com';
+    this.API = 'https://gold-candles-sink-218-236-101-36.loca.lt';
   }
-  getMonthlyScoreBoard = (filter: string) => {
-    return axios.get<rowScoreBoardType>(
-      `${this.API}/api/scoreboard/${filter}/inc`,
-    );
+  getMonthlyScoreBoard = (filter: FilterType) => {
+    return axios.get<rowScoreBoardType>(`${this.API}/scoreboard/${filter}/inc`);
   };
-  getWeeklyScoreBoard = (filter: string) => {
-    return axios.get<rowScoreBoardType>(
-      `${this.API}/api/scoreboard/${filter}/inc`,
-    );
+  getWeeklyScoreBoard = (filter: FilterType) => {
+    return axios.get<rowScoreBoardType>(`${this.API}/scoreboard${filter}/inc`);
   };
-  getUserState = (userID: string) => {
-    return axios.get<rowUserStateDataType>(
-      `${this.API}/api/userstats/${userID}`,
-    );
+  getUserState = (filter: FilterType, userID: string) => {
+    return axios.get<rowUserStateDataType>(`${this.API}/userstats/${userID}`);
   };
 }
 export default new TeddyBearApi();
-/*
-
-export default new TeddyBearApi();
-async function fetcher (type, {username,listType, scoreType}) {
-  switch (type) {
-    case 'scoreboard':
-      const res = await fetch(`/api/scoreboard/${listType}/${scoreType}`);
-      const json = await res.json();
-      return json.data;
-      break;
-    case 'userStats':
-      const res1 = await fetch(`/api/userstats/${username}`);
-      const json1 = await res1.json();
-      return json1.data;
-      break;
-    case 'userScore':
-      const res2 = await fetch(`/api/userscore/${username}/${listType}/${scoreType}`);
-      const json2 = await res2.json();
-      const {data} = json2;
-      return json2;
-      break;
-  // }
-*/

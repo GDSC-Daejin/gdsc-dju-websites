@@ -19,11 +19,7 @@ const Dashboard: React.FC<{ scoreboard: userDataType[] | undefined }> = ({
 }) => {
   const [selected, setSelected] = useState<string>('');
   const [userData, setUserData] = useState<userStateDataType | undefined>();
-  const detailCardHandler = async (data: string) => {
-    const res = await API.getUserState(data);
-    setUserData(res.data.data);
-    setSelected(data);
-  };
+
   return (
     <LayoutGroup>
       {scoreboard && (
@@ -59,11 +55,11 @@ const Dashboard: React.FC<{ scoreboard: userDataType[] | undefined }> = ({
             <CardList variants={listAnimate} initial={'start'} animate={'end'}>
               {scoreboard.map((scoreboard) => (
                 <CardElementWrapper
-                  key={scoreboard.username}
+                  key={scoreboard.id}
                   variants={listItemAnimate}
                   onClick={() => {
-                    setSelected(scoreboard.username);
-                    detailCardHandler(scoreboard.username);
+                    setSelected(scoreboard.id);
+                    // detailCardHandler(scoreboard.username);
                   }}
                 >
                   <MemberCard {...scoreboard} />

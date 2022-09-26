@@ -11,11 +11,11 @@ export const CardElementWrapper = styled(motion.div)`
     width: 25%;
   }
 
-  @media (max-width: ${(props) => props.theme.windowSize.desk}px) {
+  @media (max-width: ${(props) => props.theme.windowSizes.desk}px) {
     width: 33%;
   }
 
-  @media (max-width: ${(props) => props.theme.windowSize.mobile}px) {
+  @media (max-width: ${(props) => props.theme.windowSizes.mobile}px) {
     width: 50%;
   }
 `;

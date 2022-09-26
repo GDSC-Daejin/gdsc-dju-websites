@@ -1,4 +1,5 @@
 import React from 'react';
+import { userDataType } from '../../../types';
 import {
   CardMargin,
   MemberCardInner,
@@ -8,21 +9,11 @@ import {
   ProfileImage,
 } from './styled';
 
-export type Iprops = {
-  username: string;
-  name: string;
-  avatar: string;
-  memberType: string;
-  score: number;
+export type Props = {
+  userData: userDataType;
 };
 
-const MemberCard: React.FC<Iprops> = ({
-  username,
-  name,
-  avatar,
-  memberType,
-  score,
-}) => {
+const MemberCard: React.FC<Props> = ({ userData }) => {
   return (
     <>
       <MemberCardWrapper
@@ -31,20 +22,20 @@ const MemberCard: React.FC<Iprops> = ({
           background: 'white',
           boxShadow: '0px 20px 30px rgba(0, 0, 0, 0.06)',
         }}
-        layoutId={`memberCard-${username}`}
+        layoutId={`memberCard-${userData.id}`}
       >
         <MemberCardInner>
           <ProfileImage
-            src={avatar}
-            layoutId={`memberCard-avatar-${username}`}
+            src={userData.profileImage}
+            layoutId={`memberCard-avatar-${userData.id}`}
           />
           <CardMargin />
-          <MemberName layoutId={`memberCard-name-${username}`}>
-            {name}
+          <MemberName layoutId={`memberCard-name-${userData.id}`}>
+            {userData.displayName}
           </MemberName>
           <CardMargin />
-          <MemberScore layoutId={`memberCard-score-${username}`}>
-            {score}
+          <MemberScore layoutId={`memberCard-score-${userData.id}`}>
+            {userData.count}
           </MemberScore>
         </MemberCardInner>
       </MemberCardWrapper>

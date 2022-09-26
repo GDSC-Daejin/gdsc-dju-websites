@@ -4308,6 +4308,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
+        ["npm:0.0.38", {\
+          "packageLocation": "./.yarn/cache/@gdsc-dju-styled-components-npm-0.0.38-34fbf34e07-1f152be08c.zip/node_modules/@gdsc-dju/styled-components/",\
+          "packageDependencies": [\
+            ["@gdsc-dju/styled-components", "npm:0.0.38"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:0.0.16", {\
           "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-virtual-cf8786678e/0/cache/@gdsc-dju-styled-components-npm-0.0.16-80885be146-bcae5e085b.zip/node_modules/@gdsc-dju/styled-components/",\
           "packageDependencies": [\
@@ -4362,6 +4369,31 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/react",\
             "@types/styled-components",\
             "react-is",\
+            "react",\
+            "styled-components"\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["virtual:c6bc22aa89023bb1fd5087d4774276ad707b309992028302f5585ea8c9553ac938c5fabe23cf026fdbf202022679b12e0d89a1da42a238fd25042efde8a32d5c#npm:0.0.38", {\
+          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-virtual-a2c61c1a49/0/cache/@gdsc-dju-styled-components-npm-0.0.38-34fbf34e07-1f152be08c.zip/node_modules/@gdsc-dju/styled-components/",\
+          "packageDependencies": [\
+            ["@gdsc-dju/styled-components", "virtual:c6bc22aa89023bb1fd5087d4774276ad707b309992028302f5585ea8c9553ac938c5fabe23cf026fdbf202022679b12e0d89a1da42a238fd25042efde8a32d5c#npm:0.0.38"],\
+            ["@types/react", "npm:18.0.17"],\
+            ["@types/react-is", null],\
+            ["@types/react-router-dom", "npm:5.3.3"],\
+            ["@types/styled-components", "npm:5.1.26"],\
+            ["react", "npm:18.2.0"],\
+            ["react-is", null],\
+            ["react-router-dom", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:6.3.0"],\
+            ["styled-components", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:5.3.5"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-is",\
+            "@types/react-router-dom",\
+            "@types/react",\
+            "@types/styled-components",\
+            "react-is",\
+            "react-router-dom",\
             "react",\
             "styled-components"\
           ],\
@@ -15851,6 +15883,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/gdsc-dju-teddy/",\
           "packageDependencies": [\
             ["gdsc-dju-teddy", "workspace:packages/gdsc-dju-teddy"],\
+            ["@gdsc-dju/styled-components", "virtual:c6bc22aa89023bb1fd5087d4774276ad707b309992028302f5585ea8c9553ac938c5fabe23cf026fdbf202022679b12e0d89a1da42a238fd25042efde8a32d5c#npm:0.0.38"],\
             ["@types/react", "npm:18.0.17"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["@types/react-router", "npm:5.1.18"],\
