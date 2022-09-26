@@ -27,7 +27,7 @@ const ComponentLayout: React.FC<{ children: React.ReactNode }> = ({
   const { isMenuOpen, toggleMenu, menuHandler } = useContext(MenuContext);
   const { isDarkMode, toggleTheme } = useContext(DarkModeContext);
   return (
-    <div>
+    <>
       <Alert />
       <Modal />
       <Navigation
@@ -48,7 +48,7 @@ const ComponentLayout: React.FC<{ children: React.ReactNode }> = ({
       {children}
       <ThemeButton toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
       <Footer pages={siteLinks} />
-    </div>
+    </>
   );
 };
 

@@ -1,39 +1,42 @@
-import { refresh, refreshErrorHandler } from '@src/api/hooks/getNewToken';
+import { resetTokenAndReattemptRequest } from '@src/api/hooks/getNewToken';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-const AuthInstance = axios.create({
-  timeout: 10000,
-  params: {},
-  baseURL: `https://api.gdsc-dju.com/`,
-});
-AuthInstance.interceptors.request.use(refresh, refreshErrorHandler);
-AuthInstance.defaults.withCredentials = true;
+let token = Cookies.get('token');
+const blogRoute = `https://api.gdsc-dju.com/${
+  isProduction ? 'blog-route' : 'blog-route-dev'
+}`;
 
-const AuthBlogInstance = axios.create({
-  timeout: 10000,
-  params: {},
-  baseURL: `https://api.gdsc-dju.com/${
-    isProduction ? 'blog-route' : 'blog-route-dev'
-  }`,
-});
-AuthBlogInstance.interceptors.request.use(refresh, refreshErrorHandler);
-AuthInstance.defaults.withCredentials = true;
+const generateAuthInstance = (baseUrl: string) => {
+  const instance = axios.create({
+    timeout: 10000,
+    params: {},
+    headers: { Authorization: `Bearer ${token}` },
+    baseURL: baseUrl,
+  });
+  instance.defaults.withCredentials = true;
+  instance.interceptors.response.use(
+    (response) => response,
+    (error) => resetTokenAndReattemptRequest(instance, error),
+  );
+  return instance;
+};
 
-const Instance = axios.create({
-  timeout: 10000,
-  params: {},
-  baseURL: `https://api.gdsc-dju.com`,
-});
-const BlogInstance = axios.create({
-  timeout: 10000,
-  params: {},
-  baseURL: `https://api.gdsc-dju.com/${
-    isProduction ? 'blog-route' : 'blog-route-dev'
-  }`,
-});
-Instance.interceptors.request.use();
-Instance.defaults.withCredentials = true;
+const generateInstance = (baseUrl: string) => {
+  const instance = axios.create({
+    timeout: 10000,
+    params: {},
+    baseURL: baseUrl,
+  });
+  instance.defaults.withCredentials = true;
+  return instance;
+};
+
+const AuthInstance = generateAuthInstance('https://accounts.gdsc-dju.com/');
+const AuthBlogInstance = generateAuthInstance(blogRoute);
+const Instance = generateInstance(`https://api.gdsc-dju.com`);
+const BlogInstance = generateInstance(blogRoute);
 
 export { Instance, AuthInstance, BlogInstance, AuthBlogInstance };

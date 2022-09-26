@@ -16,7 +16,16 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <ReactQueryDevtools initialIsOpen={false} />
         <RecoilRoot>
           <CookiesProvider>
-            <App />
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                flex: '1 0 auto',
+                minHeight: '100vh',
+              }}
+            >
+              <App />
+            </div>
           </CookiesProvider>
         </RecoilRoot>
       </QueryClientProvider>
