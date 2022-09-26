@@ -14,15 +14,14 @@ const PostSectionContainer = ({ postData }: Props) => {
   const { scrapList } = useGetScrap();
   return (
     <BlogCardSection>
-      {scrapList &&
-        postData.map((data) => (
-          <BlogCardWrapper key={data.postId}>
-            <BlogCard
-              postData={data}
-              isScrap={!!scrapList?.find((id) => id == data.postId)}
-            />
-          </BlogCardWrapper>
-        ))}
+      {postData.map((data) => (
+        <BlogCardWrapper key={data.postId}>
+          <BlogCard
+            postData={data}
+            isScrap={!!scrapList?.find((id) => id == data.postId)}
+          />
+        </BlogCardWrapper>
+      ))}
     </BlogCardSection>
   );
 };

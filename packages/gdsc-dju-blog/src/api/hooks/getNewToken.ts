@@ -1,34 +1,65 @@
 import TokenService from '@src/api/TokenService';
-import { AxiosRequestConfig } from 'axios';
+import { AxiosError, AxiosInstance } from 'axios';
 import Cookies from 'js-cookie';
 
-const refreshErrorHandler = () => {
-  Cookies.remove('token');
-  console.log('remove');
-};
+type Callback = (token: string) => void;
 
-const refresh = async (
-  config: AxiosRequestConfig,
-): Promise<AxiosRequestConfig> => {
-  let token = Cookies.get('token');
+let isAlreadyFetchingAccessToken = false;
+let subscribers: Callback = () => {};
 
-  //TODO http 환경에서 cookieStore 사용 불가 -> https 설정 필요
-  const expireDateValue = await Cookies.get('expires_in');
+function addSubscriber(callback: any) {
+  subscribers = callback;
+}
 
-  const expireDate = new Date(expireDateValue as string);
-  console.log(expireDateValue);
-  if (token) {
-    if (expireDate.getTime() - new Date().getTime() < 0) {
+function onAccessTokenFetched(token: string) {
+  subscribers(token);
+
+  console.log(subscribers);
+}
+
+export async function resetTokenAndReattemptRequest(
+  instance: AxiosInstance,
+  error: AxiosError,
+) {
+  try {
+    const { response: errorResponse } = error;
+
+    // subscribers에 access token을 받은 이후 재요청할 함수 추가 (401로 실패했던)
+    // retryOriginalRequest는 pending 상태로 있다가
+    // access token을 받은 이후 onAccessTokenFetched가 호출될 때
+    // access token을 넘겨 다시 axios로 요청하고
+    // 결과값을 처음 요청했던 promise의 resolve로 settle시킨다.
+    const retryOriginalRequest = new Promise((resolve, reject) => {
+      // TODO#1 callback 함수
+      addSubscriber(async (token: string) => {
+        try {
+          if (!errorResponse) return;
+          errorResponse.config.headers = { Authorization: `Bearer ${token}` };
+          resolve(instance(errorResponse.config));
+          console.log(instance);
+        } catch (error) {
+          reject(error);
+        }
+      });
+    });
+
+    // refresh token을 이용해서 access token 요청
+    if (!isAlreadyFetchingAccessToken) {
+      isAlreadyFetchingAccessToken = true; // 문닫기 (한 번만 요청)
+
       const response = await TokenService.getRefresh();
-      if (response.data.header.code === 200) {
-        token = response.data.body.data.token;
+
+      isAlreadyFetchingAccessToken = false; // 문열기 (초기화)
+      if (response.data.header.code == 403) {
+        Cookies.remove('token', { path: '/', domain: '.gdsc-dju.com' });
       }
-      if (response.data.header.code === 403) {
-        Cookies.remove('token');
-      }
+      // TODO#2 callback 함수 실행 장소
+      onAccessTokenFetched(response.data.body.data.token);
     }
-    config.headers = { Authorization: `Bearer ${token}` };
+
+    return retryOriginalRequest; // pending 됐다가 onAccessTokenFetched가 호출될 때 resolve
+  } catch (error) {
+    Cookies.remove('token', { path: '/', domain: '.gdsc-dju.com' });
+    return Promise.reject(error);
   }
-  return config;
-};
-export { refresh, refreshErrorHandler };
+}
