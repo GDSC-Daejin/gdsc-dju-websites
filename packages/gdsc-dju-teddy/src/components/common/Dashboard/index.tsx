@@ -53,16 +53,16 @@ const Dashboard: React.FC<{ scoreboard: userDataType[] | undefined }> = ({
               )}
             </AnimatePresence>
             <CardList variants={listAnimate} initial={'start'} animate={'end'}>
-              {scoreboard.map((scoreboard) => (
+              {scoreboard.map((userData) => (
                 <CardElementWrapper
-                  key={scoreboard.id}
+                  key={userData.id}
                   variants={listItemAnimate}
                   onClick={() => {
-                    setSelected(scoreboard.id);
+                    setSelected(userData.id);
                     // detailCardHandler(scoreboard.username);
                   }}
                 >
-                  <MemberCard {...scoreboard} />
+                  <MemberCard userData={userData} />
                 </CardElementWrapper>
               ))}
             </CardList>

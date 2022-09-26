@@ -2,7 +2,7 @@ export type rowScoreBoardType = {
   error: boolean;
   code: number;
   message: string;
-  data:userDataType[];
+  data: userDataType[];
 };
 
 export type userDataType = {
@@ -10,7 +10,7 @@ export type userDataType = {
   displayName: string;
   profileImage: string;
   count: number;
-},
+};
 export type rowUserStateDataType = {
   error: boolean;
   code: number;
