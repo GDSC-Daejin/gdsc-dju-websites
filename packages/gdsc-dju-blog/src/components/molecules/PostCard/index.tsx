@@ -52,7 +52,7 @@ const PostCard: React.FC<Props> = ({ postData, isScrap }) => {
   const navigate = useNavigate();
 
   const linkToPost = useCallback(() => {
-    navigate(`/${postData.memberInfo.nickname}/${postData.postId}`);
+    navigate(`/@${postData.memberInfo.nickname}/${postData.postId}`);
   }, [postData]);
 
   const removedMarkDownContent = removeMarkdownInContent(postData.content);

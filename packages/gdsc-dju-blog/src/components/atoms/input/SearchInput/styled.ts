@@ -40,6 +40,7 @@ export const SearchIconWrapper = styled.div`
   justify-content: center;
   top: 3px;
   right: 14px;
+  cursor: pointer;
   @media (max-width: ${({ theme }) => theme.windowSizes.tablet}px) {
     position: static;
   }
