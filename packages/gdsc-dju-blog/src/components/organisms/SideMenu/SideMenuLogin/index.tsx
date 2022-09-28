@@ -53,7 +53,7 @@ const SideMenuLogin: React.FC<{
             <ProfileJobPosition>{myData.role.toLowerCase()}</ProfileJobPosition>
             <SettingIconWrapper
               onClick={() => {
-                navigate(`/${myData.memberInfo.nickname}/edit`);
+                navigate(`/@${myData.memberInfo.nickname}/edit`);
                 closeSideMenu();
               }}
             >
@@ -65,7 +65,7 @@ const SideMenuLogin: React.FC<{
               size={'large'}
               text="내 블로그"
               onClick={() => {
-                navigate(`/${myData.memberInfo.nickname}?type=all&page=1`);
+                navigate(`/@${myData.memberInfo.nickname}?type=all&page=1`);
                 closeSideMenu();
               }}
             />

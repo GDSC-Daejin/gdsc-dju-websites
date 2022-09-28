@@ -47,7 +47,7 @@ const WidthPostCard: React.FC<Props> = ({ postData, isScrap }) => {
   const navigate = useNavigate();
 
   const linkToPost = useCallback(() => {
-    navigate(`/${postData.memberInfo.nickname}/${postData.postId}`);
+    navigate(`/@${postData.memberInfo.nickname}/${postData.postId}`);
   }, [postData]);
   return (
     <WidthPostCardWrapper

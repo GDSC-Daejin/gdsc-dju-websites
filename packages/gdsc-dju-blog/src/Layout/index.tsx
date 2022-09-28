@@ -17,7 +17,7 @@ const Layout = () => {
       <Suspense>
         <Routes>
           <Route path={'/*'} element={<Home />} />
-          <Route path={'/:nickname/*'} element={<MyBlog />} />
+          <Route path={'/@:nickname/*'} element={<MyBlog />} />
           <Route path={'/post/write'} element={<PostWrite />} />
           <Route path={'/post/edit/:id'} element={<PostWrite />} />
           <Route path={'/category/*'} element={<Category />} />
