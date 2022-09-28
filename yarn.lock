@@ -2266,6 +2266,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gdsc-dju/styled-components@npm:^0.0.38":
+  version: 0.0.38
+  resolution: "@gdsc-dju/styled-components@npm:0.0.38"
+  peerDependencies:
+    react: ^18.2.0
+    react-is: ^18.2.0
+    react-router-dom: "*"
+    styled-components: ^5.3.5
+  checksum: 1f152be08cd2aadc17e34adcf4529097ee2b2a1e33a967335be83e54fa8d9a5ea28ef4d0cbd546f6fb8adb3d4ae012171298da8527a202b2dbb43684202d6420
+  languageName: node
+  linkType: hard
+
 "@giscus/react@npm:^1.1.2":
   version: 1.1.2
   resolution: "@giscus/react@npm:1.1.2"
@@ -12000,6 +12012,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "gdsc-dju-teddy@workspace:packages/gdsc-dju-teddy"
   dependencies:
+    "@gdsc-dju/styled-components": ^0.0.38
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6
     "@types/react-router": ^5.1.18

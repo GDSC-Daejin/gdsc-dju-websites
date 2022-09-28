@@ -2,25 +2,14 @@ export type rowScoreBoardType = {
   error: boolean;
   code: number;
   message: string;
-  data: [
-    {
-      username: string;
-      name: string;
-      avatar: string;
-      memberType: string;
-      score: number;
-    },
-  ];
-};
-export type scoreBoardType = {
   data: userDataType[];
 };
+
 export type userDataType = {
-  username: string;
-  name: string;
-  avatar: string;
-  memberType: string;
-  score: number;
+  id: string;
+  displayName: string;
+  profileImage: string;
+  count: number;
 };
 export type rowUserStateDataType = {
   error: boolean;

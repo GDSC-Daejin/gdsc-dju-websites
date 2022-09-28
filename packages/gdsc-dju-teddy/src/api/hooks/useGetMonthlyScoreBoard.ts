@@ -1,12 +1,13 @@
+import { FilterType } from '../../types/filterType';
 import Api from '../index';
 import useSWR from 'swr';
 
-async function getMonthlyScoreBoard(filter: string) {
+async function getMonthlyScoreBoard(filter: FilterType) {
   const res = await Api.getMonthlyScoreBoard(filter);
   return res.data;
 }
 
-export function useGetMonthlyScoreBoard(filter: string) {
+export function useGetMonthlyScoreBoard(filter: FilterType) {
   const { data: scoreboard, error } = useSWR(
     [`monthly/${filter}`],
     getMonthlyScoreBoard,

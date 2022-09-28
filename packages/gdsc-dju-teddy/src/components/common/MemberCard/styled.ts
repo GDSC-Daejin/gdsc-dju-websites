@@ -13,7 +13,7 @@ export const MemberCardWrapper = styled(motion.div)`
   display: flex;
   justify-content: center;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.04);
-  @media (max-width: ${(props) => props.theme.windowSize.tablet}px) {
+  @media (max-width: ${(props) => props.theme.windowSizes.tablet}px) {
     height: 225px;
   }
 `;
@@ -34,7 +34,7 @@ export const ProfileImage = styled(motion.img)`
   border-width: 1px;
   border-color: #f2f2f2;
 
-  @media (max-width: ${(props) => props.theme.windowSize.tablet}px) {
+  @media (max-width: ${(props) => props.theme.windowSizes.tablet}px) {
     width: 60px;
     height: 60px;
   }
@@ -56,7 +56,7 @@ export const MemberScore = styled(motion.div)`
   font-weight: bold;
   color: #a35d29;
 
-  @media (max-width: ${(props) => props.theme.windowSize.tablet}px) {
+  @media (max-width: ${(props) => props.theme.windowSizes.tablet}px) {
     font-size: 24px;
   }
 `;
