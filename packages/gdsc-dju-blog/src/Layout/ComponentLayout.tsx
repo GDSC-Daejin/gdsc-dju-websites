@@ -16,6 +16,7 @@ import { siteLinks } from '@src/contents/siteLinks';
 import { loaderState } from '@src/store/loader';
 import GlobalStyles from '@styles/globalStyles';
 import { NavigationBlock } from '@styles/layouts';
+import ScrollTop from '@utils/ScrollTop';
 import { AnimatePresence } from 'framer-motion';
 import React, { useContext } from 'react';
 import { useRecoilState } from 'recoil';
@@ -30,6 +31,7 @@ const ComponentLayout: React.FC<{ children: React.ReactNode }> = ({
     <>
       <Alert />
       <Modal />
+      <ScrollTop />
       <Navigation
         isMenuOpen={isMenuOpen}
         themeButtonActive={false}
