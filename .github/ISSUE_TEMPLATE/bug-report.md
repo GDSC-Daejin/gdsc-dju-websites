@@ -1,6 +1,6 @@
 ---
-name: Bug report
-about: 서비스 버그 발생 시
+name: Web Bug report
+about: 웹 서비스 버그 발생 시
 title: "[BUG]"
 labels: bug
 assignees: HyeokE
@@ -31,12 +31,12 @@ assignees: HyeokE
 [//]: # (스크린 샷이나 동영상이 있을 경우 올려주세요.)
 
 **Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+- OS: [e.g. iOS]
+- Browser [e.g. chrome, safari]
+- Version [e.g. 22]
 
 **Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+- Device: [e.g. iPhone6]
+- OS: [e.g. iOS8.1]
+- Browser [e.g. stock browser, safari]
+- Version [e.g. 22]
