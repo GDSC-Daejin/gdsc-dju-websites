@@ -1,32 +1,34 @@
 ---
 name: Bug report
-about: 버그 발생시
-title: ''
+about: 서비스 버그 발생 시
+title: "[BUG]"
 labels: bug
-assignees: ''
+assignees: HyeokE
 
 ---
 
-**버그 설명**
+[//]: # (좌측의 Label에서 어떤 서비스에 대한 버그인지 선택해주세요.)
 
-[//]: # (A clear and concise description of what the bug is.)
+## 버그 설명
 
-** 버그 조건**
+[//]: # (어떤 버그인지 설명해주세요)
 
-[//]: # (Steps to reproduce the behavior:)
+## 버그 조건
+
+[//]: # (버그의 조건을 설명해주세요)
 
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
 
-**Expected behavior**
+# Expected behavior
 
 [//]: # (A clear and concise description of what you expected to happen.)
 
-**Screenshots**
+## Screenshots
 
-[//]: # (If applicable, add screenshots to help explain your problem.)
+[//]: # (스크린 샷이나 동영상이 있을 경우 올려주세요.)
 
 **Desktop (please complete the following information):**
  - OS: [e.g. iOS]
@@ -38,6 +40,3 @@ assignees: ''
  - OS: [e.g. iOS8.1]
  - Browser [e.g. stock browser, safari]
  - Version [e.g. 22]
-
-**Additional context**
-Add any other context about the problem here.
