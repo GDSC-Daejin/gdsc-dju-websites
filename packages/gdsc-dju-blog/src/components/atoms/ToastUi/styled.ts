@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ContentBox = styled.article`
   .toastui-editor > div {
-    font-size: ${({ theme }) => theme.fontSizes.textXl};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
   .toastui-editor-defaultUI {
     border: 0 solid !important;
@@ -80,7 +80,7 @@ export const ContentBox = styled.article`
   li,
   ol,
   ul {
-    font-size: ${({ theme }) => theme.fontSizes.textXl};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
     line-height: 1.7;
   }
 

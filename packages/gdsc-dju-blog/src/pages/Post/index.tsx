@@ -1,4 +1,5 @@
-import React from 'react';
+import { DarkModeContext, useDarkMode } from '@gdsc-dju/styled-components';
+import React, { useContext } from 'react';
 import { Giscus } from '@giscus/react';
 import { useParams } from 'react-router-dom';
 
@@ -11,7 +12,7 @@ import { ContentViewer } from '@src/components/atoms/ToastUi';
 const Post = () => {
   const { postId } = useParams<{ postId: string }>();
   const { postData } = useGetDetailPost(postId);
-  const theme = localStorage.getItem('theme') || 'light';
+  const { isDarkMode } = useContext(DarkModeContext);
 
   return (
     <LayoutContainer>
@@ -24,12 +25,12 @@ const Post = () => {
         )}
         <GiscusWrapper>
           <Giscus
-            repo="GDSC-Daejin/gdsc-dju-blog-fe"
-            repoId="R_kgDOGwlX0Q"
-            category="Announcements"
-            categoryId="DIC_kwDOGwlX0c4CBQA5"
+            repo="GDSC-Daejin/devlog-giscus"
+            repoId="R_kgDOIFUKFA"
+            category="General"
+            categoryId="DIC_kwDOIFUKFM4CRrNT"
             mapping="pathname"
-            theme={theme}
+            theme={isDarkMode ? 'dark' : 'light'}
             lang="ko"
           />
         </GiscusWrapper>
