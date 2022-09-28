@@ -29,6 +29,8 @@ interface Props {
 }
 const PageBar = ({ currentPage, totalPage }: Props) => {
   const [searchParams, setSearchParams] = useSearchParams();
+  console.log(currentPage);
+  console.log(totalPage);
   const pageHandler = (page: number, limit?: number) => {
     if (page < 1) return;
     if (page === limit) return;
