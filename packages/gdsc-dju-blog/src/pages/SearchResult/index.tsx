@@ -24,7 +24,7 @@ const SearchResult = () => {
   const { postListData } = useGetSearchPosts({
     searchContent: searchContent!,
     category,
-    page: currentPage,
+    page: currentPage - 1,
   });
 
   const categoryHandler = (category: string) =>
