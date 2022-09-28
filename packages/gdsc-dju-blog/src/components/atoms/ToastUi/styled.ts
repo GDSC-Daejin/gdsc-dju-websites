@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ContentBox = styled.article`
   .toastui-editor > div {
-    font-size: ${({ theme }) => theme.fontSizes.textXl};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
   .toastui-editor-defaultUI {
     border: 0 solid !important;
@@ -80,7 +80,7 @@ export const ContentBox = styled.article`
   li,
   ol,
   ul {
-    font-size: ${({ theme }) => theme.fontSizes.textXl};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
     line-height: 1.7;
   }
 
@@ -152,7 +152,7 @@ export const ContentBox = styled.article`
   }
 
   .toastui-editor-contents small {
-    font-size: ${({ theme }) => theme.fontSizes.textXl};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
 
   .toastui-editor-contents sub,
@@ -1172,16 +1172,16 @@ export const ContentBox = styled.article`
   }
 
   .toastui-editor-md-strong {
-    font-size: ${({ theme }) => theme.fontSizes.textXl};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
   .toastui-editor-md-meta {
-    font-size: ${({ theme }) => theme.fontSizes.textXl};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
   .toastui-editor-md-code-block {
-    font-size: ${({ theme }) => theme.fontSizes.textXl};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
   .toastui-editor-md-block-quote {
-    font-size: ${({ theme }) => theme.fontSizes.textXl};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
   .toastui-editor-md-delimiter {
     font-size: unset;
@@ -1199,6 +1199,6 @@ export const ContentBox = styled.article`
     font-size: ${({ theme }) => theme.fontSizes.titleS};
   }
   .toastui-editor-md-list-item {
-    font-size: ${({ theme }) => theme.fontSizes.textXl} !important;
+    font-size: ${({ theme }) => theme.fontSizes.textL} !important;
   }
 `;

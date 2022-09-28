@@ -26,7 +26,7 @@ const SearchResult = () => {
     category,
     page: currentPage,
   });
-  console.log(postListData);
+
   const categoryHandler = (category: string) =>
     navigate({
       pathname: `/search/${searchContent}/${category}?page=1`,
