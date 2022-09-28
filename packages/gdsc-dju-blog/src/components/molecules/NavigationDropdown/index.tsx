@@ -25,7 +25,7 @@ const NavigationDropdown = ({ role, nickname, isDropdownOpen }: Props) => {
         <br />
         <DropdownUserName
           color={positionColor(role)}
-          onClick={() => navigate(`/${nickname}`)}
+          onClick={() => navigate(`/@${nickname}`)}
         >
           {nickname}
         </DropdownUserName>

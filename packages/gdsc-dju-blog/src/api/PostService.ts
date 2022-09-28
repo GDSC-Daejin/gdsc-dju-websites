@@ -61,27 +61,10 @@ class PostService {
   };
 
   updateMyScrapData = (postId: number) => {
-    const token = Cookies.get('token');
-    return AuthBlogInstance.post(`/api/guest/v1/scrap/${postId}`, {
-      authorities: [
-        {
-          authority: `Bearer ${token}`,
-        },
-      ],
-    });
+    return AuthBlogInstance.post(`/api/guest/v1/scrap/${postId}`);
   };
-  getSearchPosts = ({
-    searchContent,
-    category,
-    page,
-  }: {
-    searchContent: string;
-    category: string;
-    page: number;
-  }) => {
-    return BlogInstance.get(
-      `/api/v1/post/search/${searchContent}?page=${page}&size=${16}`,
-    );
+  getSearchPosts = (param: string) => {
+    return BlogInstance.get(`/api/v1/post/search${param}`);
   };
 }
 export default new PostService();

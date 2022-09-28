@@ -105,8 +105,6 @@ const DetailMemberCard: React.FC<memberCardProps> = ({
   userData,
 }) => {
   const [given, setGiven] = useState<boolean>(true);
-
-  console.log(userData?.user);
   return (
     <div>
       {userData && userData.user && (

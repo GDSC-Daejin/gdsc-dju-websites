@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 
 export const SearchResultTitleWrapper = styled.div`
-  width: 1200px;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   gap: 40px;
-  margin: 100px 0px 80px;
+  margin: 100px 0 80px;
   color: ${(props) => props.theme.colors.grey900};
 `;
 export const SearchResultTitle = styled.h1`
   display: flex;
-  align-self: flex-end;
+  align-self: flex-start;
   padding: 12px 0;
   font-size: ${({ theme }) => theme.fontSizes.titleS};
   color: ${(props) => props.theme.colors.grey900};
@@ -21,7 +22,19 @@ export const SearchResultContent = styled.p`
   line-height: 1.625rem;
   color: ${(props) => props.theme.colors.grey600};
 `;
-
+export const PostSectionWrapper = styled.div`
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 120px;
+`;
+export const PostLayoutWrapper = styled.div`
+  max-width: 1082px;
+  width: 1082px;
+  display: flex;
+  gap: 60px;
+  flex-direction: column;
+`;
 export const CategoryMenuWrapper = styled.div`
   margin: 60px 0px;
 `;
@@ -38,7 +51,7 @@ export const LayoutInner = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   margin: 50px auto;
 `;
 

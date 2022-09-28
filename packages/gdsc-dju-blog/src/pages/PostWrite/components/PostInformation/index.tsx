@@ -30,7 +30,6 @@ const PostWriteHeader = ({ postData, setPostData, setCategory }: Props) => {
         ...postData,
         base64Thumbnail: base64,
       });
-    console.log(base64);
   }, [base64]);
 
   return (

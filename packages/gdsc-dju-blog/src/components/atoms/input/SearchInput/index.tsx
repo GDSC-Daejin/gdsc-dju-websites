@@ -8,14 +8,23 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const SearchInput = forwardRef<HTMLInputElement, Props>((props, ref) => {
+  const onKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      props.onClick();
+    }
+  };
   return (
     <SearchInputWrapper>
-      <form onSubmit={props.onClick}>
-        <Search ref={ref} name="search" type="text" {...props} />
-        <SearchIconWrapper onClick={props.onClick}>
-          <SearchIcon />
-        </SearchIconWrapper>
-      </form>
+      <Search
+        ref={ref}
+        name="search"
+        type="text"
+        {...props}
+        onKeyPress={onKeyPress}
+      />
+      <SearchIconWrapper onClick={props.onClick}>
+        <SearchIcon />
+      </SearchIconWrapper>
     </SearchInputWrapper>
   );
 });

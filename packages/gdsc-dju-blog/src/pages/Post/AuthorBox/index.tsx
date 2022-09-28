@@ -29,7 +29,9 @@ const AuthorBox: React.FC<Props> = ({
   return (
     <>
       <PostInformation>
-        <AuthorWrapper onClick={() => navigate(`/${nickname}?type=all&page=1`)}>
+        <AuthorWrapper
+          onClick={() => navigate(`/@${nickname}?type=all&page=1`)}
+        >
           <AuthorImage src={profileImageUrl} />
           <Author color={'grey500'} marginRight={2}>
             by

@@ -1,22 +1,19 @@
 import { useGetSearchPosts } from '@src/api/hooks/useGetSearchPost';
+
+import CategoryMenu from '@src/components/atoms/CategoryMenu';
+import PagingPostsContainer from '@src/components/organisms/PagingPostsContainer';
 import { LayoutContainer } from '@styles/layouts';
 import React from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 
 import {
-  BlogCardGridLayoutWrapper,
-  CategoryMenuWrapper,
   LayoutInner,
-  PageBarWrapper,
+  PostLayoutWrapper,
+  PostSectionWrapper,
   SearchResultContent,
   SearchResultTitle,
   SearchResultTitleWrapper,
 } from './styled';
-import PostsContainer from '@src/components/molecules/PostsContainer';
-import PageBar from '@src/components/atoms/PageBar';
-
-import CategoryMenu from '@src/components/atoms/CategoryMenu';
-import Notice from '@src/components/atoms/Notice';
 
 const SearchResult = () => {
   const navigate = useNavigate();
@@ -24,18 +21,11 @@ const SearchResult = () => {
   const { searchContent, categoryName } = useParams();
   const currentPage = Number(searchParams.get('page')) ?? 1;
   const category = categoryName ? categoryName : 'all';
-  console.log(searchParams);
   const { postListData } = useGetSearchPosts({
     searchContent: searchContent!,
     category,
     page: currentPage,
   });
-
-  const handleClick = (page: number, limit?: number) => {
-    const limitPage = limit ?? postListData?.totalPages!;
-    if (currentPage > limitPage) navigate(`page=${limitPage}`);
-    else setSearchParams(`page=${page}`);
-  };
 
   const categoryHandler = (category: string) =>
     navigate({
@@ -53,28 +43,19 @@ const SearchResult = () => {
             {postListData?.content.length}개의 검색결과가 있습니다
           </SearchResultContent>
         </SearchResultTitleWrapper>
-        <CategoryMenuWrapper>
+        <PostLayoutWrapper>
           <CategoryMenu type={category} onClick={categoryHandler} />
-        </CategoryMenuWrapper>
-        {postListData && (
-          <>
-            <BlogCardGridLayoutWrapper>
-              {!postListData.empty ? (
-                <PostsContainer postData={postListData.content} />
-              ) : (
-                <Notice>검색결과가 없습니다.</Notice>
-              )}
-              {!postListData.empty && (
-                <PageBarWrapper>
-                  <PageBar
-                    currentPage={Number(currentPage)}
-                    totalPage={postListData.totalPages}
-                  />
-                </PageBarWrapper>
-              )}
-            </BlogCardGridLayoutWrapper>
-          </>
-        )}
+          <PostSectionWrapper>
+            {postListData && (
+              <PagingPostsContainer
+                postData={postListData.content}
+                totalPage={postListData.totalPages || 0}
+                currentPage={Number(currentPage)}
+                isEmpty={postListData.empty}
+              />
+            )}
+          </PostSectionWrapper>
+        </PostLayoutWrapper>
       </LayoutInner>
     </LayoutContainer>
   );

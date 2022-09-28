@@ -103,9 +103,10 @@ const Modal: React.FC<ModalProps> = () => {
                   <GDSCButton
                     text={modalType[modal.type].rightButton}
                     background={modalType[modal.type].rightColor}
-                    onClick={() =>
-                      modal.onClick ? modal.onClick() : undefined
-                    }
+                    onClick={() => {
+                      modal.onClick ? modal.onClick() : undefined;
+                      setModal({ ...modal, isOpen: false });
+                    }}
                   />
                 </ModalButtonWrapper>
               </ModalContentWrapper>
