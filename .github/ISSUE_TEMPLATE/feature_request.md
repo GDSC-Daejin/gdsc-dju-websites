@@ -11,18 +11,13 @@ assignees: ''
 
 [//]: # ( A clear and concise description of what the problem is. Ex. I'm always frustrated when I can't find a way to do X. )
 
-## ISSUE (BUG)
-
-- [ ]
-
 ## ISSUE (Enhancement)
 
-- [ ]
+[//]: # (어떤 내용인지 설명해주세요)
 
 ## 작업 상세 내용
 
-- [ ]
+[//]: # (작업 상세 내용을 알려주세요)
 
 ## 참고사항
-
-- [ ]
+[//]: # (참고사항이 있다면 적어주세요)
