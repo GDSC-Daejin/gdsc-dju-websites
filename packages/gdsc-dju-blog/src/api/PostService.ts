@@ -61,14 +61,7 @@ class PostService {
   };
 
   updateMyScrapData = (postId: number) => {
-    const token = Cookies.get('token');
-    return AuthBlogInstance.post(`/api/guest/v1/scrap/${postId}`, {
-      authorities: [
-        {
-          authority: `Bearer ${token}`,
-        },
-      ],
-    });
+    return AuthBlogInstance.post(`/api/guest/v1/scrap/${postId}`);
   };
   getSearchPosts = ({
     searchContent,
