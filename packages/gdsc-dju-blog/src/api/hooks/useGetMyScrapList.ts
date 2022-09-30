@@ -2,7 +2,7 @@ import Cookies from 'js-cookie';
 import { useQuery } from 'react-query';
 import PostService from '../PostService';
 
-async function getMyScrapList() {
+export async function getMyScrapList() {
   const res = await PostService.getMyScrapList();
   return res.data.body.data;
 }
