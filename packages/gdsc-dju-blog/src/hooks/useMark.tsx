@@ -10,7 +10,7 @@ export default function (id: number) {
   const [cookie] = useCookies(['token']);
 
   const queryClient = useQueryClient();
-  const { mutate, isSuccess } = usePostBookMark();
+  const { mutate } = usePostBookMark();
 
   const scrap_List: number[] =
     queryClient.getQueryData([`${cookie.token}-scrapList`]) ?? [];
@@ -18,25 +18,20 @@ export default function (id: number) {
   const [alert, setAlert] = useRecoilState(alertState);
   const [isMark, setMark] = React.useState(scrap_List.includes(id));
 
-  // eslint-disable-next-line no-console
-  console.log(isMark);
-
   const setIsMark = async () => {
     if (cookie.token && id) {
-      mutate(id);
-      if (isSuccess) {
-        queryClient.setQueryData(
-          [`${cookie.token}-scrapList`],
-          (oldData: any) => {
-            const index = oldData?.indexOf(id);
-            // scrap된 데이터라면
-            if (index !== -1)
-              return [...oldData.slice(0, index), ...oldData.slice(index + 1)];
-            return [...oldData, id];
-          },
-        );
-        setMark(!isMark);
-      }
+      await mutate(id);
+      setMark(!isMark);
+      queryClient.setQueryData(
+        [`${cookie.token}-scrapList`],
+        (oldData: any) => {
+          const index = oldData?.indexOf(id);
+          // scrap된 데이터라면
+          if (index !== -1)
+            return [...oldData.slice(0, index), ...oldData.slice(index + 1)];
+          return [...oldData, id];
+        },
+      );
     } else {
       setAlert({
         ...alert,
