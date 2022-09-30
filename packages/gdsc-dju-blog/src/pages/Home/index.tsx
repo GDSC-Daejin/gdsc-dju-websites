@@ -2,7 +2,7 @@ import PlusIcon from '@assets/icons/PlusIcon';
 import { useGetMyScrapList } from '@src/api/hooks/useGetMyScrapList';
 import { useGetPostsData } from '@src/api/hooks/useGetPostsData';
 import CategoryMenu from '@src/components/atoms/CategoryMenu';
-import BlogCard from '@src/components/molecules/PostCard';
+import PostCard from '@src/components/molecules/PostCard';
 import HomePhrase from '@src/components/molecules/HomePhrase';
 import React, { Suspense, useEffect, useRef, useState } from 'react';
 
@@ -73,10 +73,7 @@ function Home() {
                     homeWidth={`${homeWidth}px`}
                     windowWidth={`${windowSize.width}px`}
                   >
-                    <BlogCard
-                      postData={postData}
-                      isScrap={!!scrapList?.find((id) => id == postData.postId)}
-                    />
+                    <PostCard postData={postData} />
                   </BlogCardWrapper>
                 );
               })}

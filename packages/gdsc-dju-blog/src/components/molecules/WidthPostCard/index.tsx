@@ -1,14 +1,12 @@
 import BookmarkIcon from '@assets/icons/BookmarkIcon';
 import { HashTageDark } from '@src/components/atoms/HashTage';
-import { useSetBookMark } from '@src/hooks/useHandleBookMark';
+import useMark from '@src/hooks/useMark';
 import { DetailPostDataType } from '@type/postData';
 import { dateFilter } from '@utils/dateFilter';
-import { debounce } from '@utils/debounce';
 import { hashTageSpreader } from '@utils/hashTageSpreader';
 import { removeMarkdownInContent } from '@utils/removeMarkdownInContent';
 import { thumbnailHandler } from '@utils/thumbnailHandler';
 import React, { Suspense, memo, useCallback, useState } from 'react';
-import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 
 import {
@@ -25,22 +23,14 @@ import {
 
 interface Props {
   postData: DetailPostDataType;
-  isScrap: boolean;
 }
 
-const WidthPostCard: React.FC<Props> = ({ postData, isScrap }) => {
+const WidthPostCard: React.FC<Props> = ({ postData }) => {
   const [hover, setHover] = useState(false);
-  const [isMarked, setIsMarked] = useState(isScrap);
-  const [cookie] = useCookies(['token']);
-  const { bookMarkHandler } = useSetBookMark(
-    postData.postId,
-    cookie.token,
-    () => setIsMarked(!isMarked),
-  );
-  const debounceBookMarkHandler = debounce(bookMarkHandler, 300);
+  const { isMark, debounceSetIsMark } = useMark(postData.postId);
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
-    debounceBookMarkHandler();
+    debounceSetIsMark();
   };
 
   const removedMarkdownContent = removeMarkdownInContent(postData.content);
@@ -60,7 +50,7 @@ const WidthPostCard: React.FC<Props> = ({ postData, isScrap }) => {
           handleClick(e)
         }
       >
-        <BookmarkIcon marked={isMarked} />
+        <BookmarkIcon marked={isMark} />
       </BookmarkWrapper>
 
       <WidthPostCardImageWrapper>

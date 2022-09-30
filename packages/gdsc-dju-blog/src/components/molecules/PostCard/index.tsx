@@ -1,7 +1,7 @@
+import useMark from '@src/hooks/useMark';
 import { thumbnailHandler } from '@utils/thumbnailHandler';
 import React, { Suspense, memo, useCallback, useState } from 'react';
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
-import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router';
 
 import {
@@ -20,33 +20,23 @@ import {
   PostText,
 } from './styled';
 import { HashTageLight } from '@src/components/atoms/HashTage';
-import { useSetBookMark } from '@src/hooks/useHandleBookMark';
 import { DetailPostDataType } from '@type/postData';
 import { dateFilter } from '@utils/dateFilter';
 import { hashTageSpreader } from '@utils/hashTageSpreader';
 import BookmarkIcon from '@assets/icons/BookmarkIcon';
 import { removeMarkdownInContent } from '@utils/removeMarkdownInContent';
 import { PostTextVariants } from '@src/components/Animation';
-import { debounce } from '@utils/debounce';
 
 interface Props {
   postData: DetailPostDataType;
-  isScrap: boolean;
 }
 
-const PostCard: React.FC<Props> = ({ postData, isScrap }) => {
+const PostCard: React.FC<Props> = ({ postData }) => {
   const [IsHovered, setIsHovered] = useState(false);
-  const [isMarked, setIsMarked] = useState(isScrap);
-  const [cookie] = useCookies(['token']);
-  const { bookMarkHandler } = useSetBookMark(
-    postData.postId,
-    cookie.token,
-    () => setIsMarked(!isMarked),
-  );
-  const debounceBookMarkHandler = debounce(bookMarkHandler, 300);
+  const { isMark, debounceSetIsMark } = useMark(postData.postId);
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
-    debounceBookMarkHandler();
+    debounceSetIsMark();
   };
 
   const navigate = useNavigate();
@@ -66,7 +56,7 @@ const PostCard: React.FC<Props> = ({ postData, isScrap }) => {
             handleClick(e)
           }
         >
-          <BookmarkIcon marked={isMarked} />
+          <BookmarkIcon marked={isMark} />
         </BookMarkWrapper>
         {/* 이미지 */}
         <PostCardThumbnailWrapper>
