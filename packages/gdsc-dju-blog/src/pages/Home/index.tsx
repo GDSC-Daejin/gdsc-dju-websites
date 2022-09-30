@@ -37,7 +37,7 @@ function Home() {
   const { windowSize } = useWindowSize();
 
   const { postListData } = useGetPostsData(category, 0, 11);
-  const { scrapList } = useGetMyScrapList();
+  const { scrap_List } = useGetMyScrapList();
 
   const homeRef = useRef<HTMLDivElement>(null);
 

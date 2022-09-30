@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie';
-import { useQuery } from 'react-query';
+import { useQuery, useQueryClient } from 'react-query';
 import PostService from '../PostService';
 
 export async function getMyScrapList() {
@@ -8,15 +8,18 @@ export async function getMyScrapList() {
 }
 export function useGetMyScrapList() {
   const token = Cookies.get('token');
-  const { data: scrapList } = useQuery(
+  const queryClient = useQueryClient();
+
+  const { data: scrap_List } = useQuery(
     [`${token}-scrapList`],
-    () => getMyScrapList(),
+    getMyScrapList,
     {
-      enabled: !!token,
-      suspense: true,
+      enabled: !!token && !queryClient.getQueryData([`${token}-scrapList`]),
+      staleTime: 600 * 1000,
     },
   );
+
   return {
-    scrapList,
+    scrap_List,
   };
 }

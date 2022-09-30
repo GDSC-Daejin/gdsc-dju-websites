@@ -1,17 +1,11 @@
-import { getMyScrapList } from '@src/api/hooks/useGetMyScrapList';
+import { useGetMyScrapList } from '@src/api/hooks/useGetMyScrapList';
 import { usePostBookMark } from '@src/api/hooks/usePostBookMark';
 import { debounce } from '@utils/debounce';
 import React from 'react';
 import { useCookies } from 'react-cookie';
-import { useQuery, useQueryClient } from 'react-query';
+import { useQueryClient } from 'react-query';
 import { useRecoilState } from 'recoil';
 import { alertState } from '../store/alert';
-
-const fetchScrap = async (queryClient: any, key: string) => {
-  return await queryClient.prefetchQuery([key], getMyScrapList, {
-    staleTime: 60 * 10000,
-  });
-};
 
 export default function (id: number) {
   const [cookie] = useCookies(['token']);
@@ -19,16 +13,13 @@ export default function (id: number) {
 
   const queryClient = useQueryClient();
   const { mutate } = usePostBookMark();
-  const { data: scrap_List } = useQuery([key], getMyScrapList, {
-    enabled: !!cookie.token && !queryClient.getQueryData([key]),
-    staleTime: 60 * 10000,
-  });
+  const { scrap_List } = useGetMyScrapList();
 
   const [alert, setAlert] = useRecoilState(alertState);
-  const [isMark, setMark] = React.useState(scrap_List?.includes(id));
+  const [isMark, setMark] = React.useState(scrap_List?.includes(id) ?? false);
 
   React.useEffect(() => {
-    setMark(scrap_List?.includes(id));
+    setMark(scrap_List?.includes(id) ?? false);
   }, [scrap_List]);
 
   const setIsMark = async () => {
