@@ -24,8 +24,9 @@ export const MemberCardWrapper = styled(motion.div)`
 `;
 export const MemberCardInner = styled(motion.div)`
   display: flex;
-  padding: 20px 30px;
+
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   border-radius: 20px;
   border-style: solid;
