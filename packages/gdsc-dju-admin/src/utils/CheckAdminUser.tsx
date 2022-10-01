@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import React, { useEffect } from 'react';
 import { useAtom } from 'jotai';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -8,12 +9,11 @@ const CheckAdminUser = () => {
   const [, writeAdminUser] = useAtom(userInfoWriteOnlyAtom);
   const navigate = useNavigate();
   const location = useLocation();
-  const refreshToken = localStorage.getItem('refresh_token');
-  const token = localStorage.getItem('token');
+  const token = Cookies.get('token');
   const { userData } = useGetMyData();
   const isAdmin = userData?.role === 'LEAD' || 'CORE';
   const checkAdminUser = () => {
-    if (!refreshToken && !token && location.pathname.includes('/certified')) {
+    if (!token && location.pathname.includes('/certified')) {
       navigate('/');
       if (!isAdmin) {
         navigate('/');

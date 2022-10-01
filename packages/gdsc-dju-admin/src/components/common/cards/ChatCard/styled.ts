@@ -23,18 +23,18 @@ export const ChatCardInner = styled.div<{ isUser: boolean }>`
     `}
 `;
 export const ChatUser = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   color: ${({ theme }) => theme.colors.grey900};
   font-weight: bold;
 `;
 
 export const ChatText = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   color: ${({ theme }) => theme.colors.grey900};
   min-height: 18px;
 `;
 export const ChatDate = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.body3};
+  font-size: ${({ theme }) => theme.fontSizes.textS};
   color: ${({ theme }) => theme.colors.grey600};
   width: 100%;
   display: flex;

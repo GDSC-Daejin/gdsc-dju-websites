@@ -1,16 +1,11 @@
+import { putRecruitStatus } from '@src/apis/RecruitService';
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useAtom } from 'jotai';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import API from '../../apis';
-import ToggleButton from '../../components/common/ToggleButton';
+import ApplicantCard from '../../components/common/cards/ApplicantCard';
 
-import {
-  ApplicantCardSection,
-  ApplicantCardWrapper,
-  ApplicantContainerInner,
-  ApplicantHeadWrapper,
-} from './styled';
+import ToggleButton from '../../components/common/ToggleButton';
 import StatusBadgeBox from '../../components/layout/StatusBadgeBox';
 
 import { position } from '../../context/recruitInfo';
@@ -25,8 +20,13 @@ import { getApplicants } from '../../utils/applicantsHandler';
 import ApplicantDetailModal from '../ApplicantDetailModal';
 import { AdminContainerInner } from '../styled';
 
-import { AdminSectionWrapper } from './styled';
-import ApplicantCard from '../../components/common/cards/ApplicantCard';
+import {
+  AdminSectionWrapper,
+  ApplicantCardSection,
+  ApplicantCardWrapper,
+  ApplicantContainerInner,
+  ApplicantHeadWrapper,
+} from './styled';
 
 const Applicants = () => {
   const [recruit] = useAtom(recruitmentReadOnlyAtom);
@@ -82,9 +82,8 @@ const Applicants = () => {
     applicantHandler();
   }, [currentParam]);
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (recruit && token) {
-      API.putRecruitStatus(recruit, token);
+    if (recruit) {
+      putRecruitStatus(recruit);
     }
   }, [recruit]);
 

@@ -1,19 +1,10 @@
-import axios from 'axios';
-import { Api } from './index';
+import { AuthInstance } from '@src/apis/Instance';
 
-class TokenService extends Api {
-  getRedirectURL() {
-    const OAUTH2_REDIRECT_URI = `${location.origin}/redirect`;
-    return `${this.ACCOUNT_API}/oauth2/authorization/google?redirect_uri=${OAUTH2_REDIRECT_URI}`;
-  }
-  getRefresh = (refreshToken: string, token: string) => {
-    return axios.get(`${this.ACCOUNT_API}/refresh`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        RefreshToken: `Bearer ${refreshToken}`,
-      },
-    });
-  };
-}
+export const getRedirectURL = () => {
+  const OAUTH2_REDIRECT_URI = `${location.origin}/redirect`;
+  return `https://accounts.gdsc-dju.com/oauth2/authorization/google?redirect_uri=${OAUTH2_REDIRECT_URI}`;
+};
 
-export default new TokenService();
+export const getRefresh = () => {
+  return AuthInstance.get(`/refresh`);
+};

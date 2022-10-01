@@ -1,11 +1,10 @@
+import { AnimatePresence } from 'framer-motion';
 import { useAtom } from 'jotai';
+import lottie from 'lottie-web';
 import React, { useEffect, useRef } from 'react';
 import { loaderAtom } from '../../../store/loaderAtom';
-import { GoogleLoader, LoaderBackground } from './styled';
-import lottie from 'lottie-web';
 import googleAnimation from './GoogleAnimation.json';
-import { AnimatePresence } from 'framer-motion';
-import { useRecoilValue } from 'recoil';
+import { GoogleLoader, LoaderBackground } from './styled';
 
 const GoogleSpinner = (props: { background?: boolean }) => {
   const { background } = props;

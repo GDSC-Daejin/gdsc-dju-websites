@@ -1,6 +1,5 @@
-import { GdsThemeProvider } from '@gdsc-dju/styled-components';
+import { GdsThemeProvider, Navigation } from '@gdsc-dju/styled-components';
 import React from 'react';
-import Navigation from './components/layout/Navigation';
 
 import { GoogleSpinner } from './components/Lottie/GoogleSpinner';
 
@@ -12,7 +11,6 @@ function App() {
     <GdsThemeProvider mode={'auto'}>
       <GlobalStyles />
       <GoogleSpinner background={true} />
-      <Navigation />
       <Layout />
     </GdsThemeProvider>
   );

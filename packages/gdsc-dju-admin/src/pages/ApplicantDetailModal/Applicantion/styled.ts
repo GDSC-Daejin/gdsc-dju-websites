@@ -9,12 +9,12 @@ export const ApplicationWrapper = styled.div`
   overflow: scroll;
 `;
 export const ApplicationHeader = styled.div`
-  font-size: ${({ theme }) => theme.fontSize.h7};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   color: ${({ theme }) => theme.colors.grey900};
   margin-bottom: 6px;
 `;
 export const ApplicationText = styled.div`
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   color: ${({ theme }) => theme.colors.grey800};
   margin-bottom: 20px;
 `;

@@ -1,9 +1,9 @@
 import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
-import UserService from '../UserService';
+import { getMyData } from '../UserService';
 
-export const getMyData = async (token: string) => {
-  const response = await UserService.getMyData(token);
+export const getUserData = async () => {
+  const response = await getMyData();
   return response.data.body.data;
 };
 
@@ -12,7 +12,7 @@ export const useGetMyData = () => {
   const navigate = useNavigate();
   const { data: userData } = useQuery(
     [`myData-${token}`],
-    () => getMyData(token as string),
+    () => getUserData(),
     {
       retry: 2,
       refetchOnWindowFocus: false,

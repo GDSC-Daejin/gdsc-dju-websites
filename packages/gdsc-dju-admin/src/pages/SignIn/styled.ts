@@ -25,7 +25,7 @@ export const AuthBoxWrapper = styled.div`
   z-index: 1;
   align-items: center;
   justify-content: center;
-  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.windowSizes.tablet}px) {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -79,7 +79,7 @@ export const AuthSignButton = styled.button`
   border-radius: 50px;
   padding: 13px 40px;
   color: white;
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   font-weight: bold;
   background: ${({ theme }) => theme.colors.blue600};
   &:hover {
@@ -107,7 +107,7 @@ export const AuthInput = styled.input`
   border: 0 solid transparent;
   border-radius: 10px;
   padding: 0 20px;
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   background: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.grey900};
   ::placeholder {
@@ -116,13 +116,13 @@ export const AuthInput = styled.input`
 `;
 
 export const AuthLogoText = styled.div<any>`
-  font-size: ${({ theme }) => theme.fontSize.h6};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   font-weight: ${({ border }) => border};
   color: ${({ theme }) => theme.colors.grey900};
   margin-right: 5px;
 `;
 export const AuthOtherText = styled.text`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   color: ${({ theme }) => theme.colors.grey400};
   margin: 0 10px;
 `;
@@ -149,7 +149,7 @@ export const OAuthButton = styled.button`
   }
 `;
 export const OAuthText = styled.div<{ weight?: string }>`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   font-weight: ${({ weight }) => weight};
   color: ${({ theme }) => theme.colors.grey800};
 `;

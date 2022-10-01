@@ -18,14 +18,14 @@ export const ButtonWrapper = styled.div`
   margin-top: 10px;
 `;
 export const ModalP = styled.p`
-  font-size: ${(props) => props.theme.fontSize.body2};
+  font-size: ${(props) => props.theme.fontSizes.textM};
   color: ${(props) => props.theme.colors.grey600};
   min-width: 80px;
   margin-bottom: 6px;
 `;
 
 export const ModalTitle = styled.h5`
-  font-size: ${(props) => props.theme.fontSize.h6};
+  font-size: ${(props) => props.theme.fontSizes.textXl};
   font-weight: 500;
   color: ${(props) => props.theme.colors.grey900};
   margin-bottom: 12px;
@@ -54,9 +54,7 @@ export const ModalWrapper = styled(motion.div)`
   background: rgba(0, 0, 0, 0.5);
   z-index: 1000;
 `;
-export const ModalButtonWrapper = styled.div`
-  margin-right: 10px;
-`;
+
 export const ModalBackgroundWrapper = styled(motion.div)`
   position: fixed;
   top: 0;

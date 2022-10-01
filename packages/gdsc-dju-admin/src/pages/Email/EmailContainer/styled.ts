@@ -27,7 +27,7 @@ export const TemplateEmailWrapper = styled.div`
   width: 300px;
 `;
 export const TemplateText = styled.div`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   color: ${({ theme }) => theme.colors.grey900};
   display: flex;
   align-items: center;

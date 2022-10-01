@@ -20,7 +20,7 @@ const StatusBadgeWrapper = styled.div<{
       background: ${({ theme }) => theme.colors.white};
       border: 1px solid ${({ theme }) => theme.colors[color]};
     `}
-  font-size: ${({ theme }) => theme.fontSize.body3};
+  font-size: ${({ theme }) => theme.fontSizes.textS};
   width: fit-content;
   border-radius: 4px;
   ${({ disable }) =>

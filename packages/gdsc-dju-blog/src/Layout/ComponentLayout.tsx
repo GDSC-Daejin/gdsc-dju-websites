@@ -34,12 +34,12 @@ const ComponentLayout: React.FC<{ children: React.ReactNode }> = ({
       <ScrollTop />
       <Navigation
         isMenuOpen={isMenuOpen}
-        themeButtonActive={false}
         menuToggle={toggleMenu}
+        menuHandler={menuHandler}
+        themeButtonActive={false}
         title={'Tech Blog'}
         menuPosition={'left'}
         sideMenu={<SideMenu />}
-        menuHandler={menuHandler}
         rightElement={<NavigationElementBox />}
       />
       <NavigationBlock />

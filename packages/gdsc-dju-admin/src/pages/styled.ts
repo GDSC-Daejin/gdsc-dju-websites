@@ -14,15 +14,8 @@ export const AdminContainer = styled.div`
   overflow: hidden;
 `;
 export const AdminContainerWrapper = styled.div`
-  height: calc(100vh - 60px);
+  padding-top: 70px;
+  height: calc(100vh - 70px);
   display: flex;
   overflow: hidden;
-`;
-export const SidebarContainer = styled.div`
-  width: 200px;
-  height: 100%;
-  border-right: 1px solid ${({ theme }) => theme.colors.grey100};
-  flex-shrink: 0;
-  padding-top: 35px;
-  position: relative;
 `;

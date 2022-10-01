@@ -12,7 +12,7 @@ export const StyledButton = styled.button<{
   align-items: center;
   justify-content: center;
   border: 0 solid ${(props) => props.theme.colors.grey300};
-  font-size: ${(props) => props.theme.fontSize.body2};
+  font-size: ${(props) => props.theme.fontSizes.textM};
   padding: 10px 20px;
   cursor: pointer;
   box-shadow: 0 2px 12px rgba(25, 31, 40, 0.08);

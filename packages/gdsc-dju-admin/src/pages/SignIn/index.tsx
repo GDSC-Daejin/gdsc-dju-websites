@@ -1,5 +1,6 @@
+import { getRedirectURL } from '@src/apis/TokenService';
 import React from 'react';
-import TokenService from '../../apis/TokenService';
+
 import GDSCImage from '../../assets/logos/GDSCLogo.svg';
 import GithubLogo from '../../assets/logos/GithubLogo.svg';
 import GoogleLogo from '../../assets/logos/GoogleLogo.svg';
@@ -29,7 +30,7 @@ import {
 
 const SignIn = () => {
   const googleLogin = () => {
-    return TokenService.getRedirectURL();
+    return getRedirectURL();
   };
 
   return (

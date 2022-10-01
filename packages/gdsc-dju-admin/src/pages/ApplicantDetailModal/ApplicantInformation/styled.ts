@@ -13,7 +13,7 @@ export const ApplicantInfoInner = styled.div`
   background: ${({ theme }) => theme.colors.white};
 `;
 export const ApplicantInfoLink = styled.a`
-  font-size: ${({ theme }) => theme.fontSize.body3};
+  font-size: ${({ theme }) => theme.fontSizes.textS};
   color: ${({ theme }) => theme.colors.blue900};
   min-width: 60px;
   max-width: 150px;
@@ -23,7 +23,7 @@ export const ApplicantInfoLink = styled.a`
   overflow: hidden;
 `;
 export const ApplicantInfoText = styled(motion.p)`
-  font-size: ${({ theme }) => theme.fontSize.body3};
+  font-size: ${({ theme }) => theme.fontSizes.textS};
   color: ${({ theme }) => theme.colors.grey900};
   min-width: 60px;
   max-width: 150px;
@@ -40,7 +40,7 @@ export const ApplicantNameWrapper = styled.div`
   align-items: center;
 `;
 export const ApplicantName = styled(motion.p)`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   color: ${({ theme }) => theme.colors.grey900};
   font-weight: bold;
 `;

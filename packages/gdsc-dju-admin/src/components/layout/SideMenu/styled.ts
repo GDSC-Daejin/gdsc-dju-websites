@@ -1,4 +1,28 @@
 import styled, { css } from 'styled-components';
+export const SidebarContainer = styled.div`
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  @media screen and (max-width: 500px) {
+    width: 100vw;
+  }
+`;
+export const SidebarInner = styled.aside`
+  width: 100%;
+  height: 100%;
+  padding-top: 70px;
+  background-color: ${({ theme }) => theme.colors.white};
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  @media screen and (max-width: 500px) {
+    align-items: flex-start;
+  }
+`;
 
 export const SideElementWrapper = styled.div`
   display: flex;
@@ -43,7 +67,7 @@ export const SideElementSelectBar = styled.div<{ isCurrent: boolean }>`
     `}
 `;
 export const SideElementText = styled.div<{ isCurrent: boolean }>`
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   color: ${({ theme }) => theme.colors.grey700};
   font-weight: 500;
   transition: all 0.2s ease-in-out;

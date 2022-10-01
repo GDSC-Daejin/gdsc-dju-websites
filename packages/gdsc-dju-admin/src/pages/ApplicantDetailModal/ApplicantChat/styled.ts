@@ -23,7 +23,7 @@ export const ApplicantChatInput = styled.textarea`
   position: relative;
   display: flex;
   border: 1px solid ${({ theme }) => theme.colors.grey300};
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   border-radius: 7px;
   height: 40px;
   resize: none;
@@ -44,7 +44,7 @@ export const ApplicantChatInput = styled.textarea`
 export const ApplicantChatSendButton = styled.button`
   position: relative;
   border: 1px solid ${({ theme }) => theme.colors.blue600};
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   color: #fff;
   border-radius: 7px;
   background: ${({ theme }) => theme.colors.blue500};

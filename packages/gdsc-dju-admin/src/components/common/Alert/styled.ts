@@ -14,7 +14,7 @@ export const AlertInnerWrapper = styled.div`
   z-index: 3;
 `;
 export const AlertText = styled.div<{ alertColor: keyof ColorScheme }>`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   opacity: 100%;
   margin-left: 5px;
   display: flex;
@@ -26,10 +26,10 @@ export const AlertText = styled.div<{ alertColor: keyof ColorScheme }>`
       color: ${({ theme }) => theme.colors[alertColor]};
     `};
   @media (max-width: 500px) {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
   @media (max-width: 320px) {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textM};
   }
 `;
 export const AlertInner = styled(motion.div)`

@@ -1,4 +1,6 @@
-import React from 'react';
+import { MenuContext, Navigation } from '@gdsc-dju/styled-components';
+import NavigationElement from '@layout/NavigationElement';
+import React, { useContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import SideMenu from '../components/layout/SideMenu';
 
@@ -9,8 +11,18 @@ import Home from './Home';
 import { AdminContainer, AdminContainerWrapper } from './styled';
 
 const Pages = () => {
+  const { isMenuOpen, toggleMenu, menuHandler } = useContext(MenuContext);
+
   return (
     <AdminContainerWrapper>
+      <Navigation
+        menuPosition={'right'}
+        sideMenu={<SideMenu />}
+        isMenuOpen={isMenuOpen}
+        menuToggle={toggleMenu}
+        menuHandler={menuHandler}
+        rightElement={<NavigationElement />}
+      />
       <SideMenu />
       <AdminContainer>
         <Routes>

@@ -6,7 +6,7 @@ export const StyledInputInner = styled.input<{ disabled?: boolean }>`
   border: 0;
   border-radius: 10px;
   height: 40px;
-  font-size: ${(props) => props.theme.fontSize.body2};
+  font-size: ${(props) => props.theme.fontSizes.textM};
   outline: none;
   width: 100%;
   flex-grow: 1;
@@ -24,16 +24,6 @@ export const StyledInputInner = styled.input<{ disabled?: boolean }>`
       background: ${(props) => props.theme.colors.grey100};
       color: ${(props) => props.theme.colors.grey400};
     `}
-`;
-export const StyledFileInput = styled.div`
-  color: ${(props) => props.theme.colors.grey500};
-  cursor: pointer;
-  overflow: hidden;
-  white-space: nowrap;
-  flex-grow: 1;
-  font-weight: 300;
-  font-size: ${(props) => props.theme.fontSize.body1};
-  padding: 0 18px;
 `;
 
 export const StyledInputWrapper = styled.div<{
@@ -94,7 +84,7 @@ export const StyledInput = styled.input<{
   border: 0;
   border-radius: 10px;
   height: 50px;
-  font-size: ${(props) => props.theme.fontSize.body1};
+  font-size: ${(props) => props.theme.fontSizes.textL};
   outline: none;
   flex-grow: 1;
   background: none;
