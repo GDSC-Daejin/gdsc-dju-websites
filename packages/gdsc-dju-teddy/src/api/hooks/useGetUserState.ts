@@ -6,12 +6,12 @@ async function getUserState(filter: FilterType, userId: string) {
   return res.data.data;
 }
 
-export function useGetUserState(userId: string) {
+export function useGetUserState(filter: FilterType, userId: string) {
   const { data: userData, error } = useSWR(
-    [userId, `/api/v1/users/${userId}/state`],
-    getUserState,
+    filter && userId && [`${filter}/${userId}`],
+    () => getUserState(filter, userId),
     {
-      suspense: true,
+      isPaused: () => !(userId && filter),
     },
   );
   return {

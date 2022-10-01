@@ -3055,7 +3055,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@octokit/rest@npm:^19.0.3":
+"@octokit/rest@npm:^19.0.3, @octokit/rest@npm:^19.0.4":
   version: 19.0.4
   resolution: "@octokit/rest@npm:19.0.4"
   dependencies:
@@ -12033,6 +12033,8 @@ __metadata:
     swr: ^1.3.0
     typescript: ^4.6.4
     vite: ^3.0.0
+    vite-plugin-mkcert: ^1.10.1
+    zustand: ^4.1.1
   languageName: unknown
   linkType: soft
 
@@ -23378,6 +23380,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vite-plugin-mkcert@npm:^1.10.1":
+  version: 1.10.1
+  resolution: "vite-plugin-mkcert@npm:1.10.1"
+  dependencies:
+    "@octokit/rest": ^19.0.4
+    axios: ^0.21.4
+    debug: ^4.3.4
+    picocolors: ^1.0.0
+  peerDependencies:
+    vite: ">=3"
+  checksum: 0bacd5488cbc7640a2fcf6ff299b483312e4c93ac61051ca13d89df5b86f541cb0f3a26466dd77621e56a5873fd49cd1436ad55aaf18627e65852d8d6f60a506
+  languageName: node
+  linkType: hard
+
 "vite-plugin-mkcert@npm:^1.9.0":
   version: 1.9.0
   resolution: "vite-plugin-mkcert@npm:1.9.0"
@@ -24332,5 +24348,22 @@ __metadata:
     react:
       optional: true
   checksum: b8ae5971dff79a1007d46f9a6bfa39ed5cc5b101a877eeec069ebdb6c8285ec8e3463e40cfa7c0f1507a41f43fe26ffb44b556063cb70ac03bccf1ea6e0f69d6
+  languageName: node
+  linkType: hard
+
+"zustand@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "zustand@npm:4.1.1"
+  dependencies:
+    use-sync-external-store: 1.2.0
+  peerDependencies:
+    immer: ">=9.0"
+    react: ">=16.8"
+  peerDependenciesMeta:
+    immer:
+      optional: true
+    react:
+      optional: true
+  checksum: 03eefb193e2ecb43a761c81cb60f517c2780289dab0f55f2cbdb91400924c6291abb5a007b32ee19787b8f72b6769f891a38b64fd296660c170d632c3182f6e1
   languageName: node
   linkType: hard

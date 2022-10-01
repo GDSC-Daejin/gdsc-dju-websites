@@ -11,6 +11,7 @@ export const LayoutContainer = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  padding-top: 70px;
   max-width: 1140px;
   margin: 0 auto;
   min-width: 320px;
