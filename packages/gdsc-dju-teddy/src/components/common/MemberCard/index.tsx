@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { userDataType } from '../../../types';
 import {
   CardMargin,
@@ -14,32 +14,39 @@ export type Props = {
 };
 
 const MemberCard: React.FC<Props> = ({ userData }) => {
+  const [imageLoading, setImageLoading] = useState(true);
+
+  const imageLoaded = () => {
+    setImageLoading(false);
+  };
   return (
-    <>
-      <MemberCardWrapper
-        whileHover={{
-          borderColor: 'transparent',
-          background: 'white',
-          boxShadow: '0px 20px 30px rgba(0, 0, 0, 0.06)',
-        }}
-        layoutId={`memberCard-${userData.id}`}
-      >
-        <MemberCardInner>
-          <ProfileImage
-            src={userData.profileImage}
-            layoutId={`memberCard-avatar-${userData.id}`}
-          />
-          <CardMargin />
-          <MemberName layoutId={`memberCard-name-${userData.id}`}>
-            {userData.displayName}
-          </MemberName>
-          <CardMargin />
-          <MemberScore layoutId={`memberCard-score-${userData.id}`}>
-            {userData.count}
-          </MemberScore>
-        </MemberCardInner>
-      </MemberCardWrapper>
-    </>
+    <MemberCardWrapper>
+      <MemberCardInner>
+        <ProfileImage
+          src={userData.profileImage}
+          layoutId={`memberCard-avatar-${userData.displayName}`}
+          initial={{ height: '16rem', opacity: 0 }}
+          // style={{ height: imageLoading ? "6rem" : "auto" }}
+          animate={{
+            height: imageLoading ? '16rem' : 'auto',
+            opacity: imageLoading ? 0 : 1,
+          }}
+          transition={{
+            height: { delay: 0, duration: 0.4 },
+            opacity: { delay: 0.5, duration: 0.4 },
+          }}
+          onLoad={imageLoaded}
+        />
+        <CardMargin />
+        <MemberName layoutId={`memberCard-name-${userData.displayName}`}>
+          {userData.displayName}
+        </MemberName>
+        <CardMargin />
+        <MemberScore layoutId={`memberCard-score-${userData.displayName}`}>
+          {userData.count}
+        </MemberScore>
+      </MemberCardInner>
+    </MemberCardWrapper>
   );
 };
 

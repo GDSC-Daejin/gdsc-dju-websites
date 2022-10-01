@@ -18,14 +18,15 @@ export const StyledLi = styled(motion.li)`
   align-items: center;
   position: relative;
   user-select: none;
-  font-size: 14px;
   @media (max-width: ${(props) => props.theme.windowSizes.mobile}px) {
     margin: 0 2px;
   }
 `;
 
 export const StyledLabel = styled(motion.div)`
+  font-size: ${({ theme }) => theme.fontSizes.textS};
   z-index: 1;
   background: transparent;
   color: #cecece;
+  text-transform: capitalize;
 `;

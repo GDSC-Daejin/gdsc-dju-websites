@@ -7,7 +7,7 @@ const Error = ({ error }: { error?: Error }) => {
     <ErrorContainer>
       <ErrorContentWrapper>
         <h1>어딘가 문제가 생겼어요</h1>
-        <p>{error?.message}</p>
+        <div>{error?.message}</div>
       </ErrorContentWrapper>
     </ErrorContainer>
   );

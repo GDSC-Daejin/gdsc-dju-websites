@@ -1,20 +1,21 @@
 import axios from 'axios';
 import { rowScoreBoardType, rowUserStateDataType } from '../types';
-import { FilterType } from '../types/filterType';
+import { FilterType, ListType } from '../types/filterType';
 
 export class TeddyBearApi {
   protected API: string;
   constructor() {
-    this.API = 'https://gold-candles-sink-218-236-101-36.loca.lt';
+    this.API = 'https://api.gdsc-dju.com/teddy-route';
   }
-  getMonthlyScoreBoard = (filter: FilterType) => {
-    return axios.get<rowScoreBoardType>(`${this.API}/scoreboard/${filter}/inc`);
-  };
-  getWeeklyScoreBoard = (filter: FilterType) => {
-    return axios.get<rowScoreBoardType>(`${this.API}/scoreboard${filter}/inc`);
+  getScoreboard = (filter: FilterType, listType: ListType) => {
+    return axios.get<rowScoreBoardType>(
+      `${this.API}/scoreboard/${filter}/${listType}/inc`,
+    );
   };
   getUserState = (filter: FilterType, userID: string) => {
-    return axios.get<rowUserStateDataType>(`${this.API}/userstats/${userID}`);
+    return axios.get<rowUserStateDataType>(
+      `${this.API}/userstats/${filter}/${userID}`,
+    );
   };
 }
 export default new TeddyBearApi();
