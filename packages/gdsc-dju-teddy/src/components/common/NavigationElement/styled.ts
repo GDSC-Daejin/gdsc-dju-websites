@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const StyledUl = styled(motion.ul)`
   display: flex;
@@ -20,13 +20,37 @@ export const StyledLi = styled(motion.li)`
   user-select: none;
   @media (max-width: ${(props) => props.theme.windowSizes.mobile}px) {
     margin: 0 2px;
+    padding: 7px 12px;
+  }
+`;
+export const UnderlineFilter = styled(motion.div)<{ color: string }>`
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  height: 35px;
+  z-index: -1;
+  background: ${({ color }) => color};
+  border-radius: 20px;
+  @media (max-width: ${(props) => props.theme.windowSizes.mobile}px) {
+    bottom: 1px;
   }
 `;
 
-export const StyledLabel = styled(motion.div)`
+export const StyledLabel = styled(motion.div)<{ selected: boolean }>`
   font-size: ${({ theme }) => theme.fontSizes.textS};
   z-index: 1;
   background: transparent;
-  color: #cecece;
+  transition: 500ms;
+  ${({ selected }) =>
+    selected
+      ? css`
+          color: #a35d29;
+          font-weight: bold;
+        `
+      : css`
+          color: #cecece;
+        `}
+
   text-transform: capitalize;
 `;

@@ -39,7 +39,7 @@ GDSC DJU의 기술 블로그 프로젝트입니다.
 │   ├── assets // 사진폴더
 │   ├── components // 컴포넌트 폴더
 │   ├── fonts // 폰트 폴더
-│   ├── index.tsx
+│   ├── FilterSelectBox.tsx
 │   ├── pages  //페이지가 정의되어있습니다.
 │   ├── store //recoil 상태관리 폴더
 │   ├── styles  //스타일 에셋

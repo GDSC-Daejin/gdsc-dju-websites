@@ -1,16 +1,15 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import { FilterType } from '../../../types/filterType';
-import { StyledLabel, StyledLi, StyledUl } from './styled';
+import { StyledLabel, StyledLi, StyledUl, UnderlineFilter } from './styled';
 import { useNavigate } from 'react-router-dom';
-import './NavRouteCategory.css';
 
 type Props = {
   setFilter: (setSelect: FilterType) => void;
   filter: FilterType;
 };
 const routeData: FilterType[] = ['monthly', 'weekly'];
-const NavRouteCategory = ({ filter, setFilter }: Props) => {
+const FilterSelectBox = ({ filter, setFilter }: Props) => {
   const navigate = useNavigate();
 
   return (
@@ -24,11 +23,9 @@ const NavRouteCategory = ({ filter, setFilter }: Props) => {
             navigate(item);
           }}
         >
-          <StyledLabel className={item === filter ? 'selected' : ''}>
-            {item}
-          </StyledLabel>
+          <StyledLabel selected={item === filter}>{item}</StyledLabel>
           {item === filter ? (
-            <motion.div className="underline" layoutId="underline" />
+            <UnderlineFilter color={'#f6eee9'} layoutId="filterSelect" />
           ) : null}
         </StyledLi>
       ))}
@@ -36,4 +33,4 @@ const NavRouteCategory = ({ filter, setFilter }: Props) => {
   );
 };
 
-export default NavRouteCategory;
+export default FilterSelectBox;

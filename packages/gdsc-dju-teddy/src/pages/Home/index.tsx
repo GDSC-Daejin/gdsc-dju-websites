@@ -1,4 +1,3 @@
-import { LayoutGroup } from 'framer-motion';
 import React from 'react';
 import { useGetScoreboard } from '../../api/hooks/useGetScoreboard';
 
@@ -9,11 +8,12 @@ import { ContainerInner, LayoutContainer } from '../../styles/layouts';
 const Home = () => {
   const filter = useFilterStore((state) => state.filter);
   const { scoreboard } = useGetScoreboard(filter.filterType, filter.listType);
+  const sortedScoreboard = scoreboard?.sort((a, b) => b.count - a.count);
 
   return (
     <LayoutContainer>
       <ContainerInner>
-        <Dashboard scoreboard={scoreboard} filter={filter.filterType} />
+        <Dashboard scoreboard={sortedScoreboard} filter={filter.filterType} />
       </ContainerInner>
     </LayoutContainer>
   );
