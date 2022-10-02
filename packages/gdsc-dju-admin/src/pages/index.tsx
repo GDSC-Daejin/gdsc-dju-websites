@@ -14,7 +14,7 @@ const Pages = () => {
   const { isMenuOpen, toggleMenu, menuHandler } = useContext(MenuContext);
 
   return (
-    <AdminContainerWrapper>
+    <>
       <Navigation
         menuPosition={'right'}
         sideMenu={<SideMenu />}
@@ -23,17 +23,19 @@ const Pages = () => {
         menuHandler={menuHandler}
         rightElement={<NavigationElement />}
       />
-      <SideMenu />
-      <AdminContainer>
-        <Routes>
-          <Route path={'/*'} element={<Home />} />
-          <Route path={'/recruit/*'} element={<AdminApplicants />} />
-          <Route path={'/recruit/:userid'} element={<AdminApplicants />} />
-          <Route path={'/email'} element={<Email />} />
-          <Route path={'/email-log'} element={<AdminEmailLog />} />
-        </Routes>
-      </AdminContainer>
-    </AdminContainerWrapper>
+      <AdminContainerWrapper>
+        <SideMenu />
+        <AdminContainer>
+          <Routes>
+            <Route path={'/*'} element={<Home />} />
+            <Route path={'/recruit/*'} element={<AdminApplicants />} />
+            <Route path={'/recruit/:userid'} element={<AdminApplicants />} />
+            <Route path={'/email'} element={<Email />} />
+            <Route path={'/email-log'} element={<AdminEmailLog />} />
+          </Routes>
+        </AdminContainer>
+      </AdminContainerWrapper>
+    </>
   );
 };
 

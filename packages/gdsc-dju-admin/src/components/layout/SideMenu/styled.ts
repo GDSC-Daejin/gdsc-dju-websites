@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 export const SidebarContainer = styled.div`
   display: flex;
-  position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
