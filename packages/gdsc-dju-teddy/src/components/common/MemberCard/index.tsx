@@ -1,5 +1,7 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import { userDataType } from '../../../types';
+import GradeCrown from '../GradeCrown';
 import {
   CardMargin,
   MemberCardInner,
@@ -9,37 +11,50 @@ import {
   ProfileImage,
 } from './styled';
 
-export type Props = {
+export type MemberCardProps = {
   userData: userDataType;
+  grade: number;
 };
 
-const MemberCard: React.FC<Props> = ({ userData }) => {
+const MemberCard = ({ userData, grade }: MemberCardProps) => {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const listItem = {
+    hidden: { height: '80px', opacity: 0 },
+    show: {
+      opacity: 1,
+    },
+  };
   return (
-    <>
-      <MemberCardWrapper
-        whileHover={{
-          borderColor: 'transparent',
-          background: 'white',
-          boxShadow: '0px 20px 30px rgba(0, 0, 0, 0.06)',
-        }}
-        layoutId={`memberCard-${userData.id}`}
-      >
-        <MemberCardInner>
+    <MemberCardWrapper>
+      <MemberCardInner>
+        <motion.div style={{ position: 'relative' }}>
           <ProfileImage
             src={userData.profileImage}
-            layoutId={`memberCard-avatar-${userData.id}`}
+            layoutId={`memberCard-avatar-${userData.displayName}`}
+            variants={listItem}
           />
-          <CardMargin />
-          <MemberName layoutId={`memberCard-name-${userData.id}`}>
-            {userData.displayName}
-          </MemberName>
-          <CardMargin />
-          <MemberScore layoutId={`memberCard-score-${userData.id}`}>
-            {userData.count}
-          </MemberScore>
-        </MemberCardInner>
-      </MemberCardWrapper>
-    </>
+          {grade < 3 && <GradeCrown />}
+        </motion.div>
+        <CardMargin />
+        <MemberName layoutId={`memberCard-name-${userData.displayName}`}>
+          {userData.displayName}
+        </MemberName>
+        <CardMargin />
+        <MemberScore layoutId={`memberCard-score-${userData.displayName}`}>
+          {userData.count}
+        </MemberScore>
+      </MemberCardInner>
+    </MemberCardWrapper>
   );
 };
 

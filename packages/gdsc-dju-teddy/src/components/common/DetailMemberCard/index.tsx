@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { userStateDataType } from '../../../types';
-import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import styled, { css } from 'styled-components';
+import { userStateDataType } from '../../../types';
 import { CardMargin, MemberName, ProfileImage } from '../MemberCard/styled';
 
 export const DetailMemberCardInner = styled(motion.div)`
@@ -14,11 +14,11 @@ export const DetailMemberCardInner = styled(motion.div)`
   border-width: 0;
 `;
 export const DetailMemberCardWrapper = styled(motion.div)`
-  background: #fcfcfc;
+  background: ${({ theme }) => theme.colors.grey100};
+  border-color: ${({ theme }) => theme.colors.grey100};
   border-radius: 20px;
   border-style: solid;
   border-width: 1px;
-  border-color: #f1f1f1;
   display: flex;
   justify-content: center;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.04);
@@ -54,7 +54,7 @@ const MemberBlock = styled(motion.div)`
   width: 100%;
 `;
 const MemberBlockName = styled(motion.div)`
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   color: black;
   width: 200px;
 `;
@@ -80,6 +80,7 @@ const ScoreSelect = styled(motion.div)<{ selected: boolean }>`
   cursor: pointer;
   padding: 2px;
   border-bottom: 3px solid rgba(0, 0, 0, 0);
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   ${({ selected }) =>
     selected &&
     css`
@@ -88,8 +89,7 @@ const ScoreSelect = styled(motion.div)<{ selected: boolean }>`
 `;
 
 interface memberCardProps {
-  username: string;
-  userData: userStateDataType | undefined;
+  userData: userStateDataType;
 }
 interface IDetailShareList {
   userData: userStateDataType;
@@ -100,34 +100,35 @@ interface ISelectBar {
   setGiven: (type: boolean) => void;
 }
 
-const DetailMemberCard: React.FC<memberCardProps> = ({
-  username,
-  userData,
-}) => {
+const DetailMemberCard: React.FC<memberCardProps> = ({ userData }) => {
   const [given, setGiven] = useState<boolean>(true);
+
+  const user = userData?.user;
   return (
     <div>
-      {userData && userData.user && (
-        <DetailMemberCardWrapper layoutId={`memberCard-${username}`}>
-          <DetailMemberCardInner>
-            <>
-              <ProfileWrapper>
-                <ProfileImage
-                  src={userData.user.avatar}
-                  layoutId={`memberCard-avatar-${username}`}
-                />
-                <CardMargin />
-                <ScoreNameWrapper>
-                  <MemberName layoutId={`memberCard-name-${username}`}>
-                    {userData.user.name}
-                  </MemberName>
-                  <Score>보낸 곰돌이: {userData.user.given}</Score>
-                  <Score>받은 곰돌이: {userData.user.received}</Score>
-                </ScoreNameWrapper>
-              </ProfileWrapper>
-              <SelectBar given={given} setGiven={setGiven} />
-              <DetailShareList given={given} userData={userData} />
-            </>
+      {userData && user && (
+        <DetailMemberCardWrapper layoutId={`memberCard-${user.displayName}`}>
+          <DetailMemberCardInner layout>
+            <ProfileWrapper>
+              <ProfileImage
+                src={user.profileImage}
+                layoutId={`memberCard-avatar-${user.displayName}`}
+              />
+              <CardMargin />
+              <ScoreNameWrapper>
+                <MemberName layoutId={`memberCard-name-${user.displayName}`}>
+                  {user.displayName}
+                </MemberName>
+                <Score layoutId={`memberCard-give`}>
+                  보낸 곰돌이: {userData.user.given}
+                </Score>
+                <Score layoutId={`memberCard-get`}>
+                  받은 곰돌이: {userData.user.received}
+                </Score>
+              </ScoreNameWrapper>
+            </ProfileWrapper>
+            <SelectBar given={given} setGiven={setGiven} />
+            <DetailShareList given={given} userData={userData} />
           </DetailMemberCardInner>
         </DetailMemberCardWrapper>
       )}
@@ -162,20 +163,20 @@ const DetailShareList: React.FC<IDetailShareList> = ({ userData, given }) => {
   return (
     <>
       {given ? (
-        <ScoreSection>
+        <ScoreSection layout>
           {userData.given.map((data) => (
-            <MemberBlock key={`memberBlock-${data.username}`}>
-              <MemberBlockName> {data.name}</MemberBlockName>
-              <MemberBlockScore>{data.scoreinc}</MemberBlockScore>
+            <MemberBlock key={`memberBlock-${data.displayName}`}>
+              <MemberBlockName> {data.displayName}</MemberBlockName>
+              <MemberBlockScore>{data.count}</MemberBlockScore>
             </MemberBlock>
           ))}
         </ScoreSection>
       ) : (
-        <ScoreSection>
+        <ScoreSection layout>
           {userData.received.map((data) => (
-            <MemberBlock key={`memberBlock-${data.username}`}>
-              <MemberBlockName> {data.name}</MemberBlockName>
-              <MemberBlockScore>{data.scoreinc}</MemberBlockScore>
+            <MemberBlock key={`memberBlock-${data.displayName}`}>
+              <MemberBlockName> {data.displayName}</MemberBlockName>
+              <MemberBlockScore>{data.count}</MemberBlockScore>
             </MemberBlock>
           ))}
         </ScoreSection>
