@@ -7,10 +7,11 @@ import { ContainerInner, LayoutContainer } from '../../styles/layouts';
 const Weekly = () => {
   const filter = useFilterStore((state) => state.filter);
   const { scoreboard } = useGetScoreboard(filter.filterType, filter.listType);
+  const sortedScoreboard = scoreboard?.sort((a, b) => b.count - a.count);
   return (
     <LayoutContainer>
       <ContainerInner>
-        <Dashboard scoreboard={scoreboard} filter={filter.filterType} />
+        <Dashboard scoreboard={sortedScoreboard} filter={filter.filterType} />
       </ContainerInner>
     </LayoutContainer>
   );

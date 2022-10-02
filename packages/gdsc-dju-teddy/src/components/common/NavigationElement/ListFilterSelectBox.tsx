@@ -1,15 +1,13 @@
-import { motion } from 'framer-motion';
 import React from 'react';
 import { ListType } from '../../../types/filterType';
-import { StyledLabel, StyledLi, StyledUl } from '../NavRouteCategory/styled';
-import './NavfilterCategory.css';
+import { StyledLabel, StyledLi, StyledUl, UnderlineFilter } from './styled';
 
 type Props = {
   setListFilter: (setSelect: ListType) => void;
   listFilter: ListType;
 };
 const filterData: ListType[] = ['to', 'from'];
-const FilterBox = ({ listFilter, setListFilter }: Props) => {
+const ListFilterSelectBox = ({ listFilter, setListFilter }: Props) => {
   return (
     <StyledUl>
       {filterData.map((item) => (
@@ -20,13 +18,12 @@ const FilterBox = ({ listFilter, setListFilter }: Props) => {
             setListFilter(item);
           }}
         >
-          <StyledLabel className={item === listFilter ? 'selectedFilter' : ''}>
-            {item}
-          </StyledLabel>
+          <StyledLabel selected={item === listFilter}>{item}</StyledLabel>
           {item === listFilter ? (
-            <motion.div
+            <UnderlineFilter
+              color={'#f6eee9'}
               className="underlineFilter"
-              layoutId="underlineFilter"
+              layoutId="listFilterSelect"
             />
           ) : null}
         </StyledLi>
@@ -35,4 +32,4 @@ const FilterBox = ({ listFilter, setListFilter }: Props) => {
   );
 };
 
-export default FilterBox;
+export default ListFilterSelectBox;

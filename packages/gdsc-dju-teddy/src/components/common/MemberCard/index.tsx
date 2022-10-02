@@ -9,11 +9,12 @@ import {
   ProfileImage,
 } from './styled';
 
-export type Props = {
+export type MemberCardProps = {
   userData: userDataType;
+  grade: number;
 };
 
-const MemberCard: React.FC<Props> = ({ userData }) => {
+const MemberCard = ({ userData, grade }: MemberCardProps) => {
   const [imageLoading, setImageLoading] = useState(true);
 
   const imageLoaded = () => {

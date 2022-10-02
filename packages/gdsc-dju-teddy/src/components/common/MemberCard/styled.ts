@@ -24,13 +24,13 @@ export const MemberCardWrapper = styled(motion.div)`
 `;
 export const MemberCardInner = styled(motion.div)`
   display: flex;
-
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
   border-style: solid;
   border-width: 0;
+  padding: 10px 20px;
 `;
 export const ProfileImage = styled(motion.img)`
   width: 80px;
