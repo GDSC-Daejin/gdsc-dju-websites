@@ -1,5 +1,5 @@
+import { getRecruitStatus } from '@src/apis/RecruitService';
 import { atom } from 'jotai';
-import API from '../apis/index';
 
 export interface RecruitmentAtom {
   home: boolean;
@@ -14,7 +14,7 @@ export interface RecruitmentAtom {
 export const recruitmentAtom = atom<RecruitmentAtom | null>(null);
 
 export const recruitmentWriteOnlyAtom = atom(null, async (get, set) => {
-  const response = await API.getRecruitStatus();
+  const response = await getRecruitStatus();
   const recruitmentData = response.data.data;
   set(recruitmentAtom, recruitmentData);
 });

@@ -15,7 +15,7 @@ export const AdminUserMenuWrapper = styled(motion.div)`
   background-color: ${({ theme }) => theme.colors.background};
 `;
 export const MenuElement = styled(motion.button)`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   padding: 5px 15px;
   border: 0 solid;
   border-radius: 5px;

@@ -16,7 +16,7 @@ export const ApplicantCardWrapper = styled(motion.div)`
   background: ${({ theme }) => theme.colors.white};
 `;
 export const ApplicantText = styled(motion.div)`
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   color: ${({ theme }) => theme.colors.grey900};
   min-width: 50px;
   max-width: 70px;
@@ -26,7 +26,7 @@ export const ApplicantText = styled(motion.div)`
   text-overflow: ellipsis;
 `;
 export const ApplicantEmail = styled(motion.div)`
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   color: ${({ theme }) => theme.colors.grey900};
   text-overflow: ellipsis;
   width: 150px;

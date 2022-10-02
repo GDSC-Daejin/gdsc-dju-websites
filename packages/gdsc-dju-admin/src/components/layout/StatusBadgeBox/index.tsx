@@ -10,7 +10,7 @@ export const ApplicantsStatusWrapper = styled.div`
   width: fit-content;
 `;
 export const ApplicantsBadgeWrapper = styled.div`
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   color: ${({ theme }) => theme.colors.grey700};
   display: flex;
   align-items: center;

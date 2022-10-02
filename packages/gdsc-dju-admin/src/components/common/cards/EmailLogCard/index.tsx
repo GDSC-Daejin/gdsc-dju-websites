@@ -27,14 +27,14 @@ const 구분선 = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   color: ${({ theme }) => theme.colors.grey700};
 `;
 const EmailLogBox = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   color: ${({ theme }) => theme.colors.grey700};
   width: 100%;
   justify-content: space-between;
@@ -50,7 +50,7 @@ const EmailLogText = styled.div<{ email?: boolean }>`
   overflow: hidden;
   display: flex;
   text-overflow: ellipsis;
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   justify-content: center;
   ${({ email }) =>
     email &&

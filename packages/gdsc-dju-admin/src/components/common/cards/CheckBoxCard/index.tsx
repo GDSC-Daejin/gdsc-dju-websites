@@ -28,7 +28,7 @@ const CheckBoxCardWrapper = styled.div<{ disabled?: boolean }>`
     `}
 `;
 const CheckBoxText = styled.div`
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   color: ${({ theme }) => theme.colors.grey800};
   width: 70px;
   white-space: nowrap;
@@ -36,7 +36,7 @@ const CheckBoxText = styled.div`
   overflow: hidden;
 `;
 const CheckBoxName = styled.div`
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   color: ${({ theme }) => theme.colors.grey800};
   width: 60px;
   display: flex;
@@ -49,7 +49,7 @@ const CheckBoxStatusWrapper = styled.div`
   justify-content: center;
 `;
 const CheckBoxEmailText = styled.div`
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   color: ${({ theme }) => theme.colors.grey800};
   width: 200px;
   white-space: nowrap;

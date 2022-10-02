@@ -1,9 +1,7 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
 import { position } from '../../../context/recruitInfo';
-
-import { SidebarContainer } from '../../../pages/styled';
 import { ROUTES } from '../../../routes/Route';
 
 import {
@@ -11,6 +9,8 @@ import {
   SideElementSelectBar,
   SideElementText,
   SideElementWrapper,
+  SidebarContainer,
+  SidebarInner,
 } from './styled';
 
 const SideMenu = () => {
@@ -29,39 +29,42 @@ const SideMenu = () => {
   const ROUTEArray = Object.values(ROUTES);
   return (
     <SidebarContainer>
-      {ROUTEArray.map((item) => {
-        const isCurrent = location.pathname === item.ROUTE;
-        const isRecruitROUTE = location.pathname.includes('/certified/recruit');
-        const isRecruit = item.LABEL === '지원자 관리';
-        return (
-          <>
-            <SideElementWrapper
-              key={item.ROUTE}
-              onClick={() => ROUTEHandler(item.ROUTE)}
-            >
-              <SideElementSelectBar isCurrent={isCurrent} id={'bar'} />
-              <SideElementText isCurrent={isCurrent}>
-                {item.LABEL}
-              </SideElementText>
-            </SideElementWrapper>
-            {isRecruit &&
-              isRecruitROUTE &&
-              positionList.map((data, id) => {
-                const selectedPosition = searchParams.get('type') === data;
-                return (
-                  <SideElementChildrenWrapper
-                    key={id}
-                    onClick={() => setParams(data)}
-                  >
-                    <SideElementText isCurrent={selectedPosition}>
-                      {data}
-                    </SideElementText>
-                  </SideElementChildrenWrapper>
-                );
-              })}
-          </>
-        );
-      })}
+      <SidebarInner>
+        {ROUTEArray.map((item) => {
+          const isCurrent = location.pathname === item.ROUTE;
+          const isRecruitROUTE =
+            location.pathname.includes('/certified/recruit');
+          const isRecruit = item.LABEL === '지원자 관리';
+          return (
+            <div key={item.LABEL}>
+              <SideElementWrapper
+                key={item.ROUTE}
+                onClick={() => ROUTEHandler(item.ROUTE)}
+              >
+                <SideElementSelectBar isCurrent={isCurrent} id={'bar'} />
+                <SideElementText isCurrent={isCurrent}>
+                  {item.LABEL}
+                </SideElementText>
+              </SideElementWrapper>
+              {isRecruit &&
+                isRecruitROUTE &&
+                positionList.map((data, id) => {
+                  const selectedPosition = searchParams.get('type') === data;
+                  return (
+                    <SideElementChildrenWrapper
+                      key={id}
+                      onClick={() => setParams(data)}
+                    >
+                      <SideElementText isCurrent={selectedPosition}>
+                        {data}
+                      </SideElementText>
+                    </SideElementChildrenWrapper>
+                  );
+                })}
+            </div>
+          );
+        })}
+      </SidebarInner>
     </SidebarContainer>
   );
 };

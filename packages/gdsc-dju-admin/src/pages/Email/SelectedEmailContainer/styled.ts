@@ -9,7 +9,7 @@ export const SelectEmailsWrapper = styled.div`
   row-gap: 10px;
 `;
 export const EmailCategory = styled.div`
-  font-size: ${({ theme }) => theme.fontSize.h7};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   color: ${({ theme }) => theme.colors.grey900};
   display: flex;
   align-items: center;
