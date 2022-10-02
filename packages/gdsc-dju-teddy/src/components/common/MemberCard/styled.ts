@@ -30,7 +30,7 @@ export const MemberCardInner = styled(motion.div)`
   border-radius: 20px;
   border-style: solid;
   border-width: 0;
-  padding: 10px 20px;
+  padding: 20px 10px;
 `;
 export const ProfileImage = styled(motion.img)`
   width: 80px;
@@ -39,7 +39,7 @@ export const ProfileImage = styled(motion.img)`
   border-style: solid;
   border-width: 1px;
   border-color: #f2f2f2;
-
+  position: relative;
   @media (max-width: ${(props) => props.theme.windowSizes.tablet}px) {
     width: 60px;
     height: 60px;

@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import React from 'react';
 import { userDataType } from '../../../types';
+import GradeCrown from '../GradeCrown';
 import {
   CardMargin,
   MemberCardInner,
@@ -15,29 +17,34 @@ export type MemberCardProps = {
 };
 
 const MemberCard = ({ userData, grade }: MemberCardProps) => {
-  const [imageLoading, setImageLoading] = useState(true);
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 1,
+        delayChildren: 0.2,
+      },
+    },
+  };
 
-  const imageLoaded = () => {
-    setImageLoading(false);
+  const listItem = {
+    hidden: { height: '80px', opacity: 0 },
+    show: {
+      opacity: 1,
+    },
   };
   return (
     <MemberCardWrapper>
       <MemberCardInner>
-        <ProfileImage
-          src={userData.profileImage}
-          layoutId={`memberCard-avatar-${userData.displayName}`}
-          initial={{ height: '16rem', opacity: 0 }}
-          // style={{ height: imageLoading ? "6rem" : "auto" }}
-          animate={{
-            height: imageLoading ? '16rem' : 'auto',
-            opacity: imageLoading ? 0 : 1,
-          }}
-          transition={{
-            height: { delay: 0, duration: 0.4 },
-            opacity: { delay: 0.5, duration: 0.4 },
-          }}
-          onLoad={imageLoaded}
-        />
+        <motion.div style={{ position: 'relative' }}>
+          <ProfileImage
+            src={userData.profileImage}
+            layoutId={`memberCard-avatar-${userData.displayName}`}
+            variants={listItem}
+          />
+          {grade < 3 && <GradeCrown />}
+        </motion.div>
         <CardMargin />
         <MemberName layoutId={`memberCard-name-${userData.displayName}`}>
           {userData.displayName}
