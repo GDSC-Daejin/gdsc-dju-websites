@@ -2,8 +2,8 @@ import { GdsThemeProvider } from '@gdsc-dju/styled-components-theme';
 
 import React from 'react';
 
-import Layout from './Layout';
-import ElementLayoutBox from './Layout/ElementLayoutBox';
+import Layout from './core';
+import ElementLayoutBox from './core/ElementLayoutBox';
 import GlobalStyles from './styles/globalStyles';
 
 function App() {

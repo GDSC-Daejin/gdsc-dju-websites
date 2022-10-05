@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import Banner from '@common/Banner';
+import Banner from '@src/components/atoms/Banner';
 import { FaqData } from '@src/contents/faq';
 import * as FaqStyle from './styled';
-import { Title } from '@common/Title/title';
+import { Title } from '@src/components/atoms/Title/title';
 import { ContainerInner, TopMargin } from '@styles/layouts';
 import { LayoutContainer } from '@styles/layouts';
 

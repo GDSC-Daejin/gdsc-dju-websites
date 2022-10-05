@@ -26,7 +26,7 @@ const Footer = () => {
     backend: '/category/be',
     android: '/category/and',
     design: '/category/de',
-    common: '/category/common',
+    common: '/category/atoms',
   };
   const otherSite = {
     googleDevelopers: 'https://developers.google.com/community/gdsc',

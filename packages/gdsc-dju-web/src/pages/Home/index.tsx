@@ -1,31 +1,37 @@
-import React, { Suspense, lazy } from 'react';
-import { Footer } from '@gdsc-dju/styled-components';
+import React, { lazy } from 'react';
+import SolarSystem from '@molecules/SolarSystem';
 
-import SolarSystem from '@layout/SolarSystem';
+import { HomeContainer, HomeSolarSystemWrapper } from './styled';
 
 const HomePageSection = lazy(() =>
-  import('@layout/Home/HomePageSection').then((module) => ({
-    default: module.default,
-  })),
+  import('@src/components/templates/HomeLayout/HomePageSection').then(
+    (module) => ({
+      default: module.default,
+    }),
+  ),
 );
 
 const IntroduceSection = lazy(() =>
-  import('@layout/Home/IntroduceSection').then((module) => ({
-    default: module.default,
-  })),
+  import('@src/components/templates/HomeLayout/IntroduceSection').then(
+    (module) => ({
+      default: module.default,
+    }),
+  ),
 );
 const CultureSection = lazy(() =>
-  import('@layout/Home/CultureSection').then((module) => ({
-    default: module.default,
-  })),
+  import('@src/components/templates/HomeLayout/CultureSection').then(
+    (module) => ({
+      default: module.default,
+    }),
+  ),
 );
 const ManagementSection = lazy(() =>
-  import('@layout/Home/ManagementSection').then((module) => ({
-    default: module.default,
-  })),
+  import('@src/components/templates/HomeLayout/ManagementSection').then(
+    (module) => ({
+      default: module.default,
+    }),
+  ),
 );
-
-import { HomeContainer, HomeSolarSystemWrapper } from './styled';
 
 const Home = () => {
   return (

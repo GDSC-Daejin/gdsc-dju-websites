@@ -1,10 +1,10 @@
 import React from 'react';
+import { useSearchParams } from 'react-router-dom';
 
-import ApplySuccessCard from '@common/ApplySuccessCard';
-import { MainText } from '@common/Title/title';
+import ApplySuccessCard from '@molecules/ApplySuccessCard';
+import { MainText } from '@src/components/atoms/Title/title';
 import { ContainerInner, LayoutContainer } from '@styles/layouts';
 
-import { useSearchParams } from 'react-router-dom';
 import {
   RecruitFormCardWrapper,
   RecruitFormInner,

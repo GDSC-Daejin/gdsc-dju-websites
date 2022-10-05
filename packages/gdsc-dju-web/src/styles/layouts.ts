@@ -26,9 +26,9 @@ export const ContainerInner = styled.div`
 export const CardList = styled(motion.section)`
   display: grid;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
   grid-template-columns: repeat(4, 1fr);
-  @media (max-width: 1200px) {
+  @media (max-width: 1400px) {
     grid-template-columns: repeat(3, 1fr);
   }
   @media (max-width: 850px) {

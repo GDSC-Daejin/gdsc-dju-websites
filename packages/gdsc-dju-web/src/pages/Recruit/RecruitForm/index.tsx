@@ -1,16 +1,24 @@
 import React, { memo, useLayoutEffect, useState } from 'react';
-import { useAtom } from 'jotai';
 import { useForm } from 'react-hook-form';
+import { FieldValues } from 'react-hook-form/dist/types/fields';
 import { createSearchParams, useNavigate, useParams } from 'react-router-dom';
 
 import { FileInput, TextArea, TextInput } from '@gdsc-dju/styled-components';
-import ApplyModal from '@common/Modal/ApplyModal';
-import { formValidation } from '@src/components/Validation/recuitForm';
-import { recruitInfo } from '@src/contents/recruitInfo';
+
+import { addDoc, collection } from 'firebase/firestore';
+import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
+import { useAtom } from 'jotai';
+
+import { SubTitle, Title } from '@atoms/Title/title';
+import { formValidation } from '@common/validations/recuitForm';
+import { recruitInfo } from '@contents/recruitInfo';
+import ApplyModal from '@organisms/Modal/ApplyModal';
 import { db } from '@src/firebase/firebase';
-import { alertAtom } from '@src/store/alertAtom';
-import { loaderAtom } from '@src/store/loaderAtom';
-import { MODAL_KEY, modalAtom } from '@src/store/modalAtom';
+import { storage } from '@src/firebase/firebase.config';
+import { alertAtom } from '@store/alertAtom';
+import { loaderAtom } from '@store/loaderAtom';
+import { MODAL_KEY, modalAtom } from '@store/modalAtom';
+import { ContainerInner, LayoutContainer } from '@styles/layouts';
 import {
   IApplicantParams,
   IInputRegister,
@@ -18,10 +26,6 @@ import {
 } from '@type/applicant';
 import { FormValue } from '@type/recruitForm';
 import { isObjEmpty } from '@utils/objectCheck';
-import { addDoc, collection } from 'firebase/firestore';
-import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
-
-import { FieldValues } from 'react-hook-form/dist/types/fields';
 
 import { positionSelect } from './FormFunctions';
 import {
@@ -35,23 +39,19 @@ import {
   RecruitFormInner,
   RecruitFormWrapper,
 } from './styled';
-import { storage } from '@src/firebase/firebase.config';
-import { ContainerInner, LayoutContainer } from '@styles/layouts';
-import { SubTitle, Title } from '@common/Title/title';
 
 const RecruitForm = () => {
   const { id } = useParams();
   const [position, setPosition] = useState('');
-  const [loading, setLoading] = useAtom(loaderAtom);
+  const [, setLoading] = useAtom(loaderAtom);
   const [modal, setModal] = useAtom(modalAtom);
   const [alert, setAlert] = useAtom(alertAtom);
   const [file, setFile] = useState<null | File>(null);
-  const navigate = useNavigate();
   const [data, setData] = useState<null | IInputRegister>(null);
-
   const { register, handleSubmit, watch, formState } = useForm<FormValue>({
     mode: 'onChange',
   });
+  const navigate = useNavigate();
   const { errors } = formState;
 
   const checkFile = (file: File | null, size: number, type: string) => {

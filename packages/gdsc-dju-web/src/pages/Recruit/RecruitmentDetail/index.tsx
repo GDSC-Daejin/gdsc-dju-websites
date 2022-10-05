@@ -1,18 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import Banner from '@atoms/Banner';
+import { SubtitleContent } from '@atoms/BulletList';
+import { Title } from '@atoms/Title/title';
+import { recruitDefaultText, RecruitDetails } from '@contents/recruitDetails';
+import InformationBar from '@molecules/InformationBar';
+import RecruitFaqButton from '@molecules/RecruitFaqButton';
+import { ContainerInner, LayoutContainer, TopMargin } from '@styles/layouts';
 
-import Banner from '@common/Banner';
-import { SubtitleContent } from '@common/BulletList';
-import { Title } from '@common/Title/title';
-import {
-  RecruitDetails,
-  recruitDefaultText,
-} from '@src/contents/recruitDetails';
-import { ContainerInner, TopMargin } from '@styles/layouts';
-import { LayoutContainer } from '@styles/layouts';
-
-import InformationBar from './InformationBar';
-import RecruitFaqButton from './RecruitFaqButton';
 import {
   IntroduceWrapper,
   JoinInner,

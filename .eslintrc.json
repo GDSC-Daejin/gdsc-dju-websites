@@ -5,15 +5,26 @@
     "node": true
   },
   "parser": "@typescript-eslint/parser",
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": ["react", "@typescript-eslint", "prettier", "import"],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:prettier/recommended"
+    "plugin:import/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/typescript",
+    "plugin:import/errors",
+    "plugin:import/warnings"
   ],
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ["src", "node_modules"],
+        "paths": ["src", "node_modules"]
+      }
     }
   },
   "parserOptions": {
@@ -25,13 +36,41 @@
   },
 
   "rules": {
-    "sort-imports": ["error", {
-      "ignoreCase": false,
-      "ignoreDeclarationSort": true,
-      "ignoreMemberSort": false,
-      "memberSyntaxSortOrder": ["all", "single", "multiple", "none"],
-      "allowSeparatedGroups": false
+    "import/order": ["error", {
+      "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+      "pathGroups": [
+        {
+          "pattern": "{react*,react*/**}",
+          "group": "builtin",
+          "position": "before"
+        },
+        {
+          "pattern": "@gdsc-dju/**",
+          "group": "builtin",
+          "position": "after"
+        },
+        {
+          "pattern": "@*/**",
+          "group": "internal"
+        },
+        {
+          "pattern": "./**/*.style",
+          "group": "unknown"
+        },
+        {
+          "pattern": "../**/*.style",
+          "group": "unknown"
+        },
+        {
+          "pattern": "*.style",
+          "group": "unknown"
+        }
+      ],
+      "pathGroupsExcludedImportTypes": ["react", "internal","unknown"],
+      "newlines-between": "always",
+      "alphabetize": { "order": "asc", "caseInsensitive": true }
     }],
+    "import/no-unresolved": "off",
     "react/react-in-jsx-scope": 0,
     "react/prefer-stateless-function": 0,
     "react/jsx-filename-extension": 0,

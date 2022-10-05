@@ -6,6 +6,6 @@ export const ROUTES = {
 };
 export const routes: { route: string; title: string }[] = [
   { route: ROUTES.INTRODUCE, title: 'introduce' },
-  { route: ROUTES.RECRUIT, title: 'recruit' },
+  { route: ROUTES.RECRUIT, title: 'recruitment' },
   { route: ROUTES.fAQ, title: 'faq' },
 ];

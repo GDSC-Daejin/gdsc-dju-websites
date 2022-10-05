@@ -1,30 +1,18 @@
-import Banner from '@common/Banner';
-import { MainText, Title } from '@common/Title/title';
-import MemberSection from '@layout/Introduce/MemberSection';
-import { memberList } from '@src/contents/MemberList';
-import { ContainerInner, LayoutContainer, TopMargin } from '@styles/layouts';
 import React from 'react';
+
+import Banner from '@atoms/Banner';
+import { LayoutContainer } from '@styles/layouts';
+import IntroduceLayout from '@templates/IntroduceLayout';
 
 const Introduce = () => {
   return (
     <>
       <Banner color={'yellow'} />
       <LayoutContainer>
-        <ContainerInner>
-          <TopMargin />
-          <Title>About us</Title>
-          <TopMargin />
-          <div>
-            <MainText>
-              GDSC와 함께 성장하는 멋진 {memberList.length}명을 소개해요
-            </MainText>
-          </div>
-          <TopMargin />
-          <MemberSection />
-          <TopMargin />
-        </ContainerInner>
+        <IntroduceLayout />
       </LayoutContainer>
     </>
   );
 };
+
 export default Introduce;
