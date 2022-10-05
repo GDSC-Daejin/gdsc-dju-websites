@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 export const AdminUserMenuWrapper = styled(motion.div)`
   position: fixed;
-  right: 3%;
   top: 60px;
   justify-content: center;
   display: flex;
@@ -23,6 +22,6 @@ export const MenuElement = styled(motion.button)`
   color: ${({ theme }) => theme.colors.grey900};
   cursor: pointer;
   &:hover {
-    background-color: ${({ theme }) => theme.colors.grey500};
+    background-color: ${({ theme }) => theme.colors.grey200};
   }
 `;
