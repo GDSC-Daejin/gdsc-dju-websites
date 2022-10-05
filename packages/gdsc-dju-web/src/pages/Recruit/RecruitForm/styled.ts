@@ -35,7 +35,7 @@ export const RecruitFormCardWrapper = styled.div`
 export const FormLabel = styled.label<{ essential?: boolean }>`
   padding: 5px 0;
   display: inline-block;
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   font-weight: 400;
   line-height: 1.5;
   color: ${({ theme }) => theme.colors.grey700};
@@ -61,7 +61,7 @@ export const FormContentWrapper = styled.div`
 `;
 export const FormText = styled.p`
   margin-bottom: 4px;
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   line-height: 24px;
   color: ${({ theme }) => theme.colors.grey600};
 `;
@@ -105,7 +105,7 @@ export const FormSubmitButton = styled.button<{ disable?: boolean }>`
   text-align: center;
   justify-content: center;
   width: 25%;
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
   border-radius: 10px;
   cursor: pointer;
   background: ${({ theme }) => theme.colors.blue900};
@@ -116,4 +116,11 @@ export const FormSubmitButton = styled.button<{ disable?: boolean }>`
       background: ${({ theme }) => theme.colors.blue200};
       cursor: not-allowed;
     `}
+`;
+export const ErrorBox = styled.div`
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: ${({ theme }) => theme.colors.red900};
+  font-size: ${({ theme }) => theme.fontSizes.textM};
 `;

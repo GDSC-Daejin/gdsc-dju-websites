@@ -8,22 +8,22 @@ import {
 } from './styled';
 
 import { motion } from 'framer-motion';
-import { listAnimate, listItemAnimate } from '../../animations/Variants';
+import { listAnimate, listItemAnimate } from '@animations/variants';
 
 const ContentWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  width: 50rem;
+  width: 30rem;
   margin-top: 5.1rem;
   word-break: keep-all;
-  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.windowSizes.mobile}px) {
     width: 250px;
     margin-top: 2rem;
   }
 `;
 const ContentTitle = styled.span`
   margin-bottom: 0.9rem;
-  font-size: ${({ theme }) => theme.fontSize.h5};
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
   font-style: normal;
   font-weight: normal;
   font-stretch: normal;
@@ -32,26 +32,26 @@ const ContentTitle = styled.span`
   letter-spacing: normal;
   word-break: keep-all;
   -webkit-font-smoothing: subpixel-antialiased;
-  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+  @media (max-width: ${({ theme }) => theme.windowSizes.tablet}px) {
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
-  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+  @media (max-width: ${({ theme }) => theme.windowSizes.mobile}px) {
+    font-size: ${({ theme }) => theme.fontSizes.textL};
   }
 `;
 const ContentText = styled.span`
-  font-size: ${({ theme }) => theme.fontSize.h2};
+  font-size: ${({ theme }) => theme.fontSizes.titleXl};
   font-style: normal;
   font-weight: bold;
   font-stretch: normal;
   color: ${({ theme }) => theme.colors.grey900};
   letter-spacing: normal;
   word-break: keep-all;
-  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
-    font-size: ${({ theme }) => theme.fontSize.h3};
+  @media (max-width: ${({ theme }) => theme.windowSizes.tablet}px) {
+    font-size: ${({ theme }) => theme.fontSizes.titleL};
   }
-  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
-    font-size: ${({ theme }) => theme.fontSize.h4};
+  @media (max-width: ${({ theme }) => theme.windowSizes.mobile}px) {
+    font-size: ${({ theme }) => theme.fontSizes.titleM};
     line-height: 1.5;
   }
 `;

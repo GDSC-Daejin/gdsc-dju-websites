@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const ApplyTitle = styled.h1`
-  font-size: ${({ theme }) => theme.fontSize.h2};
+  font-size: ${({ theme }) => theme.fontSizes.titleXl};
   color: ${({ theme }) => theme.colors.grey800};
   font-weight: 500;
-  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
-    font-size: ${({ theme }) => theme.fontSize.h3};
+  @media (max-width: ${({ theme }) => theme.windowSizes.mobile}px) {
+    font-size: ${({ theme }) => theme.fontSizes.titleL};
   }
   margin-bottom: 10px;
 `;
@@ -13,13 +13,13 @@ export const ApplyMargin = styled.div`
   height: 60px;
 `;
 export const ApplyLink = styled.a`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   color: ${({ theme }) => theme.colors.blue600};
   font-weight: 400;
   text-decoration: underline;
   transition: color 0.3s ease-in-out;
-  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+  @media (max-width: ${({ theme }) => theme.windowSizes.mobile}px) {
+    font-size: ${({ theme }) => theme.fontSizes.textM};
   }
   &:hover {
     color: ${({ theme }) => theme.colors.blue900};
@@ -27,7 +27,7 @@ export const ApplyLink = styled.a`
   }
 `;
 export const ApplyLinkWrapper = styled.div`
-  font-size: ${({ theme }) => theme.fontSize.body1};
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   color: ${({ theme }) => theme.colors.grey900};
   align-items: center;
   font-weight: 500;
@@ -36,7 +36,7 @@ export const ApplyLinkWrapper = styled.div`
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 6px;
-  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+  @media (max-width: ${({ theme }) => theme.windowSizes.mobile}px) {
+    font-size: ${({ theme }) => theme.fontSizes.textM};
   }
 `;

@@ -1,6 +1,6 @@
-import { ColorScheme } from '@gdsc-dju/styled-components';
-import styled, { css } from 'styled-components';
+import { ColorToken } from '@gdsc-dju/styled-components-theme';
 import { motion } from 'framer-motion';
+import styled, { css } from 'styled-components';
 
 export const AlertInnerWrapper = styled.div`
   display: flex;
@@ -12,16 +12,16 @@ export const AlertInnerWrapper = styled.div`
   opacity: 80%;
   z-index: 3;
 `;
-export const AlertText = styled.div<{ alertColor: keyof ColorScheme }>`
-  font-size: ${({ theme }) => theme.fontSize.h7};
+export const AlertText = styled.div<{ alertColor: ColorToken }>`
+  font-size: ${({ theme }) => theme.fontSizes.textL};
   display: flex;
   align-items: center;
   color: ${({ theme }) => theme.colors.grey900};
   @media (max-width: 500px) {
-    font-size: ${({ theme }) => theme.fontSize.body1};
+    font-size: ${({ theme }) => theme.fontSizes.textXxl};
   }
   @media (max-width: 320px) {
-    font-size: ${({ theme }) => theme.fontSize.body2};
+    font-size: ${({ theme }) => theme.fontSizes.textXl};
   }
   ${({ alertColor }) =>
     alertColor &&

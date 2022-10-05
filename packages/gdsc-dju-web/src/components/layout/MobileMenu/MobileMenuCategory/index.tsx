@@ -1,24 +1,26 @@
 import { navigationAnimate } from '@animations/NavigationAnimation';
+import { MenuContext } from '@gdsc-dju/styled-components-theme';
+import { ROUTES } from '@src/contents/routes';
 import { menuAtom } from '@src/store/menuAtom';
 import { useAtom } from 'jotai';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ROUTES } from '..';
+
 import GDSCLogo from '../../../../assets/logos/GDSCLogo.svg';
-import { StyledLink } from '../styled';
 
 import './MobileMenu.css';
 import {
   CategoryLine,
   MenuInner,
+  MenuLink,
   MenuLogo,
   MenuRouteWrapper,
   MenuWrapper,
 } from './styled';
 
 const MobileMenuCategory = () => {
-  const navigate = useNavigate();
-  const [menu, setMenu] = useAtom(menuAtom);
+  const { toggleMenu } = useContext(MenuContext);
+  const routeArray = Object.values(ROUTES);
   return (
     <MenuWrapper>
       <picture>
@@ -29,16 +31,17 @@ const MobileMenuCategory = () => {
         initial={false}
         // animate={menu.appMenu ? 'open' : 'closed'}
       >
-        {ROUTES.map((data, id) => (
+        {routeArray.map((data, id) => (
           <MenuRouteWrapper
             // variants={navigationItemAnimate}
             key={id}
             onClick={() => {
-              navigate(data.route);
-              setMenu(false);
+              toggleMenu();
             }}
           >
-            <StyledLink>{data.title}</StyledLink>
+            <MenuLink to={data}>
+              <div>{data.replace('/', '')}</div>
+            </MenuLink>
             <CategoryLine />
           </MenuRouteWrapper>
         ))}

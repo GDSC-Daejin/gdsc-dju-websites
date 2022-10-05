@@ -1,10 +1,11 @@
-import { LayoutGroup } from 'framer-motion';
 import React, { memo } from 'react';
-import { memberList } from '../../../contents/MemberList';
-import { MemberCardWrapper } from '../../../pages/Introduce/styled';
-import { CardList } from '../../../styles/layouts';
-import { listAnimate, memberCardAnimate } from '../../animations/Variants';
+import { LayoutGroup } from 'framer-motion';
+import { listAnimate, memberCardAnimate } from '@animations/variants';
+import { memberList } from '@src/contents/MemberList';
+import { CardList } from '@styles/layouts';
+
 import MemberCard from '../../common/MemberCard';
+import { MemberCardWrapper } from '@pages/Introduce/styled';
 
 const MemberSection = () => {
   return (

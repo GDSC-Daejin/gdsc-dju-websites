@@ -1,4 +1,4 @@
-import { bannerItemAnimate } from '@animations/Variants';
+import { bannerItemAnimate } from '@animations/variants';
 import { recruitmentAtom } from '@src/store/recruitmentStatusAtom';
 import { useAtom } from 'jotai';
 import React from 'react';

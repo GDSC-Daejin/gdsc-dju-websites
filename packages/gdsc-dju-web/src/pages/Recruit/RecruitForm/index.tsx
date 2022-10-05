@@ -3,7 +3,7 @@ import { useAtom } from 'jotai';
 import { useForm } from 'react-hook-form';
 import { createSearchParams, useNavigate, useParams } from 'react-router-dom';
 
-import FileInput from '@common/input/FileInput';
+import { FileInput, TextArea, TextInput } from '@gdsc-dju/styled-components';
 import ApplyModal from '@common/Modal/ApplyModal';
 import { formValidation } from '@src/components/Validation/recuitForm';
 import { recruitInfo } from '@src/contents/recruitInfo';
@@ -25,6 +25,7 @@ import { FieldValues } from 'react-hook-form/dist/types/fields';
 
 import { positionSelect } from './FormFunctions';
 import {
+  ErrorBox,
   FormContentWrapper,
   FormLabel,
   FormMargin,
@@ -37,8 +38,6 @@ import {
 import { storage } from '@src/firebase/firebase.config';
 import { ContainerInner, LayoutContainer } from '@styles/layouts';
 import { SubTitle, Title } from '@common/Title/title';
-import { ErrorBox, StyledInput } from '@common/input/TextInput/styled';
-import { StyledTextArea } from '@common/input/TextArea/styled';
 
 const RecruitForm = () => {
   const { id } = useParams();
@@ -186,13 +185,13 @@ const RecruitForm = () => {
                         <FormText>{elementName.text}</FormText>
                       )}
                       {elementName.type === 'INPUT' ? (
-                        <StyledInput
+                        <TextInput
                           error={!!errors[element]}
                           placeholder={elementName.placeholder}
                           {...register(element, elementName)}
                         />
                       ) : elementName.type === 'TEXT_AREA' ? (
-                        <StyledTextArea
+                        <TextArea
                           placeholder={elementName.placeholder}
                           error={!!errors[element]}
                           {...register(element, elementName)}

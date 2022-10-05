@@ -2234,13 +2234,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gdsc-dju/styled-components@npm:^0.0.11":
-  version: 0.0.11
-  resolution: "@gdsc-dju/styled-components@npm:0.0.11"
+"@gdsc-dju/styled-components-theme@npm:^0.0.48":
+  version: 0.0.48
+  resolution: "@gdsc-dju/styled-components-theme@npm:0.0.48"
   peerDependencies:
     react: ^18.2.0
+    react-is: ^18.2.0
+    react-router-dom: "*"
     styled-components: ^5.3.5
-  checksum: 1afabfdc03acb1a236547e4baaad13a5b176d92a0ba1d2b48d515c6d478e8ad3e5727b60722b9ecbaedbb8289d28f3c718eafff0eeb4575ec65d77c3390c0544
+  checksum: 259bc0216e65bf57808028baba643e8093ce7a887a0bfed6c9643f6099f9644103b46473825912d5387ea522dab6ad26cf69c163ec211cab3b10b2cca6adc7b1
   languageName: node
   linkType: hard
 
@@ -2276,6 +2278,19 @@ __metadata:
     react-router-dom: "*"
     styled-components: ^5.3.5
   checksum: e22ef08991cbe3487532f6a93b35a4471515defd6caf51f599b8377ee3108c2bff39cded348dbea31d63f4e9f5558f52f8d4c941dceb8407976298962a5bf2f7
+  languageName: node
+  linkType: hard
+
+"@gdsc-dju/styled-components@npm:^0.0.50":
+  version: 0.0.50
+  resolution: "@gdsc-dju/styled-components@npm:0.0.50"
+  peerDependencies:
+    "@gdsc-dju/styled-components-theme": "*"
+    react: ^18.2.0
+    react-is: ^18.2.0
+    react-router-dom: "*"
+    styled-components: ^5.3.5
+  checksum: 61d0f10efee8400b351e909326a8d143bece6bd354f5b8f44672c22d3eb223d327b06533e1fce54698f7aacafb9dd7808381d04ffe4d7a1828d023c5678c1943
   languageName: node
   linkType: hard
 
@@ -11945,6 +11960,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "gdsc-dju-frontend@workspace:."
   dependencies:
+    "@gdsc-dju/styled-components": ^0.0.50
+    "@gdsc-dju/styled-components-theme": ^0.0.48
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6
     "@types/react-router-dom": ^5.3.3
@@ -11967,6 +11984,7 @@ __metadata:
     react-router-dom: ^6.3.0
     typescript: ^4.7.4
     vite: ^3.0.1
+    vite-plugin-mkcert: ^1.10.1
   languageName: unknown
   linkType: soft
 
@@ -12047,7 +12065,8 @@ __metadata:
   dependencies:
     "@firebase/app": ^0.7.28
     "@firebase/app-compat": ^0.1.29
-    "@gdsc-dju/styled-components": ^0.0.11
+    "@gdsc-dju/styled-components": ^0.0.50
+    "@gdsc-dju/styled-components-theme": ^0.0.48
     "@types/node": ^18.0.4
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6
@@ -12081,6 +12100,7 @@ __metadata:
     swr: ^1.0.1
     typescript: ^4.6.3
     vite: ^3.0.1
+    vite-plugin-mkcert: ^1.10.1
   languageName: unknown
   linkType: soft
 

@@ -24,7 +24,17 @@ export const ContainerInner = styled.div`
   padding: 0 20px;
 `;
 export const CardList = styled(motion.section)`
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
-  row-gap: 30px;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 850px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;

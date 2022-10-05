@@ -10,7 +10,8 @@
     "sitemap": "node sitemap-builder.js"
   },
   "dependencies": {
-    "@gdsc-dju/styled-components": "^0.0.11",
+    "@gdsc-dju/styled-components": "^0.0.50",
+    "@gdsc-dju/styled-components-theme": "^0.0.48",
     "axios": "^0.26.1",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
@@ -47,6 +48,7 @@
     "autoprefixer": "^10.4.4",
     "prettier": "^2.6.2",
     "typescript": "^4.6.3",
-    "vite": "^3.0.1"
+    "vite": "^3.0.1",
+    "vite-plugin-mkcert": "^1.10.1"
   }
 }

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const MenuWrapper = styled.div`
@@ -6,6 +7,10 @@ export const MenuWrapper = styled.div`
   flex-direction: column;
   margin-top: 100px;
   align-items: center;
+`;
+export const MenuLink = styled(Link)`
+  display: flex;
+  text-transform: capitalize;
 `;
 export const MenuInner = styled(motion.div)`
   margin-top: 50px;

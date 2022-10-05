@@ -14,7 +14,6 @@ const Introduce = () => {
           <TopMargin />
           <Title>About us</Title>
           <TopMargin />
-
           <div>
             <MainText>
               GDSC와 함께 성장하는 멋진 {memberList.length}명을 소개해요
