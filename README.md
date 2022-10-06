@@ -8,6 +8,8 @@
 
 GDSC Daejin Univ. 에서 관리되는 서비스의 모노레포입니다.
 
+[Notion](https://excessive-cheddar-885.notion.site/GDSC-DJU-WebService-90f5f4d029414777a982623fb240db04)
+
 [GDSC DJU WEB](https://web.gdsc-dju.com) 소개사이트
 
 [GDSC DJU SHARED](https://shared.gdsc-dju.com) 이벤트 사이트
