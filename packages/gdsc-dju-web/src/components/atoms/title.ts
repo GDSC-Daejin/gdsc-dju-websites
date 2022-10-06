@@ -11,7 +11,7 @@ export const Title = styled(motion.h1)`
     font-size: ${({ theme }) => theme.fontSizes.titleXl};
   }
   @media (max-width: 500px) {
-    font-size: ${({ theme }) => theme.fontSizes.textL};
+    font-size: ${({ theme }) => theme.fontSizes.titleL};
   }
 `;
 export const SubTitle = styled(motion.h2)`
@@ -20,7 +20,7 @@ export const SubTitle = styled(motion.h2)`
   color: ${({ theme }) => theme.colors.grey600};
   margin-bottom: 10px;
   @media (max-width: 500px) {
-    font-size: 1.6rem;
+    font-size: ${({ theme }) => theme.fontSizes.textXxl};
   }
 `;
 export const SubCategory = styled(motion.h3)`
@@ -33,8 +33,8 @@ export const SubCategory = styled(motion.h3)`
   }
 `;
 export const MainText = styled(motion.p)`
-  font-size: ${({ theme }) => theme.fontSizes.textXl};
-  color: ${({ theme }) => theme.colors.grey800};
-  padding-bottom: 20px;
+  font-size: ${({ theme }) => theme.fontSizes.textL};
+  color: ${({ theme }) => theme.colors.grey700};
+  padding-bottom: 10px;
   line-height: 1.5;
 `;

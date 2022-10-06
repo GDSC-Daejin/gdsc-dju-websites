@@ -1,4 +1,4 @@
-import { RecruitmentDetailType } from '../types/pageData';
+import { AnnouncementData } from '@type/pageData';
 export const recruitDefaultText = {
   developer:
     '코딩에 대한 남다른 애정을 가지신 분\n' +
@@ -32,12 +32,13 @@ export const recruitDefaultText = {
     '서류접수 > 인터뷰 > 최종합격 (결과 발표에는 최대 2주가 소요될 수 있습니다.)',
 };
 
-export const RecruitDetails: RecruitmentDetailType[] = [
+export const announcementData: AnnouncementData[] = [
   {
     id: 'android',
     name: 'Android Developer',
     skill: 'Android',
     stack: 'JAVA, Kotlin',
+    status: 'ALWAYS_OPEN',
     people:
       '코딩에 대한 남다른 애정을 가지신 분\n' +
       '1년이상 활동이 가능하신 분\n' +
@@ -68,6 +69,7 @@ export const RecruitDetails: RecruitmentDetailType[] = [
     name: 'Frontend Developer',
     skill: 'React',
     stack: 'JavaScript, JSX, TypeScript',
+    status: 'ALWAYS_OPEN',
     people:
       '코딩에 대한 남다른 애정을 가지신 분\n' +
       '1년이상 활동이 가능하신 분\n' +
@@ -100,6 +102,7 @@ export const RecruitDetails: RecruitmentDetailType[] = [
     name: 'Backend Developer',
     skill: 'Spring, Spring Boot',
     stack: 'JAVA',
+    status: 'ALWAYS_OPEN',
     people:
       '코딩에 대한 남다른 애정을 가지신 분\n' +
       '1년이상 활동이 가능하신 분\n' +
@@ -133,6 +136,7 @@ export const RecruitDetails: RecruitmentDetailType[] = [
     name: 'Machine Learning Engineer',
     skill: 'Tensorflow, Pytorch',
     stack: 'Python, JavaScript',
+    status: 'ALWAYS_OPEN',
     people:
       '코딩에 대한 남다른 애정을 가지신 분\n' +
       '1년이상 활동이 가능하신 분\n' +
@@ -164,6 +168,7 @@ export const RecruitDetails: RecruitmentDetailType[] = [
     name: 'UX/UI Designer',
     skill: 'UX/UI',
     stack: 'Figma, Adobe XD, Framer',
+    status: 'ALWAYS_OPEN',
     people:
       'UX/UI 디자인에 대한 남다른 애정을 가지신 분\n' +
       '1년이상 활동이 가능하신 분\n' +
@@ -193,6 +198,7 @@ export const RecruitDetails: RecruitmentDetailType[] = [
     name: 'Beginner',
     skill: 'none',
     stack: 'none',
+    status: 'CLOSED',
     people:
       '코딩에 대한 남다른 애정을 가지신 분\n' +
       '1년이상 활동이 가능하신 분\n' +

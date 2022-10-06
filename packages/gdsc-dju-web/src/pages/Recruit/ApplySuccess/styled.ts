@@ -28,7 +28,7 @@ export const ApplyLink = styled.a`
 `;
 export const ApplyLinkWrapper = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.textL};
-  color: ${({ theme }) => theme.colors.grey900};
+  color: ${({ theme }) => theme.colors.grey800};
   align-items: center;
   font-weight: 500;
   display: flex;

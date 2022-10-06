@@ -4840,6 +4840,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
+        ["npm:0.0.53", {\
+          "packageLocation": "./.yarn/cache/@gdsc-dju-styled-components-npm-0.0.53-b4c036a560-c65e9791a0.zip/node_modules/@gdsc-dju/styled-components/",\
+          "packageDependencies": [\
+            ["@gdsc-dju/styled-components", "npm:0.0.53"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:0.0.40", {\
           "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-virtual-8be10beefe/0/cache/@gdsc-dju-styled-components-npm-0.0.40-bf4f6ee028-e22ef08991.zip/node_modules/@gdsc-dju/styled-components/",\
           "packageDependencies": [\
@@ -4894,10 +4901,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:0.0.50", {\
-          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-virtual-36ad1d9e6b/0/cache/@gdsc-dju-styled-components-npm-0.0.50-dd0f03768f-61d0f10efe.zip/node_modules/@gdsc-dju/styled-components/",\
+        ["virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:0.0.53", {\
+          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-virtual-e32940eb0e/0/cache/@gdsc-dju-styled-components-npm-0.0.53-b4c036a560-c65e9791a0.zip/node_modules/@gdsc-dju/styled-components/",\
           "packageDependencies": [\
-            ["@gdsc-dju/styled-components", "virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:0.0.50"],\
+            ["@gdsc-dju/styled-components", "virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:0.0.53"],\
             ["@gdsc-dju/styled-components-theme", "virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:0.0.48"],\
             ["@types/gdsc-dju__styled-components-theme", null],\
             ["@types/react", "npm:18.0.17"],\
@@ -17035,9 +17042,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/gdsc-dju-web/",\
           "packageDependencies": [\
             ["gdsc-dju-web", "workspace:packages/gdsc-dju-web"],\
-            ["@firebase/app", "npm:0.7.30"],\
-            ["@firebase/app-compat", "npm:0.1.31"],\
-            ["@gdsc-dju/styled-components", "virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:0.0.50"],\
+            ["@firebase/app", "npm:0.7.33"],\
+            ["@firebase/app-compat", "npm:0.1.34"],\
+            ["@gdsc-dju/styled-components", "virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:0.0.53"],\
             ["@gdsc-dju/styled-components-theme", "virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:0.0.48"],\
             ["@types/node", "npm:18.7.6"],\
             ["@types/react", "npm:18.0.17"],\
@@ -17053,8 +17060,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-preset-react", "npm:6.24.1"],\
             ["babel-register", "npm:6.26.0"],\
             ["browser-detect", "npm:0.2.28"],\
-            ["firebase", "npm:9.10.0"],\
-            ["firebase-tools", "npm:11.7.0"],\
+            ["firebase", "npm:9.9.2"],\
+            ["firebase-tools", "npm:11.14.0"],\
             ["framer-motion", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:6.5.1"],\
             ["jotai", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:1.7.8"],\
             ["lottie-web", "npm:5.9.6"],\

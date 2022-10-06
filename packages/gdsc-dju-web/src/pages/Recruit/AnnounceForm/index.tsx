@@ -1,15 +1,12 @@
 import React, { memo, useLayoutEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FieldValues } from 'react-hook-form/dist/types/fields';
-import { createSearchParams, useNavigate, useParams } from 'react-router-dom';
-
-import { FileInput, TextArea, TextInput } from '@gdsc-dju/styled-components';
+import { useParams, createSearchParams, useNavigate } from 'react-router-dom';
 
 import { addDoc, collection } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { useAtom } from 'jotai';
 
-import { SubTitle, Title } from '@atoms/title';
 import { formValidation } from '@common/validations/recuitForm';
 import { recruitInfo } from '@contents/recruitInfo';
 import ApplyModal from '@organisms/Modal/ApplyModal';
@@ -19,6 +16,7 @@ import { alertAtom } from '@store/alertAtom';
 import { loaderAtom } from '@store/loaderAtom';
 import { MODAL_KEY, modalAtom } from '@store/modalAtom';
 import { ContainerInner, LayoutContainer } from '@styles/layouts';
+import AnnounceFormLayout from '@templates/AnnounceFormLayout';
 import {
   IApplicantParams,
   IInputRegister,
@@ -28,19 +26,8 @@ import { FormValue } from '@type/recruitForm';
 import { isObjEmpty } from '@utils/objectCheck';
 
 import { positionSelect } from './FormFunctions';
-import {
-  ErrorBox,
-  FormContentWrapper,
-  FormLabel,
-  FormMargin,
-  FormMarginXS,
-  FormSubmitButton,
-  FormText,
-  RecruitFormInner,
-  RecruitFormWrapper,
-} from './styled';
 
-const RecruitForm = () => {
+const AnnounceForm = () => {
   const { id } = useParams();
   const [position, setPosition] = useState('');
   const [, setLoading] = useAtom(loaderAtom);
@@ -153,97 +140,31 @@ const RecruitForm = () => {
     email: data?.email,
     phoneNumber: data?.phoneNumber,
   };
-  useLayoutEffect(() => {
-    setPosition(positionSelect[id as keyof typeof positionSelect]);
-  }, [id]);
   const formElements = Object.keys(formValidation) as Array<
     keyof typeof formValidation
   >;
+  useLayoutEffect(() => {
+    setPosition(positionSelect[id as keyof typeof positionSelect]);
+  }, [id]);
 
   return (
     <>
       <ApplyModal {...(params as IApplicantParams)} onClick={onRegister} />
       <LayoutContainer>
         <ContainerInner>
-          <FormMargin />
-          <FormMargin />
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <RecruitFormWrapper>
-              <RecruitFormInner>
-                <Title>지원서 작성하기</Title>
-                <SubTitle>{position}</SubTitle>
-                <FormMargin />
-                {formElements.map((element) => {
-                  const elementName = formValidation[element];
-                  const isRequired = elementName.required.value;
-                  return (
-                    <FormContentWrapper key={element}>
-                      <FormLabel essential={isRequired}>
-                        {elementName.label}
-                      </FormLabel>
-                      {elementName.text && (
-                        <FormText>{elementName.text}</FormText>
-                      )}
-                      {elementName.type === 'INPUT' ? (
-                        <TextInput
-                          error={!!errors[element]}
-                          placeholder={elementName.placeholder}
-                          {...register(element, elementName)}
-                        />
-                      ) : elementName.type === 'TEXT_AREA' ? (
-                        <TextArea
-                          placeholder={elementName.placeholder}
-                          error={!!errors[element]}
-                          {...register(element, elementName)}
-                        />
-                      ) : (
-                        <p>
-                          {elementName.notice?.split('\n').map((text) => (
-                            <FormText key={text}>{text}</FormText>
-                          ))}
-                        </p>
-                      )}
-                      <ErrorBox>
-                        {!!errors[element] &&
-                          (errors[element]?.message as string)}
-                      </ErrorBox>
-                    </FormContentWrapper>
-                  );
-                })}
-                <FormContentWrapper>
-                  <FormLabel essential={false}>
-                    참고해야 할 추가적인 자료가 있다면 첨부해주세요
-                  </FormLabel>
-                  <FileInput
-                    defaultPlaceholder={'PDF로 업로드 해주세요!'}
-                    accept={'application/pdf, .pdf'}
-                    onChange={(e) =>
-                      setFile(e.target.files && e.target.files[0])
-                    }
-                  />
-                  <FormText>
-                    * 파일은 최대 50MB로 업로드 하실 수 있습니다.
-                  </FormText>
-                </FormContentWrapper>
-                <FormMarginXS />
-                <FormMargin />
-                {!isBlocked ? (
-                  <FormSubmitButton type={'submit'} onClick={onSubmit}>
-                    제출하기
-                  </FormSubmitButton>
-                ) : (
-                  <FormSubmitButton type={'button'} disable={isBlocked}>
-                    제출하기
-                  </FormSubmitButton>
-                )}
-                <FormMargin />
-              </RecruitFormInner>
-            </RecruitFormWrapper>
-          </form>
+          <AnnounceFormLayout
+            isBlocked={isBlocked}
+            formElements={formElements}
+            handleSubmit={handleSubmit(onSubmit)}
+            register={register}
+            errors={errors}
+            position={position}
+            setFile={setFile}
+          />
         </ContainerInner>
       </LayoutContainer>
     </>
   );
 };
 
-export default memo(RecruitForm);
+export default memo(AnnounceForm);

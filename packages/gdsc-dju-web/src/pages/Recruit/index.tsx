@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
+import RecruitForm from './AnnounceForm';
+import RecruitmentDetail from './Announcement';
 import ApplySuccess from './ApplySuccess';
-import RecruitForm from './RecruitForm';
 import Recruitment from './Recruitment';
-import RecruitmentDetail from './RecruitmentDetail';
 
 const Recruit = () => {
   return (

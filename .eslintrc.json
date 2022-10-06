@@ -21,9 +21,7 @@
     },
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"],
-        "moduleDirectory": ["src", "node_modules"],
-        "paths": ["src", "node_modules"]
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     }
   },
@@ -85,7 +83,7 @@
     "no-console": "error",
     "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
     "unused-imports/no-unused-imports": "error",
-      "import/no-named-as-default": "off",
+    "import/no-named-as-default": "off",
     "import/no-named-as-default-member": "off",
     "unused-imports/no-unused-vars": [
       "off",

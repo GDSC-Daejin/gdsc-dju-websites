@@ -41,7 +41,7 @@ const HomePageSection = () => {
             </GoogleColorTextWrapper>
             <GoogleColorText>Recruit</GoogleColorText>
             <MainBannerText variants={bannerItemAnimate}>
-              2022. 06. 13 ~ 2022. 08. 19
+              지금 바로 GDSC에 합류하세요
             </MainBannerText>
             <HomeRecruitmentButton />
           </RecruitingWrapper>

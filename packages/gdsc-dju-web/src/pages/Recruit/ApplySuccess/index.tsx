@@ -9,7 +9,7 @@ import {
   RecruitFormCardWrapper,
   RecruitFormInner,
   RecruitFormWrapper,
-} from '../RecruitForm/styled';
+} from '../AnnounceForm/styled';
 
 import { ApplyLink, ApplyLinkWrapper, ApplyMargin, ApplyTitle } from './styled';
 
@@ -51,6 +51,7 @@ const ApplySuccess = () => {
                 만약 2주 이상 지났지만 연락을 받지 못했다면 GDSC DJU에
                 문의해주세요.
               </MainText>
+              <ApplyMargin />
               <ApplyLinkWrapper>
                 - 카카오톡:
                 <ApplyLink
@@ -75,8 +76,6 @@ const ApplySuccess = () => {
                   @GDSC DJU
                 </ApplyLink>
               </ApplyLinkWrapper>
-              <ApplyMargin />
-              <MainText>GDSC DJU 드림</MainText>
               <ApplyMargin />
             </RecruitFormInner>
           </RecruitFormWrapper>

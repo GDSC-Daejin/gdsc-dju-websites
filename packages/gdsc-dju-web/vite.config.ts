@@ -33,4 +33,7 @@ export default defineConfig({
       '@src': path.resolve(__dirname, './src'),
     },
   },
+  esbuild: {
+    logOverride: { 'this-is-undefined-in-esm': 'silent' },
+  },
 });
