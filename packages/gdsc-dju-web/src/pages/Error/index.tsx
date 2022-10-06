@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ErrorLottie from '@common/lotties/ErrorLottie';
-import { MainText, Title } from '@src/components/atoms/Title/title';
+import { MainText, Title } from '@src/components/atoms/title';
 
 import { ErrorContainer, ErrorContentWrapper } from './styled';
 

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import Banner from '@atoms/Banner';
 import { SubtitleContent } from '@atoms/BulletList';
-import { Title } from '@atoms/Title/title';
+import { Title } from '@atoms/title';
 import { recruitDefaultText, RecruitDetails } from '@contents/recruitDetails';
 import InformationBar from '@molecules/InformationBar';
 import RecruitFaqButton from '@molecules/RecruitFaqButton';

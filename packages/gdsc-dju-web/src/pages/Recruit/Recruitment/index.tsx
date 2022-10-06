@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 
 import Banner from '@atoms/Banner';
-import { MainText, Title } from '@atoms/Title/title';
+import { MainText, Title } from '@atoms/title';
 import { RecruitDetails } from '@contents/recruitDetails';
 import { ContainerInner, LayoutContainer, TopMargin } from '@styles/layouts';
 

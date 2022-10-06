@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import Banner from '@atoms/Banner';
-import { Title } from '@atoms/Title/title';
+import { Title } from '@atoms/title';
 import { FaqData } from '@contents/faq';
 import { ContainerInner, TopMargin, LayoutContainer } from '@styles/layouts';
 

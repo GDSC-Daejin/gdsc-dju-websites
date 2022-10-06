@@ -2,7 +2,7 @@ import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import ApplySuccessCard from '@molecules/ApplySuccessCard';
-import { MainText } from '@src/components/atoms/Title/title';
+import { MainText } from '@src/components/atoms/title';
 import { ContainerInner, LayoutContainer } from '@styles/layouts';
 
 import {

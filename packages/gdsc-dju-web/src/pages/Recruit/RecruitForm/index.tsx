@@ -9,7 +9,7 @@ import { addDoc, collection } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { useAtom } from 'jotai';
 
-import { SubTitle, Title } from '@atoms/Title/title';
+import { SubTitle, Title } from '@atoms/title';
 import { formValidation } from '@common/validations/recuitForm';
 import { recruitInfo } from '@contents/recruitInfo';
 import ApplyModal from '@organisms/Modal/ApplyModal';

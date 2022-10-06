@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SubCategory } from '../Title/title';
+import { SubCategory } from '../title';
 
 import { StyledLi } from './styled';
 
