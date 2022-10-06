@@ -7,12 +7,8 @@ import {
   RecruitFormInner,
   RecruitFormWrapper,
 } from '@pages/Recruit/AnnounceForm/styled';
-import {
-  ApplyLink,
-  ApplyLinkWrapper,
-  ApplyMargin,
-  ApplyTitle,
-} from '@pages/Recruit/ApplySuccess/styled';
+
+import { ApplyLink, ApplyLinkWrapper, ApplyMargin, ApplyTitle } from './styled';
 
 type ApplySuccessLayoutProps = {
   params: {
