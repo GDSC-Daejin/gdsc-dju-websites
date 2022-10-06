@@ -1,6 +1,8 @@
-import { motion } from 'framer-motion';
 import React from 'react';
+
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
+
 import DownArrowIcon from '../../../assets/icons/DownArrowIcon';
 
 const DownArrowWrapper = styled(motion.div)`

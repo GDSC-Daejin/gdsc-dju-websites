@@ -1,4 +1,5 @@
 import { ColorToken } from '@gdsc-dju/styled-components-theme';
+
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 

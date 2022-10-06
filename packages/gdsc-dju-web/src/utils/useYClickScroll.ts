@@ -1,4 +1,5 @@
-import { MouseEvent, useEffect, useRef, useState, useTransition } from 'react';
+import { MouseEvent, useEffect, useRef, useState } from 'react';
+
 import { debounce } from './debounce';
 
 export const useYClickScroll = () => {

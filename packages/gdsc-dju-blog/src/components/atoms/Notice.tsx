@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
+
 import styled, { css } from 'styled-components';
 
 export const NoticeText = styled.p<{ align: boolean }>`

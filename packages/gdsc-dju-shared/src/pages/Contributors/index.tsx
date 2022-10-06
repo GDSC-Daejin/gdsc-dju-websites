@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { pageAnimate, pageTransitionAnimate } from '../../components/animation';
 import ContributorsLayout from '../../layout/contributors';
 import { ContainerInner, LayoutContainer } from '../../styles/layouts';

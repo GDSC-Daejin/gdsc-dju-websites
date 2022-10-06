@@ -1,9 +1,6 @@
 import React, { Dispatch, SetStateAction, useEffect, useRef } from 'react';
-import PostCategoryMenu from '@src/components/layouts/PostCategoryMenu';
-import ThumbnailInput from '@src/components/atoms/input/ThumbnailInput';
-
-import { GDSCButton } from '@src/components/atoms/Button';
 import { useNavigate } from 'react-router-dom';
+
 import {
   PostHashTagInput,
   PostInfoWrapper,
@@ -11,8 +8,11 @@ import {
   PostTitleInput,
   SavesButtonWrapper,
 } from '@pages/PostWrite/components/PostInformation/styled';
-import { PostPostDataType } from '@type/postData';
+import { GDSCButton } from '@src/components/atoms/Button';
+import ThumbnailInput from '@src/components/atoms/input/ThumbnailInput';
+import PostCategoryMenu from '@src/components/layouts/PostCategoryMenu';
 import { useFileToBase64 } from '@src/hooks/useFileToBase64';
+import { PostPostDataType } from '@type/postData';
 
 interface Props {
   postData: PostPostDataType;

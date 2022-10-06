@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { ErrorContainer, ErrorContentWrapper } from './styled';
 import ErrorLottie from '../../components/Lottie/ErrorLottie';
+
+import { ErrorContainer, ErrorContentWrapper } from './styled';
 
 const Error = ({ error }: { error?: Error }) => {
   return (

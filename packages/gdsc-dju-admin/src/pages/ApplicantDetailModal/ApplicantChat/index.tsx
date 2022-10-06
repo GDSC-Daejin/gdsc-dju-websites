@@ -1,12 +1,14 @@
+import React, { useCallback, useEffect, useRef } from 'react';
+
 import { addDoc, collection, limit, orderBy, query } from 'firebase/firestore';
 import { useAtom } from 'jotai';
-import React, { useCallback, useEffect, useRef } from 'react';
+
 import { db } from '../../../firebase/firebase';
 import { useFirestoreQuery } from '../../../hooks/useFirebaseQuery';
 import { userAtom } from '../../../store/userAtom';
 import { IApplicantChatType } from '../../../types/applicant';
-import ApplicantChatCardSection from './ApplicantChatCardSection';
 
+import ApplicantChatCardSection from './ApplicantChatCardSection';
 import {
   ApplicantChatBottomBar,
   ApplicantChatContainerWrapper,

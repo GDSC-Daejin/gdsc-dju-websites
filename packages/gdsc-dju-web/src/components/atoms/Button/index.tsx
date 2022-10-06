@@ -1,5 +1,6 @@
-import { ColorToken } from '@gdsc-dju/styled-components-theme';
 import React from 'react';
+
+import { ColorToken } from '@gdsc-dju/styled-components-theme';
 
 import { StyledButton } from './styled';
 

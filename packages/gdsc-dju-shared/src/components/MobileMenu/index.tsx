@@ -1,11 +1,13 @@
-import { motion } from 'framer-motion';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
+
+import GDSCLogo from '../../assets/GDSCLogo.svg';
 import { menuStore } from '../../store/menuStore';
 import { sidebar } from '../animation';
 import { ROUTES } from '../Navigation';
-import GDSCLogo from '../../assets/GDSCLogo.svg';
 
 export const MobileMenuWrapper = styled(motion.nav)`
   position: fixed;

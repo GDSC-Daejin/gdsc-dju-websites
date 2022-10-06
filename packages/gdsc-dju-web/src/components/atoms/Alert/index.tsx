@@ -1,7 +1,10 @@
+import React, { useEffect } from 'react';
+
 import { AnimatePresence } from 'framer-motion';
 import { useAtom } from 'jotai';
-import React, { useEffect } from 'react';
-import { alertAtom } from '../../../store/alertAtom';
+
+import { alertAtom } from '@store/alertAtom';
+
 import {
   AlertInner,
   AlertInnerWrapper,

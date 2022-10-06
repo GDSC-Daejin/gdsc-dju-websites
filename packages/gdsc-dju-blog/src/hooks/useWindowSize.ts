@@ -1,5 +1,6 @@
-import { debounce } from '@utils/debounce';
 import React from 'react';
+
+import { debounce } from '@utils/debounce';
 
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = React.useState({

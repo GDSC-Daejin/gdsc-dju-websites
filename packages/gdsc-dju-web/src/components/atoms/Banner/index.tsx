@@ -1,15 +1,17 @@
 import React from 'react';
+
 import styled from 'styled-components';
 
 import BlueBanner from '../../../assets/BannerImages/BlueBanner.svg';
+import GreenBanner from '../../../assets/BannerImages/GreenBanner.svg';
 import RedBanner from '../../../assets/BannerImages/RedBanner.svg';
 import YellowBanner from '../../../assets/BannerImages/YellowBanner.svg';
-import GreenBanner from '../../../assets/BannerImages/GreenBanner.svg';
 
 interface BannerProps {
   color: 'blue' | 'red' | 'yellow' | 'green';
   image?: string;
 }
+
 export const BannerInner = styled.img`
   height: 700px;
   background-position-x: 50%;

@@ -1,6 +1,7 @@
 import { ColorScheme } from '@gdsc-dju/styled-components';
-import styled, { css } from 'styled-components';
+
 import { motion } from 'framer-motion';
+import styled, { css } from 'styled-components';
 
 export const AlertInnerWrapper = styled.div`
   display: flex;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
+
 import { metaDatas } from '../../siteDatas/metaDatas';
 
 const ReactHead: React.FC = () => {

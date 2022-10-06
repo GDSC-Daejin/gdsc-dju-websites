@@ -1,4 +1,5 @@
 import useSWR from 'swr';
+
 import { FilterType, ListType } from '../../types/filterType';
 import Api from '../index';
 

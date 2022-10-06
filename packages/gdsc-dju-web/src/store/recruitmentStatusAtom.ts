@@ -1,4 +1,5 @@
 import { atom } from 'jotai';
+
 import API from '../apis/index';
 
 export const RecruitmentState = {

@@ -4,7 +4,7 @@ import {
   RowPostListType,
   RowScrapList,
 } from '@type/postData';
-import Cookies from 'js-cookie';
+
 import { AuthBlogInstance, BlogInstance } from './Instance';
 
 class PostService {

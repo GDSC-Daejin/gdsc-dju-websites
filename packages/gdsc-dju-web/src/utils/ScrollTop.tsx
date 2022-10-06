@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router';
 {
   /*페이지 이동시 스크롤 초기화 코드*/

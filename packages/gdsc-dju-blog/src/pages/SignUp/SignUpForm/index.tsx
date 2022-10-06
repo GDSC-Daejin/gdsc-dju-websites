@@ -2,20 +2,21 @@ import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 
-import { SignUpFormStyle, TextInputWrapper } from './styled';
+import CheckIcon from '@assets/icons/CheckIcon';
+import { useCheckNickname } from '@src/api/hooks/useCheckNickname';
+import { useGetMyData } from '@src/api/hooks/useGetMyData';
 import UserService from '@src/api/UserService';
 import { GDSCButton } from '@src/components/atoms/Button';
-import { useGetMyData } from '@src/api/hooks/useGetMyData';
 import TextInput from '@src/components/atoms/input/TextInput';
-import { formValidation } from '@src/components/Validation/profileEdit';
 import ValidationInput from '@src/components/atoms/input/ValidationInput';
-import { useCheckNickname } from '@src/api/hooks/useCheckNickname';
-import CheckIcon from '@assets/icons/CheckIcon';
 import {
   FormElementWrapper,
   FormLabel,
   FormLabelWrapper,
 } from '@src/components/layouts/ProfileEditLayout/styled';
+import { formValidation } from '@src/components/Validation/profileEdit';
+
+import { SignUpFormStyle, TextInputWrapper } from './styled';
 
 const SignUpForm = () => {
   const {

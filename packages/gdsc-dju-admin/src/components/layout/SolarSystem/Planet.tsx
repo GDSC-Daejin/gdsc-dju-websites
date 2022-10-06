@@ -1,5 +1,6 @@
+import React, { memo } from 'react';
+
 import { motion } from 'framer-motion';
-import React, { memo, useState } from 'react';
 import styled, { css } from 'styled-components';
 
 const Planet = ({ line }: { line: number }) => {

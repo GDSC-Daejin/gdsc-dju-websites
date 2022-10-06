@@ -1,6 +1,7 @@
-import Cookies from 'js-cookie';
 import { useQuery } from 'react-query';
+
 import PostService from '../PostService';
+
 import { userPostTempUrlFilter } from './postPagination';
 
 export async function getUserPostsNotTempData(userId: string, params: string) {

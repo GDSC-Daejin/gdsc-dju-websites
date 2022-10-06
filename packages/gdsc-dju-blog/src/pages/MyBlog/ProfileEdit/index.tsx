@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
+
 import { useGetMyData } from '@src/api/hooks/useGetMyData';
-import { ContainerInner, LayoutContainer } from '@styles/layouts';
 import ProfileEditLayout from '@src/components/layouts/ProfileEditLayout';
+import { ContainerInner, LayoutContainer } from '@styles/layouts';
 
 const ProfileEdit = () => {
   const { myData } = useGetMyData();

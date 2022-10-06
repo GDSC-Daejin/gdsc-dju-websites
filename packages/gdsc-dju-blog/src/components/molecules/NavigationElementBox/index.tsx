@@ -1,3 +1,7 @@
+import React, { useEffect, useRef, useState } from 'react';
+import { useCookies } from 'react-cookie';
+import { useNavigate } from 'react-router-dom';
+
 import { useGetMyData } from '@src/api/hooks/useGetMyData';
 import TokenService from '@src/api/TokenService';
 import { GDSCButton } from '@src/components/atoms/Button';
@@ -9,9 +13,6 @@ import {
   NavigationElementBoxWrapper,
 } from '@src/components/molecules/NavigationElementBox/styled';
 import OutsideClickHandler from '@utils/OutsideClickHandler';
-import React, { useEffect, useRef, useState } from 'react';
-import { useCookies } from 'react-cookie';
-import { useNavigate } from 'react-router-dom';
 
 const NavigationElementBox = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);

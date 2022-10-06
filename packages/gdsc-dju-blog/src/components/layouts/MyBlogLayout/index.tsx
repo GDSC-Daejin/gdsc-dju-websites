@@ -1,12 +1,12 @@
 import React, { Suspense } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
+
+import MyBlogContentBox from '@pages/MyBlog/BlogHome/MyBlogContentBox';
+import MyBlogMenuBox from '@pages/MyBlog/BlogHome/MyBlogMenuBox';
+import MyBlogProfileBox from '@pages/MyBlog/BlogHome/MyBlogProfileBox';
 import { useGetGuestData } from '@src/api/hooks/useGetGuestData';
 import { useGetMyData } from '@src/api/hooks/useGetMyData';
-import MyBlogProfileBox from '@pages/MyBlog/BlogHome/MyBlogProfileBox';
-import MyBlogMenuBox from '@pages/MyBlog/BlogHome/MyBlogMenuBox';
-
 import { MyBlogLayoutContainer } from '@src/components/layouts/MyBlogLayout/styled';
-import MyBlogContentBox from '@pages/MyBlog/BlogHome/MyBlogContentBox';
 
 const MyBlogLayout = () => {
   const [searchParams, setSearchParams] = useSearchParams();

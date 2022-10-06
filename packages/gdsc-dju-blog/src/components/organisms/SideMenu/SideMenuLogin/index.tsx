@@ -1,11 +1,12 @@
-import SettingIcon from '@assets/icons/SettingIcon';
-import { useGetMyData } from '@src/api/hooks/useGetMyData';
-
-import { GDSCButton } from '@src/components/atoms/Button';
-import ProfileImage from '@src/components/atoms/ProfileImage';
 import React, { Suspense } from 'react';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router';
+
+import SettingIcon from '@assets/icons/SettingIcon';
+import { useGetMyData } from '@src/api/hooks/useGetMyData';
+import { GDSCButton } from '@src/components/atoms/Button';
+import ProfileImage from '@src/components/atoms/ProfileImage';
+
 import {
   BottomButtonWrapper,
   LogoutButtonWrapper,

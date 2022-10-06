@@ -1,9 +1,11 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+
+import Post from '../Post';
+
 import BlogHome from './BlogHome';
 import MyScrap from './MyScrap';
 import ProfileEdit from './ProfileEdit';
-import Post from '../Post';
 
 const MyBlog = () => {
   return (

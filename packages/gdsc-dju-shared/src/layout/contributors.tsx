@@ -1,7 +1,9 @@
 import React from 'react';
+
 import ContributorCard from '../components/ContributorCard';
 import { contributorsData } from '../siteDatas/contributorsData';
 import { Paragraph, Title } from '../styles/layouts';
+
 import {
   ContributorCardWrapper,
   ContributorsLayoutWrapper,

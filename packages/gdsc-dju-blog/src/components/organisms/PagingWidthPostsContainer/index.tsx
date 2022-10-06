@@ -1,12 +1,13 @@
 import React, { Suspense } from 'react';
-import WidthPostsContainer from '@src/components/molecules/WidthPostsContainer';
+
+import Notice from '@src/components/atoms/Notice';
 import PageBar from '@src/components/atoms/PageBar';
-import { PostListResponse } from '@type/postData';
+import WidthPostsContainer from '@src/components/molecules/WidthPostsContainer';
 import {
   CategoryContainer,
   PageBarWrapper,
 } from '@src/components/organisms/PagingPostsContainer/styled';
-import Notice from '@src/components/atoms/Notice';
+import { PostListResponse } from '@type/postData';
 
 interface Props {
   currentPage: number;

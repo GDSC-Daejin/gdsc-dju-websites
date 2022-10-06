@@ -5,7 +5,7 @@
     "node": true
   },
   "parser": "@typescript-eslint/parser",
-  "plugins": ["react", "@typescript-eslint", "prettier", "import"],
+  "plugins": ["react", "@typescript-eslint", "prettier", "import", "unused-imports"],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -54,19 +54,24 @@
           "group": "internal"
         },
         {
+          "pattern": "@styles/**",
+          "group": "internal",
+          "position": "after"
+        },
+        {
           "pattern": "./**/*.style",
-          "group": "unknown"
+          "group": "index"
         },
         {
           "pattern": "../**/*.style",
-          "group": "unknown"
+          "group": "index"
         },
         {
           "pattern": "*.style",
-          "group": "unknown"
+          "group": "index"
         }
       ],
-      "pathGroupsExcludedImportTypes": ["react", "internal","unknown"],
+      "pathGroupsExcludedImportTypes": ["react", "internal"],
       "newlines-between": "always",
       "alphabetize": { "order": "asc", "caseInsensitive": true }
     }],
@@ -78,7 +83,14 @@
     "no-nested-ternary": 0,
     "react/display-name": "off",
     "no-console": "error",
-    "no-unused-vars": "warn",
+    "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+      "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+    "unused-imports/no-unused-vars": [
+      "off",
+      { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+    ],
     "un-useless-escape": "off",
     "quotes": [2, "single", { "allowTemplateLiterals": true }]
   }

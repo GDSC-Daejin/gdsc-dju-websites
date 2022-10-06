@@ -1,4 +1,5 @@
 import { EventsDataType } from '../types/event';
+
 import { userData } from './userData';
 
 export const eventsData: EventsDataType = [

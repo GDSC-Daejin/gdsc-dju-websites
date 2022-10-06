@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
-import styled from 'styled-components';
 
 import browser from 'browser-detect';
+import styled from 'styled-components';
+
 import { Line1, Line1ForSafari } from './Line1';
 import { Line2, Line2ForSafari } from './Line2';
 import { Line3, Line3ForSafari } from './Line3';

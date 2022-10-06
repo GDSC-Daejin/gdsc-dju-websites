@@ -1,9 +1,11 @@
 import React, { memo, useState } from 'react';
 import { useLocation } from 'react-router';
+
+import { AnimatePresence, LayoutGroup } from 'framer-motion';
+
 import { memberCardAnimate } from '@animations/variants';
 import { IMemberCardType } from '@type/member';
 import { positionColorHandler } from '@utils/positionColorHandler';
-import { AnimatePresence, LayoutGroup } from 'framer-motion';
 
 import {
   CardText,

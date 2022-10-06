@@ -1,14 +1,16 @@
 import React from 'react';
+
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
+
+import { listAnimate, listItemAnimate } from '@animations/variants';
+
 import {
   HomeSectionContainer,
   HomeSectionContainerInner,
   HomeSectionTitle,
   HomeSectionWrapper,
 } from './styled';
-
-import { motion } from 'framer-motion';
-import { listAnimate, listItemAnimate } from '@animations/variants';
 
 const ContentWrapper = styled(motion.div)`
   display: flex;

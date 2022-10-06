@@ -1,11 +1,13 @@
 import React, { lazy, Suspense, useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { Route, Routes } from 'react-router';
-import { GoogleSpinnerStatic } from '@common/lotties/GoogleSpinner';
-import { asyncGetRecruitmentStatusAtom } from '@store/recruitmentStatusAtom';
+
 import { useAtom } from 'jotai';
-import Error from '../pages/Error';
-import ScrollTop from '../utils/ScrollTop';
+
+import { GoogleSpinnerStatic } from '@common/lotties/GoogleSpinner';
+import Error from '@pages/Error';
+import { asyncGetRecruitmentStatusAtom } from '@store/recruitmentStatusAtom';
+import ScrollTop from '@utils/ScrollTop';
 
 const Home = lazy(() =>
   import('../pages/Home').then((module) => ({

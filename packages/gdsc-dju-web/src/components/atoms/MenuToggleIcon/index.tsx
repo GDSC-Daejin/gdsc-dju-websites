@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { menuAtom } from '@store/menuAtom';
 import { motion } from 'framer-motion';
 import { useAtom } from 'jotai';
 import { useTheme } from 'styled-components';
+
+import { menuAtom } from '@store/menuAtom';
 
 import { StyledMenuButton } from './styled';
 

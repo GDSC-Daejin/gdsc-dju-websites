@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
+
 import lottie from 'lottie-web';
+
 import errorAnimation from './ErrorLottie.json';
 
 const ErrorLottie = () => {

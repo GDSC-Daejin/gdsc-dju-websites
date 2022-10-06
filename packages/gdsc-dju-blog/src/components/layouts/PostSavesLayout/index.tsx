@@ -1,9 +1,10 @@
+import React from 'react';
+
 import PostSavesMenuBox from '@pages/PostSaves/PostSavesMenuBox';
 import { PostSavesTitle } from '@pages/PostSaves/styled';
 import { useGetMyPostsTempData } from '@src/api/hooks/useGetMyPostsTempData';
 import { PostSavesLayoutContainer } from '@src/components/layouts/PostSavesLayout/styled';
 import PagingWidthPostsContainer from '@src/components/organisms/PagingWidthPostsContainer';
-import React from 'react';
 
 interface Props {
   category: string;

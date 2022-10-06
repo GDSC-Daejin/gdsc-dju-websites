@@ -1,8 +1,10 @@
-import { useAtom } from 'jotai';
 import React, { useRef } from 'react';
+
+import { useAtom } from 'jotai';
+
 import { GDSCButton } from '../../../components/common/Button';
-import { TextInput } from '../../../components/common/TextInput';
 import CheckBoxCard from '../../../components/common/cards/CheckBoxCard';
+import { TextInput } from '../../../components/common/TextInput';
 import { useModalHandle } from '../../../hooks/useModalHandle';
 import {
   EmailButtonWrapper,

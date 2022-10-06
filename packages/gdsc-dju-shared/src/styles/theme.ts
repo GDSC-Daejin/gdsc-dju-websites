@@ -1,9 +1,9 @@
-import { windowSize } from './windowSize';
-import { fontSize } from './fontSize';
+import type { DefaultTheme } from 'styled-components';
 
-import { lightColors } from './lightColors';
 import { darkColors } from './darkColors';
-import { DefaultTheme } from 'styled-components';
+import { fontSize } from './fontSize';
+import { lightColors } from './lightColors';
+import { windowSize } from './windowSize';
 
 export const darkTheme: DefaultTheme = {
   colors: darkColors,

@@ -1,6 +1,8 @@
-import { IApplicantTypeWithID } from '@src/types/applicant';
 import React from 'react';
+
 import styled, { css } from 'styled-components';
+
+import { IApplicantTypeWithID } from '@src/types/applicant';
 
 import StatusBadge from '../../Statusbadge';
 

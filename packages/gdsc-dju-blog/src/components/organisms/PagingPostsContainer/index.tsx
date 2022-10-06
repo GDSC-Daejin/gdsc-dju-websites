@@ -1,9 +1,11 @@
 import React, { Suspense } from 'react';
+
+import Notice from '@src/components/atoms/Notice';
+import PageBar from '@src/components/atoms/PageBar';
 import PostsContainer from '@src/components/molecules/PostsContainer';
 import { DetailPostDataType } from '@type/postData';
+
 import { CategoryContainer, PageBarWrapper } from './styled';
-import PageBar from '@src/components/atoms/PageBar';
-import Notice from '@src/components/atoms/Notice';
 
 interface Props {
   postData: DetailPostDataType[];

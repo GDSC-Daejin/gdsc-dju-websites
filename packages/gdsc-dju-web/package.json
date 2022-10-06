@@ -4,6 +4,7 @@
   "scripts": {
     "start": "vite --host",
     "dev": "vite",
+    "lint": "eslint --fix",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",

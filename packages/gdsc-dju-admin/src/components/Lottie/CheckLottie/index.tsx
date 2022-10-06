@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import { CheckLottieWrapper } from './styled';
+
 import lottie from 'lottie-web';
+
+import { CheckLottieWrapper } from './styled';
 
 const CheckLottie = () => {
   const checkRef = useRef<HTMLDivElement>(null);

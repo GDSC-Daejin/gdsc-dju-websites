@@ -1,8 +1,9 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+
 import { eventsData } from '../siteDatas/eventsData';
 import { checkEventEnd } from '../utils/checkEventEnd';
 import { eventDateFilter, eventTimeFilter } from '../utils/eventDateFilter';
+
 import {
   ButtonWrapper,
   HomeLayoutWrapper,

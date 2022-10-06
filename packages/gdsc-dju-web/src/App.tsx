@@ -1,6 +1,6 @@
-import { GdsThemeProvider } from '@gdsc-dju/styled-components-theme';
-
 import React from 'react';
+
+import { GdsThemeProvider } from '@gdsc-dju/styled-components-theme';
 
 import Layout from './core';
 import ElementLayoutBox from './core/ElementLayoutBox';

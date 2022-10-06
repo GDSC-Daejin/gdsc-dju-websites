@@ -1,7 +1,9 @@
-import { HomePhraseData, homePhraseData } from '@src/api/Mocks/homePhraseData';
-import { AnimatePresence, motion } from 'framer-motion';
 import React, { memo, useCallback, useEffect, useState } from 'react';
+
+import { AnimatePresence, motion } from 'framer-motion';
 import styled from 'styled-components';
+
+import { HomePhraseData, homePhraseData } from '@src/api/Mocks/homePhraseData';
 
 const From = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.textXl};

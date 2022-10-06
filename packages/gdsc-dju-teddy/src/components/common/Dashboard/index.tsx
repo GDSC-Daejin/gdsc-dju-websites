@@ -1,6 +1,8 @@
-import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import React, { useState } from 'react';
+
+import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import styled from 'styled-components';
+
 import { useGetUserState } from '../../../api/hooks/useGetUserState';
 import {
   Background,

@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { GoogleIcon, LoaderBackground } from './styled';
+
 import lottie from 'lottie-web';
+
 import animation from './GoogleAnimation.json';
+import { GoogleIcon, LoaderBackground } from './styled';
 
 const GoogleLoader = (props: { background?: boolean }) => {
   const { background } = props;

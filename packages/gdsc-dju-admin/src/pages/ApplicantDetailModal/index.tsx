@@ -1,15 +1,17 @@
 import React, { memo, useEffect, useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+
+import { AnimatePresence } from 'framer-motion';
+
 import { ClearButton } from '@common/ModalButton';
 import { modalVariants } from '@src/components/animations/modalVariants';
 import { IApplicantTypeWithID } from '@type/applicant';
 import { getApplicant } from '@utils/applicantsHandler';
+
 import ApplicantChatContainer from './ApplicantChat';
 import ApplicantInfoCard from './ApplicantInformation';
-import ApplicantInfoState from './ApplicantState';
 import Application from './Applicantion';
-
+import ApplicantInfoState from './ApplicantState';
 import {
   ApplicantDataWrapper,
   ApplicantInfoHeader,

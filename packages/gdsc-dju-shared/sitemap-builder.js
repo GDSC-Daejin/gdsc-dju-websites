@@ -4,6 +4,7 @@ require('babel-register')({
 require.extensions['.css'] = () => {};
 
 const router = require('./sitemap-routes').default;
+
 const Sitemap = require('react-router-sitemap').default;
 
 function generateSitemap() {

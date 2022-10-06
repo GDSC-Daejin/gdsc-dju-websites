@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { AdminContainerWrapper } from '../styled';
 
 const Home = () => {

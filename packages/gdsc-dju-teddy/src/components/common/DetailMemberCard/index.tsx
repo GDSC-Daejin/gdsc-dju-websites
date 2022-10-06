@@ -1,6 +1,8 @@
-import { motion } from 'framer-motion';
 import React, { useState } from 'react';
+
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
+
 import { userStateDataType } from '../../../types';
 import { CardMargin, MemberName, ProfileImage } from '../MemberCard/styled';
 

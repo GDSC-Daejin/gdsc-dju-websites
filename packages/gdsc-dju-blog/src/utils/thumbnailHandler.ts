@@ -1,15 +1,15 @@
-import webp1 from '../assets/thumbnails/Rectangle-81.webp';
 import jpg1 from '../assets/thumbnails/Rectangle-81.jpg';
-import webp2 from '../assets/thumbnails/Rectangle-82.webp';
+import webp1 from '../assets/thumbnails/Rectangle-81.webp';
 import jpg2 from '../assets/thumbnails/Rectangle-82.jpg';
-import webp3 from '../assets/thumbnails/Rectangle-83.webp';
+import webp2 from '../assets/thumbnails/Rectangle-82.webp';
 import jpg3 from '../assets/thumbnails/Rectangle-83.jpg';
-import webp4 from '../assets/thumbnails/Rectangle-84.webp';
+import webp3 from '../assets/thumbnails/Rectangle-83.webp';
 import jpg4 from '../assets/thumbnails/Rectangle-84.jpg';
-import webp5 from '../assets/thumbnails/Rectangle-85.webp';
+import webp4 from '../assets/thumbnails/Rectangle-84.webp';
 import jpg5 from '../assets/thumbnails/Rectangle-85.jpg';
-import webp6 from '../assets/thumbnails/Rectangle-86.webp';
+import webp5 from '../assets/thumbnails/Rectangle-85.webp';
 import jpg6 from '../assets/thumbnails/Rectangle-86.jpg';
+import webp6 from '../assets/thumbnails/Rectangle-86.webp';
 const thumbnails = {
   '0': {
     webp: webp1,

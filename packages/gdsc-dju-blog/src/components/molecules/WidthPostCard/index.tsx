@@ -1,3 +1,7 @@
+import React, { memo, useCallback, useState } from 'react';
+import { useCookies } from 'react-cookie';
+import { useNavigate } from 'react-router-dom';
+
 import BookmarkIcon from '@assets/icons/BookmarkIcon';
 import { HashTageDark } from '@src/components/atoms/HashTage';
 import { useSetBookMark } from '@src/hooks/useHandleBookMark';
@@ -7,9 +11,6 @@ import { debounce } from '@utils/debounce';
 import { hashTageSpreader } from '@utils/hashTageSpreader';
 import { removeMarkdownInContent } from '@utils/removeMarkdownInContent';
 import { thumbnailHandler } from '@utils/thumbnailHandler';
-import React, { Suspense, memo, useCallback, useState } from 'react';
-import { useCookies } from 'react-cookie';
-import { useNavigate } from 'react-router-dom';
 
 import {
   BookmarkWrapper,

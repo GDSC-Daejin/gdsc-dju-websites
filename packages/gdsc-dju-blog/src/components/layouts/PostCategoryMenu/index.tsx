@@ -1,4 +1,8 @@
 import React from 'react';
+
+import { positionColor } from '../../../utils/positionColor';
+import { PostCategoryAnimation, PostCircleAnimation } from '../../Animation';
+
 import {
   PostCategoryCircle,
   PostCategoryCircleWrapper,
@@ -6,9 +10,6 @@ import {
   PostCategoryText,
   PostCategoryTextWrapper,
 } from './styled';
-
-import { positionColor } from '../../../utils/positionColor';
-import { PostCategoryAnimation, PostCircleAnimation } from '../../Animation';
 export const PostCategoryMenuData = [
   {
     title: 'Frontend',

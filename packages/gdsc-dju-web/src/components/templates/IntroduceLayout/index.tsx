@@ -1,9 +1,9 @@
+import React from 'react';
+
 import { MainText, Title } from '@atoms/Title/title';
 import { memberList } from '@contents/MemberList';
 import MemberSection from '@organisms/introduce/MemberSection';
 import { ContainerInner, TopMargin } from '@styles/layouts';
-
-import React from 'react';
 
 const IntroduceLayout = () => {
   return (

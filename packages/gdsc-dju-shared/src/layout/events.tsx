@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Event from '../components/Event';
 import Session from '../components/Session';
 import { eventsData } from '../siteDatas/eventsData';
@@ -12,7 +13,6 @@ import {
 } from './events.styled';
 
 const EventsLayout = () => {
-
   return (
     <EventLayoutWrapper>
       <LayoutContainer>
@@ -20,18 +20,18 @@ const EventsLayout = () => {
           <Title>Events</Title>
         </ContainerInner>
       </LayoutContainer>
-        <EventSection>
-            {eventsData.map((data, id) => (
-                <EventsWrapper key={id}>
-                    {data.type == 'session' ? (
-                        <Session {...data} />
-                    ) : (
-                        <Event {...data} />
-                    )}
-                    <EventContour last={id === eventsData.length - 1} />
-                </EventsWrapper>
-            ))}
-        </EventSection>
+      <EventSection>
+        {eventsData.map((data, id) => (
+          <EventsWrapper key={id}>
+            {data.type == 'session' ? (
+              <Session {...data} />
+            ) : (
+              <Event {...data} />
+            )}
+            <EventContour last={id === eventsData.length - 1} />
+          </EventsWrapper>
+        ))}
+      </EventSection>
     </EventLayoutWrapper>
   );
 };

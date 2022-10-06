@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+
 import { AnimatePresence, motion } from 'framer-motion';
-import Banner from '@src/components/atoms/Banner';
-import { FaqData } from '@src/contents/faq';
+
+import Banner from '@atoms/Banner';
+import { Title } from '@atoms/Title/title';
+import { FaqData } from '@contents/faq';
+import { ContainerInner, TopMargin, LayoutContainer } from '@styles/layouts';
+
 import * as FaqStyle from './styled';
-import { Title } from '@src/components/atoms/Title/title';
-import { ContainerInner, TopMargin } from '@styles/layouts';
-import { LayoutContainer } from '@styles/layouts';
 
 const Faq = () => {
   return (

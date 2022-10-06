@@ -1,7 +1,9 @@
-import React from 'react';
-import { usePostBookMark } from '@src/api/hooks/usePostBookMark';
 import { useQueryClient } from 'react-query';
+
 import { useRecoilState } from 'recoil';
+
+import { usePostBookMark } from '@src/api/hooks/usePostBookMark';
+
 import { alertState } from '../store/alert';
 
 export const useSetBookMark = (

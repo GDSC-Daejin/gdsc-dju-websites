@@ -1,7 +1,8 @@
-import SideMenuLogo from '@assets/logos/SideMenuLogo';
-
-import { GDSCButton } from '@src/components/atoms/Button';
 import React from 'react';
+
+import SideMenuLogo from '@assets/logos/SideMenuLogo';
+import { GDSCButton } from '@src/components/atoms/Button';
+
 import { GoogleButtonWrapper, LogoutBoxWrapper } from '../styled';
 
 interface IProps {

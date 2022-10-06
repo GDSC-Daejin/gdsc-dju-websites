@@ -1,4 +1,5 @@
 import React, { lazy } from 'react';
+
 import SolarSystem from '@molecules/SolarSystem';
 
 import { HomeContainer, HomeSolarSystemWrapper } from './styled';

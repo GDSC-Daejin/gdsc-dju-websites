@@ -1,6 +1,13 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router';
+
 import { useRecoilState } from 'recoil';
+
+import GdscLogo from '@assets/logos/GdscLogo';
+import { SideMenuCircleAnimation } from '@src/components/Animation';
+import { MENU_KEY, menuState } from '@src/store/menu';
+import { category } from '@type/position';
+import { positionColor } from '@utils/positionColor';
 
 import {
   SideCategoryCircle,
@@ -10,13 +17,6 @@ import {
   SideCategoryTextWrapper,
   SideMenuGDSCLogoWrapper,
 } from './styled';
-
-import { MENU_KEY, menuState } from '@src/store/menu';
-
-import GdscLogo from '@assets/logos/GdscLogo';
-import { category } from '@type/position';
-import { SideMenuCircleAnimation } from '@src/components/Animation';
-import { positionColor } from '@utils/positionColor';
 
 const SideMenuCategory = () => {
   const navigate = useNavigate();

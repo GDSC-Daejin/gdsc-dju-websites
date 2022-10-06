@@ -1,8 +1,10 @@
 import React from 'react';
+
 import styled from 'styled-components';
-import RightArrow from '../../../assets/icons/RightArrowIcon.svg';
-import LeftArrow from '../../../assets/icons/LeftArrowIcon.svg';
+
 import Clear from '../../../assets/icons/ClearIcon.svg';
+import LeftArrow from '../../../assets/icons/LeftArrowIcon.svg';
+import RightArrow from '../../../assets/icons/RightArrowIcon.svg';
 
 const ModalButton = styled.button`
   display: flex;

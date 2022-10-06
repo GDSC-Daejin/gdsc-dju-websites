@@ -1,8 +1,12 @@
-import MemberCard from '@molecules/MemberCard';
-import { managerData } from '@contents/managerData';
-import { motion } from 'framer-motion';
 import React from 'react';
+
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
+
+import { listItemAnimate } from '@animations/variants';
+import { managerData } from '@contents/managerData';
+import MemberCard from '@molecules/MemberCard';
+import { useYClickScroll } from '@utils/useYClickScroll';
 
 import {
   HomeSectionContainer,
@@ -10,8 +14,6 @@ import {
   HomeSectionTitle,
   HomeSectionWrapper,
 } from './styled';
-import { listItemAnimate } from '@animations/variants';
-import { useYClickScroll } from '@utils/useYClickScroll';
 
 const ManagerSectionInner = styled(HomeSectionContainerInner)`
   min-width: 320px;

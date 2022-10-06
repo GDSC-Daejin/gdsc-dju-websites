@@ -1,6 +1,7 @@
-import { resetTokenAndReattemptRequest } from '@src/api/hooks/getNewToken';
 import axios from 'axios';
 import Cookies from 'js-cookie';
+
+import { resetTokenAndReattemptRequest } from '@src/api/hooks/getNewToken';
 
 const isProduction = process.env.NODE_ENV === 'production';
 

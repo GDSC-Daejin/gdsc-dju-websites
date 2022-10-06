@@ -1,15 +1,17 @@
 import React from 'react';
+
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
+
+import { listAnimate, listItemAnimate } from '@animations/variants';
+import { culture } from '@src/contents/culture';
+
 import {
   HomeSectionContainer,
   HomeSectionContainerInner,
   HomeSectionTitle,
   HomeSectionWrapper,
 } from './styled';
-
-import { motion } from 'framer-motion';
-import { listAnimate, listItemAnimate } from '@animations/variants';
-import { culture } from '@src/contents/culture';
 
 const CultureContentSection = styled(motion.section)`
   display: grid;

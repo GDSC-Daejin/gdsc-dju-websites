@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
+
 import { EventsType } from '../types/event';
 
 export const HomeTitle = styled.h1`

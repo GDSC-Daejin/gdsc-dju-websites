@@ -1,6 +1,6 @@
 import 'styled-components';
-import { lightColors } from './lightColors';
 import { fontSize } from './fontSize';
+import { lightColors } from './lightColors';
 import { windowSize } from './windowSize';
 
 declare module 'styled-components' {

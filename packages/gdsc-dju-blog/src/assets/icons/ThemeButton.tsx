@@ -1,5 +1,7 @@
 import React from 'react';
+
 import styled from 'styled-components';
+
 import DarkModeIcon from '../../assets/icons/DarkModeIcon.svg';
 import LightModeIcon from '../../assets/icons/LightModeIcon.svg';
 

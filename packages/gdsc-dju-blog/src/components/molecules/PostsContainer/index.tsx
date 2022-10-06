@@ -1,10 +1,11 @@
 import React from 'react';
 
+import { useGetScrap } from '@src/hooks/useGetScrap';
+import { DetailPostDataType } from '@type/postData';
+
 import BlogCard from '../PostCard';
 
 import { BlogCardSection, BlogCardWrapper } from './styled';
-import { DetailPostDataType } from '@type/postData';
-import { useGetScrap } from '@src/hooks/useGetScrap';
 
 interface Props {
   postData: DetailPostDataType[];

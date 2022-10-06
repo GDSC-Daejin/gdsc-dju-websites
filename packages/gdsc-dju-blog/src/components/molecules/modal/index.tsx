@@ -1,5 +1,13 @@
 import React, { useEffect } from 'react';
 
+import { AnimatePresence } from 'framer-motion';
+import { useRecoilState } from 'recoil';
+
+import { GDSCButton } from '@src/components/atoms/Button';
+import { IModalType, modalState } from '@src/store/modal';
+
+import OutsideClickHandler from '../../../utils/OutsideClickHandler';
+
 import {
   ModalBackground,
   ModalButtonWrapper,
@@ -7,11 +15,6 @@ import {
   ModalContentWrapper,
   ModalInner,
 } from './styled';
-import OutsideClickHandler from '../../../utils/OutsideClickHandler';
-import { IModalType, modalState } from '@src/store/modal';
-import { AnimatePresence } from 'framer-motion';
-import { GDSCButton } from '@src/components/atoms/Button';
-import { useRecoilState } from 'recoil';
 
 interface ModalProps {
   onClick?: () => void;

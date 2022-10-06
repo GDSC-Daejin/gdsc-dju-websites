@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { HashTageWrapper } from './styled';
 
 interface HashTageProps {

@@ -1,8 +1,10 @@
 import React from 'react';
+
 import WidthPostCard from '@src/components/molecules/WidthPostCard';
-import { PostCardWrapper, WidthPostsContainerInner } from './styled';
-import { DetailPostDataType } from '@type/postData';
 import { useGetScrap } from '@src/hooks/useGetScrap';
+import { DetailPostDataType } from '@type/postData';
+
+import { PostCardWrapper, WidthPostsContainerInner } from './styled';
 
 interface Props {
   postData: DetailPostDataType[];

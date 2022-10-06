@@ -1,7 +1,8 @@
-import { sidebar } from '@animations/NavigationAnimation';
 import React from 'react';
-import MobileMenuCategory from './MobileMenuCategory';
 
+import { sidebar } from '@animations/NavigationAnimation';
+
+import MobileMenuCategory from './MobileMenuCategory';
 import { MobileNavBackGround } from './styled';
 
 const MobileMenu = () => {

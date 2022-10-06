@@ -1,5 +1,7 @@
 import React from 'react';
+
 import styled from 'styled-components';
+
 import DarkModeIcon from '../../assets/icons/darkModeIcon';
 import LightModeIcon from '../../assets/icons/lightModeIcon';
 import { ThemeType } from '../../hooks/ThemeHandler';

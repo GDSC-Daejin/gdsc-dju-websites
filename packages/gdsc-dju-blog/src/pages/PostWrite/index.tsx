@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+
 import { useRecoilState } from 'recoil';
-import { modalState } from '@src/store/modal';
 
 import { useGetMyPostData } from '@src/api/hooks/useGetMyPostData';
-import { LayoutContainer } from '@styles/layouts';
 import PostWriteLayout from '@src/components/layouts/PostWriteLayout';
+import { modalState } from '@src/store/modal';
+import { LayoutContainer } from '@styles/layouts';
 /*color plugin*/
 
 const PostWrite = () => {

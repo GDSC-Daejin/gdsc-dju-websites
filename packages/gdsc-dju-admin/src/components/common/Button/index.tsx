@@ -1,5 +1,6 @@
-import { ColorScheme } from '@gdsc-dju/styled-components';
 import React from 'react';
+
+import { ColorScheme } from '@gdsc-dju/styled-components';
 
 import { StyledButton } from './styled';
 

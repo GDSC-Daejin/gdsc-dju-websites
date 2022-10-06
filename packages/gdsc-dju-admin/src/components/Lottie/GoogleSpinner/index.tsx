@@ -1,8 +1,11 @@
+import React, { useEffect, useRef } from 'react';
+
 import { AnimatePresence } from 'framer-motion';
 import { useAtom } from 'jotai';
 import lottie from 'lottie-web';
-import React, { useEffect, useRef } from 'react';
+
 import { loaderAtom } from '../../../store/loaderAtom';
+
 import googleAnimation from './GoogleAnimation.json';
 import { GoogleLoader, LoaderBackground } from './styled';
 

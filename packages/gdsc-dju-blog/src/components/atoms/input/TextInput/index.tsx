@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+
 import { ErrorBox, StyledInput, StyledInputWrapper } from './styled';
 
 export interface TextInputProps {

@@ -1,8 +1,5 @@
-import {
-  createSearchParams,
-  URLSearchParamsInit,
-  useNavigate,
-} from 'react-router-dom';
+import { createSearchParams, useNavigate } from 'react-router-dom';
+import type { URLSearchParamsInit } from 'react-router-dom';
 
 const useNavigateSearch = () => {
   const navigate = useNavigate();

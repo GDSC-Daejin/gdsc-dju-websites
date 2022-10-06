@@ -1,5 +1,7 @@
-import { motion } from 'framer-motion';
 import React from 'react';
+
+import { motion } from 'framer-motion';
+
 import { LineContainer } from './Line1';
 import Planet from './Planet';
 import PlanetForSafari from './PlanetForSafari';

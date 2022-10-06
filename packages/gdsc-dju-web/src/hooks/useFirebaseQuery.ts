@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { DocumentData, Query, onSnapshot } from 'firebase/firestore';
+import { onSnapshot } from 'firebase/firestore';
+import type { DocumentData, Query } from 'firebase/firestore';
 
 export function useFirestoreQuery<T>(query: Query<DocumentData>): T {
   const [docs, setDocs] = useState<unknown>();

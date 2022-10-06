@@ -1,5 +1,7 @@
-import Cookies from 'js-cookie';
 import { useQuery } from 'react-query';
+
+import Cookies from 'js-cookie';
+
 import PostService from '../PostService';
 
 async function getMyScrapList() {

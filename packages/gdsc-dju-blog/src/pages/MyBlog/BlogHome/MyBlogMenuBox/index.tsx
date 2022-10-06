@@ -1,8 +1,10 @@
 import React, { memo } from 'react';
-import { ButtonWrapper, TopMenuWrapper } from './styled';
-import { GDSCButton } from '@src/components/atoms/Button';
 import { useNavigate } from 'react-router-dom';
+
+import { GDSCButton } from '@src/components/atoms/Button';
 import CategoryMenu from '@src/components/atoms/CategoryMenu';
+
+import { ButtonWrapper, TopMenuWrapper } from './styled';
 
 interface Props {
   isGuest: boolean;

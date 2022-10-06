@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { ThemeProvider } from 'styled-components';
+
 import { Footer } from './components/Footer';
 import Navigation from './components/Navigation';
 import { useTheme } from './hooks/ThemeHandler';

@@ -1,6 +1,8 @@
-import { DarkModeContext, Navigation } from '@gdsc-dju/styled-components';
 import React, { useContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
+
+import { DarkModeContext, Navigation } from '@gdsc-dju/styled-components';
+
 import CustomLogo from '../components/common/CustomLogo';
 import NavigationElement from '../components/common/NavigationElement';
 import Home from '../pages/Home';

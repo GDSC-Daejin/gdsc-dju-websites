@@ -1,7 +1,9 @@
-import { navigationAnimate } from '@animations/NavigationAnimation';
-import { MenuContext } from '@gdsc-dju/styled-components-theme';
-import { ROUTES } from '@src/contents/routes';
 import React, { useContext } from 'react';
+
+import { MenuContext } from '@gdsc-dju/styled-components-theme';
+
+import { navigationAnimate } from '@animations/NavigationAnimation';
+import { ROUTES } from '@src/contents/routes';
 
 import GDSCLogo from '../../../assets/logos/GDSCLogo.svg';
 

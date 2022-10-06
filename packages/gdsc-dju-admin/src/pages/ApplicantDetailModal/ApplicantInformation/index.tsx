@@ -1,4 +1,5 @@
 import React from 'react';
+
 import StatusBadge from '../../../components/common/Statusbadge';
 import { IApplicantTypeWithID } from '../../../types/applicant';
 import { timeFilter } from '../../../utils/timeFilter';

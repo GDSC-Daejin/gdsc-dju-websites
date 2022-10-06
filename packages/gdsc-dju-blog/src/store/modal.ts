@@ -1,4 +1,5 @@
 import { ColorToken } from '@gdsc-dju/styled-components';
+
 import { atom } from 'recoil';
 
 const MODAL = 'modal';

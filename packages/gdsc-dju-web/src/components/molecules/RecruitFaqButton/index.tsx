@@ -1,9 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { StyledButton } from '@atoms/Button/styled';
-import { recruitmentAtom } from '@store/recruitmentStatusAtom';
+
 import { useAtom } from 'jotai';
 import styled from 'styled-components';
+
+import { StyledButton } from '@atoms/Button/styled';
+import { recruitmentAtom } from '@store/recruitmentStatusAtom';
 
 const RecruitFaqButtonWrapper = styled.div`
   display: flex;

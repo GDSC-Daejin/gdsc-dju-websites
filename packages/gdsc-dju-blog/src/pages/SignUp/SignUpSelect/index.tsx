@@ -1,6 +1,8 @@
+import React, { useState } from 'react';
+
 import { positionColor } from '@src/utils/positionColor';
 import { IFormStructure, errorCheck } from '@type/SignUpFormType';
-import React, { useState } from 'react';
+
 import BottomArrowIcon from '../../../assets/icons/BottomArrowIcon';
 
 import {

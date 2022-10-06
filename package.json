@@ -2,7 +2,7 @@
   "name": "gdsc-dju-frontend",
   "private": true,
   "scripts": {
-    "lint": "eslint --ext .ts,.tsx,.js,.jsx --cache",
+    "lint": "eslint --fix --ext .ts,.tsx .",
     "typecheck": "yarn workspaces list typecheck"
   },
   "workspaces": {
@@ -24,6 +24,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4",
     "vite": "^3.0.1",
