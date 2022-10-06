@@ -16742,8 +16742,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/styled-components", "npm:5.1.26"],\
             ["@vitejs/plugin-react", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:2.0.1"],\
             ["axios", "npm:0.27.2"],\
-            ["firebase", "npm:9.9.2"],\
-            ["firebase-tools", "npm:11.7.0"],\
+            ["firebase", "npm:9.10.0"],\
+            ["firebase-tools", "npm:10.9.2"],\
             ["framer-motion", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:6.5.1"],\
             ["lottie-web", "npm:5.9.6"],\
             ["react", "npm:18.2.0"],\
