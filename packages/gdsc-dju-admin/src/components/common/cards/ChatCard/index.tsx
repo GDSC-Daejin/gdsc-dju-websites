@@ -1,5 +1,6 @@
-import { IApplicantChatType } from '@src/types/applicant';
 import React, { memo } from 'react';
+
+import { IApplicantChatType } from '@src/types/applicant';
 
 import {
   ChatCardInner,

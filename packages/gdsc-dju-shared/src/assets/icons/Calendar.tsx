@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { useTheme } from 'styled-components';
 
 const Calendar: React.FC<{ isActive: boolean }> = ({ isActive }) => {

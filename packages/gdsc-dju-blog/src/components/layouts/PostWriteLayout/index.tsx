@@ -1,17 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { PostLayoutWrapper } from './styled';
-import { DetailPostDataType, PostPostDataType } from '@type/postData';
-
-import { ContentEditor } from '@src/components/atoms/ToastUi';
-import PostButtons from '@pages/PostWrite/components/PostButtons';
-import { ModalType, modalState } from '@src/store/modal';
-import { alertState } from '@src/store/alert';
 import { useRecoilState } from 'recoil';
+
+import PostButtons from '@pages/PostWrite/components/PostButtons';
 import PostWriteHeader from '@pages/PostWrite/components/PostInformation';
 import PostService from '@src/api/PostService';
-import { useNavigate } from 'react-router-dom';
+import { ContentEditor } from '@src/components/atoms/ToastUi';
+import { alertState } from '@src/store/alert';
+import { ModalType, modalState } from '@src/store/modal';
 import { ContainerInner } from '@styles/layouts';
+import { DetailPostDataType, PostPostDataType } from '@type/postData';
+
+import { PostLayoutWrapper } from './styled';
 
 interface PostWriteProps {
   postData: DetailPostDataType | undefined;

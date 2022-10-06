@@ -1,4 +1,5 @@
 import React from 'react';
+
 import CheckBoxCard from '@src/components/common/cards/CheckBoxCard';
 import { IApplicantTypeWithID } from '@src/types/applicant';
 

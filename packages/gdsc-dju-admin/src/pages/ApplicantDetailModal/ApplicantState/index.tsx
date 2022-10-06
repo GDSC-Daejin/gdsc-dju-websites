@@ -1,5 +1,7 @@
-import { doc, updateDoc } from 'firebase/firestore';
 import React, { useCallback } from 'react';
+
+import { doc, updateDoc } from 'firebase/firestore';
+
 import StatusBadge from '../../../components/common/Statusbadge';
 import { recruitInfo } from '../../../context/recruitInfo';
 import { db } from '../../../firebase/firebase';

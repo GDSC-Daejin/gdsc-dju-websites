@@ -1,7 +1,10 @@
 import { useQuery } from 'react-query';
-import PostService from '../PostService';
+
 import Cookies from 'js-cookie';
+
 import { postUrlFilter } from '@src/api/hooks/postPagination';
+
+import PostService from '../PostService';
 
 async function getMyScrapData(params: string) {
   const res = await PostService.getMyScrapData(params);

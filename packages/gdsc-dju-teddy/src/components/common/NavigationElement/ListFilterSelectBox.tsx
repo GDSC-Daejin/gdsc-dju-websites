@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { ListType } from '../../../types/filterType';
+
 import { StyledLabel, StyledLi, StyledUl, UnderlineFilter } from './styled';
 
 type Props = {

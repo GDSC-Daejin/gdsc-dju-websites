@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { AnimatePresence } from 'framer-motion';
+
 import { GDSCButton } from '@common/Button';
 import { useModalHandle } from '@src/hooks/useModalHandle';
 import { IApplicantTypeWithID } from '@type/applicant';

@@ -1,6 +1,7 @@
-import TokenService from '@src/api/TokenService';
 import { AxiosError, AxiosInstance } from 'axios';
 import Cookies from 'js-cookie';
+
+import TokenService from '@src/api/TokenService';
 
 type Callback = (token: string) => void;
 

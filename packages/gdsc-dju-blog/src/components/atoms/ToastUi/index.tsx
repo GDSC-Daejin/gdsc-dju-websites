@@ -1,12 +1,15 @@
 import React, { forwardRef } from 'react';
-import { ContentBox } from './styled';
-import codeSyntaxHighlight from '@toast-ui/editor-plugin-code-syntax-highlight';
-import tableMergedCell from '@toast-ui/editor-plugin-table-merged-cell';
-import { Editor, Viewer } from '@toast-ui/react-editor';
+
 import Prism from 'prismjs';
+
 import { useTheme } from '@src/hooks/ThemeHandler';
 import chart from '@toast-ui/editor-plugin-chart';
+import codeSyntaxHighlight from '@toast-ui/editor-plugin-code-syntax-highlight';
 import colorSyntax from '@toast-ui/editor-plugin-color-syntax';
+import tableMergedCell from '@toast-ui/editor-plugin-table-merged-cell';
+import { Editor, Viewer } from '@toast-ui/react-editor';
+
+import { ContentBox } from './styled';
 /*Chart Plugin*/
 import '@toast-ui/editor-plugin-code-syntax-highlight/dist/toastui-editor-plugin-code-syntax-highlight.css';
 import '@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-syntax.css';

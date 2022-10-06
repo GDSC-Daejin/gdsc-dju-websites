@@ -1,5 +1,6 @@
 // https://firestore.googleapis.com/v1/projects/gdsc-dju/databases/(default)/documents/members?key=AIzaSyDrAEizOXHcCXYrQa96w6TxfddOS2Yb0tU
 import axios from 'axios';
+
 import { getRecruitmentInfoDataType, recruitmentInfoDataType } from './types';
 
 export class GDSCApi {

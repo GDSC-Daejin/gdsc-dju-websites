@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { GoogleLoader, LoaderBackground } from './styled';
+
 import lottie from 'lottie-web';
+
 import googleAnimation from './GoogleAnimation.json';
+import { GoogleLoader, LoaderBackground } from './styled';
 
 const GoogleSpinner = (props: { background?: boolean }) => {
   const { background } = props;

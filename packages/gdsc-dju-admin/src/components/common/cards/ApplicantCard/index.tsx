@@ -1,6 +1,8 @@
 import React from 'react';
+
 import { IApplicantTypeWithID } from '../../../../types/applicant';
 import StatusBadge from '../../Statusbadge';
+
 import { ApplicantCardWrapper, ApplicantEmail, ApplicantText } from './styled';
 
 const ApplicantCard: React.FC<IApplicantTypeWithID> = ({

@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { ContainerInner, LayoutContainer } from '@styles/layouts';
+
 import MyBlogLayout from '@src/components/layouts/MyBlogLayout';
+import { ContainerInner, LayoutContainer } from '@styles/layouts';
 
 const BlogHome = () => {
   const [searchParams, setSearchParams] = useSearchParams();

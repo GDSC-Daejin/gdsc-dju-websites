@@ -1,6 +1,7 @@
+import { useQuery } from 'react-query';
+
 import { postSearchUrlFilter } from '@src/api/hooks/postPagination';
 import { PostListResponse } from '@type/postData';
-import { useQuery } from 'react-query';
 
 import PostService from '../PostService';
 

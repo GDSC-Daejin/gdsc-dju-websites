@@ -1,8 +1,10 @@
 import React, { forwardRef } from 'react';
-import { ValidationButtonWrapper } from './styled';
+
 import { GDSCButton } from '../../Button';
 import { TextInputProps } from '../TextInput';
 import { ErrorBox, StyledInput, StyledInputWrapper } from '../TextInput/styled';
+
+import { ValidationButtonWrapper } from './styled';
 
 interface ValidationInputProps extends TextInputProps {
   validationCheck: () => void;

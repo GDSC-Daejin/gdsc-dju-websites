@@ -1,5 +1,7 @@
 import { useQuery } from 'react-query';
+
 import PostService from '../PostService';
+
 import { postUrlFilter } from './postPagination';
 
 async function getPostsData(params: string) {

@@ -1,8 +1,11 @@
-import { alertAtom } from '@src/store/alertAtom';
-import { useAtom } from 'jotai';
-import Cookies from 'js-cookie';
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import { useAtom } from 'jotai';
+import Cookies from 'js-cookie';
+
+import { alertAtom } from '@src/store/alertAtom';
+
 import { useGetMyData } from '../../apis/hooks/useGetMyData';
 import { GoogleSpinnerStatic } from '../../components/Lottie/GoogleSpinner';
 

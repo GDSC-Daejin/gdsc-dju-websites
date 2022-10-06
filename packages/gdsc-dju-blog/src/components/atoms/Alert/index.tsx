@@ -1,5 +1,12 @@
 import React, { useEffect } from 'react';
+
+import { AnimatePresence } from 'framer-motion';
 import { useRecoilState } from 'recoil';
+
+import CheckIcon from '@assets/icons/CheckIcon.svg';
+import ErrorIcon from '@assets/icons/ErrorIcon.svg';
+import { alertState } from '@src/store/alert';
+
 import {
   AlertIcon,
   AlertInner,
@@ -7,11 +14,6 @@ import {
   AlertText,
   AlertWrapper,
 } from './styled';
-
-import ErrorIcon from '@assets/icons/ErrorIcon.svg';
-import { AnimatePresence } from 'framer-motion';
-import { alertState } from '@src/store/alert';
-import CheckIcon from '@assets/icons/CheckIcon.svg';
 
 const variants = {
   active: {

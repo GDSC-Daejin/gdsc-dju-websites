@@ -1,5 +1,6 @@
 import { AxiosError, AxiosInstance } from 'axios';
 import Cookies from 'js-cookie';
+
 import { getRefresh } from './TokenService';
 
 type Callback = (token: string) => void;

@@ -1,8 +1,8 @@
-import { GdsThemeProvider, Navigation } from '@gdsc-dju/styled-components';
 import React from 'react';
 
-import { GoogleSpinner } from './components/Lottie/GoogleSpinner';
+import { GdsThemeProvider } from '@gdsc-dju/styled-components';
 
+import { GoogleSpinner } from './components/Lottie/GoogleSpinner';
 import Layout from './Core';
 import GlobalStyles from './styles/globalStyles';
 

@@ -1,4 +1,15 @@
 import React, { Suspense, memo } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import SettingIcon from '@assets/icons/SettingIcon';
+import { HashTageSection } from '@pages/Post/styled';
+import { HashTageWrapper } from '@src/components/atoms/HashTage/styled';
+import Notice from '@src/components/atoms/Notice';
+import ProfileImage from '@src/components/atoms/ProfileImage';
+import { positionColor } from '@src/utils/positionColor';
+import { UserGuest } from '@type/userDataType';
+import { hashTageSpreader } from '@utils/hashTageSpreader';
+
 import {
   BlogName,
   BlogNamePosition,
@@ -10,15 +21,6 @@ import {
   Role,
   SettingIconWrapper,
 } from './styled';
-import ProfileImage from '@src/components/atoms/ProfileImage';
-import { positionColor } from '@src/utils/positionColor';
-import SettingIcon from '@assets/icons/SettingIcon';
-import { HashTageSection } from '@pages/Post/styled';
-import { hashTageSpreader } from '@utils/hashTageSpreader';
-import { HashTageWrapper } from '@src/components/atoms/HashTage/styled';
-import { UserGuest } from '@type/userDataType';
-import { useNavigate } from 'react-router-dom';
-import Notice from '@src/components/atoms/Notice';
 
 interface Props {
   guestData: UserGuest | undefined;

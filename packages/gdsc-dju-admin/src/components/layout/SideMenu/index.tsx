@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
+
 import { position } from '../../../context/recruitInfo';
 import { ROUTES } from '../../../routes/Route';
 

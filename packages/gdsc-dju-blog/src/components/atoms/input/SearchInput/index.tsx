@@ -1,6 +1,7 @@
 import React, { InputHTMLAttributes, forwardRef } from 'react';
 
 import SearchIcon from '@assets/icons/SearchIcon';
+
 import { Search, SearchIconWrapper, SearchInputWrapper } from './styled';
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {

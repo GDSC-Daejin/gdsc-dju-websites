@@ -1,13 +1,15 @@
-import { DarkModeContext, useDarkMode } from '@gdsc-dju/styled-components';
 import React, { useContext } from 'react';
-import { Giscus } from '@giscus/react';
 import { useParams } from 'react-router-dom';
+
+import { DarkModeContext } from '@gdsc-dju/styled-components';
+
+import { Giscus } from '@giscus/react';
+import { useGetDetailPost } from '@src/api/hooks/useGetDetailPost';
+import { ContentViewer } from '@src/components/atoms/ToastUi';
+import { LayoutContainer, PostContainerInner } from '@styles/layouts';
 
 import PostHeader from './PostHeader';
 import { ContentWrapper, GiscusWrapper } from './styled';
-import { useGetDetailPost } from '@src/api/hooks/useGetDetailPost';
-import { LayoutContainer, PostContainerInner } from '@styles/layouts';
-import { ContentViewer } from '@src/components/atoms/ToastUi';
 
 const Post = () => {
   const { postId } = useParams<{ postId: string }>();

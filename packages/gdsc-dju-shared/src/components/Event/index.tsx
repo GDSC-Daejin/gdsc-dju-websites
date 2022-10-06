@@ -1,12 +1,11 @@
 import React from 'react';
+
 import { ContainerInner, LayoutContainer } from '../../styles/layouts';
 import { EventType } from '../../types/event';
 import { checkEventEnd } from '../../utils/checkEventEnd';
 import { google } from '../../utils/createGoogleCalendarLink';
 import { eventDateFilter, eventTimeFilter } from '../../utils/eventDateFilter';
-import CalendarButton from '../common/Button';
-import { EventButton } from '../common/Button';
-
+import CalendarButton, { EventButton } from '../common/Button';
 import {
   EventApplyWrapper,
   EventDate,
@@ -17,6 +16,7 @@ import {
   EventTitle,
   SessionHeader,
 } from '../Session/styled';
+
 import { StyledSectionBar } from './styled';
 
 const Event: React.FC<EventType> = ({

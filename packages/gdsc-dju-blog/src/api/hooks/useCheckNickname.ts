@@ -1,5 +1,6 @@
 import React from 'react';
 import { useMutation } from 'react-query';
+
 import UserService from '../UserService';
 
 export function useCheckNickname(

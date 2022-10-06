@@ -1,3 +1,7 @@
+import React from 'react';
+import { useCookies } from 'react-cookie';
+import { useNavigate } from 'react-router-dom';
+
 import {
   DropdownContour,
   DropdownUserName,
@@ -6,9 +10,6 @@ import {
   NavigationDropdownWrapper,
 } from '@src/components/molecules/NavigationDropdown/styled';
 import { positionColor } from '@utils/positionColor';
-import React from 'react';
-import { useCookies } from 'react-cookie';
-import { useNavigate } from 'react-router-dom';
 
 interface Props {
   role: string;

@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { SessionType } from '../../types/event';
+
 import {
   SessionCardWrapper,
   SessionTime,

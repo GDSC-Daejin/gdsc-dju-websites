@@ -1,5 +1,7 @@
 import { useQuery } from 'react-query';
+
 import PostService from '../PostService';
+
 import { userPostTempUrlFilter } from './postPagination';
 
 async function getMyPostListTempData(params: string) {

@@ -1,4 +1,5 @@
 import { ContributorsType } from '../types/contributor';
+
 import { projectData } from './projectData';
 import { userData } from './userData';
 const findContribute = (username: string) => {

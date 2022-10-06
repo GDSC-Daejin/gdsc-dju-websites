@@ -1,5 +1,6 @@
-import { getRedirectURL } from '@src/apis/TokenService';
 import React from 'react';
+
+import { getRedirectURL } from '@src/apis/TokenService';
 
 import GDSCImage from '../../assets/logos/GDSCLogo.svg';
 import GithubLogo from '../../assets/logos/GithubLogo.svg';

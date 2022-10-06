@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
+
 import styled, { css } from 'styled-components';
-import { timeFilter } from '@utils/timeFilter';
+
 import { EmailLogTypeWithID } from '@type/applicant';
+import { timeFilter } from '@utils/timeFilter';
+
 import StatusBadge from '../../Statusbadge';
 
 interface IEmailLogBoxProps {

@@ -1,7 +1,9 @@
-import Cookies from 'js-cookie';
-import React, { useEffect } from 'react';
-import { useAtom } from 'jotai';
+import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+
+import { useAtom } from 'jotai';
+import Cookies from 'js-cookie';
+
 import { useGetMyData } from '../apis/hooks/useGetMyData';
 import { userInfoWriteOnlyAtom } from '../store/userAtom';
 

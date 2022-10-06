@@ -43,7 +43,7 @@ jobs:
       - name: Project Build
         run: yarn build
         working-directory: ${{ env.working-directory }}
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - uses: HyeokE/action-hosting-deploy@main
         id: run_firebase_deploy
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

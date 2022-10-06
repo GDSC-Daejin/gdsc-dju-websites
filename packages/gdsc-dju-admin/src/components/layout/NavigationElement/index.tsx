@@ -1,9 +1,10 @@
-import AdminUserMenu from '@layout/AdminUserMenu';
-
-import { userAtom } from '@src/store/userAtom';
-import { useAtom } from 'jotai';
 import React, { useState } from 'react';
+
+import { useAtom } from 'jotai';
 import styled from 'styled-components';
+
+import AdminUserMenu from '@layout/AdminUserMenu';
+import { userAtom } from '@src/store/userAtom';
 
 export const AdminNavCategoryWrapper = styled.nav`
   display: flex;

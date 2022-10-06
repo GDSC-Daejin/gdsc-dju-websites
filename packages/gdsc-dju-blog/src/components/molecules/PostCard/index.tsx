@@ -1,8 +1,19 @@
-import { thumbnailHandler } from '@utils/thumbnailHandler';
-import React, { Suspense, memo, useCallback, useState } from 'react';
-import { AnimatePresence, LayoutGroup } from 'framer-motion';
+import React, { memo, useCallback, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router';
+
+import { AnimatePresence, LayoutGroup } from 'framer-motion';
+
+import BookmarkIcon from '@assets/icons/BookmarkIcon';
+import { PostTextVariants } from '@src/components/Animation';
+import { HashTageLight } from '@src/components/atoms/HashTage';
+import { useSetBookMark } from '@src/hooks/useHandleBookMark';
+import { DetailPostDataType } from '@type/postData';
+import { dateFilter } from '@utils/dateFilter';
+import { debounce } from '@utils/debounce';
+import { hashTageSpreader } from '@utils/hashTageSpreader';
+import { removeMarkdownInContent } from '@utils/removeMarkdownInContent';
+import { thumbnailHandler } from '@utils/thumbnailHandler';
 
 import {
   BookMarkWrapper,
@@ -19,15 +30,6 @@ import {
   PostCardTitle,
   PostText,
 } from './styled';
-import { HashTageLight } from '@src/components/atoms/HashTage';
-import { useSetBookMark } from '@src/hooks/useHandleBookMark';
-import { DetailPostDataType } from '@type/postData';
-import { dateFilter } from '@utils/dateFilter';
-import { hashTageSpreader } from '@utils/hashTageSpreader';
-import BookmarkIcon from '@assets/icons/BookmarkIcon';
-import { removeMarkdownInContent } from '@utils/removeMarkdownInContent';
-import { PostTextVariants } from '@src/components/Animation';
-import { debounce } from '@utils/debounce';
 
 interface Props {
   postData: DetailPostDataType;

@@ -1,9 +1,10 @@
 import React from 'react';
-import CategoryMenu from '@src/components/atoms/CategoryMenu';
+import { useNavigate } from 'react-router-dom';
+
+import { PostSavesMenuBoxWrapper } from '@pages/PostSaves/PostSavesMenuBox/styled';
 import { ButtonWrapper } from '@pages/PostSaves/styled';
 import { GDSCButton } from '@src/components/atoms/Button';
-import { useNavigate } from 'react-router-dom';
-import { PostSavesMenuBoxWrapper } from '@pages/PostSaves/PostSavesMenuBox/styled';
+import CategoryMenu from '@src/components/atoms/CategoryMenu';
 
 interface Props {
   category: string;

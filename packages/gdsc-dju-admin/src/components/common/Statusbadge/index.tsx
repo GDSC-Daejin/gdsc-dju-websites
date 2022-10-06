@@ -1,5 +1,7 @@
-import { ColorScheme } from '@gdsc-dju/styled-components';
 import React from 'react';
+
+import { ColorScheme } from '@gdsc-dju/styled-components';
+
 import styled, { css } from 'styled-components';
 
 import { StatusBadgeType, StatusType } from '../../../types/applicant';

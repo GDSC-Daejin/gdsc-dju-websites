@@ -1,13 +1,14 @@
-import { putRecruitStatus } from '@src/apis/RecruitService';
-import { AnimatePresence, LayoutGroup } from 'framer-motion';
-import { useAtom } from 'jotai';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import ApplicantCard from '../../components/common/cards/ApplicantCard';
 
+import { AnimatePresence, LayoutGroup } from 'framer-motion';
+import { useAtom } from 'jotai';
+
+import { putRecruitStatus } from '@src/apis/RecruitService';
+
+import ApplicantCard from '../../components/common/cards/ApplicantCard';
 import ToggleButton from '../../components/common/ToggleButton';
 import StatusBadgeBox from '../../components/layout/StatusBadgeBox';
-
 import { position } from '../../context/recruitInfo';
 import {
   RecruitmentAtom,

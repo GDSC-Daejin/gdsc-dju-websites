@@ -1,6 +1,8 @@
-import RightArrowIcon from '@assets/icons/RightArrowIcon';
 import React, { memo } from 'react';
 import { useSearchParams } from 'react-router-dom';
+
+import RightArrowIcon from '@assets/icons/RightArrowIcon';
+
 import LeftArrowIcon from '../../../assets/icons/LeftArrowIcon';
 
 import {

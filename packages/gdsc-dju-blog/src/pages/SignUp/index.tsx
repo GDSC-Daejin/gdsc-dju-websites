@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { SignUpContentWrapper, SignUpFormTitle } from './styled';
-import SignUpForm from './SignUpForm';
 import { LayoutContainer } from '@styles/layouts';
+
+import SignUpForm from './SignUpForm';
+import { SignUpContentWrapper, SignUpFormTitle } from './styled';
 
 const SignUp = () => {
   return (

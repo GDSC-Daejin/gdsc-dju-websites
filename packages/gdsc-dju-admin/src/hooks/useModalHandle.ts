@@ -1,4 +1,5 @@
 import { useAtom } from 'jotai';
+
 import { ModalKey, modalAtom } from '../store/modalAtom';
 
 export const useModalHandle = (key: ModalKey) => {

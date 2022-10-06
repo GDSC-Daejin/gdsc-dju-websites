@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+
 import PostService from '../PostService';
 
 async function getMyPostData(postId: string | undefined) {

@@ -1,7 +1,10 @@
-import { MenuContext, Navigation } from '@gdsc-dju/styled-components';
-import NavigationElement from '@layout/NavigationElement';
 import React, { useContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
+
+import { MenuContext, Navigation } from '@gdsc-dju/styled-components';
+
+import NavigationElement from '@layout/NavigationElement';
+
 import SideMenu from '../components/layout/SideMenu';
 
 import AdminApplicants from './Applicants';

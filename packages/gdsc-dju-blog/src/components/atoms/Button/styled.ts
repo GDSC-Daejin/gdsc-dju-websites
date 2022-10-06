@@ -1,5 +1,6 @@
-import styled, { css } from 'styled-components';
 import { ColorToken } from '@gdsc-dju/styled-components';
+
+import styled, { css } from 'styled-components';
 
 export const StyledButton = styled.button<{
   color?: ColorToken;

@@ -1,11 +1,13 @@
 import React, { ChangeEvent, forwardRef, useEffect, useState } from 'react';
+
+import ImageIcon from '@assets/icons/imageIcon';
+
 import {
   PostFileImage,
   PostThumbnailInner,
   PostThumbnailWrapper,
   ThumbnailText,
 } from './styled';
-import ImageIcon from '@assets/icons/imageIcon';
 
 interface Props {
   imageValue: string;

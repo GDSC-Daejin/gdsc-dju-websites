@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+
 import { StyledBody } from '../styles/layouts';
 
 export const EventLayoutWrapper = styled(StyledBody)`

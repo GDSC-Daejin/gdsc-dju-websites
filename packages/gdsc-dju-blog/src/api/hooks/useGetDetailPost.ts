@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+
 import PostService from '../PostService';
 
 async function getDetailPost(postId: string) {

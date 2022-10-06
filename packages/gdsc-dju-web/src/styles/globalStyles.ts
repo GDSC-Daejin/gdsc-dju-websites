@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { throttle } from '@utils/throttle';
 
 window.addEventListener('resize', () => {
   let vh = window.innerHeight * 0.01;
@@ -15,7 +14,7 @@ const GlobalStyles = createGlobalStyle`
       url('/fonts/GoogleSansDisplay-Regular.woff') format('woff'),
       url('/fonts/GoogleSansDisplay-Regular.ttf') format('truetype');
     font-weight: 400;
-    font-display: swap;
+    font-display: block;
     unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
   }  @font-face {
     font-family: 'Google Sans Display';
@@ -25,7 +24,7 @@ const GlobalStyles = createGlobalStyle`
       url('/fonts/GoogleSansDisplay-Medium.woff') format('woff'),
       url('/fonts/GoogleSansDisplay-Medium.ttf') format('truetype');
     font-weight: 500;
-    font-display: swap;
+    font-display: block;
     unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
   }  @font-face {
     font-family: 'Google Sans Display';
@@ -35,7 +34,7 @@ const GlobalStyles = createGlobalStyle`
       url('/fonts/GoogleSansDisplay-Bold.woff') format('woff'),
       url('/fonts/GoogleSansDisplay-Bold.ttf') format('truetype');
     font-weight: 700;
-    font-display: swap;
+    font-display: block;
     unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
   }
   @font-face {
@@ -46,7 +45,7 @@ const GlobalStyles = createGlobalStyle`
       url('/fonts/SpoqaHanSansNeo-Thin.woff') format('woff'), 
       url('/fonts/SpoqaHanSansNeo-Thin.ttf') format('truetype');
     font-weight: 100;
-    font-display: swap;
+    font-display: block;
     unicode-range: U+AC00-U+D7A3;
   } @font-face {
     font-family: 'Spoqa Han Sans Neo';
@@ -55,7 +54,7 @@ const GlobalStyles = createGlobalStyle`
     url('/fonts/SpoqaHanSansNeo-light.woff') format('woff'),
     url('/fonts/SpoqaHanSansNeo-light.ttf') format('truetype');
     font-weight: 300;
-    font-display: swap;
+    font-display: block;
     unicode-range: U+AC00-U+D7A3;
 
   }  @font-face {
@@ -66,7 +65,7 @@ const GlobalStyles = createGlobalStyle`
       url('/fonts/SpoqaHanSansNeo-Regular.woff') format('woff'),
       url('/fonts/SpoqaHanSansNeo-Regular.ttf') format('truetype');
     font-weight: 400;
-    font-display: swap;
+    font-display: block;
     unicode-range: U+AC00-U+D7A3;
   } @font-face {
     font-family: 'Spoqa Han Sans Neo';
@@ -75,7 +74,7 @@ const GlobalStyles = createGlobalStyle`
     url('/fonts/SpoqaHanSansNeo-Medium.woff') format('woff'),
     url('/fonts/SpoqaHanSansNeo-Medium.ttf') format('truetype');
     font-weight: 500;
-    font-display: swap;
+    font-display: block;
     unicode-range: U+AC00-U+D7A3;
 
   }  @font-face {
@@ -85,7 +84,7 @@ const GlobalStyles = createGlobalStyle`
     url('/fonts/SpoqaHanSansNeo-Bold.woff') format('woff'),
     url('/fonts/SpoqaHanSansNeo-Bold.ttf') format('truetype');
     font-weight: 700;
-    font-display: swap;
+    font-display: block;
     unicode-range: U+AC00-U+D7A3;
   }
  

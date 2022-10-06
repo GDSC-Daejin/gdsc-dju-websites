@@ -1,5 +1,7 @@
 import React from 'react';
+
 import styled from 'styled-components';
+
 import Teddybear from '../../assets/TeddyBear.svg';
 
 const CustomLogoWrapper = styled.div`

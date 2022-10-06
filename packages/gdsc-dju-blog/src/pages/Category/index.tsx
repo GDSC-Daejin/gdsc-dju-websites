@@ -1,7 +1,3 @@
-import { useGetPostsData } from '@src/api/hooks/useGetPostsData';
-import CategoryMenu from '@src/components/atoms/CategoryMenu';
-import PagingPostsContainer from '@src/components/organisms/PagingPostsContainer';
-import { LayoutContainer } from '@styles/layouts';
 import React, { memo, useEffect } from 'react';
 import {
   createSearchParams,
@@ -9,6 +5,11 @@ import {
   useParams,
   useSearchParams,
 } from 'react-router-dom';
+
+import { useGetPostsData } from '@src/api/hooks/useGetPostsData';
+import CategoryMenu from '@src/components/atoms/CategoryMenu';
+import PagingPostsContainer from '@src/components/organisms/PagingPostsContainer';
+import { LayoutContainer } from '@styles/layouts';
 
 import {
   CategoryPageInner,

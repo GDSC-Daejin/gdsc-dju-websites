@@ -1,4 +1,5 @@
 import { ColorScheme } from '@gdsc-dju/styled-components';
+
 import styled, { css } from 'styled-components';
 
 export const StyledButton = styled.button<{

@@ -1,5 +1,7 @@
 import React from 'react';
+
 import styled from 'styled-components';
+
 import { GDSCButton } from '@src/components/atoms/Button';
 
 export const PostBottomButtonBox = styled.div`

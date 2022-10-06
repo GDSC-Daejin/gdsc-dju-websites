@@ -1,8 +1,11 @@
-import { AnimatePresence } from 'framer-motion';
-import Cookies from 'js-cookie';
 import React, { useCallback, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import { AnimatePresence } from 'framer-motion';
+import Cookies from 'js-cookie';
+
 import { ROUTES } from '../../../routes/Route';
+
 import { AdminUserMenuWrapper, MenuElement } from './styled';
 
 const AdminUserMenu: React.FC<{

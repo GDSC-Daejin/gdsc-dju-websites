@@ -1,14 +1,15 @@
 import { atom } from 'jotai';
+
 import API from '../apis/index';
 
 export const RecruitmentState = {
-  home: true,
-  frontend: true,
-  backend: true,
-  android: true,
-  design: true,
-  ml: true,
-  beginner: true,
+  home: false,
+  frontend: false,
+  backend: false,
+  android: false,
+  design: false,
+  ml: false,
+  beginner: false,
 };
 export const recruitmentAtom = atom<typeof RecruitmentState>(RecruitmentState);
 

@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
+
 import { getMyData } from '../UserService';
 
 export const getUserData = async () => {

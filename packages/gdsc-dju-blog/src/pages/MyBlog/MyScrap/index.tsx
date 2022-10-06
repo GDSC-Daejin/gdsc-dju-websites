@@ -1,8 +1,9 @@
-import { useGetMyScrapData } from '@src/api/hooks/useGetMyScrapData';
-import React, { useCallback, useEffect } from 'react';
-import { ContainerInner, LayoutContainer } from '@styles/layouts';
+import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+
+import { useGetMyScrapData } from '@src/api/hooks/useGetMyScrapData';
 import MyScrapLayout from '@src/components/layouts/MyScrapLayout';
+import { ContainerInner, LayoutContainer } from '@styles/layouts';
 
 const MyScrap = () => {
   const [searchParams, setSearchParams] = useSearchParams();

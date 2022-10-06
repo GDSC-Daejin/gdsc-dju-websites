@@ -1,12 +1,14 @@
-import { MenuContext } from '@gdsc-dju/styled-components';
-import TokenService from '@src/api/TokenService';
-import { SideMenuAnimation } from '@src/components/Animation';
 import React, { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
+
+import { MenuContext } from '@gdsc-dju/styled-components';
+
+import TokenService from '@src/api/TokenService';
+import { SideMenuAnimation } from '@src/components/Animation';
+
 import SideMenuCategory from './SideMenuCategory';
 import SideMenuLogin from './SideMenuLogin';
 import SideMenuLogout from './SideMenuLogout';
-
 import {
   SideMenuInner,
   SideMenuSectionWrapper,

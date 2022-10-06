@@ -1,6 +1,8 @@
-import { GdsThemeProvider } from '@gdsc-dju/styled-components';
 import React from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
+
+import { GdsThemeProvider } from '@gdsc-dju/styled-components';
+
 import Layout from './Layout';
 import Error from './pages/Error';
 import GlobalStyles from './styles/globalStyles';

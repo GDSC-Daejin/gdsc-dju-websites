@@ -1,4 +1,5 @@
 import { atom } from 'recoil';
+
 import { IAlertState } from '@type/alert';
 
 export const ALERT = 'alert';

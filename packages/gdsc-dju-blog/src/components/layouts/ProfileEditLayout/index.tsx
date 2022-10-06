@@ -1,9 +1,18 @@
 import React, { useEffect } from 'react';
-import { MemberInfo, UserData } from '@type/userDataType';
-import { alertState } from '@src/store/alert';
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+
+import { useRecoilState } from 'recoil';
+
 import UserService from '@src/api/UserService';
+import { GDSCButton } from '@src/components/atoms/Button';
+import TextInput from '@src/components/atoms/input/TextInput';
+import ProfileImage from '@src/components/atoms/ProfileImage';
 import { formValidation } from '@src/components/Validation/profileEdit';
+import { alertState } from '@src/store/alert';
+import { MemberInfo, UserData } from '@type/userDataType';
 import { dateFilter } from '@utils/dateFilter';
+
 import {
   FormButtonWrapper,
   FormElementWrapper,
@@ -13,12 +22,6 @@ import {
   FormTitleWrapper,
   FormWrapper,
 } from './styled';
-import ProfileImage from '@src/components/atoms/ProfileImage';
-import TextInput from '@src/components/atoms/input/TextInput';
-import { GDSCButton } from '@src/components/atoms/Button';
-import { useForm } from 'react-hook-form';
-import { useRecoilState } from 'recoil';
-import { useNavigate } from 'react-router-dom';
 
 const ProfileEditLayout = ({ myData }: { myData: UserData }) => {
   const { register, handleSubmit, reset, formState } = useForm<MemberInfo>({

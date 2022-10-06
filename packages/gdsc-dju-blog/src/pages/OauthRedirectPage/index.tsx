@@ -1,6 +1,7 @@
-import { getMyData } from '@src/api/hooks/useGetMyData';
 import React, { useEffect } from 'react';
-import { useCookies } from 'react-cookie';
+
+import { getMyData } from '@src/api/hooks/useGetMyData';
+
 import GoogleLoader from '../../components/atoms/GoogleLoader';
 
 export default function OauthRedirectPage() {

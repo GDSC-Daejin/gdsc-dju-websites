@@ -1,8 +1,9 @@
-import { motion } from 'framer-motion';
 import React from 'react';
-import { FilterType } from '../../../types/filterType';
-import { StyledLabel, StyledLi, StyledUl, UnderlineFilter } from './styled';
 import { useNavigate } from 'react-router-dom';
+
+import { FilterType } from '../../../types/filterType';
+
+import { StyledLabel, StyledLi, StyledUl, UnderlineFilter } from './styled';
 
 type Props = {
   setFilter: (setSelect: FilterType) => void;

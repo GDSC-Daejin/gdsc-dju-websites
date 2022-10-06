@@ -1,4 +1,5 @@
 import { AuthInstance } from '@src/apis/Instance';
+
 import { RowMemberDataType } from '../types/userDataType';
 
 export const getMyData = () => {

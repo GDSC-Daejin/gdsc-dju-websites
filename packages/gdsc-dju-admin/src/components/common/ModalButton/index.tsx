@@ -1,5 +1,7 @@
 import React from 'react';
+
 import styled from 'styled-components';
+
 import ClearIcon from '../../../assets/icons/ClearIcon';
 import LeftArrow from '../../../assets/icons/LeftArrowIcon.svg';
 import RightArrow from '../../../assets/icons/RightArrowIcon.svg';

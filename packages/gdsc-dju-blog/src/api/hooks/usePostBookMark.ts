@@ -1,4 +1,5 @@
 import { useMutation } from 'react-query';
+
 import PostService from '../PostService';
 
 export const usePostBookMark = () => {

@@ -1,6 +1,8 @@
-import { motion } from 'framer-motion';
 import React from 'react';
+
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
+
 import sessionBackground from '../../assets/sessionBackground.svg';
 import { pageAnimate, pageTransitionAnimate } from '../../components/animation';
 import HomeLayout from '../../layout/home';

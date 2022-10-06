@@ -1,4 +1,3 @@
-import { ColorToken } from '@gdsc-dju/styled-components';
 import styled, { css } from 'styled-components';
 
 export const NavigationDropdownWrapper = styled.div<{

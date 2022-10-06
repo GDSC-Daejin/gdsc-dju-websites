@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
 
 import { DarkModeContext } from '@gdsc-dju/styled-components';
+
+import styled from 'styled-components';
+
 import DarkModeIcon from '../../../assets/icons/darkModeIcon';
 import LightModeIcon from '../../../assets/icons/lightModeIcon';
 

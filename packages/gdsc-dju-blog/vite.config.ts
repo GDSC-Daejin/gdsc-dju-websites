@@ -1,7 +1,9 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
 import * as path from 'path';
+
+import { defineConfig } from 'vite';
 import mkcert from 'vite-plugin-mkcert';
+
+import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,8 +19,8 @@ export default defineConfig({
       '@src': path.resolve(__dirname, './src'),
       '@type': path.resolve(__dirname, './src/types'),
       '@assets': path.resolve(__dirname, './src/assets'),
-      '@layout': path.resolve(__dirname, './src/components/layout'),
-      '@common': path.resolve(__dirname, './src/components/common'),
+      '@layout': path.resolve(__dirname, './src/components/templates'),
+      '@common': path.resolve(__dirname, './src/components/atoms'),
       '@utils': path.resolve(__dirname, './src/utils'),
       '@animations': path.resolve(__dirname, './src/components/animations'),
       '@pages': path.resolve(__dirname, './src/pages'),

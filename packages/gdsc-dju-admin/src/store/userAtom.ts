@@ -1,5 +1,6 @@
-import { getUserData } from '@src/apis/hooks/useGetMyData';
 import { atom } from 'jotai';
+
+import { getUserData } from '@src/apis/hooks/useGetMyData';
 
 import { IUserInfoDataType } from '../types/userInfoData';
 

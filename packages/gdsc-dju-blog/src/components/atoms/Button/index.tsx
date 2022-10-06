@@ -1,6 +1,9 @@
-import GoogleLogo from '@assets/logos/GoogleLogo';
-import { ColorToken } from '@gdsc-dju/styled-components';
 import React, { ButtonHTMLAttributes, forwardRef } from 'react';
+
+import { ColorToken } from '@gdsc-dju/styled-components';
+
+import GoogleLogo from '@assets/logos/GoogleLogo';
+
 import { StyledButton } from './styled';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

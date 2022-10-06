@@ -1,10 +1,11 @@
+import React from 'react';
+
+import { collection, limit, orderBy, query } from 'firebase/firestore';
+
 import EmailLogCard from '@common/cards/EmailLogCard';
 import { db } from '@src/firebase/firebase';
 import { useFirestoreQuery } from '@src/hooks/useFirebaseQuery';
 import { EmailLogTypeWithID } from '@type/applicant';
-import React from 'react';
-
-import { collection, limit, orderBy, query } from 'firebase/firestore';
 
 import { LogWrapper } from './styled';
 

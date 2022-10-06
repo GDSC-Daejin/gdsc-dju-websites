@@ -1,4 +1,10 @@
 import React, { memo } from 'react';
+
+import GdscLogo from '@assets/logos/GdscLogo';
+import { circleMotion } from '@src/components/Animation';
+import { positionColor } from '@src/utils/positionColor';
+import { category } from '@type/position';
+
 import {
   CategoryCircle,
   CategoryCircleWrapper,
@@ -7,11 +13,6 @@ import {
   CategoryTextWrapper,
   GDSCLogoWrapper,
 } from './styled';
-import { positionColor } from '@src/utils/positionColor';
-import GdscLogo from '@assets/logos/GdscLogo';
-
-import { circleMotion } from '@src/components/Animation';
-import { category } from '@type/position';
 
 type CategoryMenuProps = {
   onClick?: (url: string) => void;

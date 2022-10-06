@@ -1,7 +1,10 @@
-import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import React, { useState } from 'react';
+
+import { AnimatePresence } from 'framer-motion';
+
 import { ContributorType } from '../../types/contributor';
 import { contributorAnimate } from '../animation';
+
 import {
   ContributeList,
   ContributorCardWrapper,

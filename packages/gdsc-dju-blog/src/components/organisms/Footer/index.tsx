@@ -1,4 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
+
+import GdscBlogLogo from '@assets/logos/GdscBlogLogo';
+
 import {
   BlogIconWrapper,
   ColumnWrapper,
@@ -14,8 +18,6 @@ import {
   StyledColumn,
   StyledTr,
 } from './styled';
-import { useNavigate } from 'react-router';
-import GdscBlogLogo from '@assets/logos/GdscBlogLogo';
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -26,7 +28,7 @@ const Footer = () => {
     backend: '/category/be',
     android: '/category/and',
     design: '/category/de',
-    common: '/category/common',
+    common: '/category/atoms',
   };
   const otherSite = {
     googleDevelopers: 'https://developers.google.com/community/gdsc',

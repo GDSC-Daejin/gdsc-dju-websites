@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+
 import UserService from '@src/api/UserService';
 
 export const getGuestData = async (token: string) => {

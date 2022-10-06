@@ -9,6 +9,7 @@ import PostSaves from '../pages/PostSaves';
 import PostWrite from '../pages/PostWrite';
 import SearchResult from '../pages/SearchResult';
 import SignUp from '../pages/SignUp';
+
 import ComponentLayout from './ComponentLayout';
 
 const Layout = () => {

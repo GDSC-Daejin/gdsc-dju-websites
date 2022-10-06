@@ -1,12 +1,38 @@
-import React from 'react';
-import { Footer } from '@layout/Footer';
-import CultureSection from '@layout/Home/CultureSection';
-import HomePageSection from '@layout/Home/HomePageSection';
-import IntroduceSection from '@layout/Home/IntroduceSection';
-import ManagementSection from '@layout/Home/ManagementSection';
-import SolarSystem from '@layout/SolarSystem';
+import React, { lazy } from 'react';
+
+import SolarSystem from '@molecules/SolarSystem';
 
 import { HomeContainer, HomeSolarSystemWrapper } from './styled';
+
+const HomePageSection = lazy(() =>
+  import('@src/components/templates/HomeLayout/HomePageSection').then(
+    (module) => ({
+      default: module.default,
+    }),
+  ),
+);
+
+const IntroduceSection = lazy(() =>
+  import('@src/components/templates/HomeLayout/IntroduceSection').then(
+    (module) => ({
+      default: module.default,
+    }),
+  ),
+);
+const CultureSection = lazy(() =>
+  import('@src/components/templates/HomeLayout/CultureSection').then(
+    (module) => ({
+      default: module.default,
+    }),
+  ),
+);
+const ManagementSection = lazy(() =>
+  import('@src/components/templates/HomeLayout/ManagementSection').then(
+    (module) => ({
+      default: module.default,
+    }),
+  ),
+);
 
 const Home = () => {
   return (
@@ -18,7 +44,6 @@ const Home = () => {
       <IntroduceSection />
       <CultureSection />
       <ManagementSection />
-      <Footer />
     </HomeContainer>
   );
 };

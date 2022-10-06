@@ -1,7 +1,8 @@
-import PostSavesLayout from '@src/components/layouts/PostSavesLayout';
-import { ContainerInner, LayoutContainer } from '@styles/layouts';
 import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+
+import PostSavesLayout from '@src/components/layouts/PostSavesLayout';
+import { ContainerInner, LayoutContainer } from '@styles/layouts';
 
 const PostSaves = () => {
   const [searchParams, setSearchParams] = useSearchParams();

@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import { rowScoreBoardType, rowUserStateDataType } from '../types';
 import { FilterType, ListType } from '../types/filterType';
 

@@ -1,5 +1,6 @@
-import { getRecruitStatus } from '@src/apis/RecruitService';
 import { atom } from 'jotai';
+
+import { getRecruitStatus } from '@src/apis/RecruitService';
 
 export interface RecruitmentAtom {
   home: boolean;
