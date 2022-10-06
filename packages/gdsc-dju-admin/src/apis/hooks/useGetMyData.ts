@@ -9,20 +9,13 @@ export const getUserData = async () => {
 };
 
 export const useGetMyData = () => {
-  const token = localStorage.getItem('token');
   const navigate = useNavigate();
-  const { data: userData } = useQuery(
-    [`myData-${token}`],
-    () => getUserData(),
-    {
-      retry: 2,
-      refetchOnWindowFocus: false,
-      enabled: !!token,
-      onError: () => {
-        localStorage.removeItem('token');
-        navigate('/');
-      },
+  const { data: userData } = useQuery([`myData`], () => getUserData(), {
+    retry: 2,
+    refetchOnWindowFocus: false,
+    onError: () => {
+      navigate('/');
     },
-  );
+  });
   return { userData: userData ?? userData };
 };

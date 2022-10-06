@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { AnimatePresence } from 'framer-motion';
+import Cookies from 'js-cookie';
 
 import { ROUTES } from '../../../routes/Route';
 
@@ -49,8 +50,7 @@ const AdminUserMenu: React.FC<{
             layout
             onClick={async () => {
               setIsOpen(false);
-              localStorage.removeItem('token');
-              localStorage.removeItem('refresh_token');
+              Cookies.remove('token', { path: '/', domain: '.gdsc-dju.com' });
               navigate(ROUTES.HOME.ROUTE);
             }}
           >
