@@ -28,7 +28,7 @@ type AnnounceFormLayoutProps = {
   setFile: (file: File) => void;
 };
 
-const AnnounceFormLayout = ({
+const AnnouncementFormLayout = ({
   handleSubmit,
   formElements,
   isBlocked,
@@ -111,4 +111,4 @@ const AnnounceFormLayout = ({
   );
 };
 
-export default AnnounceFormLayout;
+export default AnnouncementFormLayout;

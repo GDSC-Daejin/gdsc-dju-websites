@@ -118,8 +118,8 @@ export const FormSubmitButton = styled.button<{ disable?: boolean }>`
     `}
 `;
 export const ErrorBox = styled.div`
-  margin-top: 10px;
-  padding: 10px 20px;
+  margin-bottom: 10px;
+  padding: 12px 6px;
   border-radius: 10px;
   color: ${({ theme }) => theme.colors.red900};
   font-size: ${({ theme }) => theme.fontSizes.textM};

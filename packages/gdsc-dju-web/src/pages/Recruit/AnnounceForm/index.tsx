@@ -16,7 +16,7 @@ import { alertAtom } from '@store/alertAtom';
 import { loaderAtom } from '@store/loaderAtom';
 import { MODAL_KEY, modalAtom } from '@store/modalAtom';
 import { ContainerInner, LayoutContainer } from '@styles/layouts';
-import AnnounceFormLayout from '@templates/AnnounceFormLayout';
+import AnnouncementFormLayout from '@templates/AnnouncementFormLayout';
 import {
   IApplicantParams,
   IInputRegister,
@@ -152,7 +152,7 @@ const AnnounceForm = () => {
       <ApplyModal {...(params as IApplicantParams)} onClick={onRegister} />
       <LayoutContainer>
         <ContainerInner>
-          <AnnounceFormLayout
+          <AnnouncementFormLayout
             isBlocked={isBlocked}
             formElements={formElements}
             handleSubmit={handleSubmit(onSubmit)}
