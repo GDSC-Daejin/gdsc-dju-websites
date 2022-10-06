@@ -46,7 +46,7 @@ jobs:
         run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
         working-directory: ${{ env.working-directory }}
 
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - uses: HyeokE/action-hosting-deploy@main
         id: run_firebase_preview
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

@@ -14,7 +14,7 @@
     "@types/react-router-dom": "^5.3.3",
     "axios": "^0.27.2",
     "firebase": "^9.9.1",
-    "firebase-tools": "^11.4.0",
+    "firebase-tools": "^11.13.0",
     "framer-motion": "^6.5.1",
     "lottie-web": "^5.9.6",
     "react": "^18.2.0",
