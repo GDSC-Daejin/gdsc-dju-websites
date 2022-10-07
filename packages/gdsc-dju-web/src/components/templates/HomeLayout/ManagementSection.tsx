@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
-import { listItemAnimate } from '@animations/variants';
+import { listAnimate, managerCardAnimate } from '@animations/variants';
 import { managerData } from '@contents/managerData';
 import MemberCard from '@molecules/MemberCard';
 import { useYClickScroll } from '@utils/useYClickScroll';
@@ -57,8 +57,7 @@ const MemberCardSection = styled(motion.section)`
   }
 `;
 const MemberCardWrapper = styled(motion.div)<{
-  windowWidth: string;
-  sectionWidth: string;
+  width: string;
 }>`
   display: flex;
   min-width: 250px;
@@ -67,15 +66,11 @@ const MemberCardWrapper = styled(motion.div)<{
   @media (max-width: ${({ theme }) => theme.windowSizes.mobile}px) {
     width: 100%;
   }
-  ${({ sectionWidth, windowWidth }) =>
-    sectionWidth &&
-    windowWidth &&
+  ${({ width }) =>
+    width &&
     css`
-      transform: translateX(
-        calc((${windowWidth} - ${sectionWidth}) / 2 + 20px)
-      );
       &:last-child {
-        padding-right: calc((${windowWidth} - ${sectionWidth}) / 2 + 20px);
+        padding-right: calc((${width}) / 2 + 20px);
       }
     `}
 `;
@@ -97,7 +92,7 @@ const ManagementSection = () => {
         <ManagerSectionInner>
           <ManagerSectionWrapper ref={sectionRef}>
             <HomeSectionTitle
-              variants={listItemAnimate}
+              variants={listAnimate}
               initial={'start'}
               whileInView={'end'}
               viewport={{ once: true }}
@@ -105,7 +100,7 @@ const ManagementSection = () => {
               GDSC DJU 운영진을 소개해요
             </HomeSectionTitle>
             <ManagerSubTitle
-              variants={listItemAnimate}
+              variants={listAnimate}
               initial={'start'}
               whileInView={'end'}
               viewport={{ once: true }}
@@ -115,6 +110,10 @@ const ManagementSection = () => {
           </ManagerSectionWrapper>
         </ManagerSectionInner>
         <MemberCardSection
+          variants={listAnimate}
+          initial={'start'}
+          whileInView={'end'}
+          viewport={{ once: true }}
           ref={sessionRef}
           onMouseDown={mouseDownHandler}
           onMouseUp={mouseUpHandler}
@@ -122,8 +121,9 @@ const ManagementSection = () => {
         >
           {managerData.map((member, index) => (
             <MemberCardWrapper
-              windowWidth={`${windowSize.width}px`}
-              sectionWidth={`${sectionWidth}px`}
+              variants={managerCardAnimate}
+              custom={windowSize.width - sectionWidth}
+              width={`${windowSize.width - sectionWidth}px`}
               key={index}
             >
               <MemberCard member={member} />

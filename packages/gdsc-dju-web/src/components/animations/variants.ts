@@ -1,11 +1,13 @@
 export const listItemAnimate = {
   start: {
     opacity: 0,
+    y: -10,
   },
   end: {
     opacity: 1,
+    y: 0,
     transition: {
-      duration: 1,
+      duration: 0.5,
     },
   },
   exit: {
@@ -21,7 +23,6 @@ export const listAnimate = {
     transition: {
       staggerChildren: 0.2,
       delayChildren: 0.2,
-      duration: 0.6,
     },
   },
   exit: {
@@ -61,22 +62,6 @@ export const titleAnimate = {
   },
 };
 
-export const titleItemAnimate = {
-  start: {
-    opacity: 0,
-    y: -30,
-  },
-  end: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-    },
-  },
-  exit: {
-    opacity: 0,
-  },
-};
 export const bannerItemAnimate = {
   start: {
     opacity: 0,
@@ -96,7 +81,7 @@ export const bannerItemAnimate = {
 export const memberCardAnimate = {
   start: {
     opacity: 0,
-    y: 30,
+    y: -10,
   },
   end: {
     opacity: 1,
@@ -108,4 +93,18 @@ export const memberCardAnimate = {
   exit: {
     opacity: 0,
   },
+};
+export const managerCardAnimate = {
+  start: {
+    opacity: 0,
+    y: -10,
+  },
+  end: (animateWidth: number) => ({
+    opacity: 1,
+    y: 0,
+    translateX: `calc((${animateWidth}px) / 2 + 20px)`,
+    transition: {
+      duration: 0.5,
+    },
+  }),
 };
