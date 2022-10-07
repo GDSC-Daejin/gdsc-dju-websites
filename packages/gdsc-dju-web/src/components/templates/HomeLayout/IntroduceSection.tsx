@@ -23,6 +23,15 @@ const ContentWrapper = styled(motion.div)`
     margin-top: 2rem;
   }
 `;
+const ContentBox = styled(motion.div)`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @media (max-width: ${({ theme }) => theme.windowSizes.mobile}px) {
+    width: 250px;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 2rem;
+  }
+`;
 const ContentTitle = styled.span`
   margin-bottom: 0.9rem;
   font-size: ${({ theme }) => theme.fontSizes.textXl};
@@ -62,55 +71,38 @@ const IntroduceSection = () => {
   return (
     <HomeSectionContainer>
       <HomeSectionContainerInner>
-        <HomeSectionWrapper variants={listAnimate}>
-          <HomeSectionTitle
-            variants={listItemAnimate}
+        <HomeSectionWrapper
+          variants={listAnimate}
+          initial={'start'}
+          whileInView={'end'}
+          viewport={{ once: true }}
+        >
+          <HomeSectionTitle variants={listItemAnimate}>
+            디자이너와 개발자의 성장을 위해
+          </HomeSectionTitle>
+          <ContentBox
+            variants={listAnimate}
             initial={'start'}
             whileInView={'end'}
             viewport={{ once: true }}
           >
-            디자이너와 개발자의 성장을 위해
-          </HomeSectionTitle>
-          <div>
-            <ContentWrapper
-              variants={listItemAnimate}
-              initial={'start'}
-              whileInView={'end'}
-              viewport={{ once: true }}
-            >
+            <ContentWrapper variants={listItemAnimate}>
               <ContentTitle>누적 지원자 수</ContentTitle>
               <ContentText>90명 +</ContentText>
             </ContentWrapper>
-            <ContentWrapper
-              variants={listItemAnimate}
-              initial={'start'}
-              whileInView={'end'}
-              viewport={{ once: true }}
-            >
+            <ContentWrapper variants={listItemAnimate}>
               <ContentTitle>전체 인원</ContentTitle>
               <ContentText>30명 +</ContentText>
             </ContentWrapper>
-          </div>
-          <div>
-            <ContentWrapper
-              variants={listItemAnimate}
-              initial={'start'}
-              whileInView={'end'}
-              viewport={{ once: true }}
-            >
+            <ContentWrapper variants={listItemAnimate}>
               <ContentTitle>진행한 스터디/프로젝트</ContentTitle>
               <ContentText>10회 +</ContentText>
             </ContentWrapper>
-            <ContentWrapper
-              variants={listItemAnimate}
-              initial={'start'}
-              whileInView={'end'}
-              viewport={{ once: true }}
-            >
+            <ContentWrapper variants={listItemAnimate}>
               <ContentTitle>진행한 이벤트</ContentTitle>
               <ContentText>100회 +</ContentText>
             </ContentWrapper>
-          </div>
+          </ContentBox>
         </HomeSectionWrapper>
       </HomeSectionContainerInner>
     </HomeSectionContainer>

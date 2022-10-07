@@ -21,7 +21,7 @@ export const memberList = [
     role: 'Core Member',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02CH6KQT8Q-a03a44566103-512',
     text: '빛나지만 눈부시지 않게',
-    position: 'Backend',
+    position: 'Frontend',
   },
   {
     nickname: 'Blaire	',

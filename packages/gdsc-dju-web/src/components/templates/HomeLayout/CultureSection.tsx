@@ -61,22 +61,21 @@ const CultureSection = () => {
       <HomeSectionContainerInner>
         <HomeSectionWrapper>
           <HomeSectionTitle
-            variants={listItemAnimate}
+            variants={listAnimate}
             initial={'start'}
             whileInView={'end'}
             viewport={{ once: true }}
           >
             GDSC DJU의 문화를 소개해요
           </HomeSectionTitle>
-          <CultureContentSection variants={listItemAnimate}>
+          <CultureContentSection
+            variants={listAnimate}
+            initial={'start'}
+            whileInView={'end'}
+            viewport={{ once: true }}
+          >
             {culture.map((data, index) => (
-              <CultureContentWrapper
-                key={index}
-                variants={listAnimate}
-                initial={'start'}
-                whileInView={'end'}
-                viewport={{ once: true }}
-              >
+              <CultureContentWrapper key={index} variants={listItemAnimate}>
                 <CultureTitle>{data.title}</CultureTitle>
                 <CultureText>{data.text}</CultureText>
               </CultureContentWrapper>
