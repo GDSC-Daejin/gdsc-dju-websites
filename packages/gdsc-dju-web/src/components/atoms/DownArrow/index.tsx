@@ -13,6 +13,7 @@ const DownArrowWrapper = styled(motion.div)`
   align-items: center;
   justify-content: flex-end;
   position: relative;
+  z-index: -1;
 `;
 const DownArrowInner = styled(motion.div)`
   width: 100%;
