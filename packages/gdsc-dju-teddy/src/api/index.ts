@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { rowScoreBoardType, rowUserStateDataType } from '../types';
+import { RowScoreBoard, RowUserState } from '../types';
 import { FilterType, ListType } from '../types/filterType';
 
 export class TeddyBearApi {
@@ -9,14 +9,12 @@ export class TeddyBearApi {
     this.API = 'https://api.gdsc-dju.com/teddy-route';
   }
   getScoreboard = (filter: FilterType, listType: ListType) => {
-    return axios.get<rowScoreBoardType>(
+    return axios.get<RowScoreBoard>(
       `${this.API}/scoreboard/${filter}/${listType}/inc`,
     );
   };
   getUserState = (filter: FilterType, userID: string) => {
-    return axios.get<rowUserStateDataType>(
-      `${this.API}/userstats/${filter}/${userID}`,
-    );
+    return axios.get<RowUserState>(`${this.API}/userstats/${filter}/${userID}`);
   };
 }
 export default new TeddyBearApi();

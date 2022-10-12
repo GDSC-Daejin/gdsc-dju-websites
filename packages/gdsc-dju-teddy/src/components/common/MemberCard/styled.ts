@@ -28,8 +28,8 @@ export const MemberCardInner = styled(motion.div)`
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  border-style: solid;
-  border-width: 0;
+  border: 1px solid ${({ theme }) => theme.colors.grey100};
+  gap: 20px;
   padding: 20px 10px;
 `;
 export const ProfileImage = styled(motion.img)`

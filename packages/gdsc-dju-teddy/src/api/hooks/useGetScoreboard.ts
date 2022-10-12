@@ -9,8 +9,12 @@ async function getScoreboard(filter: FilterType, listType: ListType) {
 }
 
 export function useGetScoreboard(filter: FilterType, listType: ListType) {
-  const { data: scoreboard, error } = useSWR([`${filter}/${listType}`], () =>
-    getScoreboard(filter, listType),
+  const { data: scoreboard, error } = useSWR(
+    [`${filter}/${listType}`],
+    () => getScoreboard(filter, listType),
+    {
+      suspense: true,
+    },
   );
   return {
     scoreboard: scoreboard && scoreboard.data,

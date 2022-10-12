@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
-import { userStateDataType } from '../../../types';
+import { useGetUserState } from '../../../api/hooks/useGetUserState';
+import { UserState } from '../../../types';
+import { FilterType } from '../../../types/filterType';
 import { CardMargin, MemberName, ProfileImage } from '../MemberCard/styled';
 
 export const DetailMemberCardInner = styled(motion.div)`
@@ -21,6 +23,8 @@ export const DetailMemberCardWrapper = styled(motion.div)`
   border-radius: 20px;
   border-style: solid;
   border-width: 1px;
+  min-width: 300px;
+  min-height: 400px;
   display: flex;
   justify-content: center;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.04);
@@ -90,11 +94,12 @@ const ScoreSelect = styled(motion.div)<{ selected: boolean }>`
     `}
 `;
 
-interface memberCardProps {
-  userData: userStateDataType;
+interface DetailMemberCardProps {
+  id: string;
+  filter: FilterType;
 }
 interface IDetailShareList {
-  userData: userStateDataType;
+  userData: UserState;
   given: boolean;
 }
 interface ISelectBar {
@@ -102,39 +107,27 @@ interface ISelectBar {
   setGiven: (type: boolean) => void;
 }
 
-const DetailMemberCard: React.FC<memberCardProps> = ({ userData }) => {
+const DetailMemberCard: React.FC<DetailMemberCardProps> = ({ filter, id }) => {
   const [given, setGiven] = useState<boolean>(true);
-
-  const user = userData?.user;
+  const { userData } = useGetUserState(filter, id);
   return (
-    <div>
-      {userData && user && (
-        <DetailMemberCardWrapper layoutId={`memberCard-${user.displayName}`}>
-          <DetailMemberCardInner layout>
-            <ProfileWrapper>
-              <ProfileImage
-                src={user.profileImage}
-                layoutId={`memberCard-avatar-${user.displayName}`}
-              />
-              <CardMargin />
-              <ScoreNameWrapper>
-                <MemberName layoutId={`memberCard-name-${user.displayName}`}>
-                  {user.displayName}
-                </MemberName>
-                <Score layoutId={`memberCard-give`}>
-                  보낸 곰돌이: {userData.user.given}
-                </Score>
-                <Score layoutId={`memberCard-get`}>
-                  받은 곰돌이: {userData.user.received}
-                </Score>
-              </ScoreNameWrapper>
-            </ProfileWrapper>
-            <SelectBar given={given} setGiven={setGiven} />
-            <DetailShareList given={given} userData={userData} />
-          </DetailMemberCardInner>
-        </DetailMemberCardWrapper>
+    <>
+      {userData && (
+        <DetailMemberCardInner layout>
+          <ProfileWrapper>
+            <ProfileImage src={userData.user.profileImage} />
+            <CardMargin />
+            <ScoreNameWrapper>
+              <MemberName>{userData.user.displayName}</MemberName>
+              <Score>보낸 곰돌이: {userData.user.given}</Score>
+              <Score>받은 곰돌이: {userData.user.received}</Score>
+            </ScoreNameWrapper>
+          </ProfileWrapper>
+          <SelectBar given={given} setGiven={setGiven} />
+          <DetailShareList given={given} userData={userData} />
+        </DetailMemberCardInner>
       )}
-    </div>
+    </>
   );
 };
 

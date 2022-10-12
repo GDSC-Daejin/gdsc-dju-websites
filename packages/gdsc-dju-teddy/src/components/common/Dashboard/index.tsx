@@ -1,38 +1,37 @@
-import React, { useState } from 'react';
+import React, { Suspense } from 'react';
 
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import styled from 'styled-components';
 
-import { useGetUserState } from '../../../api/hooks/useGetUserState';
-import {
-  Background,
-  CardElementWrapper,
-  CardList,
-} from '../../../pages/Home/styled';
-import { userDataType } from '../../../types';
+import { Background } from '../../../pages/Home/styled';
+import { useFilterStore } from '../../../store/filter';
+import { useTeddyUserStore } from '../../../store/teddyUser';
+import { UserState } from '../../../types';
 import { FilterType } from '../../../types/filterType';
 import OutsideClickHandler from '../../../utils/OutSideClickHandler';
-import DetailMemberCard from '../DetailMemberCard';
-import MemberCard from '../MemberCard';
-import { listAnimate, listItemAnimate } from '../motions/variants';
+import MemberCardSkeletonSection from '../../skeletons/MemberCardSkeletonSection';
+import DetailMemberCard, { DetailMemberCardWrapper } from '../DetailMemberCard';
+import TeddyMemberCardSection from '../TeddyMemberCardSection';
 
 const DashboardContainer = styled.div`
   margin-top: 50px;
+  min-height: 100vh;
 `;
 
 type DashboardProps = {
-  scoreboard: userDataType[] | undefined;
+  scoreboard: UserState[] | undefined;
   filter: FilterType;
 };
 
-const Dashboard = ({ scoreboard, filter }: DashboardProps) => {
-  const [selectedId, setSelectedId] = useState<string>('');
-  const { userData } = useGetUserState(filter, selectedId);
+const Dashboard = () => {
+  const filter = useFilterStore((state) => state.filter);
+  const setTeddyUserId = useTeddyUserStore((state) => state.setTeddyUserId);
+  const teddyUser = useTeddyUserStore((state) => state.teddyUser);
   return (
-    <DashboardContainer>
-      <LayoutGroup>
+    <LayoutGroup>
+      <DashboardContainer>
         <AnimatePresence>
-          {selectedId && (
+          {teddyUser.id && (
             <Background
               initial={{ opacity: 0 }}
               exit={{ opacity: 0 }}
@@ -40,33 +39,30 @@ const Dashboard = ({ scoreboard, filter }: DashboardProps) => {
             >
               <OutsideClickHandler
                 outsideClick={() => {
-                  setSelectedId('');
+                  setTeddyUserId('');
                 }}
               >
-                {userData && <DetailMemberCard userData={userData} />}
+                <DetailMemberCardWrapper layoutId={teddyUser.id}>
+                  <Suspense fallback={<h1>카드 로딩</h1>}>
+                    <DetailMemberCard
+                      id={teddyUser.id}
+                      filter={filter.filterType}
+                    />
+                  </Suspense>
+                </DetailMemberCardWrapper>
               </OutsideClickHandler>
             </Background>
           )}
         </AnimatePresence>
 
-        {scoreboard && (
-          <CardList variants={listAnimate} initial={'start'} animate={'end'}>
-            {scoreboard.map((userData, index) => (
-              <CardElementWrapper
-                key={userData.id}
-                variants={listItemAnimate}
-                layoutId={`memberCard-${userData.displayName}`}
-                onClick={() => {
-                  setSelectedId(userData.id);
-                }}
-              >
-                <MemberCard userData={userData} grade={index} />
-              </CardElementWrapper>
-            ))}
-          </CardList>
-        )}
-      </LayoutGroup>
-    </DashboardContainer>
+        <Suspense fallback={<MemberCardSkeletonSection />}>
+          <TeddyMemberCardSection
+            filterType={filter.filterType}
+            listType={filter.listType}
+          />
+        </Suspense>
+      </DashboardContainer>
+    </LayoutGroup>
   );
 };
 

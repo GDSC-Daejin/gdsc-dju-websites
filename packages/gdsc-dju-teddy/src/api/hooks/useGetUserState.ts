@@ -13,6 +13,7 @@ export function useGetUserState(filter: FilterType, userId: string) {
     () => getUserState(filter, userId),
     {
       isPaused: () => !(userId && filter),
+      suspense: true,
     },
   );
   return {

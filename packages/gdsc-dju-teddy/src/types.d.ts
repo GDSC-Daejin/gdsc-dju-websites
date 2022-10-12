@@ -1,23 +1,23 @@
-export type rowScoreBoardType = {
+export type RowScoreBoard = {
   error: boolean;
   code: number;
   message: string;
-  data: userDataType[];
+  data: User[];
 };
 
-export type userDataType = {
+export type User = {
   id: string;
   displayName: string;
   profileImage: string;
   count: number;
 };
-export type rowUserStateDataType = {
+export type RowUserState = {
   error: boolean;
   code: number;
-  data: userStateDataType;
+  data: UserState;
   message: string;
 };
-export type userStateDataType = {
+export type UserState = {
   user: {
     id: string;
     displayName: string;

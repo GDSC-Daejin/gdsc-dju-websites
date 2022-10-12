@@ -21,7 +21,6 @@ const Layout = () => {
         menuPosition={'none'}
         rightElement={<NavigationElement />}
       />
-
       <Routes>
         <Route path={'/*'} element={<Home />} />
         <Route path={'/weekly/*'} element={<Weekly />} />
