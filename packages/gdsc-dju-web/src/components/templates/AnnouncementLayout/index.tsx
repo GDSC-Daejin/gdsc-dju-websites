@@ -64,6 +64,7 @@ const AnnouncementLayout = ({ aboutTeam }: AnnouncementLayoutProps) => {
             title={'GDSC DJU로의 합류여정'}
             bulletText={`${recruitDefaultText.process} `}
           />
+          <TopMargin />
         </IntroduceWrapper>
         <JoinWrapper>
           <JoinInner>
