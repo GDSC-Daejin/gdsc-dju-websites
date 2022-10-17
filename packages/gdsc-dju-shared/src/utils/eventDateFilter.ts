@@ -6,7 +6,7 @@ export const eventDateFilter = (start: string, end: string) => {
   const endDate = end.split(' ')[0];
   const startTime = start.split(' ')[1];
   const endTime = end.split(' ')[1];
-  if (startDate == endDate) {
+  if (startDate === endDate) {
     return `${startYear}. ${startMonth}. ${startDay}`;
   } else {
     return `${startDate} - ${endDate}`;
@@ -19,7 +19,7 @@ export const eventTimeFilter = (start: string, end: string) => {
   const endDay = endDate.split('-')[2];
   const startTime = start.split(' ')[1];
   const endTime = end.split(' ')[1];
-  if (startDate == endDate) {
+  if (startDate === endDate) {
     return `${startTime} - ${endTime}`;
   } else {
     return `${StartDay}일 ${startTime} - ${endDay}일 ${endTime}`;

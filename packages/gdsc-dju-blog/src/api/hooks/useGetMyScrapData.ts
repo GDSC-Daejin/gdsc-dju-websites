@@ -18,7 +18,7 @@ export function useGetMyScrapData(category: string, page = 0, size: number) {
     [`myPost/temp${postUrlFilter(category, page, size)}`],
     () => getMyScrapData(postUrlFilter(category, page, size)),
     {
-      enabled: !!token,
+      enabled: Boolean(token),
     },
   );
   return {

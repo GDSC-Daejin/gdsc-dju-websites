@@ -16,7 +16,9 @@ const MyBlogLayout = () => {
   const category = searchParams.get('type') ?? 'all';
   const page = searchParams.get('page') ?? '1';
   const categoryHandler = (category: string) => {
-    if (!category) return;
+    if (!category) {
+      return;
+    }
     setSearchParams({
       ...searchParams,
       type: category,

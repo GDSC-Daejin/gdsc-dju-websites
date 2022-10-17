@@ -29,7 +29,9 @@ const HomePhrase: React.FC = () => {
     setInterval(() => {
       setPhrase(homePhraseData[index]);
       index++;
-      if (index >= homePhraseData.length) index = 0;
+      if (index >= homePhraseData.length) {
+        index = 0;
+      }
     }, 5000);
   }, []);
   useEffect(() => {

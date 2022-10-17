@@ -34,7 +34,9 @@ const SignUpForm = () => {
     if (response.data.body.message === 'SUCCESS') {
       alert('회원가입이 완료되었습니다');
       navigate('/', { replace: true });
-    } else alert('에러가 발생했습니다');
+    } else {
+      alert('에러가 발생했습니다');
+    }
   };
   const formElements = Object.keys(formValidation) as Array<
     keyof typeof formValidation
@@ -61,9 +63,13 @@ const SignUpForm = () => {
   }, [watch('nickname')]);
 
   const handleType = () => {
-    if (isSuccess) return 'success';
-    else if (isMutationError) return 'error';
-    else return 'none';
+    if (isSuccess) {
+      return 'success';
+    } else if (isMutationError) {
+      return 'error';
+    } else {
+      return 'none';
+    }
   };
 
   return (
@@ -73,7 +79,7 @@ const SignUpForm = () => {
         return (
           <FormElementWrapper key={element}>
             <FormLabelWrapper>
-              <FormLabel essential={!!elementName.required}>
+              <FormLabel essential={Boolean(elementName.required)}>
                 {elementName.label}
               </FormLabel>
               {elementName.isValidate && <CheckIcon type={handleType()} />}

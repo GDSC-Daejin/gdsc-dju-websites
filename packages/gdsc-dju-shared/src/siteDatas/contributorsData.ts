@@ -3,10 +3,10 @@ import { ContributorsType } from '../types/contributor';
 import { projectData } from './projectData';
 import { userData } from './userData';
 const findContribute = (username: string) => {
-  let result: string[] = [];
+  const result: string[] = [];
   projectData.map((data) =>
     data.members.map((name) =>
-      name == username ? result.push(data.projectName) : null,
+      name === username ? result.push(data.projectName) : null,
     ),
   );
   return result;

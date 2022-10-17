@@ -22,7 +22,9 @@ export const useSetBookMark = (
         if (isSuccess) {
           queryClient.invalidateQueries([`${token}-scrapList`]);
           setMarked(true);
-        } else setMarked(false);
+        } else {
+          setMarked(false);
+        }
       }
     } else {
       setAlert({

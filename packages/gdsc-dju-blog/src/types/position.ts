@@ -6,7 +6,7 @@ export type Position =
   | 'design'
   | 'common';
 
-export const category: Capitalize<Position>[] = [
+export const category: Array<Capitalize<Position>> = [
   'All',
   'Frontend',
   'Backend',

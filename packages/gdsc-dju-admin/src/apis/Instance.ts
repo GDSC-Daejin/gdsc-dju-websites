@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 
 import { resetTokenAndReattemptRequest } from './getNewToken';
 
-let token = Cookies.get('token');
+const token = Cookies.get('token');
 
 const generateAuthInstance = (baseUrl: string) => {
   const instance = axios.create({

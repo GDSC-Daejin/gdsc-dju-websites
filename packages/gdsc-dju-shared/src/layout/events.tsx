@@ -23,7 +23,7 @@ const EventsLayout = () => {
       <EventSection>
         {eventsData.map((data, id) => (
           <EventsWrapper key={id}>
-            {data.type == 'session' ? (
+            {data.type === 'session' ? (
               <Session {...data} />
             ) : (
               <Event {...data} />

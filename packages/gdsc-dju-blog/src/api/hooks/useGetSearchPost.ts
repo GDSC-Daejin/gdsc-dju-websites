@@ -21,7 +21,7 @@ export function useGetSearchPosts(props: Props) {
     () =>
       getSearchPostsData(postSearchUrlFilter(searchContent, category, page)),
     {
-      enabled: !!searchContent && !!category,
+      enabled: Boolean(searchContent) && Boolean(category),
       cacheTime: 60 * 1000,
     },
   );

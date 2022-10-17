@@ -48,6 +48,6 @@ export type getRecruitmentInfoDataType = {
   };
 };
 export type nickNameDataType = {
-  data: { nickname: string }[];
+  data: Array<{ nickname: string }>;
 };
-export type navigationDataType = { route: string; title: string }[];
+export type navigationDataType = Array<{ route: string; title: string }>;

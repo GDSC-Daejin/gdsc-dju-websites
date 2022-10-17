@@ -14,7 +14,7 @@ export function useGetMyScrapList() {
     [`${token}-scrapList`],
     () => getMyScrapList(),
     {
-      enabled: !!token,
+      enabled: Boolean(token),
       suspense: true,
     },
   );

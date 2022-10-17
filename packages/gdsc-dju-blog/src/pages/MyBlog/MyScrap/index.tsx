@@ -16,8 +16,9 @@ const MyScrap = () => {
   const { scrapData } = useGetMyScrapData(category, page - 1, 12);
 
   useEffect(() => {
-    if (searchParams.get('type') && searchParams.get('page')) return;
-    else {
+    if (searchParams.get('type') && searchParams.get('page')) {
+      return;
+    } else {
       setSearchParams({
         type: 'all',
         page: '1',

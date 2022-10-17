@@ -16,8 +16,12 @@ const Redirect = () => {
   const { userData } = useGetMyData();
 
   useEffect(() => {
-    if (!token) return;
-    if (!(userData && userData.role)) return;
+    if (!token) {
+      return;
+    }
+    if (!(userData && userData.role)) {
+      return;
+    }
     if (userData.role === 'LEAD' || userData.role === 'CORE') {
       navigate('/certified');
     } else {

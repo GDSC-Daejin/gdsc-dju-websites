@@ -75,7 +75,7 @@ const SignUpSelect = ({
             <SignUpSelectOption
               key={index}
               onClick={() => OptionOnClick(data)}
-              selected={!!(watch && watch('positionType') === data)}
+              selected={Boolean(watch && watch('positionType') === data)}
             >
               <SignUpColorCircle positionColor={positionColor(data)} />
               {data}

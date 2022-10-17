@@ -74,7 +74,9 @@ function Home() {
                   >
                     <BlogCard
                       postData={postData}
-                      isScrap={!!scrapList?.find((id) => id == postData.postId)}
+                      isScrap={Boolean(
+                        scrapList?.find((id) => id == postData.postId),
+                      )}
                     />
                   </BlogCardWrapper>
                 );

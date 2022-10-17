@@ -11,7 +11,7 @@ export const useGetGuestData = (nickname: string | undefined) => {
   const { data: guestData } = useQuery(
     [`${nickname}-data`],
     () => getGuestData(nickname!),
-    { suspense: true, enabled: !!nickname, retry: 0 },
+    { suspense: true, enabled: Boolean(nickname), retry: 0 },
   );
   return { guestData: guestData && guestData };
 };

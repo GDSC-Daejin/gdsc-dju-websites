@@ -4,7 +4,7 @@ export const ROUTES = {
   RECRUIT: '/recruit',
   fAQ: '/faq',
 };
-export const routes: { route: string; title: string }[] = [
+export const routes: Array<{ route: string; title: string }> = [
   { route: ROUTES.INTRODUCE, title: 'introduce' },
   { route: ROUTES.RECRUIT, title: 'recruitment' },
   { route: ROUTES.fAQ, title: 'faq' },

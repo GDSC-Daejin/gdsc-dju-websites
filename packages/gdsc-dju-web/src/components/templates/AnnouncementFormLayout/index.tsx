@@ -22,7 +22,7 @@ type AnnounceFormLayoutProps = {
   handleSubmit: () => void;
   isBlocked: boolean;
   position: string;
-  formElements: (keyof FormValue)[];
+  formElements: Array<keyof FormValue>;
   register: UseFormRegister<FormValue>;
   errors: FieldErrorsImpl<FormValue>;
   setFile: (file: File) => void;
@@ -58,14 +58,14 @@ const AnnouncementFormLayout = ({
                   {elementName.text && <FormText>{elementName.text}</FormText>}
                   {elementName.type === 'INPUT' ? (
                     <Input
-                      error={!!errors[element]}
+                      error={Boolean(errors[element])}
                       placeholder={elementName.placeholder}
                       {...register(element, elementName)}
                     />
                   ) : elementName.type === 'TEXT_AREA' ? (
                     <TextArea
                       placeholder={elementName.placeholder}
-                      error={!!errors[element]}
+                      error={Boolean(errors[element])}
                       {...register(element, elementName)}
                     />
                   ) : (
@@ -76,7 +76,8 @@ const AnnouncementFormLayout = ({
                     </p>
                   )}
                   <ErrorBox>
-                    {!!errors[element] && (errors[element]?.message as string)}
+                    {Boolean(errors[element]) &&
+                      (errors[element]?.message as string)}
                   </ErrorBox>
                 </FormContentWrapper>
               );

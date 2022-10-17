@@ -36,7 +36,9 @@ export async function resetTokenAndReattemptRequest(
       // TODO#1 callback 함수
       addSubscriber(async (token: string) => {
         try {
-          if (!errorResponse) return;
+          if (!errorResponse) {
+            return;
+          }
           errorResponse.config.headers = { Authorization: `Bearer ${token}` };
           resolve(instance(errorResponse.config));
         } catch (error) {

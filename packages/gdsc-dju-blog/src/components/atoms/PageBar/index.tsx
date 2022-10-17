@@ -33,9 +33,12 @@ const PageBar = ({ currentPage, totalPage }: Props) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const pageHandler = (page: number, limit?: number) => {
-    if (page < 1) return;
-    if (page === limit) return;
-    else {
+    if (page < 1) {
+      return;
+    }
+    if (page === limit) {
+      return;
+    } else {
       setSearchParams({ ...searchParams, page: page.toString() });
     }
   };

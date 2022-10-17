@@ -19,7 +19,7 @@ const PostSectionContainer = ({ postData }: Props) => {
         <BlogCardWrapper key={data.postId}>
           <BlogCard
             postData={data}
-            isScrap={!!scrapList?.find((id) => id == data.postId)}
+            isScrap={Boolean(scrapList?.find((id) => id == data.postId))}
           />
         </BlogCardWrapper>
       ))}

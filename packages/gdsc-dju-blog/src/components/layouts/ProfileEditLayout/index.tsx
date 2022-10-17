@@ -80,13 +80,15 @@ const ProfileEditLayout = ({ myData }: { myData: UserData }) => {
           const elementName = formValidation[element];
           return (
             <FormElementWrapper key={element}>
-              <FormLabel essential={!!elementName.required}>
+              <FormLabel essential={Boolean(elementName.required)}>
                 {elementName.label}
               </FormLabel>
               <TextInput
                 disabled={
                   elementName.isBlock ||
-                  !!(elementName.isModifyBlock && myData.memberInfo[element])
+                  Boolean(
+                    elementName.isModifyBlock && myData.memberInfo[element],
+                  )
                 }
                 error={errors[element]}
                 placeholder={elementName.placeholder}

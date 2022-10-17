@@ -19,7 +19,9 @@ const WidthPostsContainer = ({ postData }: Props) => {
           <WidthPostCard
             postData={data}
             isScrap={
-              scrapList ? !!scrapList.find((id) => id == data.postId) : false
+              scrapList
+                ? Boolean(scrapList.find((id) => id == data.postId))
+                : false
             }
           />
         </PostCardWrapper>

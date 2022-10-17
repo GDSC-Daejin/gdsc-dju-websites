@@ -25,4 +25,4 @@ export interface SessionEventType extends DefaultEventType {
   type: 'session';
 }
 
-export type EventsDataType = (SessionEventType | EventType)[];
+export type EventsDataType = Array<SessionEventType | EventType>;

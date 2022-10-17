@@ -5,7 +5,7 @@ import { resetTokenAndReattemptRequest } from '@src/api/hooks/getNewToken';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-let token = Cookies.get('token');
+const token = Cookies.get('token');
 const blogRoute = `https://api.gdsc-dju.com/${
   isProduction ? 'blog-route' : 'blog-route-dev'
 }`;

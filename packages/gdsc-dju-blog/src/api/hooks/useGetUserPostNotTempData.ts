@@ -27,7 +27,7 @@ export function useGetUserPostsNotTempData(
         userPostTempUrlFilter(category!, page, size),
       ),
     {
-      enabled: !!isAble,
+      enabled: Boolean(isAble),
       suspense: true,
     },
   );

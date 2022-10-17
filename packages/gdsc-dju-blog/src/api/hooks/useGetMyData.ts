@@ -14,7 +14,7 @@ export const useGetMyData = () => {
 
   const { data: myData } = useQuery([`userdata`], () => getMyData(), {
     suspense: true,
-    enabled: !!token,
+    enabled: Boolean(token),
     retry: 0,
   });
 

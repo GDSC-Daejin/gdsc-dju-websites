@@ -161,7 +161,9 @@ const Index: React.FC<PostWriteProps> = ({ postData, id }) => {
   };
 
   useEffect(() => {
-    if (!postData) return;
+    if (!postData) {
+      return;
+    }
     setDetailPostData({
       ...detailPostData,
       title: postData.title,

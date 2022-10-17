@@ -12,7 +12,7 @@ export function useGetDetailPost(postId: string | undefined) {
     [postId, `/post/${postId}`],
     () => getDetailPost(postId!),
     {
-      enabled: !!postId,
+      enabled: Boolean(postId),
     },
   );
   return {

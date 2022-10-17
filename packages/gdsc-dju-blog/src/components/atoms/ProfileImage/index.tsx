@@ -13,7 +13,7 @@ const ProfileImage = (props: Props) => {
   const { image, position, size = 'medium' } = props;
   const imageUrl = image.replace('=s96-c', '');
   return (
-    <StyledImageWrapper isHaveClickEvent={!!props.onClick}>
+    <StyledImageWrapper isHaveClickEvent={Boolean(props.onClick)}>
       {position && <PositionCircle color={positionColor(position)} />}
       <StyledImage src={imageUrl} size={size} {...props} />
     </StyledImageWrapper>
