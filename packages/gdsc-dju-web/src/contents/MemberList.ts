@@ -32,20 +32,36 @@ export const memberList = [
     position: 'Designer',
   },
   {
-    nickname: 'Rocoli',
-    name: '유형찬',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02C8B72LT1-e35fe9b38122-512',
-    text: '내 죽음이 내 삶 보다 가취가 있기를',
-    position: 'Backend',
-  },
-  {
     nickname: 'Jim',
     name: '전병선',
     role: 'Core Member',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02TKATKRBN-f7b7e7e1dc15-512',
     text: '돈 많은 백수가 꿈이에요',
     position: 'Android',
+  },
+  {
+    nickname: 'Cindy',
+    name: '박수현',
+    role: 'Core Member',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02TMHKQJQ6-6f56b34c34c9-512',
+    text: '강하지?강하지! 우리집 강아지는 복슬강아지',
+    position: 'Designer',
+  },
+  {
+    nickname: 'Peony',
+    name: '정명주',
+    role: 'Core Member',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02TWSK3RQU-a3e79f8f5148-512',
+    text: '응애개발자',
+    position: 'Backend',
+  },
+  {
+    nickname: 'Rocoli',
+    name: '유형찬',
+    role: 'Member',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02C8B72LT1-e35fe9b38122-512',
+    text: '내 죽음이 내 삶 보다 가취가 있기를',
+    position: 'Backend',
   },
 
   {
@@ -105,14 +121,6 @@ export const memberList = [
     position: 'Backend',
   },
   {
-    nickname: 'Peony	',
-    name: '정명주',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02TWSK3RQU-a3e79f8f5148-512',
-    text: '응애개발자',
-    position: 'Backend',
-  },
-  {
     nickname: 'Chois',
     name: '최병주',
     role: 'Member',
@@ -137,14 +145,7 @@ export const memberList = [
     text: '내일은 오늘보다 더 좋은 날 되길',
     position: 'Android',
   },
-  {
-    nickname: 'Cindy',
-    name: '박수현',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02TMHKQJQ6-6f56b34c34c9-512',
-    text: '강하지?강하지! 우리집 강아지는 복슬강아지',
-    position: 'Designer',
-  },
+
   {
     nickname: 'Gunzo',
     name: '권소윤',
@@ -182,7 +183,7 @@ export const memberList = [
     name: '김경하',
     role: 'Member',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U040W6PS0TW-g2d312e41758-512',
-    text: '안녕하세요',
+    text: '미래의 나야 부탁해',
     position: 'Beginner',
   },
   {
@@ -190,7 +191,7 @@ export const memberList = [
     name: '신상민',
     role: 'Member',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U040LUD1CG6-80c2a95a222b-512',
-    text: '안녕하세요',
+    text: '차곡차곡',
     position: 'Beginner',
   },
   {
@@ -206,7 +207,7 @@ export const memberList = [
     name: '원동규',
     role: 'Member',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U040TCMFASF-af2ea49a5ff7-512',
-    text: '안녕하세요',
+    text: '오늘 저녁은 내가 만든 스파게티~ (코드 맞음)',
     position: 'Beginner',
   },
   {
@@ -214,7 +215,7 @@ export const memberList = [
     name: '정승우',
     role: 'Member',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U040W4HRMEY-6f00bba63c01-512',
-    text: '안녕하세요',
+    text: '개미는 뚠뚠 오늘도 뚠뚠 열심히 일을하네',
     position: 'Beginner',
   },
   {
@@ -230,7 +231,7 @@ export const memberList = [
     name: '오소영',
     role: 'Member',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U040TP38YUA-0317ab883a84-512',
-    text: '비온뒤 미끄러움',
+    text: '열심히 레벨업!',
     position: 'Beginner',
   },
   // {
