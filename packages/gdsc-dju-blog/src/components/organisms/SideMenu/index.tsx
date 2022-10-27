@@ -18,7 +18,7 @@ import {
 
 export const SideMenu = () => {
   const [cookies] = useCookies(['token', 'user']);
-  const { isMenuOpen, toggleMenu } = React.useContext(MenuContext);
+  const { isMenuOpen, toggleMenu, menuHandler } = React.useContext(MenuContext);
   const isLogin = cookies.token;
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export const SideMenu = () => {
   }, [isMenuOpen]);
 
   return (
-    <OutsideClickHandler outsideClick={toggleMenu}>
+    <OutsideClickHandler outsideClick={() => menuHandler(false)}>
       <SideMenuWrapper
         initial={false}
         variants={SideMenuAnimation}
