@@ -1,11 +1,8 @@
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import {
-  DarkModeContext,
-  Footer,
-  MenuContext,
-  Navigation,
-} from '@gdsc-dju/styled-components';
+import { Footer, Navigation } from '@gdsc-dju/styled-components';
+import { DarkModeContext } from '@gdsc-dju/styled-components-theme';
 
 import { AnimatePresence } from 'framer-motion';
 import { useRecoilState } from 'recoil';
@@ -26,7 +23,8 @@ const ComponentLayout: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [loader] = useRecoilState(loaderState);
-  const { isMenuOpen, toggleMenu, menuHandler } = useContext(MenuContext);
+  const navigate = useNavigate();
+
   const { isDarkMode, toggleTheme } = useContext(DarkModeContext);
   return (
     <>
@@ -34,9 +32,7 @@ const ComponentLayout: React.FC<{ children: React.ReactNode }> = ({
       <Modal />
       <ScrollTop />
       <Navigation
-        isMenuOpen={isMenuOpen}
-        menuToggle={toggleMenu}
-        menuHandler={menuHandler}
+        router={navigate}
         themeButtonActive={false}
         title={'Tech Blog'}
         menuPosition={'left'}

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { DarkModeContext } from '@gdsc-dju/styled-components';
+import { DarkModeContext } from '@gdsc-dju/styled-components-theme';
 
 import { Giscus } from '@giscus/react';
 import { useGetDetailPost } from '@src/api/hooks/useGetDetailPost';

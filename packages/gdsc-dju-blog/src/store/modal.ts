@@ -1,4 +1,4 @@
-import { ColorToken } from '@gdsc-dju/styled-components';
+import { ColorToken } from '@gdsc-dju/styled-components-theme';
 
 import { atom } from 'recoil';
 
