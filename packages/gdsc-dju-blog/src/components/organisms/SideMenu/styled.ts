@@ -4,11 +4,11 @@ import styled from 'styled-components';
 export const SideMenuWrapper = styled(motion.div)`
   display: flex;
   position: fixed;
-  z-index: 1009;
   left: 0;
   top: 0;
   width: 400px;
   height: 100%;
+  z-index: 100;
   @media screen and (max-width: 500px) {
     width: 100vw;
     height: 100vh;
