@@ -58,8 +58,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
-            ["@gdsc-dju/styled-components", "virtual:4d684cb317bf579f075303c0478e1cef1ea15dfa8ce290651bcc6b72c39087c220f0060beff3a6b4206a26f48551b2efa9fbb9054dfa1952f770281fc07f3fa0#npm:0.0.50"],\
-            ["@gdsc-dju/styled-components-theme", "virtual:4d684cb317bf579f075303c0478e1cef1ea15dfa8ce290651bcc6b72c39087c220f0060beff3a6b4206a26f48551b2efa9fbb9054dfa1952f770281fc07f3fa0#npm:0.0.48"],\
             ["@types/react", "npm:18.0.17"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["@types/react-router-dom", "npm:5.3.3"],\
@@ -4812,13 +4810,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@gdsc-dju/styled-components", [\
-        ["npm:0.0.32", {\
-          "packageLocation": "./.yarn/cache/@gdsc-dju-styled-components-npm-0.0.32-4f5e3a7684-f5f23ac463.zip/node_modules/@gdsc-dju/styled-components/",\
-          "packageDependencies": [\
-            ["@gdsc-dju/styled-components", "npm:0.0.32"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
         ["npm:0.0.38", {\
           "packageLocation": "./.yarn/cache/@gdsc-dju-styled-components-npm-0.0.38-34fbf34e07-1f152be08c.zip/node_modules/@gdsc-dju/styled-components/",\
           "packageDependencies": [\
@@ -4833,17 +4824,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["npm:0.0.50", {\
-          "packageLocation": "./.yarn/cache/@gdsc-dju-styled-components-npm-0.0.50-dd0f03768f-61d0f10efe.zip/node_modules/@gdsc-dju/styled-components/",\
-          "packageDependencies": [\
-            ["@gdsc-dju/styled-components", "npm:0.0.50"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
         ["npm:0.0.53", {\
           "packageLocation": "./.yarn/cache/@gdsc-dju-styled-components-npm-0.0.53-b4c036a560-c65e9791a0.zip/node_modules/@gdsc-dju/styled-components/",\
           "packageDependencies": [\
             ["@gdsc-dju/styled-components", "npm:0.0.53"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["npm:0.0.60", {\
+          "packageLocation": "./.yarn/cache/@gdsc-dju-styled-components-npm-0.0.60-6f68d30a22-9a22865601.zip/node_modules/@gdsc-dju/styled-components/",\
+          "packageDependencies": [\
+            ["@gdsc-dju/styled-components", "npm:0.0.60"]\
           ],\
           "linkType": "SOFT"\
         }],\
@@ -4861,35 +4852,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["styled-components", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:5.3.5"]\
           ],\
           "packagePeers": [\
-            "@types/react-is",\
-            "@types/react-router-dom",\
-            "@types/react",\
-            "@types/styled-components",\
-            "react-is",\
-            "react-router-dom",\
-            "react",\
-            "styled-components"\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["virtual:4d684cb317bf579f075303c0478e1cef1ea15dfa8ce290651bcc6b72c39087c220f0060beff3a6b4206a26f48551b2efa9fbb9054dfa1952f770281fc07f3fa0#npm:0.0.50", {\
-          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-virtual-1619f1982e/0/cache/@gdsc-dju-styled-components-npm-0.0.50-dd0f03768f-61d0f10efe.zip/node_modules/@gdsc-dju/styled-components/",\
-          "packageDependencies": [\
-            ["@gdsc-dju/styled-components", "virtual:4d684cb317bf579f075303c0478e1cef1ea15dfa8ce290651bcc6b72c39087c220f0060beff3a6b4206a26f48551b2efa9fbb9054dfa1952f770281fc07f3fa0#npm:0.0.50"],\
-            ["@gdsc-dju/styled-components-theme", "virtual:4d684cb317bf579f075303c0478e1cef1ea15dfa8ce290651bcc6b72c39087c220f0060beff3a6b4206a26f48551b2efa9fbb9054dfa1952f770281fc07f3fa0#npm:0.0.48"],\
-            ["@types/gdsc-dju__styled-components-theme", null],\
-            ["@types/react", "npm:18.0.17"],\
-            ["@types/react-is", null],\
-            ["@types/react-router-dom", "npm:5.3.3"],\
-            ["@types/styled-components", null],\
-            ["react", "npm:18.2.0"],\
-            ["react-is", "npm:18.2.0"],\
-            ["react-router-dom", "virtual:4d684cb317bf579f075303c0478e1cef1ea15dfa8ce290651bcc6b72c39087c220f0060beff3a6b4206a26f48551b2efa9fbb9054dfa1952f770281fc07f3fa0#npm:6.3.0"],\
-            ["styled-components", null]\
-          ],\
-          "packagePeers": [\
-            "@gdsc-dju/styled-components-theme",\
-            "@types/gdsc-dju__styled-components-theme",\
             "@types/react-is",\
             "@types/react-router-dom",\
             "@types/react",\
@@ -4930,10 +4892,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.32", {\
-          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-virtual-c6ec7f4d7a/0/cache/@gdsc-dju-styled-components-npm-0.0.32-4f5e3a7684-f5f23ac463.zip/node_modules/@gdsc-dju/styled-components/",\
+        ["virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.60", {\
+          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-virtual-9abcd60f7a/0/cache/@gdsc-dju-styled-components-npm-0.0.60-6f68d30a22-9a22865601.zip/node_modules/@gdsc-dju/styled-components/",\
           "packageDependencies": [\
-            ["@gdsc-dju/styled-components", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.32"],\
+            ["@gdsc-dju/styled-components", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.60"],\
+            ["@gdsc-dju/styled-components-theme", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.52"],\
+            ["@types/gdsc-dju__styled-components-theme", null],\
             ["@types/react", "npm:18.0.17"],\
             ["@types/react-is", null],\
             ["@types/styled-components", "npm:5.1.26"],\
@@ -4942,6 +4906,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["styled-components", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:5.3.5"]\
           ],\
           "packagePeers": [\
+            "@gdsc-dju/styled-components-theme",\
+            "@types/gdsc-dju__styled-components-theme",\
             "@types/react-is",\
             "@types/react",\
             "@types/styled-components",\
@@ -4985,18 +4951,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:4d684cb317bf579f075303c0478e1cef1ea15dfa8ce290651bcc6b72c39087c220f0060beff3a6b4206a26f48551b2efa9fbb9054dfa1952f770281fc07f3fa0#npm:0.0.48", {\
-          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-theme-virtual-32063629e1/0/cache/@gdsc-dju-styled-components-theme-npm-0.0.48-f010049bbe-259bc0216e.zip/node_modules/@gdsc-dju/styled-components-theme/",\
+        ["npm:0.0.52", {\
+          "packageLocation": "./.yarn/cache/@gdsc-dju-styled-components-theme-npm-0.0.52-76c88ea256-6a6c3e0e39.zip/node_modules/@gdsc-dju/styled-components-theme/",\
           "packageDependencies": [\
-            ["@gdsc-dju/styled-components-theme", "virtual:4d684cb317bf579f075303c0478e1cef1ea15dfa8ce290651bcc6b72c39087c220f0060beff3a6b4206a26f48551b2efa9fbb9054dfa1952f770281fc07f3fa0#npm:0.0.48"],\
+            ["@gdsc-dju/styled-components-theme", "npm:0.0.52"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:0.0.48", {\
+          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-theme-virtual-7031e87027/0/cache/@gdsc-dju-styled-components-theme-npm-0.0.48-f010049bbe-259bc0216e.zip/node_modules/@gdsc-dju/styled-components-theme/",\
+          "packageDependencies": [\
+            ["@gdsc-dju/styled-components-theme", "virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:0.0.48"],\
             ["@types/react", "npm:18.0.17"],\
             ["@types/react-is", null],\
-            ["@types/react-router-dom", "npm:5.3.3"],\
-            ["@types/styled-components", null],\
+            ["@types/react-router-dom", null],\
+            ["@types/styled-components", "npm:5.1.26"],\
             ["react", "npm:18.2.0"],\
-            ["react-is", "npm:18.2.0"],\
-            ["react-router-dom", "virtual:4d684cb317bf579f075303c0478e1cef1ea15dfa8ce290651bcc6b72c39087c220f0060beff3a6b4206a26f48551b2efa9fbb9054dfa1952f770281fc07f3fa0#npm:6.3.0"],\
-            ["styled-components", null]\
+            ["react-is", null],\
+            ["react-router-dom", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:6.3.0"],\
+            ["styled-components", "virtual:3a9faba5984359708d7582126ccabdd7480360af6dfdd8683c5b19a42b86d2d8fbd11131b8f7218f3e0f9c18603e1ed00f4549e7a7f5226dd035df9c162e8ae3#npm:5.3.5"]\
           ],\
           "packagePeers": [\
             "@types/react-is",\
@@ -5010,13 +4983,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:0.0.48", {\
-          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-theme-virtual-7031e87027/0/cache/@gdsc-dju-styled-components-theme-npm-0.0.48-f010049bbe-259bc0216e.zip/node_modules/@gdsc-dju/styled-components-theme/",\
+        ["virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.52", {\
+          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-theme-virtual-1a7ef240af/0/cache/@gdsc-dju-styled-components-theme-npm-0.0.52-76c88ea256-6a6c3e0e39.zip/node_modules/@gdsc-dju/styled-components-theme/",\
           "packageDependencies": [\
-            ["@gdsc-dju/styled-components-theme", "virtual:54e081a6195d22aab06be35b97cc3c0fbdc43a71f24bc3b28bedc08ffe7e26a5df2c0a859e204f4e578cb082de25c1fdfc5b77c93f5e9154481832cfb2621273#npm:0.0.48"],\
+            ["@gdsc-dju/styled-components-theme", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.52"],\
             ["@types/react", "npm:18.0.17"],\
             ["@types/react-is", null],\
-            ["@types/react-router-dom", null],\
+            ["@types/react-router-dom", "npm:5.3.3"],\
             ["@types/styled-components", "npm:5.1.26"],\
             ["react", "npm:18.2.0"],\
             ["react-is", null],\
@@ -16870,7 +16843,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/gdsc-dju-blog/",\
           "packageDependencies": [\
             ["gdsc-dju-blog", "workspace:packages/gdsc-dju-blog"],\
-            ["@gdsc-dju/styled-components", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.32"],\
+            ["@gdsc-dju/styled-components", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.60"],\
+            ["@gdsc-dju/styled-components-theme", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.52"],\
             ["@giscus/react", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:1.1.2"],\
             ["@toast-ui/editor", "npm:3.2.0"],\
             ["@toast-ui/editor-plugin-chart", "npm:3.0.1"],\
@@ -16929,8 +16903,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["gdsc-dju-frontend", "workspace:."],\
-            ["@gdsc-dju/styled-components", "virtual:4d684cb317bf579f075303c0478e1cef1ea15dfa8ce290651bcc6b72c39087c220f0060beff3a6b4206a26f48551b2efa9fbb9054dfa1952f770281fc07f3fa0#npm:0.0.50"],\
-            ["@gdsc-dju/styled-components-theme", "virtual:4d684cb317bf579f075303c0478e1cef1ea15dfa8ce290651bcc6b72c39087c220f0060beff3a6b4206a26f48551b2efa9fbb9054dfa1952f770281fc07f3fa0#npm:0.0.48"],\
             ["@types/react", "npm:18.0.17"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["@types/react-router-dom", "npm:5.3.3"],\

@@ -17,7 +17,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
-    "eslint": "^8.19.0",
+    "eslint": "8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.1",
     "eslint-plugin-import": "^2.26.0",
@@ -31,8 +31,6 @@
     "vite-plugin-mkcert": "^1.10.1"
   },
   "dependencies": {
-    "@gdsc-dju/styled-components": "^0.0.50",
-    "@gdsc-dju/styled-components-theme": "^0.0.48",
     "@yarnpkg/pnpify": "^4.0.0-rc.14",
     "@yarnpkg/sdks": "^3.0.0-rc.12",
     "babel-cli": "^6.26.0",

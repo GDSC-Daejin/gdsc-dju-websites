@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 
-import { MenuContext } from '@gdsc-dju/styled-components';
+import { MenuContext } from '@gdsc-dju/styled-components-theme';
 
 import TokenService from '@src/api/TokenService';
 import { SideMenuAnimation } from '@src/components/Animation';
+import OutsideClickHandler from '@utils/OutsideClickHandler';
 
 import SideMenuCategory from './SideMenuCategory';
 import SideMenuLogin from './SideMenuLogin';
@@ -35,7 +36,7 @@ export const SideMenu = () => {
   }, [isMenuOpen]);
 
   return (
-    <>
+    <OutsideClickHandler outsideClick={toggleMenu}>
       <SideMenuWrapper
         initial={false}
         variants={SideMenuAnimation}
@@ -52,7 +53,7 @@ export const SideMenu = () => {
           </SideMenuSectionWrapper>
         </SideMenuInner>
       </SideMenuWrapper>
-    </>
+    </OutsideClickHandler>
   );
 };
 

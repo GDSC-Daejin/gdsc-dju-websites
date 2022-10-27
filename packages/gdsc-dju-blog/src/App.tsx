@@ -1,6 +1,6 @@
 import { ErrorBoundary } from 'react-error-boundary';
 
-import { GdsThemeProvider } from '@gdsc-dju/styled-components';
+import { GdsThemeProvider } from '@gdsc-dju/styled-components-theme';
 
 import Layout from './Layout';
 import ErrorFallback from './pages/ErrorFallback';

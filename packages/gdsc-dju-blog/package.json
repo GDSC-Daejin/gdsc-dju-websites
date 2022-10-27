@@ -10,7 +10,8 @@
     "sitemap": "node sitemap-builder.js"
   },
   "dependencies": {
-    "@gdsc-dju/styled-components": "^0.0.32",
+    "@gdsc-dju/styled-components": "^0.0.60",
+    "@gdsc-dju/styled-components-theme": "^0.0.52",
     "@giscus/react": "^1.1.2",
     "@toast-ui/editor": "^3.2.0",
     "@toast-ui/editor-plugin-chart": "^3.0.1",
