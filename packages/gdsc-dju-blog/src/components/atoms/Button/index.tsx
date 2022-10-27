@@ -1,6 +1,6 @@
 import React, { ButtonHTMLAttributes, forwardRef } from 'react';
 
-import { ColorToken } from '@gdsc-dju/styled-components';
+import { ColorToken } from '@gdsc-dju/styled-components-theme';
 
 import GoogleLogo from '@assets/logos/GoogleLogo';
 
