@@ -3,13 +3,14 @@ import { useNavigate } from 'react-router-dom';
 
 import { GDSCButton } from '@src/components/atoms/Button';
 import CategoryMenu from '@src/components/atoms/CategoryMenu';
+import { Position } from '@type/position';
 
 import { ButtonWrapper, TopMenuWrapper } from './styled';
 
 interface Props {
   isGuest: boolean;
-  category: string;
-  categoryHandler: (url: string) => void;
+  category: Position;
+  categoryHandler: (url: Position) => void;
 }
 
 const MyBlogMenuBox = ({

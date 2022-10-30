@@ -11,7 +11,6 @@ import { useSetBookMark } from '@src/hooks/useHandleBookMark';
 import { DetailPostDataType } from '@type/postData';
 import { dateFilter } from '@utils/dateFilter';
 import { debounce } from '@utils/debounce';
-import { hashTageSpreader } from '@utils/hashTageSpreader';
 import { removeMarkdownInContent } from '@utils/removeMarkdownInContent';
 import { thumbnailHandler } from '@utils/thumbnailHandler';
 
@@ -89,7 +88,7 @@ const PostCard: React.FC<Props> = ({ postData, isScrap }) => {
         {/* 태그 */}
         {postData.postHashTags && (
           <PostCardTagWrapper IsHovered={IsHovered}>
-            {hashTageSpreader(postData.postHashTags)
+            {postData.postHashTags
               .filter((data, index) => index < 2)
               .map((data: string, index: number) => (
                 <HashTageLight key={index} text={data} />

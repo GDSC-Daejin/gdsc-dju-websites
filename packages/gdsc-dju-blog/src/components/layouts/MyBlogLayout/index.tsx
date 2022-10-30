@@ -1,26 +1,29 @@
 import React, { Suspense } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 
+import { useRouter } from '@hooks/routing';
 import MyBlogContentBox from '@pages/MyBlog/BlogHome/MyBlogContentBox';
 import MyBlogMenuBox from '@pages/MyBlog/BlogHome/MyBlogMenuBox';
 import MyBlogProfileBox from '@pages/MyBlog/BlogHome/MyBlogProfileBox';
 import { useGetGuestData } from '@src/api/hooks/useGetGuestData';
 import { useGetMyData } from '@src/api/hooks/useGetMyData';
 import { MyBlogLayoutContainer } from '@src/components/layouts/MyBlogLayout/styled';
+import { Position } from '@type/position';
 
-const MyBlogLayout = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+type Props = {
+  category: Position;
+};
+
+const MyBlogLayout = ({ category }: Props) => {
+  const [searchParams] = useSearchParams();
   const { nickname } = useParams<{ nickname: string }>();
   const { guestData } = useGetGuestData(nickname);
   const { myData } = useGetMyData();
-  const category = searchParams.get('type') ?? 'all';
+  const { push } = useRouter();
   const page = searchParams.get('page') ?? '1';
-  const categoryHandler = (category: string) => {
-    if (!category) return;
-    setSearchParams({
-      ...searchParams,
-      type: category,
-    });
+
+  const categoryHandler = (category: Position) => {
+    push(`/@${nickname}/${category}`, { page: '1' });
   };
 
   return (

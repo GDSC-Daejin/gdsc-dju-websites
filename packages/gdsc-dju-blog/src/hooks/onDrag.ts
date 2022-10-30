@@ -9,16 +9,13 @@ const onDrag = (scrollRef: React.RefObject<HTMLDivElement>) => {
     if (scrollRef.current?.scrollLeft !== undefined)
       setStartX(e.pageX + scrollRef.current.scrollLeft);
   };
-  const onDragEnd = () => {
-    setIsDrag(false);
-  };
   const onDragMove = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (isDrag) {
       if (scrollRef.current !== null) {
         const { scrollWidth, clientWidth, scrollLeft } = scrollRef.current;
-        if (scrollRef.current?.scrollLeft !== undefined)
+        if (scrollRef.current?.scrollLeft !== undefined) {
           scrollRef.current.scrollLeft = startX - e.pageX;
-
+        }
         if (scrollLeft === 0) {
           setStartX(e.pageX);
         } else if (scrollWidth <= clientWidth + scrollLeft) {
@@ -26,6 +23,9 @@ const onDrag = (scrollRef: React.RefObject<HTMLDivElement>) => {
         }
       }
     }
+  };
+  const onDragEnd = () => {
+    setIsDrag(false);
   };
 
   return {

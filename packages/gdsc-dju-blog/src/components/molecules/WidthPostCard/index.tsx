@@ -8,7 +8,6 @@ import { useSetBookMark } from '@src/hooks/useHandleBookMark';
 import { DetailPostDataType } from '@type/postData';
 import { dateFilter } from '@utils/dateFilter';
 import { debounce } from '@utils/debounce';
-import { hashTageSpreader } from '@utils/hashTageSpreader';
 import { removeMarkdownInContent } from '@utils/removeMarkdownInContent';
 import { thumbnailHandler } from '@utils/thumbnailHandler';
 
@@ -24,19 +23,29 @@ import {
   WidthPostCardWrapper,
 } from './styled';
 
-interface Props {
-  postData: DetailPostDataType;
+interface Props extends DetailPostDataType {
   isScrap: boolean;
 }
 
-const WidthPostCard: React.FC<Props> = ({ postData, isScrap }) => {
+const WidthPostCard: React.FC<Props> = ({
+  isScrap,
+  postId,
+  postHashTags,
+  title,
+  imagePath,
+  content,
+  memberInfo,
+  example,
+  likes,
+  uploadDate,
+  modifiedAt,
+  category,
+}) => {
   const [hover, setHover] = useState(false);
   const [isMarked, setIsMarked] = useState(isScrap);
   const [cookie] = useCookies(['token']);
-  const { bookMarkHandler } = useSetBookMark(
-    postData.postId,
-    cookie.token,
-    () => setIsMarked(!isMarked),
+  const { bookMarkHandler } = useSetBookMark(postId, cookie.token, () =>
+    setIsMarked(!isMarked),
   );
   const debounceBookMarkHandler = debounce(bookMarkHandler, 300);
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -44,12 +53,12 @@ const WidthPostCard: React.FC<Props> = ({ postData, isScrap }) => {
     debounceBookMarkHandler();
   };
 
-  const removedMarkdownContent = removeMarkdownInContent(postData.content);
+  const removedMarkdownContent = removeMarkdownInContent(content);
   const navigate = useNavigate();
 
   const linkToPost = useCallback(() => {
-    navigate(`/@${postData.memberInfo.nickname}/${postData.postId}`);
-  }, [postData]);
+    navigate(`/@${memberInfo.nickname}/${postId}`);
+  }, [postId]);
   return (
     <WidthPostCardWrapper
       onClick={linkToPost}
@@ -66,13 +75,13 @@ const WidthPostCard: React.FC<Props> = ({ postData, isScrap }) => {
 
       <WidthPostCardImageWrapper>
         <picture>
-          {postData.imagePath ? (
-            <WidthPostCardImage src={postData.imagePath} alt="thumbnail" />
+          {imagePath ? (
+            <WidthPostCardImage src={imagePath} alt="thumbnail" />
           ) : (
             <>
-              <source srcSet={thumbnailHandler(postData.postId).webp} />
+              <source srcSet={thumbnailHandler(postId).webp} />
               <WidthPostCardImage
-                src={thumbnailHandler(postData.postId).jpg}
+                src={thumbnailHandler(postId).jpg}
                 alt="PostCardThumbnail"
               />
             </>
@@ -81,11 +90,11 @@ const WidthPostCard: React.FC<Props> = ({ postData, isScrap }) => {
       </WidthPostCardImageWrapper>
 
       <WidthPostCardContentWrapper hover={hover}>
-        <PostDate>{dateFilter(postData.uploadDate)}</PostDate>
-        <PostTitle>{postData.title}</PostTitle>
-        {postData.postHashTags && (
+        <PostDate>{dateFilter(uploadDate)}</PostDate>
+        <PostTitle>{title}</PostTitle>
+        {postHashTags && (
           <PostHashTageSection>
-            {hashTageSpreader(postData.postHashTags).map((data, id) => (
+            {postHashTags.map((data, id) => (
               <HashTageDark text={data} key={id} />
             ))}
           </PostHashTageSection>

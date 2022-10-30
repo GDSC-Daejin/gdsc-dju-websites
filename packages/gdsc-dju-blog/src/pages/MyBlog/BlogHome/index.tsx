@@ -1,28 +1,18 @@
-import React, { useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import React from 'react';
 
 import MyBlogLayout from '@src/components/layouts/MyBlogLayout';
 import { ContainerInner, LayoutContainer } from '@styles/layouts';
+import { Position } from '@type/position';
 
-const BlogHome = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const categoryParams = searchParams.get('type');
+type Props = {
+  position: Position;
+};
 
-  const pageParams = searchParams.get('page');
-
-  useEffect(() => {
-    if (!pageParams && !categoryParams) {
-      setSearchParams({
-        type: 'all',
-        page: '1',
-      });
-    }
-  }, [pageParams, categoryParams]);
-
+const BlogHome = ({ position }: Props) => {
   return (
     <LayoutContainer>
       <ContainerInner>
-        <MyBlogLayout />
+        <MyBlogLayout category={position} />
       </ContainerInner>
     </LayoutContainer>
   );

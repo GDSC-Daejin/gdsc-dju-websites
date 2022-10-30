@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import GdscLogo from '@assets/logos/GdscLogo';
 import { circleMotion } from '@src/components/Animation';
 import { positionColor } from '@src/utils/positionColor';
-import { category } from '@type/position';
+import { category, Position } from '@type/position';
 
 import {
   CategoryCircle,
@@ -15,7 +15,7 @@ import {
 } from './styled';
 
 type CategoryMenuProps = {
-  onClick?: (url: string) => void;
+  onClick?: (url: Position) => void;
   type: string;
 };
 
@@ -27,15 +27,11 @@ const CategoryMenu: React.FC<CategoryMenuProps> = ({ onClick, type }) => {
   return (
     <CategoryMenuWrapper>
       {category.map((item, id) => {
-        const categoryValue = category[id].toLowerCase();
+        const categoryValue = category[id].toLowerCase() as Position;
         return (
           <CategoryTextWrapper
             isActive={animate(type, categoryValue)}
-            onClick={() => {
-              {
-                onClick && onClick(categoryValue);
-              }
-            }}
+            onClick={() => onClick && onClick(categoryValue)}
             key={id}
           >
             <CategoryCircleWrapper

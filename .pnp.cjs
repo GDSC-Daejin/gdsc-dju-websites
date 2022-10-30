@@ -4831,10 +4831,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["npm:0.0.61", {\
-          "packageLocation": "./.yarn/cache/@gdsc-dju-styled-components-npm-0.0.61-4eefc4a653-0fdf4a2cc9.zip/node_modules/@gdsc-dju/styled-components/",\
+        ["npm:0.0.62", {\
+          "packageLocation": "./.yarn/cache/@gdsc-dju-styled-components-npm-0.0.62-20c04e68b2-09241729ac.zip/node_modules/@gdsc-dju/styled-components/",\
           "packageDependencies": [\
-            ["@gdsc-dju/styled-components", "npm:0.0.61"]\
+            ["@gdsc-dju/styled-components", "npm:0.0.62"]\
           ],\
           "linkType": "SOFT"\
         }],\
@@ -4892,10 +4892,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.61", {\
-          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-virtual-0e712fc2c2/0/cache/@gdsc-dju-styled-components-npm-0.0.61-4eefc4a653-0fdf4a2cc9.zip/node_modules/@gdsc-dju/styled-components/",\
+        ["virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.62", {\
+          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-virtual-98dd9d1a26/0/cache/@gdsc-dju-styled-components-npm-0.0.62-20c04e68b2-09241729ac.zip/node_modules/@gdsc-dju/styled-components/",\
           "packageDependencies": [\
-            ["@gdsc-dju/styled-components", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.61"],\
+            ["@gdsc-dju/styled-components", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.62"],\
             ["@gdsc-dju/styled-components-theme", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.52"],\
             ["@types/gdsc-dju__styled-components-theme", null],\
             ["@types/react", "npm:18.0.17"],\
@@ -16843,7 +16843,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/gdsc-dju-blog/",\
           "packageDependencies": [\
             ["gdsc-dju-blog", "workspace:packages/gdsc-dju-blog"],\
-            ["@gdsc-dju/styled-components", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.61"],\
+            ["@gdsc-dju/styled-components", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.62"],\
             ["@gdsc-dju/styled-components-theme", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.52"],\
             ["@giscus/react", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:1.1.2"],\
             ["@toast-ui/editor", "npm:3.2.0"],\

@@ -7,7 +7,7 @@ export interface DetailPostDataType {
     uploadDate: string;
   };
   content: string;
-  postHashTags: string;
+  postHashTags: string[];
   postId: number;
   title: string;
   likes: string[];
