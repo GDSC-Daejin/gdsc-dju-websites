@@ -4,9 +4,8 @@ import UserService from '@src/api/UserService';
 
 export const getGuestData = async (token: string) => {
   const response = await UserService.getGuestData(token);
-  //TODO : response.data.body.data 변경 요청
-  //@ts-ignore
-  return response.data.body.memberInfo;
+
+  return response.data.body.data;
 };
 
 export const useGetGuestData = (nickname: string | undefined) => {
