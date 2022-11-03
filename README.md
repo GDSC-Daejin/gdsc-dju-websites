@@ -1,6 +1,6 @@
 # gdsc-dju-frontend
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FGDSC-Daejin%2Fgdsc-dju-frontend&count_bg=%23EA4335&title_bg=%234285F4&icon=google.svg&icon_color=%23FFFFFF&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
@@ -67,13 +67,16 @@ ex) feature/gdsc-dju-web/29-navigation
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href="https://github.com/bjc1102"><img src="https://avatars.githubusercontent.com/u/71929440?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Byeong Ju Choi</b></sub></a><br /><a href="https://github.com/GDSC-Daejin/gdsc-dju-websites/commits?author=bjc1102" title="Code">💻</a></td>
-      <td align="center"><a href="https://starlight-j-h.tistory.com/"><img src="https://avatars.githubusercontent.com/u/61281239?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hyeok_E</b></sub></a><br /><a href="https://github.com/GDSC-Daejin/gdsc-dju-websites/commits?author=HyeokE" title="Code">💻</a></td>
-      <td align="center"><a href="https://github.com/BlaireLee"><img src="https://avatars.githubusercontent.com/u/97537672?v=4?s=100" width="100px;" alt=""/><br /><sub><b>BlaireLee</b></sub></a><br /><a href="#design-BlaireLee" title="Design">🎨</a></td>
-      <td align="center"><a href="https://github.com/cin-dy"><img src="https://avatars.githubusercontent.com/u/97660878?v=4?s=100" width="100px;" alt=""/><br /><sub><b>suhyun park</b></sub></a><br /><a href="#design-cin-dy" title="Design">🎨</a></td>
-      <td align="center"><a href="https://github.com/dogdduddy"><img src="https://avatars.githubusercontent.com/u/32217176?v=4?s=100" width="100px;" alt=""/><br /><sub><b>dogdduddy</b></sub></a><br /><a href="https://github.com/GDSC-Daejin/gdsc-dju-websites/commits?author=dogdduddy" title="Code">💻</a></td>
-      <td align="center"><a href="https://github.com/HarryTylenol"><img src="https://avatars.githubusercontent.com/u/22587486?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Harry Park</b></sub></a><br /><a href="#design-HarryTylenol" title="Design">🎨</a></td>
-      <td align="center"><a href="https://github.com/Member-gunzo"><img src="https://avatars.githubusercontent.com/u/98573262?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Member-gunzo</b></sub></a><br /><a href="#design-Member-gunzo" title="Design">🎨</a></td>
+      <td align="center"><a href="https://github.com/bjc1102"><img src="https://avatars.githubusercontent.com/u/71929440?v=4?s=100" width="100px;" alt="Byeong Ju Choi"/><br /><sub><b>Byeong Ju Choi</b></sub></a><br /><a href="https://github.com/GDSC-Daejin/gdsc-dju-websites/commits?author=bjc1102" title="Code">💻</a></td>
+      <td align="center"><a href="https://starlight-j-h.tistory.com/"><img src="https://avatars.githubusercontent.com/u/61281239?v=4?s=100" width="100px;" alt="Hyeok_E"/><br /><sub><b>Hyeok_E</b></sub></a><br /><a href="https://github.com/GDSC-Daejin/gdsc-dju-websites/commits?author=HyeokE" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/BlaireLee"><img src="https://avatars.githubusercontent.com/u/97537672?v=4?s=100" width="100px;" alt="BlaireLee"/><br /><sub><b>BlaireLee</b></sub></a><br /><a href="#design-BlaireLee" title="Design">🎨</a></td>
+      <td align="center"><a href="https://github.com/cin-dy"><img src="https://avatars.githubusercontent.com/u/97660878?v=4?s=100" width="100px;" alt="suhyun park"/><br /><sub><b>suhyun park</b></sub></a><br /><a href="#design-cin-dy" title="Design">🎨</a></td>
+      <td align="center"><a href="https://github.com/dogdduddy"><img src="https://avatars.githubusercontent.com/u/32217176?v=4?s=100" width="100px;" alt="dogdduddy"/><br /><sub><b>dogdduddy</b></sub></a><br /><a href="https://github.com/GDSC-Daejin/gdsc-dju-websites/commits?author=dogdduddy" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/HarryTylenol"><img src="https://avatars.githubusercontent.com/u/22587486?v=4?s=100" width="100px;" alt="Harry Park"/><br /><sub><b>Harry Park</b></sub></a><br /><a href="#design-HarryTylenol" title="Design">🎨</a></td>
+      <td align="center"><a href="https://github.com/Member-gunzo"><img src="https://avatars.githubusercontent.com/u/98573262?v=4?s=100" width="100px;" alt="Member-gunzo"/><br /><sub><b>Member-gunzo</b></sub></a><br /><a href="#design-Member-gunzo" title="Design">🎨</a></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/gudcks0305"><img src="https://avatars.githubusercontent.com/u/84506708?v=4?s=100" width="100px;" alt="yoo hyeong chan"/><br /><sub><b>yoo hyeong chan</b></sub></a><br /><a href="https://github.com/GDSC-Daejin/gdsc-dju-websites/commits?author=gudcks0305" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
