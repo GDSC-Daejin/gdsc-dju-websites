@@ -1,31 +1,29 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { HashTageDark } from '@src/components/atoms/HashTage';
 import { AuthorProps } from '@type/postData';
 import { dateFilter } from '@utils/dateFilter';
-import { hashTageSpreader } from '@utils/hashTageSpreader';
 
 import {
   Author,
   AuthorImage,
   AuthorWrapper,
   Date,
-  HashTageSection,
   PostInformation,
 } from '../styled';
 
 interface Props extends AuthorProps {
   uploadDate: string;
-  postHashTags: string;
+  postHashTags: string[];
 }
-const AuthorBox: React.FC<Props> = ({
+const AuthorBox = ({
   profileImageUrl,
   nickname,
   uploadDate,
   postHashTags,
-}) => {
+}: Props) => {
   const navigate = useNavigate();
+
   return (
     <>
       <PostInformation>
@@ -40,11 +38,11 @@ const AuthorBox: React.FC<Props> = ({
         </AuthorWrapper>
         <Date>{dateFilter(uploadDate)}</Date>
       </PostInformation>
-      <HashTageSection>
-        {hashTageSpreader(postHashTags).map((tage) => (
-          <HashTageDark text={tage} key={tage} size={'L'} />
-        ))}
-      </HashTageSection>
+      {/*<HashTageSection>*/}
+      {/*  {postHashTags.map((tage) => (*/}
+      {/*    <HashTageDark text={tage} key={tage} size={'L'} />*/}
+      {/*  ))}*/}
+      {/*</HashTageSection>*/}
     </>
   );
 };

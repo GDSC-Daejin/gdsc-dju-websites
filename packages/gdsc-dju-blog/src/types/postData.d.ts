@@ -1,4 +1,4 @@
-export interface DetailPostDataType {
+export interface PostData {
   modifiedAt: string;
   uploadDate: string;
   example: string;
@@ -7,8 +7,9 @@ export interface DetailPostDataType {
     uploadDate: string;
   };
   content: string;
-  postHashTags: string;
+  postHashTags: string[];
   postId: number;
+  userId: string;
   title: string;
   likes: string[];
   imagePath: string;
@@ -21,11 +22,6 @@ export interface AuthorProps {
   role: string;
 }
 
-export interface RowPostDataType {
-  body: {
-    data: DetailPostDataType;
-  };
-}
 export interface PostPostDataType {
   base64Thumbnail: string;
   fileName: string;
@@ -34,16 +30,12 @@ export interface PostPostDataType {
     categoryName: string;
   };
   content: string;
-  postHashTags: string;
+  postHashTags: string[];
   tmpStore: boolean | undefined;
 }
-export interface RowPostListType {
-  body: {
-    data: PostListResponse;
-  };
-}
+
 interface PostListResponse {
-  content: DetailPostDataType[];
+  content: PostData[];
   totalPages: number;
   totalElements: number;
   last: boolean;
@@ -59,9 +51,4 @@ interface PostListResponse {
   empty: boolean;
 }
 
-export interface RowScrapList {
-  body: {
-    data: ScrapList;
-  };
-}
 export type ScrapList = number[];

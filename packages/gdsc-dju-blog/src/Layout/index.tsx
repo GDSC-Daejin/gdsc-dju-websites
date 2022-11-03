@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 import Category from '../pages/Category';
 import Home from '../pages/Home';
@@ -27,6 +27,7 @@ const Layout = () => {
           <Route path={'/redirect'} element={<OauthRedirectPage />} />
           <Route path={'/search/:searchContent'} element={<SearchResult />} />
           <Route path={'/post/saves'} element={<PostSaves />} />
+          <Route path="*" element={<Navigate replace to="/" />} />
         </Routes>
       </Suspense>
     </ComponentLayout>

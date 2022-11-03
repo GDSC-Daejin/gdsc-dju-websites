@@ -38,8 +38,7 @@ export const CategoryMenuWrapper = styled(motion.div)`
   display: flex;
   align-items: flex-end;
   flex-direction: row;
-  width: 713px;
-  justify-content: space-between;
+  gap: 40px;
 `;
 export const CategoryCircleWrapper = styled(motion.div)`
   position: absolute;

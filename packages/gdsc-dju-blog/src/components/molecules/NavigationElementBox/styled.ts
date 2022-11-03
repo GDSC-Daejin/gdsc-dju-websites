@@ -11,4 +11,5 @@ export const NavigationElementBoxInner = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 20px;
+  z-index: 1;
 `;

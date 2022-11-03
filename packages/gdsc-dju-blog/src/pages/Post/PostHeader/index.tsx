@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useGetMyData } from '@src/api/hooks/useGetMyData';
 import { positionColor } from '@src/utils/positionColor';
-import { DetailPostDataType } from '@type/postData';
+import { PostData } from '@type/postData';
 
 import AuthorBox from '../AuthorBox';
 import PostIconBox from '../PostIconBox';
@@ -17,14 +17,15 @@ import {
 } from '../styled';
 
 interface Props {
-  postData: DetailPostDataType;
+  postData: PostData;
   postId: number;
 }
 
 const PostHeader = ({ postId, postData }: Props) => {
   const { myData } = useGetMyData();
   const userInfoData = myData?.memberInfo;
-  const isUser = userInfoData?.nickname == postData.memberInfo.nickname;
+  const isUser = myData?.userId === postData.userId;
+
   return (
     <PostHead>
       <CategoryWrapper>

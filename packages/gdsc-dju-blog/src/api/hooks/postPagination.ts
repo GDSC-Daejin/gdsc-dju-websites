@@ -1,13 +1,9 @@
 const category = {
-  fe: 'frontend',
-  be: 'backend',
-  de: 'design',
-  common: 'common',
-  and: 'android',
   frontend: 'frontend',
   backend: 'backend',
   design: 'design',
-  android: 'android',
+  client: 'client',
+  ml: 'ml',
 } as const;
 
 export const userPostUrlFilter = (tage: string, page: number, size = 16) => {

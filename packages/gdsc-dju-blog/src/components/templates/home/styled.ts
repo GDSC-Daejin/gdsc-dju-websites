@@ -28,7 +28,6 @@ export const HomeLayoutContainer = styled.div`
   @media (max-width: ${({ theme }) => theme.windowSizes.mobile}px) {
     width: 100%;
   }
-  overflow: hidden;
 `;
 export const HomePhraseWrapper = styled(motion.div)`
   height: 180px;
@@ -37,7 +36,6 @@ export const HomePhraseWrapper = styled(motion.div)`
 `;
 export const CardSectionWrapper = styled.div`
   height: 400px;
-
   .CardSection_Circle {
     background-color: white;
     width: 50px;

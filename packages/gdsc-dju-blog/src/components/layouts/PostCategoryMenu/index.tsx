@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { positionColor } from '../../../utils/positionColor';
+import { Position } from '@type/position';
+import { positionColor } from '@utils/positionColor';
+
 import { PostCategoryAnimation, PostCircleAnimation } from '../../Animation';
 
 import {
@@ -10,48 +12,36 @@ import {
   PostCategoryText,
   PostCategoryTextWrapper,
 } from './styled';
-export const PostCategoryMenuData = [
-  {
-    title: 'Frontend',
-  },
-  {
-    title: 'Backend',
-  },
-  {
-    title: 'Android',
-  },
-  {
-    title: 'Design',
-  },
-  {
-    title: 'Common',
-  },
-];
+
 const PostCategoryMenu: React.FC<{
   onClick: (category: string) => void;
   category?: string;
-}> = ({ onClick, category }) => {
+}> = ({ onClick, category: defaultCategory }) => {
+  const category = ['Frontend', 'Backend', 'Client', 'Design', 'Ml'];
   return (
-    <>
-      <PostCategoryMenuWrapper variants={PostCategoryAnimation}>
-        {PostCategoryMenuData.map((data, id) => (
+    <PostCategoryMenuWrapper variants={PostCategoryAnimation}>
+      {category.map((data, id) => {
+        const categoryValue = category[id].toLowerCase() as Position;
+        return (
           <PostCategoryTextWrapper
             key={id}
-            onClick={() => onClick(data.title)}
+            onClick={() => onClick(categoryValue)}
             className={'category'}
-            isActive={data.title === category}
+            isActive={categoryValue === defaultCategory}
           >
             <PostCategoryCircleWrapper
               variants={PostCircleAnimation}
-              animate={data.title === category ? 'isActive' : 'unActive'}
+              animate={
+                categoryValue === defaultCategory ? 'isActive' : 'unActive'
+              }
             >
-              <PostCategoryCircle color={positionColor(data.title)} />
+              <PostCategoryCircle color={positionColor(categoryValue)} />
             </PostCategoryCircleWrapper>
-            <PostCategoryText>{data.title}</PostCategoryText>
+            <PostCategoryText>{categoryValue}</PostCategoryText>
           </PostCategoryTextWrapper>
-        ))}
-      </PostCategoryMenuWrapper>
-    </>
+        );
+      })}
+    </PostCategoryMenuWrapper>
   );
 };
 export default PostCategoryMenu;

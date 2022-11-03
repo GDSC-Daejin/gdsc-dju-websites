@@ -2,15 +2,23 @@ export type Position =
   | 'all'
   | 'frontend'
   | 'backend'
-  | 'android'
+  | 'client'
   | 'design'
-  | 'common';
+  | 'ml';
+export const position: Position[] = [
+  'all',
+  'frontend',
+  'backend',
+  'client',
+  'design',
+  'ml',
+];
 
-export const category: Capitalize<Position>[] = [
+export const category: Array<Capitalize<Position>> = [
   'All',
   'Frontend',
   'Backend',
-  'Android',
+  'Client',
   'Design',
-  'Common',
+  'Ml',
 ];
