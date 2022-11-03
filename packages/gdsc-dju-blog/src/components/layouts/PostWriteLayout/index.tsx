@@ -10,12 +10,12 @@ import { ContentEditor } from '@src/components/atoms/ToastUi';
 import { alertState } from '@src/store/alert';
 import { ModalType, modalState } from '@src/store/modal';
 import { ContainerInner } from '@styles/layouts';
-import { DetailPostDataType, PostPostDataType } from '@type/postData';
+import { PostData, PostPostDataType } from '@type/postData';
 
 import { PostLayoutWrapper } from './styled';
 
 interface PostWriteProps {
-  postData: DetailPostDataType | undefined;
+  postData: PostData | undefined;
   id: string | undefined;
 }
 

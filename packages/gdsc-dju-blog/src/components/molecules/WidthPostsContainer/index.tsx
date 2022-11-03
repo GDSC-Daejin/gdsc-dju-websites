@@ -2,12 +2,12 @@ import React from 'react';
 
 import WidthPostCard from '@src/components/molecules/WidthPostCard';
 import { useGetScrap } from '@src/hooks/useGetScrap';
-import { DetailPostDataType } from '@type/postData';
+import { PostData } from '@type/postData';
 
 import { PostCardWrapper, WidthPostsContainerInner } from './styled';
 
 interface Props {
-  postData: DetailPostDataType[];
+  postData: PostData[];
 }
 
 const WidthPostsContainer = ({ postData }: Props) => {
@@ -17,9 +17,11 @@ const WidthPostsContainer = ({ postData }: Props) => {
       {postData.map((data) => (
         <PostCardWrapper key={data.postId}>
           <WidthPostCard
-            postData={data}
+            {...data}
             isScrap={
-              scrapList ? !!scrapList.find((id) => id == data.postId) : false
+              scrapList
+                ? Boolean(scrapList.find((id) => id === data.postId))
+                : false
             }
           />
         </PostCardWrapper>

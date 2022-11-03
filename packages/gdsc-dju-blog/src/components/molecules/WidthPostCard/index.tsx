@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import BookmarkIcon from '@assets/icons/BookmarkIcon';
 import { HashTageDark } from '@src/components/atoms/HashTage';
 import { useSetBookMark } from '@src/hooks/useHandleBookMark';
-import { DetailPostDataType } from '@type/postData';
+import { PostData } from '@type/postData';
 import { dateFilter } from '@utils/dateFilter';
 import { debounce } from '@utils/debounce';
 import { removeMarkdownInContent } from '@utils/removeMarkdownInContent';
@@ -23,7 +23,7 @@ import {
   WidthPostCardWrapper,
 } from './styled';
 
-interface Props extends DetailPostDataType {
+interface Props extends PostData {
   isScrap: boolean;
 }
 

@@ -1,14 +1,14 @@
 import React from 'react';
 
 import { useGetScrap } from '@src/hooks/useGetScrap';
-import { DetailPostDataType } from '@type/postData';
+import { PostData } from '@type/postData';
 
 import BlogCard from '../PostCard';
 
 import { BlogCardSection, BlogCardWrapper } from './styled';
 
 interface Props {
-  postData: DetailPostDataType[];
+  postData: PostData[];
 }
 
 const PostSectionContainer = ({ postData }: Props) => {
@@ -19,7 +19,7 @@ const PostSectionContainer = ({ postData }: Props) => {
         <BlogCardWrapper key={data.postId}>
           <BlogCard
             postData={data}
-            isScrap={!!scrapList?.find((id) => id == data.postId)}
+            isScrap={Boolean(scrapList?.find((id) => id === data.postId))}
           />
         </BlogCardWrapper>
       ))}

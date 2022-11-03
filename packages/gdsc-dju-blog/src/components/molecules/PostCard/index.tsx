@@ -8,7 +8,7 @@ import BookmarkIcon from '@assets/icons/BookmarkIcon';
 import { PostTextVariants } from '@src/components/Animation';
 import { HashTageLight } from '@src/components/atoms/HashTage';
 import { useSetBookMark } from '@src/hooks/useHandleBookMark';
-import { DetailPostDataType } from '@type/postData';
+import { PostData } from '@type/postData';
 import { dateFilter } from '@utils/dateFilter';
 import { debounce } from '@utils/debounce';
 import { removeMarkdownInContent } from '@utils/removeMarkdownInContent';
@@ -31,7 +31,7 @@ import {
 } from './styled';
 
 interface Props {
-  postData: DetailPostDataType;
+  postData: PostData;
   isScrap: boolean;
 }
 

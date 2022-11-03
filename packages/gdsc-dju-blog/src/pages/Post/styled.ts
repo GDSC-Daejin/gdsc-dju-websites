@@ -29,8 +29,9 @@ export const PostAuthorWrapper = styled.h1`
 export const PositionCircle = styled.div<{ color: string }>`
   display: flex;
   position: absolute;
-  top: -10px;
-  left: 45%;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 8px;
   width: 8px;
   border-radius: 50%;

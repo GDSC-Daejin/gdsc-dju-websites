@@ -11,7 +11,7 @@ import ProfileEdit from './ProfileEdit';
 const MyBlog = () => {
   return (
     <Routes>
-      <Route path={'/'} element={<BlogHome />} />
+      <Route path={'/'} element={<BlogHome position={'all'} />} />
       {position.map((pos) => (
         <Route
           path={`/${pos}`}

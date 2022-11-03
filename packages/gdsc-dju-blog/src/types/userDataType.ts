@@ -11,12 +11,7 @@ export interface UserData {
   userId: string;
   username: string;
 }
-export interface RowUserData {
-  header: { code: string };
-  body: {
-    data: UserData;
-  };
-}
+
 export interface UserGuest {
   hashTag: string | null;
   introduce: string | null;
@@ -25,12 +20,6 @@ export interface UserGuest {
   role: 'GUEST' | 'MEMBER' | 'CORE' | 'LEAD';
   userId: string;
   positionType: string | null;
-}
-export interface RowUserGuest {
-  header: { code: string };
-  body: {
-    memberInfo: UserGuest;
-  };
 }
 
 export interface ValidationMemberInfo {
