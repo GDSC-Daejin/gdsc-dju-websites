@@ -9,6 +9,7 @@ export interface DetailPostDataType {
   content: string;
   postHashTags: string[];
   postId: number;
+  userId: string;
   title: string;
   likes: string[];
   imagePath: string;
@@ -34,8 +35,10 @@ export interface PostPostDataType {
     categoryName: string;
   };
   content: string;
-  postHashTags: string;
+  postHashTags: string[];
   tmpStore: boolean | undefined;
+}
+boolean | undefined;
 }
 export interface RowPostListType {
   body: {

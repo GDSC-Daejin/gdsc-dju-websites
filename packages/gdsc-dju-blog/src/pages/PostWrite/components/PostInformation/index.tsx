@@ -1,8 +1,15 @@
-import React, { Dispatch, SetStateAction, useEffect, useRef } from 'react';
+import React, {
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { TagInput } from '@gdsc-dju/styled-components';
+
 import {
-  PostHashTagInput,
   PostInfoWrapper,
   PostInputWrapper,
   PostTitleInput,
@@ -21,6 +28,7 @@ interface Props {
 }
 
 const PostWriteHeader = ({ postData, setPostData, setCategory }: Props) => {
+  const [tage, setTage] = useState<string[]>([]);
   const navigate = useNavigate();
   const input = useRef<HTMLInputElement>(null);
   const { base64 } = useFileToBase64(input);
@@ -31,6 +39,10 @@ const PostWriteHeader = ({ postData, setPostData, setCategory }: Props) => {
         base64Thumbnail: base64,
       });
   }, [base64]);
+
+  useEffect(() => {
+    setPostData({ ...postData, postHashTags: tage });
+  }, [tage]);
 
   return (
     <>
@@ -50,14 +62,11 @@ const PostWriteHeader = ({ postData, setPostData, setCategory }: Props) => {
               });
             }}
           />
-          <PostHashTagInput
-            placeholder={'#해시태그 ,로 구분하세요'}
-            value={postData.postHashTags}
-            onChange={(e) => {
-              setPostData(() => {
-                return { ...postData, postHashTags: e.target.value };
-              });
-            }}
+          <TagInput
+            onChange={setTage}
+            borderless={true}
+            maxTags={4}
+            placeholder={'띄어쓰기로 태그를 추가할 수 있어요.'}
           />
         </PostInputWrapper>
       </PostInfoWrapper>

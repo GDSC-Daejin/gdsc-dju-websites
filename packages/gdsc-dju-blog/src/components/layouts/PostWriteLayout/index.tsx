@@ -25,7 +25,7 @@ const Index: React.FC<PostWriteProps> = ({ postData, id }) => {
     content: '',
     base64Thumbnail: '',
     category: { categoryName: '' },
-    postHashTags: '',
+    postHashTags: [],
     tmpStore: false,
     fileName: '',
   });
@@ -100,12 +100,18 @@ const Index: React.FC<PostWriteProps> = ({ postData, id }) => {
     detailPostData: PostPostDataType,
     temp: boolean,
   ) => {
-    const postData = { ...detailPostData, tmpStore: temp };
+    const postData = {
+      ...detailPostData,
+      postHashTags: detailPostData.postHashTags.join(','),
+      tmpStore: temp,
+    };
     setModal({
       ...modal,
       isOpen: false,
     });
     try {
+      //@ts-ignore
+      //업로드 형식이 string이기 때문에 array를 join으로 string으로 변환
       await PostService.postMyPostData(postData);
       await navigate(`/category/all`);
       await setAlert({
@@ -124,12 +130,17 @@ const Index: React.FC<PostWriteProps> = ({ postData, id }) => {
     }
   };
   const updatePost = async (detailPostData: PostPostDataType) => {
-    const postData = { ...detailPostData, tmpStore: false };
+    const postData = {
+      ...detailPostData,
+      postHashTags: detailPostData.postHashTags.join(','),
+      tmpStore: false,
+    };
     setModal({
       ...modal,
       isOpen: false,
     });
     try {
+      //@ts-ignore
       id && (await PostService.updateMyPostData(postData, id));
       await setAlert({
         ...alert,
@@ -161,7 +172,9 @@ const Index: React.FC<PostWriteProps> = ({ postData, id }) => {
   };
 
   useEffect(() => {
-    if (!postData) return;
+    if (!postData) {
+      return;
+    }
     setDetailPostData({
       ...detailPostData,
       title: postData.title,

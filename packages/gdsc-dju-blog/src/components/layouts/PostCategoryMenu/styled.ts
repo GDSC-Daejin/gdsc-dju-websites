@@ -3,9 +3,9 @@ import styled, { css } from 'styled-components';
 
 export const PostCategoryText = styled(motion.div)<{ active?: boolean }>`
   font-size: ${({ theme }) => theme.fontSizes.textXl};
-
   font-weight: normal;
-  font-family: 'Google Sans', sans-serif;
+  
+  text-transform: capitalize;
   ${(props) =>
     props.active &&
     css`

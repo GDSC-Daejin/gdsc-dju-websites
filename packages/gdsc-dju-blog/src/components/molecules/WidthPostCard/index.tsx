@@ -27,7 +27,7 @@ interface Props extends DetailPostDataType {
   isScrap: boolean;
 }
 
-const WidthPostCard: React.FC<Props> = ({
+const WidthPostCard = ({
   isScrap,
   postId,
   postHashTags,
@@ -35,12 +35,8 @@ const WidthPostCard: React.FC<Props> = ({
   imagePath,
   content,
   memberInfo,
-  example,
-  likes,
   uploadDate,
-  modifiedAt,
-  category,
-}) => {
+}: Props) => {
   const [hover, setHover] = useState(false);
   const [isMarked, setIsMarked] = useState(isScrap);
   const [cookie] = useCookies(['token']);
@@ -72,7 +68,6 @@ const WidthPostCard: React.FC<Props> = ({
       >
         <BookmarkIcon marked={isMarked} />
       </BookmarkWrapper>
-
       <WidthPostCardImageWrapper>
         <picture>
           {imagePath ? (
@@ -88,7 +83,6 @@ const WidthPostCard: React.FC<Props> = ({
           )}
         </picture>
       </WidthPostCardImageWrapper>
-
       <WidthPostCardContentWrapper hover={hover}>
         <PostDate>{dateFilter(uploadDate)}</PostDate>
         <PostTitle>{title}</PostTitle>

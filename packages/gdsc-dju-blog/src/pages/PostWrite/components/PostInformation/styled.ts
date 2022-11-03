@@ -22,20 +22,18 @@ export const PostInputWrapper = styled.div`
   }
   min-width: 250px;
   flex-grow: 1;
-  padding-left: 30px;
-  margin-right: 20px;
 `;
 export const PostTitleInput = styled.input`
   display: flex;
   border: none;
   width: 100%;
-  padding-bottom: 10px;
+  padding: 0 16px;
   font-size: ${({ theme }) => theme.fontSizes.titleM};
   background: ${({ theme }) => theme.colors.background};
   caret-color: ${({ theme }) => theme.colors.grey400};
   color: ${({ theme }) => theme.colors.grey900};
   &::placeholder {
-    color: ${({ theme }) => theme.colors.grey400};
+    color: ${({ theme }) => theme.colors.grey500};
   }
   @media screen and (max-width: 530px) {
     font-size: ${(props) => props.theme.fontSizes.textXxl};
