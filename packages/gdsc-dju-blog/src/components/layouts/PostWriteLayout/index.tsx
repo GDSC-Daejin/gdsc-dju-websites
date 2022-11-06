@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom';
 
 import { useRecoilState } from 'recoil';
 
+import MarkdownContainer from '@molecules/MarkdownContainer';
 import PostButtons from '@pages/PostWrite/components/PostButtons';
 import PostWriteHeader from '@pages/PostWrite/components/PostInformation';
 import PostService from '@src/api/PostService';
-import { ContentEditor } from '@src/components/atoms/ToastUi';
+import { markdownMock } from '@src/mock/markdownMock';
 import { alertState } from '@src/store/alert';
 import { ModalType, modalState } from '@src/store/modal';
 import { ContainerInner } from '@styles/layouts';
@@ -22,7 +23,7 @@ interface PostWriteProps {
 const Index: React.FC<PostWriteProps> = ({ postData, id }) => {
   const [detailPostData, setDetailPostData] = useState<PostPostDataType>({
     title: '',
-    content: '',
+    content: markdownMock,
     base64Thumbnail: '',
     category: { categoryName: '' },
     postHashTags: [],
@@ -158,10 +159,9 @@ const Index: React.FC<PostWriteProps> = ({ postData, id }) => {
       });
     }
   };
-  const setEditorValue = () => {
-    const editorContent = editorRef.current.getInstance().getMarkdown();
+  const setEditorValue = (content: string) => {
     setDetailPostData(() => {
-      return { ...detailPostData, content: editorContent };
+      return { ...detailPostData, content: content };
     });
   };
 
@@ -198,17 +198,15 @@ const Index: React.FC<PostWriteProps> = ({ postData, id }) => {
       </ContainerInner>
       {id ? (
         detailPostData.content !== '' && (
-          <ContentEditor
+          <MarkdownContainer
             content={detailPostData.content}
-            onChange={setEditorValue}
-            ref={editorRef}
+            setContent={setEditorValue}
           />
         )
       ) : (
-        <ContentEditor
+        <MarkdownContainer
           content={detailPostData.content}
-          onChange={setEditorValue}
-          ref={editorRef}
+          setContent={setEditorValue}
         />
       )}
       <ContainerInner>
