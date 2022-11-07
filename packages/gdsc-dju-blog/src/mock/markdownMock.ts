@@ -23,8 +23,9 @@ _이탤릭_
     1. 순서가 필요한 목록
 1. 순서가 필요한 목록
 
-Click [here](http://goddaehee.tistory.com/)  
-[갓대희의 작은 공간](https://goddaehee.tistory.com)
+Click [우아](http://gdsc-dju.com/)
+
+[우아](http://gdsc-dju.com/)
 ![Image Description](https://tistory1.daumcdn.net/tistory/1994430/74cb0667c02241939c5c13ec5dd1afb1)
 
 | Header | value | Description |

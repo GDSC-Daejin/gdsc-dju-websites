@@ -13,9 +13,13 @@ const MarkdownContainerWrapper = styled.div`
 const MarkdownContainerInner = styled.div`
   word-break: break-word;
   padding: 3rem;
-  flex: 1 1 0;
+  box-sizing: border-box;
+  flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
+  :last-child {
+    border-left: 1px solid ${({ theme }) => theme.colors.grey300};
+  }
 `;
 
 type Props = {

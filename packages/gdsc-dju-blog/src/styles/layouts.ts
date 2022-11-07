@@ -13,6 +13,7 @@ export const LayoutContainer = styled.div`
 `;
 export const ContainerInner = styled.div`
   padding: 0 20px;
+  overflow: hidden;
 `;
 export const PostContainerInner = styled.div`
   padding: 0 20px;

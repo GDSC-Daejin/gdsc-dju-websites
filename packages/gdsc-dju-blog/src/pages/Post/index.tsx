@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom';
 
 import { DarkModeContext } from '@gdsc-dju/styled-components-theme';
 
+import MarkdownView from '@atoms/MarkdownView';
 import { Giscus } from '@giscus/react';
 import { useGetDetailPost } from '@src/api/hooks/useGetDetailPost';
-import { ContentViewer } from '@src/components/atoms/ToastUi';
 import { LayoutContainer, PostContainerInner } from '@styles/layouts';
 
 import PostHeader from './PostHeader';
@@ -22,7 +22,7 @@ const Post = () => {
         {postId && postData && (
           <ContentWrapper>
             <PostHeader postId={Number(postId)} postData={postData} />
-            <ContentViewer content={postData.content} />
+            <MarkdownView content={postData.content} />
           </ContentWrapper>
         )}
         <GiscusWrapper>
