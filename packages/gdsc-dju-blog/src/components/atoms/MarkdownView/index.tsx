@@ -1,8 +1,14 @@
 import type React from 'react';
+import { useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import type { CodeProps } from 'react-markdown/lib/ast-to-react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { prism } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import {
+  materialDark,
+  materialLight,
+} from 'react-syntax-highlighter/dist/cjs/styles/prism';
+
+import { DarkModeContext } from '@gdsc-dju/styled-components-theme';
 
 import remarkGfm from 'remark-gfm';
 
@@ -15,6 +21,8 @@ interface Props {
 }
 
 const Preview = (props: Props) => {
+  const { isDarkMode } = useContext(DarkModeContext);
+
   return (
     <MarkdownStyle>
       <div className={'markdown-body'}>
@@ -36,7 +44,7 @@ const Preview = (props: Props) => {
               const match = /language-(\w+)/.exec(className || '');
               return !inline && match ? (
                 <SyntaxHighlighter
-                  style={prism}
+                  style={isDarkMode ? materialDark : materialLight}
                   language={match[1]}
                   PreTag="div"
                   {...props}

@@ -21,10 +21,14 @@ const NavigationElementBox = () => {
   const { myData } = useGetMyData();
   const navigate = useNavigate();
   const handleSubmit = () => {
-    if (!inputRef.current) return;
-    if (inputRef.current.value.trim() !== '')
+    if (!inputRef.current) {
+      return;
+    }
+    if (inputRef.current.value.trim() !== '') {
       navigate(`/search/${inputRef.current.value}?type=all&page=1`);
+    }
   };
+
   useEffect(() => {
     setIsDropdownOpen(false);
   }, [location.pathname]);
