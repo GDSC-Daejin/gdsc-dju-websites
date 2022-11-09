@@ -41,11 +41,12 @@ export const EditorStyle = styled.div`
   .cm-focused {
     outline: none !important;
   }
-  .ͼp.cm-focused .cm-selectionBackground,
-  .ͼp .cm-selectionBackground,
-  .ͼp .cm-content ::selection {
-    background-color: ${({ theme }) => theme.colors.grey200}!important;
+
+  .cm-focused .cm-selectionBackground,
+  ::selection {
+    background: ${({ theme }) => theme.colors.grey400};
   }
+
   .cm-line {
     font-size: ${({ theme }) => theme.fontSizes.textL};
     color: ${({ theme }) => theme.colors.grey900};
