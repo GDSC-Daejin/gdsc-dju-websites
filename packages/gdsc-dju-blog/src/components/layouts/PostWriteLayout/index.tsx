@@ -195,21 +195,20 @@ const Index: React.FC<PostWriteProps> = ({ postData, id }) => {
           setPostData={setDetailPostData}
           setCategory={setCategory}
         />
-      </ContainerInner>
-      {id ? (
-        detailPostData.content !== '' && (
+        {id ? (
+          detailPostData.content !== '' && (
+            <MarkdownContainer
+              content={detailPostData.content}
+              setContent={setEditorValue}
+            />
+          )
+        ) : (
           <MarkdownContainer
             content={detailPostData.content}
             setContent={setEditorValue}
           />
-        )
-      ) : (
-        <MarkdownContainer
-          content={detailPostData.content}
-          setContent={setEditorValue}
-        />
-      )}
-      <ContainerInner>
+        )}
+
         <PostButtons
           isUpdate={isUpdate}
           disable={isButtonBlock}

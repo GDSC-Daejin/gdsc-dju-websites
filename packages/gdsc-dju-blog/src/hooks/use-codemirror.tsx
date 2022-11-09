@@ -9,7 +9,6 @@ import { languages } from '@codemirror/language-data';
 import { EditorState } from '@codemirror/state';
 import { oneDark } from '@codemirror/theme-one-dark';
 import { EditorView, keymap } from '@codemirror/view';
-import { customEditorStyle } from '@styles/editor';
 
 interface Props {
   initialDoc: string;
@@ -38,7 +37,6 @@ const useCodeMirror = <T extends Element>(
           codeLanguages: languages,
           addKeymap: true,
         }),
-        customEditorStyle,
         oneDark,
         EditorView.lineWrapping,
         EditorView.updateListener.of((update) => {
@@ -53,6 +51,7 @@ const useCodeMirror = <T extends Element>(
       state: startState,
       parent: refContainer.current,
     });
+
     setEditorView(view);
 
     return () => {

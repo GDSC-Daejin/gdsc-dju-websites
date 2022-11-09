@@ -1013,7 +1013,7 @@ export const MarkdownStyle = styled.div`
   .markdown-body pre code,
   .markdown-body pre tt {
     display: inline;
-    max-width: auto;
+    max-width: fit-content;
     padding: 0;
     margin: 0;
     overflow: visible;

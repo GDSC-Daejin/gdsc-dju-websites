@@ -1,19 +1,5 @@
 import styled from 'styled-components';
 
-import { EditorView } from '@codemirror/view';
-
-export const customEditorStyle = EditorView.theme({
-  '.cm-content': {
-    fontSize: '1.6rem',
-  },
-  '&.cm-focused .cm-selectionBackground, ::selection': {
-    backgroundColor: '#B4D5FF',
-  },
-  '.cm-line ::selection': {
-    backgroundColor: '#B4D5FF',
-  },
-});
-
 export const EditorStyle = styled.div`
   .cm-gutters {
     display: none;
@@ -46,7 +32,7 @@ export const EditorStyle = styled.div`
   }
   .cm-selectionMatch {
     font-size: ${({ theme }) => theme.fontSizes.textL};
-    background-color: ${({ theme }) => theme.colors.blue300};
+    background-color: ${({ theme }) => theme.colors.blue400};
   }
   .cm-focused {
     outline: none !important;
@@ -54,7 +40,7 @@ export const EditorStyle = styled.div`
   .ͼp.cm-focused .cm-selectionBackground,
   .ͼp .cm-selectionBackground,
   .ͼp .cm-content ::selection {
-    background-color: ${({ theme }) => theme.colors.blue300}!important;
+    background-color: ${({ theme }) => theme.colors.grey200}!important;
   }
   .cm-line {
     font-size: ${({ theme }) => theme.fontSizes.textL};
@@ -62,7 +48,7 @@ export const EditorStyle = styled.div`
   }
 
   .cm-content {
-    font-family: 'Spoqa Han Sans Neo', 'Noto Sans KR', sans-serif;
+    font-family: 'Spoqa Han Sans Neo', 'Google Sans', sans-serif;
     font-size: ${({ theme }) => theme.fontSizes.textL};
   }
 `;
