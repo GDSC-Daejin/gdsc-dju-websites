@@ -1,6 +1,17 @@
 import React, { useMemo } from 'react';
 
+import styled from 'styled-components';
+
+import IconButton from '@atoms/IconButton';
 import { EditorView } from '@codemirror/view';
+
+const ToolBoxSection = styled.section`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 10px;
+  gap: 10px;
+`;
 
 type Props = {
   editorView: EditorView;
@@ -12,10 +23,15 @@ const MarkdownToolBox = ({ editorView }: Props) => {
   const selection = doc.doc.slice(selectionRange.from, selectionRange.to);
   const replaceSelection = useMemo(() => {
     return {
+      heading: () =>
+        editorView.dispatch(doc.replaceSelection(`# ${selection}`)),
       bold: () => editorView.dispatch(doc.replaceSelection(`**${selection}**`)),
       italic: () => editorView.dispatch(doc.replaceSelection(`*${selection}*`)),
       strike: () =>
         editorView.dispatch(doc.replaceSelection(`~~${selection}~~`)),
+      quote: () => editorView.dispatch(doc.replaceSelection(`> ${selection}`)),
+      ul: () => editorView.dispatch(doc.replaceSelection(`- ${selection}`)),
+      ol: () => editorView.dispatch(doc.replaceSelection(`1. ${selection}`)),
       code: () => editorView.dispatch(doc.replaceSelection(`\`${selection}\``)),
       link: () =>
         editorView.dispatch(
@@ -25,16 +41,6 @@ const MarkdownToolBox = ({ editorView }: Props) => {
         editorView.dispatch(
           doc.replaceSelection(`![${selection}](url을 입력해주세요)`),
         ),
-      quote: () => editorView.dispatch(doc.replaceSelection(`> ${selection}`)),
-      ul: () => editorView.dispatch(doc.replaceSelection(`- ${selection}`)),
-      ol: () => editorView.dispatch(doc.replaceSelection(`1. ${selection}`)),
-      h1: () => editorView.dispatch(doc.replaceSelection(`# ${selection}`)),
-      h2: () => editorView.dispatch(doc.replaceSelection(`## ${selection}`)),
-      h3: () => editorView.dispatch(doc.replaceSelection(`### ${selection}`)),
-      h4: () => editorView.dispatch(doc.replaceSelection(`#### ${selection}`)),
-      h5: () => editorView.dispatch(doc.replaceSelection(`##### ${selection}`)),
-      h6: () =>
-        editorView.dispatch(doc.replaceSelection(`###### ${selection}`)),
     };
   }, [doc]);
 
@@ -43,15 +49,17 @@ const MarkdownToolBox = ({ editorView }: Props) => {
   >;
 
   return (
-    <div>
+    <ToolBoxSection>
       {toolKeys.map((toolKey) => {
         return (
-          <button onClick={replaceSelection[toolKey]} key={toolKey}>
-            {toolKey}
-          </button>
+          <IconButton
+            onClick={replaceSelection[toolKey]}
+            icon={toolKey}
+            key={toolKey}
+          />
         );
       })}
-    </div>
+    </ToolBoxSection>
   );
 };
 

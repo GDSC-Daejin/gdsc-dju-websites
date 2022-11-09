@@ -7,7 +7,6 @@ import MarkdownContainer from '@molecules/MarkdownContainer';
 import PostButtons from '@pages/PostWrite/components/PostButtons';
 import PostWriteHeader from '@pages/PostWrite/components/PostInformation';
 import PostService from '@src/api/PostService';
-import { markdownMock } from '@src/mock/markdownMock';
 import { alertState } from '@src/store/alert';
 import { ModalType, modalState } from '@src/store/modal';
 import { ContainerInner } from '@styles/layouts';
@@ -23,7 +22,7 @@ interface PostWriteProps {
 const Index: React.FC<PostWriteProps> = ({ postData, id }) => {
   const [detailPostData, setDetailPostData] = useState<PostPostDataType>({
     title: '',
-    content: markdownMock,
+    content: '',
     base64Thumbnail: '',
     category: { categoryName: '' },
     postHashTags: [],

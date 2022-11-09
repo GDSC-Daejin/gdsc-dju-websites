@@ -19,6 +19,7 @@ const MarkdownContainerWrapper = styled.div<{ maxHeight?: number }>`
 const MarkdownContainerInner = styled.div`
   word-break: break-word;
   box-sizing: border-box;
+  padding: 0 20px;
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
