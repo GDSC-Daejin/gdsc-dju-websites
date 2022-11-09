@@ -7022,95 +7022,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["@toast-ui/chart", [\
-        ["npm:4.4.3", {\
-          "packageLocation": "./.yarn/cache/@toast-ui-chart-npm-4.4.3-e97756c7c8-b7010abec6.zip/node_modules/@toast-ui/chart/",\
-          "packageDependencies": [\
-            ["@toast-ui/chart", "npm:4.4.3"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@toast-ui/editor", [\
-        ["npm:3.2.0", {\
-          "packageLocation": "./.yarn/cache/@toast-ui-editor-npm-3.2.0-7526138bec-1402ff222b.zip/node_modules/@toast-ui/editor/",\
-          "packageDependencies": [\
-            ["@toast-ui/editor", "npm:3.2.0"],\
-            ["dompurify", "npm:2.3.10"],\
-            ["prosemirror-commands", "npm:1.3.0"],\
-            ["prosemirror-history", "npm:1.3.0"],\
-            ["prosemirror-inputrules", "npm:1.2.0"],\
-            ["prosemirror-keymap", "npm:1.2.0"],\
-            ["prosemirror-model", "npm:1.18.1"],\
-            ["prosemirror-state", "npm:1.4.1"],\
-            ["prosemirror-transform", "npm:1.7.0"],\
-            ["prosemirror-view", "npm:1.27.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@toast-ui/editor-plugin-chart", [\
-        ["npm:3.0.1", {\
-          "packageLocation": "./.yarn/cache/@toast-ui-editor-plugin-chart-npm-3.0.1-ddd3a41501-107b5b53c5.zip/node_modules/@toast-ui/editor-plugin-chart/",\
-          "packageDependencies": [\
-            ["@toast-ui/editor-plugin-chart", "npm:3.0.1"],\
-            ["@toast-ui/chart", "npm:4.4.3"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@toast-ui/editor-plugin-code-syntax-highlight", [\
-        ["npm:3.1.0", {\
-          "packageLocation": "./.yarn/cache/@toast-ui-editor-plugin-code-syntax-highlight-npm-3.1.0-c1ad588de9-cdef0f5da7.zip/node_modules/@toast-ui/editor-plugin-code-syntax-highlight/",\
-          "packageDependencies": [\
-            ["@toast-ui/editor-plugin-code-syntax-highlight", "npm:3.1.0"],\
-            ["prismjs", "npm:1.28.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@toast-ui/editor-plugin-color-syntax", [\
-        ["npm:3.1.0", {\
-          "packageLocation": "./.yarn/cache/@toast-ui-editor-plugin-color-syntax-npm-3.1.0-1688766a0c-e4f47afbdc.zip/node_modules/@toast-ui/editor-plugin-color-syntax/",\
-          "packageDependencies": [\
-            ["@toast-ui/editor-plugin-color-syntax", "npm:3.1.0"],\
-            ["tui-color-picker", "npm:2.2.8"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@toast-ui/editor-plugin-table-merged-cell", [\
-        ["npm:3.1.0", {\
-          "packageLocation": "./.yarn/cache/@toast-ui-editor-plugin-table-merged-cell-npm-3.1.0-5d381a9972-0dc4f30d1f.zip/node_modules/@toast-ui/editor-plugin-table-merged-cell/",\
-          "packageDependencies": [\
-            ["@toast-ui/editor-plugin-table-merged-cell", "npm:3.1.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@toast-ui/react-editor", [\
-        ["npm:3.2.0", {\
-          "packageLocation": "./.yarn/cache/@toast-ui-react-editor-npm-3.2.0-1dd02e4b14-20e9c7d782.zip/node_modules/@toast-ui/react-editor/",\
-          "packageDependencies": [\
-            ["@toast-ui/react-editor", "npm:3.2.0"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:3.2.0", {\
-          "packageLocation": "./.yarn/__virtual__/@toast-ui-react-editor-virtual-6235ea130a/0/cache/@toast-ui-react-editor-npm-3.2.0-1dd02e4b14-20e9c7d782.zip/node_modules/@toast-ui/react-editor/",\
-          "packageDependencies": [\
-            ["@toast-ui/react-editor", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:3.2.0"],\
-            ["@toast-ui/editor", "npm:3.2.0"],\
-            ["@types/react", "npm:18.0.17"],\
-            ["react", "npm:18.2.0"]\
-          ],\
-          "packagePeers": [\
-            "@types/react",\
-            "react"\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["@tootallnate/once", [\
         ["npm:1.1.2", {\
           "packageLocation": "./.yarn/cache/@tootallnate-once-npm-1.1.2-0517220057-e1fb1bbbc1.zip/node_modules/@tootallnate/once/",\
@@ -14174,15 +14085,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["dompurify", [\
-        ["npm:2.3.10", {\
-          "packageLocation": "./.yarn/cache/dompurify-npm-2.3.10-6db07a88c6-ee343876b4.zip/node_modules/dompurify/",\
-          "packageDependencies": [\
-            ["dompurify", "npm:2.3.10"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["domutils", [\
         ["npm:1.7.0", {\
           "packageLocation": "./.yarn/cache/domutils-npm-1.7.0-7a1529fcfc-f60a725b1f.zip/node_modules/domutils/",\
@@ -17590,12 +17492,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@gdsc-dju/styled-components", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.63"],\
             ["@gdsc-dju/styled-components-theme", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:0.0.52"],\
             ["@giscus/react", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:1.1.2"],\
-            ["@toast-ui/editor", "npm:3.2.0"],\
-            ["@toast-ui/editor-plugin-chart", "npm:3.0.1"],\
-            ["@toast-ui/editor-plugin-code-syntax-highlight", "npm:3.1.0"],\
-            ["@toast-ui/editor-plugin-color-syntax", "npm:3.1.0"],\
-            ["@toast-ui/editor-plugin-table-merged-cell", "npm:3.1.0"],\
-            ["@toast-ui/react-editor", "virtual:674a670b816c5c1719d03fc6ac0bcd8e10e2182526b5491151e2ddcebff59b65b97f87dffc72b5a46614c788802b754eba874dc56a6846f1c1e7678d58f63826#npm:3.2.0"],\
             ["@types/jest", "npm:26.0.24"],\
             ["@types/js-cookie", "npm:3.0.2"],\
             ["@types/node", "npm:16.11.49"],\
@@ -26299,52 +26195,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["prosemirror-commands", [\
-        ["npm:1.3.0", {\
-          "packageLocation": "./.yarn/cache/prosemirror-commands-npm-1.3.0-2c4d72afe3-1e896b1ddc.zip/node_modules/prosemirror-commands/",\
-          "packageDependencies": [\
-            ["prosemirror-commands", "npm:1.3.0"],\
-            ["prosemirror-model", "npm:1.18.1"],\
-            ["prosemirror-state", "npm:1.4.1"],\
-            ["prosemirror-transform", "npm:1.7.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["prosemirror-history", [\
-        ["npm:1.3.0", {\
-          "packageLocation": "./.yarn/cache/prosemirror-history-npm-1.3.0-c4190c34d0-023feff702.zip/node_modules/prosemirror-history/",\
-          "packageDependencies": [\
-            ["prosemirror-history", "npm:1.3.0"],\
-            ["prosemirror-state", "npm:1.4.1"],\
-            ["prosemirror-transform", "npm:1.7.0"],\
-            ["rope-sequence", "npm:1.3.3"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["prosemirror-inputrules", [\
-        ["npm:1.2.0", {\
-          "packageLocation": "./.yarn/cache/prosemirror-inputrules-npm-1.2.0-39ef2859e1-c6c3e4c4d6.zip/node_modules/prosemirror-inputrules/",\
-          "packageDependencies": [\
-            ["prosemirror-inputrules", "npm:1.2.0"],\
-            ["prosemirror-state", "npm:1.4.1"],\
-            ["prosemirror-transform", "npm:1.7.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["prosemirror-keymap", [\
-        ["npm:1.2.0", {\
-          "packageLocation": "./.yarn/cache/prosemirror-keymap-npm-1.2.0-36cb458dbe-35ce499a72.zip/node_modules/prosemirror-keymap/",\
-          "packageDependencies": [\
-            ["prosemirror-keymap", "npm:1.2.0"],\
-            ["prosemirror-state", "npm:1.4.1"],\
-            ["w3c-keyname", "npm:2.2.6"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["prosemirror-model", [\
         ["npm:1.18.1", {\
           "packageLocation": "./.yarn/cache/prosemirror-model-npm-1.18.1-0667ed3899-1c42fac8f4.zip/node_modules/prosemirror-model/",\
@@ -26355,35 +26205,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["prosemirror-state", [\
-        ["npm:1.4.1", {\
-          "packageLocation": "./.yarn/cache/prosemirror-state-npm-1.4.1-ee7c1876d4-d094a48c30.zip/node_modules/prosemirror-state/",\
-          "packageDependencies": [\
-            ["prosemirror-state", "npm:1.4.1"],\
-            ["prosemirror-model", "npm:1.18.1"],\
-            ["prosemirror-transform", "npm:1.7.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["prosemirror-transform", [\
         ["npm:1.7.0", {\
           "packageLocation": "./.yarn/cache/prosemirror-transform-npm-1.7.0-8c6cc0ac14-8d099ae0dc.zip/node_modules/prosemirror-transform/",\
           "packageDependencies": [\
             ["prosemirror-transform", "npm:1.7.0"],\
             ["prosemirror-model", "npm:1.18.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["prosemirror-view", [\
-        ["npm:1.27.1", {\
-          "packageLocation": "./.yarn/cache/prosemirror-view-npm-1.27.1-18f3a39add-01eb4c6567.zip/node_modules/prosemirror-view/",\
-          "packageDependencies": [\
-            ["prosemirror-view", "npm:1.27.1"],\
-            ["prosemirror-model", "npm:1.18.1"],\
-            ["prosemirror-state", "npm:1.4.1"],\
-            ["prosemirror-transform", "npm:1.7.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -28397,15 +28224,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["rollup-pluginutils", "npm:2.8.2"],\
             ["estree-walker", "npm:0.6.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["rope-sequence", [\
-        ["npm:1.3.3", {\
-          "packageLocation": "./.yarn/cache/rope-sequence-npm-1.3.3-2c8440686f-f77ef15299.zip/node_modules/rope-sequence/",\
-          "packageDependencies": [\
-            ["rope-sequence", "npm:1.3.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -30838,15 +30656,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/tty-browserify-npm-0.0.0-684371f6ca-a06f746acc.zip/node_modules/tty-browserify/",\
           "packageDependencies": [\
             ["tty-browserify", "npm:0.0.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["tui-color-picker", [\
-        ["npm:2.2.8", {\
-          "packageLocation": "./.yarn/cache/tui-color-picker-npm-2.2.8-cd63eccaa5-d0a7dadf1d.zip/node_modules/tui-color-picker/",\
-          "packageDependencies": [\
-            ["tui-color-picker", "npm:2.2.8"]\
           ],\
           "linkType": "HARD"\
         }]\

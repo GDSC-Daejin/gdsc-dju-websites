@@ -8,7 +8,7 @@ import { markdown, markdownLanguage } from '@codemirror/lang-markdown';
 import { languages } from '@codemirror/language-data';
 import { EditorState } from '@codemirror/state';
 import { oneDark } from '@codemirror/theme-one-dark';
-import { EditorView, keymap } from '@codemirror/view';
+import { EditorView, keymap, placeholder } from '@codemirror/view';
 
 interface Props {
   initialDoc: string;
@@ -31,6 +31,7 @@ const useCodeMirror = <T extends Element>(
       doc: props.initialDoc,
       extensions: [
         basicSetup,
+        placeholder('여기에 포스트를 작성해주세요.'),
         keymap.of(defaultKeymap),
         markdown({
           base: markdownLanguage,
@@ -53,7 +54,6 @@ const useCodeMirror = <T extends Element>(
     });
 
     setEditorView(view);
-
     return () => {
       view.destroy();
     };

@@ -4,6 +4,10 @@ export const EditorStyle = styled.div`
   .cm-gutters {
     display: none;
   }
+  .cm-placeholder {
+    color: ${({ theme }) => theme.colors.grey500};
+    font-size: ${({ theme }) => theme.fontSizes.textL};
+  }
   .ͼo,
   .ͼp {
     background-color: ${({ theme }) => theme.colors.background};
