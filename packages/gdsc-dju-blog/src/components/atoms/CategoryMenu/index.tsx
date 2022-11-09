@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 
 import GdscLogo from '@assets/logos/GdscLogo';
-import { circleMotion } from '@src/components/Animation';
 import { positionColor } from '@src/utils/positionColor';
 import { category, Position } from '@type/position';
 
@@ -34,10 +33,7 @@ const CategoryMenu: React.FC<CategoryMenuProps> = ({ onClick, type }) => {
             onClick={() => onClick && onClick(categoryValue)}
             key={id}
           >
-            <CategoryCircleWrapper
-              variants={circleMotion}
-              animate={animate(type, categoryValue) ? 'isActive' : 'isUnActive'}
-            >
+            <CategoryCircleWrapper animate={animate(type, categoryValue)}>
               {categoryValue === 'all' ? (
                 <GDSCLogoWrapper>
                   <GdscLogo />
