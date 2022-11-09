@@ -6,6 +6,8 @@ export const circleMotion = {
   isUnActive: {
     y: -20,
     opacity: 0,
+    top: '-10px',
+    left: '50%',
   },
 };
 

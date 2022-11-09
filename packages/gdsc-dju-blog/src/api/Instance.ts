@@ -5,7 +5,7 @@ import { resetTokenAndReattemptRequest } from '@src/api/hooks/getNewToken';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-let token = Cookies.get('token');
+const token = Cookies.get('token');
 const blogRoute = `https://api.gdsc-dju.com/${
   isProduction ? 'blog-route' : 'blog-route-dev'
 }`;
@@ -14,7 +14,10 @@ const generateAuthInstance = (baseUrl: string) => {
   const instance = axios.create({
     timeout: 10000,
     params: {},
-    headers: { Authorization: `Bearer ${token}` },
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
     baseURL: baseUrl,
   });
   instance.defaults.withCredentials = true;

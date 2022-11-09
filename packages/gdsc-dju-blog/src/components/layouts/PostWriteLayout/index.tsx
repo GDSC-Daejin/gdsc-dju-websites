@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 import { useRecoilState } from 'recoil';
 
+import MarkdownContainer from '@molecules/MarkdownContainer';
 import PostButtons from '@pages/PostWrite/components/PostButtons';
 import PostWriteHeader from '@pages/PostWrite/components/PostInformation';
 import PostService from '@src/api/PostService';
-import { ContentEditor } from '@src/components/atoms/ToastUi';
 import { alertState } from '@src/store/alert';
 import { ModalType, modalState } from '@src/store/modal';
 import { ContainerInner } from '@styles/layouts';
@@ -158,10 +158,9 @@ const Index: React.FC<PostWriteProps> = ({ postData, id }) => {
       });
     }
   };
-  const setEditorValue = () => {
-    const editorContent = editorRef.current.getInstance().getMarkdown();
+  const setEditorValue = (content: string) => {
     setDetailPostData(() => {
-      return { ...detailPostData, content: editorContent };
+      return { ...detailPostData, content: content };
     });
   };
 
@@ -195,23 +194,20 @@ const Index: React.FC<PostWriteProps> = ({ postData, id }) => {
           setPostData={setDetailPostData}
           setCategory={setCategory}
         />
-      </ContainerInner>
-      {id ? (
-        detailPostData.content !== '' && (
-          <ContentEditor
+        {id ? (
+          detailPostData.content !== '' && (
+            <MarkdownContainer
+              content={detailPostData.content}
+              setContent={setEditorValue}
+            />
+          )
+        ) : (
+          <MarkdownContainer
             content={detailPostData.content}
-            onChange={setEditorValue}
-            ref={editorRef}
+            setContent={setEditorValue}
           />
-        )
-      ) : (
-        <ContentEditor
-          content={detailPostData.content}
-          onChange={setEditorValue}
-          ref={editorRef}
-        />
-      )}
-      <ContainerInner>
+        )}
+
         <PostButtons
           isUpdate={isUpdate}
           disable={isButtonBlock}

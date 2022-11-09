@@ -40,14 +40,25 @@ export const CategoryMenuWrapper = styled(motion.div)`
   flex-direction: row;
   gap: 40px;
 `;
-export const CategoryCircleWrapper = styled(motion.div)`
+export const CategoryCircleWrapper = styled.div<{ animate?: boolean }>`
   position: absolute;
-  left: 45%;
-  top: -14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transform: translate(-50%, -50%);
+  top: -20px;
+  left: 50%;
+  height: fit-content;
+  width: fit-content;
   opacity: 0;
+  transition: all 0.3s ease-in-out;
+  ${({ animate }) =>
+    animate
+      ? css`
+          opacity: 1;
+          top: -10px;
+        `
+      : css`
+          opacity: 0;
+          top: -20px;
+        `}
 `;
 export const CategoryCircle = styled.div<{ colors: string }>`
   width: 12px;
@@ -56,7 +67,6 @@ export const CategoryCircle = styled.div<{ colors: string }>`
   background: ${(props) => props.colors};
 `;
 export const GDSCLogoWrapper = styled.div`
-  position: absolute;
-  width: 30px;
-  left: -12px;
+  position: relative;
+  width: 26px;
 `;

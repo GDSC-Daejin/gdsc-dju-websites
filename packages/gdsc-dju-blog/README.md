@@ -35,7 +35,7 @@ GDSC DJU의 기술 블로그 프로젝트입니다.
 │   ├── api
 │   │   ├── Mocks //Mock data 파일
 │   │   ├── hooks //SWR 파일
-│   │   └── index.ts //api 파일
+│   │   └── index.tsx //api 파일
 │   ├── assets // 사진폴더
 │   ├── components // 컴포넌트 폴더
 │   ├── fonts // 폰트 폴더

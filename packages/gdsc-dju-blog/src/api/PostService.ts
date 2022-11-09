@@ -46,7 +46,7 @@ class PostService {
     );
   };
   postMyPostData = (postData: PostPostDataType) => {
-    return AuthBlogInstance.post(`/api/member/v2/post`, postData);
+    return AuthBlogInstance.post(`/api/member/v2/post`, postData, {});
   };
   updateMyPostData = (postData: PostPostDataType, postId: string) => {
     return AuthBlogInstance.put(`/api/member/v2/post/${postId}`, postData);
