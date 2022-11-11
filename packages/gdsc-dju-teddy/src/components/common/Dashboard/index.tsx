@@ -12,9 +12,11 @@ import {
 import { userDataType } from '../../../types';
 import { FilterType } from '../../../types/filterType';
 import OutsideClickHandler from '../../../utils/OutSideClickHandler';
+import { dataSort } from '../../../utils/sortData';
 import DetailMemberCard from '../DetailMemberCard';
 import MemberCard from '../MemberCard';
 import { listAnimate, listItemAnimate } from '../motions/variants';
+import Notice from '../Notice';
 
 const DashboardContainer = styled.div`
   margin-top: 50px;
@@ -28,6 +30,7 @@ type DashboardProps = {
 const Dashboard = ({ scoreboard, filter }: DashboardProps) => {
   const [selectedId, setSelectedId] = useState<string>('');
   const { userData } = useGetUserState(filter, selectedId);
+
   return (
     <DashboardContainer>
       <LayoutGroup>
@@ -49,9 +52,9 @@ const Dashboard = ({ scoreboard, filter }: DashboardProps) => {
           )}
         </AnimatePresence>
 
-        {scoreboard && (
+        {scoreboard ? (
           <CardList variants={listAnimate} initial={'start'} animate={'end'}>
-            {scoreboard.map((userData, index) => (
+            {dataSort(scoreboard, 'count').map((userData, index) => (
               <CardElementWrapper
                 key={userData.id}
                 variants={listItemAnimate}
@@ -64,6 +67,8 @@ const Dashboard = ({ scoreboard, filter }: DashboardProps) => {
               </CardElementWrapper>
             ))}
           </CardList>
+        ) : (
+          <Notice>칭찬한 멤버가 없어요.</Notice>
         )}
       </LayoutGroup>
     </DashboardContainer>
