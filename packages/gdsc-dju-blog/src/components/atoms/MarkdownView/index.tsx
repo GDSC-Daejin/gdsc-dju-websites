@@ -10,6 +10,8 @@ import {
 
 import { DarkModeContext } from '@gdsc-dju/styled-components-theme';
 
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize from 'rehype-sanitize';
 import remarkGfm from 'remark-gfm';
 
 import { MarkdownStyle } from '@styles/markdown';
@@ -28,6 +30,7 @@ const Preview = (props: Props) => {
       <div className={'markdown-body'}>
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeRaw, rehypeSanitize]}
           // className={styles.reactMarkDown}
           components={{
             pre({ node, ...props }) {
