@@ -1,7 +1,14 @@
-import { applicationQuestions } from '@contents/recruitInfo';
 import { FormElementsType, FormValue } from '@type/recruitForm';
+import { IApplicationQuestions } from '@type/recruitInfo';
 
-export const formValidation: FormElementsType<keyof FormValue> = {
+export const backendApplication: IApplicationQuestions = {
+  question1: '활용할 수 있는 프레임워크, 라이브러리를 알려주세요.',
+  question2: '프로젝트 협업 경험이 있다면 자세하게 알려주세요.',
+  question3: '어떤 리드가 좋은 리드라고 생각하시는지 알려주세요.',
+  question4: '팀원과 갈등상황은 어떻게 해결하시나요?',
+  question5: '본인만의 공부방법이 있다면 어떤 것이 있나요?',
+};
+export const backendForm: FormElementsType<keyof FormValue> = {
   name: {
     type: 'INPUT',
     label: '이름(실명)',
@@ -77,8 +84,7 @@ export const formValidation: FormElementsType<keyof FormValue> = {
   },
   question1: {
     type: 'TEXT_AREA',
-    label: applicationQuestions.question1,
-    text: '* 디자이너 분들은 사용가능한 툴에 대해서 알려주세요.',
+    label: backendApplication.question1,
     placeholder:
       '예) Spring, Vue, Git, Github, NodeJS, Spring, Figma, Adobe XD',
     required: {
@@ -88,7 +94,7 @@ export const formValidation: FormElementsType<keyof FormValue> = {
   },
   question2: {
     type: 'TEXT_AREA',
-    label: applicationQuestions.question2,
+    label: backendApplication.question2,
     text: ' * 프로젝트 경험이 없다면 본인이 노력해서 보람을 느낀 일에 대해서 알려주세요.',
     required: {
       value: true,
@@ -97,7 +103,7 @@ export const formValidation: FormElementsType<keyof FormValue> = {
   },
   question3: {
     type: 'TEXT_AREA',
-    label: applicationQuestions.question3,
+    label: backendApplication.question3,
     required: {
       value: true,
       message: '필수 입력 값이에요.',
@@ -105,7 +111,7 @@ export const formValidation: FormElementsType<keyof FormValue> = {
   },
   question4: {
     type: 'TEXT_AREA',
-    label: applicationQuestions.question4,
+    label: backendApplication.question4,
     required: {
       value: true,
       message: '필수 입력 값이에요.',
@@ -113,7 +119,7 @@ export const formValidation: FormElementsType<keyof FormValue> = {
   },
   question5: {
     type: 'TEXT_AREA',
-    label: applicationQuestions.question5,
+    label: backendApplication.question5,
     required: {
       value: true,
       message: '필수 입력 값이에요.',
@@ -153,7 +159,6 @@ export const formValidation: FormElementsType<keyof FormValue> = {
     type: 'TEXT',
     notice:
       '자신을 잘 나타낼 수 있는 개인블로그, 노션, Github링크 등을 입력해주세요.\n' +
-      '*디자이너 분들은 포트폴리오가 필수사항입니다.\n' +
       '*파일 용량이 50MB를 넘어갈 경우 클라우드/드라이브에 파일을 업로드 후 공유링크를 입력해주세요.',
     required: {
       value: false,

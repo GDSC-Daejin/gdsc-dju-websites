@@ -28,7 +28,7 @@ export const ApplyModalContentWrapper = styled.div`
   flex-direction: row;
 `;
 export const ApplyModalTitle = styled.h5`
-  font-size: ${({ theme }) => theme.fontSizes.textM};
+  font-size: ${({ theme }) => theme.fontSizes.textXxl};
   color: ${({ theme }) => theme.colors.grey900};
   margin-bottom: 12px;
 `;
