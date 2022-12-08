@@ -6,7 +6,7 @@ import { FilterType, ListType } from '../types/filterType';
 export class TeddyBearApi {
   protected API: string;
   constructor() {
-    this.API = 'https://api.gdsc-dju.com/teddy-route';
+    this.API = 'https://gdsc-teddy-boo105.koyeb.app';
   }
   getScoreboard = (filter: FilterType, listType: ListType) => {
     return axios.get<rowScoreBoardType>(
