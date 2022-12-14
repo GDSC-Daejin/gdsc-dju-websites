@@ -2,7 +2,7 @@ import { AnnouncementData } from '@type/pageData';
 
 export const iosRecruitInfo: AnnouncementData = {
   id: 'ios',
-  name: 'ios Developer',
+  name: 'iOS Developer',
   skill: 'Swift, Objective-C',
   stack: 'JAVA, Kotlin',
   status: 'ALWAYS_OPEN',
@@ -19,15 +19,14 @@ export const iosRecruitInfo: AnnouncementData = {
   plus:
     'Github, git에 대한 경험이나 프로젝트 경험이 있는 분\n' +
     'Framework나 Library 사용이 능숙하신 분\n' +
-    'Android, Kotlin 개발 경험이 있으신 분\n' +
-    'Android 의 다양한 Framework 나 Library 사용이 능숙하신 분\n' +
+    'iOS, Objective-C 개발 경험이 있으신 분\n' +
+    'iOS 의 다양한 Framework 나 Library 사용이 능숙하신 분\n' +
     '프로젝트의 아키텍쳐에 대한 고려를 끊임 없이 하시는 분',
   introduction:
-    'Beginner 포지션이 개설된 이후 포지션의 기준이 변경되었어요.\n' +
     '프레임워크를 바탕으로 하나의 프로젝트를 혼자 개발하실 수 있는 분이 포지션을 얻을 수 있어요.\n' +
     '동료 개발자와 협업하거나 열정적인 분들과 함께 성장해나가고 싶은 분들을 환영해요.',
   activity:
     '2주마다 있는 정기세션에 참여할 수 있어요.\n' +
     'GDSC KOR나 GDSC DJU가 기획 및 운영하는 이벤트에 운영진으로 참여할 수 있어요.\n' +
-    '팀리더로서 프로젝트를 개설하거나 프로젝트에 안드로이드 포지션으로 합류할 수 있어요.',
+    '팀리더로서 프로젝트를 개설하거나 프로젝트에 iOS 포지션으로 합류할 수 있어요.',
 };

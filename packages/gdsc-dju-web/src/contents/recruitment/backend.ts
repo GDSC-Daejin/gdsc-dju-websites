@@ -26,7 +26,6 @@ export const backendRecruitInfo: AnnouncementData = {
     '스프링 관련 프로젝트 경험이 있으신 분 \n' +
     '최신 개발 트렌드에 관심이 많으신 분 ',
   introduction:
-    'Beginner 포지션이 개설된 이후 포지션의 기준이 변경되었어요.\n' +
     '프레임워크를 바탕으로 하나의 프로젝트를 혼자 개발하실 수 있는 분이 포지션을 얻을 수 있어요.\n' +
     '동료 개발자와 협업하거나 열정적인 분들과 함께 성장해나가고 싶은 분들을 환영해요.',
   activity:

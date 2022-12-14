@@ -1,0 +1,17 @@
+vite v3.0.8 building for production...
+transforming...
+Use of eval is strongly discouraged, as it poses security risks and may cause issues with minification
+✓ 588 modules transformed.
+rendering chunks...
+dist/assets/GDSCLogo.a7a27ddd.svg         2.99 KiB
+dist/assets/GoogleLogo.70a1c084.svg       0.96 KiB
+dist/assets/GithubLogo.11a20290.svg       32.43 KiB
+dist/assets/LeftArrowIcon.a4771318.svg    0.20 KiB
+dist/assets/RightArrowIcon.0c417ede.svg   0.20 KiB
+dist/index.html                           0.86 KiB
+dist/assets/index.4057a23d.js             1217.75 KiB / gzip: 315.84 KiB
+
+(!) Some chunks are larger than 500 KiB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/guide/en/#outputmanualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.

@@ -1,0 +1,29 @@
+vite v3.0.8 building for production...
+transforming...
+Use of eval is strongly discouraged, as it poses security risks and may cause issues with minification
+✓ 553 modules transformed.
+rendering chunks...
+dist/assets/BlueBanner.bc5cc33f.svg         259.87 KiB
+dist/assets/GreenBanner.fc5a3d72.svg        276.12 KiB
+dist/assets/RedBanner.edc8bd48.svg          267.30 KiB
+dist/assets/YellowBanner.b631a182.svg       247.30 KiB
+dist/assets/GDSCLogo.a7a27ddd.svg           2.99 KiB
+dist/index.html                             2.73 KiB
+dist/assets/index.70600ea5.js               1.32 KiB / gzip: 0.60 KiB
+dist/assets/variants.c3a2eafb.js            0.52 KiB / gzip: 0.20 KiB
+dist/assets/index.9fd5bf61.js               4.21 KiB / gzip: 1.60 KiB
+dist/assets/index.3e6d396d.js               17.72 KiB / gzip: 7.05 KiB
+dist/assets/index.22af9666.js               7.26 KiB / gzip: 2.35 KiB
+dist/assets/HomePageSection.748b9cd4.js     1.84 KiB / gzip: 0.94 KiB
+dist/assets/styled.aea17f83.js              3.43 KiB / gzip: 0.89 KiB
+dist/assets/IntroduceSection.970f7ad2.js    2.41 KiB / gzip: 0.79 KiB
+dist/assets/CultureSection.4fb30c1b.js      3.31 KiB / gzip: 1.22 KiB
+dist/assets/index.39c11813.js               6.85 KiB / gzip: 2.31 KiB
+dist/assets/ManagementSection.3ccdaafe.js   4.40 KiB / gzip: 1.76 KiB
+dist/assets/index.e0555cb9.js               442.42 KiB / gzip: 103.54 KiB
+dist/assets/index.8d609e78.js               827.40 KiB / gzip: 218.49 KiB
+
+(!) Some chunks are larger than 500 KiB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/guide/en/#outputmanualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.

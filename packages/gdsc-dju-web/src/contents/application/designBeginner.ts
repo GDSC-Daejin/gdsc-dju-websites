@@ -2,7 +2,7 @@ import { FormElementsType, FormValue } from '@type/recruitForm';
 import { IApplicationQuestions } from '@type/recruitInfo';
 
 export const designBeginnerApplication: IApplicationQuestions = {
-  question1: '활용할 수 있는 프레임워크, 라이브러리를 알려주세요.',
+  question1: '활용할 수 있는 툴을 알려주세요.',
   question2: '프로젝트 협업 경험이 있다면 자세하게 알려주세요.',
   question3: '어떤 리드가 좋은 리드라고 생각하시는지 알려주세요.',
   question4: '팀원과 갈등상황은 어떻게 해결하시나요?',
@@ -128,10 +128,13 @@ export const designBeginnerForm: FormElementsType<keyof FormValue> = {
   },
   link0: {
     type: 'INPUT',
-    label: '링크 1',
+    label: '포트폴리오 링크',
+    text:
+      '포트폴리오는 꼭 UX/UI와 관련되어있지 않아도 됩니다. \n ' +
+      '클라우드/드라이브에 파일을 업로드 후 공유링크를 입력해주세요.',
     placeholder: 'https://',
     required: {
-      value: false,
+      value: true,
       message: '',
     },
     pattern: {
@@ -143,7 +146,7 @@ export const designBeginnerForm: FormElementsType<keyof FormValue> = {
   },
   link1: {
     type: 'INPUT',
-    label: '링크 2',
+    label: '추가 링크',
     placeholder: 'https://',
     required: {
       value: false,
@@ -159,7 +162,7 @@ export const designBeginnerForm: FormElementsType<keyof FormValue> = {
   linkAnnounce: {
     type: 'TEXT',
     notice:
-      '자신을 잘 나타낼 수 있는 개인블로그, 노션, Github링크 등을 입력해주세요.\n' +
+      '자신을 잘 나타낼 수 있는 개인블로그, 노션 등을 입력해주세요.\n' +
       '*파일 용량이 50MB를 넘어갈 경우 클라우드/드라이브에 파일을 업로드 후 공유링크를 입력해주세요.',
     required: {
       value: false,
