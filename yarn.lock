@@ -3062,6 +3062,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@gdsc-dju/gds-styles@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "@gdsc-dju/gds-styles@npm:0.0.2"
+  checksum: 580933c58f1111662e8234a2e195e2dc718c65c92373af2478e41ee3e53d736115b5fb08ec6220ef9b224ca071f4ffd1d09c1196755dbd392c4d8f2719e94859
+  languageName: node
+  linkType: hard
+
+"@gdsc-dju/gds-theme@npm:^0.0.9":
+  version: 0.0.9
+  resolution: "@gdsc-dju/gds-theme@npm:0.0.9"
+  peerDependencies:
+    react: "*"
+  checksum: b438120ea3ebbf832f0d98ad08d5b7d56e2b3c881371d4763bb1e0fd271509f263c91f302d2385252f44e19c701402dae135e60177c957bf37db31f8429f1bb1
+  languageName: node
+  linkType: hard
+
 "@gdsc-dju/shared@workspace:apps/shared":
   version: 0.0.0-use.local
   resolution: "@gdsc-dju/shared@workspace:apps/shared"
@@ -5265,7 +5281,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/styled-components@npm:^5.1.15, @types/styled-components@npm:^5.1.25":
+"@types/styled-components@npm:^5.1.15, @types/styled-components@npm:^5.1.25, @types/styled-components@npm:^5.1.26":
   version: 5.1.26
   resolution: "@types/styled-components@npm:5.1.26"
   dependencies:
@@ -19157,13 +19173,18 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "next-web@workspace:apps/next-web"
   dependencies:
+    "@gdsc-dju/gds-styles": ^0.0.2
+    "@gdsc-dju/gds-theme": ^0.0.9
     "@types/node": 18.11.11
     "@types/react": 18.0.26
     "@types/react-dom": 18.0.9
+    "@types/styled-components": ^5.1.26
     eslint-config-next: 13.0.6
     next: 13.0.6
     react: 18.2.0
     react-dom: 18.2.0
+    react-is: ^18.2.0
+    styled-components: ^5.3.6
     typescript: 4.9.3
   languageName: unknown
   linkType: soft
@@ -24620,7 +24641,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^5.3.3":
+"styled-components@npm:^5.3.3, styled-components@npm:^5.3.6":
   version: 5.3.6
   resolution: "styled-components@npm:5.3.6"
   dependencies:

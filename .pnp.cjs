@@ -5599,6 +5599,37 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT"\
         }]\
       ]],\
+      ["@gdsc-dju/gds-styles", [\
+        ["npm:0.0.2", {\
+          "packageLocation": "./.yarn/cache/@gdsc-dju-gds-styles-npm-0.0.2-b1b3295446-580933c58f.zip/node_modules/@gdsc-dju/gds-styles/",\
+          "packageDependencies": [\
+            ["@gdsc-dju/gds-styles", "npm:0.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@gdsc-dju/gds-theme", [\
+        ["npm:0.0.9", {\
+          "packageLocation": "./.yarn/cache/@gdsc-dju-gds-theme-npm-0.0.9-b05fe35296-b438120ea3.zip/node_modules/@gdsc-dju/gds-theme/",\
+          "packageDependencies": [\
+            ["@gdsc-dju/gds-theme", "npm:0.0.9"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:8b259ac29cf09b341b91d7c965774dd130a5b3ab6fb5922c39fcf12ceb364c7f6510bbfbfd247a9430843ccaf95d49312d7a4add08f325c92286e2ecbbbb9a92#npm:0.0.9", {\
+          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-gds-theme-virtual-3197af9760/0/cache/@gdsc-dju-gds-theme-npm-0.0.9-b05fe35296-b438120ea3.zip/node_modules/@gdsc-dju/gds-theme/",\
+          "packageDependencies": [\
+            ["@gdsc-dju/gds-theme", "virtual:8b259ac29cf09b341b91d7c965774dd130a5b3ab6fb5922c39fcf12ceb364c7f6510bbfbfd247a9430843ccaf95d49312d7a4add08f325c92286e2ecbbbb9a92#npm:0.0.9"],\
+            ["@types/react", "npm:18.0.26"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@gdsc-dju/shared", [\
         ["workspace:apps/shared", {\
           "packageLocation": "./apps/shared/",\
@@ -24678,13 +24709,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./apps/next-web/",\
           "packageDependencies": [\
             ["next-web", "workspace:apps/next-web"],\
+            ["@gdsc-dju/gds-styles", "npm:0.0.2"],\
+            ["@gdsc-dju/gds-theme", "virtual:8b259ac29cf09b341b91d7c965774dd130a5b3ab6fb5922c39fcf12ceb364c7f6510bbfbfd247a9430843ccaf95d49312d7a4add08f325c92286e2ecbbbb9a92#npm:0.0.9"],\
             ["@types/node", "npm:18.11.11"],\
             ["@types/react", "npm:18.0.26"],\
             ["@types/react-dom", "npm:18.0.9"],\
+            ["@types/styled-components", "npm:5.1.26"],\
             ["eslint-config-next", "virtual:8b259ac29cf09b341b91d7c965774dd130a5b3ab6fb5922c39fcf12ceb364c7f6510bbfbfd247a9430843ccaf95d49312d7a4add08f325c92286e2ecbbbb9a92#npm:13.0.6"],\
             ["next", "virtual:8b259ac29cf09b341b91d7c965774dd130a5b3ab6fb5922c39fcf12ceb364c7f6510bbfbfd247a9430843ccaf95d49312d7a4add08f325c92286e2ecbbbb9a92#npm:13.0.6"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:cf8e741bfc4cf94d285226378974bfd60e24ba23a88c85e7a48cc6a7b1051f3b6429dac794a66de08b8f6b13a044aff730ea5701a69b3b4df782300e1e2fabc6#npm:18.2.0"],\
+            ["react-is", "npm:18.2.0"],\
+            ["styled-components", "virtual:cf8e741bfc4cf94d285226378974bfd60e24ba23a88c85e7a48cc6a7b1051f3b6429dac794a66de08b8f6b13a044aff730ea5701a69b3b4df782300e1e2fabc6#npm:5.3.6"],\
             ["typescript", "patch:typescript@npm%3A4.9.3#~builtin<compat/typescript>::version=4.9.3&hash=f456af"]\
           ],\
           "linkType": "SOFT"\

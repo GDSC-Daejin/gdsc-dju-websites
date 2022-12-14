@@ -1,6 +1,13 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { useLayoutEffect } from 'react';
+
+import { themeHandler } from '@gdsc-dju/gds-theme';
+
+import type { AppProps } from 'next/app';
+import '@gdsc-dju/gds-styles/global.css';
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  useLayoutEffect(() => {
+    themeHandler('auto');
+  }, []);
+  return <Component {...pageProps} />;
 }
