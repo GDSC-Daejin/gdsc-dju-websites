@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { IApplicantTypeWithID } from '../../../../types/applicant';
+import { IApplicantTypeWithID } from '@type/applicant';
+
 import StatusBadge from '../../Statusbadge';
 
 import { ApplicantCardWrapper, ApplicantEmail, ApplicantText } from './styled';

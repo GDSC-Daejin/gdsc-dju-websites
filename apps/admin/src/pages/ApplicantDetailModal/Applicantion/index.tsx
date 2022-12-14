@@ -1,10 +1,11 @@
 import React from 'react';
 
+import { IApplicantTypeWithID } from '@type/applicant';
+
 import {
   QuestionType,
   applicationQuestions,
 } from '../../../context/recruitInfo';
-import { IApplicantTypeWithID } from '../../../types/applicant';
 
 import {
   ApplicationHeader,

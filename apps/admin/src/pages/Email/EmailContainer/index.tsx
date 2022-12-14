@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 
 import { useAtom } from 'jotai';
 
+import { IApplicantTypeWithID } from '@type/applicant';
+
 import { GDSCButton } from '../../../components/common/Button';
 import CheckBoxCard from '../../../components/common/cards/CheckBoxCard';
 import { TextInput } from '../../../components/common/TextInput';
@@ -13,7 +15,6 @@ import {
 import { TemplateSelectWrapper } from '../../../pages/EmailLog/styled';
 import { alertAtom } from '../../../store/alertAtom';
 import { templateAtom } from '../../../store/templateAtom';
-import { IApplicantTypeWithID } from '../../../types/applicant';
 
 import {
   CheckboxSection,

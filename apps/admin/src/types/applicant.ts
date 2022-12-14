@@ -99,7 +99,7 @@ export interface EmailLogType {
   sender: string;
   status: number;
 }
-export interface getEmailLogType {
+export interface EmailLogTypeWithUploadDate {
   email: string;
   name: string;
   applicantID: string;
@@ -111,6 +111,6 @@ export interface getEmailLogType {
   sender: string;
   status: number;
 }
-export interface EmailLogTypeWithID extends getEmailLogType {
+export interface EmailLogTypeWithID extends EmailLogTypeWithUploadDate {
   id: string;
 }

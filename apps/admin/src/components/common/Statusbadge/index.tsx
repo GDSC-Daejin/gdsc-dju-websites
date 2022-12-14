@@ -4,7 +4,7 @@ import { ColorScheme } from '@gdsc-dju/styled-components';
 
 import styled, { css } from 'styled-components';
 
-import { StatusBadgeType, StatusType } from '../../../types/applicant';
+import { StatusBadgeType, StatusType } from '@type/applicant';
 
 const StatusBadgeWrapper = styled.div<{
   color: keyof ColorScheme;

@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import { MenuContext, Navigation } from '@gdsc-dju/styled-components';
 
 import NavigationElement from '@layout/NavigationElement';
+import Members from '@pages/Members';
 
 import SideMenu from '../components/layout/SideMenu';
 
@@ -35,6 +36,7 @@ const Pages = () => {
             <Route path={'/recruit/:userid'} element={<AdminApplicants />} />
             <Route path={'/email'} element={<Email />} />
             <Route path={'/email-log'} element={<AdminEmailLog />} />
+            <Route path={'/members'} element={<Members />} />
           </Routes>
         </AdminContainer>
       </AdminContainerWrapper>

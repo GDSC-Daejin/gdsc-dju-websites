@@ -8,13 +8,14 @@ import {
   where,
 } from 'firebase/firestore';
 
-import { recruitInfo } from '../context/recruitInfo';
-import { db } from '../firebase/firebase';
 import {
   IApplicantType,
   IApplicantTypeWithID,
   StatusType,
-} from '../types/applicant';
+} from '@type/applicant';
+
+import { recruitInfo } from '../context/recruitInfo';
+import { db } from '../firebase/firebase';
 
 export const applicantFilterByStatus = (
   filteredApplicants: IApplicantTypeWithID[],

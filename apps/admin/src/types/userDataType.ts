@@ -13,10 +13,10 @@ export interface IUserDataType {
   userId: string;
   username: string;
 }
-export interface RowMemberDataType {
+export interface AxiosResponse<T> {
   header: { code: string };
   body: {
-    data: IUserDataType;
+    data: T;
   };
 }
 export interface MemberDataInfoType {

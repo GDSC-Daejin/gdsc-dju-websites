@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { IApplicantTypeWithID } from '@type/applicant';
+
 import StatusBadge from '../../../components/common/Statusbadge';
-import { IApplicantTypeWithID } from '../../../types/applicant';
 import { timeFilter } from '../../../utils/timeFilter';
 
 import {

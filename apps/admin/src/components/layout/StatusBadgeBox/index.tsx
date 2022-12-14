@@ -2,7 +2,8 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { IApplicantTypeWithID, StatusType } from '../../../types/applicant';
+import { IApplicantTypeWithID, StatusType } from '@type/applicant';
+
 import { applicantFilterByStatus } from '../../../utils/applicantsHandler';
 import StatusBadge from '../../common/Statusbadge';
 

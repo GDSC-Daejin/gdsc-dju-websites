@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const AdminContainerInner = styled.div`
   height: 100%;
   padding: 30px 30px;
+  box-sizing: border-box;
   overflow: scroll;
 `;
 export const AdminContainer = styled.div`

@@ -2,10 +2,11 @@ import React, { useCallback } from 'react';
 
 import { doc, updateDoc } from 'firebase/firestore';
 
+import { IApplicantTypeWithID, StatusType } from '@type/applicant';
+
 import StatusBadge from '../../../components/common/Statusbadge';
 import { recruitInfo } from '../../../context/recruitInfo';
 import { db } from '../../../firebase/firebase';
-import { IApplicantTypeWithID, StatusType } from '../../../types/applicant';
 
 import { ApplicantBadgeWrapper, ApplicantInfoStateWrapper } from './styled';
 

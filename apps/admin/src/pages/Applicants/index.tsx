@@ -5,6 +5,7 @@ import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useAtom } from 'jotai';
 
 import { putRecruitStatus } from '@src/apis/RecruitService';
+import { IApplicantTypeWithID } from '@type/applicant';
 
 import ApplicantCard from '../../components/common/cards/ApplicantCard';
 import ToggleButton from '../../components/common/ToggleButton';
@@ -16,7 +17,6 @@ import {
   recruitmentReadOnlyAtom,
   recruitmentWriteOnlyAtom,
 } from '../../store/recruitmentAtom';
-import { IApplicantTypeWithID } from '../../types/applicant';
 import { getApplicants } from '../../utils/applicantsHandler';
 import ApplicantDetailModal from '../ApplicantDetailModal';
 import { AdminContainerInner } from '../styled';

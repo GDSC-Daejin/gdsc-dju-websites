@@ -14,7 +14,7 @@ export interface UserDataWithID extends UserDataState {
   id: string;
 }
 
-export type onBoardingMember = {
+export type OnboardMember = {
   email: string;
   nickname: string;
   major: string;
@@ -26,7 +26,7 @@ export type AdminDataType = {
   nickName: string;
   phoneNumber: string;
 };
-export type recruitmentInfoDataType = {
+export type RecruitmentInfoDataType = {
   frontend: boolean;
   backend: boolean;
   android: boolean;
@@ -35,19 +35,8 @@ export type recruitmentInfoDataType = {
   beginner: boolean;
   home: boolean;
 };
-export type getRecruitmentInfoDataType = {
-  status: string;
-  data: {
-    frontend: boolean;
-    backend: boolean;
-    android: boolean;
-    design: boolean;
-    ml: boolean;
-    beginner: boolean;
-    home: boolean;
-  };
+
+export type NicknameData = {
+  data: Array<{ nickname: string }>;
 };
-export type nickNameDataType = {
-  data: { nickname: string }[];
-};
-export type navigationDataType = { route: string; title: string }[];
+export type NavigationType = Array<{ route: string; title: string }>;

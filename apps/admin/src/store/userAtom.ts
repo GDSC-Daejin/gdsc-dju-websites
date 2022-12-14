@@ -1,8 +1,7 @@
 import { atom } from 'jotai';
 
 import { getUserData } from '@src/apis/hooks/useGetMyData';
-
-import { IUserInfoDataType } from '../types/userInfoData';
+import { IUserInfoDataType } from '@type/userInfoData';
 
 interface UserAtomType {
   role: string | null;

@@ -1,6 +1,11 @@
 import { atom } from 'jotai';
 
-export type ModalKey = 'EMAIL' | 'SIGNUP' | 'USER_MENU' | 'APPLICANT';
+export type ModalKey =
+  | 'EMAIL'
+  | 'SIGNUP'
+  | 'USER_MENU'
+  | 'APPLICANT'
+  | 'MEMBER';
 
 export interface ModalAtom {
   isOpen: ModalKey | null;

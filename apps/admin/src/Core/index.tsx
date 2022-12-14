@@ -21,6 +21,7 @@ const Core = () => {
           <Route path={'/'} element={<SignIn />} />
           <Route path={'/redirect'} element={<Redirect />} />
           <Route path={'/certified/*'} element={<Pages />} />
+          <Route path={'*'} element={<Error />} />
         </Routes>
       </Suspense>
     </ErrorBoundary>
