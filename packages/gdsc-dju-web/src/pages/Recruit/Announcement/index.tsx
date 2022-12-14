@@ -2,13 +2,13 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 import Banner from '@atoms/Banner';
-import { announcementData } from '@contents/recruitDetails';
+import { announcementData } from '@contents/recruitment';
 import { ContainerInner, LayoutContainer } from '@styles/layouts';
 import AnnouncementLayout from '@templates//AnnouncementLayout';
-import { AnnouncementData, RecruitmentId } from '@type/pageData';
+import { AnnouncementData, PositionType } from '@type/pageData';
 
 const Announcement = () => {
-  const { id } = useParams<{ id: RecruitmentId }>();
+  const { id } = useParams<{ id: PositionType }>();
   const aboutTeam = announcementData.find(
     (aboutTeam) => aboutTeam.id === id,
   ) as AnnouncementData;

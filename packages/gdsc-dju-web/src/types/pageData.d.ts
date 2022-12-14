@@ -1,17 +1,21 @@
-export type RecruitmentId =
+export type PositionType =
   | 'frontend'
   | 'backend'
   | 'android'
-  | 'design'
+  | 'designer'
   | 'ml'
-  | 'beginner';
+  | 'ios'
+  | 'beginner'
+  | 'designBeginner';
 
 export type RecruitmentStatus = 'OPEN' | 'CLOSED' | 'ALWAYS_OPEN';
 
 export interface AnnouncementData {
-  id: RecruitmentId;
+  id: PositionType;
   name: string;
   status: RecruitmentStatus;
+  designDescription?: string;
+  developDescription?: string;
   skill: string;
   stack: string;
   people: string; //이런 분을 찾고 있어요

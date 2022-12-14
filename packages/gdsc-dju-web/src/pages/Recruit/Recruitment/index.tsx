@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Banner from '@atoms/Banner';
-import { announcementData } from '@contents/recruitDetails';
+import { announcementData } from '@contents/recruitment';
 import { ContainerInner, LayoutContainer } from '@styles/layouts';
 import RecruitmentLayout from '@templates/RecruitmentLayout';
 

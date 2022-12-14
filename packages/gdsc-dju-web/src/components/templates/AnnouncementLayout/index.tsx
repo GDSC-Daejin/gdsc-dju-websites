@@ -2,7 +2,7 @@ import React from 'react';
 
 import { SubtitleContent } from '@atoms/BulletList';
 import { Title } from '@atoms/title';
-import { recruitDefaultText } from '@contents/recruitDetails';
+import { recruitDefaultText } from '@contents/recruitment';
 import InformationBar from '@molecules/InformationBar';
 import RecruitFaqButton from '@molecules/RecruitFaqButton';
 import { TopMargin } from '@styles/layouts';

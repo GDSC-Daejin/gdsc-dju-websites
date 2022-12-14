@@ -56,19 +56,13 @@ const HomeRecruitmentButton = () => {
   const navigate = useNavigate();
   return (
     <ButtonWrapper variants={bannerItemAnimate}>
-      {recruit.home ? (
-        <StyledRecruitmentButton
-          onClick={() => {
-            navigate('/recruit');
-          }}
-        >
-          지원하기
-        </StyledRecruitmentButton>
-      ) : (
-        <StyledRecruitmentButton disable={true}>
-          지원기간이 아닙니다.
-        </StyledRecruitmentButton>
-      )}
+      <StyledRecruitmentButton
+        onClick={() => {
+          navigate('/recruit');
+        }}
+      >
+        지원하기
+      </StyledRecruitmentButton>
     </ButtonWrapper>
   );
 };
