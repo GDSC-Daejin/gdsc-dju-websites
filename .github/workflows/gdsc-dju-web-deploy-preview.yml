@@ -39,7 +39,7 @@ jobs:
       - name: Yarn install
         run: yarn install
       - name: Project Build
-        run: yarn build
+        run: yarn turbo build
         working-directory: ${{ env.working-directory }}
       - name: Get short SHA
         id: slug

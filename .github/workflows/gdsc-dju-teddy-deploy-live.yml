@@ -32,8 +32,8 @@ jobs:
           echo "VITE_FIREBASE_MEASUREMENT_ID=${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}" >> .env
           cat .env
         working-directory: ${{ env.working-directory }}
-      - name: install package
-        run: yarn install
+      - name: Project Build
+        run: yarn turbo build
       - name: Project Build
         run: yarn build
         working-directory: ${{ env.working-directory }}

@@ -2,21 +2,22 @@
   "name": "gdsc-dju-frontend",
   "private": true,
   "scripts": {
-    "lint": "eslint --fix --ext .ts,.tsx .",
-    "typecheck": "yarn workspaces list typecheck"
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "dev": "turbo run dev"
   },
   "workspaces": {
     "packages": [
-      "packages/**"
+      "packages/**",
+      "apps/**"
     ]
   },
-  "packageManager": "yarn@3.2.2",
+  "packageManager": "yarn@3.3.0",
   "devDependencies": {
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
-    "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
+    "@yarnpkg/plugin-typescript": "^4.0.0-rc.32",
     "eslint": "8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.1",
@@ -26,20 +27,7 @@
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "prettier": "^2.7.1",
-    "typescript": "^4.7.4",
-    "vite": "^3.0.1",
-    "vite-plugin-mkcert": "^1.10.1"
-  },
-  "dependencies": {
-    "@yarnpkg/pnpify": "^4.0.0-rc.14",
-    "@yarnpkg/sdks": "^3.0.0-rc.12",
-    "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "react": "^18.2.0",
-    "react-is": "^18.2.0",
-    "react-router": "^6.3.0",
-    "react-router-dom": "^6.3.0"
+    "turbo": "^1.6.3",
+    "typescript": "^4.7.4"
   }
 }
