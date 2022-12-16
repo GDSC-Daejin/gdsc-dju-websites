@@ -14,7 +14,7 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
-      working-directory: ./packages/gdsc-dju-teddy
+      working-directory: ./apps/teddy
     environment:
       name: GDSC DJU Teddy Production
       url: https://teddy.gdsc-dju.com
@@ -36,7 +36,6 @@ jobs:
         run: yarn turbo build
       - name: Project Build
         run: yarn build
-        working-directory: ${{ env.working-directory }}
       - uses: HyeokE/action-hosting-deploy@main
         id: run_firebase_deploy
         with:
@@ -45,7 +44,7 @@ jobs:
           channelId: live
           projectId: gdsc-dju
           target: gdsc-dju-teddy
-          entryPoint: './packages/gdsc-dju-teddy'
+          entryPoint: ${{ env.working-directory }}
       - name: Discord Message Notify
         uses: appleboy/discord-action@0.0.3
         with:

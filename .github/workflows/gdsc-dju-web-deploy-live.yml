@@ -20,7 +20,7 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
-      working-directory: ./packages/gdsc-dju-web
+      working-directory: ./apps/web
     environment:
       name: GDSC DJU WEB Production
       url: https://web.gdsc-dju.com
@@ -42,7 +42,6 @@ jobs:
         run: yarn install
       - name: Project Build
         run: yarn turbo build
-        working-directory: ${{ env.working-directory }}
       - uses: HyeokE/action-hosting-deploy@main
         id: run_firebase_deploy
         with:
@@ -50,7 +49,7 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GDSC_DJU }}'
           channelId: live
           projectId: gdsc-dju
-          entryPoint: './packages/gdsc-dju-web'
+          entryPoint: ${{ env.working-directory }}
       - name: Discord Message Notify
         uses: appleboy/discord-action@0.0.3
         with:
