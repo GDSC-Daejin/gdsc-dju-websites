@@ -20,7 +20,7 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
-      working-directory: ./packages/gdsc-dju-blog
+      working-directory: ./apps/blog
     environment:
       name: GDSC DJU blog Production
       url: https://blog.gdsc-dju.com

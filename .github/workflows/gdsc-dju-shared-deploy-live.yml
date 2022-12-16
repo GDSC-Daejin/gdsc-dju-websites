@@ -14,7 +14,7 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
-      working-directory: ./packages/gdsc-dju-shared
+      working-directory: ./apps/shared
     environment:
       name: GDSC DJU Shared Production
       url: https://shared.gdsc-dju.com

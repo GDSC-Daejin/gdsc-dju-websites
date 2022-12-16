@@ -20,7 +20,7 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
-      working-directory: ./packages/gdsc-dju-admin
+      working-directory: ./apps/admin
     environment:
       name: GDSC DJU admin Production
       url: https://admin.gdsc-dju.com
