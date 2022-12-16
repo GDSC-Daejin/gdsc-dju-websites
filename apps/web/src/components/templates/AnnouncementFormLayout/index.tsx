@@ -4,7 +4,6 @@ import { FieldErrorsImpl, UseFormRegister } from 'react-hook-form';
 import { FileInput, TextArea, Input } from '@gdsc-dju/styled-components';
 
 import { SubTitle, Title } from '@atoms/title';
-import { formValidation } from '@common/validations/recuitForm';
 import {
   ErrorBox,
   FormContentWrapper,
@@ -22,9 +21,10 @@ type AnnounceFormLayoutProps = {
   handleSubmit: () => void;
   isBlocked: boolean;
   position: string;
-  formElements: (keyof FormValue)[];
+  formElements: Array<keyof FormValue>;
   register: UseFormRegister<FormValue>;
   errors: FieldErrorsImpl<FormValue>;
+  formValidation: Record<keyof FormValue, any>;
   setFile: (file: File) => void;
 };
 
@@ -36,6 +36,7 @@ const AnnouncementFormLayout = ({
   position,
   errors,
   setFile,
+  formValidation,
 }: AnnounceFormLayoutProps) => {
   return (
     <div>
@@ -58,25 +59,26 @@ const AnnouncementFormLayout = ({
                   {elementName.text && <FormText>{elementName.text}</FormText>}
                   {elementName.type === 'INPUT' ? (
                     <Input
-                      error={!!errors[element]}
+                      error={Boolean(errors[element])}
                       placeholder={elementName.placeholder}
                       {...register(element, elementName)}
                     />
                   ) : elementName.type === 'TEXT_AREA' ? (
                     <TextArea
                       placeholder={elementName.placeholder}
-                      error={!!errors[element]}
+                      error={Boolean(errors[element])}
                       {...register(element, elementName)}
                     />
                   ) : (
                     <p>
-                      {elementName.notice?.split('\n').map((text) => (
+                      {elementName.notice?.split('\n').map((text: string) => (
                         <FormText key={text}>{text}</FormText>
                       ))}
                     </p>
                   )}
                   <ErrorBox>
-                    {!!errors[element] && (errors[element]?.message as string)}
+                    {Boolean(errors[element]) &&
+                      (errors[element]?.message as string)}
                   </ErrorBox>
                 </FormContentWrapper>
               );

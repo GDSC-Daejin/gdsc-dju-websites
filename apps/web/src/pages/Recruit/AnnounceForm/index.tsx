@@ -1,4 +1,4 @@
-import React, { memo, useLayoutEffect, useState } from 'react';
+import React, { memo, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FieldValues } from 'react-hook-form/dist/types/fields';
 import { useParams, createSearchParams, useNavigate } from 'react-router-dom';
@@ -7,8 +7,7 @@ import { addDoc, collection } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { useAtom } from 'jotai';
 
-import { formValidation } from '@common/validations/recuitForm';
-import { recruitInfo } from '@contents/recruitInfo';
+import { applications, forms } from '@contents/application';
 import ApplyModal from '@organisms/Modal/ApplyModal';
 import { db } from '@src/firebase/firebase';
 import { storage } from '@src/firebase/firebase.config';
@@ -22,14 +21,13 @@ import {
   IInputRegister,
   IRegisterApplicantType,
 } from '@type/applicant';
+import { positionSelect } from '@type/position';
 import { FormValue } from '@type/recruitForm';
+import { recruitInfo } from '@type/recruitInfo';
 import { isObjEmpty } from '@utils/objectCheck';
-
-import { positionSelect } from './FormFunctions';
 
 const AnnounceForm = () => {
   const { id } = useParams();
-  const [position, setPosition] = useState('');
   const [, setLoading] = useAtom(loaderAtom);
   const [modal, setModal] = useAtom(modalAtom);
   const [alert, setAlert] = useAtom(alertAtom);
@@ -118,7 +116,7 @@ const AnnounceForm = () => {
   };
 
   const isBlocked = !(
-    watch('name') &&
+    watch() &&
     watch('email') &&
     watch('major') &&
     watch('phoneNumber') &&
@@ -133,34 +131,36 @@ const AnnounceForm = () => {
     setData(JSON.parse(JSON.stringify(values)));
     isObjEmpty(errors) && setModal({ ...modal, [MODAL_KEY.APPLY_CHECK]: true });
   };
-
+  const position = positionSelect[id as keyof typeof positionSelect];
+  const selectForm = applications[id as keyof typeof applications];
+  const formValidation = forms[id as keyof typeof forms];
+  const formElements = Object.keys(formValidation) as Array<
+    keyof typeof formValidation
+  >;
   const params = {
     name: data?.name,
     position: position,
     email: data?.email,
     phoneNumber: data?.phoneNumber,
   };
-  const formElements = Object.keys(formValidation) as Array<
-    keyof typeof formValidation
-  >;
-  useLayoutEffect(() => {
-    setPosition(positionSelect[id as keyof typeof positionSelect]);
-  }, [id]);
 
   return (
     <>
       <ApplyModal {...(params as IApplicantParams)} onClick={onRegister} />
       <LayoutContainer>
         <ContainerInner>
-          <AnnouncementFormLayout
-            isBlocked={isBlocked}
-            formElements={formElements}
-            handleSubmit={handleSubmit(onSubmit)}
-            register={register}
-            errors={errors}
-            position={position}
-            setFile={setFile}
-          />
+          {position && formElements && selectForm && formValidation && (
+            <AnnouncementFormLayout
+              isBlocked={isBlocked}
+              formElements={formElements}
+              formValidation={formValidation}
+              handleSubmit={handleSubmit(onSubmit)}
+              register={register}
+              errors={errors}
+              position={position}
+              setFile={setFile}
+            />
+          )}
         </ContainerInner>
       </LayoutContainer>
     </>

@@ -50,10 +50,10 @@ const ApplySuccessLayout = ({ params }: ApplySuccessLayoutProps) => {
         <ApplyLinkWrapper>
           - 카카오톡:
           <ApplyLink
-            href={'https://open.kakao.com/o/sjN4kDsd'}
+            href={'https://open.kakao.com/o/gFACXSqe'}
             target={'_blank'}
           >
-            https://open.kakao.com/o/sjN4kDsd
+            https://open.kakao.com/o/gFACXSqe
           </ApplyLink>
         </ApplyLinkWrapper>
         <ApplyLinkWrapper>

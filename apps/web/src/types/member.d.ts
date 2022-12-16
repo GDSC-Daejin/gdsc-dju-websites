@@ -1,4 +1,4 @@
-export interface memberDataType {
+export interface MemberDataType {
   image: string;
   nickname: string;
   name: string;
@@ -16,10 +16,10 @@ export interface UserDataType {
     major: string;
     memberInfoId: number;
     birthday: string;
-    memberPortfolioUrls: {
+    memberPortfolioUrls: Array<{
       id: number;
       webUrl: string | null;
-    }[];
+    }>;
     nickname: string;
     phoneNumber: string;
     positionType: string;
