@@ -36,7 +36,6 @@ jobs:
         run: yarn install
       - name: Project Build
         run: yarn turbo build
-        working-directory: ${{ env.working-directory }}
       - uses: HyeokE/action-hosting-deploy@main
         id: run_firebase_deploy
         with:
