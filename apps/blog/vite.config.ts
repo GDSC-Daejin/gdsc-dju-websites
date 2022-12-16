@@ -13,6 +13,11 @@ export default defineConfig({
     port: 3000,
     https: true,
   },
+  build:{
+    rollupOptions:{
+      external:['@lezer/common']
+    }
+  },
 
   resolve: {
     alias: {
