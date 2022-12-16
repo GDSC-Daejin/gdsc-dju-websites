@@ -83,7 +83,7 @@ export const Role = styled(motion.p)`
 export const CardText = styled(motion.div)`
   margin-top: 8px;
   font-size: ${({ theme }) => theme.fontSizes.textL};
-  color: ${({ theme }) => theme.colors.white};
+  color: #ffffff;
   display: block;
 `;
 export const CardTextWrapper = styled(motion.div)<{ isClicked?: boolean }>`
