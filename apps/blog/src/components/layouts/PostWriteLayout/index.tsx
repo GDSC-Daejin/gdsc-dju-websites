@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { useRecoilState } from 'recoil';
 
+import { GDSCButton } from '@atoms/Button';
 import MarkdownContainer from '@molecules/MarkdownContainer';
-import PostButtons from '@pages/PostWrite/components/PostButtons';
 import PostWriteHeader from '@pages/PostWrite/components/PostInformation';
 import PostService from '@src/api/PostService';
 import { alertState } from '@src/store/alert';
@@ -12,7 +12,7 @@ import { ModalType, modalState } from '@src/store/modal';
 import { ContainerInner } from '@styles/layouts';
 import { PostData, PostPostDataType } from '@type/postData';
 
-import { PostLayoutWrapper } from './styled';
+import { PostBottomButtonBox, PostLayoutWrapper } from './styled';
 
 interface PostWriteProps {
   postData: PostData | undefined;
@@ -208,11 +208,28 @@ const Index: React.FC<PostWriteProps> = ({ postData, id }) => {
           />
         )}
 
-        <PostButtons
-          isUpdate={isUpdate}
-          disable={isButtonBlock}
-          submitHandler={submitHandler}
-        />
+        <PostBottomButtonBox>
+          <GDSCButton
+            text="작성취소"
+            onClick={() => submitHandler('backBlock')}
+          />
+          <GDSCButton
+            text="임시저장"
+            onClick={() => submitHandler('draft')}
+            disable={isButtonBlock}
+          />
+          <GDSCButton
+            text={isUpdate ? '수정하기' : '업로드'}
+            onClick={() => {
+              !isButtonBlock &&
+                (isUpdate
+                  ? submitHandler('update')
+                  : submitHandler('uploadPost'));
+            }}
+            color={'blue900'}
+            disable={isButtonBlock}
+          />
+        </PostBottomButtonBox>
       </ContainerInner>
     </PostLayoutWrapper>
   );

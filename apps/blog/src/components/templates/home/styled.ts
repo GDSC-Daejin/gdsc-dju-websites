@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const HomeContentWrapper = styled.div`
   width: 100%;
@@ -44,66 +44,6 @@ export const CardSectionWrapper = styled.div`
     box-shadow: 0px 2px 12px rgba(25, 31, 40, 0.08);
     border: 1px solid #ebebeb;
     border-radius: 50%;
-  }
-`;
-
-export const CardSection = styled(motion.section)<{ isDrag: boolean }>`
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  cursor: ${(props) => (props.isDrag ? 'grabbing' : 'grab')};
-  div:last-child {
-    margin-right: 0;
-  }
-  &::-webkit-scrollbar {
-    display: none;
-  }
-`;
-
-export const BlogCardWrapper = styled(motion.div)<{
-  homeWidth?: string;
-  windowWidth?: string;
-}>`
-  width: 248px;
-  height: 294px;
-  margin: 0 15px;
-
-  ${({ windowWidth, homeWidth }) =>
-    homeWidth &&
-    windowWidth &&
-    css`
-      transform: translateX(calc((${windowWidth} - ${homeWidth}) / 2 + 20px));
-    `}
-
-  :first-child {
-    margin-left: 0;
-  }
-  :last-child {
-    margin-right: 0;
-  }
-  &.viewmore-item {
-    min-width: 248px;
-    height: 294px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .viewmore-item__button {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: #ffffff;
-      box-shadow: 0px 2px 12px rgba(25, 31, 40, 0.08);
-      border: 1px solid #ebebeb;
-      box-sizing: border-box;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-    }
   }
 `;
 

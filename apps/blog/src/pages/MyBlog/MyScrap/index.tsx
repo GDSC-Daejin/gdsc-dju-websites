@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useGetMyScrapData } from '@src/api/hooks/useGetMyScrapData';
 import MyScrapLayout from '@src/components/layouts/MyScrapLayout';
 import { ContainerInner, LayoutContainer } from '@styles/layouts';
+import { Position } from '@type/position';
 
 const MyScrap = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -13,11 +14,12 @@ const MyScrap = () => {
   const pageParams = searchParams.get('page');
   const page = pageParams ? parseInt(pageParams) : 1;
 
-  const { scrapData } = useGetMyScrapData(category, page - 1, 12);
+  const { scrapData } = useGetMyScrapData(category as Position, page - 1, 12);
 
   useEffect(() => {
-    if (searchParams.get('type') && searchParams.get('page')) return;
-    else {
+    if (searchParams.get('type') && searchParams.get('page')) {
+      return;
+    } else {
       setSearchParams({
         type: 'all',
         page: '1',

@@ -20,7 +20,13 @@ export const useSetBookMark = (
       if (!isLoading) {
         mutate(id);
         if (isSuccess) {
-          queryClient.invalidateQueries([`${token}-scrapList`]);
+          queryClient.setQueryData([`${token}-scrapList`], (oldData: any) => {
+            const index = oldData?.indexOf(id);
+            // scrap된 데이터
+            if (index !== -1)
+              return [...oldData.slice(0, index), ...oldData.slice(index + 1)];
+            return [...oldData, id];
+          });
           setMarked(true);
         } else setMarked(false);
       }
@@ -33,5 +39,6 @@ export const useSetBookMark = (
       });
     }
   };
+
   return { bookMarkHandler, isLoading, isSuccess };
 };

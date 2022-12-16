@@ -28,7 +28,6 @@ const NavigationElementBox = () => {
       navigate(`/search/${inputRef.current.value}?type=all&page=1`);
     }
   };
-
   useEffect(() => {
     setIsDropdownOpen(false);
   }, [location.pathname]);

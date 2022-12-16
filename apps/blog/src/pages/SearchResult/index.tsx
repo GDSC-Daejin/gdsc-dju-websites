@@ -4,7 +4,9 @@ import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useGetSearchPosts } from '@src/api/hooks/useGetSearchPost';
 import CategoryMenu from '@src/components/atoms/CategoryMenu';
 import PagingPostsContainer from '@src/components/organisms/PagingPostsContainer';
+import { useRouter } from '@src/routing';
 import { LayoutContainer } from '@styles/layouts';
+import { Position } from '@type/position';
 
 import {
   LayoutInner,
@@ -18,18 +20,23 @@ import {
 const SearchResult = () => {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const { searchContent, categoryName } = useParams();
+  const { searchContent } = useParams();
+
+  const categoryName = searchParams.get('category');
+
   const currentPage = Number(searchParams.get('page')) ?? 1;
   const category = categoryName ? categoryName : 'all';
-  const { postListData } = useGetSearchPosts({
-    searchContent: searchContent!,
-    category,
-    page: currentPage - 1,
-  });
+  const { postListData } = useGetSearchPosts(
+    searchContent as string,
+    category as Position,
+    currentPage - 1,
+  );
+  const { push } = useRouter();
 
   const categoryHandler = (category: string) =>
-    navigate({
-      pathname: `/search/${searchContent}/${category}?page=1`,
+    push(`/search/${searchContent}`, {
+      category: category,
+      page: currentPage,
     });
 
   return (

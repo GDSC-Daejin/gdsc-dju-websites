@@ -2,7 +2,6 @@ import React, { useCallback, useRef } from 'react';
 
 import styled from 'styled-components';
 
-import MarkdownEditor from '@atoms/MarkdownEditor';
 import MarkdownView from '@atoms/MarkdownView';
 import { EditorState } from '@codemirror/state';
 import useCodeMirror from '@hooks/use-codemirror';
@@ -13,16 +12,15 @@ const MarkdownContainerWrapper = styled.div<{ maxHeight?: number }>`
   display: flex;
   flex-direction: row;
   min-height: 400px;
-  max-height: ${({ maxHeight }) => maxHeight}px;
-  overflow: hidden;
+  //max-height: ${({ maxHeight }) => maxHeight}px;
+  //overflow: hidden;
 `;
 const MarkdownContainerInner = styled.div`
   word-break: break-word;
   box-sizing: border-box;
   padding: 10px;
   flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   :last-child {
     border-left: 1px solid ${({ theme }) => theme.colors.grey300};
   }
@@ -44,13 +42,19 @@ const MarkdownContainer = ({ content, setContent }: Props) => {
     initialDoc: content,
     onChange: handleChange,
   });
+
+  const refEditor = useRef<HTMLTextAreaElement>(null);
   //@ts-ignore
   return (
     <>
       {editorView && <MarkdownToolBox editorView={editorView} />}
       <MarkdownContainerWrapper maxHeight={editorHeight.current?.offsetHeight}>
         <MarkdownContainerInner ref={editorHeight}>
-          <MarkdownEditor refContainer={refContainer} />
+          <TestEditor
+            ref={refEditor}
+            onChange={(e) => setContent(e.target.value)}
+          />
+          {/*<MarkdownEditor refContainer={refContainer} />*/}
         </MarkdownContainerInner>
         <MarkdownContainerInner>
           <MarkdownView content={content} />
@@ -59,5 +63,15 @@ const MarkdownContainer = ({ content, setContent }: Props) => {
     </>
   );
 };
+
+const TestEditor = styled.textarea`
+  width: 100%;
+  height: 100%;
+  font-size: ${({ theme }) => theme.fontSizes.textXl};
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 0;
+`;
 
 export default MarkdownContainer;

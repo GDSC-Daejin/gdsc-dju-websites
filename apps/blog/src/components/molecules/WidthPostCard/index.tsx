@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import BookmarkIcon from '@assets/icons/BookmarkIcon';
 import { HashTageDark } from '@src/components/atoms/HashTage';
 import { useSetBookMark } from '@src/hooks/useHandleBookMark';
+import { useRouter } from '@src/routing';
 import { PostData } from '@type/postData';
 import { dateFilter } from '@utils/dateFilter';
 import { debounce } from '@utils/debounce';
@@ -25,6 +26,7 @@ import {
 
 interface Props extends PostData {
   isScrap: boolean;
+  onClick?: () => void;
 }
 
 const WidthPostCard = ({
@@ -36,6 +38,7 @@ const WidthPostCard = ({
   content,
   memberInfo,
   uploadDate,
+  onClick,
 }: Props) => {
   const [hover, setHover] = useState(false);
   const [isMarked, setIsMarked] = useState(isScrap);
@@ -43,6 +46,7 @@ const WidthPostCard = ({
   const { bookMarkHandler } = useSetBookMark(postId, cookie.token, () =>
     setIsMarked(!isMarked),
   );
+  const { push } = useRouter();
   const debounceBookMarkHandler = debounce(bookMarkHandler, 300);
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
@@ -53,8 +57,8 @@ const WidthPostCard = ({
   const navigate = useNavigate();
 
   const linkToPost = useCallback(() => {
-    navigate(`/@${memberInfo.nickname}/${postId}`);
-  }, [postId]);
+    onClick ?? push(`/@${memberInfo.nickname}/${postId}`);
+  }, [postId, memberInfo.nickname, onClick]);
   return (
     <WidthPostCardWrapper
       onClick={linkToPost}

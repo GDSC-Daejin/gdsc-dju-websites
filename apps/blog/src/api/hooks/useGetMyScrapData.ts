@@ -2,7 +2,8 @@ import { useQuery } from 'react-query';
 
 import Cookies from 'js-cookie';
 
-import { postUrlFilter } from '@src/api/hooks/postPagination';
+import { Position } from '@type/position';
+import { createCategoryUrl, createQueryKey } from '@utils/createQueryKey';
 
 import PostService from '../PostService';
 
@@ -11,14 +12,23 @@ async function getMyScrapData(params: string) {
   return res.data.body.data;
 }
 
-export function useGetMyScrapData(category: string, page = 0, size: number) {
+export function useGetMyScrapData(category: Position, page = 0, size = 16) {
   const token = Cookies.get('token');
 
+  const obj = {
+    page: page,
+    size: size,
+  };
+  const key = createQueryKey('myScrap', {
+    category: category,
+    ...obj,
+  });
+
   const { data: scrapData } = useQuery(
-    [`myPost/temp${postUrlFilter(category, page, size)}`],
-    () => getMyScrapData(postUrlFilter(category, page, size)),
+    [key],
+    () => getMyScrapData(createCategoryUrl(category, obj)),
     {
-      enabled: !!token,
+      enabled: Boolean(token),
     },
   );
   return {

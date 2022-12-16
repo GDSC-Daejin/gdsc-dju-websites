@@ -1,27 +1,36 @@
 import { useQuery } from 'react-query';
 
-import { postSearchUrlFilter } from '@src/api/hooks/postPagination';
+import { Position } from '@type/position';
 import { PostListResponse } from '@type/postData';
+import { createQueryKey, createSearchUrl } from '@utils/createQueryKey';
 
 import PostService from '../PostService';
 
-export interface Props {
-  searchContent: string;
-  category: string;
-  page: number;
-}
 async function getSearchPostsData(params: string) {
   const res = await PostService.getSearchPosts(params);
   return res.data.body.data;
 }
-export function useGetSearchPosts(props: Props) {
-  const { searchContent, category, page } = props;
+export function useGetSearchPosts(
+  searchContent: string,
+  category: Position,
+  page = 0,
+) {
   const { data: postListData } = useQuery<PostListResponse>(
-    [`search/${postSearchUrlFilter(searchContent, category, page)}`],
+    [
+      createQueryKey('post/search', {
+        searchContent: searchContent,
+        category: category,
+        page: page,
+      }),
+    ],
     () =>
-      getSearchPostsData(postSearchUrlFilter(searchContent, category, page)),
+      getSearchPostsData(
+        createSearchUrl(searchContent, category, {
+          page: page,
+        }),
+      ),
     {
-      enabled: !!searchContent && !!category,
+      enabled: Boolean(searchContent) && Boolean(category),
       cacheTime: 60 * 1000,
     },
   );

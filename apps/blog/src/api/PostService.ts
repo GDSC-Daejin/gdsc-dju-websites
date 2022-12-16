@@ -15,7 +15,7 @@ class PostService {
   };
   getPostsData = (params: string) => {
     return BlogInstance.get<ResponseData<PostListResponse>>(
-      `/api/v1/post/list${params}`,
+      `/api/v1/post/list/${params}`,
     );
   };
   //내 포스트
@@ -32,12 +32,12 @@ class PostService {
 
   getMyPostsTempData = (params: string) => {
     return AuthBlogInstance.get<ResponseData<PostListResponse>>(
-      `/api/guest/v1/myPost/temp${params}`,
+      `/api/guest/v1/myPost/temp/${params}`,
     );
   };
   getMyPostsNotTempData = (params: string) => {
     return AuthBlogInstance.get<ResponseData<PostListResponse>>(
-      `/api/guest/v1/myPost/notTemp${params}`,
+      `/api/guest/v1/myPost/notTemp/${params}`,
     );
   };
   getUserPostsNotTempData = (userId: string, params: string) => {
@@ -61,7 +61,7 @@ class PostService {
   };
   getMyScrapData = (params: string) => {
     return AuthBlogInstance.get<ResponseData<PostListResponse>>(
-      `/api/guest/v1/myScrap${params}`,
+      `/api/guest/v1/myScrap/${params}`,
     );
   };
 
@@ -70,7 +70,7 @@ class PostService {
   };
   getSearchPosts = (param: string) => {
     return BlogInstance.get<ResponseData<PostListResponse>>(
-      `/api/v1/post/search${param}`,
+      `/api/v1/post/search/${param}`,
     );
   };
 }

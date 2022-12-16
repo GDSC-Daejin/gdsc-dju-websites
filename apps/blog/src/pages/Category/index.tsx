@@ -2,7 +2,6 @@ import React, { memo, useEffect } from 'react';
 import {
   createSearchParams,
   useNavigate,
-  useParams,
   useSearchParams,
 } from 'react-router-dom';
 
@@ -10,22 +9,24 @@ import { useGetPostsData } from '@src/api/hooks/useGetPostsData';
 import CategoryMenu from '@src/components/atoms/CategoryMenu';
 import PagingPostsContainer from '@src/components/organisms/PagingPostsContainer';
 import { LayoutContainer } from '@styles/layouts';
+import { Position } from '@type/position';
 
 import {
   CategoryPageInner,
   PostLayoutWrapper,
   PostSectionWrapper,
 } from './styled';
+type CategoryProps = {
+  category: Position;
+};
 
-const Category = () => {
+const Category = ({ category }: CategoryProps) => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const { categoryName } = useParams();
 
-  const category = categoryName ? categoryName : 'all';
   const pageParams = searchParams.get('page');
   const page = pageParams ? parseInt(pageParams) : 1;
 
-  const { postListData } = useGetPostsData(category, page - 1);
+  const { postListData } = useGetPostsData(category as Position, page - 1);
 
   const navigate = useNavigate();
   useEffect(() => {

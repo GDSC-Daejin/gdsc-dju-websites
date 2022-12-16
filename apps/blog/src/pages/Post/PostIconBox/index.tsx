@@ -1,3 +1,4 @@
+import useMark from '@src/hooks/useMark';
 import React, { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
@@ -27,12 +28,11 @@ interface Props {
 const PostIconBox = ({ isUser, postId }: Props) => {
   const [modal, setModal] = useRecoilState(modalState);
   const [alert, setAlert] = useRecoilState(alertState);
-  const [cookie] = useCookies(['token']);
-  const { isScrap } = useGetScrap(postId);
-  const [isMarked, setIsMarked] = useState(false);
-  const { bookMarkHandler } = useSetBookMark(postId, cookie.token, (check) =>
-    setIsMarked(check!),
-  );
+  const { isMark, debounceSetIsMark } = useMark(postId);
+  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.stopPropagation();
+    debounceSetIsMark();
+  };
 
   const navigate = useNavigate();
   const deleteHandler = async () => {
@@ -63,14 +63,11 @@ const PostIconBox = ({ isUser, postId }: Props) => {
       onClick: deleteHandler,
     });
   };
-  useEffect(() => {
-    setIsMarked(isScrap);
-  }, [isScrap]);
 
   return (
     <PostIconWrapper>
-      <BookmarkWrapper onClick={bookMarkHandler}>
-        <BookmarkIcon marked={isMarked} height={'25'} />
+      <BookmarkWrapper onClick={handleClick}>
+        <BookmarkIcon marked={isMark} height={'25'} />
       </BookmarkWrapper>
       {isUser && (
         <>
