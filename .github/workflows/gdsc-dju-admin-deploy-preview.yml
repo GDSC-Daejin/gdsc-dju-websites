@@ -53,7 +53,7 @@ jobs:
           target: gdsc-dju-admin
           expires: 3d
           channelId: ' ${{ steps.slug.outputs.sha8 }}-${{ github.event.pull_request.head.ref }} '
-          entryPoint: './packages/gdsc-dju-admin'
+          entryPoint: ${{ env.working-directory }}
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
       - name: Discord Message Notify

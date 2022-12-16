@@ -44,7 +44,7 @@ jobs:
           channelId: live
           projectId: gdsc-dju
           target: gdsc-dju-share
-          entryPoint: './packages/gdsc-dju-shared'
+          entryPoint: ${{ env.working-directory }}
       - name: Discord Message Notify
         uses: appleboy/discord-action@0.0.3
         with:
