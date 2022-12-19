@@ -7,7 +7,7 @@ on:
     types:
       - closed
     paths:
-      - "packages/gdsc-dju-teddy/**"
+      - "./apps/teddy/**"
       - ".github/workflows/gdsc-dju-teddy-deploy-live.yml"
 jobs:
   Deploy_Live_channel:
