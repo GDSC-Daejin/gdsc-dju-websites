@@ -43,11 +43,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {\
         "name": "@gdsc-dju/web",\
         "reference": "workspace:apps/web"\
+      },\
+      {\
+        "name": "@applicant",\
+        "reference": "workspace:packages/@applicant"\
       }\
     ],\
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
+      ["@applicant", ["workspace:packages/@applicant"]],\
       ["@gdsc-dju/admin", ["workspace:apps/admin"]],\
       ["@gdsc-dju/blog", ["workspace:apps/blog"]],\
       ["@gdsc-dju/shared", ["workspace:apps/shared"]],\
@@ -252,6 +257,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["js-yaml", "npm:4.1.0"]\
           ],\
           "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@applicant", [\
+        ["workspace:packages/@applicant", {\
+          "packageLocation": "./packages/@applicant/",\
+          "packageDependencies": [\
+            ["@applicant", "workspace:packages/@applicant"]\
+          ],\
+          "linkType": "SOFT"\
         }]\
       ]],\
       ["@babel/code-frame", [\
