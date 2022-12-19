@@ -5,12 +5,12 @@ import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useAtom } from 'jotai';
 
 import { putRecruitStatus } from '@src/apis/RecruitService';
-import { IApplicantTypeWithID } from '@type/applicant';
+import {IApplicantType, IApplicantTypeWithID, StatusType} from '@type/applicant';
 
 import ApplicantCard from '../../components/common/cards/ApplicantCard';
 import ToggleButton from '../../components/common/ToggleButton';
 import StatusBadgeBox from '../../components/layout/StatusBadgeBox';
-import { position } from '../../context/recruitInfo';
+import {position, recruitInfo} from '../../context/recruitInfo';
 import {
   RecruitmentAtom,
   recruitmentAtom,
@@ -28,6 +28,8 @@ import {
   ApplicantContainerInner,
   ApplicantHeadWrapper,
 } from './styled';
+import {db} from "@src/firebase/firebase";
+import {addDoc, collection, getDocs, orderBy, query, where } from 'firebase/firestore';
 
 const Applicants = () => {
   const [recruit] = useAtom(recruitmentReadOnlyAtom);
@@ -87,6 +89,7 @@ const Applicants = () => {
       putRecruitStatus(recruit);
     }
   }, [recruit]);
+
 
   return (
     <AdminContainerInner>
