@@ -10,8 +10,6 @@ on:
   pull_request:
     branches:
       - master
-    types:
-      - closed
     paths:
       - "./apps/web/**"
       - ".github/workflows/gdsc-dju-web-deploy-live.yml"
