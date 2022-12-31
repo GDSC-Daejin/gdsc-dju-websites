@@ -5,13 +5,15 @@ on:
     branches:
       - master
     paths:
-      - "./apps/web/**"
+      - "apps/web/**"
       - ".github/workflows/gdsc-dju-web-deploy-live.yml"
   pull_request:
     branches:
       - master
+    types:
+      - closed
     paths:
-      - "./apps/web/**"
+      - "apps/web/**"
       - ".github/workflows/gdsc-dju-web-deploy-live.yml"
 jobs:
   Deploy_Live_channel:
