@@ -12,7 +12,7 @@ export const RecruitmentState: Record<PositionType, boolean> = {
   ios: true,
   designBeginner: true,
   ml: true,
-  beginner: false,
+  beginner: true,
 };
 export const recruitmentAtom = atom<typeof RecruitmentState>(RecruitmentState);
 
