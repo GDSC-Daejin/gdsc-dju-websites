@@ -137,6 +137,7 @@ const AnnounceForm = () => {
   const formElements = Object.keys(formValidation) as Array<
     keyof typeof formValidation
   >;
+
   const params = {
     name: data?.name,
     position: position,
