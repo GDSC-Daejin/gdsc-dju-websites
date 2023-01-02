@@ -10,7 +10,7 @@ export const getMyData = () => {
 
 export const getMemberListData = () => {
   return AuthInstance.get<AxiosResponse<IUserDataType[]>>(
-    `/member-route/api/admin/v1/member/list`,
+    `/member-route/api/admin/v1/all/list`,
   );
 };
 
