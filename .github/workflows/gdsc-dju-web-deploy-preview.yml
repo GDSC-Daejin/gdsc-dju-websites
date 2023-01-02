@@ -3,7 +3,7 @@ name: Deploy to GDSC DJU WEB Preview Channel
 on:
   push:
     paths:
-      - "./apps/web/**"
+      - "apps/web/**"
       - ".github/workflows/gdsc-dju-web-deploy-preview.yml"
     branches-ignore:
       - master
@@ -12,7 +12,7 @@ on:
       - master
       - develop
     paths:
-      - "./apps/web/**"
+      - "apps/web/**"
       - ".github/workflows/gdsc-dju-web-deploy-preview.yml"
 jobs:
   Deploy_preview_channel:

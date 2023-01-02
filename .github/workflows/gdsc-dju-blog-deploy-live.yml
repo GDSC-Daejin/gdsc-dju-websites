@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - "./apps/blog/**"
+      - "apps/blog/**"
       - ".github/workflows/gdsc-dju-blog-deploy-live.yml"
   pull_request:
     branches:
@@ -13,7 +13,7 @@ on:
     types:
       - closed
     paths:
-      - "./apps/blog/**"
+      - "apps/blog/**"
       - ".github/workflows/gdsc-dju-blog-deploy-live.yml"
 jobs:
   Deploy_Live_channel:
