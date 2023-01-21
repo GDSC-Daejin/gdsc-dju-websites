@@ -159,12 +159,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@applicant@workspace:packages/@applicant":
-  version: 0.0.0-use.local
-  resolution: "@applicant@workspace:packages/@applicant"
-  languageName: unknown
-  linkType: soft
-
 "@babel/code-frame@npm:7.10.4":
   version: 7.10.4
   resolution: "@babel/code-frame@npm:7.10.4"
@@ -2923,6 +2917,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gdsc-dju/next-web@workspace:apps/next-web":
+  version: 0.0.0-use.local
+  resolution: "@gdsc-dju/next-web@workspace:apps/next-web"
+  dependencies:
+    "@gdsc-dju/gds-styles": ^0.0.2
+    "@gdsc-dju/gds-theme": ^0.0.9
+    "@types/node": 18.11.11
+    "@types/qs": ^6.9.7
+    "@types/react": 18.0.26
+    "@types/react-dom": 18.0.9
+    "@types/styled-components": ^5.1.26
+    babel-plugin-styled-components: ^2.0.7
+    eslint-config-next: 13.0.6
+    framer-motion: ^8.5.0
+    jotai: ^1.13.1
+    lottie-web: ^5.10.1
+    next: 13.0.6
+    qs: ^6.11.0
+    react: 18.2.0
+    react-dom: 18.2.0
+    react-error-boundary: ^3.1.4
+    react-is: ^18.2.0
+    styled-components: ^5.3.6
+    typescript: 4.9.3
+  languageName: unknown
+  linkType: soft
+
 "@gdsc-dju/shared@workspace:apps/shared":
   version: 0.0.0-use.local
   resolution: "@gdsc-dju/shared@workspace:apps/shared"
@@ -3804,6 +3825,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@motionone/animation@npm:^10.15.1":
+  version: 10.15.1
+  resolution: "@motionone/animation@npm:10.15.1"
+  dependencies:
+    "@motionone/easing": ^10.15.1
+    "@motionone/types": ^10.15.1
+    "@motionone/utils": ^10.15.1
+    tslib: ^2.3.1
+  checksum: 75b7a1e6c47c27073a578eb5559ea0a6e7075862c72e1eb1598403c8c2725f596a95b0369514c9e72f3c7439a9845c468b85a14d4e500df48e09d01b0739d4a7
+  languageName: node
+  linkType: hard
+
 "@motionone/dom@npm:10.12.0":
   version: 10.12.0
   resolution: "@motionone/dom@npm:10.12.0"
@@ -3818,6 +3851,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@motionone/dom@npm:^10.15.3":
+  version: 10.15.5
+  resolution: "@motionone/dom@npm:10.15.5"
+  dependencies:
+    "@motionone/animation": ^10.15.1
+    "@motionone/generators": ^10.15.1
+    "@motionone/types": ^10.15.1
+    "@motionone/utils": ^10.15.1
+    hey-listen: ^1.0.8
+    tslib: ^2.3.1
+  checksum: 2453fe3df6a2b4b339d075bcd598bda1eee1926ba0ad881edfd154362b0992c91f31c08d83c469c7e8cb8bf8ebc0ed5530972673cf5c74d99e46e3772cf5f1cb
+  languageName: node
+  linkType: hard
+
 "@motionone/easing@npm:^10.14.0":
   version: 10.14.0
   resolution: "@motionone/easing@npm:10.14.0"
@@ -3825,6 +3872,16 @@ __metadata:
     "@motionone/utils": ^10.14.0
     tslib: ^2.3.1
   checksum: c845b7a445d6dbfb6d9d830fe8c88050345988fb6e423e63c1962506995e99efe899d6e7b14a8960b7df27aa279dfdfb02202a20de01bc65dcbd416ec2315d37
+  languageName: node
+  linkType: hard
+
+"@motionone/easing@npm:^10.15.1":
+  version: 10.15.1
+  resolution: "@motionone/easing@npm:10.15.1"
+  dependencies:
+    "@motionone/utils": ^10.15.1
+    tslib: ^2.3.1
+  checksum: cf7cfcf9917525d892334c58282425aafc69d9ab9004c190bfa7cf91317a680e8143f227adc79557424e7f26cdf8478dcbb2ae467e744cebc58195d6f0b8153a
   languageName: node
   linkType: hard
 
@@ -3839,10 +3896,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@motionone/generators@npm:^10.15.1":
+  version: 10.15.1
+  resolution: "@motionone/generators@npm:10.15.1"
+  dependencies:
+    "@motionone/types": ^10.15.1
+    "@motionone/utils": ^10.15.1
+    tslib: ^2.3.1
+  checksum: 0eb6797a64d536bb5c26628343d6594a2ebc45c3c447b8ce442b4ac3a41be847b860ac009bda7968fc7d339d2ee49b18bfe36306c5dd99cf17c7d84c82de93f3
+  languageName: node
+  linkType: hard
+
 "@motionone/types@npm:^10.12.0, @motionone/types@npm:^10.14.0":
   version: 10.14.0
   resolution: "@motionone/types@npm:10.14.0"
   checksum: 2fbd65f925c786b190d99867010960ffb458beda5f9b5499eeb0822094871ecbeded1aae917c194b605d80f0c56a55a13ff1e0fa4f6bad3ad8ff32fe5a3201dc
+  languageName: node
+  linkType: hard
+
+"@motionone/types@npm:^10.15.1":
+  version: 10.15.1
+  resolution: "@motionone/types@npm:10.15.1"
+  checksum: 98091f7dca257508d94d1080678c433da39a814e8e58aaa742212bf6c2a5b5e2120a6251a06e3ea522219ce6d1b6eb6aa2cab224b803fe52789033d8398ef0aa
   languageName: node
   linkType: hard
 
@@ -3854,6 +3929,17 @@ __metadata:
     hey-listen: ^1.0.8
     tslib: ^2.3.1
   checksum: eb4c0a50e458ba7e7944dba7d0b063665744fed60aef9b4670bbc26fe02bed43f26595e9515f8ca6e4899ff5f31e7d81708feb42c16bf6e91c871d310085bc48
+  languageName: node
+  linkType: hard
+
+"@motionone/utils@npm:^10.15.1":
+  version: 10.15.1
+  resolution: "@motionone/utils@npm:10.15.1"
+  dependencies:
+    "@motionone/types": ^10.15.1
+    hey-listen: ^1.0.8
+    tslib: ^2.3.1
+  checksum: 6ef13cd6637ec87c340e5536f849f8c40d30cc90139a3856d11cd70d78e3740f8815b0e63564fefd23c05a060da7a0ea5395390549606ed8801a7b832b74e04e
   languageName: node
   linkType: hard
 
@@ -7137,7 +7223,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-styled-components@npm:>= 1.12.0":
+"babel-plugin-styled-components@npm:>= 1.12.0, babel-plugin-styled-components@npm:^2.0.7":
   version: 2.0.7
   resolution: "babel-plugin-styled-components@npm:2.0.7"
   dependencies:
@@ -13456,6 +13542,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"framer-motion@npm:^8.5.0":
+  version: 8.5.0
+  resolution: "framer-motion@npm:8.5.0"
+  dependencies:
+    "@emotion/is-prop-valid": ^0.8.2
+    "@motionone/dom": ^10.15.3
+    hey-listen: ^1.0.8
+    tslib: ^2.4.0
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  dependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+  checksum: d35f109d87431731c3c3fecc132737c1442604f455b768b3352dfa887264439edbc620d41c68dc61ac044e483aa8e586b8dfd3bc323d4bcce83227548866e2e3
+  languageName: node
+  linkType: hard
+
 "framesync@npm:6.0.1":
   version: 6.0.1
   resolution: "framesync@npm:6.0.1"
@@ -16896,6 +17000,49 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jotai@npm:^1.13.1":
+  version: 1.13.1
+  resolution: "jotai@npm:1.13.1"
+  peerDependencies:
+    "@babel/core": "*"
+    "@babel/template": "*"
+    jotai-devtools: "*"
+    jotai-immer: "*"
+    jotai-optics: "*"
+    jotai-redux: "*"
+    jotai-tanstack-query: "*"
+    jotai-urql: "*"
+    jotai-valtio: "*"
+    jotai-xstate: "*"
+    jotai-zustand: "*"
+    react: ">=16.8"
+  peerDependenciesMeta:
+    "@babel/core":
+      optional: true
+    "@babel/template":
+      optional: true
+    jotai-devtools:
+      optional: true
+    jotai-immer:
+      optional: true
+    jotai-optics:
+      optional: true
+    jotai-redux:
+      optional: true
+    jotai-tanstack-query:
+      optional: true
+    jotai-urql:
+      optional: true
+    jotai-valtio:
+      optional: true
+    jotai-xstate:
+      optional: true
+    jotai-zustand:
+      optional: true
+  checksum: bc1f88ec1d52dda7c2aa39d278b15c128a6babc91fe9294862feb1b2d8467e47fc37cd193fd1358107212b9a4e5f5a8ae9a5a5ed1e845b74421d4476ce5d9efd
+  languageName: node
+  linkType: hard
+
 "jotai@npm:^1.7.6, jotai@npm:^1.7.7":
   version: 1.7.8
   resolution: "jotai@npm:1.7.8"
@@ -17912,6 +18059,13 @@ __metadata:
   bin:
     loose-envify: cli.js
   checksum: 6517e24e0cad87ec9888f500c5b5947032cdfe6ef65e1c1936a0c48a524b81e65542c9c3edc91c97d5bddc806ee2a985dbc79be89215d613b1de5db6d1cfe6f4
+  languageName: node
+  linkType: hard
+
+"lottie-web@npm:^5.10.1":
+  version: 5.10.1
+  resolution: "lottie-web@npm:5.10.1"
+  checksum: 5da7d0804b4b895d795e3eb299e45a0dfd1c7a5268784668ff72965d4c6e0806e0b60984fade74dd681909cc325d45b13d4a8e24c96e73472a00646e16b628b4
   languageName: node
   linkType: hard
 
@@ -19355,26 +19509,6 @@ __metadata:
   checksum: 83b5cf36027a53ee6d8b7f9c0782f2ba87f4858d977342bfc3c20c21629290a2111f8374d13a81221179603ffc4364f38374b5655d17b6a8f8a8c77bdea4fe8b
   languageName: node
   linkType: hard
-
-"next-web@workspace:apps/next-web":
-  version: 0.0.0-use.local
-  resolution: "next-web@workspace:apps/next-web"
-  dependencies:
-    "@gdsc-dju/gds-styles": ^0.0.2
-    "@gdsc-dju/gds-theme": ^0.0.9
-    "@types/node": 18.11.11
-    "@types/react": 18.0.26
-    "@types/react-dom": 18.0.9
-    "@types/styled-components": ^5.1.26
-    eslint-config-next: 13.0.6
-    next: 13.0.6
-    react: 18.2.0
-    react-dom: 18.2.0
-    react-is: ^18.2.0
-    styled-components: ^5.3.6
-    typescript: 4.9.3
-  languageName: unknown
-  linkType: soft
 
 "next@npm:12.3.1":
   version: 12.3.1
