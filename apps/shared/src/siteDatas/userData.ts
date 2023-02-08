@@ -40,7 +40,7 @@ export const userData: UserDataType = {
     name: 'Rocoli',
     profileImage:
       'https://ca.slack-edge.com/T02BE2ERU5A-U02C8B72LT1-dd9b1e6b25ad-512',
-    role: 'GDSC DJU Core',
+    role: 'GDSC DJU Member',
     position: 'Backend Developer',
   },
   Panda: {
@@ -112,5 +112,12 @@ export const userData: UserDataType = {
       'https://ca.slack-edge.com/T02BE2ERU5A-U02BR888JMT-84a18780d457-512',
     role: 'GDSC DJU Member',
     position: 'Project Team',
+  },
+  Ayaan: {
+    name: 'Ayaan',
+    profileImage:
+      'https://ca.slack-edge.com/T02BE2ERU5A-U041JBLSY8Y-8d1677399cb0-512',
+    role: 'GDSC DJU Member',
+    position: 'Machine Learning Engineer',
   },
 };
