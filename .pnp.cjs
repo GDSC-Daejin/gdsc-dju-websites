@@ -6320,17 +6320,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@gdsc-dju/gds-theme", [\
-        ["npm:0.0.9", {\
-          "packageLocation": "./.yarn/cache/@gdsc-dju-gds-theme-npm-0.0.9-b05fe35296-b438120ea3.zip/node_modules/@gdsc-dju/gds-theme/",\
+        ["npm:0.0.10", {\
+          "packageLocation": "./.yarn/cache/@gdsc-dju-gds-theme-npm-0.0.10-2e6e1b63e2-86db31e108.zip/node_modules/@gdsc-dju/gds-theme/",\
           "packageDependencies": [\
-            ["@gdsc-dju/gds-theme", "npm:0.0.9"]\
+            ["@gdsc-dju/gds-theme", "npm:0.0.10"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:1d58d81151241f1956f46aa89ef7fa0d0f4e23d5399e7e7a914b9a4ef15f157cc7129d3dac2a0a75e63664950f2193c85050673b0ff13c206a764df158abf9d9#npm:0.0.9", {\
-          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-gds-theme-virtual-7030ac50fc/0/cache/@gdsc-dju-gds-theme-npm-0.0.9-b05fe35296-b438120ea3.zip/node_modules/@gdsc-dju/gds-theme/",\
+        ["virtual:1d58d81151241f1956f46aa89ef7fa0d0f4e23d5399e7e7a914b9a4ef15f157cc7129d3dac2a0a75e63664950f2193c85050673b0ff13c206a764df158abf9d9#npm:0.0.10", {\
+          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-gds-theme-virtual-f684656a3d/0/cache/@gdsc-dju-gds-theme-npm-0.0.10-2e6e1b63e2-86db31e108.zip/node_modules/@gdsc-dju/gds-theme/",\
           "packageDependencies": [\
-            ["@gdsc-dju/gds-theme", "virtual:1d58d81151241f1956f46aa89ef7fa0d0f4e23d5399e7e7a914b9a4ef15f157cc7129d3dac2a0a75e63664950f2193c85050673b0ff13c206a764df158abf9d9#npm:0.0.9"],\
+            ["@gdsc-dju/gds-theme", "virtual:1d58d81151241f1956f46aa89ef7fa0d0f4e23d5399e7e7a914b9a4ef15f157cc7129d3dac2a0a75e63664950f2193c85050673b0ff13c206a764df158abf9d9#npm:0.0.10"],\
             ["@types/react", "npm:18.0.26"],\
             ["react", "npm:18.2.0"]\
           ],\
@@ -6347,7 +6347,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@gdsc-dju/next-web", "workspace:apps/next-web"],\
             ["@gdsc-dju/gds-styles", "npm:0.0.2"],\
-            ["@gdsc-dju/gds-theme", "virtual:1d58d81151241f1956f46aa89ef7fa0d0f4e23d5399e7e7a914b9a4ef15f157cc7129d3dac2a0a75e63664950f2193c85050673b0ff13c206a764df158abf9d9#npm:0.0.9"],\
+            ["@gdsc-dju/gds-theme", "virtual:1d58d81151241f1956f46aa89ef7fa0d0f4e23d5399e7e7a914b9a4ef15f157cc7129d3dac2a0a75e63664950f2193c85050673b0ff13c206a764df158abf9d9#npm:0.0.10"],\
             ["@types/node", "npm:18.11.11"],\
             ["@types/qs", "npm:6.9.7"],\
             ["@types/react", "npm:18.0.26"],\

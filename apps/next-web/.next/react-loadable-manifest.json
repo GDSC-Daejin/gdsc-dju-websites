@@ -2,13 +2,13 @@
   "../../../.yarn/__virtual__/next-virtual-7e9ea0425e/0/cache/next-npm-13.0.6-d05b793bd2-2de1d9975f.zip/node_modules/next/dist/client/index.js -> ../pages/_app": {
     "id": "../../../.yarn/__virtual__/next-virtual-7e9ea0425e/0/cache/next-npm-13.0.6-d05b793bd2-2de1d9975f.zip/node_modules/next/dist/client/index.js -> ../pages/_app",
     "files": [
-      "static/chunks/fallback/_yarn___virtual___next-virtual-7e9ea0425e_0_cache_next-npm-13_0_6-d05b793bd2-2de1d9975f_zip_n-e646fd.js"
+      "static/chunks/_yarn___virtual___next-virtual-7e9ea0425e_0_cache_next-npm-13_0_6-d05b793bd2-2de1d9975f_zip_n-e646fd.js"
     ]
   },
   "../../../.yarn/__virtual__/next-virtual-7e9ea0425e/0/cache/next-npm-13.0.6-d05b793bd2-2de1d9975f.zip/node_modules/next/dist/client/index.js -> ../pages/_error": {
     "id": "../../../.yarn/__virtual__/next-virtual-7e9ea0425e/0/cache/next-npm-13.0.6-d05b793bd2-2de1d9975f.zip/node_modules/next/dist/client/index.js -> ../pages/_error",
     "files": [
-      "static/chunks/fallback/_yarn___virtual___next-virtual-7e9ea0425e_0_cache_next-npm-13_0_6-d05b793bd2-2de1d9975f_zip_n-9e398a.js"
+      "static/chunks/_yarn___virtual___next-virtual-7e9ea0425e_0_cache_next-npm-13_0_6-d05b793bd2-2de1d9975f_zip_n-9e398a.js"
     ]
   }
 }

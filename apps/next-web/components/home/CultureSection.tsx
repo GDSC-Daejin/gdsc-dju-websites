@@ -3,8 +3,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-import { listAnimate, listItemAnimate } from '@animations/variants';
-import { culture } from '@src/contents/culture';
+import { culture } from '../../contents/culture';
+import { listAnimate, listItemAnimate } from '../animations/variants';
 
 import {
   HomeSectionContainer,

@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components';
 
 import { managerData } from '../../contents/managerData';
 import { useYClickScroll } from '../../utils/useYClickScroll';
-import { managerCardAnimate } from '../animations/variants';
+import { listAnimate, managerCardAnimate } from '../animations/variants';
 import MemberCard from '../common/MemberCard';
 
 import {

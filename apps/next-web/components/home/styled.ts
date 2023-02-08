@@ -1,10 +1,10 @@
-import { ColorToken } from '@gdsc-dju/styled-components-theme';
+import { color } from '@gdsc-dju/gds-theme';
 
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 export const HomeSectionContainer = styled(motion.div)<{
-  color?: ColorToken;
+  color?: keyof typeof color;
 }>`
   flex: 1;
   display: flex;
@@ -134,7 +134,7 @@ export const GoogleColorTextWrapper = styled.div`
   flex-direction: row;
 `;
 export const GoogleColorText = styled.h1<{
-  color?: ColorToken;
+  color?: keyof typeof color;
 }>`
   font-size: 70px;
   font-weight: bold;

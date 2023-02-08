@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@gdsc-dju/gds-styles": "^0.0.2",
-    "@gdsc-dju/gds-theme": "^0.0.9",
+    "@gdsc-dju/gds-theme": "^0.0.10",
     "browser-detect": "^0.2.28",
     "firebase": "^9.16.0",
     "framer-motion": "^8.5.0",

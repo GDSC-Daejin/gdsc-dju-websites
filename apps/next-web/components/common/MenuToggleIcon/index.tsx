@@ -1,8 +1,12 @@
 import React from 'react';
 
+import { color } from '@gdsc-dju/gds-theme';
+
 import { motion } from 'framer-motion';
 import { useAtom } from 'jotai';
 import { useTheme } from 'styled-components';
+
+import { menuAtom } from '../../../store/menuAtom';
 
 import { StyledMenuButton } from './styled';
 
@@ -15,16 +19,11 @@ const MenuToggleIcon = () => {
       animate={menu ? 'open' : 'closed'}
       onClick={() => setMenu(!menu)}
     >
-      <svg
-        width="23"
-        height="23"
-        viewBox="0 0 23 23"
-        fill={theme.colors.grey900}
-      >
+      <svg width="23" height="23" viewBox="0 0 23 23" fill={color.grey900}>
         <motion.path
-          fill={theme.colors.grey900}
+          fill={color.grey900}
           strokeWidth="3"
-          stroke={theme.colors.grey900}
+          stroke={color.grey900}
           strokeLinecap="round"
           variants={{
             closed: { d: 'M 2 2.5 L 20 2.5' },
@@ -32,9 +31,9 @@ const MenuToggleIcon = () => {
           }}
         />
         <motion.path
-          fill={theme.colors.grey900}
+          fill={color.grey900}
           strokeWidth="3"
-          stroke={theme.colors.grey900}
+          stroke={color.grey900}
           strokeLinecap="round"
           d="M 2 9.423 L 20 9.423"
           variants={{
@@ -44,9 +43,9 @@ const MenuToggleIcon = () => {
           transition={{ duration: 0.1 }}
         />
         <motion.path
-          fill={theme.colors.grey900}
+          fill={color.grey900}
           strokeWidth="3"
-          stroke={theme.colors.grey900}
+          stroke={color.grey900}
           strokeLinecap="round"
           variants={{
             closed: { d: 'M 2 16.346 L 20 16.346' },

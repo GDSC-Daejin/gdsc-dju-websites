@@ -3,11 +3,10 @@ import React from 'react';
 import { useAtom } from 'jotai';
 import styled from 'styled-components';
 
-import { bannerItemAnimate } from '@animations/variants';
-import { recruitmentAtom } from '@src/store/recruitmentStatusAtom';
-
-import DownArrow from '../../atoms/DownArrow';
+import { recruitmentAtom } from '../../store/recruitmentStatusAtom';
 import { useRouter } from '../../utils/Routes';
+import { bannerItemAnimate } from '../animations/variants';
+import DownArrow from '../common/DownArrow';
 
 import {
   ButtonWrapper,

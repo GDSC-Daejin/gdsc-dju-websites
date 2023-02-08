@@ -2,8 +2,9 @@ import { useRouter as useRoute } from 'next/router';
 import { stringify } from 'qs';
 
 export const useRouter = () => {
-  const { push, back } = useRoute();
+  const { push, back, pathname } = useRoute();
   return {
+    pathname,
     push: (path: RoutePath, search?: any) =>
       push({
         pathname: path,

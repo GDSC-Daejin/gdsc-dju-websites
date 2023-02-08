@@ -3415,12 +3415,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gdsc-dju/gds-theme@npm:^0.0.9":
-  version: 0.0.9
-  resolution: "@gdsc-dju/gds-theme@npm:0.0.9"
+"@gdsc-dju/gds-theme@npm:^0.0.10":
+  version: 0.0.10
+  resolution: "@gdsc-dju/gds-theme@npm:0.0.10"
   peerDependencies:
     react: "*"
-  checksum: b438120ea3ebbf832f0d98ad08d5b7d56e2b3c881371d4763bb1e0fd271509f263c91f302d2385252f44e19c701402dae135e60177c957bf37db31f8429f1bb1
+  checksum: 86db31e10833482e0db9d35e68f6560a3fcdeae6ddbd87dea5f42dd857b026d52c6b1db4ea724041746335687ae62680c42f5b537cd0af9edb8f01d34b0a5077
   languageName: node
   linkType: hard
 
@@ -3429,7 +3429,7 @@ __metadata:
   resolution: "@gdsc-dju/next-web@workspace:apps/next-web"
   dependencies:
     "@gdsc-dju/gds-styles": ^0.0.2
-    "@gdsc-dju/gds-theme": ^0.0.9
+    "@gdsc-dju/gds-theme": ^0.0.10
     "@types/node": 18.11.11
     "@types/qs": ^6.9.7
     "@types/react": 18.0.26

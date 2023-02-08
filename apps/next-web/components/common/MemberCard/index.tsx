@@ -1,11 +1,11 @@
 import React, { memo, useState } from 'react';
-import { useLocation } from 'react-router';
 
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 
-import { memberCardAnimate } from '@animations/variants';
-import { IMemberCardType } from '@type/member';
-import { positionColorHandler } from '@utils/positionColorHandler';
+import { IMemberCardType } from '../../../types/member';
+import { positionColorHandler } from '../../../utils/positionColorHandler';
+import { useRouter } from '../../../utils/Routes';
+import { memberCardAnimate } from '../../animations/variants';
 
 import {
   CardText,
@@ -30,7 +30,7 @@ const MemberCard: React.FC<IMemberCardProps> = ({
 }) => {
   const { name, nickname, role, image, position, text } = member;
   const [isClicked, setIsClicked] = useState(false);
-  const location = useLocation();
+  const location = useRouter();
   return (
     <AnimatePresence>
       <LayoutGroup>
