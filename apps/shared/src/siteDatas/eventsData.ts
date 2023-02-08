@@ -9,7 +9,7 @@ export const eventsData: EventsDataType = [
     description: '모두가 참여할 수 있는 public Session',
     start: '2023-02-23 20:00',
     end: '2023-02-23 22:00',
-    applyLink: 'https://festa.io/events/q3GgVCKWSTY2BJ4MfgabHp',
+    applyLink: 'https://festa.io/events/q3GgVCKWSTY2BJ4MfgabHp/',
     sessions: [
       {
         title: '비전공자, 1년만에 프론트엔드 개발자로 취업하기',
