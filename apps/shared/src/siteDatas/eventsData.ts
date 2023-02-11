@@ -13,28 +13,28 @@ export const eventsData: EventsDataType = [
     sessions: [
       {
         title: '비전공자, 1년만에 프론트엔드 개발자로 취업하기',
-        time: '20:00 - 20:20',
+        time: '20:00 - 20:15',
         profileImage: userData.Jason.profileImage,
         name: userData.Jason.name,
         position: userData.Jason.position,
       },
       {
         title: '조그만 토이플젝에 22일간 3.7만명 오게 만들기',
-        time: '20:30 - 20:50',
+        time: '20:20 - 20:35',
         profileImage: userData.Want.profileImage,
         name: userData.Want.name,
         position: userData.Want.position,
       },
       {
         title: '비전공자가 AI를 한다고?',
-        time: '21:00 - 21:20',
+        time: '20:50 - 21:05',
         profileImage: userData.Ayaan.profileImage,
         name: userData.Ayaan.name,
         position: userData.Ayaan.position,
       },
       {
         title: '코흘리개가 토스에 와버렸다',
-        time: '21:30 - 21:50',
+        time: '21:20 - 21:35',
         profileImage: userData.Harry.profileImage,
         name: userData.Harry.name,
         position: userData.Harry.position,
