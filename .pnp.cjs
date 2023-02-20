@@ -5399,12 +5399,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@gdsc-dju/gds-theme", [\
+        ["npm:0.0.10", {\
+          "packageLocation": "./.yarn/cache/@gdsc-dju-gds-theme-npm-0.0.10-2e6e1b63e2-86db31e108.zip/node_modules/@gdsc-dju/gds-theme/",\
+          "packageDependencies": [\
+            ["@gdsc-dju/gds-theme", "npm:0.0.10"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["npm:0.0.9", {\
           "packageLocation": "./.yarn/cache/@gdsc-dju-gds-theme-npm-0.0.9-b05fe35296-b438120ea3.zip/node_modules/@gdsc-dju/gds-theme/",\
           "packageDependencies": [\
             ["@gdsc-dju/gds-theme", "npm:0.0.9"]\
           ],\
           "linkType": "SOFT"\
+        }],\
+        ["virtual:3007ed81df40ecd8c0b3d15b9c0fcb0d3dea2464d2ef014327f256cb228b3788b003b5cf26a4590a6a259396d794da2152e2e2d11cb848b2040fad457811fbee#npm:0.0.10", {\
+          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-gds-theme-virtual-229931429d/0/cache/@gdsc-dju-gds-theme-npm-0.0.10-2e6e1b63e2-86db31e108.zip/node_modules/@gdsc-dju/gds-theme/",\
+          "packageDependencies": [\
+            ["@gdsc-dju/gds-theme", "virtual:3007ed81df40ecd8c0b3d15b9c0fcb0d3dea2464d2ef014327f256cb228b3788b003b5cf26a4590a6a259396d794da2152e2e2d11cb848b2040fad457811fbee#npm:0.0.10"],\
+            ["@types/react", "npm:18.0.17"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
         }],\
         ["virtual:8b259ac29cf09b341b91d7c965774dd130a5b3ab6fb5922c39fcf12ceb364c7f6510bbfbfd247a9430843ccaf95d49312d7a4add08f325c92286e2ecbbbb9a92#npm:0.0.9", {\
           "packageLocation": "./.yarn/__virtual__/@gdsc-dju-gds-theme-virtual-3197af9760/0/cache/@gdsc-dju-gds-theme-npm-0.0.9-b05fe35296-b438120ea3.zip/node_modules/@gdsc-dju/gds-theme/",\
@@ -5425,6 +5445,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./apps/shared/",\
           "packageDependencies": [\
             ["@gdsc-dju/shared", "workspace:apps/shared"],\
+            ["@gdsc-dju/gds-styles", "npm:0.0.2"],\
+            ["@gdsc-dju/gds-theme", "virtual:3007ed81df40ecd8c0b3d15b9c0fcb0d3dea2464d2ef014327f256cb228b3788b003b5cf26a4590a6a259396d794da2152e2e2d11cb848b2040fad457811fbee#npm:0.0.10"],\
             ["@types/react", "npm:18.0.17"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["@types/react-helmet", "npm:6.1.5"],\

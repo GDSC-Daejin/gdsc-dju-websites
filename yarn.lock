@@ -2914,6 +2914,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gdsc-dju/gds-theme@npm:^0.0.10":
+  version: 0.0.10
+  resolution: "@gdsc-dju/gds-theme@npm:0.0.10"
+  peerDependencies:
+    react: "*"
+  checksum: 86db31e10833482e0db9d35e68f6560a3fcdeae6ddbd87dea5f42dd857b026d52c6b1db4ea724041746335687ae62680c42f5b537cd0af9edb8f01d34b0a5077
+  languageName: node
+  linkType: hard
+
 "@gdsc-dju/gds-theme@npm:^0.0.9":
   version: 0.0.9
   resolution: "@gdsc-dju/gds-theme@npm:0.0.9"
@@ -2927,6 +2936,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@gdsc-dju/shared@workspace:apps/shared"
   dependencies:
+    "@gdsc-dju/gds-styles": ^0.0.2
+    "@gdsc-dju/gds-theme": ^0.0.10
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6
     "@types/react-helmet": ^6.1.5
