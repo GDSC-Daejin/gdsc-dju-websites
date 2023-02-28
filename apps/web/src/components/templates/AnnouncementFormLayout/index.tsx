@@ -15,7 +15,7 @@ import {
   RecruitFormInner,
   RecruitFormWrapper,
 } from '@pages/Recruit/AnnounceForm/styled';
-import { FormValue } from '@type/recruitForm';
+import { FormElementsType, FormValue } from '@type/recruitForm';
 
 type AnnounceFormLayoutProps = {
   handleSubmit: () => void;
@@ -24,7 +24,7 @@ type AnnounceFormLayoutProps = {
   formElements: Array<keyof FormValue>;
   register: UseFormRegister<FormValue>;
   errors: FieldErrorsImpl<FormValue>;
-  formValidation: Record<keyof FormValue, any>;
+  formValidation: FormElementsType<keyof FormValue>;
   setFile: (file: File) => void;
 };
 
@@ -50,37 +50,45 @@ const AnnouncementFormLayout = ({
             <FormMargin />
             {formElements.map((element) => {
               const elementName = formValidation[element];
-              const isRequired = elementName.required.value;
+              const isRequired = elementName?.required.value;
 
               return (
                 <FormContentWrapper key={element}>
-                  <FormLabel essential={isRequired}>
-                    {elementName.label}
-                  </FormLabel>
-                  {elementName.text && <FormText>{elementName.text}</FormText>}
-                  {elementName.type === 'INPUT' ? (
-                    <Input
-                      error={Boolean(errors[element])}
-                      placeholder={elementName.placeholder}
-                      {...register(element, elementName)}
-                    />
-                  ) : elementName.type === 'TEXT_AREA' ? (
-                    <TextArea
-                      placeholder={elementName.placeholder}
-                      error={Boolean(errors[element])}
-                      {...register(element, elementName)}
-                    />
-                  ) : (
-                    <p>
-                      {elementName.notice?.split('\n').map((text: string) => (
-                        <FormText key={text}>{text}</FormText>
-                      ))}
-                    </p>
+                  {elementName && (
+                    <>
+                      <FormLabel essential={isRequired}>
+                        {elementName.label}
+                      </FormLabel>
+                      {elementName.text && (
+                        <FormText>{elementName.text}</FormText>
+                      )}
+                      {elementName.type === 'INPUT' ? (
+                        <Input
+                          error={Boolean(errors[element])}
+                          placeholder={elementName.placeholder}
+                          {...register(element, elementName)}
+                        />
+                      ) : elementName.type === 'TEXT_AREA' ? (
+                        <TextArea
+                          placeholder={elementName.placeholder}
+                          error={Boolean(errors[element])}
+                          {...register(element, elementName)}
+                        />
+                      ) : (
+                        <p>
+                          {elementName.notice
+                            ?.split('\n')
+                            .map((text: string) => (
+                              <FormText key={text}>{text}</FormText>
+                            ))}
+                        </p>
+                      )}
+                      <ErrorBox>
+                        {Boolean(errors[element]) &&
+                          (errors[element]?.message as string)}
+                      </ErrorBox>
+                    </>
                   )}
-                  <ErrorBox>
-                    {Boolean(errors[element]) &&
-                      (errors[element]?.message as string)}
-                  </ErrorBox>
                 </FormContentWrapper>
               );
             })}
