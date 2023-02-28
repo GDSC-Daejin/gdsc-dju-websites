@@ -16,7 +16,7 @@ export interface FormValue {
   recommender: string;
 }
 export type FormElementsType<T extends string> = {
-  [key in T]: {
+  [key in T]?: {
     label?: string;
     placeholder?: string;
     type: 'INPUT' | 'TEXT_AREA' | 'TEXT';
