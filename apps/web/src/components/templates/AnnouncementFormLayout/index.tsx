@@ -51,6 +51,7 @@ const AnnouncementFormLayout = ({
             {formElements.map((element) => {
               const elementName = formValidation[element];
               const isRequired = elementName.required.value;
+
               return (
                 <FormContentWrapper key={element}>
                   <FormLabel essential={isRequired}>

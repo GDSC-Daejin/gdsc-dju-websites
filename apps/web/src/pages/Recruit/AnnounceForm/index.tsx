@@ -127,6 +127,7 @@ const AnnounceForm = () => {
     watch('question4') &&
     watch('question5')
   );
+
   const onSubmit = (values: FieldValues) => {
     setData(JSON.parse(JSON.stringify(values)));
     isObjEmpty(errors) && setModal({ ...modal, [MODAL_KEY.APPLY_CHECK]: true });
