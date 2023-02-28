@@ -12,6 +12,7 @@ export interface FormValue {
   link0: string;
   link1: string;
   linkAnnounce: string;
+  preferredPosition: string;
   recommender: string;
 }
 export type FormElementsType<T extends string> = {

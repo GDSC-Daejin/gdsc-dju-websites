@@ -155,6 +155,15 @@ export const beginnerForm: FormElementsType<keyof FormValue> = {
       message: 'URL 형식에 맞춰 입력해주세요',
     },
   },
+  preferredPosition: {
+    type: 'INPUT',
+    label: '선호하는 포지션',
+    placeholder: '프론트엔드, 백엔드, 안드로이드, iOS',
+    required: {
+      value: true,
+      message: '필수 입력 값이에요.',
+    },
+  },
   linkAnnounce: {
     type: 'TEXT',
     notice:
