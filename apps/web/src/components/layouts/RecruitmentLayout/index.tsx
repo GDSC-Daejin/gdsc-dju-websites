@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { MainText, Title } from '@atoms/title';
-import RecruitmentCard from '@molecules/RecruitmentCard';
+import RecruitmentCard from '@common/RecruitmentCard';
+import { MainText, Title } from '@common/title';
 import { TopMargin } from '@styles/layouts';
 import { AnnouncementData } from '@type/pageData';
 

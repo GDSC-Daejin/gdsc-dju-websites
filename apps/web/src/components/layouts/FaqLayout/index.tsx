@@ -2,9 +2,9 @@ import React from 'react';
 
 import { AnimatePresence } from 'framer-motion';
 
-import { Title } from '@atoms/title';
+import FaqCard from '@common/faq/FaqCard';
+import { Title } from '@common/title';
 import { FaqData } from '@contents/faq';
-import FaqCard from '@organisms/faq/FaqCard';
 import { TopMargin } from '@styles/layouts';
 
 const FaqLayout = () => {

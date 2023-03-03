@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { MainText } from '@atoms/title';
-import ApplySuccessCard from '@molecules/ApplySuccessCard';
+import ApplySuccessCard from '@common/ApplySuccessCard';
+import { MainText } from '@common/title';
 import {
   RecruitFormCardWrapper,
   RecruitFormInner,

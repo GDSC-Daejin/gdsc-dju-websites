@@ -7,15 +7,15 @@ import { addDoc, collection } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { useAtom } from 'jotai';
 
+import ApplyModal from '@common/Modal/ApplyModal';
 import { applications, forms } from '@contents/application';
-import ApplyModal from '@organisms/Modal/ApplyModal';
+import AnnouncementFormLayout from '@src/components/layouts/AnnouncementFormLayout';
 import { db } from '@src/firebase/firebase';
 import { storage } from '@src/firebase/firebase.config';
 import { alertAtom } from '@store/alertAtom';
 import { loaderAtom } from '@store/loaderAtom';
 import { MODAL_KEY, modalAtom } from '@store/modalAtom';
 import { ContainerInner, LayoutContainer } from '@styles/layouts';
-import AnnouncementFormLayout from '@templates/AnnouncementFormLayout';
 import {
   IApplicantParams,
   IInputRegister,

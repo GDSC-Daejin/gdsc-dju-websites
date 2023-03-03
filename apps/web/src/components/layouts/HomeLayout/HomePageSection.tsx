@@ -5,9 +5,8 @@ import { useAtom } from 'jotai';
 import styled from 'styled-components';
 
 import { bannerItemAnimate } from '@animations/variants';
+import DownArrow from '@common/DownArrow';
 import { recruitmentAtom } from '@src/store/recruitmentStatusAtom';
-
-import DownArrow from '../../atoms/DownArrow';
 
 import {
   ButtonWrapper,

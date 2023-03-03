@@ -1,10 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import Banner from '@atoms/Banner';
+import Banner from '@common/Banner';
 import { announcementData } from '@contents/recruitment';
+import AnnouncementLayout from '@src/components/layouts//AnnouncementLayout';
 import { ContainerInner, LayoutContainer } from '@styles/layouts';
-import AnnouncementLayout from '@templates//AnnouncementLayout';
 import { AnnouncementData, PositionType } from '@type/pageData';
 
 const Announcement = () => {

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { MainText, Title } from '@atoms/title';
+import MemberSection from '@common/introduce/MemberSection';
+import { MainText, Title } from '@common/title';
 import { memberList } from '@contents/MemberList';
-import MemberSection from '@organisms/introduce/MemberSection';
 import { ContainerInner, TopMargin } from '@styles/layouts';
 
 const IntroduceLayout = () => {

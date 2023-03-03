@@ -4,7 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import { useAtom } from 'jotai';
 
 import { modalVariants } from '@animations/modalVariants';
-import { GDSCButton } from '@atoms/Button';
+import { GDSCButton } from '@common/Button';
 import { MODAL_KEY, modalAtom } from '@store/modalAtom';
 import OutsideClickHandler from '@utils/OutsideClickHandler';
 

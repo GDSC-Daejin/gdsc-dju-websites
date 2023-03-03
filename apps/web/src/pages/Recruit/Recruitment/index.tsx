@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Banner from '@atoms/Banner';
+import Banner from '@common/Banner';
 import { announcementData } from '@contents/recruitment';
+import RecruitmentLayout from '@src/components/layouts/RecruitmentLayout';
 import { ContainerInner, LayoutContainer } from '@styles/layouts';
-import RecruitmentLayout from '@templates/RecruitmentLayout';
 
 const Recruitment = () => {
   return (

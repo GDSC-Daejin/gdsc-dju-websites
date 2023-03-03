@@ -4,10 +4,10 @@ import { useLocation } from 'react-router';
 import { Footer, Navigation } from '@gdsc-dju/styled-components';
 import { MenuContext } from '@gdsc-dju/styled-components-theme';
 
-import Alert from '@atoms/Alert';
+import Alert from '@common/Alert';
 import { GoogleSpinner } from '@common/lotties/GoogleSpinner';
+import MobileMenu from '@common/MobileMenu';
 import ReactHelmet from '@common/ReactHelmet';
-import MobileMenu from '@organisms/MobileMenu';
 import { routes } from '@src/contents/routes';
 
 const ElementLayoutBox: React.FC<{ children: React.ReactNode }> = ({

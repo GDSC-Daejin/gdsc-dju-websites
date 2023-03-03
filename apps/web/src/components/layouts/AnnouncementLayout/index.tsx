@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { SubtitleContent } from '@atoms/BulletList';
-import { Title } from '@atoms/title';
+import { SubtitleContent } from '@common/BulletList';
+import InformationBar from '@common/InformationBar';
+import RecruitFaqButton from '@common/RecruitFaqButton';
+import { Title } from '@common/title';
 import { recruitDefaultText } from '@contents/recruitment';
-import InformationBar from '@molecules/InformationBar';
-import RecruitFaqButton from '@molecules/RecruitFaqButton';
 import { TopMargin } from '@styles/layouts';
 import { AnnouncementData } from '@type/pageData';
 

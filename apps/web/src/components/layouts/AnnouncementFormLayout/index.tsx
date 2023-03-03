@@ -3,7 +3,7 @@ import { FieldErrorsImpl, UseFormRegister } from 'react-hook-form';
 
 import { FileInput, TextArea, Input } from '@gdsc-dju/styled-components';
 
-import { SubTitle, Title } from '@atoms/title';
+import { SubTitle, Title } from '@common/title';
 import {
   ErrorBox,
   FormContentWrapper,

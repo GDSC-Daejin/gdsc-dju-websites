@@ -3,8 +3,8 @@ import React, { memo } from 'react';
 import { LayoutGroup } from 'framer-motion';
 
 import { listAnimate, memberCardAnimate } from '@animations/variants';
+import MemberCard from '@common/MemberCard';
 import { memberList } from '@contents/MemberList';
-import MemberCard from '@molecules/MemberCard';
 import { CardList } from '@styles/layouts';
 
 import { MemberCardWrapper } from './styled';

@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 import { listAnimate, managerCardAnimate } from '@animations/variants';
+import MemberCard from '@common/MemberCard';
 import { managerData } from '@contents/managerData';
-import MemberCard from '@molecules/MemberCard';
 import { useYClickScroll } from '@utils/useYClickScroll';
 
 import {

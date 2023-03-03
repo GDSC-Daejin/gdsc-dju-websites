@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 
+import ApplySuccessLayout from '@src/components/layouts/ApplySuccessLayout';
 import { ContainerInner, LayoutContainer } from '@styles/layouts';
-import ApplySuccessLayout from '@templates/ApplySuccessLayout';
 
 const ApplySuccess = () => {
   const [searchParams] = useSearchParams();
