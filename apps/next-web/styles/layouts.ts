@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const TopMargin = styled.div`
@@ -10,7 +11,6 @@ export const LayoutContainer = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  padding-top: 70px;
   max-width: 1140px;
   margin: 0 auto;
   min-width: 320px;
@@ -22,4 +22,19 @@ export const ContainerInner = styled.div`
   max-width: calc(100% - 48px);
   margin: 0 auto;
   padding: 0 20px;
+`;
+export const CardList = styled(motion.section)`
+  display: grid;
+  flex-wrap: wrap;
+  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  @media (max-width: 1400px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 850px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;

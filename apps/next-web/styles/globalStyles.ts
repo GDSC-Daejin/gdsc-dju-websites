@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 window.addEventListener('resize', () => {
-  const vh = window.innerHeight * 0.01;
+  let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
@@ -90,6 +90,7 @@ const GlobalStyles = createGlobalStyle`
  
   * {
     margin: 0;
+    font-size: 10px;
     word-break: keep-all;
     -webkit-tap-highlight-color: transparent;
     transition: color, background-color 0.3s ease-in-out;
@@ -111,6 +112,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     border: 0;
+    font-size: 10px;
     vertical-align: baseline;
   }
   /* HTML5 display-role reset for older browsers */
@@ -118,9 +120,12 @@ const GlobalStyles = createGlobalStyle`
   footer, header, hgroup, menu, nav, section {
     display: block;
   }
+
   html {
-    background: var(--background);
+    background: ${({ theme }) => theme.colors.background};
   }
+  
+
   a {
     text-decoration: none;
   }
@@ -136,6 +141,5 @@ const GlobalStyles = createGlobalStyle`
   a:active {
     text-decoration: none;
   }
-  
 `;
 export default GlobalStyles;

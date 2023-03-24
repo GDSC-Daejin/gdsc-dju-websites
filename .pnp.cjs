@@ -5634,6 +5634,31 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
+        ["virtual:8b259ac29cf09b341b91d7c965774dd130a5b3ab6fb5922c39fcf12ceb364c7f6510bbfbfd247a9430843ccaf95d49312d7a4add08f325c92286e2ecbbbb9a92#npm:0.0.53", {\
+          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-theme-virtual-30fcf80f01/0/cache/@gdsc-dju-styled-components-theme-npm-0.0.53-4d17a95a3a-835cd61ab6.zip/node_modules/@gdsc-dju/styled-components-theme/",\
+          "packageDependencies": [\
+            ["@gdsc-dju/styled-components-theme", "virtual:8b259ac29cf09b341b91d7c965774dd130a5b3ab6fb5922c39fcf12ceb364c7f6510bbfbfd247a9430843ccaf95d49312d7a4add08f325c92286e2ecbbbb9a92#npm:0.0.53"],\
+            ["@types/react", "npm:18.0.26"],\
+            ["@types/react-is", null],\
+            ["@types/react-router-dom", null],\
+            ["@types/styled-components", "npm:5.1.26"],\
+            ["react", "npm:18.2.0"],\
+            ["react-is", "npm:18.2.0"],\
+            ["react-router-dom", null],\
+            ["styled-components", "virtual:8b259ac29cf09b341b91d7c965774dd130a5b3ab6fb5922c39fcf12ceb364c7f6510bbfbfd247a9430843ccaf95d49312d7a4add08f325c92286e2ecbbbb9a92#npm:5.3.6"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-is",\
+            "@types/react-router-dom",\
+            "@types/react",\
+            "@types/styled-components",\
+            "react-is",\
+            "react-router-dom",\
+            "react",\
+            "styled-components"\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["virtual:cf8e741bfc4cf94d285226378974bfd60e24ba23a88c85e7a48cc6a7b1051f3b6429dac794a66de08b8f6b13a044aff730ea5701a69b3b4df782300e1e2fabc6#npm:0.0.53", {\
           "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-theme-virtual-5d5e10eda0/0/cache/@gdsc-dju-styled-components-theme-npm-0.0.53-4d17a95a3a-835cd61ab6.zip/node_modules/@gdsc-dju/styled-components-theme/",\
           "packageDependencies": [\
@@ -24862,6 +24887,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next-web", "workspace:apps/next-web"],\
             ["@gdsc-dju/gds-styles", "npm:0.0.2"],\
             ["@gdsc-dju/gds-theme", "virtual:8b259ac29cf09b341b91d7c965774dd130a5b3ab6fb5922c39fcf12ceb364c7f6510bbfbfd247a9430843ccaf95d49312d7a4add08f325c92286e2ecbbbb9a92#npm:0.0.9"],\
+            ["@gdsc-dju/styled-components-theme", "virtual:8b259ac29cf09b341b91d7c965774dd130a5b3ab6fb5922c39fcf12ceb364c7f6510bbfbfd247a9430843ccaf95d49312d7a4add08f325c92286e2ecbbbb9a92#npm:0.0.53"],\
             ["@types/node", "npm:18.11.11"],\
             ["@types/react", "npm:18.0.26"],\
             ["@types/react-dom", "npm:18.0.9"],\

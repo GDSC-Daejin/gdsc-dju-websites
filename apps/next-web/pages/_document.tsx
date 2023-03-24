@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { GdsThemeProvider } from '@gdsc-dju/styled-components-theme';
+
 import Document, {
   Html,
   Main,
@@ -9,6 +11,9 @@ import Document, {
   DocumentInitialProps,
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+
+import ElementLayoutBox from '../core/ElementLayoutBox';
+import GlobalStyles from '../styles/globalStyles';
 
 export default class MyDocument extends Document {
   static async getInitialProps(
@@ -49,8 +54,13 @@ export default class MyDocument extends Document {
           />
         </Head>
         <body>
-          <Main />
-          <NextScript />
+          <GdsThemeProvider mode={'auto'}>
+            <GlobalStyles />
+            <ElementLayoutBox>
+              <NextScript />
+              <Main />
+            </ElementLayoutBox>
+          </GdsThemeProvider>
         </body>
       </Html>
     );
