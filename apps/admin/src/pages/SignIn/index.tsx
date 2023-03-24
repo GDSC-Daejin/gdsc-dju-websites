@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { getRedirectURL } from '@src/apis/TokenService';
+import { useNavigate } from 'react-router-dom';
 
 import GDSCImage from '../../assets/logos/GDSCLogo.svg';
 import GithubLogo from '../../assets/logos/GithubLogo.svg';
@@ -30,10 +29,11 @@ import {
 } from './styled';
 
 const SignIn = () => {
-  const googleLogin = () => {
-    return getRedirectURL();
-  };
+  // const googleLogin = () => {
+  //   return getRedirectURL();
+  // };
 
+  const navigate = useNavigate();
   return (
     <SignInWrapper>
       <SignInLeftSection>
@@ -79,7 +79,7 @@ const SignIn = () => {
           <ButtonWrapper>
             <OAuthLoginButton
               type={'google'}
-              onClick={() => (location.href = googleLogin())}
+              onClick={() => navigate('/certified')}
             />
           </ButtonWrapper>
         </AuthBoxInner>

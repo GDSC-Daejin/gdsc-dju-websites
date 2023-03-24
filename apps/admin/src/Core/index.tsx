@@ -7,7 +7,6 @@ import Error from '@pages/Error';
 import Redirect from '@pages/Redirect';
 import SignIn from '@pages/SignIn';
 import Pages from '@src/pages';
-import CheckAdminUser from '@utils/CheckAdminUser';
 
 import { GoogleSpinnerStatic } from '../components/Lottie/GoogleSpinner';
 
@@ -15,7 +14,7 @@ const Core = () => {
   return (
     <ErrorBoundary FallbackComponent={Error}>
       <Suspense fallback={<GoogleSpinnerStatic />}>
-        <CheckAdminUser />
+        {/*<CheckAdminUser />*/}
         <Alert />
         <Routes>
           <Route path={'/'} element={<SignIn />} />
