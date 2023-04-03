@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { getRedirectURL } from '@src/apis/TokenService';
+import { firebaseLogin } from '@utils/firebaseLogin';
 
 import GDSCImage from '../../assets/logos/GDSCLogo.svg';
 import GithubLogo from '../../assets/logos/GithubLogo.svg';
@@ -77,10 +78,7 @@ const SignIn = () => {
             <AuthLine />
           </AuthElementWrapper>
           <ButtonWrapper>
-            <OAuthLoginButton
-              type={'google'}
-              onClick={() => (location.href = googleLogin())}
-            />
+            <OAuthLoginButton type={'google'} onClick={firebaseLogin} />
           </ButtonWrapper>
         </AuthBoxInner>
       </AuthBoxWrapper>
