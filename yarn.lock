@@ -4085,7 +4085,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@gdsc-dju/gds-styles@^0.0.2, @gdsc-dju/gds-styles@workspace:^, @gdsc-dju/gds-styles@workspace:packages/styles":
+"@gdsc-dju/gds-styles@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "@gdsc-dju/gds-styles@npm:0.0.2"
+  checksum: 580933c58f1111662e8234a2e195e2dc718c65c92373af2478e41ee3e53d736115b5fb08ec6220ef9b224ca071f4ffd1d09c1196755dbd392c4d8f2719e94859
+  languageName: node
+  linkType: hard
+
+"@gdsc-dju/gds-styles@workspace:^, @gdsc-dju/gds-styles@workspace:packages/styles":
   version: 0.0.0-use.local
   resolution: "@gdsc-dju/gds-styles@workspace:packages/styles"
   dependencies:

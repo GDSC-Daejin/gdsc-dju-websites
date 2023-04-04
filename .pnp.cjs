@@ -9189,6 +9189,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@gdsc-dju/gds-styles", [\
+        ["npm:0.0.2", {\
+          "packageLocation": "./.yarn/cache/@gdsc-dju-gds-styles-npm-0.0.2-b1b3295446-580933c58f.zip/node_modules/@gdsc-dju/gds-styles/",\
+          "packageDependencies": [\
+            ["@gdsc-dju/gds-styles", "npm:0.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["workspace:packages/styles", {\
           "packageLocation": "./packages/styles/",\
           "packageDependencies": [\
@@ -35075,7 +35082,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./apps/next-web/",\
           "packageDependencies": [\
             ["next-web", "workspace:apps/next-web"],\
-            ["@gdsc-dju/gds-styles", "workspace:packages/styles"],\
+            ["@gdsc-dju/gds-styles", "npm:0.0.2"],\
             ["@gdsc-dju/gds-theme", "virtual:8b259ac29cf09b341b91d7c965774dd130a5b3ab6fb5922c39fcf12ceb364c7f6510bbfbfd247a9430843ccaf95d49312d7a4add08f325c92286e2ecbbbb9a92#npm:0.0.9"],\
             ["@types/node", "npm:18.11.11"],\
             ["@types/react", "npm:18.0.26"],\
