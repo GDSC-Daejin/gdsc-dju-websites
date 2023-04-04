@@ -1,10 +1,8 @@
-import React from 'react';
-
-import { NavigationRoutes } from './Navigation';
+import React, { ReactElement } from 'react';
 
 export interface NavigationProps {
   title?: string;
-  routes?: NavigationRoutes;
+  routes?: ReactElement;
   pointColor?: string;
   themeButton?: boolean;
   menuButton?:

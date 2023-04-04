@@ -14,10 +14,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "exports": {
-    "./global.css": "./global.css",
-    "./package.json": "./package.json"
-  },
+  "main": "/global.css",
   "files": [
     "global.css"
   ],

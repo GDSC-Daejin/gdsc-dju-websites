@@ -8,14 +8,12 @@ import NavigationLogo from './NavigationLogo';
 import { NavigationProps } from './props';
 import {
   ButtonWrapper,
-  LinkWrapper,
   MenuButtonWrapper,
   NavInner,
   NavLogoContainer,
   NavLogoContainerInner,
   NavTaskWrapper,
   NavWrapper,
-  StyledLi,
 } from './styled';
 
 export type NavigationRoutes = Array<{
@@ -64,25 +62,7 @@ const Navigation = ({
             customLogo={customLogo}
             pointColor={pointColor}
           />
-          <NavTaskWrapper>
-            {routes && (
-              <LinkWrapper>
-                {routes.map((link) => {
-                  const isRoute = currentLocation?.includes(link.route);
-                  return (
-                    <StyledLi
-                      key={link.route}
-                      color={pointColor}
-                      active={isRoute}
-                      onClick={() => routeHandler(link.route)}
-                    >
-                      {link.title}
-                    </StyledLi>
-                  );
-                })}
-              </LinkWrapper>
-            )}
-          </NavTaskWrapper>
+          <NavTaskWrapper>{routes}</NavTaskWrapper>
         </NavLogoContainerInner>
       </NavLogoContainer>
       <NavInner>
