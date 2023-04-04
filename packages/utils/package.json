@@ -1,0 +1,63 @@
+{
+  "name": "@gdsc-dju/utils",
+  "version": "0.0.0",
+  "packageManager": "yarn@3.2.2",
+  "description": "GDSC-DJU Design System Component package for styled-components",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -cw",
+    "release": "standard-version"
+  },
+  "source": "./src/index.ts",
+  "main": "./src/index.ts",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GDSC-Daejin/design-seed",
+    "directory": "packages/utils"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/bundle.js",
+    "module": "./dist/bundle.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/bundle.js",
+      "require": "./dist/bundle.js",
+      "default": "./dist/bundle.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "keywords": [
+    "styled-components",
+    "react"
+  ],
+  "files": [
+    "src",
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-is": "^18.2.0",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.1",
+    "@babel/preset-env": "^7.19.1",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@types/react": "^18.0.15",
+    "@types/styled-components": "^5.1.25",
+    "rollup": "^2.79.1",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-tslint": "^0.2.2",
+    "rollup-plugin-typescript2": "^0.34.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "standard-version": "^9.5.0",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.3"
+  }
+}

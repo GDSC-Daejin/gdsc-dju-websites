@@ -1,0 +1,35 @@
+name: '@gdsc-dju/gds-theme Package Publish'
+
+on:
+  push:
+    paths:
+      - "packages/theme/**"
+      - ".github/workflows/gds-theme-publish.yml"
+jobs:
+  gds-theme-publish-npm:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./packages/theme
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org
+      - name: yarn install
+        run: yarn install
+      - name: version up
+        run: |
+          git pull
+          git config --global user.name 'hyeoke0'
+          git config --global user.email jhjeong00@gmail.com
+          yarn release
+          git push --follow-tags
+        working-directory: ${{ env.working-directory }}
+      - name: build
+        run: yarn build
+        working-directory: ${{ env.working-directory }}
+      - run: npm publish
+        working-directory: ${{ env.working-directory }}
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

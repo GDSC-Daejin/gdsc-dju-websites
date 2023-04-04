@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-
-import { SWRConfig } from 'swr';
 
 import App from './App';
+import './index.css';
+import '@gdsc-dju/gds-styles';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <SWRConfig>
-        <App />
-      </SWRConfig>
-    </BrowserRouter>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        flex: '1 0 auto',
+        minHeight: '100vh',
+      }}
+    >
+      <App />
+    </div>
   </React.StrictMode>,
 );
