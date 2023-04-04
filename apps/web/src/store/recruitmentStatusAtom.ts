@@ -14,6 +14,7 @@ export const RecruitmentState: Record<PositionType, boolean> = {
   ml: true,
   beginner: false,
 };
+
 export const recruitmentAtom = atom<typeof RecruitmentState>(RecruitmentState);
 
 export const asyncGetRecruitmentStatusAtom = atom(null, async (get, set) => {
