@@ -2932,6 +2932,7 @@ __metadata:
     "@types/react": ^18.0.28
     "@types/react-dom": ^18.0.11
     "@vitejs/plugin-react-swc": ^3.0.0
+    firebase: ^9.19.1
     jotai: ^2.0.3
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -13404,7 +13405,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"firebase@npm:^9.9.0, firebase@npm:^9.9.1":
+"firebase@npm:^9.19.1, firebase@npm:^9.9.0, firebase@npm:^9.9.1":
   version: 9.19.1
   resolution: "firebase@npm:9.19.1"
   dependencies:
