@@ -19,7 +19,28 @@ jobs:
       name: GDSC DJU Shared Production
       url: https://shared.gdsc-dju.com
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: 캐시 폴더를 가져오고 있어요.
+        id: yarn-cache-dir-path
+        run: echo "dir=$(cd client && yarn config get cacheFolder)" >> $GITHUB_ENV
+
+      - name: 캐시 의존성을 설정하고 있어요.
+        uses: actions/cache@v3
+        with:
+          path: ~/.yarn
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Node 버전/캐싱여부를 설정하고 있어요.
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: yarn
+          cache-dependency-path: ./yarn.lock
+          registry-url: "https://registry.yarnpkg.com"
       - name: Setting .env
         run: |
           echo "VITE_FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }}" >> .env
