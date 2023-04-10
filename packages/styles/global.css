@@ -34,14 +34,14 @@
     --core-blue: #4285F4;
     --font-weight-bold: 700;
     --font-weight-medium: 500;
-    --font-weight---regular: 400;
+    --font-weight-regular: 400;
     --window-size-desktop: 1024px;
     --window-size-tablet: 768px;
     --window-size-mobile: 480px;
     --window-size-mobile-small: 320px;
     --title-font-weight: var(--font-weight-bold);
     --text-font-weight: var(--font-weight-medium);
-    --quote-font-weight: var(--font-weight---regular);
+    --quote-font-weight: var(--font-weight-regular);
 }
 :root[data-seed][data-seed-theme=light]{
     --background: var(--static-white);

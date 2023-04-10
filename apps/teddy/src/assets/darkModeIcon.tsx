@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledSvg = styled.svg`
-  fill: var(--grey900);
+  fill: var(--grey600);
 `;
 
 const DarkModeIcon = () => {
