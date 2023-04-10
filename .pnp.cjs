@@ -6137,13 +6137,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@gdsc-dju/teddy", "workspace:apps/teddy"],\
             ["@gdsc-dju/gds-styles", "workspace:packages/styles"],\
             ["@gdsc-dju/gds-theme", "virtual:d9ca299ff416e84c8989500360e19c3ca3de408bbea6b192c49df18020f4ad737f99d986fa1299961d5d1b11f23efdfef33d8a8cd57eb69745bffbbc91900759#workspace:packages/theme"],\
+            ["@types/qs", "npm:6.9.7"],\
             ["@types/react", "npm:18.0.34"],\
             ["@types/react-dom", "npm:18.0.11"],\
+            ["@types/react-router-dom", "npm:5.3.3"],\
             ["@vitejs/plugin-react-swc", "virtual:d9ca299ff416e84c8989500360e19c3ca3de408bbea6b192c49df18020f4ad737f99d986fa1299961d5d1b11f23efdfef33d8a8cd57eb69745bffbbc91900759#npm:3.3.0"],\
             ["firebase", "npm:9.19.1"],\
             ["jotai", "virtual:d9ca299ff416e84c8989500360e19c3ca3de408bbea6b192c49df18020f4ad737f99d986fa1299961d5d1b11f23efdfef33d8a8cd57eb69745bffbbc91900759#npm:2.0.4"],\
+            ["qs", "npm:6.11.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:5600c14147b0fedd344c739a0b06eca774a844057113b0be8c634de01cd357edc182d62e2fb814b5745504475f0715d194f7ae3fb8b3e2c77ad704a36d2ef303#npm:18.2.0"],\
+            ["react-router-dom", "virtual:5600c14147b0fedd344c739a0b06eca774a844057113b0be8c634de01cd357edc182d62e2fb814b5745504475f0715d194f7ae3fb8b3e2c77ad704a36d2ef303#npm:6.10.0"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\
             ["vite", "virtual:d9ca299ff416e84c8989500360e19c3ca3de408bbea6b192c49df18020f4ad737f99d986fa1299961d5d1b11f23efdfef33d8a8cd57eb69745bffbbc91900759#npm:4.2.1"]\
           ],\
