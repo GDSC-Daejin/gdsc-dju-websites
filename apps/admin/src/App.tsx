@@ -1,18 +1,41 @@
-import React from 'react';
+import { useInsertionEffect } from 'react';
 
-import { GdsThemeProvider } from '@gdsc-dju/styled-components';
+import { changeTheme, themeHandler, useTheme } from '@gdsc-dju/gds-theme';
 
-import { GoogleSpinner } from './components/Lottie/GoogleSpinner';
-import Layout from './Core';
-import GlobalStyles from './styles/globalStyles';
+import reactLogo from './assets/react.svg';
+
+import viteLogo from '/vite.svg';
+import './App.css';
 
 function App() {
+  const [theme] = useTheme();
+
+  useInsertionEffect(() => {
+    themeHandler('auto');
+  }, []);
+
   return (
-    <GdsThemeProvider mode={'auto'}>
-      <GlobalStyles />
-      <GoogleSpinner background={true} />
-      <Layout />
-    </GdsThemeProvider>
+    <div className="App">
+      <div>
+        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => changeTheme()}>change Theme</button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </div>
   );
 }
 

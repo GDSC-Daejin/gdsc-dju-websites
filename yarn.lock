@@ -2718,9 +2718,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gdsc-dju/admin@workspace:apps/admin":
+"@gdsc-dju/admin-deprecated@workspace:apps/admin(deprecated)":
   version: 0.0.0-use.local
-  resolution: "@gdsc-dju/admin@workspace:apps/admin"
+  resolution: "@gdsc-dju/admin-deprecated@workspace:apps/admin(deprecated)"
   dependencies:
     "@emailjs/browser": ^3.6.2
     "@firebase/app": ^0.7.29
@@ -2751,6 +2751,24 @@ __metadata:
     typescript: ^4.6.4
     vite: ^3.0.0
     vite-plugin-mkcert: ^1.10.1
+  languageName: unknown
+  linkType: soft
+
+"@gdsc-dju/admin@workspace:apps/admin":
+  version: 0.0.0-use.local
+  resolution: "@gdsc-dju/admin@workspace:apps/admin"
+  dependencies:
+    "@gdsc-dju/gds-styles": "workspace:^"
+    "@gdsc-dju/gds-theme": "workspace:^"
+    "@types/react": ^18.0.28
+    "@types/react-dom": ^18.0.11
+    "@vitejs/plugin-react-swc": ^3.0.0
+    firebase: ^9.19.1
+    jotai: ^2.0.3
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    typescript: ^4.9.3
+    vite: ^4.2.0
   languageName: unknown
   linkType: soft
 
