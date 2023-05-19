@@ -2,8 +2,6 @@ import React from 'react';
 
 import { changeTheme } from '@gdsc-dju/gds-theme';
 
-import './App.css';
-
 const Home = () => {
   return (
     <div className="App">
