@@ -11,6 +11,8 @@
     "sitemap": "node sitemap-builder.js"
   },
   "dependencies": {
+    "@gdsc-dju/gds-styles": "workspace:^",
+    "@gdsc-dju/gds-theme": "workspace:^",
     "axios": "^0.26.1",
     "browser-detect": "^0.2.28",
     "firebase": "^9.9.0",

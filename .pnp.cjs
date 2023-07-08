@@ -6240,6 +6240,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@gdsc-dju/web", "workspace:apps/web"],\
             ["@firebase/app", "npm:0.7.33"],\
             ["@firebase/app-compat", "npm:0.1.39"],\
+            ["@gdsc-dju/gds-styles", "workspace:packages/styles"],\
+            ["@gdsc-dju/gds-theme", "virtual:5600c14147b0fedd344c739a0b06eca774a844057113b0be8c634de01cd357edc182d62e2fb814b5745504475f0715d194f7ae3fb8b3e2c77ad704a36d2ef303#workspace:packages/theme"],\
             ["@types/node", "npm:18.15.11"],\
             ["@types/react", "npm:18.0.34"],\
             ["@types/react-dom", "npm:18.0.11"],\

@@ -2992,6 +2992,8 @@ __metadata:
   dependencies:
     "@firebase/app": ^0.7.33
     "@firebase/app-compat": ^0.1.34
+    "@gdsc-dju/gds-styles": "workspace:^"
+    "@gdsc-dju/gds-theme": "workspace:^"
     "@types/node": ^18.0.4
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6
