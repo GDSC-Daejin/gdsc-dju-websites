@@ -20,6 +20,7 @@
       "@templates/*": [ "./components/templates/*" ],
       "@molecules/*": [ "./components/molecules/*" ],
       "@organisms/*": [ "./components/organisms/*" ],
+      "@layouts/*": [ "./components/layouts/*" ],
       "@atoms/*": [ "./components/atoms/*" ],
       "@common/*": [ "./components/common/*" ],
       "@animations/*": [ "./components/animations/*" ],

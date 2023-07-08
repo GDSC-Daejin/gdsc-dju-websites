@@ -1,11 +1,11 @@
 import React, { lazy } from 'react';
 
-import SolarSystem from '@molecules/SolarSystem';
+import SolarSystem from '@common/SolarSystem';
 
 import { HomeContainer, HomeSolarSystemWrapper } from './styled';
 
 const HomePageSection = lazy(() =>
-  import('@src/components/templates/HomeLayout/HomePageSection').then(
+  import('@src/components/layouts/HomeLayout/HomePageSection').then(
     (module) => ({
       default: module.default,
     }),
@@ -13,21 +13,21 @@ const HomePageSection = lazy(() =>
 );
 
 const IntroduceSection = lazy(() =>
-  import('@src/components/templates/HomeLayout/IntroduceSection').then(
+  import('@src/components/layouts/HomeLayout/IntroduceSection').then(
     (module) => ({
       default: module.default,
     }),
   ),
 );
 const CultureSection = lazy(() =>
-  import('@src/components/templates/HomeLayout/CultureSection').then(
+  import('@src/components/layouts/HomeLayout/CultureSection').then(
     (module) => ({
       default: module.default,
     }),
   ),
 );
 const ManagementSection = lazy(() =>
-  import('@src/components/templates/HomeLayout/ManagementSection').then(
+  import('@src/components/layouts/HomeLayout/ManagementSection').then(
     (module) => ({
       default: module.default,
     }),

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Banner from '@atoms/Banner';
+import Banner from '@common/Banner';
+import FaqLayout from '@src/components/layouts/FaqLayout';
 import { ContainerInner, LayoutContainer } from '@styles/layouts';
-import FaqLayout from '@templates/FaqLayout';
 
 const Faq = () => {
   return (
