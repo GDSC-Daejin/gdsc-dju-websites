@@ -2827,7 +2827,6 @@ __metadata:
   peerDependencies:
     "@gdsc-dju/gds-theme": "workspace:^"
     react: ^18.2.0
-    react-is: ^18.2.0
     styled-components: ^5.3.5
   languageName: unknown
   linkType: soft
@@ -2931,15 +2930,25 @@ __metadata:
   dependencies:
     "@gdsc-dju/gds-styles": "workspace:^"
     "@gdsc-dju/gds-theme": "workspace:^"
+    "@types/qs": ^6.9.7
     "@types/react": ^18.0.28
     "@types/react-dom": ^18.0.11
+    "@types/react-router-dom": ^5.3.3
+    "@types/styled-components": ^5.1.26
     "@vitejs/plugin-react-swc": ^3.0.0
+    axios: ^1.4.0
     firebase: ^9.19.1
+    framer-motion: ^10.12.18
     jotai: ^2.0.3
+    qs: ^6.11.2
     react: ^18.2.0
     react-dom: ^18.2.0
+    react-router-dom: ^6.10.0
+    styled-components: ^5.3.9
+    swr: ^2.2.0
     typescript: ^4.9.3
     vite: ^4.2.0
+    zustand: ^4.3.9
   languageName: unknown
   linkType: soft
 
@@ -5990,7 +5999,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/qs@npm:^6.9.5":
+"@types/qs@npm:^6.9.5, @types/qs@npm:^6.9.7":
   version: 6.9.7
   resolution: "@types/qs@npm:6.9.7"
   checksum: 7fd6f9c25053e9b5bb6bc9f9f76c1d89e6c04f7707a7ba0e44cc01f17ef5284adb82f230f542c2d5557d69407c9a40f0f3515e8319afd14e1e16b5543ac6cdba
@@ -7758,6 +7767,26 @@ __metadata:
     form-data: ^4.0.0
     proxy-from-env: ^1.1.0
   checksum: 4d6bcf933b1cdff86d4993752aaeeeedc4a7f7a4b1c942847f6884bb13fc6106610ff826b076acf0b08d8ced55dee9344bb9a11f3624c3e70ab1da1a40bb5506
+  languageName: node
+  linkType: hard
+
+"axios@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "axios@npm:1.4.0"
+  dependencies:
+    follow-redirects: ^1.15.0
+    form-data: ^4.0.0
+    proxy-from-env: ^1.1.0
+  checksum: 7fb6a4313bae7f45e89d62c70a800913c303df653f19eafec88e56cea2e3821066b8409bc68be1930ecca80e861c52aa787659df0ffec6ad4d451c7816b9386b
+  languageName: node
+  linkType: hard
+
+"axobject-query@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "axobject-query@npm:3.1.1"
+  dependencies:
+    deep-equal: ^2.0.5
+  checksum: c12a5da10dc7bab75e1cda9b6a3b5fcf10eba426ddf1a17b71ef65a434ed707ede7d1c4f013ba1609e970bc8c0cddac01365080d376204314e9b294719acd8a5
   languageName: node
   linkType: hard
 
@@ -13404,6 +13433,27 @@ __metadata:
   dependencies:
     map-cache: ^0.2.2
   checksum: 1cbbd0b0116b67d5790175de0038a11df23c1cd2e8dcdbade58ebba5594c2d641dade6b4f126d82a7b4a6ffc2ea12e3d387dbb64ea2ae97cf02847d436f60fdc
+  languageName: node
+  linkType: hard
+
+"framer-motion@npm:^10.12.18":
+  version: 10.12.18
+  resolution: "framer-motion@npm:10.12.18"
+  dependencies:
+    "@emotion/is-prop-valid": ^0.8.2
+    tslib: ^2.4.0
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  dependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 71539be1175de80d2266702069bb3c4f0150eb3e28f0e32307e10c217410d5ee350b025d48a86c3144caf2d0e0e1dd95e33ed886a14466bc1e763e52d4cd6157
   languageName: node
   linkType: hard
 
@@ -20512,6 +20562,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"qs@npm:^6.11.2":
+  version: 6.11.2
+  resolution: "qs@npm:6.11.2"
+  dependencies:
+    side-channel: ^1.0.4
+  checksum: e812f3c590b2262548647d62f1637b6989cc56656dc960b893fe2098d96e1bd633f36576f4cd7564dfbff9db42e17775884db96d846bebe4f37420d073ecdc0b
+  languageName: node
+  linkType: hard
+
 "qs@npm:~6.5.2":
   version: 6.5.3
   resolution: "qs@npm:6.5.3"
@@ -20809,6 +20868,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-is@npm:*, react-is@npm:^18.2.0":
+  version: 18.2.0
+  resolution: "react-is@npm:18.2.0"
+  checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
+  languageName: node
+  linkType: hard
+
 "react-is@npm:17.0.2, react-is@npm:^17.0.1":
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
@@ -20820,13 +20886,6 @@ __metadata:
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
-  languageName: node
-  linkType: hard
-
-"react-is@npm:^18.2.0":
-  version: 18.2.0
-  resolution: "react-is@npm:18.2.0"
-  checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
   languageName: node
   linkType: hard
 
@@ -20876,7 +20935,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:^6.3.0, react-router-dom@npm:^6.4.3":
+"react-router-dom@npm:^6.10.0, react-router-dom@npm:^6.3.0, react-router-dom@npm:^6.4.3":
   version: 6.10.0
   resolution: "react-router-dom@npm:6.10.0"
   dependencies:
@@ -23098,7 +23157,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^5.3.5, styled-components@npm:^5.3.6":
+"styled-components@npm:^5.3.5, styled-components@npm:^5.3.6, styled-components@npm:^5.3.9":
   version: 5.3.9
   resolution: "styled-components@npm:5.3.9"
   dependencies:
@@ -23245,6 +23304,17 @@ __metadata:
   peerDependencies:
     react: ^16.11.0 || ^17.0.0 || ^18.0.0
   checksum: e7a184f0d560e9c8be85c023cc8e65e56a88a6ed46f9394b301b07f838edca23d2e303685319a4fcd620b81d447a7bcb489c7fa0a752c259f91764903c690cdb
+  languageName: node
+  linkType: hard
+
+"swr@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "swr@npm:2.2.0"
+  dependencies:
+    use-sync-external-store: ^1.2.0
+  peerDependencies:
+    react: ^16.11.0 || ^17.0.0 || ^18.0.0
+  checksum: 1f04795ff9dff54987cbf8a544afc9e42d1350a99e899be8a7cdc4885f561e3ee464f78245ee2ebc8ced262b04023d134f731e276227319dc2d6e1843389ddd8
   languageName: node
   linkType: hard
 
@@ -24582,7 +24652,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-sync-external-store@npm:1.2.0":
+"use-sync-external-store@npm:1.2.0, use-sync-external-store@npm:^1.2.0":
   version: 1.2.0
   resolution: "use-sync-external-store@npm:1.2.0"
   peerDependencies:
@@ -25642,6 +25712,23 @@ __metadata:
     react:
       optional: true
   checksum: 355b414ba4830b6106bcb888077c5f90f40ed649e4127e337eff4fb4ea90e88bf5cccf32344711d743cb92a676a0643a6ab3674ddc60ed49f17ea1bc8e3f58e2
+  languageName: node
+  linkType: hard
+
+"zustand@npm:^4.3.9":
+  version: 4.3.9
+  resolution: "zustand@npm:4.3.9"
+  dependencies:
+    use-sync-external-store: 1.2.0
+  peerDependencies:
+    immer: ">=9.0"
+    react: ">=16.8"
+  peerDependenciesMeta:
+    immer:
+      optional: true
+    react:
+      optional: true
+  checksum: fc83d653913fa537c354ba8b95d3a4fdebe62d2ebd3d9f5aeff2edf062811c0f5af48e02ab4da32b666752fd4f3e78c2b44624e445254f48503595435d4a7d70
   languageName: node
   linkType: hard
 

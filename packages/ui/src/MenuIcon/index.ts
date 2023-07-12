@@ -1,3 +1,3 @@
 /** @docs-ignore */
-export { default } from './MenuIcon';
+export { default as MenuIcon } from './MenuIcon';
 export * from './props';
