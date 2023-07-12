@@ -4,8 +4,8 @@ import { useTheme, changeTheme } from '@gdsc-dju/gds-theme';
 
 import styled, { keyframes } from 'styled-components';
 
-import DarkModeIcon from '../../assets/darkModeIcon';
-import LightModeIcon from '../../assets/lightModeIcon';
+import DarkModeIcon from '../../../assets/darkModeIcon';
+import LightModeIcon from '../../../assets/lightModeIcon';
 
 const startAnimation = keyframes`
   0% {
