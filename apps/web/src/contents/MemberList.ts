@@ -1,239 +1,260 @@
 export const memberList = [
-  {
-    nickname: 'Jason',
-    name: '정준혁',
-    role: 'Lead',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02B4R8P8HK-bdf04fe4ad6b-512',
-    text: '리액트에 미친 사람입니다',
-    position: 'Frontend',
-  },
-  {
-    nickname: 'Harry',
-    name: '박현기',
-    role: 'Core Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02BR888JMT-dd70b40bca94-512',
-    text: '엄마 나 여기있어',
-    position: 'Android',
-  },
-  {
-    nickname: 'Want',
-    name: '정소연',
-    role: 'Core Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02CH6KQT8Q-a03a44566103-512',
-    text: '빛나지만 눈부시지 않게',
-    position: 'Frontend',
-  },
-  {
-    nickname: 'Blaire	',
-    name: '이소희',
-    role: 'Core Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02TWS2TDS5-726b69e0e1c8-512',
-    text: '생기가 없다면 먹을 걸 주세요',
-    position: 'Designer',
-  },
-  {
-    nickname: 'Jim',
-    name: '전병선',
-    role: 'Core Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02TKATKRBN-f7b7e7e1dc15-512',
-    text: '돈 많은 백수가 꿈이에요',
-    position: 'Android',
-  },
-  {
-    nickname: 'Cindy',
-    name: '박수현',
-    role: 'Core Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02TMHKQJQ6-6f56b34c34c9-512',
-    text: '강하지?강하지! 우리집 강아지는 복슬강아지',
-    position: 'Designer',
-  },
-  {
-    nickname: 'Peony',
-    name: '정명주',
-    role: 'Core Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02TWSK3RQU-a3e79f8f5148-512',
-    text: '응애개발자',
-    position: 'Backend',
-  },
-  {
-    nickname: 'Rocoli',
-    name: '유형찬',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02C8B72LT1-e35fe9b38122-512',
-    text: '내 죽음이 내 삶 보다 가취가 있기를',
-    position: 'Backend',
-  },
-
-  {
-    nickname: 'Reese',
-    name: '안주원',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02CH2LV8VC-efb0ce60230f-512',
-    text: '개미는 오늘도 열심히 일을 하네',
-    position: 'Backend',
-  },
-  {
-    nickname: 'Lulu',
-    name: '김수진',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02CWDN14CU-557c4fe53e5e-512',
-    text: '룰루하게 살아보아요 ^&^',
-    position: 'Frontend',
-  },
-  {
-    nickname: 'Jade	',
-    name: '서정우',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02CPD32N3D-6b7a165e5bb6-512',
-    text: '낮밤 언제 바꾸지...',
-    position: 'Frontend',
-  },
-  {
-    nickname: 'Pascal',
-    name: '임종수',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02C9FTGT7H-6573ad607286-512',
-    text: '복잡한 걸 좋아하는 사람은 없다',
-    position: 'Beginner',
-  },
-  {
-    nickname: 'Lala	',
-    name: '라허운',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02D2RXTP3K-5b98e49b6beb-512',
-    text: 'ㅅ..살려주세요..자고싶어요....',
-    position: 'Beginner',
-  },
-  {
-    nickname: 'Lucy	',
-    name: '박진혜',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02CH3YMBE2-03395b575cae-512',
-    text: '저는 아무고토 몰라요..',
-    position: 'Beginner',
-  },
-  {
-    nickname: 'Panda	',
-    name: '강민호',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02U0C94L1X-ad7ea4fc4fb7-512',
-    text: '실력 좋은 개발자가 되고싶어여~~',
-    position: 'Backend',
-  },
-  {
-    nickname: 'Chois',
-    name: '최병주',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02T78C2U07-16c618db6e0b-512',
-    text: '우리 모두 성공 기원',
-    position: 'Frontend',
-  },
-  {
-    nickname: 'Chaz',
-    name: '문희리',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02T3GSSBRV-55acf03d8b77-512',
-    text: '재즈 아니고 차즈 아니고 채즈네',
-    position: 'Frontend',
-  },
-
-  {
-    nickname: 'Purang',
-    name: '손민성',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U030E9L5VB8-f08e7737022b-512',
-    text: '내일은 오늘보다 더 좋은 날 되길',
-    position: 'Android',
-  },
-
-  {
-    nickname: 'Gunzo',
-    name: '권소윤',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U030NT7MP2Q-ea60c5fb2098-512',
-    text: '웹디자인사우르스',
-    position: 'Designer',
-  },
-  {
-    nickname: 'Winnie',
-    name: '유미소',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U031VV8SS6R-gea0879bc69f-512',
-    text: '안녕하세용?',
-    position: 'Designer',
-  },
-  {
-    nickname: 'Soopeach	',
-    name: '전현수',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02U7QRL4SC-ac441340652f-512',
-    text: '같이...가요...',
-    position: 'Beginner',
-  },
-  {
-    nickname: 'Nox',
-    name: '전상민',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02TLNR15PE-g17d802fcdd7-512',
-    text: '게으르기 위해 노력하자',
-    position: 'Beginner',
-  },
-  {
-    nickname: 'Ace',
-    name: '김경하',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U040W6PS0TW-g2d312e41758-512',
-    text: '미래의 나야 부탁해',
-    position: 'Beginner',
-  },
-  {
-    nickname: 'Als',
-    name: '신상민',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U040LUD1CG6-80c2a95a222b-512',
-    text: '차곡차곡',
-    position: 'Beginner',
-  },
-  {
-    nickname: 'Ayaan',
-    name: '장규진',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U041JBLSY8Y-fd89848ab9b1-512',
-    text: '알고리즘 중독자',
-    position: 'Beginner',
-  },
-  {
-    nickname: 'Dawn',
-    name: '원동규',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U040TCMFASF-af2ea49a5ff7-512',
-    text: '오늘 저녁은 내가 만든 스파게티~ (코드 맞음)',
-    position: 'Beginner',
-  },
-  {
-    nickname: 'Glenn',
-    name: '정승우',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U040W4HRMEY-6f00bba63c01-512',
-    text: '개미는 뚠뚠 오늘도 뚠뚠 열심히 일을하네',
-    position: 'Beginner',
-  },
-  {
-    nickname: 'Iden',
-    name: '이지훈',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U04180XL4V7-ed899b4e7e95-512',
-    text: '비온뒤 미끄러움',
-    position: 'Beginner',
-  },
-  {
-    nickname: 'Mini',
-    name: '오소영',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U040TP38YUA-0317ab883a84-512',
-    text: '열심히 레벨업!',
-    position: 'Beginner',
-  },
+    {
+        nickname: "Peony",
+        name: "정명주",
+        role: "Lead",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U02TWSK3RQU-a3e79f8f5148-512",
+        text: "이 구역의 짱은 나야!",
+        position: "Backend"
+    },
+    {
+        nickname: "Cindy",
+        name: "박수현",
+        role: "Core Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U02TMHKQJQ6-a88706484b95-512",
+        text: "",
+        position: "Designer"
+    },
+    {
+        nickname: "Soopeach",
+        name: "전현수",
+        role: "Core Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U02U7QRL4SC-6e454afca9f4-512",
+        text: "",
+        position: "Android"
+    },
+    {
+        nickname: "Pascal",
+        name: "Kane Ki Hayashi",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U02C9FTGT7H-370ce27dc622-512",
+        text: "",
+        position: "Machine Learning"
+    },
+    {
+        nickname: "Lucy",
+        name: "박진혜",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U02CH3YMBE2-bf3052404c23-512",
+        text: "",
+        position: "Frontend"
+    },
+    {
+        nickname: "Jade",
+        name: "Jeongu Seo",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U02CPD32N3D-g0beff217a80-512",
+        text: "",
+        position: "Android"
+    },
+    {
+        nickname: "Lala",
+        name: "Lala",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U02D2RXTP3K-5b98e49b6beb-512",
+        text: "",
+        position: "Machine Learning"
+    },
+    {
+        nickname: "Nox",
+        name: "전상민",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U02TLNR15PE-b14a81ec08cb-512",
+        text: "",
+        position: "Backend"
+    },
+    {
+        nickname: "Panda",
+        name: "강민호",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U02U0C94L1X-184728f37ca1-512",
+        text: "",
+        position: "Backend"
+    },
+    {
+        nickname: "PuRang",
+        name: "손민성",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U030E9L5VB8-d202c97a72ac-512",
+        text: "",
+        position: "Android"
+    },
+    {
+        nickname: "Winnie",
+        name: "유미소",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U031VV8SS6R-gea0879bc69f-512",
+        text: "",
+        position: "Designer"
+    },
+    {
+        nickname: "Dawn",
+        name: "원동규",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U040TCMFASF-af2ea49a5ff7-512",
+        text: "",
+        position: "Backend"
+    },
+    {
+        nickname: "Mini",
+        name: "오소영",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U040TP38YUA-0317ab883a84-512",
+        text: "",
+        position: "Frontend"
+    },
+    {
+        nickname: "Ace",
+        name: "김경하",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U040W6PS0TW-g2d312e41758-512",
+        text: "",
+        position: "Android"
+    },
+    {
+        nickname: "Iden",
+        name: "이지훈",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U04180XL4V7-6da93e855eaa-512",
+        text: "",
+        position: "iOS"
+    },
+    {
+        nickname: "Ayaan",
+        name: "장규진",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U041JBLSY8Y-8d1677399cb0-512",
+        text: "",
+        position: "Machine Learning"
+    },
+    {
+        nickname: "Aqua",
+        name: "이우민",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U04JNJQQX2T-b29abe9da45f-512",
+        text: "",
+        position: "Frontend"
+    },
+    {
+        nickname: "Louis",
+        name: "Louis",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U04K26UEZMK-9d9eac3bfcdc-512",
+        text: "",
+        position: "Backend"
+    },
+    {
+        nickname: "James",
+        name: "정우성",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U04K6G3JDDJ-84b11f3a8439-512",
+        text: "",
+        position: "Frontend"
+    },
+    {
+        nickname: "Donny",
+        name: "조현돈",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U04K6VC2WR1-dc678dfd3d31-512",
+        text: "",
+        position: "Frontend"
+    },
+    {
+        nickname: "Jayden",
+        name: "옥지훈",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U04K8FKSNMS-d5754e45d6b5-512",
+        text: "",
+        position: "Frontend"
+    },
+    {
+        nickname: "Judy",
+        name: "김정하",
+        role: "Member",
+        image: "https://ca.slack-edge.com/T02BE2ERU5A-U052X10G0SZ-g2ffb49c81e1-512",
+        text: "",
+        position: "Designer"
+    },
+    // {
+    //     nickname: "Rulu",
+    //     name: "김수진",
+    //     role: "Member",
+    //     image: "https://ca.slack-edge.com/T02BE2ERU5A-U02CWDN14CU-a7abf33eadfd-512",
+    //     text: "",
+    //     position: ""
+    // },
+    // {
+    //     nickname: "Als",
+    //     name: "신상민",
+    //     role: "Member",
+    //     image: "https://ca.slack-edge.com/T02BE2ERU5A-U040LUD1CG6-1558de05b20e-512",
+    //     text: "",
+    //     position: ""
+    // },
+    // {
+    //     nickname: "Jason",
+    //     name: "정준혁",
+    //     role: "Member",
+    //     image: "https: //ca.slack-edge.com/T02BE2ERU5A-U02B4R8P8HK-d049523078ea-512",
+    //     text: "",
+    //     position: ""
+    // },
+    // {
+    //     nickname: "Harry",
+    //     name: "Hyun Ki Park",
+    //     role: "Member",
+    //     image: "https://ca.slack-edge.com/T02BE2ERU5A-U02BR888JMT-6895fc3ca3f5-512",
+    //     text: "",
+    //     position: ""
+    // },
+    // {
+    //     nickname: "Reese",
+    //     name: "안주원",
+    //     role: "Member",
+    //     image: "https://ca.slack-edge.com/T02BE2ERU5A-U02CH2LV8VC-b961b9ccc504-512",
+    //     text: "",
+    //     position: ""
+    // },
+    // {
+    //     nickname: "Glenn",
+    //     name: "Seung Woo Jung",
+    //     role: "Member",
+    //     image: "https://ca.slack-edge.com/T02BE2ERU5A-U040W4HRMEY-6f00bba63c01-512",
+    //     text: "",
+    //     position: ""
+    // },
+    // {
+    //     nickname: "Blaire",
+    //     name: "이소희",
+    //     role: "Member",
+    //     image: "https://ca.slack-edge.com/T02BE2ERU5A-U02TWS2TDS5-cbb48b945dba-512",
+    //     text: "",
+    //     position: ""
+    // },
+    // {
+    //     nickname: "Want",
+    //     name: "Want",
+    //     role: "Member",
+    //     image: "https://ca.slack-edge.com/T02BE2ERU5A-U02CH6KQT8Q-45a696d9961d-512",
+    //     text: "",
+    //     position: ""
+    // },
+    // {
+    //     nickname: "Jim",
+    //     name: "전병선",
+    //     role: "Member",
+    //     image: "https://ca.slack-edge.com/T02BE2ERU5A-U02TKATKRBN-5c528ec281ec-512",
+    //     text: "",
+    //     position: ""
+    // },
+    // {
+    //     nickname: "Gunzo",
+    //     name: "권소윤",
+    //     role: "Member",
+    //     image: "https://ca.slack-edge.com/T02BE2ERU5A-U030NT7MP2Q-966fdd0bcd88-512",
+    //     text: "",
+    //     position: ""
+    // },
   // {
   //   nickname: 'Gabi	',
   //   name: '신동석',
