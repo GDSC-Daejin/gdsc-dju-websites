@@ -55,11 +55,14 @@ const RankUserTitle = ({ filter, ListType }: DashboardProps) => {
     </DashboardTitle>
   );
 };
-
+const SpreadUserData = () => {};
 const Dashboard = ({ scoreboard, filter, ListType }: DashboardProps) => {
   const [selectedId, setSelectedId] = useState<string>('');
 
   const { userData } = useGetUserState(filter, selectedId);
+
+  const DataIndex = scoreboard ? dataSort(scoreboard, 'count') : []; // undefined일 경우 빈 배열로 처리
+  const hasDataMoreThan3 = DataIndex.length > 3;
 
   return (
     <>
@@ -72,7 +75,7 @@ const Dashboard = ({ scoreboard, filter, ListType }: DashboardProps) => {
                 ListType={ListType}
                 scoreboard={undefined}
               />
-              <CardContainer>
+              <CardContainer isSub={false}>
                 {dataSort(scoreboard, 'count')
                   .slice(0, 3)
                   .map((userData, index) => (
@@ -82,29 +85,41 @@ const Dashboard = ({ scoreboard, filter, ListType }: DashboardProps) => {
                         setSelectedId(userData.id);
                       }}
                     >
-                      <MemberCard userData={userData} grade={index} />
+                      <MemberCard
+                        isSub={false}
+                        userData={userData}
+                        grade={index}
+                      />
                     </Card>
                   ))}
               </CardContainer>
-              <NormalUserTitle
-                filter={filter}
-                ListType={ListType}
-                scoreboard={undefined}
-              />
-              <CardContainer>
-                {dataSort(scoreboard, 'count')
-                  .slice(3)
-                  .map((userData, index) => (
-                    <Card
-                      key={userData.id}
-                      onClick={() => {
-                        setSelectedId(userData.id);
-                      }}
-                    >
-                      <MemberCard userData={userData} grade={index + 3} />
-                    </Card>
-                  ))}
-              </CardContainer>
+              {hasDataMoreThan3 && (
+                <>
+                  <NormalUserTitle
+                    filter={filter}
+                    ListType={ListType}
+                    scoreboard={undefined}
+                  />
+                  <CardContainer isSub={true}>
+                    {dataSort(scoreboard, 'count')
+                      .slice(3)
+                      .map((userData, index) => (
+                        <Card
+                          key={userData.id}
+                          onClick={() => {
+                            setSelectedId(userData.id);
+                          }}
+                        >
+                          <MemberCard
+                            isSub={true}
+                            userData={userData}
+                            grade={index + 3}
+                          />
+                        </Card>
+                      ))}
+                  </CardContainer>
+                </>
+              )}
             </DashboardContainer>
           ) : (
             <>
@@ -113,7 +128,7 @@ const Dashboard = ({ scoreboard, filter, ListType }: DashboardProps) => {
                 ListType={ListType}
                 scoreboard={undefined}
               />
-              <CardContainer>
+              <CardContainer isSub={true}>
                 {dataSort(scoreboard, 'count').map((userData, index) => (
                   <Card
                     key={userData.id}
@@ -121,7 +136,11 @@ const Dashboard = ({ scoreboard, filter, ListType }: DashboardProps) => {
                       setSelectedId(userData.id);
                     }}
                   >
-                    <MemberCard userData={userData} grade={index} />
+                    <MemberCard
+                      isSub={true}
+                      userData={userData}
+                      grade={index}
+                    />
                   </Card>
                 ))}
               </CardContainer>

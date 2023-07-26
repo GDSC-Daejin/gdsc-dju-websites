@@ -1,3 +1,4 @@
+import { useTheme } from '@gdsc-dju/gds-theme';
 import React, { useState } from 'react';
 import { userDataType } from '../../../../types';
 import {
@@ -14,9 +15,17 @@ import {
 export type MemberCardProps = {
   userData: userDataType;
   grade: number;
+  isSub: boolean;
 };
 
-const MemberCard = ({ userData, grade }: MemberCardProps) => {
+const MemberCard = ({ userData, grade, isSub }: MemberCardProps) => {
+  const [imageError, setImageError] = useState(false);
+  const [theme] = useTheme();
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
+  console.log(theme);
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -36,19 +45,38 @@ const MemberCard = ({ userData, grade }: MemberCardProps) => {
   };
   return (
     <MemberCardWrapper>
-      <MemberCardInner>
-        <ProfileImage
-          src={userData.profileImage}
-          layoutId={`memberCard-avatar-${userData.displayName}`}
-          variants={listItem}
-        />
-        <CardMargin />
+      <MemberCardInner isSub={isSub} theme={theme}>
+        {imageError ? (
+          <ProfileImage
+            isSub={isSub}
+            src="https://cdn.pixabay.com/photo/2023/04/06/15/08/rabbit-7904131_1280.jpg"
+            alt="User profile image"
+            // Add any styling or class names as needed for the replacement image
+          />
+        ) : (
+          <ProfileImage
+            isSub={isSub}
+            src={userData.profileImage}
+            alt="User profile image"
+            layoutId={`memberCard-avatar-${userData.displayName}`}
+            variants={listItem}
+            onError={handleImageError}
+          />
+        )}
+        <CardMargin isSub={isSub} />
         <MemberTextSection>
-          <MemberName layoutId={`memberCard-name-${userData.displayName}`}>
+          <MemberName
+            isSub={isSub}
+            layoutId={`memberCard-name-${userData.displayName}`}
+          >
             {userData.displayName}
           </MemberName>
-          <TeddyQuantity>받은 곰인형</TeddyQuantity>
-          <MemberScore layoutId={`memberCard-score-${userData.displayName}`}>
+          {!isSub && <TeddyQuantity isSub={isSub}>받은 곰인형</TeddyQuantity>}
+
+          <MemberScore
+            isSub={isSub}
+            layoutId={`memberCard-score-${userData.displayName}`}
+          >
             {userData.count}
           </MemberScore>
         </MemberTextSection>

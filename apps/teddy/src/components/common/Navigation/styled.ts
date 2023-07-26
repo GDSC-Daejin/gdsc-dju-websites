@@ -28,22 +28,28 @@ export const UnderlineFilter = styled(motion.div)<{ color: string }>`
   background: ${({ color }) => color};
 `;
 
-export const StyledLabel = styled(motion.div)<{ selected: boolean }>`
+export const StyledLabel = styled(motion.div)<{
+  selected: boolean;
+  isDarkMode: boolean;
+}>`
   z-index: 1;
   background: transparent;
   transition: 500ms;
   border-radius: 18px;
   padding: 6px 24px 6px 24px;
-  ${({ selected }) =>
+  color: var(--grey700);
+  background-color: var(--grey100);
+  ${({ selected, isDarkMode }) =>
     selected
       ? css`
           color: var(--grey50);
           font-weight: bold;
           background-color: #ff740f;
         `
-      : css`
-          color: var(--grey700);
-          background-color: var(--grey100);
+      : isDarkMode &&
+        css`
+          color: var(--grey100);
+          background-color: var(--grey900);
         `}
 
   text-transform: capitalize;
