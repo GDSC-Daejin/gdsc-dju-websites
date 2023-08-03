@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { FilterType } from '../../../types/filterType';
-
+import { useTheme, changeTheme } from '@gdsc-dju/gds-theme';
 import { StyledLabel, StyledLi, StyledUl, UnderlineFilter } from './styled';
 
 type Props = {
@@ -11,6 +11,9 @@ type Props = {
 };
 const routeData: FilterType[] = ['monthly', 'weekly'];
 const FilterSelectBox = ({ filter, setFilter }: Props) => {
+  const [theme] = useTheme();
+  const [isDarkMode, setIsDarkMode] = useState(theme === 'dark');
+
   const navigate = useNavigate();
 
   return (
@@ -24,7 +27,9 @@ const FilterSelectBox = ({ filter, setFilter }: Props) => {
             navigate(item);
           }}
         >
-          <StyledLabel selected={item === filter}>{item}</StyledLabel>
+          <StyledLabel isDarkMode={isDarkMode} selected={item === filter}>
+            {item}
+          </StyledLabel>
           {item === filter ? (
             <UnderlineFilter color={'#f6eee9'} layoutId="filterSelect" />
           ) : null}
