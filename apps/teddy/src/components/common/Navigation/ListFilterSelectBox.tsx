@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { useTheme } from '@gdsc-dju/gds-theme';
+import { useCurrentTheme, useTheme } from '@gdsc-dju/gds-theme';
 import { ListType } from '../../../types/filterType';
 
 import { StyledLabel, StyledLi, StyledUl, UnderlineFilter } from './styled';
@@ -11,8 +11,9 @@ type Props = {
 };
 const filterData: ListType[] = ['to', 'from'];
 const ListFilterSelectBox = ({ listFilter, setListFilter }: Props) => {
-  const [theme] = useTheme();
+  const [theme] = useCurrentTheme();
   const [isDarkMode, setIsDarkMode] = useState(theme === 'dark');
+
   //const isDarkMode = theme === 'dark';
 
   return (

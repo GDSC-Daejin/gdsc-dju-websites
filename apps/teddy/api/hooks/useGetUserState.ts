@@ -2,6 +2,7 @@ import useSWR from 'swr';
 
 import { FilterType } from '../../types/filterType';
 import API from '../index';
+
 async function getUserState(filter: FilterType, userId: string) {
   const res = await API.getUserState(filter, userId);
   return res.data.data;

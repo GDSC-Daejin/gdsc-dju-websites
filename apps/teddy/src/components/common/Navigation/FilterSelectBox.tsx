@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { FilterType } from '../../../types/filterType';
-import { useTheme, changeTheme } from '@gdsc-dju/gds-theme';
+import { useTheme, changeTheme, useCurrentTheme } from '@gdsc-dju/gds-theme';
 import { StyledLabel, StyledLi, StyledUl, UnderlineFilter } from './styled';
 
 type Props = {
@@ -11,7 +11,8 @@ type Props = {
 };
 const routeData: FilterType[] = ['monthly', 'weekly'];
 const FilterSelectBox = ({ filter, setFilter }: Props) => {
-  const [theme] = useTheme();
+  const [theme] = useCurrentTheme();
+
   const [isDarkMode, setIsDarkMode] = useState(theme === 'dark');
 
   const navigate = useNavigate();

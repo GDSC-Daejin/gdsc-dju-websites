@@ -1,4 +1,4 @@
-import { useTheme } from '@gdsc-dju/gds-theme';
+import { useCurrentTheme, useTheme } from '@gdsc-dju/gds-theme';
 import React, { useState } from 'react';
 import { userDataType } from '../../../../types';
 import {
@@ -20,12 +20,12 @@ export type MemberCardProps = {
 
 const MemberCard = ({ userData, grade, isSub }: MemberCardProps) => {
   const [imageError, setImageError] = useState(false);
-  const [theme] = useTheme();
+  const [theme] = useCurrentTheme();
 
   const handleImageError = () => {
     setImageError(true);
   };
-  console.log(theme);
+
   const container = {
     hidden: { opacity: 0 },
     show: {

@@ -50,6 +50,7 @@ export const StyledLabel = styled(motion.div)<{
         css`
           color: var(--grey100);
           background-color: var(--grey900);
+          font-weight: bold;
         `}
 
   text-transform: capitalize;
