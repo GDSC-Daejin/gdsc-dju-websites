@@ -1,9 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components';
-const StyledSvg = styled.svg`
-  padding-top: 5px;
-`;
+const StyledSvg = styled.svg``;
 const TeddyIcon = () => {
   return (
     <StyledSvg

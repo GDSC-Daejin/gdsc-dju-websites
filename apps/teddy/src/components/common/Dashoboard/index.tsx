@@ -148,7 +148,7 @@ const Dashboard = ({ scoreboard, filter, ListType }: DashboardProps) => {
           )}
         </>
       ) : (
-        <div>데이터가 없다~</div>
+        <div>현재 데이터가 없습니다.</div>
       )}
     </>
   );
