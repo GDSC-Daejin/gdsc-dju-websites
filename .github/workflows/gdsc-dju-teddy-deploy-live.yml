@@ -41,6 +41,8 @@ jobs:
           cache: yarn
           cache-dependency-path: ./yarn.lock
           registry-url: "https://registry.yarnpkg.com"
+      - name: install package
+        run: yarn install
       - name: Setting .env
         run: |
           echo "VITE_FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }}" >> .env
@@ -55,8 +57,8 @@ jobs:
         working-directory: ${{ env.working-directory }}
       - name: Project Build
         run: yarn turbo build --filter @gdsc-dju/teddy
-      - name: Project Build
-        run: yarn build
+      # - name: Project Build
+      #   run: yarn build
       - uses: HyeokE/action-hosting-deploy@main
         id: run_firebase_deploy
         with:
