@@ -6068,10 +6068,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["npm:0.0.63", {\
-          "packageLocation": "./.yarn/cache/@gdsc-dju-styled-components-npm-0.0.63-75734b1fca-abf08a5700.zip/node_modules/@gdsc-dju/styled-components/",\
+        ["npm:0.0.53", {\
+          "packageLocation": "./.yarn/cache/@gdsc-dju-styled-components-npm-0.0.53-b4c036a560-c65e9791a0.zip/node_modules/@gdsc-dju/styled-components/",\
           "packageDependencies": [\
-            ["@gdsc-dju/styled-components", "npm:0.0.63"]\
+            ["@gdsc-dju/styled-components", "npm:0.0.53"]\
           ],\
           "linkType": "SOFT"\
         }],\
@@ -6125,26 +6125,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["virtual:88d33ce7ce5f7e4278fdaf2a9e029e1d259549296fcbee81c90b838e8088314e513858585f562d394a53ba8271d7600a952f85d17ca9e42ba178f20cda570c11#npm:0.0.63", {\
-          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-virtual-99ff42e43c/0/cache/@gdsc-dju-styled-components-npm-0.0.63-75734b1fca-abf08a5700.zip/node_modules/@gdsc-dju/styled-components/",\
+        ["virtual:88d33ce7ce5f7e4278fdaf2a9e029e1d259549296fcbee81c90b838e8088314e513858585f562d394a53ba8271d7600a952f85d17ca9e42ba178f20cda570c11#npm:0.0.53", {\
+          "packageLocation": "./.yarn/__virtual__/@gdsc-dju-styled-components-virtual-081afdaf12/0/cache/@gdsc-dju-styled-components-npm-0.0.53-b4c036a560-c65e9791a0.zip/node_modules/@gdsc-dju/styled-components/",\
           "packageDependencies": [\
-            ["@gdsc-dju/styled-components", "virtual:88d33ce7ce5f7e4278fdaf2a9e029e1d259549296fcbee81c90b838e8088314e513858585f562d394a53ba8271d7600a952f85d17ca9e42ba178f20cda570c11#npm:0.0.63"],\
+            ["@gdsc-dju/styled-components", "virtual:88d33ce7ce5f7e4278fdaf2a9e029e1d259549296fcbee81c90b838e8088314e513858585f562d394a53ba8271d7600a952f85d17ca9e42ba178f20cda570c11#npm:0.0.53"],\
             ["@gdsc-dju/styled-components-theme", "virtual:88d33ce7ce5f7e4278fdaf2a9e029e1d259549296fcbee81c90b838e8088314e513858585f562d394a53ba8271d7600a952f85d17ca9e42ba178f20cda570c11#npm:0.0.53"],\
             ["@types/gdsc-dju__styled-components-theme", null],\
             ["@types/react", "npm:18.0.34"],\
             ["@types/react-is", null],\
+            ["@types/react-router-dom", null],\
             ["@types/styled-components", "npm:5.1.26"],\
             ["react", "npm:18.2.0"],\
             ["react-is", "npm:18.2.0"],\
+            ["react-router-dom", "virtual:0dcad631678d50a51f0abb9e7b121e4e926541e2c29648209fc8575ced9d9026baebb03ab54ba0a5bc5749b50cb7b20914078440882ad2cc1a635e3a8521efd9#npm:6.10.0"],\
             ["styled-components", "virtual:0dcad631678d50a51f0abb9e7b121e4e926541e2c29648209fc8575ced9d9026baebb03ab54ba0a5bc5749b50cb7b20914078440882ad2cc1a635e3a8521efd9#npm:5.3.9"]\
           ],\
           "packagePeers": [\
             "@gdsc-dju/styled-components-theme",\
             "@types/gdsc-dju__styled-components-theme",\
             "@types/react-is",\
+            "@types/react-router-dom",\
             "@types/react",\
             "@types/styled-components",\
             "react-is",\
+            "react-router-dom",\
             "react",\
             "styled-components"\
           ],\
@@ -6280,7 +6284,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@gdsc-dju/web", "workspace:apps/web"],\
             ["@firebase/app", "npm:0.7.33"],\
             ["@firebase/app-compat", "npm:0.1.39"],\
-            ["@gdsc-dju/styled-components", "virtual:88d33ce7ce5f7e4278fdaf2a9e029e1d259549296fcbee81c90b838e8088314e513858585f562d394a53ba8271d7600a952f85d17ca9e42ba178f20cda570c11#npm:0.0.63"],\
+            ["@gdsc-dju/styled-components", "virtual:88d33ce7ce5f7e4278fdaf2a9e029e1d259549296fcbee81c90b838e8088314e513858585f562d394a53ba8271d7600a952f85d17ca9e42ba178f20cda570c11#npm:0.0.53"],\
             ["@gdsc-dju/styled-components-theme", "virtual:88d33ce7ce5f7e4278fdaf2a9e029e1d259549296fcbee81c90b838e8088314e513858585f562d394a53ba8271d7600a952f85d17ca9e42ba178f20cda570c11#npm:0.0.53"],\
             ["@types/node", "npm:18.15.11"],\
             ["@types/react", "npm:18.0.34"],\

@@ -2905,15 +2905,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gdsc-dju/styled-components@npm:^0.0.63":
-  version: 0.0.63
-  resolution: "@gdsc-dju/styled-components@npm:0.0.63"
+"@gdsc-dju/styled-components@npm:^0.0.53":
+  version: 0.0.53
+  resolution: "@gdsc-dju/styled-components@npm:0.0.53"
   peerDependencies:
     "@gdsc-dju/styled-components-theme": "*"
     react: ^18.2.0
     react-is: ^18.2.0
+    react-router-dom: "*"
     styled-components: ^5.3.5
-  checksum: abf08a57003326c413352c8ab0f35de9e49f789f9c482503514785646eaf94f49b8a1511698eb2ad27261a149d2515454a650af5a456d9794816fdf8e6670978
+  checksum: c65e9791a00c1d7feb2ed2429ccb6712a035120c018a9675226adcadac639751e8884bf52d9634c9383b9668bc092c597ea90ba9279c8f13ed5f1094ae8d6382
   languageName: node
   linkType: hard
 
@@ -3009,7 +3010,7 @@ __metadata:
   dependencies:
     "@firebase/app": ^0.7.33
     "@firebase/app-compat": ^0.1.34
-    "@gdsc-dju/styled-components": ^0.0.63
+    "@gdsc-dju/styled-components": ^0.0.53
     "@gdsc-dju/styled-components-theme": ^0.0.53
     "@types/node": ^18.0.4
     "@types/react": ^18.0.15
