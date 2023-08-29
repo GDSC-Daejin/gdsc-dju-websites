@@ -20,7 +20,7 @@ export const Footer: React.FC<{ disable?: boolean }> = ({ disable = true }) => {
         <FooterText href={'https://blog.gdsc-dju.com/'}>
           GDSC DJU Tech Blog
         </FooterText>
-        <FooterText href={'https://web.gdsc-dju.com/'}>
+        <FooterText href={'https://gdscdju.dev/'}>
           GDSC DJU Site
         </FooterText>
       </FooterLogo>
