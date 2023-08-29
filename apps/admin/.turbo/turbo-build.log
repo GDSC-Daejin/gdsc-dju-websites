@@ -1,32 +1,34 @@
-src/App.tsx(1,36): error TS2307: Cannot find module 'react' or its corresponding type declarations.
-src/App.tsx(3,53): error TS2307: Cannot find module '@gdsc-dju/gds-theme' or its corresponding type declarations.
-src/App.tsx(5,23): error TS2307: Cannot find module './assets/react.svg' or its corresponding type declarations.
-src/App.tsx(7,22): error TS2307: Cannot find module '/vite.svg' or its corresponding type declarations.
-src/App.tsx(18,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(18,5): error TS2307: Cannot find module 'react/jsx-runtime' or its corresponding type declarations.
-src/App.tsx(19,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(20,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(21,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(22,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(23,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(24,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(25,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(26,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(28,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(28,23): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(29,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(30,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(30,59): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(31,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(32,16): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(32,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(33,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(34,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(35,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(37,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/App.tsx(38,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/main.tsx(1,19): error TS2307: Cannot find module 'react' or its corresponding type declarations.
-src/main.tsx(2,22): error TS2307: Cannot find module 'react-dom/client' or its corresponding type declarations.
-src/main.tsx(9,3): error TS2307: Cannot find module 'react/jsx-runtime' or its corresponding type declarations.
-src/main.tsx(10,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
-src/main.tsx(19,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+vite v4.2.1 building for production...
+transforming...
+
+/fonts/Pretandard-Regular.woff2 referenced in /Users/junhyeok/react/gdsc-dju-websites/apps/admin/src/index.css didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/fonts/Pretandard-Medium.woff2 referenced in /Users/junhyeok/react/gdsc-dju-websites/apps/admin/src/index.css didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/fonts/Pretandard-SemiBold.woff2 referenced in /Users/junhyeok/react/gdsc-dju-websites/apps/admin/src/index.css didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/fonts/Pretandard-ExtraBold.woff2 referenced in /Users/junhyeok/react/gdsc-dju-websites/apps/admin/src/index.css didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/fonts/Pretandard-Regular.woff referenced in /Users/junhyeok/react/gdsc-dju-websites/apps/admin/src/index.css didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/fonts/Pretandard-Medium.woff referenced in /Users/junhyeok/react/gdsc-dju-websites/apps/admin/src/index.css didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/fonts/Pretandard-SemiBold.woff referenced in /Users/junhyeok/react/gdsc-dju-websites/apps/admin/src/index.css didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/fonts/Pretandard-ExtraBold.woff referenced in /Users/junhyeok/react/gdsc-dju-websites/apps/admin/src/index.css didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/fonts/Pretandard-Regular.otf referenced in /Users/junhyeok/react/gdsc-dju-websites/apps/admin/src/index.css didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/fonts/Pretandard-Medium.otf referenced in /Users/junhyeok/react/gdsc-dju-websites/apps/admin/src/index.css didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/fonts/Pretandard-SemiBold.otf referenced in /Users/junhyeok/react/gdsc-dju-websites/apps/admin/src/index.css didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/fonts/Pretandard-ExtraBold.otf referenced in /Users/junhyeok/react/gdsc-dju-websites/apps/admin/src/index.css didn't resolve at build time, it will remain unchanged to be resolved at runtime
+✓ 43 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.47 kB
+dist/assets/react-35ef61ed.svg    4.13 kB
+dist/assets/index-91ea0686.css    6.91 kB │ gzip:  2.07 kB
+dist/assets/index-0cb798c0.js   144.90 kB │ gzip: 46.59 kB
+✓ built in 1.37s
