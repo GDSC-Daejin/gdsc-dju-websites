@@ -33,8 +33,8 @@ const HomePageSection = () => {
         <HomeMainWrapper>
           <RecruitingWrapper variants={bannerItemAnimate}>
             <GoogleColorTextWrapper>
-              <GoogleColorText color={'blue900'}>2</GoogleColorText>
-              <GoogleColorText color={'red900'}>n</GoogleColorText>
+              <GoogleColorText color={'blue900'}>3</GoogleColorText>
+              <GoogleColorText color={'red900'}>r</GoogleColorText>
               <GoogleColorText color={'yellow900'}>d</GoogleColorText>
               <GoogleColorText color={'green900'}>.</GoogleColorText>
             </GoogleColorTextWrapper>
