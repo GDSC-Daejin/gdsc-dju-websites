@@ -9,9 +9,9 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react(), mkcert()],
   server: {
-    host: 'devlog.gdsc-dju.com',
+    // host: 'devlog.gdsc-dju.com',
     port: 3000,
-    https: true,
+    // https: true,
   },
   resolve: {
     alias: {

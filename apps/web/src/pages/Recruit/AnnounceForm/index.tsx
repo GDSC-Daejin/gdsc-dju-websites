@@ -151,18 +151,16 @@ const AnnounceForm = () => {
       <ApplyModal {...(params as IApplicantParams)} onClick={onRegister} />
       <LayoutContainer>
         <ContainerInner>
-          {position && formElements && selectForm && formValidation && (
-            <AnnouncementFormLayout
-              isBlocked={isBlocked}
-              formElements={formElements}
-              formValidation={formValidation}
-              handleSubmit={handleSubmit(onSubmit)}
-              register={register}
-              errors={errors}
-              position={position}
-              setFile={setFile}
-            />
-          )}
+          <AnnouncementFormLayout
+            isBlocked={isBlocked}
+            formElements={formElements}
+            formValidation={formValidation}
+            handleSubmit={handleSubmit(onSubmit)}
+            register={register}
+            errors={errors}
+            position={position}
+            setFile={setFile}
+          />
         </ContainerInner>
       </LayoutContainer>
     </>

@@ -16,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             flexDirection: 'column',
             flex: '1 0 auto',
             minHeight: '100vh',
+            overflowX: 'hidden',
           }}
         >
           <App />
