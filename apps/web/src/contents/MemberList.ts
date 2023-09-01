@@ -81,14 +81,7 @@ export const memberList = [
     text: '',
     position: 'Android',
   },
-  {
-    nickname: 'Winnie',
-    name: '유미소',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U031VV8SS6R-gea0879bc69f-512',
-    text: '',
-    position: 'Designer',
-  },
+  
   {
     nickname: 'Dawn',
     name: '원동규',
@@ -156,6 +149,14 @@ export const memberList = [
     text: '',
     position: 'Designer',
   },
+  // {
+  //   nickname: 'Winnie',
+  //   name: '유미소',
+  //   role: 'Member',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U031VV8SS6R-gea0879bc69f-512',
+  //   text: '',
+  //   position: 'Designer',
+  // },
   //   {
   //     nickname: 'Mini',
   //     name: '오소영',
