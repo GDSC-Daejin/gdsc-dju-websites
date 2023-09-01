@@ -2,7 +2,7 @@ import { AuthInstance } from '@src/apis/Instance';
 
 export const getRedirectURL = () => {
   const OAUTH2_REDIRECT_URI = `${location.origin}/redirect`;
-  return `https://accounts.gdsc-dju.com/oauth2/authorization/google?redirect_uri=${OAUTH2_REDIRECT_URI}`;
+  return `https://accounts.gdscdju.dev/oauth2/authorization/google?redirect_uri=${OAUTH2_REDIRECT_URI}`;
 };
 
 export const getRefresh = () => {

@@ -30,8 +30,8 @@ const generateInstance = (baseUrl: string) => {
   return instance;
 };
 
-const AuthInstance = generateAuthInstance('https://accounts.gdsc-dju.com/');
+const AuthInstance = generateAuthInstance('https://accounts.gdscdju.dev/');
 
-const Instance = generateInstance(`https://api.gdsc-dju.com`);
+const Instance = generateInstance(`https://api.gdscdju.dev`);
 
 export { Instance, AuthInstance };
