@@ -3,7 +3,7 @@ name: Deploy to GDSC DJU Admin Preview Channel
 on:
   push:
     paths:
-      - "apps/admin/**"
+      - "apps/admin(deprecated)/**"
       - ".github/workflows/gdsc-dju-admin-deploy-preview.yml"
     branches-ignore:
       - master
@@ -12,13 +12,13 @@ on:
       - master
       - develop
     paths:
-      - "apps/admin/**"
+      - "apps/admin(deprecated)/**"
       - ".github/workflows/gdsc-dju-admin-deploy-preview.yml"
 jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest
     env:
-      working-directory: ./apps/admin
+      working-directory: ./apps/admin(deprecated)
     environment:
       name: GDSC DJU Admin Preview
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
@@ -60,7 +60,7 @@ jobs:
       - name: Project yarn install
         run: yarn install
       - name: Project Build
-        run: yarn turbo build --filter @gdsc-dju/admin
+        run: yarn turbo build --filter @gdsc-dju/admin-deprecated
       - name: Get short SHA
         id: slug
         run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
