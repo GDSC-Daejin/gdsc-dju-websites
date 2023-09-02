@@ -4,8 +4,9 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { BrowserRouter } from 'react-router-dom';
 
+// import { AtomDevtools } from '@utils/JotaiDevTool';
+
 import App from './App';
-import { AtomDevtools } from './utils/JotaiDevTool';
 
 const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -13,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
-        <AtomDevtools>
+        {/*<AtomDevtools>*/}
           <div
             style={{
               display: 'flex',
@@ -24,7 +25,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           >
             <App />
           </div>
-        </AtomDevtools>
+        {/*</AtomDevtools>*/}
       </QueryClientProvider>
     </BrowserRouter>
   </React.StrictMode>,
