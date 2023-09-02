@@ -26,7 +26,7 @@ require('@babel/register')({
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'GDSC DJU Design',
-  url: 'https://design.gdsc-dju.com',
+  url: 'https://design.gdscdju.dev',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
