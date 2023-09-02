@@ -6,7 +6,7 @@ import { getRecruitmentInfoDataType, recruitmentInfoDataType } from './types';
 export class GDSCApi {
   protected API: string;
   constructor() {
-    this.API = 'https://api.gdsc-dju.com';
+    this.API = 'https://api.gdscdju.dev';
   }
 
   getRecruitStatus = () => {

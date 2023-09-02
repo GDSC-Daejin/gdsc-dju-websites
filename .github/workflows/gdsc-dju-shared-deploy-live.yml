@@ -17,7 +17,7 @@ jobs:
       working-directory: ./apps/shared
     environment:
       name: GDSC DJU Shared Production
-      url: https://shared.gdsc-dju.com
+      url: https://shared.gdscdju.dev
     steps:
       - uses: actions/checkout@v3
         with:
@@ -76,5 +76,5 @@ jobs:
             gdsc-dju-shared has been deployed to Live channel
             `Contributor` ${{github.actor}}
             `Event Status` ${{github.event_name}}
-            `URL` https://shared.gdsc-dju.com
+            `URL` https://shared.gdscdju.dev
             `Build Time` ${{steps.run_firebase_deploy.outputs.expire_time}}

@@ -24,7 +24,7 @@ export const frontendRecruitInfo: AnnouncementData = {
     'Framework나 Library 사용이 능숙하신 분 \n' +
     'React나 Vue 등 SPA에 대한 이해도가 있으신 분 ',
   activity:
-    '2주마다 있는 정기세션에 참여할 수 있어요.\n' +
+    '4주마다 있는 정기세션에 참여할 수 있어요.\n' +
     'GDSC KOR나 GDSC DJU가 기획 및 운영하는 이벤트에 운영진으로 참여할 수 있어요.\n' +
     '팀리더로서 프로젝트를 개설하거나 프로젝트에 프론트엔드 포지션으로 합류할 수 있어요.\n' +
     'GDSC DJU에서 운영하는 서비스의 성능개선을 진행하거나 사이트의 신규기능(백오피스) 등을 개발하는 프로젝트에 합류할 수 있어요.',

@@ -17,7 +17,7 @@ function onAccessTokenFetched(token: string) {
 }
 
 const logout = () => {
-  Cookies.remove('token', { path: '/', domain: '.gdsc-dju.com' });
+  Cookies.remove('token', { path: '/', domain: '.gdscdju.dev' });
 };
 
 export async function resetTokenAndReattemptRequest(
