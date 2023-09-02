@@ -18,7 +18,7 @@ jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest
     env:
-      working-directory: ./apps/admin
+      working-directory: ./apps/admin(deprecated)
     environment:
       name: GDSC DJU Admin Preview
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
