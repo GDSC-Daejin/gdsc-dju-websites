@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - "apps/admin/**"
+      - "apps/admin(deprecated)/**"
       - ".github/workflows/gdsc-dju-admin-deploy-live.yml"
   pull_request:
     branches:
@@ -13,17 +13,17 @@ on:
     types:
       - closed
     paths:
-      - "apps/admin/**"
+      - "apps/admin(deprecated)/**"
       - ".github/workflows/gdsc-dju-admin-deploy-live.yml"
 jobs:
   Deploy_Live_channel:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
-      working-directory: ./apps/admin
+      working-directory: ./apps/admin(deprecated)
     environment:
       name: GDSC DJU admin Production
-      url: https://admin.gdsc-dju.com
+      url: https://admin.gdscdju.dev
     steps:
       - uses: actions/checkout@v3
         with:
@@ -63,7 +63,7 @@ jobs:
       - name: install package
         run: yarn install
       - name: Project Build
-        run: yarn turbo build --filter @gdsc-dju/admin
+        run: yarn turbo build --filter @gdsc-dju/admin-deprecated
       - uses: HyeokE/action-hosting-deploy@main
         id: run_firebase_deploy
         with:
