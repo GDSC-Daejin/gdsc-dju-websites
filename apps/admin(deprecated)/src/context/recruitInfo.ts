@@ -2,7 +2,7 @@ export const isDevelop = import.meta.env.MODE === 'development';
 
 //2기, 2.5기 모집
 
-const GENERATION = isDevelop ? 'dev' : 2.5;
+const GENERATION = isDevelop ? 'dev' : 3;
 
 interface IRecruitInfo {
   GENERATION: string;

@@ -3,8 +3,8 @@ import { AnnouncementData } from '@type/pageData';
 export const backendRecruitInfo: AnnouncementData = {
   id: 'backend',
   name: 'Backend Developer',
-  skill: 'Spring, Spring Boot',
-  stack: 'JAVA',
+  skill: 'Spring, Spring Boot ...',
+  stack: 'JAVA, KOTLIN, GOLANG, PYTHON',
   status: 'ALWAYS_OPEN',
   people:
     '코딩에 대한 남다른 애정을 가지신 분\n' +
@@ -29,7 +29,7 @@ export const backendRecruitInfo: AnnouncementData = {
     '프레임워크를 바탕으로 하나의 프로젝트를 혼자 개발하실 수 있는 분이 포지션을 얻을 수 있어요.\n' +
     '동료 개발자와 협업하거나 열정적인 분들과 함께 성장해나가고 싶은 분들을 환영해요.',
   activity:
-    '2주마다 있는 정기세션에 참여할 수 있어요.\n' +
+    '4주마다 있는 정기세션에 참여할 수 있어요.\n' +
     'GDSC KOR나 GDSC DJU가 기획 및 운영하는 이벤트에 운영진으로 참여할 수 있어요.\n' +
     '팀리더로서 프로젝트를 개설하거나 프로젝트에 백엔드 포지션으로 합류할 수 있어요.',
 };
