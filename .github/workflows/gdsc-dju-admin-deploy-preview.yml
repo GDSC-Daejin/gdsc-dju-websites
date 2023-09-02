@@ -60,7 +60,7 @@ jobs:
       - name: Project yarn install
         run: yarn install
       - name: Project Build
-        run: yarn turbo build --filter @gdsc-dju/admin
+        run: yarn turbo build --filter @gdsc-dju/admin-deprecated
       - name: Get short SHA
         id: slug
         run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
