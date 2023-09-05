@@ -23,17 +23,19 @@ jobs:
       name: GDSC DJU Shared Preview
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
     steps:
-      - name: 캐시 의존성을 설정하고 있어요.
-        uses: actions/cache@v3
+      - uses: actions/checkout@v3
 
-      - name: Node 버전/캐싱여부를 설정하고 있어요.
+      - name: pnpm을 설정하고 있어요.
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 8.6.12
+          run_install: true
+
+      - name: 노드를 설정하고 있어요.
         uses: actions/setup-node@v3
         with:
-          node-version: 16
-          cache: pnpm
-
-      - name: install package
-        run: pnpm install
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
       - name: Setting .env
         run: |
           echo "VITE_FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }}" >> .env
