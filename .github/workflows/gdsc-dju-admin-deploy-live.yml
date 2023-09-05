@@ -15,9 +15,10 @@ on:
     paths:
       - "apps/admin(deprecated)/**"
       - ".github/workflows/gdsc-dju-admin-deploy-live.yml"
+    workflow_dispatch:
 jobs:
   Deploy_Live_channel:
-    if: github.event.pull_request.merged == true
+
     runs-on: ubuntu-latest
     env:
       working-directory: ./apps/admin(deprecated)
@@ -26,8 +27,6 @@ jobs:
       url: https://admin.gdscdju.dev
     steps:
       - uses: actions/checkout@v3
-
-
 
       - name: 캐시 의존성을 설정하고 있어요.
         uses: actions/cache@v3

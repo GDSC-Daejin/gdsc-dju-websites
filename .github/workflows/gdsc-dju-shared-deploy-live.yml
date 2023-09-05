@@ -9,6 +9,7 @@ on:
     paths:
       - "apps/shared/**"
       - ".github/workflows/gdsc-dju-shared-deploy-live.yml"
+  workflow_dispatch:
 jobs:
   Deploy_Live_channel:
     if: github.event.pull_request.merged == true
