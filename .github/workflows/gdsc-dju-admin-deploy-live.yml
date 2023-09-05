@@ -26,7 +26,7 @@ jobs:
       url: https://admin.gdscdju.dev
     steps:
       - uses: actions/checkout@v3
-        with:
+
 
 
       - name: 캐시 의존성을 설정하고 있어요.
