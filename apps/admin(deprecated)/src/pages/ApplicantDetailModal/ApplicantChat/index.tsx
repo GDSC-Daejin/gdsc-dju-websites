@@ -77,13 +77,14 @@ const ApplicantChatContainer: React.FC<IApplicantChatSectionProps> = ({
     chatSectionRef.current?.scrollIntoView();
   }, [newMessages]);
 
+
   return (
     <ApplicantChatContainerWrapper>
       <>
-        {chatSectionRef && newMessages && adminUser.uid && (
+        {newMessages && (
           <ApplicantChatCardSection
             ref={chatSectionRef}
-            adminUser={adminUser.uid}
+            adminUser={adminUser.uid || ''}
             newMessages={newMessages as IApplicantChatType[]}
           />
         )}

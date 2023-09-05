@@ -21,6 +21,7 @@ node_modules/
 .ultra.cache.json
 .log
 .env
+node_modules
 storybook-static/
 vite-project
 
