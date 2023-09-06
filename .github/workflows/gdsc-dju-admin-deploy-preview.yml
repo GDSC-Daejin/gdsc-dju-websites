@@ -91,11 +91,8 @@
 #             `Build Time` ${{steps.run_firebase_preview.outputs.expire_time}}
 
 name: Deploy to GDSC DJU Admin Live Channel
-
 on:
   push:
-    branches:
-      - master
     paths:
       - 'apps/admin(deprecated)/**'
       - '.github/workflows/gdsc-dju-admin-deploy-preview.yml'
