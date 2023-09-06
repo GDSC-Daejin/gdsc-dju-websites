@@ -78,6 +78,7 @@ const ApplicantChatContainer: React.FC<IApplicantChatSectionProps> = ({
     chatSectionRef.current?.scrollIntoView();
   }, [newMessages]);
 
+
   return (
     <ApplicantChatContainerWrapper>
       <>

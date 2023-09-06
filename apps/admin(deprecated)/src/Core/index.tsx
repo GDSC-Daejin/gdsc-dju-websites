@@ -15,10 +15,10 @@ const Core = () => {
   return (
     <ErrorBoundary FallbackComponent={Error}>
       <Suspense fallback={<GoogleSpinnerStatic />}>
-        <CheckAdminUser />
+        {/*<CheckAdminUser />*/}
         <Alert />
         <Routes>
-          <Route path={'/'} element={<SignIn />} />
+          {/*<Route path={'/'} element={<SignIn />} />*/}
           <Route path={'/redirect'} element={<Redirect />} />
           <Route path={'/certified/*'} element={<Pages />} />
           <Route path={'*'} element={<Error />} />
