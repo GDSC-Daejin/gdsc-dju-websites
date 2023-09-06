@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "gdsc-dju"
+  },
+  "targets": {
+    "gdsc-dju": {
+      "hosting": {
+        "gdsc-dju-design": [
+          "gdsc-dju-design"
+        ]
+      }
+    }
+  }
+}

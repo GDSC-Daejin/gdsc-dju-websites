@@ -1,0 +1,174 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "jsx": true,
+    "useJSXTextNode": true,
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier", "import", "unused-imports"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/typescript",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+
+
+  "rules": {
+    "import/order": ["error", {
+      "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+      "pathGroups": [
+        {
+          "pattern": "{react*,react*/**}",
+          "group": "builtin",
+          "position": "before"
+        },
+        {
+          "pattern": "@gdsc-dju/**",
+          "group": "builtin",
+          "position": "after"
+        },
+        {
+          "pattern": "@*/**",
+          "group": "internal"
+        },
+        {
+          "pattern": "@styles/**",
+          "group": "internal",
+          "position": "after"
+        },
+        {
+          "pattern": "./**/*.style",
+          "group": "index"
+        },
+        {
+          "pattern": "../**/*.style",
+          "group": "index"
+        },
+        {
+          "pattern": "*.style",
+          "group": "index"
+        }
+      ],
+      "pathGroupsExcludedImportTypes": ["react", "internal"],
+      "newlines-between": "always",
+      "alphabetize": { "order": "asc", "caseInsensitive": true }
+    }],
+    "prettier/prettier": "error",
+    "no-implicit-coercion": "error",
+
+    "no-undef": "off",
+
+    "indent": "off",
+    "@typescript-eslint/indent": "off",
+    "semi": "off",
+
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+
+    "no-extra-boolean-cast": "off",
+
+    "getter-return": "warn",
+
+    "@typescript-eslint/explicit-function-return-type": "off",
+
+    "@typescript-eslint/no-use-before-define": "off",
+
+    "@typescript-eslint/no-empty-interface": "off",
+
+    "@typescript-eslint/no-parameter-properties": "off",
+    "no-async-promise-executor": "warn",
+    "@typescript-eslint/prefer-as-const": "warn",
+    "@typescript-eslint/no-non-null-asserted-optional-chain": "warn",
+    "@typescript-eslint/ban-types": "warn",
+    "@typescript-eslint/no-inferrable-types": "warn",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "format": ["camelCase", "UPPER_CASE", "PascalCase"],
+        "selector": "variable",
+        "leadingUnderscore": "allow"
+      },
+      { "format": ["camelCase", "PascalCase"], "selector": "function" },
+      { "format": ["PascalCase"], "selector": "interface" },
+      { "format": ["PascalCase"], "selector": "typeAlias" }
+    ],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/array-type": ["error", { "default": "array-simple" }],
+    //    "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true }],
+    "@typescript-eslint/member-ordering": [
+      "error",
+      {
+        "default": [
+          "public-static-field",
+          "private-static-field",
+          "public-instance-field",
+          "private-instance-field",
+          "public-constructor",
+          "private-constructor",
+          "public-instance-method",
+          "private-instance-method"
+        ]
+      }
+    ],
+    "no-warning-comments": [
+      "warn",
+      {
+        "terms": ["TODO", "FIXME", "XXX", "BUG"],
+        "location": "anywhere"
+      }
+    ],
+    "prefer-const": "error",
+    "no-var": "error",
+    "curly": ["error", "all"],
+    "eqeqeq": ["error", "always", { "null": "ignore" }],
+    "import/no-duplicates": "error",
+
+    "react/prop-types": "off",
+    //    "react-hooks/rules-of-hooks": "error",
+    //    "react-hooks/exhaustive-deps": "error",
+    "react/jsx-no-target-blank": "error",
+    "@typescript-eslint/no-var-requires": "warn",
+    "import/no-unresolved": "off",
+    "react/react-in-jsx-scope": 0,
+    "react/prefer-stateless-function": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "no-nested-ternary": 0,
+    "react/display-name": "off",
+    "no-console": "error",
+    "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+    "unused-imports/no-unused-vars": [
+      "off",
+      { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+    ],
+    "un-useless-escape": "off",
+    "quotes": [2, "single", { "allowTemplateLiterals": true }]
+  }
+}

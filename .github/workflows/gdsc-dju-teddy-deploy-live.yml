@@ -7,8 +7,8 @@ on:
     types:
       - closed
     paths:
-      - 'apps/teddy/**'
-      - '.github/workflows/gdsc-dju-teddy-deploy-live.yml'
+      - "apps/teddy/**"
+      - ".github/workflows/gdsc-dju-teddy-deploy-live.yml"
 jobs:
   Deploy_Live_channel:
     if: github.event.pull_request.merged == true
@@ -20,19 +20,29 @@ jobs:
       url: https://teddy.gdscdju.dev
     steps:
       - uses: actions/checkout@v3
-
-      - name: pnpm을 설정하고 있어요.
-        uses: pnpm/action-setup@v2.2.2
         with:
-          version: 8.6.12
-          run_install: true
+          fetch-depth: 0
+      - name: 캐시 폴더를 가져오고 있어요.
+        id: yarn-cache-dir-path
+        run: echo "dir=$(cd client && yarn config get cacheFolder)" >> $GITHUB_ENV
 
-      - name: 노드를 설정하고 있어요.
+      - name: 캐시 의존성을 설정하고 있어요.
+        uses: actions/cache@v3
+        with:
+          path: ~/.yarn
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Node 버전/캐싱여부를 설정하고 있어요.
         uses: actions/setup-node@v3
         with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
-
+          node-version: 16
+          cache: yarn
+          cache-dependency-path: ./yarn.lock
+          registry-url: "https://registry.yarnpkg.com"
+      - name: install package
+        run: yarn install
       - name: Setting .env
         run: |
           echo "VITE_FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }}" >> .env
@@ -45,11 +55,10 @@ jobs:
           echo "VITE_FIREBASE_MEASUREMENT_ID=${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}" >> .env
           cat .env
         working-directory: ${{ env.working-directory }}
-      - name: install package
-        run: pnpm install
       - name: Project Build
-        run: pnpm turbo build --filter @gdsc-dju/teddy
-
+        run: yarn turbo build --filter @gdsc-dju/teddy
+      # - name: Project Build
+      #   run: yarn build
       - uses: HyeokE/action-hosting-deploy@main
         id: run_firebase_deploy
         with:
@@ -64,7 +73,7 @@ jobs:
         with:
           webhook_id: ${{ secrets.DISCORD_TEDDY_WEBHOOK_ID }}
           webhook_token: ${{ secrets.DISCORD_TEDDY_WEBHOOK_TOKEN }}
-          color: '#4285f4'
+          color: "#4285f4"
           args: |
             gdsc-dju-teddy has been deployed to Live channel
             `Contributor` ${{github.actor}}
