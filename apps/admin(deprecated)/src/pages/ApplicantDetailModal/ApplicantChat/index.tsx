@@ -53,6 +53,7 @@ const ApplicantChatContainer: React.FC<IApplicantChatSectionProps> = ({
     handleResizeHeight();
     if (message) {
       // Add new message in Firestore
+      console.log(adminUser, ':', message);
       await addDoc(chatRef, {
         text: message,
         createdAt: Date.now(),
@@ -80,10 +81,10 @@ const ApplicantChatContainer: React.FC<IApplicantChatSectionProps> = ({
   return (
     <ApplicantChatContainerWrapper>
       <>
-        {chatSectionRef && newMessages && adminUser.uid && (
+        {newMessages && (
           <ApplicantChatCardSection
             ref={chatSectionRef}
-            adminUser={adminUser.uid}
+            adminUser={adminUser.uid || ''}
             newMessages={newMessages as IApplicantChatType[]}
           />
         )}
