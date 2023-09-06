@@ -60,7 +60,7 @@ const MemberInfoModal = (selectMember: Props) => {
                 />
                 <GDSCButton
                   text={'Member'}
-                  color={'red900'}
+                  color={'red600'}
                   onClick={GiveMember}
                 />
                 <GDSCButton
