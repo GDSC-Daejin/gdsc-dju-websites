@@ -7,8 +7,8 @@ on:
     types:
       - closed
     paths:
-      - "apps/teddy/**"
-      - ".github/workflows/gdsc-dju-teddy-deploy-live.yml"
+      - 'apps/teddy/**'
+      - '.github/workflows/gdsc-dju-teddy-deploy-live.yml'
 jobs:
   Deploy_Live_channel:
     if: github.event.pull_request.merged == true
@@ -30,10 +30,8 @@ jobs:
       - name: 노드를 설정하고 있어요.
         uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
-          cache: "pnpm"
-      - name: install package
-        run: pnpm install
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
 
       - name: Setting .env
         run: |
@@ -47,6 +45,8 @@ jobs:
           echo "VITE_FIREBASE_MEASUREMENT_ID=${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}" >> .env
           cat .env
         working-directory: ${{ env.working-directory }}
+      - name: install package
+        run: pnpm install
       - name: Project Build
         run: pnpm turbo build --filter @gdsc-dju/teddy
 
@@ -64,7 +64,7 @@ jobs:
         with:
           webhook_id: ${{ secrets.DISCORD_TEDDY_WEBHOOK_ID }}
           webhook_token: ${{ secrets.DISCORD_TEDDY_WEBHOOK_TOKEN }}
-          color: "#4285f4"
+          color: '#4285f4'
           args: |
             gdsc-dju-teddy has been deployed to Live channel
             `Contributor` ${{github.actor}}
