@@ -19,6 +19,7 @@ export const userAtom = atom<UserAtomType>({
 
 export const userInfoWriteOnlyAtom = atom(null, async (get, set) => {
   await getUserData().then((userData) => {
+    console.log(userData);
     set(userAtom, {
       role: userData.role,
       nickname: userData.memberInfo.nickname,

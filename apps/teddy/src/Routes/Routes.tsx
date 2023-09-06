@@ -9,6 +9,7 @@ const Routes = () => {
         <Route path={'/'} element={<Home />} />
         <Route path={'/weekly'} element={<Home />} />
         <Route path={'/monthly'} element={<Home />} />
+        <Route path={'/*'} element={<Home />} />
       </ReactRoutes>
     </>
   );

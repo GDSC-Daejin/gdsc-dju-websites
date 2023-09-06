@@ -53,6 +53,7 @@ const ApplicantChatContainer: React.FC<IApplicantChatSectionProps> = ({
     handleResizeHeight();
     if (message) {
       // Add new message in Firestore
+      console.log(adminUser, ':', message);
       await addDoc(chatRef, {
         text: message,
         createdAt: Date.now(),
