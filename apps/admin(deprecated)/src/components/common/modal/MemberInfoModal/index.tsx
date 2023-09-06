@@ -25,6 +25,7 @@ const MemberInfoModal = (selectMember: Props) => {
         userId: selectMember.selectMember?.userId,
         role: 'CORE',
       });
+      window.location.reload();
     }
   };
   const GiveMember = async () => {
@@ -33,6 +34,7 @@ const MemberInfoModal = (selectMember: Props) => {
         userId: selectMember.selectMember?.userId,
         role: 'MEMBER',
       });
+      window.location.reload();
     }
   };
 
@@ -61,7 +63,11 @@ const MemberInfoModal = (selectMember: Props) => {
                   color={'red900'}
                   onClick={GiveMember}
                 />
-                <GDSCButton text={'뒤로가기'} color={'grey400'} />
+                <GDSCButton
+                  text={'뒤로가기'}
+                  color={'grey400'}
+                  onClick={closeModal}
+                />
               </ButtonWrapper>
             </ModalInner>
           </OutsideClickHandler>
