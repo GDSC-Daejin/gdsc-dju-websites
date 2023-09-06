@@ -57,9 +57,9 @@ const MemberInfoModal = (selectMember: Props) => {
                   onClick={GiveAdmin}
                 />
                 <GDSCButton
-                  text={'권한주기'}
+                  text={'권한뺏기'}
                   color={'red900'}
-                  onClick={GiveAdmin}
+                  onClick={GiveMember}
                 />
                 <GDSCButton text={'뒤로가기'} color={'grey400'} />
               </ButtonWrapper>
