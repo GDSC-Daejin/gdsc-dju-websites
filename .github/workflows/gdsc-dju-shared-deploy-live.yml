@@ -7,8 +7,8 @@ on:
     types:
       - closed
     paths:
-      - "apps/shared/**"
-      - ".github/workflows/gdsc-dju-shared-deploy-live.yml"
+      - 'apps/shared/**'
+      - '.github/workflows/gdsc-dju-shared-deploy-live.yml'
   workflow_dispatch:
 jobs:
   Deploy_Live_channel:
@@ -31,8 +31,8 @@ jobs:
       - name: 노드를 설정하고 있어요.
         uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
-          cache: "pnpm"
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
       - name: install package
         run: pnpm install
 
@@ -66,7 +66,7 @@ jobs:
         with:
           webhook_id: ${{ secrets.DISCORD_SHARED_WEBHOOK_ID }}
           webhook_token: ${{ secrets.DISCORD_SHARED_WEBHOOK_TOKEN }}
-          color: "#4285f4"
+          color: '#4285f4'
           args: |
             gdsc-dju-shared has been deployed to Live channel
             `Contributor` ${{github.actor}}

@@ -5,19 +5,19 @@ on:
     branches:
       - master
     paths:
-      - "apps/web/**"
-      - ".github/workflows/gdsc-dju-web-deploy-live.yml"
+      - 'apps/web/**'
+      - '.github/workflows/gdsc-dju-web-deploy-live.yml'
   pull_request:
     branches:
       - master
     types:
       - closed
     paths:
-      - "apps/web/**"
-      - ".github/workflows/gdsc-dju-web-deploy-live.yml"
+      - 'apps/web/**'
+      - '.github/workflows/gdsc-dju-web-deploy-live.yml'
 jobs:
   Deploy_Live_channel:
-#    if: github.event.pull_request.merged == true
+    #    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
       working-directory: ./apps/web
@@ -36,10 +36,8 @@ jobs:
       - name: 노드를 설정하고 있어요.
         uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
-          cache: "pnpm"
-      - name: install package
-        run: pnpm install
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
 
       - name: Setting .env
         run: |
@@ -70,7 +68,7 @@ jobs:
         with:
           webhook_id: ${{ secrets.DISCORD_FRONT_WEBHOOK_ID }}
           webhook_token: ${{ secrets.DISCORD_FRONT_WEBHOOK_TOKEN }}
-          color: "#4285f4"
+          color: '#4285f4'
           args: |
             gdsc-dju-web has been deployed to Live channel
             `Contributor` ${{github.actor}}

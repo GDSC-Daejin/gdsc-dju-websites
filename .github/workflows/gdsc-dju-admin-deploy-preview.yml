@@ -3,8 +3,8 @@ name: Deploy to GDSC DJU Admin Preview Channel
 on:
   push:
     paths:
-      - "apps/admin(deprecated)/**"
-      - ".github/workflows/gdsc-dju-admin-deploy-preview.yml"
+      - 'apps/admin(deprecated)/**'
+      - '.github/workflows/gdsc-dju-admin-deploy-preview.yml'
     branches-ignore:
       - master
   pull_request:
@@ -12,8 +12,8 @@ on:
       - master
       - develop
     paths:
-      - "apps/admin(deprecated)/**"
-      - ".github/workflows/gdsc-dju-admin-deploy-preview.yml"
+      - 'apps/admin(deprecated)/**'
+      - '.github/workflows/gdsc-dju-admin-deploy-preview.yml'
 jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest
@@ -34,10 +34,8 @@ jobs:
       - name: 노드를 설정하고 있어요.
         uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
-          cache: "pnpm"
-      - name: install package
-        run: pnpm install
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
 
       - name: Setting .env
         run: |
@@ -76,11 +74,10 @@ jobs:
         with:
           webhook_id: ${{ secrets.DISCORD_ADMIN_WEBHOOK_ID }}
           webhook_token: ${{ secrets.DISCORD_ADMIN_WEBHOOK_TOKEN }}
-          color: "#4285f4"
+          color: '#4285f4'
           args: |
             gdsc-dju-admin has been deployed to Preview channel
             `Contributor`: ${{github.actor}}
             `Event Status` ${{github.event_name}}
             `URL` <${{steps.run_firebase_preview.outputs.details_url}}>
             `Build Time` ${{steps.run_firebase_preview.outputs.expire_time}}
-      
