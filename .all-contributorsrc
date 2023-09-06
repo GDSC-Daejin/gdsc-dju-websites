@@ -1,0 +1,88 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "bjc1102",
+      "name": "Byeong Ju Choi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/71929440?v=4",
+      "profile": "https://github.com/bjc1102",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "HyeokE",
+      "name": "Hyeok_E",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61281239?v=4",
+      "profile": "https://starlight-j-h.tistory.com/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "BlaireLee",
+      "name": "BlaireLee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/97537672?v=4",
+      "profile": "https://github.com/BlaireLee",
+      "contributions": [
+        "design"
+      ]
+    },
+    {
+      "login": "cin-dy",
+      "name": "suhyun park",
+      "avatar_url": "https://avatars.githubusercontent.com/u/97660878?v=4",
+      "profile": "https://github.com/cin-dy",
+      "contributions": [
+        "design"
+      ]
+    },
+    {
+      "login": "dogdduddy",
+      "name": "dogdduddy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32217176?v=4",
+      "profile": "https://github.com/dogdduddy",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "HarryTylenol",
+      "name": "Harry Park",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22587486?v=4",
+      "profile": "https://github.com/HarryTylenol",
+      "contributions": [
+        "design"
+      ]
+    },
+    {
+      "login": "Member-gunzo",
+      "name": "Member-gunzo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/98573262?v=4",
+      "profile": "https://github.com/Member-gunzo",
+      "contributions": [
+        "design"
+      ]
+    },
+    {
+      "login": "gudcks0305",
+      "name": "yoo hyeong chan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/84506708?v=4",
+      "profile": "https://github.com/gudcks0305",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "gdsc-dju-websites",
+  "projectOwner": "GDSC-Daejin"
+}

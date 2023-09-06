@@ -1,0 +1,39 @@
+{
+  "name": "gdsc-dju-frontend",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "dev": "turbo run dev"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/**",
+      "apps/**"
+    ]
+  },
+  "packageManager": "yarn@3.5.0",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "@yarnpkg/plugin-typescript": "^4.0.0-rc.32",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "documentation": "^14.0.0",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.5.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "fast-glob": "^3.2.12",
+    "prettier": "^2.7.1",
+    "turbo": "^1.6.3",
+    "typescript": "^4.7.4"
+  }
+}

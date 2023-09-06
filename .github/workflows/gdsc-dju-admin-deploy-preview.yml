@@ -3,8 +3,8 @@ name: Deploy to GDSC DJU Admin Preview Channel
 on:
   push:
     paths:
-      - 'apps/admin(deprecated)/**'
-      - '.github/workflows/gdsc-dju-admin-deploy-preview.yml'
+      - "apps/admin(deprecated)/**"
+      - ".github/workflows/gdsc-dju-admin-deploy-preview.yml"
     branches-ignore:
       - master
   pull_request:
@@ -12,8 +12,8 @@ on:
       - master
       - develop
     paths:
-      - 'apps/admin(deprecated)/**'
-      - '.github/workflows/gdsc-dju-admin-deploy-preview.yml'
+      - "apps/admin(deprecated)/**"
+      - ".github/workflows/gdsc-dju-admin-deploy-preview.yml"
 jobs:
   Deploy_preview_channel:
     runs-on: ubuntu-latest
@@ -24,19 +24,27 @@ jobs:
       url: ${{ steps.run_firebase_preview.outputs.details_url }}
     steps:
       - uses: actions/checkout@v3
-
-      - name: pnpm을 설정하고 있어요.
-        uses: pnpm/action-setup@v2.2.2
         with:
-          version: 8.6.12
-          run_install: true
+          fetch-depth: 0
+      - name: 캐시 폴더를 가져오고 있어요.
+        id: yarn-cache-dir-path
+        run: echo "dir=$(cd client && yarn config get cacheFolder)" >> $GITHUB_ENV
 
-      - name: 노드를 설정하고 있어요.
+      - name: 캐시 의존성을 설정하고 있어요.
+        uses: actions/cache@v3
+        with:
+          path: ~/.yarn
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Node 버전/캐싱여부를 설정하고 있어요.
         uses: actions/setup-node@v3
         with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
-
+          node-version: 16
+          cache: yarn
+          cache-dependency-path: ./yarn.lock
+          registry-url: "https://registry.yarnpkg.com"
       - name: Setting .env
         run: |
           echo "VITE_FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }}" >> .env
@@ -50,9 +58,9 @@ jobs:
           cat .env
         working-directory: ${{ env.working-directory }}
       - name: Project yarn install
-        run: pnpm install
+        run: yarn install
       - name: Project Build
-        run: pnpm turbo build --filter @gdsc-dju/admin-deprecated
+        run: yarn turbo build --filter @gdsc-dju/admin-deprecated
       - name: Get short SHA
         id: slug
         run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
@@ -74,14 +82,13 @@ jobs:
         with:
           webhook_id: ${{ secrets.DISCORD_ADMIN_WEBHOOK_ID }}
           webhook_token: ${{ secrets.DISCORD_ADMIN_WEBHOOK_TOKEN }}
-          color: '#4285f4'
+          color: "#4285f4"
           args: |
             gdsc-dju-admin has been deployed to Preview channel
             `Contributor`: ${{github.actor}}
             `Event Status` ${{github.event_name}}
             `URL` <${{steps.run_firebase_preview.outputs.details_url}}>
             `Build Time` ${{steps.run_firebase_preview.outputs.expire_time}}
-
 
 # name: Deploy to GDSC DJU Admin Live Channel
 # on:
@@ -166,4 +173,3 @@ jobs:
 #             `Event Status` ${{github.event_name}}
 #             `URL` https://admin.gdscdju.dev
 #             `Build Time` ${{steps.run_firebase_deploy.outputs.expire_time}}
-
