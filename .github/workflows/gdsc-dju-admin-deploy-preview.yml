@@ -98,7 +98,7 @@ on:
       - master
     paths:
       - 'apps/admin(deprecated)/**'
-      - '.github/workflows/gdsc-dju-admin-deploy-live.yml'
+      - '.github/workflows/gdsc-dju-admin-deploy-preview.yml'
   pull_request:
     branches:
       - master
@@ -106,7 +106,7 @@ on:
       - closed
     paths:
       - 'apps/admin(deprecated)/**'
-      - '.github/workflows/gdsc-dju-admin-deploy-live.yml'
+      - '.github/workflows/gdsc-dju-admin-deploy-preview.yml'
 jobs:
   Deploy_Live_channel:
     if: github.event.pull_request.merged == true
