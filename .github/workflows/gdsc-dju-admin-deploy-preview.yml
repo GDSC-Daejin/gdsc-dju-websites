@@ -105,8 +105,7 @@ on:
       - 'apps/admin(deprecated)/**'
       - '.github/workflows/gdsc-dju-admin-deploy-preview.yml'
 jobs:
-  Deploy_Live_channel:
-    if: github.event.pull_request.merged == true
+  Deploy_preview_channel:
     runs-on: ubuntu-latest
     env:
       working-directory: ./apps/admin(deprecated)
