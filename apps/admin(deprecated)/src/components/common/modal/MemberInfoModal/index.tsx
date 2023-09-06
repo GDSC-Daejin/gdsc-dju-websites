@@ -19,11 +19,19 @@ type Props = {
 const MemberInfoModal = (selectMember: Props) => {
   const { modal, closeModal } = useModalHandle('MEMBER');
 
-  const updateMemberInfo = async () => {
+  const GiveAdmin = async () => {
     if (selectMember.selectMember) {
       await putMemberData({
         userId: selectMember.selectMember?.userId,
         role: 'CORE',
+      });
+    }
+  };
+  const GiveMember = async () => {
+    if (selectMember.selectMember) {
+      await putMemberData({
+        userId: selectMember.selectMember?.userId,
+        role: 'MEMBER',
       });
     }
   };
@@ -46,7 +54,12 @@ const MemberInfoModal = (selectMember: Props) => {
                 <GDSCButton
                   text={'권한주기'}
                   color={'blue900'}
-                  onClick={updateMemberInfo}
+                  onClick={GiveAdmin}
+                />
+                <GDSCButton
+                  text={'권한주기'}
+                  color={'red900'}
+                  onClick={GiveAdmin}
                 />
                 <GDSCButton text={'뒤로가기'} color={'grey400'} />
               </ButtonWrapper>

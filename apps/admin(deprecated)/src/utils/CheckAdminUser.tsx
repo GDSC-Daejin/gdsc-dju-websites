@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { useAtom } from 'jotai';
+// import { useAtom } from 'jotai';
 import Cookies from 'js-cookie';
 
 import { useGetMyData } from '../apis/hooks/useGetMyData';
-import { userInfoWriteOnlyAtom } from '../store/userAtom';
+// import { userInfoWriteOnlyAtom } from '../store/userAtom';
 
 const CheckAdminUser = () => {
-  const [, writeAdminUser] = useAtom(userInfoWriteOnlyAtom);
+  // const [, writeAdminUser] = useAtom(userInfoWriteOnlyAtom);
   const navigate = useNavigate();
   const location = useLocation();
   const token = Cookies.get('token');
@@ -24,8 +24,8 @@ const CheckAdminUser = () => {
   };
   useEffect(() => {
     (async function () {
-      token && (await writeAdminUser(token));
-      // token;
+      // token && (await writeAdminUser(token));
+      token;
       checkAdminUser();
     })();
   }, [userData, token]);
