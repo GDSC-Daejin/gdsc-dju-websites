@@ -17,6 +17,8 @@ import {
   ApplicantChatSendButton,
 } from './styled';
 
+import { useGetMyData } from '@src/apis/hooks/useGetMyData';
+
 interface IApplicantChatSectionProps {
   applicantId: string;
 }
@@ -25,6 +27,7 @@ const ApplicantChatContainer: React.FC<IApplicantChatSectionProps> = ({
   applicantId,
 }) => {
   const [adminUser] = useAtom(userAtom);
+  const getinfo = useGetMyData();
 
   const q = query(
     collection(db, `chats-${applicantId}`),
@@ -53,12 +56,20 @@ const ApplicantChatContainer: React.FC<IApplicantChatSectionProps> = ({
     handleResizeHeight();
     if (message) {
       // Add new message in Firestore
-      console.log(adminUser, ':', message);
+
+      //   await addDoc(chatRef, {
+      //     text: message,
+      //     createdAt: Date.now(),
+      //     uid: adminUser.uid,
+      //     displayName: adminUser.nickname,
+      //     isRead: false,
+      //   });
+      // }
       await addDoc(chatRef, {
         text: message,
         createdAt: Date.now(),
-        uid: adminUser.uid,
-        displayName: adminUser.nickname,
+        uid: getinfo.userData?.userId,
+        displayName: getinfo.userData?.username,
         isRead: false,
       });
     }
@@ -81,10 +92,10 @@ const ApplicantChatContainer: React.FC<IApplicantChatSectionProps> = ({
   return (
     <ApplicantChatContainerWrapper>
       <>
-        {newMessages && (
+        {newMessages && getinfo.userData?.username && (
           <ApplicantChatCardSection
             ref={chatSectionRef}
-            adminUser={adminUser.uid || ''}
+            adminUser={adminUser.uid || getinfo.userData?.username}
             newMessages={newMessages as IApplicantChatType[]}
           />
         )}
