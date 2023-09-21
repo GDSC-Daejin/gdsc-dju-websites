@@ -30,13 +30,17 @@ const Members = () => {
     : [];
 
   // Organize members into separate arrays based on their roles
-  const roleSections = sortedMemberList.reduce((sections, member) => {
-    if (!sections[member.role]) {
-      sections[member.role] = [];
-    }
-    sections[member.role].push(member);
-    return sections;
-  }, {});
+  const roleSections: { [key: string]: IUserDataType[] } =
+    sortedMemberList.reduce(
+      (sections, member) => {
+        if (!sections[member.role]) {
+          sections[member.role] = [];
+        }
+        sections[member.role].push(member);
+        return sections;
+      },
+      {} as { [key: string]: IUserDataType[] }, // Provide an initial empty object with the correct type
+    );
 
   return (
     <AdminContainer>
