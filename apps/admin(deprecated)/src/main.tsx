@@ -15,16 +15,16 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
         {/*<AtomDevtools>*/}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              flex: '1 0 auto',
-              minHeight: '100vh',
-            }}
-          >
-            <App />
-          </div>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            flex: '1 0 auto',
+            minHeight: '100vh',
+          }}
+        >
+          <App />
+        </div>
         {/*</AtomDevtools>*/}
       </QueryClientProvider>
     </BrowserRouter>

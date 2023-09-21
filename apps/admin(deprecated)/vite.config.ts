@@ -1,9 +1,6 @@
 import path from 'path';
 
 import { defineConfig } from 'vite';
-// local로 돌리때 주석 지우기
-// import mkcert from 'vite-plugin-mkcert';
-
 import react from '@vitejs/plugin-react';
 
 /* 배포할때 주석 해제하기*/
@@ -27,6 +24,7 @@ export default defineConfig({
   },
 });
 /* 로컬용*/
+// import mkcert from 'vite-plugin-mkcert';
 // export default defineConfig({
 //   plugins: [react(), mkcert()],
 //   // plugins: [react()],

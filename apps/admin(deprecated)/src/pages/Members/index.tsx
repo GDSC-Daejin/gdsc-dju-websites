@@ -1,12 +1,14 @@
 import React from 'react';
-
 import MemberCard from '@common/cards/MemberCard';
 import MemberInfoModal from '@common/modal/MemberInfoModal';
-import { MemberCardWrapper, MemberListSection } from '@pages/Members/styled';
+import {
+  MemberCardWrapper,
+  MemberListSection,
+  RoleSection,
+} from '@pages/Members/styled';
 import { AdminContainer, AdminContainerInner } from '@pages/styled';
 import { useGetMemberListData } from '@src/apis/hooks/useGetMemberListData';
 import { useModalHandle } from '@src/hooks/useModalHandle';
-import { IUserInfoDataType } from '@type/userInfoData';
 import { IUserDataType } from '@type/userDataType';
 
 const Members = () => {
@@ -15,13 +17,40 @@ const Members = () => {
   const [selectMember, setSelectMember] = React.useState<IUserDataType | null>(
     null,
   );
+
+  // Sort memberListData by role: CORE > MEMBER > GUEST
+  const sortedMemberList = memberListData
+    ? [...memberListData].sort((a, b) => {
+        if (a.role === 'CORE') return -1;
+        if (b.role === 'CORE') return 1;
+        if (a.role === 'MEMBER') return -1;
+        if (b.role === 'MEMBER') return 1;
+        return 0;
+      })
+    : [];
+
+  // Organize members into separate arrays based on their roles
+  const roleSections: { [key: string]: IUserDataType[] } =
+    sortedMemberList.reduce(
+      (sections, member) => {
+        if (!sections[member.role]) {
+          sections[member.role] = [];
+        }
+        sections[member.role].push(member);
+        return sections;
+      },
+      {} as { [key: string]: IUserDataType[] }, // Provide an initial empty object with the correct type
+    );
+
   return (
     <AdminContainer>
       <AdminContainerInner>
         <MemberInfoModal selectMember={selectMember} />
-        <MemberListSection>
-          {memberListData &&
-            memberListData.map((member) => (
+
+        {Object.entries(roleSections).map(([role, members]) => (
+          <MemberListSection key={role}>
+            <RoleSection>{role}</RoleSection>
+            {members.map((member) => (
               <MemberCardWrapper
                 key={member.userId}
                 onClick={() => {
@@ -32,7 +61,8 @@ const Members = () => {
                 <MemberCard {...member} />
               </MemberCardWrapper>
             ))}
-        </MemberListSection>
+          </MemberListSection>
+        ))}
       </AdminContainerInner>
     </AdminContainer>
   );
