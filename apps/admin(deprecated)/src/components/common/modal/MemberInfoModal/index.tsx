@@ -20,7 +20,6 @@ import { useModalHandle } from '@src/hooks/useModalHandle';
 import { IUserDataType } from '@type/userDataType';
 import OutsideClickHandler from '@utils/OutsideClickHandler';
 import { ClearButton } from '@common/ModalButton';
-import MemberGrid from './MemberGrid';
 
 type Props = {
   selectMember: IUserDataType | null;

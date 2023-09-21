@@ -5,7 +5,7 @@ import { defineConfig } from 'vite';
 // import mkcert from 'vite-plugin-mkcert';
 
 import react from '@vitejs/plugin-react';
-/*배포용 */
+/* */
 export default defineConfig({
   plugins: [react()],
   server: {
