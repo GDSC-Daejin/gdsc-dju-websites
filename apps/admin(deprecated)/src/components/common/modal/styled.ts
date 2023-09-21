@@ -30,16 +30,37 @@ export const ModalTitle = styled.h5`
   color: ${(props) => props.theme.colors.grey900};
   margin-bottom: 12px;
 `;
-
 export const ModalInner = styled(motion.div)`
   margin: 0 auto;
   background: ${({ theme }) => theme.colors.background};
   border-radius: 10px;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
-  padding: 20px 30px;
+  padding: 5px 30px 20px;
   display: flex;
   flex-direction: column;
   z-index: 999;
+`;
+export const ModalInnerNav = styled(motion.div)`
+  margin: 0px -20px 0px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid ${(props) => props.theme.colors.grey900};
+`;
+export const ModalInnerBody = styled(motion.div)``;
+export const ModalContainer = styled(motion.div)`
+  background: ${({ theme }) => theme.colors.background};
+`;
+export const ModalInnerGridContainer = styled(motion.div)`
+  display: grid;
+  grid-template-columns: auto auto;
+`;
+export const ModalInnerGridItem = styled(motion.div)`
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 export const ModalWrapper = styled(motion.div)`
   position: fixed;
