@@ -12,6 +12,7 @@ interface Props {
 const ApplicantSection = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
   (props, ref) => {
     const { newMessages, adminUser } = props;
+
     const reversedMessages = [...newMessages].reverse();
 
     return (
