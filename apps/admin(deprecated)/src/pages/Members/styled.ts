@@ -2,8 +2,10 @@ import styled from 'styled-components';
 
 export const MemberListSection = styled.section`
   display: grid;
+  padding: 30px;
   grid-template-columns: repeat(3, 1fr);
   row-gap: 10px;
+
   width: 100%;
   box-sizing: border-box;
   @media (max-width: 1530px) {
@@ -16,4 +18,9 @@ export const MemberListSection = styled.section`
 
 export const MemberCardWrapper = styled.div`
   width: fit-content;
+`;
+export const RoleSection = styled.div`
+  grid-column: 1 / 3;
+  font-size: ${({ theme }) => theme.fontSizes.textL};
+  color: ${({ theme }) => theme.colors.grey900};
 `;
