@@ -93,7 +93,7 @@ const Email = () => {
     template: string,
     applicant: IApplicantTypeWithID,
   ) => {
-    emailjs.init('pVvcK6wY1xj9L_Xjv');
+    emailjs.init('lgOEAaszhLcwuzIQvCuwG');
     const result = await emailjs.send('default_service', template, {
       email: applicant.email,
       name: applicant.name,
