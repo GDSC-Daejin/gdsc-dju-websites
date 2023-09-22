@@ -97,7 +97,7 @@ const Email = () => {
     const result = await emailjs.send('default_service', template, {
       email: applicant.email,
       name: applicant.name,
-    }, 'pVvcK6wY1xj9L_Xjv');
+    });
     return result;
   };
 
