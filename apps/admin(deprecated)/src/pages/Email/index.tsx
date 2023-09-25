@@ -107,6 +107,7 @@ const Email = () => {
   ) => {
     setLoading({ ...loading, isLoading: true });
     applicants.map(async (applicant) => {
+      // if (admin.nickname) {
       try {
         const result = await sendEmail(template, applicant);
         //로그 생성
@@ -137,6 +138,7 @@ const Email = () => {
         });
         setLoading({ ...loading, isLoading: false });
       }
+      // }
     });
     setLoading({ ...loading, isLoading: false });
   };
