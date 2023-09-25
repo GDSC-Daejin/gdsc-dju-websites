@@ -97,7 +97,7 @@ const Email = () => {
     const result = await emailjs.send('default_service', template, {
       email: applicant.email,
       name: applicant.name,
-    }, 'pVvcK6wY1xj9L_Xjv');
+    });
     return result;
   };
 
@@ -107,38 +107,36 @@ const Email = () => {
   ) => {
     setLoading({ ...loading, isLoading: true });
     applicants.map(async (applicant) => {
-      // if (admin.nickname) {
-        try {
-          const result = await sendEmail(template, applicant);
-          //로그 생성
-          const emailLog: EmailLogType = {
-            email: applicant.email,
-            name: applicant.name,
-            applicantID: applicant.id,
-            applicantStatus: applicant.status,
-            sender: 'Peony',
-            status: result.status,
-            uploadDate: new Date(),
-          };
-          await sendLogHandler(emailLog);
-          if (emailLog) {
-            setAlert({
-              ...alert,
-              alertHandle: true,
-              alertStatus: 'SUCCESS',
-              alertMessage: '메일이 전송되었어요. 로그를 확인해주세요.',
-            });
-            setLoading({ ...loading, isLoading: false });
-          }
-        } catch (e) {
+      try {
+        const result = await sendEmail(template, applicant);
+        //로그 생성
+        const emailLog: EmailLogType = {
+          email: applicant.email,
+          name: applicant.name,
+          applicantID: applicant.id,
+          applicantStatus: applicant.status,
+          sender: 'Peony',
+          status: result.status,
+          uploadDate: new Date(),
+        };
+        await sendLogHandler(emailLog);
+        if (emailLog) {
           setAlert({
             ...alert,
             alertHandle: true,
-            alertMessage: '어딘가 문제가 생겼어요. 콘솔을 확인해주세요.',
+            alertStatus: 'SUCCESS',
+            alertMessage: '메일이 전송되었어요. 로그를 확인해주세요.',
           });
           setLoading({ ...loading, isLoading: false });
         }
-      // }
+      } catch (e) {
+        setAlert({
+          ...alert,
+          alertHandle: true,
+          alertMessage: '어딘가 문제가 생겼어요. 콘솔을 확인해주세요.',
+        });
+        setLoading({ ...loading, isLoading: false });
+      }
     });
     setLoading({ ...loading, isLoading: false });
   };
