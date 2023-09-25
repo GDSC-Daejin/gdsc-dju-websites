@@ -18,7 +18,11 @@ const Redirect = () => {
   useEffect(() => {
     if (!token) return;
     if (!(userData && userData.role)) return;
-    if (userData.role === 'LEAD' || userData.role === 'CORE') {
+    if (
+      userData.role === 'LEAD' ||
+      userData.role === 'CORE' ||
+      userData.role === 'MEMBER'
+    ) {
       navigate('/certified');
     } else {
       navigate('/');
