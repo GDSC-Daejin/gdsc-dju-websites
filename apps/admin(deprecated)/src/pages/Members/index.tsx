@@ -10,10 +10,12 @@ import { AdminContainer, AdminContainerInner } from '@pages/styled';
 import { useGetMemberListData } from '@src/apis/hooks/useGetMemberListData';
 import { useModalHandle } from '@src/hooks/useModalHandle';
 import { IUserDataType } from '@type/userDataType';
+import { useGetMyData } from '@src/apis/hooks/useGetMyData';
 
 const Members = () => {
   const { memberListData } = useGetMemberListData();
   const { openModal, closeModal } = useModalHandle('MEMBER');
+  const { userData } = useGetMyData();
   const [selectMember, setSelectMember] = React.useState<IUserDataType | null>(
     null,
   );
@@ -54,7 +56,12 @@ const Members = () => {
               <MemberCardWrapper
                 key={member.userId}
                 onClick={() => {
-                  openModal(member.userId);
+                  if (
+                    userData?.role !== 'MEMBER' &&
+                    userData?.role !== 'GUEST'
+                  ) {
+                    openModal(member.userId);
+                  }
                   setSelectMember(member);
                 }}
               >
