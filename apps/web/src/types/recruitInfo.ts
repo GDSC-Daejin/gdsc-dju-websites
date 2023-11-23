@@ -1,6 +1,6 @@
 export const isDevelop = import.meta.env.MODE === 'development';
 
-const GENERATION = isDevelop ? 'dev' : 3;
+const GENERATION = isDevelop ? 'dev' : 3.5;
 
 interface IRecruitInfo {
   GENERATION: string;
