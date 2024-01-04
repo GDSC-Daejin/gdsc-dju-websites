@@ -27,4 +27,32 @@ export class GDSCApi {
     return axios.get(`https://gdsc.community.dev/api/event/?chapter=1833`);
   };
 }
+export const sendDiscordNotification = async (
+  name: string,
+  position: string,
+) => {
+  const webhookUrl = import.meta.env.VITE_DISCORD_WEBHOOK_URL; // Replace with your webhook URL
+  const message = {
+    username: 'GDSC DJU',
+    avatar_url: 'https://i.imgur.com/4M34hi2.png',
+    content: '<@&907258554245861416> 지원서가 도착했습니다!',
+    embeds: [
+      {
+        author: {
+          name: `지원자 : ${name} 님`,
+        },
+        title: `GDSC ${position} 지원서 신청 알림`,
+        url: 'https://admin.gdscdju.dev/',
+        color: 15258703,
+      },
+    ],
+  };
+
+  try {
+    await axios.post(webhookUrl, message);
+  } catch (error) {
+    console.error('Error sending notification to Discord', error);
+  }
+};
+
 export default new GDSCApi();
