@@ -5,19 +5,19 @@ on:
     branches:
       - master
     paths:
-      - "apps/web/**"
-      - ".github/workflows/gdsc-dju-web-deploy-live.yml"
+      - 'apps/web/**'
+      - '.github/workflows/gdsc-dju-web-deploy-live.yml'
   pull_request:
     branches:
       - master
     types:
       - closed
     paths:
-      - "apps/web/**"
-      - ".github/workflows/gdsc-dju-web-deploy-live.yml"
+      - 'apps/web/**'
+      - '.github/workflows/gdsc-dju-web-deploy-live.yml'
 jobs:
   Deploy_Live_channel:
-#    if: github.event.pull_request.merged == true
+    #    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
       working-directory: ./apps/web
@@ -46,7 +46,7 @@ jobs:
           node-version: 16
           cache: yarn
           cache-dependency-path: ./yarn.lock
-          registry-url: "https://registry.yarnpkg.com"
+          registry-url: 'https://registry.yarnpkg.com'
       - name: Setting .env
         run: |
           echo "VITE_FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }}" >> .env
@@ -57,6 +57,7 @@ jobs:
           echo "VITE_FIREBASE_MESSAGING_SENDER_ID=${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}" >> .env
           echo "VITE_FIREBASE_APPID=${{ secrets.VITE_FIREBASE_APPID }}" >> .env
           echo "VITE_FIREBASE_MEASUREMENT_ID=${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}" >> .env
+          echo "VITE_DISCORD_WEBHOOK_URL=${{ secrets.VITE_DISCORD_WEBHOOK_URL }}" >> .env
           cat .env
         working-directory: ${{ env.working-directory }}
       - name: install package
@@ -76,7 +77,7 @@ jobs:
         with:
           webhook_id: ${{ secrets.DISCORD_FRONT_WEBHOOK_ID }}
           webhook_token: ${{ secrets.DISCORD_FRONT_WEBHOOK_TOKEN }}
-          color: "#4285f4"
+          color: '#4285f4'
           args: |
             gdsc-dju-web has been deployed to Live channel
             `Contributor` ${{github.actor}}

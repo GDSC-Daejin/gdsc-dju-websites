@@ -23,7 +23,7 @@ export default defineConfig({
     },
   },
 });
-/* 로컬용*/
+// /* 로컬용*/
 // import mkcert from 'vite-plugin-mkcert';
 // export default defineConfig({
 //   plugins: [react(), mkcert()],

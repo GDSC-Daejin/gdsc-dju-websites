@@ -12,6 +12,7 @@ import { applications, forms } from '@contents/application';
 import AnnouncementFormLayout from '@src/components/layouts/AnnouncementFormLayout';
 import { db } from '@src/firebase/firebase';
 import { storage } from '@src/firebase/firebase.config';
+import { sendDiscordNotification } from '@src/apis';
 import { alertAtom } from '@store/alertAtom';
 import { loaderAtom } from '@store/loaderAtom';
 import { MODAL_KEY, modalAtom } from '@store/modalAtom';
@@ -97,6 +98,10 @@ const AnnounceForm = () => {
           fileURL: null,
         });
       }
+      if (data?.name && position) {
+        await sendDiscordNotification(data.name, position);
+      }
+
       navigate({
         pathname: '/recruit/apply-success',
         search: `?${createSearchParams(

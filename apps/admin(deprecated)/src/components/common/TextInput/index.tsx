@@ -14,7 +14,7 @@ export interface TextInputProps
 const TextInput = forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
   const { error, disabled } = props;
 
-  const errorToggle = error != undefined && error != '필수입력란입니다.';
+  const errorToggle = error !== undefined && error !== '필수입력란입니다.';
 
   return (
     <StyledInputWrapper error={errorToggle} disabled={!disabled}>

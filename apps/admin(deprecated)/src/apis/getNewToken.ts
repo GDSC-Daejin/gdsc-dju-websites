@@ -52,7 +52,7 @@ export async function resetTokenAndReattemptRequest(
       const response = await getRefresh();
 
       isAlreadyFetchingAccessToken = false; // 문열기 (초기화)
-      if (response.data.header.code == 403) {
+      if (response.data.header.code === 403) {
         logout();
       }
       // TODO#2 callback 함수 실행 장소
