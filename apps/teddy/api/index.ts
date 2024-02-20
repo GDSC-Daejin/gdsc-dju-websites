@@ -7,6 +7,7 @@ export class TeddyBearApi {
   protected API: string;
   constructor() {
     this.API = 'https://teddy-backend.gdscdju.dev';
+    
   }
   getScoreboard = (filter: FilterType, listType: ListType) => {
     return axios.get<rowScoreBoardType>(
