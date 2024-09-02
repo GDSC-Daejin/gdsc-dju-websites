@@ -2,7 +2,7 @@ import { Nickname } from "@common/MemberCard/styled";
 
 export const memberList = [
   {
-    Nickname: 'Aqua',
+    nickname: 'Aqua',
     name: '이우민',
     role: 'Lead',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U04JNJQQX2T-370c79fdd038-512',
