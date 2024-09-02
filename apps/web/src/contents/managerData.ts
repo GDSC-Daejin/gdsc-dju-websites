@@ -2,13 +2,14 @@ import { IMemberCardType } from '../types/member';
 
 export const managerData: IMemberCardType[] = [
   {
-    nickname: 'Peony',
-    name: '정명주',
+    nickname: 'Aqua',
+    name: '이우민',
     role: 'Lead',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02TWSK3RQU-a3e79f8f5148-512',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U04JNJQQX2T-370c79fdd038-512',
     text: '',
-    position: 'Backend',
+    position: 'Frontend',
   },
+
   {
     nickname: 'Soopeach',
     name: '전현수',
@@ -17,14 +18,7 @@ export const managerData: IMemberCardType[] = [
     text: '',
     position: 'Android',
   },
-  {
-    nickname: 'Iden',
-    name: '이지훈',
-    role: 'Core Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U04180XL4V7-6da93e855eaa-512',
-    text: '',
-    position: 'iOS',
-  },
+  
   {
     nickname: 'Jayden',
     name: '옥지훈',
@@ -32,5 +26,23 @@ export const managerData: IMemberCardType[] = [
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U04K8FKSNMS-d5754e45d6b5-512',
     text: '',
     position: 'Frontend',
+  },
+
+  {
+    nickname: 'Ella',
+    name: '김가영',
+    role: 'Core Member',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07HV7USGV6-c99f5b56f82c-512',
+    text: '',
+    position: 'Frontend',
+  },
+  
+  {
+    nickname: 'Kevin',
+    name: '장성훈',
+    role: 'Core Member',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07HVN29HRN-5b8bf80cb083-512',
+    text: '',
+    position: 'Machine Learning',
   },
 ];

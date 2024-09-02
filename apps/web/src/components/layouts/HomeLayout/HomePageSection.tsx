@@ -33,9 +33,9 @@ const HomePageSection = () => {
         <HomeMainWrapper>
           <RecruitingWrapper variants={bannerItemAnimate}>
             <GoogleColorTextWrapper>
-              <GoogleColorText color={'blue900'}>3</GoogleColorText>
-              <GoogleColorText color={'red900'}>r</GoogleColorText>
-              <GoogleColorText color={'yellow900'}>d</GoogleColorText>
+              <GoogleColorText color={'blue900'}>4</GoogleColorText>
+              <GoogleColorText color={'red900'}>t</GoogleColorText>
+              <GoogleColorText color={'yellow900'}>h</GoogleColorText>
               <GoogleColorText color={'green900'}>.</GoogleColorText>
             </GoogleColorTextWrapper>
             <GoogleColorText>Recruit</GoogleColorText>
