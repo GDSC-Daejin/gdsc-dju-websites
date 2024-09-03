@@ -4,6 +4,7 @@ export const isDevelop = import.meta.env.MODE === 'development';
 
 const GENERATION = isDevelop ? 'dev' : 4;
 
+
 interface IRecruitInfo {
   GENERATION: string;
   COLLECTION: string;
