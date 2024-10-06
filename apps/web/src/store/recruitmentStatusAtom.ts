@@ -10,7 +10,7 @@ export const RecruitmentState: Record<PositionType, boolean> = {
   android: true,
   designer: true,
   ios: true,
-  designBeginner: true,
+  designBeginner: false,
   ml: true,
   beginner: false,
 };
