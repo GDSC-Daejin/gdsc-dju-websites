@@ -40,7 +40,7 @@ const HomePageSection = () => {
             </GoogleColorTextWrapper>
             <GoogleColorText>Recruit</GoogleColorText>
             <MainBannerText variants={bannerItemAnimate}>
-              지금 바로 GDSC에 합류하세요
+              지금 바로 GDG on Campus에 합류하세요
             </MainBannerText>
             <HomeRecruitmentButton />
           </RecruitingWrapper>

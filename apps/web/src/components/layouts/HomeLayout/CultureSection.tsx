@@ -66,7 +66,7 @@ const CultureSection = () => {
             whileInView={'end'}
             viewport={{ once: true }}
           >
-            GDSC DJU의 문화를 소개해요
+            GDG on Campus DJU의 문화를 소개해요
           </HomeSectionTitle>
           <CultureContentSection
             variants={listAnimate}

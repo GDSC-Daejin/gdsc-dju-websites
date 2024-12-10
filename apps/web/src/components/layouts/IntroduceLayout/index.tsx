@@ -13,7 +13,7 @@ const IntroduceLayout = () => {
       <TopMargin />
       <div>
         <MainText>
-          GDSC와 함께 성장하는 {memberList.length}명을 소개합니다.
+          GDG on Campus와 함께 성장하는 {memberList.length}명을 소개합니다.
         </MainText>
       </div>
       <TopMargin />

@@ -56,12 +56,12 @@ const AnnouncementLayout = ({ aboutTeam }: AnnouncementLayoutProps) => {
           />
           <TopMargin />
           <SubtitleContent
-            title={'GDSC에 합류하면 얻는 혜택이에요'}
+            title={'GDG on Campus에 합류하면 얻는 혜택이에요'}
             bulletText={`${recruitDefaultText.benefits}`}
           />
           <TopMargin />
           <SubtitleContent
-            title={'GDSC DJU로의 합류여정'}
+            title={'GDG on Campus DJU로의 합류여정'}
             bulletText={`${recruitDefaultText.process} `}
           />
           <TopMargin />

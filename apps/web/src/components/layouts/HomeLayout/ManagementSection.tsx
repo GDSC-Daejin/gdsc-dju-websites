@@ -97,7 +97,7 @@ const ManagementSection = () => {
               whileInView={'end'}
               viewport={{ once: true }}
             >
-              GDSC DJU 운영진을 소개해요
+              GDG on Campus DJU 운영진을 소개해요
             </HomeSectionTitle>
             <ManagerSubTitle
               variants={listAnimate}
