@@ -126,6 +126,114 @@ export const memberList = [
     text: '',
     position: 'Machine Learning',
   },
+  
+  {
+    nickname: 'Bemay',
+    name: '진승우',
+    role: 'Beginner',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07Q76B91V5-8c18bccebd5b-512',
+    text: '',
+    position: 'Backend',
+  },
+
+  {
+    nickname: 'Carol',
+    name: '김다현',
+    role: 'Beginner',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07RL7W6Q1H-gb7816987ca7-512',
+    text: '',
+    position: 'Designer',
+  },
+
+  {
+    nickname: 'Catheline',
+    name: '김서연',
+    role: 'Beginner',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07Q7RKV36K-fb5720525022-512',
+    text: '',
+    position: 'Backend',
+  },
+
+  {
+    nickname: 'Chole',
+    name: '이혜빈',
+    role: 'Beginner',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07R7Q4RYQK-39c6b0d0ff72-512',
+    text: '',
+    position: 'Designer',
+  },
+
+  {
+    nickname: 'Claire',
+    name: '하채윤',
+    role: 'Beginner',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07QU9WFQGJ-d0cdd5b86082-512',
+    text: '',
+    position: 'Designer',
+  },
+
+  {
+    nickname: 'Jei',
+    name: '윤은재',
+    role: 'Beginner',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07P9G3KX3P-ada7ad2c2723-512',
+    text: '',
+    position: 'Machine Learning',
+  },
+
+  {
+    nickname: 'June',
+    name: '홍준표',
+    role: 'Beginner',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07PAM8BCLT-ddf1d51754f7-512',
+    text: '',
+    position: 'Backend',
+  },
+
+  {
+    nickname: 'Luka',
+    name: '김다연',
+    role: 'Beginner',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07QXCVUCPN-g1f3e9d96999-512',
+    text: '',
+    position: 'Machine Learning',
+  },
+
+  {
+    nickname: 'Nana',
+    name: '김나영',
+    role: 'Beginner',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07NW9LK01M-dae025238dc4-512',
+    text: '',
+    position: 'Machine Learning',
+  },
+
+  {
+    nickname: 'Nora',
+    name: '이진서',
+    role: 'Beginner',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07QU9UHQLS-g61f5f4a54e5-512',
+    text: '',
+    position: 'Designer',
+  },
+
+  {
+    nickname: 'Yve',
+    name: '송인혜',
+    role: 'Beginner',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07QKBKJLLV-1752c4767e1c-512',
+    text: '',
+    position: 'Backend',
+  },
+
+  {
+    nickname: 'Oliver',
+    name: '',
+    role: 'Beginner',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07Q1RXJLRJ-76de56810851-512',
+    text: '',
+    position: '',
+  },
   // {
   //   nickname: 'Judy',
   //   name: '김정하',
