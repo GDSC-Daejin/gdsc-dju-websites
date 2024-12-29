@@ -8,11 +8,11 @@ export const RecruitmentState: Record<PositionType, boolean> = {
   frontend: true,
   backend: true,
   android: true,
-  designer: true,
+  designer: false,
   ios: true,
-  designBeginner: true,
+  designBeginner: false,
   ml: true,
-  beginner: true,
+  beginner: false,
 };
 
 export const recruitmentAtom = atom<typeof RecruitmentState>(RecruitmentState);
