@@ -5,7 +5,7 @@ export const beginnerRecruitInfo: AnnouncementData = {
   name: 'Beginner',
   skill: 'none',
   stack: 'none',
-  status: 'CLOSED',
+  status: 'OPEN',
   people:
     '코딩에 대한 남다른 애정을 가지신 분\n' +
     '1년이상 활동이 가능하신 분\n' +

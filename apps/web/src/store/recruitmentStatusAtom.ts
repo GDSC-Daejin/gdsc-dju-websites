@@ -10,9 +10,9 @@ export const RecruitmentState: Record<PositionType, boolean> = {
   android: true,
   designer: false,
   ios: true,
-  designBeginner: false,
+  designBeginner: true,
   ml: true,
-  beginner: false,
+  beginner: true,
 };
 
 export const recruitmentAtom = atom<typeof RecruitmentState>(RecruitmentState);
