@@ -2,7 +2,7 @@ export const isDevelop = import.meta.env.MODE === 'development';
 
 // 4.5기 지원서가 보이게 수정
 
-const GENERATION = isDevelop ? 'dev' : 4.5;
+const GENERATION = isDevelop ? 'dev' : 5;
 
 
 interface IRecruitInfo {

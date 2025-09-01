@@ -8,7 +8,7 @@ export const RecruitmentState: Record<PositionType, boolean> = {
   frontend: true,
   backend: true,
   android: true,
-  designer: false,
+  designer: true,
   ios: true,
   designBeginner: true,
   ml: true,
