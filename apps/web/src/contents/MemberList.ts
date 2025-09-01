@@ -11,15 +11,6 @@ export const memberList = [
   },
 
   {
-    nickname: 'Soopeach',
-    name: '전현수',
-    role: 'Core Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02U7QRL4SC-6e454afca9f4-512',
-    text: '',
-    position: 'Android',
-  },
-  
-  {
     nickname: 'Jayden',
     name: '옥지훈',
     role: 'Core Member',
@@ -29,138 +20,21 @@ export const memberList = [
   },
 
   {
-    nickname: 'Ella',
-    name: '김가영',
-    role: 'Core Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07HV7USGV6-c99f5b56f82c-512',
-    text: '',
-    position: 'Frontend',
-  },
-  
-  {
-    nickname: 'Kevin',
-    name: '장성훈',
-    role: 'Core Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07HVN29HRN-5b8bf80cb083-512',
-    text: '',
-    position: 'Machine Learning',
-  },
-  
-  {
-    nickname: 'PuRang',
-    name: '손민성',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U030E9L5VB8-d202c97a72ac-512',
-    text: '',
-    position: 'Android',
-  },
-
-  {
     nickname: 'Donny',
     name: '조현돈',
-    role: 'Member',
+    role: 'Core Member',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U04K6VC2WR1-dc678dfd3d31-512',
     text: '',
     position: 'Frontend',
   },
 
   {
-    nickname: 'JJ-IM',
-    name: '양준석',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U06BXBXASLV-d9f71a3170c9-512',
-    text: '',
-    position: 'Backend',
-  },
-
-  {
-    nickname: 'Keeo',
-    name: '키오',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U06066D3LCB-c03d743f1ba6-512',
-    text: '',
-    position: 'Designer',
-  },
-
-  {
-    nickname: 'Astero',
-    name: '김지웅',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U05UQK2SBM0-g92ebd2828fe-512',
-    text: '',
-    position: 'Machine Learning',
-  },
-
-  {
-    nickname: 'Blue',
-    name: '선승구',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U05V136EXTK-908e47709fa7-512',
-    text: '',
-    position: '',
-  },
-
-  {
-    nickname: 'Scarlett',
-    name: '김연진',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U05UQMY4MGU-32bea448a432-512',
-    text: '',
-    position: 'Backend',
-  },
-
-  {
-    nickname: 'Shiro',
-    name: '정하연',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U05UN9X0BT5-76afdfe183c9-512',
-    text: '',
-    position: 'Frontend',
-  },
-
-  {
-    nickname: 'Las',
-    name: '편민우',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U06BKTW6PP1-9e8c5411324a-512',
-    text: '',
-    position: 'Machine Learning',
-  },
-  
-  {
-    nickname: 'Bemay',
-    name: '진승우',
-    role: 'Beginner',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07Q76B91V5-8c18bccebd5b-512',
-    text: '',
-    position: 'Backend',
-  },
-
-  {
-    nickname: 'Carol',
-    name: '김다현',
-    role: 'Beginner',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07RL7W6Q1H-gb7816987ca7-512',
-    text: '',
-    position: 'Designer',
-  },
-
-  {
     nickname: 'Catheline',
     name: '김서연',
-    role: 'Beginner',
+    role: 'Core Member',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07Q7RKV36K-fb5720525022-512',
     text: '',
     position: 'Backend',
-  },
-
-  {
-    nickname: 'Chole',
-    name: '이혜빈',
-    role: 'Beginner',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07R7Q4RYQK-39c6b0d0ff72-512',
-    text: '',
-    position: 'Designer',
   },
 
   {
@@ -173,18 +47,9 @@ export const memberList = [
   },
 
   {
-    nickname: 'Jei',
-    name: '윤은재',
-    role: 'Beginner',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07P9G3KX3P-ada7ad2c2723-512',
-    text: '',
-    position: 'Machine Learning',
-  },
-
-  {
     nickname: 'June',
     name: '홍준표',
-    role: 'Beginner',
+    role: 'Core Member',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07PAM8BCLT-ddf1d51754f7-512',
     text: '',
     position: 'Backend',
@@ -193,28 +58,10 @@ export const memberList = [
   {
     nickname: 'Luka',
     name: '김다연',
-    role: 'Beginner',
+    role: 'Member',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07QXCVUCPN-g1f3e9d96999-512',
     text: '',
     position: 'Machine Learning',
-  },
-
-  {
-    nickname: 'Nana',
-    name: '김나영',
-    role: 'Beginner',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07NW9LK01M-dae025238dc4-512',
-    text: '',
-    position: 'Machine Learning',
-  },
-
-  {
-    nickname: 'Nora',
-    name: '이진서',
-    role: 'Beginner',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07QU9UHQLS-g61f5f4a54e5-512',
-    text: '',
-    position: 'Designer',
   },
 
   {
@@ -225,15 +72,167 @@ export const memberList = [
     text: '',
     position: 'Backend',
   },
+  // {
+  //   nickname: 'Soopeach',
+  //   name: '전현수',
+  //   role: 'Core Member',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U02U7QRL4SC-6e454afca9f4-512',
+  //   text: '',
+  //   position: 'Android',
+  // },
+  // {
+  //   nickname: 'Chole',
+  //   name: '이혜빈',
+  //   role: 'Beginner',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07R7Q4RYQK-39c6b0d0ff72-512',
+  //   text: '',
+  //   position: 'Designer',
+  // },
 
-  {
-    nickname: 'Oliver',
-    name: '',
-    role: 'Beginner',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07Q1RXJLRJ-76de56810851-512',
-    text: '',
-    position: '',
-  },
+
+  // {
+  //   nickname: 'Jei',
+  //   name: '윤은재',
+  //   role: 'Beginner',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07P9G3KX3P-ada7ad2c2723-512',
+  //   text: '',
+  //   position: 'Machine Learning',
+  // },
+
+  // {
+  //   nickname: 'Nana',
+  //   name: '김나영',
+  //   role: 'Beginner',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07NW9LK01M-dae025238dc4-512',
+  //   text: '',
+  //   position: 'Machine Learning',
+  // },
+  //
+  // {
+  //   nickname: 'Nora',
+  //   name: '이진서',
+  //   role: 'Beginner',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07QU9UHQLS-g61f5f4a54e5-512',
+  //   text: '',
+  //   position: 'Designer',
+  // },
+
+
+  // {
+  //   nickname: 'JJ-IM',
+  //   name: '양준석',
+  //   role: 'Member',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U06BXBXASLV-d9f71a3170c9-512',
+  //   text: '',
+  //   position: 'Backend',
+  // },
+  //
+  // {
+  //   nickname: 'Keeo',
+  //   name: '키오',
+  //   role: 'Member',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U06066D3LCB-c03d743f1ba6-512',
+  //   text: '',
+  //   position: 'Designer',
+  // },
+  //
+  // {
+  //   nickname: 'Astero',
+  //   name: '김지웅',
+  //   role: 'Member',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U05UQK2SBM0-g92ebd2828fe-512',
+  //   text: '',
+  //   position: 'Machine Learning',
+  // },
+  //
+  // {
+  //   nickname: 'Blue',
+  //   name: '선승구',
+  //   role: 'Member',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U05V136EXTK-908e47709fa7-512',
+  //   text: '',
+  //   position: '',
+  // },
+  //
+  // {
+  //   nickname: 'Scarlett',
+  //   name: '김연진',
+  //   role: 'Member',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U05UQMY4MGU-32bea448a432-512',
+  //   text: '',
+  //   position: 'Backend',
+  // },
+  //
+  // {
+  //   nickname: 'Shiro',
+  //   name: '정하연',
+  //   role: 'Member',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U05UN9X0BT5-76afdfe183c9-512',
+  //   text: '',
+  //   position: 'Frontend',
+  // },
+  //
+  // {
+  //   nickname: 'Las',
+  //   name: '편민우',
+  //   role: 'Member',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U06BKTW6PP1-9e8c5411324a-512',
+  //   text: '',
+  //   position: 'Machine Learning',
+  // },
+  //
+  // {
+  //   nickname: 'Bemay',
+  //   name: '진승우',
+  //   role: 'Beginner',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07Q76B91V5-8c18bccebd5b-512',
+  //   text: '',
+  //   position: 'Backend',
+  // },
+  //
+  // {
+  //   nickname: 'Carol',
+  //   name: '김다현',
+  //   role: 'Beginner',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07RL7W6Q1H-gb7816987ca7-512',
+  //   text: '',
+  //   position: 'Designer',
+  // },
+  // {
+  //   nickname: 'Ella',
+  //   name: '김가영',
+  //   role: 'Core Member',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07HV7USGV6-c99f5b56f82c-512',
+  //   text: '',
+  //   position: 'Frontend',
+  // },
+  //
+  // {
+  //   nickname: 'Kevin',
+  //   name: '장성훈',
+  //   role: 'Core Member',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07HVN29HRN-5b8bf80cb083-512',
+  //   text: '',
+  //   position: 'Machine Learning',
+  // },
+  //
+  // {
+  //   nickname: 'PuRang',
+  //   name: '손민성',
+  //   role: 'Member',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U030E9L5VB8-d202c97a72ac-512',
+  //   text: '',
+  //   position: 'Android',
+  // },
+
+  // {
+  //   nickname: 'Oliver',
+  //   name: '',
+  //   role: 'Beginner',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07Q1RXJLRJ-76de56810851-512',
+  //   text: '',
+  //   position: '',
+  // },
   // {
   //   nickname: 'Judy',
   //   name: '김정하',
