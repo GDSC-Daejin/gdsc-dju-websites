@@ -5,7 +5,8 @@ export const iosRecruitInfo: AnnouncementData = {
   name: 'iOS Developer',
   skill: 'iOS',
   stack: 'Swift, Swift UI, Objective-C',
-  status: 'ALWAYS_OPEN',
+  // status: 'ALWAYS_OPEN',
+  status: 'CLOSED',
   people:
     '코딩에 대한 남다른 애정을 가지신 분\n' +
     '1년이상 활동이 가능하신 분\n' +

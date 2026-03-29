@@ -5,7 +5,7 @@ export const designBeginnerRecruitInfo: AnnouncementData = {
   name: 'UX/UI Design Beginner',
   skill: 'UX/UI',
   stack: 'Figma, Adobe XD, Framer',
-  status: 'OPEN',
+  status: 'CLOSED',
   people:
     'UX/UI 디자인에 대한 남다른 애정을 가지신 분\n' +
     '1년이상 활동이 가능하신 분\n' +

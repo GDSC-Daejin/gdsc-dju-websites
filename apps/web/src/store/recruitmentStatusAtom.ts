@@ -5,13 +5,13 @@ import { PositionType } from '@type/pageData';
 import API from '../apis/index';
 
 export const RecruitmentState: Record<PositionType, boolean> = {
-  frontend: true,
-  backend: true,
-  android: true,
-  designer: true,
-  ios: true,
-  designBeginner: true,
-  ml: true,
+  frontend: false,
+  backend: false,
+  android: false,
+  designer: false,
+  ios: false,
+  designBeginner: false,
+  ml: false,
   beginner: false,
 };
 

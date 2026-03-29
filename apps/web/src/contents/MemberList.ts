@@ -2,9 +2,18 @@ import { Nickname } from "@common/MemberCard/styled";
 
 export const memberList = [
   {
+    nickname: 'Catheline',
+    name: '김서연',
+    role: 'Lead',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07Q7RKV36K-fb5720525022-512',
+    text: '',
+    position: 'Backend',
+  },
+
+  {
     nickname: 'Aqua',
     name: '이우민',
-    role: 'Lead',
+    role: 'Core Memeber',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U04JNJQQX2T-370c79fdd038-512',
     text: '',
     position: 'Frontend',
@@ -29,18 +38,9 @@ export const memberList = [
   },
 
   {
-    nickname: 'Catheline',
-    name: '김서연',
-    role: 'Core Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07Q7RKV36K-fb5720525022-512',
-    text: '',
-    position: 'Backend',
-  },
-
-  {
     nickname: 'Claire',
     name: '하채윤',
-    role: 'Beginner',
+    role: 'Member',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07QU9WFQGJ-d0cdd5b86082-512',
     text: '',
     position: 'Designer',
@@ -56,22 +56,39 @@ export const memberList = [
   },
 
   {
-    nickname: 'Luka',
-    name: '김다연',
-    role: 'Member',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07QXCVUCPN-g1f3e9d96999-512',
+    nickname: 'Lucia',
+    name: '최송이',
+    role: 'Core Member',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U088WG3TJJJ-c2fb9bf64f0b-512',
     text: '',
-    position: 'Machine Learning',
+  position: 'Frontend',
   },
 
   {
-    nickname: 'Yve',
-    name: '송인혜',
-    role: 'Beginner',
-    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07QKBKJLLV-1752c4767e1c-512',
-    text: '',
-    position: 'Backend',
+    nickname: 'Nova',
+    name: '정예원',
+    role: 'Member',
+    image: 'https://ca.slack-edge.com/T02BE2ERU5A-U09M7JUAN91-g59e5c39d7c6-512',
+    position: 'Designer',
   },
+
+  // {
+  //   nickname: 'Luka',
+  //   name: '김다연',
+  //   role: 'Member',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07QXCVUCPN-g1f3e9d96999-512',
+  //   text: '',
+  //   position: 'Machine Learning',
+  // },
+
+  // {
+  //   nickname: 'Yve',
+  //   name: '송인혜',
+  //   role: 'Beginner',
+  //   image: 'https://ca.slack-edge.com/T02BE2ERU5A-U07QKBKJLLV-1752c4767e1c-512',
+  //   text: '',
+  //   position: 'Backend',
+  // },
   // {
   //   nickname: 'Soopeach',
   //   name: '전현수',

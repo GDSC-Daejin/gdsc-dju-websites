@@ -5,7 +5,8 @@ export const frontendRecruitInfo: AnnouncementData = {
   name: 'Frontend Developer',
   skill: 'React',
   stack: 'JavaScript, JSX, TypeScript',
-  status: 'ALWAYS_OPEN',
+  // status: 'ALWAYS_OPEN',
+  status: 'CLOSED',
   people:
     '코딩에 대한 남다른 애정을 가지신 분\n' +
     '1년이상 활동이 가능하신 분\n' +
