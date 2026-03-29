@@ -37,7 +37,7 @@ export const managerData: IMemberCardType[] = [
     position: 'Frontend',
   },
 
-   {
+  {
     nickname: 'Donny',
     name: '조현돈',
     role: 'Core Member',
@@ -70,7 +70,7 @@ export const managerData: IMemberCardType[] = [
     role: 'Core Member',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U088WG3TJJJ-c2fb9bf64f0b-512',
     text: '',
-  position: 'Frontend',
+    position: 'Frontend',
   },
   // {
   //   nickname: 'Ella',

@@ -61,7 +61,7 @@ export const memberList = [
     role: 'Core Member',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U088WG3TJJJ-c2fb9bf64f0b-512',
     text: '',
-  position: 'Frontend',
+    position: 'Frontend',
   },
 
   {
@@ -69,6 +69,7 @@ export const memberList = [
     name: '정예원',
     role: 'Member',
     image: 'https://ca.slack-edge.com/T02BE2ERU5A-U09M7JUAN91-g59e5c39d7c6-512',
+    text: '',
     position: 'Designer',
   },
 
