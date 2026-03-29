@@ -2,12 +2,9 @@ import React from 'react';
 
 import { AnimatePresence } from 'framer-motion';
 
-import { GDSCButton } from '@common/Button';
 import {
-  ButtonWrapper,
   ModalBackgroundWrapper,
   ModalInner,
-  ModalContainer,
   ModalInnerNav,
   ModalInnerBody,
   ModalTitle,
@@ -15,7 +12,6 @@ import {
   ModalInnerGridItem,
   ModalP,
 } from '@common/modal/styled';
-import { putMemberData } from '@src/apis/UserService';
 import { useModalHandle } from '@src/hooks/useModalHandle';
 import { IUserDataType } from '@type/userDataType';
 import OutsideClickHandler from '@utils/OutsideClickHandler';
@@ -27,36 +23,6 @@ type Props = {
 const MemberInfoModal = (selectMember: Props) => {
   const { modal, closeModal } = useModalHandle('MEMBER');
 
-  /** Core로 할당 */
-  const GiveAdmin = async () => {
-    if (selectMember.selectMember) {
-      await putMemberData({
-        userId: selectMember.selectMember?.userId,
-        role: 'CORE',
-      });
-      window.location.reload();
-    }
-  };
-  /** Member로 할당 */
-  const GiveMember = async () => {
-    if (selectMember.selectMember) {
-      await putMemberData({
-        userId: selectMember.selectMember?.userId,
-        role: 'MEMBER',
-      });
-      window.location.reload();
-    }
-  };
-  /** Guest로 할당 */
-  const GiveGuest = async () => {
-    if (selectMember.selectMember) {
-      await putMemberData({
-        userId: selectMember.selectMember?.userId,
-        role: 'GUEST',
-      });
-      window.location.reload();
-    }
-  };
   return (
     <AnimatePresence>
       {modal.isOpen && (
@@ -72,7 +38,7 @@ const MemberInfoModal = (selectMember: Props) => {
           >
             <ModalInner>
               <ModalInnerNav>
-                <ModalTitle>멤버수정</ModalTitle>
+                <ModalTitle>멤버 정보</ModalTitle>
                 <ClearButton onClick={closeModal} />
               </ModalInnerNav>
               <ModalInnerBody>
@@ -111,29 +77,6 @@ const MemberInfoModal = (selectMember: Props) => {
                   )}
                 </ModalInnerGridContainer>
               </ModalInnerBody>
-              <ButtonWrapper>
-                {selectMember.selectMember?.role !== 'CORE' && (
-                  <GDSCButton
-                    text={'Core'}
-                    color={'blue900'}
-                    onClick={GiveAdmin}
-                  />
-                )}
-                {selectMember.selectMember?.role !== 'MEMBER' && (
-                  <GDSCButton
-                    text={'Member'}
-                    color={'red600'}
-                    onClick={GiveMember}
-                  />
-                )}
-                {selectMember.selectMember?.role !== 'GUEST' && (
-                  <GDSCButton
-                    text={'GUEST'}
-                    color={'red600'}
-                    onClick={GiveGuest}
-                  />
-                )}
-              </ButtonWrapper>
             </ModalInner>
           </OutsideClickHandler>
         </ModalBackgroundWrapper>

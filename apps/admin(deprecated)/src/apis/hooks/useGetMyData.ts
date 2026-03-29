@@ -1,21 +1,32 @@
-import { useQuery } from 'react-query';
-import { useNavigate } from 'react-router-dom';
+import { useMemo } from 'react';
 
-import { getMyData } from '../UserService';
+import { useAtom } from 'jotai';
 
-export const getUserData = async () => {
-  const response = await getMyData();
-  return response.data.body.data;
-};
+import { userAtom } from '@src/store/userAtom';
+import { IUserDataType } from '@type/userDataType';
 
 export const useGetMyData = () => {
-  const navigate = useNavigate();
-  const { data: userData } = useQuery([`myData`], () => getUserData(), {
-    retry: 2,
-    refetchOnWindowFocus: false,
-    onError: () => {
-      navigate('/');
-    },
-  });
-  return { userData: userData ?? userData };
+  const [user] = useAtom(userAtom);
+
+  const userData = useMemo<IUserDataType | undefined>(() => {
+    if (!user.uid || !user.role || !user.memberInfo) {
+      return undefined;
+    }
+
+    return {
+      email: user.email ?? '',
+      emailVerifiedYn: 'Y',
+      memberInfo: user.memberInfo,
+      modifiedAt: '',
+      password: '',
+      profileImageUrl: '',
+      providerType: 'GOOGLE',
+      role: user.role,
+      uploadDate: '',
+      userId: user.uid,
+      username: user.username ?? user.nickname ?? '',
+    };
+  }, [user]);
+
+  return { userData };
 };

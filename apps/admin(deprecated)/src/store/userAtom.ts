@@ -1,29 +1,31 @@
 import { atom } from 'jotai';
 
-import { getUserData } from '@src/apis/hooks/useGetMyData';
 import { IUserInfoDataType } from '@type/userInfoData';
 
-interface UserAtomType {
+export interface UserAtomType {
   role: string | null;
   nickname: string | null;
   uid: string | null;
   memberInfo: IUserInfoDataType | null;
+  email: string | null;
+  username: string | null;
 }
 
-export const userAtom = atom<UserAtomType>({
+export const initialUserState: UserAtomType = {
   role: null,
   nickname: null,
   uid: null,
   memberInfo: null,
+  email: null,
+  username: null,
+};
+
+export const userAtom = atom<UserAtomType>(initialUserState);
+
+export const setUserAtom = atom(null, (_get, set, user: UserAtomType) => {
+  set(userAtom, user);
 });
 
-export const userInfoWriteOnlyAtom = atom(null, async (get, set) => {
-  await getUserData().then((userData) => {
-    set(userAtom, {
-      role: userData.role,
-      nickname: userData.memberInfo.nickname,
-      uid: userData.userId,
-      memberInfo: userData.memberInfo,
-    });
-  });
+export const resetUserAtom = atom(null, (_get, set) => {
+  set(userAtom, initialUserState);
 });

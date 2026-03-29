@@ -2,9 +2,11 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { AnimatePresence } from 'framer-motion';
-import Cookies from 'js-cookie';
+import { useAtom } from 'jotai';
 
-import { ROUTES } from '../../../routes/Route';
+import { authAtom } from '@src/store/authAtom';
+import { resetUserAtom } from '@src/store/userAtom';
+import { signOutAdmin } from '@utils/adminAuth';
 
 import { AdminUserMenuWrapper, MenuElement } from './styled';
 
@@ -14,6 +16,8 @@ const AdminUserMenu: React.FC<{
 }> = ({ isOpen, setIsOpen }) => {
   const navigate = useNavigate();
   const userMenuRef = useRef<HTMLDivElement>(null);
+  const [, resetUser] = useAtom(resetUserAtom);
+  const [, setAuthState] = useAtom(authAtom);
 
   const handleClickOutside = useCallback(
     (e: Event) => {
@@ -50,8 +54,13 @@ const AdminUserMenu: React.FC<{
             layout
             onClick={async () => {
               setIsOpen(false);
-              Cookies.remove('token', { path: '/', domain: '.gdsc-dju.com' });
-              navigate(ROUTES.HOME.ROUTE);
+              await signOutAdmin();
+              resetUser();
+              setAuthState({
+                isInitializing: false,
+                isAuthenticated: false,
+              });
+              navigate('/', { replace: true });
             }}
           >
             로그아웃

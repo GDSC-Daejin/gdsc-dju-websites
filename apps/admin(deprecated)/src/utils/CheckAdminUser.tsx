@@ -1,34 +1,36 @@
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-// import { useAtom } from 'jotai';
-import Cookies from 'js-cookie';
+import { useAtom } from 'jotai';
 
-import { useGetMyData } from '../apis/hooks/useGetMyData';
-// import { userInfoWriteOnlyAtom } from '../store/userAtom';
+import { GoogleSpinnerStatic } from '../components/Lottie/GoogleSpinner';
+import { authAtom } from '../store/authAtom';
 
 const CheckAdminUser = () => {
-  // const [, writeAdminUser] = useAtom(userInfoWriteOnlyAtom);
   const navigate = useNavigate();
   const location = useLocation();
-  const token = Cookies.get('token');
-  const { userData } = useGetMyData();
-  const isAdmin = userData?.role === 'LEAD' || 'CORE';
-  const checkAdminUser = () => {
-    if (!token && location.pathname.includes('/certified')) {
-      navigate('/');
-      if (!isAdmin) {
-        navigate('/');
-      }
-    }
-  };
+  const [authState] = useAtom(authAtom);
+
   useEffect(() => {
-    (async function () {
-      // token && (await writeAdminUser(token));
-      token;
-      checkAdminUser();
-    })();
-  }, [userData, token]);
+    if (authState.isInitializing) {
+      return;
+    }
+
+    if (!authState.isAuthenticated && location.pathname.startsWith('/certified')) {
+      navigate('/', { replace: true });
+    }
+    if (
+      authState.isAuthenticated &&
+      (location.pathname === '/' || location.pathname === '/redirect')
+    ) {
+      navigate('/certified', { replace: true });
+    }
+  }, [authState.isAuthenticated, authState.isInitializing, location.pathname, navigate]);
+
+  if (authState.isInitializing) {
+    return <GoogleSpinnerStatic />;
+  }
+
   return null;
 };
 

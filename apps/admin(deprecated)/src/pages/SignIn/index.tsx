@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { getRedirectURL } from '@src/apis/TokenService';
+import { useAtom } from 'jotai';
+
+import { signInAdminWithGoogle } from '@utils/adminAuth';
+import { alertAtom } from '@src/store/alertAtom';
+import { authAtom } from '@src/store/authAtom';
+import { loaderAtom } from '@src/store/loaderAtom';
+import { setUserAtom } from '@src/store/userAtom';
 
 import GDSCImage from '../../assets/logos/GDSCLogo.svg';
 import GithubLogo from '../../assets/logos/GithubLogo.svg';
@@ -10,13 +17,8 @@ import SolarSystem from '../../components/layout/SolarSystem';
 import {
   AuthBoxInner,
   AuthBoxWrapper,
-  AuthButtonWrapper,
   AuthElementWrapper,
-  AuthInput,
-  AuthLine,
   AuthLogoText,
-  AuthOtherText,
-  AuthSignButton,
   AuthSubTitle,
   AuthTitle,
   ButtonWrapper,
@@ -30,8 +32,43 @@ import {
 } from './styled';
 
 const SignIn = () => {
-  const googleLogin = () => {
-    return getRedirectURL();
+  const navigate = useNavigate();
+  const [, setLoading] = useAtom(loaderAtom);
+  const [, setAlert] = useAtom(alertAtom);
+  const [, setUser] = useAtom(setUserAtom);
+  const [, setAuthState] = useAtom(authAtom);
+  const [isSigningIn, setIsSigningIn] = useState(false);
+
+  const googleLogin = async () => {
+    if (isSigningIn) {
+      return;
+    }
+
+    setIsSigningIn(true);
+    setLoading({ isLoading: true });
+
+    try {
+      const user = await signInAdminWithGoogle();
+
+      setUser(user);
+      setAuthState({
+        isInitializing: false,
+        isAuthenticated: true,
+      });
+      navigate('/certified', { replace: true });
+    } catch (error) {
+      setAlert({
+        alertHandle: true,
+        alertStatus: 'ERROR',
+        alertMessage:
+          error instanceof Error
+            ? error.message
+            : 'Google 로그인에 실패했어요.',
+      });
+    } finally {
+      setLoading({ isLoading: false });
+      setIsSigningIn(false);
+    }
   };
 
   return (
@@ -52,34 +89,14 @@ const SignIn = () => {
             <AuthTitle>로그인</AuthTitle>
           </AuthElementWrapper>
           <AuthElementWrapper direction={'column'}>
-            <AuthSubTitle>이메일 주소</AuthSubTitle>
-            <AuthInput
-              type={'email'}
-              name={'email'}
-              placeholder={'gdsc@gmail.com'}
-            />
-          </AuthElementWrapper>
-          <AuthElementWrapper direction={'column'}>
-            <AuthSubTitle>비밀번호</AuthSubTitle>
-            <AuthInput
-              type={'password'}
-              name={'password'}
-              placeholder={'password'}
-            />
-          </AuthElementWrapper>
-
-          <AuthButtonWrapper>
-            <AuthSignButton>로그인</AuthSignButton>
-          </AuthButtonWrapper>
-          <AuthElementWrapper align={'center'}>
-            <AuthLine />
-            <AuthOtherText>또는</AuthOtherText>
-            <AuthLine />
+            <AuthSubTitle>
+              Google 계정으로 간단히 로그인할 수 있어요.
+            </AuthSubTitle>
           </AuthElementWrapper>
           <ButtonWrapper>
             <OAuthLoginButton
               type={'google'}
-              onClick={() => (location.href = googleLogin())}
+              onClick={googleLogin}
             />
           </ButtonWrapper>
         </AuthBoxInner>

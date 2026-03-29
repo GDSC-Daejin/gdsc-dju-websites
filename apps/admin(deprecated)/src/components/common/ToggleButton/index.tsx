@@ -21,6 +21,10 @@ export const Switch = styled.div`
     justify-content: flex-end;
     background-color: ${({ theme }) => theme.colors.blue900};
   }
+  &[data-disabled='true'] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 `;
 
 export const Handle = styled(motion.div)`
@@ -34,7 +38,8 @@ export const Handle = styled(motion.div)`
 const ToggleButton: React.FC<{
   isOn: boolean | undefined;
   toggle: () => void;
-}> = ({ isOn, toggle }) => {
+  disabled?: boolean;
+}> = ({ isOn, toggle, disabled = false }) => {
   const spring = {
     type: 'spring',
     stiffness: 700,
@@ -42,7 +47,15 @@ const ToggleButton: React.FC<{
   };
   return (
     <ToggleButtonWrapper>
-      <Switch data-ison={isOn} onClick={() => toggle()}>
+      <Switch
+        data-ison={isOn}
+        data-disabled={disabled}
+        onClick={() => {
+          if (!disabled) {
+            toggle();
+          }
+        }}
+      >
         <Handle layout transition={spring} />
       </Switch>
     </ToggleButtonWrapper>

@@ -4,17 +4,15 @@ import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useAtom } from 'jotai';
 
-import { putRecruitStatus } from '@src/apis/RecruitService';
-import {IApplicantType, IApplicantTypeWithID, StatusType} from '@type/applicant';
+import { IApplicantTypeWithID } from '@type/applicant';
 
 import ApplicantCard from '../../components/common/cards/ApplicantCard';
 import ToggleButton from '../../components/common/ToggleButton';
 import StatusBadgeBox from '../../components/layout/StatusBadgeBox';
-import {position, recruitInfo} from '../../context/recruitInfo';
+import { position } from '../../context/recruitInfo';
 import {
   RecruitmentAtom,
   recruitmentAtom,
-  recruitmentReadOnlyAtom,
   recruitmentWriteOnlyAtom,
 } from '../../store/recruitmentAtom';
 import { getApplicants } from '../../utils/applicantsHandler';
@@ -28,11 +26,10 @@ import {
   ApplicantContainerInner,
   ApplicantHeadWrapper,
 } from './styled';
-import {db} from "@src/firebase/firebase";
-import {addDoc, collection, getDocs, orderBy, query, where } from 'firebase/firestore';
+
+const RECRUIT_STATUS_READ_ONLY = true;
 
 const Applicants = () => {
-  const [recruit] = useAtom(recruitmentReadOnlyAtom);
   const [, writeRecruitStatus] = useAtom(recruitmentWriteOnlyAtom);
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
@@ -50,6 +47,10 @@ const Applicants = () => {
     }
   };
   const currentRouteRecruitStatusHandler = () => {
+    if (RECRUIT_STATUS_READ_ONLY) {
+      return;
+    }
+
     if (recruitStatus) {
       setRecruitStatus({
         ...recruitStatus,
@@ -84,12 +85,6 @@ const Applicants = () => {
   useEffect(() => {
     applicantHandler();
   }, [currentParam]);
-  useEffect(() => {
-    if (recruit) {
-      putRecruitStatus(recruit);
-    }
-  }, [recruit]);
-
 
   return (
     <AdminContainerInner>
@@ -104,6 +99,7 @@ const Applicants = () => {
                   <ToggleButton
                     isOn={currentRouteRecruitStatus()}
                     toggle={currentRouteRecruitStatusHandler}
+                    disabled={RECRUIT_STATUS_READ_ONLY}
                   />
                 </ApplicantHeadWrapper>
                 <ApplicantCardSection>

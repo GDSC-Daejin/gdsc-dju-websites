@@ -17,8 +17,6 @@ import {
   ApplicantChatSendButton,
 } from './styled';
 
-import { useGetMyData } from '@src/apis/hooks/useGetMyData';
-
 interface IApplicantChatSectionProps {
   applicantId: string;
 }
@@ -27,7 +25,6 @@ const ApplicantChatContainer: React.FC<IApplicantChatSectionProps> = ({
   applicantId,
 }) => {
   const [adminUser] = useAtom(userAtom);
-  const getinfo = useGetMyData();
 
   const q = query(
     collection(db, `chats-${applicantId}`),
@@ -68,8 +65,8 @@ const ApplicantChatContainer: React.FC<IApplicantChatSectionProps> = ({
       await addDoc(chatRef, {
         text: message,
         createdAt: Date.now(),
-        uid: getinfo.userData?.userId,
-        displayName: getinfo.userData?.username,
+        uid: adminUser.uid,
+        displayName: adminUser.username ?? adminUser.nickname,
         isRead: false,
       });
     }
@@ -92,10 +89,10 @@ const ApplicantChatContainer: React.FC<IApplicantChatSectionProps> = ({
   return (
     <ApplicantChatContainerWrapper>
       <>
-        {newMessages && getinfo.userData?.username && (
+        {newMessages && (adminUser.username || adminUser.nickname) && (
           <ApplicantChatCardSection
             ref={chatSectionRef}
-            adminUser={adminUser.uid || getinfo.userData?.username}
+            adminUser={adminUser.uid || adminUser.username || ''}
             newMessages={newMessages as IApplicantChatType[]}
           />
         )}
